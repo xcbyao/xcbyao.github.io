@@ -1,0 +1,235 @@
+<!DOCTYPE html><html lang="en-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="Crypto 九层妖塔"><meta name="keywords" content=""><meta name="author" content="xcbyao,undefined"><meta name="copyright" content="xcbyao"><title>Crypto 九层妖塔【Xcbyao's world】</title><link rel="stylesheet" href="/css/fan.css"><link rel="stylesheet" href="/css/thirdparty/jquery.mCustomScrollbar.min.css"><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch-theme-algolia.min.css"><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4"></script><!-- link(rel="dns-prefetch" href="https://cdn.jsdelivr.net")--><!-- link(rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.css")--><!-- script(src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.js" defer)--><!-- script(src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")--><script src="/js/mathjax/mathjax.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+});
+</script><script>var isPassword = '' || false;
+if (isPassword) {
+    if (prompt('请输入文章密码') !== '') {
+        alert('密码错误！');
+        history.back();
+    }
+}</script><script>window.GLOBAL_CONFIG = {
+  root: '/',
+  algolia: {"appId":"WU9Q6DZROF","apiKey":"6d9cfcf40463ab24c4eae1f06cfee8ec","indexName":"banach","hits":{"per_page":10},"languages":{"input_placeholder":"Search","hits_empty":"The content couldn't be found:${query}","hits_stats":"Found ${hits} results, in ${time} ms"}},
+  localSearch: undefined,
+  copy: {
+    success: 'Success',
+    error: 'Copy Error',
+    noSupport: 'Browser noSupport'
+  },
+  gitment: {"owner":"xcbyao","repo":"xcbyao.github.io","client_id":"b31eee1b441ab6cac11c","client_secret":"e2393d5d3b92b55ab7239150b8fab2ed8c2e12b1"},
+  valine: {},
+}</script><meta name="generator" content="Hexo 4.2.0"></head><body><canvas id="universe"></canvas><!--#body--><div id="sidebar"><div class="toggle-sidebar-info button-hover"><span data-toggle="Directory">Overview</span></div><div class="sidebar-toc"><div class="sidebar-toc-title">Catalogues</div><div class="sidebar-toc-progress"><span class="progress-notice">You have read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc-progress-bar"></div></div><div class="sidebar-toc-content" id="sidebar-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#九层妖塔（设计思路-amp-WP）"><span class="toc-number">1.</span> <span class="toc-text">九层妖塔（设计思路 &amp; WP）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言："><span class="toc-number">1.1.</span> <span class="toc-text">前言：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计大纲："><span class="toc-number">1.2.</span> <span class="toc-text">设计大纲：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#详细思路："><span class="toc-number">1.3.</span> <span class="toc-text">详细思路：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一层：腐木基座隐塔身"><span class="toc-number">1.3.1.</span> <span class="toc-text">一层：腐木基座隐塔身</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二层：幽曲木栅落凡尘"><span class="toc-number">1.3.2.</span> <span class="toc-text">二层：幽曲木栅落凡尘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三层：普莱菲尔封凯撒"><span class="toc-number">1.3.3.</span> <span class="toc-text">三层：普莱菲尔封凯撒</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四层：道法挪移镇邪煞"><span class="toc-number">1.3.4.</span> <span class="toc-text">四层：道法挪移镇邪煞</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五层：半盲道人荡图灵"><span class="toc-number">1.3.5.</span> <span class="toc-text">五层：半盲道人荡图灵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六层：圣堂武士震四方"><span class="toc-number">1.3.6.</span> <span class="toc-text">六层：圣堂武士震四方</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#七层：九转方棋威五堂"><span class="toc-number">1.3.7.</span> <span class="toc-text">七层：九转方棋威五堂</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#八层：梵音回响摄心神"><span class="toc-number">1.3.8.</span> <span class="toc-text">八层：梵音回响摄心神</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#九层：九曲轮回链生死"><span class="toc-number">1.3.9.</span> <span class="toc-text">九层：九曲轮回链生死</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#阵启：万古佛法通古今"><span class="toc-number">1.3.10.</span> <span class="toc-text">阵启：万古佛法通古今</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#破封：六十四卦补阴阳"><span class="toc-number">1.3.11.</span> <span class="toc-text">破封：六十四卦补阴阳</span></a></li></ol></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info-avatar"><img class="author-info-avatar-img" src="/avatar.gif"></div><div class="author-info-name">xcbyao</div><div class="author-info-description">凡心所向 素履以往 生如逆旅 一苇以航</div><div class="links-buttons"><a class="links-button button-hover" href="https://github.com/xcbyao" target="_blank">GitHub<i class="icon-dot bg-color3"></i></a><a class="links-button button-hover" href="https://twitter.com/xcbyao" target="_blank">Twitter<i class="icon-dot bg-color2"></i></a></div><div class="author-info-articles"><a class="author-info-articles-archives article-meta" href="/archives"><span class="pull-top">Posts</span><span class="pull-bottom">4</span></a><a class="author-info-articles-categories article-meta" href="/categories"><span class="pull-top">Categories</span><span class="pull-bottom">4</span></a></div><div class="friend-link"><a class="friend-link-text" href="http://riusksk.me/" target="_blank">riusksk's blog</a><a class="friend-link-text" href="https://www.zuozuovera.com/" target="_blank">薇拉航线🌺</a><a class="friend-link-text" href="https://xpoet.cn/" target="_blank">XPoet Blog</a><a class="friend-link-text" href="https://www.lvfan.xyz/" target="_blank">吕钒的后花园</a><a class="friend-link-text" href="https://meethigher.top/blog/" target="_blank">Kit Chen's Blog</a><a class="friend-link-text" href="http://gv7.me/" target="_blank">回忆飘如雪</a><a class="friend-link-text" href="https://www.ddosi.com/" target="_blank">🔰雨苁ℒ🔰</a></div></div></div><div id="main-container"><header><div id="menu-outer"><i class="menu-list-icon fas fa-bars"></i><nav id="menu-inner"><a class="menu-item" href="/">Home</a><a class="menu-item" href="/categories">Categories</a><a class="menu-item" href="/archives">Archives</a><a class="menu-item" href="/about">About</a></nav><div class="right-info"><a class="search social-icon"><i class="fas fa-search"></i><span> Search</span></a><a class="title-name" href="/">Xcbyao's world</a><span id="now-time"></span></div></div></header><div id="content-outer"><div id="content-inner"><article id="post"><div class="post-header"><div class="title">Crypto 九层妖塔</div><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> Published 2020-05-06 | Modified 2020-08-14</time><!--time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]--><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/categories/CTF/">CTF</a></div><div class="button-hover tags"></div></div></div><div class="main-content"><h1 id="九层妖塔（设计思路-amp-WP）"><a href="#九层妖塔（设计思路-amp-WP）" class="headerlink" title="九层妖塔（设计思路 &amp; WP）"></a>九层妖塔（设计思路 &amp; WP）</h1><p><img src="/images/demon-tower.jpg" alt=""></p>
+<h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>之前特别喜欢看雪上的一道名为“九层妖塔”的逆向题，这次要出一道密码题，故突发奇想，花了一天半的时间，整了这么一道密码学的九层妖塔，虽然没有密码学的灵魂 RSA，但也添加了一些故事性的描述，力图增加一些趣味性，同时涉及到了<strong>总计 24 种编码及加密算法</strong>，希望可以更好地了解密码学这个充满魅力的体系。（注：最后解出的 WP 为旧文档）</p>
+<h2 id="设计大纲："><a href="#设计大纲：" class="headerlink" title="设计大纲："></a>设计大纲：</h2><p><strong>一层：腐木基座隐塔身：</strong>base编码、列位移密码（密钥）、曲路密码（路径）<br><strong>二层：幽曲木栅落凡尘：</strong>栅栏密码（W型）、曲路密码<br><strong>三层：普莱菲尔封凯撒：</strong>普莱菲尔密码、凯撒密码、四方密码（两段密钥）<br><strong>四层：道法挪移镇邪煞：</strong>列移位密码、六十四卦图（密钥）、盲文（密钥）<br><strong>五层：半盲道人荡图灵：</strong>盲文、brainfuck、仿射密码（密钥）<br><strong>六层：圣堂武士震四方：</strong>猪圈密码变种、四方密码、波利比奥斯方阵密码（密钥）、维吉尼亚密码（密钥）<br><strong>七层：九转方棋威五堂：</strong>波利比奥斯方阵密码、维吉尼亚密码（威）、仿射密码（密钥）<br><strong>八层：梵音回响摄心神：</strong>敲击码、仿射密码、摩尔斯密码、夏多密码（密钥）<br><strong>九层：九曲轮回链生死：</strong>夏多密码、六十四卦图（文件）<br><strong>阵启：万古佛法通古今：</strong>与佛论禅、新约佛论禅<br><strong>破封：六十四卦补阴阳：</strong>六十四卦密码、二进制转字符、ASCII编码</p>
+<h2 id="详细思路："><a href="#详细思路：" class="headerlink" title="详细思路："></a>详细思路：</h2><h3 id="一层：腐木基座隐塔身"><a href="#一层：腐木基座隐塔身" class="headerlink" title="一层：腐木基座隐塔身"></a>一层：腐木基座隐塔身</h3><p>故事带入，某某无意间找到一个“精美的盒子”，但是这个盒子外面加了一道四个数字的密码锁，作为神偷，他很轻松地用工具解开了（这里涉及到压缩包爆破，有隐写的嫌疑……咳咳，不过也仅此一处，后面的爆破几乎很难……）</p>
+<p>然后发现一张“藏宝图”，封面是一个有些散架的，散发着淡淡幽蓝色彩的，呃……大写“B”？<br>翻开里面，掉出一张枯黄的草纸，捡起来，开始阅读：</p>
+<p>“传说东方有一座九层妖塔，里面有着富可敌国的宝藏，若想得到，需要解开层层密码，突破迷雾与阻碍……”</p>
+<p>然后下面是一堆（什么鬼）……</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">R00zRE9PQlRHWVpVSVJLR0lKQlRRT0JUR0ZDVU1RU0RIQkJUR05TRklaQkVHT0JaSVZERUVRWllIQVpUTVJLR0lKQlRRUVpUR1pDVU1RU0RIQTRVS1JTQ0lNNERRTVpXSVZERUVRWllJTVpUSVJLR0lKQlRRT0tGSVpCRUdPQllHTVlVS1JTQ0lNNEVHTVpVSVZERUVRWllIRkNVTVFTREhBNERHTUtGSVpCRUdPQ0RHTVpFS1JTQ0lNNERTUktHSUpCVFFPQlRHWkNVTVFTREhCQlRHTVNGSVpCRUdPQlpJVkRFRVFaWUhBWlRNUktHSUpCVFFRWlRHRkNVTVFTREhBNFVLUlNDSU00RFFNWlJJVkRFRVFaWUlNWlRDUktHSUpCVFFPS0ZJWkJFR09CWUdNWVVLUlNDSU00RUdNWlRJVkRFRVFaWUhGQ1VNUVNESEE0REdOU0ZJWkJFR09DREdNWlVLUlNDSU00RFNSS0dJSkJUUU9CVEdaQ1VNUVNESEJCVEdOS0ZJWkJFR09CWklWREVFUVpZSEFaVENSS0dJSkJUUVFaVEdWQ1VNUVNESEE0UT09PT0K</span></span><br></pre></td></tr></table></figure>
+
+<p>由“基座”联想到 base 编码，最后确定依次进行 base64、base32、base16</p>
+<p>得出一堆信息，继续分析……</p>
+<p>“隐塔身”可能暗示隐藏着某些信息，通过上面的解密得到以下信息：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">6x6=（1，6）（6，6）（6，4）（1，4）（1，2）（6，2）（6，1）（1，1）（1，3）（6，3）（6，5）（1，5）</span></span><br></pre></td></tr></table></figure>
+<p>但是似乎还不够，我们没有找到下一层的方法，再看看那张图，发现下面有一些空白，反白一下，又发现了一些信息：（上面的数字似乎缺了一些，还有个字母 l，之后回忆起正是对应上文的加密 base64、base32、base16）</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">6</span>  <span class="number">32</span> <span class="string">l</span></span><br><span class="line"><span class="string">TmluZSBsYXllciBkZW1vbiB0b3dlcg==</span></span><br><span class="line"><span class="string">TG9zdCBjb21wYXNz</span></span><br></pre></td></tr></table></figure>
+
+<p>base64解出如下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">Nine</span> <span class="string">layer</span> <span class="string">demon</span> <span class="string">tower</span></span><br><span class="line"><span class="string">Lost</span> <span class="string">compass</span></span><br></pre></td></tr></table></figure>
+
+<p>发现 <strong>Nine layer demon tower</strong> （九层妖塔）这个似乎才是真正的入场券，至于其他信息先留着，也许之后有用，现在成功进入了第二层……</p>
+<h3 id="二层：幽曲木栅落凡尘"><a href="#二层：幽曲木栅落凡尘" class="headerlink" title="二层：幽曲木栅落凡尘"></a>二层：幽曲木栅落凡尘</h3><p>由“木栅”首先联想到栅栏密码，这里难度升级为 W 型栅栏，注释中有一个 4，猜测为四栏：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">naitnclesdpplwalpigostautgddehcioean</span></span><br></pre></td></tr></table></figure>
+
+<p>栅栏密码（W型）在线解密<br><a href="http://www.atoolbox.net/Tool.php?Id=777" target="_blank" rel="noopener">http://www.atoolbox.net/Tool.php?Id=777</a><br>得到：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">nlgcoeassitdipaouptltegwnadadlcpenhi</span></span><br></pre></td></tr></table></figure>
+
+<p>虽然现在还是乱码，但是不要急，接着由“幽曲”再次联想到曲路密码，结合第一层得到的“曲径通幽处”，猜测为曲路密码的路径，即：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">6x6=（1，6）（6，6）（6，4）（1，4）（1，2）（6，2）（6，1）（1，1）（1，3）（6，3）（6，5）（1，5）</span></span><br></pre></td></tr></table></figure>
+<p>绘制 6x6 表格，按照路径依次填入</p>
+<table>
+<thead>
+<tr>
+<th>w</th>
+<th>i</th>
+<th>n</th>
+<th>d</th>
+<th>i</th>
+<th>n</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>g</td>
+<td>p</td>
+<td>a</td>
+<td>t</td>
+<td>h</td>
+<td>l</td>
+</tr>
+<tr>
+<td>e</td>
+<td>a</td>
+<td>d</td>
+<td>i</td>
+<td>n</td>
+<td>g</td>
+</tr>
+<tr>
+<td>t</td>
+<td>o</td>
+<td>a</td>
+<td>s</td>
+<td>e</td>
+<td>c</td>
+</tr>
+<tr>
+<td>l</td>
+<td>u</td>
+<td>d</td>
+<td>s</td>
+<td>p</td>
+<td>o</td>
+</tr>
+<tr>
+<td>t</td>
+<td>p</td>
+<td>l</td>
+<td>a</td>
+<td>c</td>
+<td>e</td>
+</tr>
+</tbody></table>
+<p>整理得到：（Hit：曲径通幽处）</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">winding</span> <span class="string">path</span> <span class="string">leading</span> <span class="string">to</span> <span class="string">a</span> <span class="string">seclud</span> <span class="string">spot</span> <span class="string">place</span></span><br></pre></td></tr></table></figure>
+<p>解压成功，进入第三层~~</p>
+<h3 id="三层：普莱菲尔封凯撒"><a href="#三层：普莱菲尔封凯撒" class="headerlink" title="三层：普莱菲尔封凯撒"></a>三层：普莱菲尔封凯撒</h3><p>这层很明显可以想到普莱菲尔密码、凯撒密码，接着用上层最后得到的密钥打开压缩包，注意到注释中写着：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">“菲尔的钥匙：</span> <span class="string">rtkhyfbveapxnwuolgmcdzqsi</span> <span class="string">”</span></span><br></pre></td></tr></table></figure>
+
+<p>接着看到：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">VUIRCPFTXYWI</span></span><br></pre></td></tr></table></figure>
+
+<p>尝试普莱菲尔密码，加上注释中“菲尔的钥匙”，进行在线解密<br><a href="http://www.practicalcryptography.com/ciphers/classical-era/playfair/" target="_blank" rel="noopener">http://www.practicalcryptography.com/ciphers/classical-era/playfair/</a><br>得到：（吾儿，亦有汝焉？）</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">ANDYOUBRUTUS</span></span><br></pre></td></tr></table></figure>
+
+<p>解出来发现不能打开“凯撒之言”，结合题目 Google 查一下，发现这是一句拉丁语名言，即</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">Et</span> <span class="string">tu,</span> <span class="string">Brute?</span></span><br></pre></td></tr></table></figure>
+<p>接着尝试一下这句话，成功打开“凯撒之言”，发现了三个单词样式的字符串，基本确定为凯撒加密：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">mywolcns，jlyzcf，jliwymm</span></span><br></pre></td></tr></table></figure>
+<p>在线解密后<br><a href="https://planetcalc.com/1434/" target="_blank" rel="noopener">https://planetcalc.com/1434/</a><br>确定偏移量均为 ROT20，得到：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">security，prefil，process</span></span><br></pre></td></tr></table></figure>
+<p>测试后，发现 <code>process</code> 为进入下一层的压缩包密码，但是不清楚剩下两段密钥是用在哪里，先保留，继续进入第四层（这里埋了个坑，之所以没有用 md5 防止爆破，是因为如果偷懒直接爆破出压缩包的密码，到了第六层就找不到四方密码的密钥了，最后还得绕回来……）</p>
+<h3 id="四层：道法挪移镇邪煞"><a href="#四层：道法挪移镇邪煞" class="headerlink" title="四层：道法挪移镇邪煞"></a>四层：道法挪移镇邪煞</h3><p>“挪移”联想移位的加密，确定列移位密码，先记录压缩包注释中 <code>a=15</code>，接着尝试解开“失落的无字罗盘”，之前第一层得到一张图纸上写着：<code>Lost compass</code>（译为：失落的罗盘），猜测这是列移位密码的 keyword，打开“镇煞之符”文件，发现：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">ttrwohettseihuiahwssdomtitrieitnhroaiernbtho</span></span><br></pre></td></tr></table></figure>
+
+<p>通过列移位密码在线解密<br><a href="http://www.practicalcryptography.com/ciphers/classical-era/columnar-transposition/" target="_blank" rel="noopener">http://www.practicalcryptography.com/ciphers/classical-era/columnar-transposition/</a></p>
+<p>得到：（菩提本无树，明镜亦非台）</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">thebodhithiswithouttreesthemirrorisnottaiwan</span></span><br></pre></td></tr></table></figure>
+
+<p>作为密码，成功打开“失落的无字罗盘”，打开里面的文件，发现是个空白，切换背景色，出现文字：“菩提本无树，明镜亦非台！恭喜你找到了这个刻着 <code>way</code> 的无字罗盘，带着它，把它交给半盲道人，他会带你继续走下去。未来……当你做到那……<code>手握日月摘星辰，世间无我这般人</code>……你便可以知生死，通古今，互阴阳，悟得卦图，道破天机！”</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">⠁⡺⠁⡺⠁⡺⠁⡺⠁⡺⠁⡱⠁⡺⠁⡺⠁⡺⠁⠊⠁⡼⠁⡱⠁⡯⠁⡺⠁⡺⠁⡺⠁⡺⠁⡱⠁⡺⠁⡺⠁⡺⠁⡺⠁⡭⠁⡱⠁⠌⠁⡯⠁⡺⠁⡿⠁⡭⠁⡱⠁⡺⠁⡺⠁⡺⠁⡺⠁⡺⠁⡱⠁⡺⠁⠊⠁⡼⠁⡯⠁⡺⠁⡱⠁⡺⠁⡺⠁⡺⠁⡺⠁⡺⠁⡱⠁⡭⠁⠌⠁⡯⠁⡺⠁⡺⠁⡱⠁⡺⠁⡺⠁⡺⠁⡺⠁⡺⠁⡱⠁⡿⠁⡭⠁⡺⠁⡺⠁⡺⠁⡱⠁⠊⠁⡼⠁⡯⠁⡼⠁⡼⠁⡛⠁⡼⠁⡭⠁⠌⠁⡯⠁⡼⠁⡱⠁⡼⠁⡿⠁⡭⠁⡺⠁⡺⠁⡱⠁⡺⠁⠊⠁⡼⠁⡯⠁⡺⠁⡱⠁⡺⠁⡺⠁⡭⠁⠌⠁⡯⠁⡱⠁⡺⠁⡺⠁⡺⠁⡺⠁⡿⠁⡱⠁⡭⠁⡺⠁⡺⠁⡺⠁⡺⠁⡱⠁⡺⠁⡺⠁⡺⠁⡺⠁⠊⠁⡱⠁⡼⠁⡯⠁⡼⠁⡼⠁⡼⠁⡱⠁⡼⠁⡼⠁⡼⠁⡼⠁⡼⠁⡱⠁⡭⠁⠌⠁⡯⠁⡼⠁⡼⠁⡱⠁⡼⠁⡼⠁⡼⠁⡼⠁⡼⠁⡱⠁⡼⠁⡼⠁⡼⠁⡼⠁⡼⠁⡛⠁⡼⠁⡼⠁⡿⠁⡭⠁⡺⠁⡱⠁⡺⠁⡺⠁⡺⠁⡺⠁⡺⠁⡱⠁⡺⠁⠊⠁⡼⠁⡯⠁⡺⠁⡱⠁⡺⠁⡺⠁⡺⠁⡺⠁⡺⠁⡱⠁⡺⠁⡭⠁⠌⠁⡯⠁⡺⠁⡱⠁⡺⠁⡺⠁⡿⠁⡭⠁⡺⠁⡱⠁⡺⠁⡺⠁⡺⠁⡺⠁⠊⠁⡱⠁⡼⠁⡯⠁⡺⠁⡺⠁⡺⠁⡱⠁⡺⠁⡺⠁⡭⠁⠌⠁⡯⠁⡱⠁⡺⠁⡺⠁⡺⠁⡺⠁⡺⠁⡱⠁⡺⠁⡺⠁⡺⠁⡿⠁⡼⠁⡱⠁⡼⠁⡼⠁⡿⠁⡼⠁⡼⠁⡛⠁⡼⠁⡼⠁⡼⠁⡼⠁⡼⠁⡱⠁⡼⠁⡼⠁⡿⠁⡺⠁⡺⠁⡱⠁⡺⠁⡺⠁⡺⠁⡿⠁⡼⠁⡱⠁⡼⠁⡼⠁⡼⠁⡼⠁⡼⠁⡱⠁⡼⠁⡿⠁⡭==</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="五层：半盲道人荡图灵"><a href="#五层：半盲道人荡图灵" class="headerlink" title="五层：半盲道人荡图灵"></a>五层：半盲道人荡图灵</h3><p>“半盲道人”很容易联想到盲文，加上上一层解出的刻着 <code>way</code> 的“失落的无字罗盘”，猜测为盲文密码，在线解密<br><a href="https://www.qqxiuzi.cn/bianma/wenbenjiami.php?s=mangwen" target="_blank" rel="noopener">https://www.qqxiuzi.cn/bianma/wenbenjiami.php?s=mangwen</a></p>
+<p>得到：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">+++++</span> <span class="string">+++[-</span> <span class="string">&gt;++++</span> <span class="string">++++&lt;</span> <span class="string">]&gt;+.&lt;</span> <span class="string">+++++</span> <span class="string">+[-&gt;+</span> <span class="string">+++++</span> <span class="string">&lt;]&gt;++</span> <span class="string">+++++</span> <span class="string">.&lt;+++</span> <span class="string">[-&gt;--</span></span><br><span class="line"><span class="string">-&lt;]&gt;-</span> <span class="string">-.&lt;++</span> <span class="string">+[-&gt;+</span> <span class="string">++&lt;]&gt;</span> <span class="string">++++.</span> <span class="string">&lt;++++</span> <span class="string">++++[</span> <span class="string">-&gt;---</span> <span class="string">-----</span> <span class="string">&lt;]&gt;--</span> <span class="string">-----</span> <span class="string">-----</span></span><br><span class="line"><span class="string">--.&lt;+</span> <span class="string">+++++</span> <span class="string">+[-&gt;+</span> <span class="string">+++++</span> <span class="string">+&lt;]&gt;+</span> <span class="string">++.&lt;+</span> <span class="string">++++[</span> <span class="string">-&gt;+++</span> <span class="string">++&lt;]&gt;</span> <span class="string">+++++</span> <span class="string">+++.-</span> <span class="string">--.--</span></span><br><span class="line"><span class="string">-----</span> <span class="string">--.++</span> <span class="string">+++.-</span> <span class="string">-----</span> <span class="string">-.&lt;</span></span><br></pre></td></tr></table></figure>
+<p>接着由“图灵”联想到 brainfuck 加密，在线解密<br><a href="https://www.splitbrain.org/services/ook" target="_blank" rel="noopener">https://www.splitbrain.org/services/ook</a><br>得到：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">Alan</span> <span class="string">Turing</span></span><br></pre></td></tr></table></figure>
+<p>然后你想爆破压缩包，不可能的(+_+)<br><a href="https://www.somd5.com/" target="_blank" rel="noopener">https://www.somd5.com/</a></p>
+<p>md5(32)来一次，得到：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">c342cdb7d4ad65f3467f1ab056f1f9c6</span></span><br></pre></td></tr></table></figure>
+
+<p>OK了，解压成功，进入第六层……</p>
+<h3 id="六层：圣堂武士震四方"><a href="#六层：圣堂武士震四方" class="headerlink" title="六层：圣堂武士震四方"></a>六层：圣堂武士震四方</h3><p>“圣堂武士”想到猪圈密码变种，有三张图包含两个变种，分别解出</p>
+<p><img src="/images/Templar.png" alt=""><br><img src="/images/pigpen-variant.png" alt=""><br><img src="/images/pigpen-cipher.png" alt=""></p>
+<p>得到一枚黑色棋子：<code>polybios</code><br>得到一枚白色棋子：<code>xcbyao</code><br>以及一张草纸：<code>OBLFGOKYCNQRKLYTZIGS</code></p>
+<p>“震四方”为四方密码，下图为示例（非本题），第三层“凯撒之言”得到两段多余的密钥 <code>security</code>，<code>prefil</code>，此处用上</p>
+<p><img src="/images/four-party-cipher.png" alt=""></p>
+<p>解密得到一串密文：（坐亦禅，行亦禅）</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">SITALSOZENWALKISZENS</span></span><br></pre></td></tr></table></figure>
+<p>解压成功，进入下一层……</p>
+<h3 id="七层：九转方棋威五堂"><a href="#七层：九转方棋威五堂" class="headerlink" title="七层：九转方棋威五堂"></a>七层：九转方棋威五堂</h3><p>首先看到其中的压缩包注释信息：翻看一下，发现棋盒底部篆刻着 <code>&lt; b=20 &gt;</code>，你需要通过圣堂武士的两枚棋子，找到钥匙，打开棋盒，拿到里面的卷轴，它会指引你继续前进……</p>
+<p>接着分析，“九转方棋”联想到棋盘密码，最后确定为波利比奥斯方阵密码，第六层得到两枚棋子，这里用黑色的一枚作为密钥，即 <code>polybios</code>，然后再看文件中给出的信息：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">`24122413541544244243132222`（Hit：九转方棋）</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="http://www.atoolbox.net/Tool.php?Id=913" target="_blank" rel="noopener">http://www.atoolbox.net/Tool.php?Id=913</a></p>
+<p>解码得到一把钥匙：（根据提示，加上两个空格，即九转方棋的英文）</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">nine</span> <span class="string">turn</span> <span class="string">chess</span></span><br></pre></td></tr></table></figure>
+
+<p>打开棋盒中的卷轴，发现下面的语句：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">Lpf</span> <span class="string">dociktf</span> <span class="string">tvlwhft</span> <span class="string">heg</span> <span class="string">qpaxkcqyrojkuy,</span> <span class="string">nojgmw,</span> <span class="string">a</span> <span class="string">fbce</span> <span class="string">rhwkm</span> <span class="string">qpaxkc（Hit：一念之间威五堂）</span></span><br></pre></td></tr></table></figure>
+<p>“威”谐音“维”维吉尼亚密码，第六层得到的两枚棋子，这里还剩下白色的，即 <code>xcbyao</code>，作为此处密钥</p>
+<p>在线解码：<a href="http://www.atoolbox.net/Tool.php?Id=856" target="_blank" rel="noopener">http://www.atoolbox.net/Tool.php?Id=856</a></p>
+<p>得到：（一念愚即般若绝，一念智即般若生）</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">One</span> <span class="string">foolish</span> <span class="string">thought</span> <span class="string">the</span> <span class="string">prajnaparamita,</span> <span class="string">namely,</span> <span class="string">a</span> <span class="string">read</span> <span class="string">think</span> <span class="string">prajna</span></span><br></pre></td></tr></table></figure>
+
+<p>测试一下，压缩包解密成功，成功开启第八层……</p>
+<h3 id="八层：梵音回响摄心神"><a href="#八层：梵音回响摄心神" class="headerlink" title="八层：梵音回响摄心神"></a>八层：梵音回响摄心神</h3><p>“梵音回响摄心神”中，结合文件内容，第一个文件解出来一堆有规律的点：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">..</span> <span class="string">.</span> <span class="string">..</span> <span class="string">.</span> <span class="string">.....</span> <span class="string">..</span>  <span class="string">.....</span> <span class="string">..</span>  <span class="string">.....</span> <span class="string">..</span>  <span class="string">..</span> <span class="string">.</span> <span class="string">..</span> <span class="string">.</span> <span class="string">..</span> <span class="string">.</span> <span class="string">.....</span> <span class="string">..</span>  <span class="string">.....</span> <span class="string">..</span>  <span class="string">..</span> <span class="string">.</span> <span class="string">..</span> <span class="string">.</span> <span class="string">..</span> <span class="string">.</span> <span class="string">..</span> <span class="string">.</span> <span class="string">.....</span> <span class="string">..</span>  <span class="string">..</span> <span class="string">.</span> <span class="string">.....</span> <span class="string">..</span>  <span class="string">.....</span> <span class="string">..</span>  <span class="string">.....</span> <span class="string">..</span>  <span class="string">.....</span> <span class="string">..</span>  <span class="string">..</span> <span class="string">.</span> <span class="string">..</span> <span class="string">.</span> <span class="string">..</span> <span class="string">.</span> <span class="string">.....</span> <span class="string">..</span>  <span class="string">.....</span> <span class="string">..</span>  <span class="string">..</span> <span class="string">.</span> <span class="string">.....</span> <span class="string">..</span>  <span class="string">.....</span> <span class="string">..</span>  <span class="string">.....</span> <span class="string">..</span>  <span class="string">.....</span> <span class="string">..</span>  <span class="string">..</span> <span class="string">.</span> <span class="string">..</span> <span class="string">.</span> <span class="string">.....</span> <span class="string">..</span>  <span class="string">.....</span> <span class="string">..</span>  <span class="string">.....</span> <span class="string">..</span>  <span class="string">..</span> <span class="string">.</span> <span class="string">..</span> <span class="string">.</span> <span class="string">..</span> <span class="string">.</span> <span class="string">..</span> <span class="string">.</span> <span class="string">.....</span> <span class="string">..</span>  <span class="string">..</span> <span class="string">.</span> <span class="string">.....</span> <span class="string">..</span>  <span class="string">.....</span> <span class="string">..</span>  <span class="string">.....</span> <span class="string">..</span>  <span class="string">.....</span> <span class="string">..</span>  <span class="string">..</span> <span class="string">.</span> <span class="string">.....</span> <span class="string">..</span>  <span class="string">.....</span> <span class="string">..</span>  <span class="string">.....</span> <span class="string">..</span>  <span class="string">.....</span> <span class="string">..</span>  <span class="string">..</span> <span class="string">.</span> <span class="string">..</span> <span class="string">.</span> <span class="string">..</span> <span class="string">.</span> <span class="string">.....</span> <span class="string">..</span>  <span class="string">.....</span> <span class="string">..</span>  <span class="string">..</span> <span class="string">.</span> <span class="string">..</span> <span class="string">.</span> <span class="string">..</span> <span class="string">.</span> <span class="string">..</span> <span class="string">.</span> <span class="string">.....</span> <span class="string">..</span>  <span class="string">..</span> <span class="string">.</span> <span class="string">..</span> <span class="string">.</span> <span class="string">.....</span> <span class="string">..</span>  <span class="string">.....</span> <span class="string">..</span>  <span class="string">.....</span> <span class="string">..</span>  <span class="string">..</span> <span class="string">.</span> <span class="string">.....</span> <span class="string">..</span>  <span class="string">.....</span> <span class="string">..</span>  <span class="string">.....</span> <span class="string">..</span>  <span class="string">.....</span> <span class="string">..</span>  <span class="string">..</span> <span class="string">.</span> <span class="string">..</span> <span class="string">.</span> <span class="string">..</span> <span class="string">.</span> <span class="string">.....</span> <span class="string">..</span>  <span class="string">.....</span> <span class="string">..</span>  <span class="string">..</span> <span class="string">.</span> <span class="string">..</span> <span class="string">.</span> <span class="string">.....</span> <span class="string">..</span>  <span class="string">.....</span> <span class="string">..</span>  <span class="string">.....</span> <span class="string">..</span>  <span class="string">..</span> <span class="string">.</span> <span class="string">..</span> <span class="string">.</span> <span class="string">..</span> <span class="string">.</span> <span class="string">..</span> <span class="string">.</span> <span class="string">.....</span> <span class="string">..</span>  <span class="string">..</span> <span class="string">.</span> <span class="string">..</span> <span class="string">.</span> <span class="string">..</span> <span class="string">.</span> <span class="string">..</span> <span class="string">.</span> <span class="string">.....</span> <span class="string">..</span>  <span class="string">..</span> <span class="string">.</span> <span class="string">..</span> <span class="string">.</span> <span class="string">.....</span> <span class="string">..</span>  <span class="string">.....</span> <span class="string">..</span>  <span class="string">.....</span> <span class="string">..</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/knock-code.png" alt=""></p>
+<p>“梵音”联想到敲击码，对照上表，每两段替换一个字母，解出如下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">FFWWW</span> <span class="string">FFFWW</span> <span class="string">FFFFW</span> <span class="string">FWWWW</span> <span class="string">FFFWW</span> <span class="string">FWWWW</span> <span class="string">FFWWW</span> <span class="string">FFFFW</span> <span class="string">FWWWW</span> <span class="string">FWWWW</span> <span class="string">FFFWW</span> <span class="string">FFFFW</span> <span class="string">FFWWW</span> <span class="string">FWWWW</span> <span class="string">FFFWW</span> <span class="string">FFWWW</span> <span class="string">FFFFW</span> <span class="string">FFFFW</span> <span class="string">FFWWW</span></span><br></pre></td></tr></table></figure>
+<p>“摄”谐音“射”，又联想到仿射密码，在线解密，前面第五层压缩包注释中得到 <code>a=15</code>，第七层压缩包注释中得到 <code>b=20</code>，设置好系数 a b<br><a href="http://www.atoolbox.net/Tool.php?Id=911" target="_blank" rel="noopener">http://www.atoolbox.net/Tool.php?Id=911</a></p>
+<p>解出一堆大写的 Z O 字符：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">ZZOOO</span> <span class="string">ZZZOO</span> <span class="string">ZZZZO</span> <span class="string">ZOOOO</span> <span class="string">ZZZOO</span> <span class="string">ZOOOO</span> <span class="string">ZZOOO</span> <span class="string">ZZZZO</span> <span class="string">ZOOOO</span> <span class="string">ZOOOO</span> <span class="string">ZZZOO</span> <span class="string">ZZZZO</span> <span class="string">ZZOOO</span> <span class="string">ZOOOO</span> <span class="string">ZZZOO</span> <span class="string">ZZOOO</span> <span class="string">ZZZZO</span> <span class="string">ZZZZO</span> <span class="string">ZZOOO</span></span><br></pre></td></tr></table></figure>
+<p>联想一下，Z 代表 zero，O 代表 one，即文本替换一下，得到一堆 0 1，得到：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">00111</span> <span class="number">00011</span> <span class="number">00001</span> <span class="number">01111</span> <span class="number">00011</span> <span class="number">01111</span> <span class="number">00111</span> <span class="number">00001</span> <span class="number">01111</span> <span class="number">01111</span> <span class="number">00011</span> <span class="number">00001</span> <span class="number">00111</span> <span class="number">01111</span> <span class="number">00011</span> <span class="number">00111</span> <span class="number">00001</span> <span class="number">00001</span> <span class="number">00111</span></span><br></pre></td></tr></table></figure>
+<p>可能是二进制转字符？或者摩尔斯密码？</p>
+<p>再次看提示中有“回响”，这里猜测是摩尔斯密码，继续替换，0为点，1为杠，如下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">..---</span> <span class="string">...--</span> <span class="string">....-</span> <span class="string">.----</span> <span class="string">...--</span> <span class="string">.----</span> <span class="string">..---</span> <span class="string">....-</span> <span class="string">.----</span> <span class="string">.----</span> <span class="string">...--</span> <span class="string">....-</span> <span class="string">..---</span> <span class="string">.----</span> <span class="string">...--</span> <span class="string">..---</span> <span class="string">....-</span> <span class="string">....-</span> <span class="string">..---</span></span><br></pre></td></tr></table></figure>
+<p>在线解密一下<br><a href="http://www.zhongguosou.com/zonghe/moErSiCodeConverter.aspx" target="_blank" rel="noopener">http://www.zhongguosou.com/zonghe/moErSiCodeConverter.aspx</a></p>
+<p>解出一串数字：<code>2341312411342132442</code></p>
+<h3 id="九层：九曲轮回链生死"><a href="#九层：九曲轮回链生死" class="headerlink" title="九层：九曲轮回链生死"></a>九层：九曲轮回链生死</h3><p>接着发现两个压缩包，其中一个《六十四卦图》，想起来之前第四层“道法挪移”中压缩包中得到的图纸上写着做到：“<code>手握日月摘星辰，世间无我这般人</code>”，猜测为密码，解压成功，再看另一个：</p>
+<p>“九曲轮回链生死”联想到曲折加密、圆形、《死亡之链》，即夏多密码，同时，前面第八层“梵音回响摄心神”中得到一串数字，确定为夏多密码的密文变换规则，解出后应为下层钥匙。</p>
+<p><img src="/images/xiaduo.png" alt=""><br><img src="/images/xiaduo-cipher.png" alt=""></p>
+<p>依次代入密文规则，即 <code>2341312411342132442</code>，解密后得到的都是大写，依据句子格式完整化输出（含句点）为：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">Something</span> <span class="string">for</span> <span class="string">nothing.</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="阵启：万古佛法通古今"><a href="#阵启：万古佛法通古今" class="headerlink" title="阵启：万古佛法通古今"></a>阵启：万古佛法通古今</h3><p>符合压缩包中注释信息——龙族，确定为压缩包密码，测试一下，成功解压出 TXT 文件，内含如下信息：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">新佛曰：修般吽所我喼阿亦婆提願空哆伏嚴波若迦喼兜修嚴迦彌諦提般婆亦修眾摩耨摩耨提願祗吽若咒羅羅吶提眾嘇喃吽諦吶愍喼嘚嚩須須諦須阿阿隸薩亦空聞兜伏阿愍須耨須莊空願宣叻嚩是修提愍空宣婆僧吽色諦嚴隸寂囉願吶即缽宣願缽缽宣塞即我眾劫菩吽祗色心所莊提般蜜彌莊訶嘚聞夷訶寂嚴斯空是彌眾劫波吽耨提迦訶祗塞咤所斯寂若彌兜叻提喃提若劫宣諦斯波所諸闍吶囉我空彌宣耨宣諸寂祗眾塞提心薩心降般愍婆阿迦眾慧吽降咤波咒菩哆菩迦愍婆喃喼宣咒吽如亦囑囑提</span></span><br></pre></td></tr></table></figure>
+
+<p>由“佛法通古今”以及“新佛曰：”联想到新旧与佛论禅，很明显要先进行一次新约佛论禅，解出：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">冥呼苦呐羅舍冥夜皤真俱離罰得罰夜梵上冥恐奢豆喝梵所佛梵闍皤悉心侄苦奢般冥喝梵死恐皤孕蘇奢吉奢波老俱亦依冥多諳訶</span></span><br></pre></td></tr></table></figure>
+
+<p>再进行一次与佛论禅，发现提示“太深奥了，参悟不出佛经的真意……”，这里你需要“普渡众生”，原来少了“佛曰：或如是我闻：”，加上“佛曰：”后成功参悟真谛</p>
+<p><a href="http://hi.pcmoe.net/buddha.html" target="_blank" rel="noopener">http://hi.pcmoe.net/buddha.html</a><br><a href="http://www.keyfc.net/bbs/tools/tudoucode.aspx" target="_blank" rel="noopener">http://www.keyfc.net/bbs/tools/tudoucode.aspx</a></p>
+<h3 id="破封：六十四卦补阴阳"><a href="#破封：六十四卦补阴阳" class="headerlink" title="破封：六十四卦补阴阳"></a>破封：六十四卦补阴阳</h3><p>解出一堆天干地支：<code>咸同人归妹明夷贲革无妄</code><br>联想到伏羲六十四卦的二进制矩阵表</p>
+<p><img src="/images/64-hexagrams.png" alt=""></p>
+<p>通过上图，解密六十四卦，阴为 0，阳为 1，补阴阳，猜测不满八位时，前补或者后补 01，最后转换后补错误，确定前补，得到二进制如下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">01001110</span> <span class="number">01101111</span> <span class="number">01110100</span> <span class="number">01101000</span> <span class="number">01101001</span> <span class="number">01101110</span> <span class="number">01100111</span></span><br></pre></td></tr></table></figure>
+
+<p>想到 ASCII 编码，去掉空格后，在线转换，<a href="http://tool.huixiang360.com/str/from-binary.php" target="_blank" rel="noopener">http://tool.huixiang360.com/str/from-binary.php</a><br>二进制转字符，得到 <code>Nothing</code></p>
+<blockquote>
+<p>这里本想直接脑洞一下，猜解出只留下 nothing，然后尝试大小写和首字母大写<br>（Something for nothing! 拿什么珍贵的东西，换来了空白。——龙族）</p>
+</blockquote>
+<p>最后得到未加密 flag：<code>Nothing</code><br>md5 32 位加密后，格式化输出：<code>flag{f80a4ad87fee7c9fdc19b7769495fdb5}</code></p>
+</div><div class="post-copyright"><div class="post-copyright-author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">xcbyao</a></span></div><div class="post-copyright-type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://xcbyao.github.io/2020/05/06/Crypto%20%E4%B9%9D%E5%B1%82%E5%A6%96%E5%A1%94/">https://xcbyao.github.io/2020/05/06/Crypto%20%E4%B9%9D%E5%B1%82%E5%A6%96%E5%A1%94/</a></span></div><div class="post-copyright-notice"><span class="post-copyright-meta">Copyright: </span><span class="post-copyright-info">All articles are used <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> License. Please indicate from <a href="https://xcbyao.github.io">Xcbyao's world</a>!</span></div></div><div class="post-copyright" id="comments-container"><script src="/js/comments/gitment.js"></script></div><script>let arr = location.href.split('/#more')[0].split('/');
+let title = arr[arr.length - 1];
+if (title === '') {
+    title = arr[arr.length - 2]
+}
+var flag = false;
+var gitFun = function () {
+    try {
+        var gitmentObj = window.GLOBAL_CONFIG.gitment;
+        var gitment = new Gitment({
+            id: decodeURI(title), // 可选。默认为 location.href
+            owner: gitmentObj.owner,
+            repo: gitmentObj.repo,
+            oauth: {
+                client_id: gitmentObj.client_id,
+                client_secret: gitmentObj.client_secret
+            },
+        });
+        gitment.render('comments-container');
+        flag = true;
+    } catch (e) {
+        flag = false;
+    }
+}
+var setIn = setInterval(() => {
+    if (!flag) {
+        gitFun();
+    } else {
+        clearInterval(setIn);
+    }
+}, 200);</script></article><div id="pagination"><div class="next-post pull-right"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/2020/02/16/%E5%BE%80%E4%BA%8B%E5%A6%82%E7%83%9F%E2%80%94%E2%80%94%E5%A4%A7%E4%B8%80%E4%B8%8A%E5%AD%A6%E6%9C%9F%E6%80%BB%E7%BB%93/"><span>往事如烟——大一上学期总结</span><span>&nbsp;</span><i class="fas fa-angle-right"></i></a></div></div><!--div!= paginator()--></div></div><div class="button-hover" id="return-top"><i class="fas fa-arrow-up" aria-hidden="true"></i></div><footer><div id="footer"><div class="button-hover" id="side-button"><i class="fas fa-arrow-right"></i></div><div class="right-content"><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="far fa-eye"></i></span><span id="busuanzi_value_page_pv"></span><span></span></div><div class="copyright">&copy;2020 By xcbyao</div></div></div></footer></div><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery-3.3.1.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/velocity.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery.mCustomScrollbar.concat.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/fan.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/canvas_bg.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/utils.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/scroll.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/sidebar.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/copy.js"></script><!--script(src=url)--><div class="search-dialog"><div id="algolia-search-title">Algolia</div><div class="search-close-button"><i class="fa fa-times"></i></div><!--div#current-refined-values--><!--div#clear-all--><div id="search-box"></div><!--div#refinement-list--><hr><div id="hits"></div><div id="algolia-pagination"></div></div><div class="search-mask"></div><script src="/js/search/algolia.js"></script></body></html>
