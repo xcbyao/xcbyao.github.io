@@ -15,7 +15,7 @@
     </title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="shortcut icon" href="/images/favicon.ico">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.0/source/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {};
     KEEP.hexo_config = {"hostname":"xcbyao.github.io","root":"/","language":"en","path":"search.json"};
@@ -203,11 +203,11 @@
         <div class="article-content markdown-body">
             <h2 id="0x00-前言概览"><a href="#0x00-前言概览" class="headerlink" title="0x00 前言概览"></a>0x00 前言概览</h2><p>此文再对 C 的内存、数组、结构体、共用体、预处理器、头文件、函数和指针等方面做一个总结概括。</p>
 <h2 id="0x01-切入正题"><a href="#0x01-切入正题" class="headerlink" title="0x01 切入正题"></a>0x01 切入正题</h2><ul>
-<li><p>printf() 转换说明修饰符<br><img src="/images/printf()Conversion-specifier.png" alt=""></p>
+<li><p>printf() 转换说明修饰符<br><img src="/images/printf()Conversion-specifier.png"></p>
 </li>
-<li><p>printf() 标记<br><img src="/images/printf()mark.png" alt=""></p>
+<li><p>printf() 标记<br><img src="/images/printf()mark.png"></p>
 </li>
-<li><p>scanf() 转换说明修饰符<br><img src="/images/scanf()Conversion-specifier.png" alt=""></p>
+<li><p>scanf() 转换说明修饰符<br><img src="/images/scanf()Conversion-specifier.png"></p>
 </li>
 <li><p>除了 <code>%c</code>，格式字符串中的空白（空格、制表符或换行符）意味着其他转换说明都会自动跳过待输入值前面所有空白</p>
 </li>
@@ -244,7 +244,7 @@
 </li>
 <li><p><strong>单独分号表示空语句。</strong>使用带空语句的 while 语句，所有的任务都在测试条件中完成了，不需要在循环体中做什么。</p>
 </li>
-<li><p>C99 提供了 <code>stdbool.h</code>，该头文件让 <code>bool</code> 成为 <code>_Bool</code> 的别名，并把 <code>true</code>和 <code>false</code> 分别定义为 1 和 0 的符号常量。包含该头文件后，可以与 C++ 兼容，因为 C++ 把 <code>bool</code>、<code>true</code>、<code>false</code> 定义为关键字。</p>
+<li><p>C99 提供了 <code>stdbool.h</code>，该头文件让 <code>bool</code> 成为 <code>_Bool</code> 的别名，并把 <code>true </code>和 <code>false</code> 分别定义为 1 和 0 的符号常量。包含该头文件后，可以与 C++ 兼容，因为 C++ 把 <code>bool</code>、<code>true</code>、<code>false</code> 定义为关键字。</p>
 </li>
 <li><p><strong>return 语句只能把被调函数中的一个值传回主调函数，传回两个值以上则需要指针。</strong>普通变量把值作为基本量，把地址作为通过 &amp; 运算符获得的派生量，而指针变量把地址作为基本量，把值作为通过 * 运算符获得的派生量。</p>
 </li>
@@ -252,20 +252,20 @@
 </li>
 </ul>
 <hr>
-<h3 id="指定初始化器（C99）"><a href="#指定初始化器（C99）" class="headerlink" title="指定初始化器（C99）"></a>指定初始化器（C99）</h3><p>如：<code>int arr[8] ={ 31, 28, [4] = 31, 30, 31, [1] = 29 };</code> 最好在声明数组时使用符号常量来表示数组大小。</p>
+<h3 id="指定初始化器（C99）"><a href="#指定初始化器（C99）" class="headerlink" title="指定初始化器（C99）"></a>指定初始化器（C99）</h3><p>如：<code>int arr[8] =&#123; 31, 28, [4] = 31, 30, 31, [1] = 29 &#125;;</code> 最好在声明数组时使用符号常量来表示数组大小。</p>
 <ul>
 <li><p><code>flizny == &amp;flizny[0];</code> // 数组名是数组首元素的地址<br><code>dates + 2 == &amp;date[2]</code> // 相同的地址<br><code>*(dates + 2) == dates[2]</code> // 相同的值</p>
 </li>
 <li><p>只有在函数原型或函数定义头中， 才可以用 <code>int ar[]</code> 代替 <code>int* ar</code> 它们都表示 ar 是一个指向 int 的指针。<code>int* ar</code> 只能用于声明形参。<code>int ar[]</code> 表示指针 ar 指向的不仅是一个 int 类型值，还是一个 int 类型数组的元素。</p>
 </li>
-<li><p>函数原型可以省略参数名（四种等价）<code>int sum(int* ar, int n);</code> <code>int sum(int*, int);</code> <code>int sum(int ar[], int n);</code> <code>int sum(int [], int);</code></p>
+<li><p>函数原型可以省略参数名（四种等价）<code>int sum(int* ar, int n);</code> <code>int sum(int*, int);</code> <code>int sum(int ar[], int n);</code> <code>int sum(int [], int); </code></p>
 </li>
 </ul>
 <blockquote>
 <p>使用这种 “越界” 指针的函数调用更为简洁：<code>a = s(m, m + SIZE);</code><br><code>ar[i]</code> 和 <code>*(ar+i)</code> 是等价的。ar 可以是数组名，或是指针变量。</p>
 </blockquote>
 <ul>
-<li><code>while (start &lt; end) {total += *start;</code> // 把数组元素值加起来<br><code>start++;}</code> // 让指针指向下一个元素<br><code>total += *start++;</code> // 循环体压缩成一行代码</li>
+<li><code>while (start &lt; end) &#123;total += *start;</code> // 把数组元素值加起来<br><code>start++;&#125;</code> // 让指针指向下一个元素<br><code>total += *start++;</code> // 循环体压缩成一行代码</li>
 </ul>
 <blockquote>
 <p>C 保证在给数组分配空间时，指向数组后面第一个位置的指针仍是有效指针，这使得  while 循环的测试条件有效。<br>虽然 <code>*start++</code> 写法常用，但 <code>*(start++)</code> 写法更清楚。<br><code>(*start)++</code> 先使用 start 指向的值，再递增该值，而不是递增指针。这样指针将一直指向同一个位置，但是该位置上的值发生了变化。</p>
@@ -304,13 +304,9 @@
 <hr>
 <ul>
 <li><p>二维数组计算元素地址公式：<br>double ary[5][8]; 求 ary[2][3] 的地址</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">int</span>)ary + <span class="keyword">sizeof</span>(<span class="keyword">double</span>[<span class="number">8</span>])*<span class="number">2</span> + <span class="keyword">sizeof</span>(<span class="keyword">double</span>)*<span class="number">3</span></span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">int</span>)ary + <span class="keyword">sizeof</span>(<span class="keyword">double</span>[<span class="number">8</span>])*<span class="number">2</span> + <span class="keyword">sizeof</span>(<span class="keyword">double</span>)*<span class="number">3</span></span><br></pre></td></tr></table></figure></li>
 <li><p>三维数组计算元素地址公式：<br>type ary[N][M][L]<br>ary[i][j][k] address is：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">int</span>)ary + <span class="keyword">sizeof</span>(type[M][L])*i + <span class="keyword">sizeof</span>(type[L])*j + <span class="keyword">sizeof</span>(type)*k</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
 <h3 id="变长数组（variable-length-array-VLA-C99）"><a href="#变长数组（variable-length-array-VLA-C99）" class="headerlink" title="变长数组（variable-length array, VLA, C99）"></a><strong>变长数组（variable-length array, VLA, C99）</strong></h3><ul>
 <li><p><code>float a[n];</code> 声明 VLA 时不能初始化，其必须是自动存储类别，不能使用 static 或 extern，VLA 创建后不能改变大小。</p>
 </li>
@@ -321,23 +317,22 @@
 <li><p><strong>变长数组允许动态内存分配</strong>，这说明可以在程序运行时指定数组大小。普通数组都是静态内存分配，即在编译时确定数组大小。</p>
 </li>
 </ul>
-<hr>
-<h3 id="复合字面量"><a href="#复合字面量" class="headerlink" title="复合字面量"></a><strong>复合字面量</strong></h3><ul>
-<li><p><strong>字面量是除符号常量外的常量。</strong><code>(int ar[2]) {10, 20}</code> 去掉数组名，留下的 <code>int [2]</code> 即复合字面量的类型名。</p>
-</li>
-<li><p><strong>复合字面量是匿名的，不能先创建再使用它，必须在创建的同时使用它。</strong><br>使用<strong>指针记录地址</strong>就是一种用法：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>* pt;</span><br><span class="line">pt = (<span class="keyword">int</span> [<span class="number">2</span>]) &#123;<span class="number">10</span>, <span class="number">20</span>&#125;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>把复合字面量作为<strong>实参</strong>传递给带有匹配形式参数的函数：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> ar[], <span class="keyword">int</span> n)</span></span>;</span><br><span class="line"><span class="keyword">int</span> total;</span><br><span class="line">total = sum((<span class="keyword">int</span> []) &#123;<span class="number">4</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">5</span>,<span class="number">5</span>&#125;, <span class="number">6</span>);</span><br></pre></td></tr></table></figure>
-
 </li>
 </ul>
+<hr>
+<h3 id="复合字面量"><a href="#复合字面量" class="headerlink" title="复合字面量"></a><strong>复合字面量</strong></h3><ul>
+<li><p><strong>字面量是除符号常量外的常量。</strong><code>(int ar[2]) &#123;10, 20&#125;</code> 去掉数组名，留下的 <code>int [2]</code> 即复合字面量的类型名。</p>
+</li>
+<li><p><strong>复合字面量是匿名的，不能先创建再使用它，必须在创建的同时使用它。</strong><br>使用<strong>指针记录地址</strong>就是一种用法：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>* pt;</span><br><span class="line">pt = (<span class="keyword">int</span> [<span class="number">2</span>]) &#123;<span class="number">10</span>, <span class="number">20</span>&#125;;</span><br></pre></td></tr></table></figure></li>
+<li><p>把复合字面量作为<strong>实参</strong>传递给带有匹配形式参数的函数：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> ar[], <span class="keyword">int</span> n)</span></span>;</span><br><span class="line"><span class="keyword">int</span> total;</span><br><span class="line">total = sum((<span class="keyword">int</span> []) &#123;<span class="number">4</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">5</span>,<span class="number">5</span>&#125;, <span class="number">6</span>);</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>第 1 个实参是内含 6 个 int 类型值的数组，和数组名类似，这同时也是该数组首元素的地址。这种用法的好处是，把信息传入函数前不必先创建数组，这是复合字面量的典型用法。</p>
 </blockquote>
-<ul>
-<li><strong>复合字面量是提供只临时需要的值的一种手段。</strong>复合字面量具有块作用域。</li>
+</li>
+<li><p><strong>复合字面量是提供只临时需要的值的一种手段。</strong>复合字面量具有块作用域。</p>
+</li>
 </ul>
 <hr>
 <h3 id="字符串和字符串函数"><a href="#字符串和字符串函数" class="headerlink" title="字符串和字符串函数"></a><strong>字符串和字符串函数</strong></h3><ul>
@@ -387,12 +382,10 @@
 </li>
 <li><p>线程存储期用于并发程序设计。该对象从被声明时到线程结束一直存在。以关键字 _Thread_local 声明一个对象时，每个线程都获得该变量的私有备份。</p>
 </li>
-<li><p>块作用域变量通常都具有自动存储期。当程序进入定义这些变量的块时，为这些变量分配内存；当退出这个块时，释放内存。这种做法相当于把自动变量占用的内存视为一个可重复使用的工作区或暂存区。<br>块作用域变量也能具有静态存储期。创建这样的变量要把变量声明在块中，且在声明前加上 static，变长数组稍有不同，它们的存储期从声明处到块的末尾，而不是从块的开始处到块的末尾。<br><img src="/images/Storage-category.png" alt=""></p>
+<li><p>块作用域变量通常都具有自动存储期。当程序进入定义这些变量的块时，为这些变量分配内存；当退出这个块时，释放内存。这种做法相当于把自动变量占用的内存视为一个可重复使用的工作区或暂存区。<br>块作用域变量也能具有静态存储期。创建这样的变量要把变量声明在块中，且在声明前加上 static，变长数组稍有不同，它们的存储期从声明处到块的末尾，而不是从块的开始处到块的末尾。<br><img src="/images/Storage-category.png"></p>
 </li>
 </ul>
 </li>
-</ul>
-<ul>
 <li><p>默认声明在块或函数头中的任何变量都属于自动存储类别，可以显式使用关键字 auto</p>
 <blockquote>
 <p>auto 在 C++ 中用法完全不同，如果编写 C/C++ 兼容的程序，最好不要使用 auto 作为存储类别说明符。</p>
@@ -480,11 +473,11 @@
 </li>
 </ul>
 <hr>
-<h3 id="文件输入-输出"><a href="#文件输入-输出" class="headerlink" title="文件输入/输出"></a><strong>文件输入/输出</strong></h3><p><img src="/images/file-IO.png" alt=""></p>
+<h3 id="文件输入-输出"><a href="#文件输入-输出" class="headerlink" title="文件输入/输出"></a><strong>文件输入/输出</strong></h3><p><img src="/images/file-IO.png"></p>
 <ul>
 <li><p><code>ch = getc(fp);</code> 从 fp 指定的文件中获取一个字符<br><code>putc(ch, fpout);</code> 把字符 ch 放入 FILE 指针 fpout 指定的文件</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> ch;</span><br><span class="line">FILE * fp;</span><br><span class="line">fp = fopen(<span class="string">"wacky.txt"</span>, <span class="string">"r"</span>);</span><br><span class="line"><span class="keyword">while</span> (( ch = getc(fp)) != EOF) &#123;</span><br><span class="line"><span class="built_in">putchar</span>(ch); <span class="comment">//处理输入</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>fclose() 关闭指定的文件，必要时刷新缓冲区。对于较正式的程序，应该检查是否成功关闭文件。成功关闭返回 0，否则返回 EOF。<br><code>if (fclose(fp) != 0) printf(&quot;Error in closing file %s\n&quot;, argv[1]);</code><br>如果磁盘已满、移动硬盘被移除或出现 I/O 错误，都会导致调用 fclose() 函数失败。<br><img src="/images/file-pointer.png" alt=""></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> ch;</span><br><span class="line">FILE * fp;</span><br><span class="line">fp = fopen(<span class="string">&quot;wacky.txt&quot;</span>, <span class="string">&quot;r&quot;</span>);</span><br><span class="line"><span class="keyword">while</span> (( ch = getc(fp)) != EOF) &#123;</span><br><span class="line"><span class="built_in">putchar</span>(ch); <span class="comment">//处理输入</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>fclose() 关闭指定的文件，必要时刷新缓冲区。对于较正式的程序，应该检查是否成功关闭文件。成功关闭返回 0，否则返回 EOF。<br><code>if (fclose(fp) != 0) printf(&quot;Error in closing file %s\n&quot;, argv[1]); </code><br>如果磁盘已满、移动硬盘被移除或出现 I/O 错误，都会导致调用 fclose() 函数失败。<br><img src="/images/file-pointer.png"></p>
 </li>
 <li><p>fgets() 它的第 1 个参数和 gets() 函数一样，表示储存输入位置的地址（char* 类型）；第 2 个参数是一个整数，表示待输入字符串的大小；最后一个参数是文件指针，指定待读取的文件。<br><code>fgets(buf, STLEN, fp);</code>buf 是 char 类型数组的名称，STLEN 是字符串大小，fp 是指向 FILE 的指针。</p>
 </li>
@@ -492,11 +485,10 @@
 </li>
 <li><p><code>fgets()</code> 读到一个换行符，会把它储存在字符串中<br><code>gets()</code> 会丢弃换行符<br><code>fputs()</code> 不会在输出的末尾添加换行符<br><code>puts()</code> 会自动在末尾添加一个换行符</p>
 </li>
-<li><p>fseek() 返回 int 类型值，第 1 个参数是 FILE 指针，指向待查找的文件，fopen() 应该已打开该文件；第 2 个参数是偏移量（offset），该参数表示从起始点开始要移动的距离，必须是一个 long 类型值，可以为正（前移）、负（后移）或 0（保持不动）；第 3 个是模式，该参数确定起始点。<br>根据 ANSI 标准，在 stdio.h 中规定了几个表示模式的明示常量。<br><img src="/images/file-mode.png" alt=""></p>
+<li><p>fseek() 返回 int 类型值，第 1 个参数是 FILE 指针，指向待查找的文件，fopen() 应该已打开该文件；第 2 个参数是偏移量（offset），该参数表示从起始点开始要移动的距离，必须是一个 long 类型值，可以为正（前移）、负（后移）或 0（保持不动）；第 3 个是模式，该参数确定起始点。<br>根据 ANSI 标准，在 stdio.h 中规定了几个表示模式的明示常量。<br><img src="/images/file-mode.png"></p>
 </li>
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fseek(fp, <span class="number">0L</span>, SEEK_SET); <span class="comment">// 定位至文件开始处</span></span><br><span class="line">fseek(fp, <span class="number">2L</span>, SEEK_CUR); <span class="comment">// 从文件当前位置前移 2 个字节</span></span><br><span class="line">fseek(fp, <span class="number">-10L</span>, SEEK_END); <span class="comment">// 从文件结尾处回退 10 个字节</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>ftell() 返回类型是 long，它返回的是文件中的当前位置。</li>
 </ul>
@@ -507,11 +499,11 @@
 <li>访问结构变量的各个部分。</li>
 </ol>
 <ul>
-<li><p>在结构声明中，用一对花括号括起来的是结构成员列表。每个成员都用自己的声明来描述。右花括号后面的分号是声明所必需的，表示结构布局定义结束。<br><code>struct book { char title[MAXTITL]; char author[AXAUTL]; float value; } library;</code></p>
+<li><p>在结构声明中，用一对花括号括起来的是结构成员列表。每个成员都用自己的声明来描述。右花括号后面的分号是声明所必需的，表示结构布局定义结束。<br><code>struct book &#123; char title[MAXTITL]; char author[AXAUTL]; float value; &#125; library;</code></p>
 </li>
-<li><p>组合后的结构声明和结构变量定义不需要使用结构标记：<br><code>struct book library = { &quot;The Pious Pirate and the Devious Damsel&quot;, &quot;Renee Vivotte&quot;, 1.95 };</code></p>
+<li><p>组合后的结构声明和结构变量定义不需要使用结构标记：<br><code>struct book library = &#123; &quot;The Pious Pirate and the Devious Damsel&quot;, &quot;Renee Vivotte&quot;, 1.95 &#125;;</code></p>
 </li>
-<li><p><code>struct book surprise = { .value = 10.99};</code> C99 和 C11 为结构提供了指定初始化器。</p>
+<li><p><code>struct book surprise = &#123; .value = 10.99&#125;;</code> C99 和 C11 为结构提供了指定初始化器。</p>
 </li>
 <li><p>和数组不同的是，结构名并不是结构的地址，因此要在结构名前面加上 &amp; 运算符。</p>
 </li>
@@ -562,7 +554,7 @@
 <ul>
 <li><p>枚举类型 声明符号名称来表示整型常量。使用 enum 关键字可以创建一个新“类型”并指定它可具有的值（实际上，enum 常量是 int 类型，因此只要能使用 int 类型的地方就可以使用枚举类型）。枚举类型的目的是提高程序的可读性，它的语法与结构相同。</p>
 </li>
-<li><p><code>enum spectrum {red, orange, yellow, green, blue, violet}; enum spectrum color;</code><br>类似地，其他标识符都是有名称的常量，这些符号常量被称为枚举符（enumerator）例如，在声明数组时，可以用枚举常量表示数组的大小；在 switch 语句中，可以把枚举常量作为标签。</p>
+<li><p><code>enum spectrum &#123;red, orange, yellow, green, blue, violet&#125;; enum spectrum color;</code><br>类似地，其他标识符都是有名称的常量，这些符号常量被称为枚举符（enumerator）例如，在声明数组时，可以用枚举常量表示数组的大小；在 switch 语句中，可以把枚举常量作为标签。</p>
 </li>
 </ul>
 <blockquote>
@@ -625,8 +617,7 @@
 </ul>
 </li>
 <li><p>操控位的第 2 种方法是位字段（bit field）。位字段是一个 signed int 或 unsigned int 类型变量中的一组相邻的位（C99 和 C11新增了 _Bool 类型的位字段）。位字段通过一个结构声明来建立，该结构声明为每个字段提供标签， 并确定该字段的宽度。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> &#123;</span> </span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> code1 : <span class="number">2</span>;</span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> code2 : <span class="number">2</span>;</span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> code3 : <span class="number">8</span>;</span><br><span class="line">&#125; prcode;</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> &#123;</span> </span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> code1 : <span class="number">2</span>;</span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> code2 : <span class="number">2</span>;</span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> code3 : <span class="number">8</span>;</span><br><span class="line">&#125; prcode;</span><br></pre></td></tr></table></figure></li>
 <li><p>一个字段不允许跨越两个 unsigned int 之间的边界。编译器会自动移动跨界的字段，保持 unsigned int 的边界对齐。一旦发生这种情况，第1个 unsigned int 中会留下一个未命名的“洞”。可以用未命名的字段宽度“填充”未命名的“洞”。使用一个宽度为 0 的未命名字段迫使下一个字段与下一个整数对齐。</p>
 </li>
 </ul>
@@ -657,33 +648,34 @@
 </li>
 </ul>
 <h3 id="头文件中最常用的形式："><a href="#头文件中最常用的形式：" class="headerlink" title="头文件中最常用的形式："></a><strong>头文件中最常用的形式：</strong></h3><ul>
-<li>明示常量—— stdio.h 中定义的 EOF、NULL 和 BUFSIZE（标准 I/O 缓冲区大小）。</li>
-<li>宏函数—— getc(stdin) 通常用 getchar() 定义，而 getc() 经常用于定义较复杂的宏，ctype.h 通常包含 ctype 系列函数的宏定义。 </li>
-<li>函数声明—— string.h 包含字符串函数系列的函数声明。在 ANSI C 和后面的标准中，函数声明都是函数原型形式。 </li>
-<li>结构模版定义—— 标准 I/O 函数使用 FILE 结构，该结构中包含了文件、与文件缓冲区相关的信息。FILE 结构在 stdio.h 中。 </li>
-<li>类型定义—— 标准 I/O 函数使用指向 FILE 的指针作为参数。通常 stdio.h 用 #define 或 typedef 把 FILE 定义为指向结构的指针。</li>
-</ul>
-<ul>
+<li><p>明示常量—— stdio.h 中定义的 EOF、NULL 和 BUFSIZE（标准 I/O 缓冲区大小）。</p>
+</li>
+<li><p>宏函数—— getc(stdin) 通常用 getchar() 定义，而 getc() 经常用于定义较复杂的宏，ctype.h 通常包含 ctype 系列函数的宏定义。 </p>
+</li>
+<li><p>函数声明—— string.h 包含字符串函数系列的函数声明。在 ANSI C 和后面的标准中，函数声明都是函数原型形式。 </p>
+</li>
+<li><p>结构模版定义—— 标准 I/O 函数使用 FILE 结构，该结构中包含了文件、与文件缓冲区相关的信息。FILE 结构在 stdio.h 中。 </p>
+</li>
+<li><p>类型定义—— 标准 I/O 函数使用指向 FILE 的指针作为参数。通常 stdio.h 用 #define 或 typedef 把 FILE 定义为指向结构的指针。</p>
+</li>
 <li><p>#undef 用于“取消”已定义的 #define 指令。<br><code>#define LIMIT 400</code><br><code>#undef LIMIT</code></p>
 </li>
 <li><p>使用其他指令创建条件编译<br><code>#ifdef</code> <code>#else</code> <code>#endif</code></p>
 <ul>
-<li>#ifdef 如果预处理器已定义了后面的标识符，则执行 #else 或 #endif 指令之前的所有指令并编译所有 C 代码（先出现哪个指令就执行到哪里）。如果预处理器未定义，且有 #else 指令，则执行 #else（如果需要） 和 #endif （必须存在）指令之间的所有代码。可以用这种方法调试程序：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> JUST_CHECKING printf(<span class="meta-string">"i=%d, running total = %d\n"</span>, i, total); </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
-</li>
+<li>#ifdef 如果预处理器已定义了后面的标识符，则执行 #else 或 #endif 指令之前的所有指令并编译所有 C 代码（先出现哪个指令就执行到哪里）。如果预处理器未定义，且有 #else 指令，则执行 #else（如果需要） 和 #endif （必须存在）指令之间的所有代码。可以用这种方法调试程序：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> JUST_CHECKING printf(<span class="meta-string">&quot;i=%d, running total = %d\n&quot;</span>, i, total); </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
-<li><p><code>#define SIZE 10 #include &quot;arrays.h&quot;</code><br>当执行到 #include “arrays.h” 这行，处理 array.h 中的代码时，由于 SIZE 是已定义的，所以跳过了 #define SIZE 100 这行代码。可以利用这种方法，用一个较小的数组测试程序。测试完毕后，移除 #define SIZE 10 并重新编译。这样就不用修改头文件数组本身了。</p>
+<li><p><code>#define SIZE 10 #include &quot;arrays.h&quot; </code><br>当执行到 #include “arrays.h” 这行，处理 array.h 中的代码时，由于 SIZE 是已定义的，所以跳过了 #define SIZE 100 这行代码。可以利用这种方法，用一个较小的数组测试程序。测试完毕后，移除 #define SIZE 10 并重新编译。这样就不用修改头文件数组本身了。</p>
 </li>
 <li><p>#ifndef 指令判断后面的标识符是否是未定义的。</p>
 </li>
 <li><p>在首次定义一个宏的头文件中用 #ifndef 指令激活定义，随后在其他头文件中的定义都被忽略。</p>
 </li>
 <li><p>#if 指令后面跟整型常量表达式</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">if</span> SYS == 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">elif</span> SYS == 2</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">if</span> SYS == 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">elif</span> SYS == 2</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure></li>
 <li><p>较新的编译器提供另一种方法测试名称是否已定义，即用 #if defined (VAX) 代替 #ifdef VAX。优点是它可以和 #elif 一起使用</p>
 </li>
-<li><p>C标准规定了一些预定义宏<br><img src="/images/Predefined-macro.jpg" alt=""></p>
+<li><p>C标准规定了一些预定义宏<br><img src="/images/Predefined-macro.jpg"></p>
 </li>
 <li><p>C99 标准提供一个名为 <code>_ _func_ _</code> 的预定义标识符，它展开为一个代表函数名的字符串（该函数包含该标识符）。<code>_ _func_ _</code> 必须具有函数作用域，而从本质上看宏具有文件作用域。因此 <code>_ _func_ _</code> 是 C 语言的预定义标识符，而不是预定义宏。</p>
 </li>
@@ -701,7 +693,7 @@
 </li>
 <li><p>ANSI C 把指向 void 的指针作为一种通用指针，用于指针指向不同类型的情况。</p>
 </li>
-<li><p>涉及的角度都以弧度为单位（1 弧度=180/π=57.296 度）pi 的值通过计算表达式<code>4*atan(1)</code>得到。<br><img src="/images/Func-prototype.jpg" alt=""></p>
+<li><p>涉及的角度都以弧度为单位（1 弧度=180/π=57.296 度）pi 的值通过计算表达式<code>4*atan(1)</code>得到。<br><img src="/images/Func-prototype.jpg"></p>
 </li>
 </ul>
 <hr>
@@ -961,21 +953,21 @@
 
 
 
-<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.0/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.0/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.0/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.0/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.0/source/js/dark-light-toggle.js"></script>
+<script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/header-shrink.js"></script><script src="/js/back2top.js"></script><script src="/js/dark-light-toggle.js"></script>
 
 
-    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.0/source/js/local-search.js"></script>
+    <script src="/js/local-search.js"></script>
 
 
 
-    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.0/source/js/code-copy.js"></script>
+    <script src="/js/code-copy.js"></script>
 
 
 
 
 <div class="post-scripts">
     
-        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.0/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.0/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.0/source/js/toc.js"></script>
+        <script src="/js/left-side-toggle.js"></script><script src="/js/libs/anime.min.js"></script><script src="/js/toc.js"></script>
     
 </div>
 

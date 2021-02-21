@@ -15,7 +15,7 @@
     </title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="shortcut icon" href="/images/favicon.ico">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.0/source/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {};
     KEEP.hexo_config = {"hostname":"xcbyao.github.io","root":"/","language":"en","path":"search.json"};
@@ -209,25 +209,24 @@
 <h2 id="0x01-OD-初识"><a href="#0x01-OD-初识" class="headerlink" title="0x01 OD 初识"></a>0x01 OD 初识</h2><h3 id="OD-四个主要窗口"><a href="#OD-四个主要窗口" class="headerlink" title="OD 四个主要窗口"></a>OD 四个主要窗口</h3><ul>
 <li>反汇编和数据窗口中间有一个<strong>解释窗口。</strong></li>
 </ul>
-<p><img src="/images/od_windows.png" alt=""></p>
+<p><img src="/images/od_windows.png"></p>
 <h4 id="1-反汇编窗口（disassembler）"><a href="#1-反汇编窗口（disassembler）" class="headerlink" title="1.反汇编窗口（disassembler）"></a>1.反汇编窗口（disassembler）</h4><p>吾爱破解版 OD 已经默认勾选了自动对主模块进行分析，OD 会分析程序显示它的附加信息</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Options -&gt; Debugging options -&gt; Analysis1 -&gt; Auto Start analysis of main module</span><br></pre></td></tr></table></figure>
-
 <p>通常 OD 显示程序的某些部分是不正确的，错误的将可执行代码解释为数据，这种情况，在<strong>反汇编窗口</strong>中右键选择 <code>Analysis -&gt; Remove analysis from module</code> 手动删除分析结果。</p>
-<p><img src="/images/delete_analysis.png" alt=""></p>
+<p><img src="/images/delete_analysis.png"></p>
 <p>吾爱版已经默认高亮显示 jumps 和 calls，若需修改右键选择 <code>Appearance -&gt; Highlighting</code></p>
-<p><img src="/images/od_highlight.png" alt=""></p>
-<h4 id="2-寄存器窗口（registers）"><a href="#2-寄存器窗口（registers）" class="headerlink" title="2.寄存器窗口（registers）"></a>2.寄存器窗口（registers）</h4><p><img src="/images/register.png" alt=""></p>
+<p><img src="/images/od_highlight.png"></p>
+<h4 id="2-寄存器窗口（registers）"><a href="#2-寄存器窗口（registers）" class="headerlink" title="2.寄存器窗口（registers）"></a>2.寄存器窗口（registers）</h4><p><img src="/images/register.png"></p>
 <p>上图是寄存器和标志位。<strong>显示模式的四种类型：</strong>默认是 FPU 寄存器，比原版多了 MMX 寄存器。</p>
 <h4 id="3-堆栈窗口（stack-amp-pile）"><a href="#3-堆栈窗口（stack-amp-pile）" class="headerlink" title="3.堆栈窗口（stack &amp; pile）"></a>3.堆栈窗口（stack &amp; pile）</h4><blockquote>
 <p>注：我常见的堆是 heap，栈是 stack，但是 pile pila 也可翻译为堆，其中 pila 是原文的翻译，而堆栈又常常直接被 stack 指代，本文以堆（heap）栈（stack）为行文标准。</p>
 </blockquote>
 <p>显示 ESP 和 EBP 寄存器指向地址的信息。默认显示 ESP 指向的信息（最重要），右键切换。</p>
-<p><img src="/images/stackwindows.png" alt=""></p>
+<p><img src="/images/stackwindows.png"></p>
 <h4 id="4-数据窗口（dump）"><a href="#4-数据窗口（dump）" class="headerlink" title="4.数据窗口（dump）"></a>4.数据窗口（dump）</h4><p>这个窗口有很多显示模式，右键选择，默认模式为 8-byte Hex / ASCII，是最常用的，这里选择 <code>Special -&gt; PE Header</code>，之后会用到。</p>
-<p><img src="/images/dump.png" alt=""></p>
-<h4 id="5-菜单-控制面板上的图标按钮代表的窗口"><a href="#5-菜单-控制面板上的图标按钮代表的窗口" class="headerlink" title="5.菜单/控制面板上的图标按钮代表的窗口"></a>5.菜单/控制面板上的图标按钮代表的窗口</h4><p><img src="/images/button1.png" alt=""></p>
-<p><img src="/images/button2.png" alt=""></p>
+<p><img src="/images/dump.png"></p>
+<h4 id="5-菜单-控制面板上的图标按钮代表的窗口"><a href="#5-菜单-控制面板上的图标按钮代表的窗口" class="headerlink" title="5.菜单/控制面板上的图标按钮代表的窗口"></a>5.菜单/控制面板上的图标按钮代表的窗口</h4><p><img src="/images/button1.png"></p>
+<p><img src="/images/button2.png"></p>
 <ul>
 <li><p>L 按钮或 <code>View -&gt; Log</code>，显示日志窗口，通过配置显示 OD 启动时保存在日志窗口的不同类型信息，也涉及条件断点的信息。最重要选项是保存到文件，即把信息保存为文本文件，右键 <code>Log to file</code></p>
 </li>
@@ -261,30 +260,30 @@
 </blockquote>
 <h4 id="6-设置实时调试-JIT"><a href="#6-设置实时调试-JIT" class="headerlink" title="6.设置实时调试 JIT"></a>6.设置实时调试 JIT</h4><p>选择菜单 <code>Options -&gt; Just-in-time debugging</code><br>开启点击 <code>Make OD just-in-time debugger</code> 后再点击 <code>Done</code><br>取消点击 <code>Restore old just-in-time debugger</code> 后再点击 <code>Done</code></p>
 <h4 id="7-关联插件"><a href="#7-关联插件" class="headerlink" title="7.关联插件"></a>7.关联插件</h4><p>默认自带 <code>plugins</code> 目录，选择 <code>Options -&gt; Appearance</code>，然后在窗口中选择 <code>Directories</code></p>
-<p><img src="/images/plugin_content.png" alt=""></p>
+<p><img src="/images/plugin_content.png"></p>
 <p>点击 <code>Pluginpath -&gt; Browse</code> 选择你创建的文件夹，修改完成有弹窗提示则需要重启 OD，但在此之前需要拷贝刚下载的插件（解压后文件，通常只需复制 DLL 文件即可）。</p>
 <p>卸载插件只需删除 <code>plugins</code> 文件夹内相关的 DLL 文件然后重启 OD。</p>
 <h4 id="8-数值系统"><a href="#8-数值系统" class="headerlink" title="8.数值系统"></a>8.数值系统</h4><p>正数从 00000000 到 7FFFFFFF，负数从 80000000 到 FFFFFFFF<br>7FFFFFFF 为十进制的 2147483647（最大正数）<br>80000000 为十进制的 -2147483648（最小负数）</p>
 <ul>
 <li>如下图右键选择 <code>Modify</code>（或选中回车），可修改寄存器的值，这里可以完成不同的转换功能。第一栏填入需转换的十六进制值，第二栏会出现对应的十进制值。</li>
 </ul>
-<p><img src="/images/modify.png" alt=""></p>
+<p><img src="/images/modify.png"></p>
 <ul>
 <li>在 OD 中使用空格，可以使用 20（Hex）或 32（Dec）</li>
 </ul>
-<p><img src="/images/ODhex.png" alt=""></p>
+<p><img src="/images/ODhex.png"></p>
 <h2 id="0x02-寄存器"><a href="#0x02-寄存器" class="headerlink" title="0x02 寄存器"></a>0x02 寄存器</h2><ul>
 <li><p>数值以十六进制显示，ESP 指向栈顶，EIP 指向当前要执行的指令，?AX（问号用于查询寄存器的值）</p>
 </li>
 <li><p>16 位寄存器分低八位和高八位</p>
 </li>
 </ul>
-<p><img src="/images/32_register.png" alt=""></p>
+<p><img src="/images/32_register.png"></p>
 <ul>
 <li>改变寄存器的值<br>上面数值系统提到过，这里说一下特殊情况。EIP 在反汇编窗口选择<code>New origin here</code></li>
 </ul>
-<p><img src="/images/EIP.png" alt=""></p>
-<h3 id="标志寄存器"><a href="#标志寄存器" class="headerlink" title="标志寄存器"></a>标志寄存器</h3><p><img src="/images/flag_register.png" alt=""></p>
+<p><img src="/images/EIP.png"></p>
+<h3 id="标志寄存器"><a href="#标志寄存器" class="headerlink" title="标志寄存器"></a>标志寄存器</h3><p><img src="/images/flag_register.png"></p>
 <ul>
 <li><p>C （进位标志）<br>无符号运算的结果，在超过最大数值时被设置，可能是寄存器的值。</p>
 </li>
@@ -319,7 +318,7 @@
 </ul>
 </li>
 </ul>
-<p><img src="/images/push_401008.png" alt=""></p>
+<p><img src="/images/push_401008.png"></p>
 <ul>
 <li><p>POP（弹/出栈）<br>弹出堆栈，取出堆栈顶部第一个字母或值，存放到指定的目标地址内存单元中。</p>
 </li>
@@ -347,7 +346,7 @@
 </ul>
 </li>
 </ul>
-<p><img src="/images/lea_eax.png" alt=""></p>
+<p><img src="/images/lea_eax.png"></p>
 <ul>
 <li>XCHG (交换 寄存器 / 内存单元 和 寄存器)<br>该指令交换两个操作数的值。存在对内存地址没有写入权限的情况。</li>
 </ul>
@@ -361,11 +360,11 @@
 <li><p>MUL（无符号数的乘法）<br>只有一个操作数，另一个操作数是 EAX，结果存放到 EDX:EAX 中。</p>
 <ul>
 <li>先存放到 EAX，若空间不够则继续存放在 EDX，否则，EDX 置零，即乘积高 32 位存放在 EDX，低 32 位存放在 EAX</li>
-<li>下图理解偏误写成了 EAX:EDX，有幸请教了看雪讲师苏大哥，错误原因如下图，为谨记就不改图了！特此注意！！<br><img src="/images/su.png" alt=""></li>
+<li>下图理解偏误写成了 EAX:EDX，有幸请教了看雪讲师苏大哥，错误原因如下图，为谨记就不改图了！特此注意！！<br><img src="/images/su.png"></li>
 </ul>
 </li>
 </ul>
-<p><img src="/images/EAX-EDX.png" alt=""></p>
+<p><img src="/images/EAX-EDX.png"></p>
 <ul>
 <li><p>IMUL（有符号数的乘法）<br>它允许使用多达三个操作数。第一个操作数保存后两个操作数相乘的结果，或者第一个操作数保存两个操作数相乘的结果。</p>
 <ul>
@@ -434,15 +433,14 @@
 <li>F8 执行下一条语句</li>
 <li>如果返回地址没有标红，每次修改完代码之后需重新分析代码。</li>
 </ul>
-<p><img src="/images/re_analysis.png" alt=""></p>
-<p><img src="/images/re_analysis2.png" alt=""></p>
+<p><img src="/images/re_analysis.png"></p>
+<p><img src="/images/re_analysis2.png"></p>
 <h3 id="5-循环、字符串指令及寻址"><a href="#5-循环、字符串指令及寻址" class="headerlink" title="5. 循环、字符串指令及寻址"></a>5. 循环、字符串指令及寻址</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">XOR ECX,ECX</span><br><span class="line">ADD ECX,15 &#x2F; MOV ECX,15</span><br><span class="line">Label:</span><br><span class="line">DEC ECX</span><br><span class="line">;循环体</span><br><span class="line">TEST ECX,ECX &#x2F; CMP ECX,0</span><br><span class="line">JNE Label</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/loopd.png" alt=""></p>
+<p><img src="/images/loopd.png"></p>
 <ul>
 <li>LOOP<br>将计数器 ECX 的值减 1，判断 ECX 的值是否为 0，若为 0 就跳转到指定地址。</li>
 </ul>
-<p><img src="/images/loopd2.png" alt=""></p>
+<p><img src="/images/loopd2.png"></p>
 <ul>
 <li><p>LOOPZ，LOOPE 循环到零标志位置 1，LOOPNZ，LOOPNE 循环到零标志位清 0</p>
 <ul>
@@ -455,14 +453,14 @@
 </ul>
 </li>
 </ul>
-<p><img src="/images/Immediate.png" alt=""></p>
+<p><img src="/images/Immediate.png"></p>
 <ul>
 <li>REP<br>此前缀表示当前指令需要执行的次数 ECX，每次循环计数器 ECX 值递减 1。<ul>
 <li>REP MOVS 不一定拷贝 4 个字节，它拷贝的大小为每次拷贝的大小 * ECX，源指针 ESI 和目的指针 EDI 每次递增 4 或递减 4（递增或递减取决于方向标志位 D）</li>
 </ul>
 </li>
 </ul>
-<p><img src="/images/rep_movs.png" alt=""></p>
+<p><img src="/images/rep_movs.png"></p>
 <ul>
 <li><p>LODS<br>从源地址 ESI 拷贝数据到 EAX。REP 可配合使用。衍生 LODSW 和 LODSB。</p>
 </li>
@@ -474,17 +472,15 @@
 </ul>
 </li>
 <li><p>直接寻址<br>操作数中包含一个具体的地址。地址的值是纯数字。</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">MOV</span> <span class="string">DWORD</span> <span class="string">PTR</span> <span class="string">[00513450],</span> <span class="string">ECX</span></span><br><span class="line"></span><br><span class="line"><span class="string">MOV</span> <span class="string">AX,</span> <span class="string">WORD</span> <span class="string">PTR</span> <span class="string">[00510A25]</span></span><br><span class="line"></span><br><span class="line"><span class="string">CALL</span> <span class="number">452200</span></span><br><span class="line"></span><br><span class="line"><span class="string">JMP</span> <span class="number">421000</span></span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">MOV</span> <span class="string">DWORD</span> <span class="string">PTR</span> [<span class="number">00513450</span>]<span class="string">,</span> <span class="string">ECX</span></span><br><span class="line"></span><br><span class="line"><span class="string">MOV</span> <span class="string">AX,</span> <span class="string">WORD</span> <span class="string">PTR</span> [<span class="string">00510A25</span>]</span><br><span class="line"></span><br><span class="line"><span class="string">CALL</span> <span class="number">452200</span></span><br><span class="line"></span><br><span class="line"><span class="string">JMP</span> <span class="number">421000</span></span><br></pre></td></tr></table></figure></li>
 <li><p>间接寻址</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">MOV</span> <span class="string">DWORD</span> <span class="string">PTR[EAX],</span> <span class="string">ECX</span></span><br><span class="line"></span><br><span class="line"><span class="string">CALL</span> <span class="string">EAX</span></span><br><span class="line"></span><br><span class="line"><span class="string">JMP</span> <span class="string">[EBX</span> <span class="string">+</span> <span class="number">4</span><span class="string">]</span></span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">MOV</span> <span class="string">DWORD</span> <span class="string">PTR[EAX],</span> <span class="string">ECX</span></span><br><span class="line"></span><br><span class="line"><span class="string">CALL</span> <span class="string">EAX</span></span><br><span class="line"></span><br><span class="line"><span class="string">JMP</span> [<span class="string">EBX</span> <span class="string">+</span> <span class="number">4</span>]</span><br></pre></td></tr></table></figure></li>
 <li><p>想在指令执行之前看到真实地址，需要在该指令上下断点，然后运行到断点，查看寄存器的值或解释窗口中的信息。<br>使用间接寻址的指令，只能在执行这条指令的时候获取地址当前的值。</p>
 </li>
 <li><p>调用任何子程序,堆栈顶部存放的都是返回地址。</p>
 </li>
 </ul>
-<p><img src="/images/search.png" alt=""></p>
+<p><img src="/images/search.png"></p>
 <h2 id="0x04-断点"><a href="#0x04-断点" class="headerlink" title="0x04 断点"></a>0x04 断点</h2><h3 id="普通断点"><a href="#普通断点" class="headerlink" title="普通断点"></a>普通断点</h3><p>当我们设置断点后，OD 会将对应指令处第一个字节指令替换成 CC。<br>F2，BP 命令栏设置断点<br>BPX 可以给引用或者调用了指定 API 函数的指令都下断点。</p>
 <h3 id="内存断点"><a href="#内存断点" class="headerlink" title="内存断点"></a>内存断点</h3><p>内存访问断点有时候也称之为 BPM，但是不要与 SoftIce 中的 BPM 弄混淆了。<br>这种类型的断点修改内存页的访问属性。<br>内存访问断点有两个缺点:1.它们不会出现[B]断点列表中和其他的地址。所以,你必须记得设置在什么地址处。2.不能同时设置多个内存断点。如果你设置了一个那么你之前设置的就会被自动删除。</p>
 <h3 id="硬件断点"><a href="#硬件断点" class="headerlink" title="硬件断点"></a>硬件断点</h3><p>最多可以设置 4 个硬件断点。<br>硬件执行断点与普通断点作用一样,但硬件执行断点并不会将指令首字节修改为 CC,所以更难检测。命令行 HE 设置。<br>硬件访问/写入断点是断在触发硬件断点的下一条指令处。</p>
@@ -716,21 +712,21 @@
 
 
 
-<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.0/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.0/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.0/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.0/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.0/source/js/dark-light-toggle.js"></script>
+<script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/header-shrink.js"></script><script src="/js/back2top.js"></script><script src="/js/dark-light-toggle.js"></script>
 
 
-    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.0/source/js/local-search.js"></script>
+    <script src="/js/local-search.js"></script>
 
 
 
-    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.0/source/js/code-copy.js"></script>
+    <script src="/js/code-copy.js"></script>
 
 
 
 
 <div class="post-scripts">
     
-        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.0/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.0/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.0/source/js/toc.js"></script>
+        <script src="/js/left-side-toggle.js"></script><script src="/js/libs/anime.min.js"></script><script src="/js/toc.js"></script>
     
 </div>
 
