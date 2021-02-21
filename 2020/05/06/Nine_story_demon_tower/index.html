@@ -1,24 +1,165 @@
-<!DOCTYPE html><html lang="en-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="Crypto 九层妖塔"><meta name="keywords" content=""><meta name="author" content="xcbyao,undefined"><meta name="copyright" content="xcbyao"><title>Crypto 九层妖塔【Xcbyao's world】</title><link rel="stylesheet" href="/css/fan.css"><link rel="stylesheet" href="/css/thirdparty/jquery.mCustomScrollbar.min.css"><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"><link rel="icon" href="/favicon.ico"><!-- script(src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")--><script src="/js/mathjax/mathjax.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
-    tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
-});
-</script><script>var isPassword = '' || false;
-if (isPassword) {
-    if (prompt('请输入文章密码') !== '') {
-        alert('密码错误！');
-        history.back();
-    }
-}</script><script>window.GLOBAL_CONFIG = {
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  copy: {
-    success: 'Success',
-    error: 'Copy Error',
-    noSupport: 'Browser noSupport'
-  },
-  gitment: ,
-  valine: ,
-}</script><meta name="generator" content="Hexo 4.2.0"></head><body><canvas id="universe"></canvas><!--#body--><div id="sidebar"><div class="toggle-sidebar-info button-hover"><span data-toggle="Directory">Overview</span></div><div class="sidebar-toc"><div class="sidebar-toc-title">Catalogues</div><div class="sidebar-toc-progress"><span class="progress-notice">You have read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc-progress-bar"></div></div><div class="sidebar-toc-content" id="sidebar-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#九层妖塔（设计思路-amp-WP）"><span class="toc-number">1.</span> <span class="toc-text">九层妖塔（设计思路 &amp; WP）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言："><span class="toc-number">1.1.</span> <span class="toc-text">前言：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计大纲："><span class="toc-number">1.2.</span> <span class="toc-text">设计大纲：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#详细思路："><span class="toc-number">1.3.</span> <span class="toc-text">详细思路：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一层：腐木基座隐塔身"><span class="toc-number">1.3.1.</span> <span class="toc-text">一层：腐木基座隐塔身</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二层：幽曲木栅落凡尘"><span class="toc-number">1.3.2.</span> <span class="toc-text">二层：幽曲木栅落凡尘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三层：普莱菲尔封凯撒"><span class="toc-number">1.3.3.</span> <span class="toc-text">三层：普莱菲尔封凯撒</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四层：道法挪移镇邪煞"><span class="toc-number">1.3.4.</span> <span class="toc-text">四层：道法挪移镇邪煞</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五层：半盲道人荡图灵"><span class="toc-number">1.3.5.</span> <span class="toc-text">五层：半盲道人荡图灵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六层：圣堂武士震四方"><span class="toc-number">1.3.6.</span> <span class="toc-text">六层：圣堂武士震四方</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#七层：九转方棋威五堂"><span class="toc-number">1.3.7.</span> <span class="toc-text">七层：九转方棋威五堂</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#八层：梵音回响摄心神"><span class="toc-number">1.3.8.</span> <span class="toc-text">八层：梵音回响摄心神</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#九层：九曲轮回链生死"><span class="toc-number">1.3.9.</span> <span class="toc-text">九层：九曲轮回链生死</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#阵启：万古佛法通古今"><span class="toc-number">1.3.10.</span> <span class="toc-text">阵启：万古佛法通古今</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#破封：六十四卦补阴阳"><span class="toc-number">1.3.11.</span> <span class="toc-text">破封：六十四卦补阴阳</span></a></li></ol></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info-avatar"><img class="author-info-avatar-img" src="/avatar.gif"></div><div class="author-info-name">xcbyao</div><div class="author-info-description">凡心所向 素履以往 生如逆旅 一苇以航</div><div class="links-buttons"><a class="links-button button-hover" href="https://github.com/xcbyao" target="_blank">GitHub<i class="icon-dot bg-color5"></i></a><a class="links-button button-hover" href="https://twitter.com/xcbyao" target="_blank">Twitter<i class="icon-dot bg-color6"></i></a></div><div class="author-info-articles"><a class="author-info-articles-archives article-meta" href="/archives"><span class="pull-top">Posts</span><span class="pull-bottom">18</span></a><a class="author-info-articles-categories article-meta" href="/categories"><span class="pull-top">Categories</span><span class="pull-bottom">6</span></a></div><div class="friend-link"><a class="friend-link-text" href="http://riusksk.me/" target="_blank">riusksk's blog</a><a class="friend-link-text" href="https://www.zuozuovera.com/" target="_blank">薇拉航线🌺</a><a class="friend-link-text" href="http://keanchen.top/" target="_blank">Keyon Blog</a><a class="friend-link-text" href="https://xpoet.cn/" target="_blank">XPoet Blog</a><a class="friend-link-text" href="https://lv-fan.gitee.io/" target="_blank">吕钒的后花园</a><a class="friend-link-text" href="https://meethigher.top/blog/" target="_blank">Kit Chen's Blog</a><a class="friend-link-text" href="http://gv7.me/" target="_blank">回忆飘如雪</a><a class="friend-link-text" href="https://www.ddosi.com/" target="_blank">🔰雨苁ℒ🔰</a></div></div></div><div id="main-container"><header><div id="menu-outer"><i class="menu-list-icon fas fa-bars"></i><nav id="menu-inner"><a class="menu-item" href="/">Home</a><a class="menu-item" href="/categories">Categories</a><a class="menu-item" href="/archives">Archives</a><a class="menu-item" href="/about">About</a></nav><div class="right-info"><a class="title-name" href="/">Xcbyao's world</a><span id="now-time"></span></div></div></header><div id="content-outer"><div id="content-inner"><article id="post"><div class="post-header"><div class="title">Crypto 九层妖塔</div><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> Published 2020-05-06 | Modified 2020-11-17</time><!--time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]--><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/categories/Crypto/">Crypto</a></div><div class="button-hover tags"></div></div></div><div class="main-content"><h1 id="九层妖塔（设计思路-amp-WP）"><a href="#九层妖塔（设计思路-amp-WP）" class="headerlink" title="九层妖塔（设计思路 &amp; WP）"></a>九层妖塔（设计思路 &amp; WP）</h1><p><img src="/images/demon-tower.jpg" alt=""></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="xcbyao,pwn,crypto,reverse,hack">
+    <meta name="description" content="凡心所向 素履以往 生如逆旅 一苇以航">
+    <meta name="author" content="Keep team">
+    
+    <title>
+        
+            Crypto 九层妖塔 |
+        
+        Keep Theme
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"xcbyao.github.io","root":"/","language":"en"};
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.0"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"};
+  </script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                Keep Theme
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Crypto 九层妖塔</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Keep team</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2020-05-06 17:21:39
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Crypto/">Crypto</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="九层妖塔（设计思路-amp-WP）"><a href="#九层妖塔（设计思路-amp-WP）" class="headerlink" title="九层妖塔（设计思路 &amp; WP）"></a>九层妖塔（设计思路 &amp; WP）</h1><p><img src="/images/demon-tower.jpg" alt=""></p>
 <h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>之前特别喜欢看雪上的一道名为“九层妖塔”的逆向题，这次要出一道密码题，故突发奇想，花了一天半的时间，整了这么一道密码学的九层妖塔，虽然没有密码学的灵魂 RSA，但也添加了一些故事性的描述，力图增加一些趣味性，同时涉及到了<strong>总计 24 种编码及加密算法</strong>，希望可以更好地了解密码学这个充满魅力的体系。（注：最后解出的 WP 为旧文档）</p>
 <h2 id="设计大纲："><a href="#设计大纲：" class="headerlink" title="设计大纲："></a>设计大纲：</h2><p><strong>一层：腐木基座隐塔身：</strong>base编码、列位移密码（密钥）、曲路密码（路径）<br><strong>二层：幽曲木栅落凡尘：</strong>栅栏密码（W型）、曲路密码<br><strong>三层：普莱菲尔封凯撒：</strong>普莱菲尔密码、凯撒密码、四方密码（两段密钥）<br><strong>四层：道法挪移镇邪煞：</strong>列移位密码、六十四卦图（密钥）、盲文（密钥）<br><strong>五层：半盲道人荡图灵：</strong>盲文、brainfuck、仿射密码（密钥）<br><strong>六层：圣堂武士震四方：</strong>猪圈密码变种、四方密码、波利比奥斯方阵密码（密钥）、维吉尼亚密码（密钥）<br><strong>七层：九转方棋威五堂：</strong>波利比奥斯方阵密码、维吉尼亚密码（威）、仿射密码（密钥）<br><strong>八层：梵音回响摄心神：</strong>敲击码、仿射密码、摩尔斯密码、夏多密码（密钥）<br><strong>九层：九曲轮回链生死：</strong>夏多密码、六十四卦图（文件）<br><strong>阵启：万古佛法通古今：</strong>与佛论禅、新约佛论禅<br><strong>破封：六十四卦补阴阳：</strong>六十四卦密码、二进制转字符、ASCII编码</p>
 <h2 id="详细思路："><a href="#详细思路：" class="headerlink" title="详细思路："></a>详细思路：</h2><h3 id="一层：腐木基座隐塔身"><a href="#一层：腐木基座隐塔身" class="headerlink" title="一层：腐木基座隐塔身"></a>一层：腐木基座隐塔身</h3><p>故事带入，某某无意间找到一个“精美的盒子”，但是这个盒子外面加了一道四个数字的密码锁，作为神偷，他很轻松地用工具解开了（这里涉及到压缩包爆破，有隐写的嫌疑……咳咳，不过也仅此一处，后面的爆破几乎很难……）</p>
@@ -202,4 +343,163 @@ if (isPassword) {
 <p>这里本想直接脑洞一下，猜解出只留下 nothing，然后尝试大小写和首字母大写<br>（Something for nothing! 拿什么珍贵的东西，换来了空白。——龙族）</p>
 </blockquote>
 <p>最后得到未加密 flag：<code>Nothing</code><br>md5 32 位加密后，格式化输出：<code>flag{f80a4ad87fee7c9fdc19b7769495fdb5}</code></p>
-</div><div class="post-copyright"><div class="post-copyright-author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">xcbyao</a></span></div><div class="post-copyright-type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://xcbyao.github.io/2020/05/06/Nine_story_demon_tower/">https://xcbyao.github.io/2020/05/06/Nine_story_demon_tower/</a></span></div><div class="post-copyright-notice"><span class="post-copyright-meta">Copyright: </span><span class="post-copyright-info">All articles are used <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> License. Please indicate from <a href="https://xcbyao.github.io">Xcbyao's world</a>!</span></div></div></article><div id="pagination"><div class="prev-post pull-left"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/2020/05/19/C_advanced/"><i class="fas fa-angle-left">&nbsp;</i><span>C 语言学习笔记之进阶篇</span></a></div><div class="next-post pull-right"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/2020/05/05/Stack/"><span>堆和栈的区别『经典』</span><span>&nbsp;</span><i class="fas fa-angle-right"></i></a></div></div><!--div!= paginator()--></div></div><div class="button-hover" id="return-top"><i class="fas fa-arrow-up" aria-hidden="true"></i></div><footer><div id="footer"><div class="button-hover" id="side-button"><i class="fas fa-arrow-right"></i></div><div class="right-content"><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="far fa-eye"></i></span><span id="busuanzi_value_page_pv"></span><span></span></div><div class="copyright">&copy;2020 ～ 2021 By xcbyao</div></div></div></footer></div><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery-3.3.1.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/velocity.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery.mCustomScrollbar.concat.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/fan.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/canvas_bg.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/utils.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/scroll.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/sidebar.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/copy.js"></script><!--script(src=url)--></body></html>
+
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2020/05/19/C_advanced/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">C 语言学习笔记之进阶篇</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2020/05/05/Stack/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">堆和栈的区别『经典』</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Keep team</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.0</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+<script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/header-shrink.js"></script><script src="/js/back2top.js"></script><script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+
+
+<div class="post-scripts">
+    
+</div>
+
+
+
+</body>
+</html>

@@ -1,37 +1,460 @@
-<!DOCTYPE html><html lang="en-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="凡心所向 素履以往 生如逆旅 一苇以航"><meta name="keywords" content="xcbyao,pwn,crypto,reverse,hack"><meta name="author" content="xcbyao,undefined"><meta name="copyright" content="xcbyao"><title>【Xcbyao's world】</title><link rel="stylesheet" href="/css/fan.css"><link rel="stylesheet" href="/css/thirdparty/jquery.mCustomScrollbar.min.css"><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"><link rel="icon" href="/favicon.ico"><!-- script(src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")--><script src="/js/mathjax/mathjax.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
-    tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
-});
-</script><script>var isPassword = '' || false;
-if (isPassword) {
-    if (prompt('请输入文章密码') !== '') {
-        alert('密码错误！');
-        history.back();
-    }
-}</script><script>window.GLOBAL_CONFIG = {
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  copy: {
-    success: 'Success',
-    error: 'Copy Error',
-    noSupport: 'Browser noSupport'
-  },
-  gitment: ,
-  valine: ,
-}</script><meta name="generator" content="Hexo 4.2.0"></head><body><canvas id="universe"></canvas><!--#body--><div id="sidebar"><div class="author-info"><div class="author-info-avatar"><img class="author-info-avatar-img" src="/avatar.gif"></div><div class="author-info-name">xcbyao</div><div class="author-info-description">凡心所向 素履以往 生如逆旅 一苇以航</div><div class="links-buttons"><a class="links-button button-hover" href="https://github.com/xcbyao" target="_blank">GitHub<i class="icon-dot bg-color9"></i></a><a class="links-button button-hover" href="https://twitter.com/xcbyao" target="_blank">Twitter<i class="icon-dot bg-color9"></i></a></div><div class="author-info-articles"><a class="author-info-articles-archives article-meta" href="/archives"><span class="pull-top">Posts</span><span class="pull-bottom">18</span></a><a class="author-info-articles-categories article-meta" href="/categories"><span class="pull-top">Categories</span><span class="pull-bottom">6</span></a></div><div class="friend-link"><a class="friend-link-text" href="http://riusksk.me/" target="_blank">riusksk's blog</a><a class="friend-link-text" href="https://www.zuozuovera.com/" target="_blank">薇拉航线🌺</a><a class="friend-link-text" href="http://keanchen.top/" target="_blank">Keyon Blog</a><a class="friend-link-text" href="https://xpoet.cn/" target="_blank">XPoet Blog</a><a class="friend-link-text" href="https://lv-fan.gitee.io/" target="_blank">吕钒的后花园</a><a class="friend-link-text" href="https://meethigher.top/blog/" target="_blank">Kit Chen's Blog</a><a class="friend-link-text" href="http://gv7.me/" target="_blank">回忆飘如雪</a><a class="friend-link-text" href="https://www.ddosi.com/" target="_blank">🔰雨苁ℒ🔰</a></div></div></div><div id="main-container"><header><div id="menu-outer"><i class="menu-list-icon fas fa-bars"></i><nav id="menu-inner"><a class="menu-item" href="/">Home</a><a class="menu-item" href="/categories">Categories</a><a class="menu-item" href="/archives">Archives</a><a class="menu-item" href="/about">About</a></nav><div class="right-info"><a class="title-name" href="/">Xcbyao's world</a><span id="now-time"></span></div></div></header><div id="content-outer"><div id="content-inner"><div id="recent-posts"><!-- each post in page.posts.sort('date', -1).limit(10).toArray()--><!-- config中配置按照什么排序--><div class="recent-post-item"><a class="post-title" href="/2020/05/05/Stack/">堆和栈的区别『经典』</a><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> Modified 2020-11-17</time><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/categories/Binary/">Binary</a></div></div><div class="post-content"><div class="main-content content">0x00 前言转载一篇理解堆和栈区别的好文章此文章虽然是面向 C/C++ 程序员写的，但是对 Java 程序员还是很有帮助的。
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="xcbyao,pwn,crypto,reverse,hack">
+    <meta name="description" content="凡心所向 素履以往 生如逆旅 一苇以航">
+    <meta name="author" content="Keep team">
+    
+    <title>
+        
+        Keep Theme
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"xcbyao.github.io","root":"/","language":"en"};
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.0"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"};
+  </script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                Keep Theme
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class="active"
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class="active"
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="home-content-container fade-in-down-animation">
+    <ul class="home-article-list">
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/05/05/Stack/">
+                        堆和栈的区别『经典』
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        0x00 前言转载一篇理解堆和栈区别的好文章此文章虽然是面向 C/C++ 程序员写的，但是对 Java 程序员还是很有帮助的。
 一、预备知识 — 程序的内存分配一个由 C/C++ 编译的程序占用的内存分为以下几个部分：
 
-栈区（stack）— 由编译器自动分配释放，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。
+栈区（stack）— 由编译...
+                    
+                </div>
 
-堆区（heap）— 一般由程序员分配释放，若程序员不释放，程序结 ...</div></div><a class="button-hover more" href="/2020/05/05/Stack/#more">Read more</a></div><div class="recent-post-item"><a class="post-title" href="/2020/03/22/Ollydbg_0/">OD 基础总结</a><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> Modified 2021-02-20</time><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/categories/Reverse/">Reverse</a></div></div><div class="post-content"><div class="main-content content">0x00 Preface之前学了一段时间的 C 语言，算是打下了一点语言基础，接下来开始同步学习逆向的知识了，不得不说比起 WEB 方向，二进制方向的入门挺枯燥的，所以为了提前获得点愉悦感 &amp; 成就感，同时了解点汇编的相关知识，开始学习《使用 OD 从零开始 Cracking》，因为其中部分例子比较繁复，特此精简，为后续复习做些笔记，软件中英文对照学习效果更好。
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue May 05 2020 23:26:23 GMT+0800">2020-05-05</span></span>
+        
+        
+    </div>
 
-环境：VMware 15 ...</div></div><a class="button-hover more" href="/2020/03/22/Ollydbg_0/#more">Read more</a></div><div class="recent-post-item"><a class="post-title" href="/2020/02/16/Semester_1_summary/">往事如烟——大一上学期总结</a><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> Modified 2020-08-14</time><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/categories/%E4%B9%9F%E6%9B%BE%E6%98%AF%E5%B0%91%E5%B9%B4/">也曾是少年</a></div></div><div class="post-content"><div class="main-content content">今年的疫情让我们难得有时间思考人生……
-转眼间大学的第一个寒假即将结束，将近两个月的假期里，我开始了真正的安全入门。作为一个仪式感比较强烈的我，还是想重新搭建一个博客来记录自己的成长历程，往事如过眼云烟，稍纵即逝，在这个自媒体盛行的时代，我总想在网络上留下我的痕迹。
-在重新搭建博客及写公众号的时候，无意间发现了许多优秀的博客，并学着他们的样子，开始写自己的年度总结、学期总结和书单影视总结，开始对自 ...</div></div><a class="button-hover more" href="/2020/02/16/Semester_1_summary/#more">Read more</a></div><div class="recent-post-item"><a class="post-title" href="/2020/02/06/C_basic/">C 语言学习笔记之基础篇</a><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> Modified 2020-11-17</time><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/categories/Binary/">Binary</a></div></div><div class="post-content"><div class="main-content content">0x00 前言概览这个系列主要是整理 C 语言相关的一些知识，方便后期的复习与检索，适用者为学过基础的入门者编写程序时提供快捷便利的检索条件，纯小白可先收藏。此系列大致分为基础篇、进阶篇、高级篇，本文为基础篇，主要是一些零散知识点的整理，内容没有先后顺序，建议读者 Ctrl+F 查询；同时本着极简原则，一些知识点会直接举例说明。
-0x01 切入正题注释12/*单多行注释*///单行注释（C99）
- ...</div></div><a class="button-hover more" href="/2020/02/06/C_basic/#more">Read more</a></div><div class="recent-post-item"><a class="post-title" href="/2020/02/02/Custom_code_highlight/">自定义 Hexo 代码高亮</a><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> Modified 2020-11-13</time><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/categories/%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/">程序开发</a></div></div><div class="post-content"><div class="main-content content">对于 hexo 默认的代码高亮插件 highlight.js 的配色方案我不太喜欢，然后 gg 了一下，总算找到了一种不错的方案，其中用到了 prism.js 这个代码高亮的插件，特此记录一下具体配置方案。
-禁用 highlight.js修改 _config.yml 配置文件
-1234highlight:  enable: false  line_number: true  auto_detect ...</div></div><a class="button-hover more" href="/2020/02/02/Custom_code_highlight/#more">Read more</a></div><div class="recent-post-item"><a class="post-title" href="/2020/02/02/Link/">个人网址导航</a><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> Modified 2021-01-31</time><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/categories/%E7%B2%BE%E7%A5%9E%E4%B9%8B%E6%B5%B7/">精神之海</a></div></div><div class="post-content"><div class="main-content content">CTF 工具CTF中那些脑洞大开的编码和加密千千秀字加密解密工具解密在线工具MD5RSA 大数分解sagemathbase64 图片转换与佛论禅新约佛论禅进制转换二进制转字符Brainfuck/Ook
-社工工具在线短信接收虚假邮件生成器即弃电子邮箱短网址生成自定义短网址工具
-图像处理工具在图像中剪切圆圈美图秀秀拼图PS 在线可批量编辑图片PDF 在线工具最优图像优化-图片压缩mp3 音乐剪辑定时刷 ...</div></div><a class="button-hover more" href="/2020/02/02/Link/#more">Read more</a></div><div class="recent-post-item"><a class="post-title" href="/2020/01/25/Crypto_online/">Crypto 加解密网站总结</a><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> Modified 2020-11-17</time><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/categories/Crypto/">Crypto</a></div></div><div class="post-content"><div class="main-content content">0x00 前言CTF 中 Crypto 题往往涉及到很多方面，无论是 web，还是 reverse，都能看到密码学的影子，所以掌握必要的密码学知识尤为重要，上文我整理分享了一些常见的加密方式，但略去了很多变种的加密方式，此间便做一个补充，也是方便在线解题，尽可能省去临时查找在线解密网站的时间。
-0x01 正文综合性网站网站中包含大多编码的解码。https://tool.lu/http://www. ...</div></div><a class="button-hover more" href="/2020/01/25/Crypto_online/#more">Read more</a></div><div class="recent-post-item"><a class="post-title" href="/2020/01/21/Crypto_classical/">Crypto 古典密码学总结</a><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> Modified 2020-11-17</time><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/categories/Crypto/">Crypto</a></div></div><div class="post-content"><div class="main-content content">前言玩过 CTF 的小伙伴会遇到类似这样的问题：大表哥这是啥加密啊？其实 CTF 中的脑洞密码题，通常是非现代加密方式，一般都是各种古典密码的变形，出题者会对密文进行一些处理，但都会留下不少线索，当然也需要参赛者对于各种编码方式有所了解，这样更有利于快速入手解密，结合一定的脑洞，拿到 Flag 就 so easy 了。Crypto 题目考察各种加解密技术，包括古典加密技术、现代加密技术甚至出题者自 ...</div></div><a class="button-hover more" href="/2020/01/21/Crypto_classical/#more">Read more</a></div></div><div id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/">&lt;i class&#x3D;&quot;fas fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="page-number current">2</span></div></div></div></div><div class="button-hover" id="return-top"><i class="fas fa-arrow-up" aria-hidden="true"></i></div><footer><div id="footer"><div class="button-hover" id="side-button"><i class="fas fa-arrow-right"></i></div><div class="right-content"><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv"><i class="fas fa-user-secret"></i></span><span id="busuanzi_value_site_uv"></span><span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv"><i class="fas fa-eye"></i></span><span id="busuanzi_value_site_pv"></span><span></span></div><div class="copyright">&copy;2020 ～ 2021 By xcbyao</div></div></div></footer></div><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery-3.3.1.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/velocity.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery.mCustomScrollbar.concat.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/fan.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/canvas_bg.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/utils.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/scroll.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/sidebar.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/copy.js"></script><!--script(src=url)--></body></html>
+    <a href="/2020/05/05/Stack/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/03/22/Ollydbg_0/">
+                        OD 基础总结
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        0x00 Preface之前学了一段时间的 C 语言，算是打下了一点语言基础，接下来开始同步学习逆向的知识了，不得不说比起 WEB 方向，二进制方向的入门挺枯燥的，所以为了提前获得点愉悦感 &amp; 成就感，同时了解点汇编的相关知识，开始学习《使用...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Mar 22 2020 21:34:49 GMT+0800">2020-03-22</span></span>
+        
+        
+    </div>
+
+    <a href="/2020/03/22/Ollydbg_0/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/02/16/Semester_1_summary/">
+                        往事如烟——大一上学期总结
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        今年的疫情让我们难得有时间思考人生……
+转眼间大学的第一个寒假即将结束，将近两个月的假期里，我开始了真正的安全入门。作为一个仪式感比较强烈的我，还是想重新搭建一个博客来记录自己的成长历程，往事如过眼云烟，稍纵即逝，在这个自媒体盛行的时代，我总想在网络...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Feb 16 2020 23:55:13 GMT+0800">2020-02-16</span></span>
+        
+        
+    </div>
+
+    <a href="/2020/02/16/Semester_1_summary/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/02/06/C_basic/">
+                        C 语言学习笔记之基础篇
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        0x00 前言概览这个系列主要是整理 C 语言相关的一些知识，方便后期的复习与检索，适用者为学过基础的入门者编写程序时提供快捷便利的检索条件，纯小白可先收藏。此系列大致分为基础篇、进阶篇、高级篇，本文为基础篇，主要是一些零散知识点的整理，内容没有先后...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Feb 06 2020 23:22:36 GMT+0800">2020-02-06</span></span>
+        
+        
+    </div>
+
+    <a href="/2020/02/06/C_basic/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/02/02/Custom_code_highlight/">
+                        自定义 Hexo 代码高亮
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        对于 hexo 默认的代码高亮插件 highlight.js 的配色方案我不太喜欢，然后 gg 了一下，总算找到了一种不错的方案，其中用到了 prism.js 这个代码高亮的插件，特此记录一下具体配置方案。
+禁用 highlight.js修改 _co...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Feb 02 2020 14:36:40 GMT+0800">2020-02-02</span></span>
+        
+        
+    </div>
+
+    <a href="/2020/02/02/Custom_code_highlight/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/02/02/Link/">
+                        个人网址导航
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        CTF 工具CTF中那些脑洞大开的编码和加密千千秀字加密解密工具解密在线工具MD5RSA 大数分解sagemathbase64 图片转换与佛论禅新约佛论禅进制转换二进制转字符Brainfuck/Ook
+社工工具在线短信接收虚假邮件生成器即弃电子邮箱短...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Feb 02 2020 02:48:37 GMT+0800">2020-02-02</span></span>
+        
+        
+    </div>
+
+    <a href="/2020/02/02/Link/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/01/25/Crypto_online/">
+                        Crypto 加解密网站总结
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        0x00 前言CTF 中 Crypto 题往往涉及到很多方面，无论是 web，还是 reverse，都能看到密码学的影子，所以掌握必要的密码学知识尤为重要，上文我整理分享了一些常见的加密方式，但略去了很多变种的加密方式，此间便做一个补充，也是方便在线...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sat Jan 25 2020 18:31:21 GMT+0800">2020-01-25</span></span>
+        
+        
+    </div>
+
+    <a href="/2020/01/25/Crypto_online/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/01/21/Crypto_classical/">
+                        Crypto 古典密码学总结
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        前言玩过 CTF 的小伙伴会遇到类似这样的问题：大表哥这是啥加密啊？其实 CTF 中的脑洞密码题，通常是非现代加密方式，一般都是各种古典密码的变形，出题者会对密文进行一些处理，但都会留下不少线索，当然也需要参赛者对于各种编码方式有所了解，这样更有利于...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Jan 21 2020 16:37:49 GMT+0800">2020-01-21</span></span>
+        
+        
+    </div>
+
+    <a href="/2020/01/21/Crypto_classical/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+    </ul>
+
+    <div class="home-paginator">
+        <div class="paginator">
+    
+        <a class="prev btn"
+           href="/"
+        >Prev</a>
+    
+
+    
+</div>
+
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Keep team</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.0</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/header-shrink.js"></script><script src="/js/back2top.js"></script><script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+
+
+<div class="post-scripts">
+    
+</div>
+
+
+
+</body>
+</html>

@@ -1,24 +1,165 @@
-<!DOCTYPE html><html lang="en-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="Crypto 加解密网站总结"><meta name="keywords" content=""><meta name="author" content="xcbyao,undefined"><meta name="copyright" content="xcbyao"><title>Crypto 加解密网站总结【Xcbyao's world】</title><link rel="stylesheet" href="/css/fan.css"><link rel="stylesheet" href="/css/thirdparty/jquery.mCustomScrollbar.min.css"><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"><link rel="icon" href="/favicon.ico"><!-- script(src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")--><script src="/js/mathjax/mathjax.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
-    tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
-});
-</script><script>var isPassword = '' || false;
-if (isPassword) {
-    if (prompt('请输入文章密码') !== '') {
-        alert('密码错误！');
-        history.back();
-    }
-}</script><script>window.GLOBAL_CONFIG = {
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  copy: {
-    success: 'Success',
-    error: 'Copy Error',
-    noSupport: 'Browser noSupport'
-  },
-  gitment: ,
-  valine: ,
-}</script><meta name="generator" content="Hexo 4.2.0"></head><body><canvas id="universe"></canvas><!--#body--><div id="sidebar"><div class="toggle-sidebar-info button-hover"><span data-toggle="Directory">Overview</span></div><div class="sidebar-toc"><div class="sidebar-toc-title">Catalogues</div><div class="sidebar-toc-progress"><span class="progress-notice">You have read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc-progress-bar"></div></div><div class="sidebar-toc-content" id="sidebar-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0x00-前言"><span class="toc-number">1.</span> <span class="toc-text">0x00 前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x01-正文"><span class="toc-number">2.</span> <span class="toc-text">0x01 正文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#综合性网站"><span class="toc-number">2.1.</span> <span class="toc-text">综合性网站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文字倒序排列"><span class="toc-number">2.2.</span> <span class="toc-text">文字倒序排列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cmd5解密"><span class="toc-number">2.3.</span> <span class="toc-text">cmd5解密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）base64解密"><span class="toc-number">2.4.</span> <span class="toc-text">（1）base64解密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）base32解密"><span class="toc-number">2.5.</span> <span class="toc-text">（2）base32解密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）base16解密"><span class="toc-number">2.6.</span> <span class="toc-text">（3）base16解密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（4）base36解密"><span class="toc-number">2.7.</span> <span class="toc-text">（4）base36解密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（5）base58解密"><span class="toc-number">2.8.</span> <span class="toc-text">（5）base58解密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（6）base62解密"><span class="toc-number">2.9.</span> <span class="toc-text">（6）base62解密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（7）base91解密"><span class="toc-number">2.10.</span> <span class="toc-text">（7）base91解密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）ROT5"><span class="toc-number">2.11.</span> <span class="toc-text">（1）ROT5</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）ROT13"><span class="toc-number">2.12.</span> <span class="toc-text">（2）ROT13</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）ROT18"><span class="toc-number">2.13.</span> <span class="toc-text">（3）ROT18</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（4）ROT47位移编码"><span class="toc-number">2.14.</span> <span class="toc-text">（4）ROT47位移编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#颜文字（aadecode）"><span class="toc-number">2.15.</span> <span class="toc-text">颜文字（aadecode）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#邮件编码（UUencode：M-75E-F-O9-amp-7HOYGDN-KED）"><span class="toc-number">2.16.</span> <span class="toc-text">邮件编码（UUencode：M&#x3D;75E;F-O9&amp;7HOYGDN*KED）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查尔斯加密（playfair解密）"><span class="toc-number">2.17.</span> <span class="toc-text">查尔斯加密（playfair解密）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在线编码解码"><span class="toc-number">2.18.</span> <span class="toc-text">在线编码解码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进制间转换"><span class="toc-number">2.19.</span> <span class="toc-text">进制间转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16进制与文本转换"><span class="toc-number">2.20.</span> <span class="toc-text">16进制与文本转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Unicode编码转换（4种）"><span class="toc-number">2.21.</span> <span class="toc-text">Unicode编码转换（4种）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Brainfuck（-gt-gt-）"><span class="toc-number">2.22.</span> <span class="toc-text">Brainfuck（++++++++++++[&gt;++++&gt;）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#URL（-23）"><span class="toc-number">2.23.</span> <span class="toc-text">URL（%23）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二维码生成-解码器"><span class="toc-number">2.24.</span> <span class="toc-text">二维码生成&#x2F;解码器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#摩斯密码"><span class="toc-number">2.25.</span> <span class="toc-text">摩斯密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#quipqiup"><span class="toc-number">2.26.</span> <span class="toc-text">quipqiup</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#与佛论禅"><span class="toc-number">2.27.</span> <span class="toc-text">与佛论禅</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新约佛论禅-熊曰"><span class="toc-number">2.28.</span> <span class="toc-text">新约佛论禅&#x2F;熊曰</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xxencode-Ri64NjS0-eRKpkQm-jRaJm6"><span class="toc-number">2.29.</span> <span class="toc-text">xxencode(Ri64NjS0-eRKpkQm-jRaJm6)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jsfuck（-）"><span class="toc-number">2.30.</span> <span class="toc-text">jsfuck（ [ ] [ ( ! [ ] + [ ]) [ + [ ] ）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UTF-8编码-amp-x5B89"><span class="toc-number">2.31.</span> <span class="toc-text">UTF-8编码(&amp;#x5B89)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DES-要密匙"><span class="toc-number">2.32.</span> <span class="toc-text">DES(要密匙)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#凯撒密码"><span class="toc-number">2.33.</span> <span class="toc-text">凯撒密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Rabbit（兔子）解密"><span class="toc-number">2.34.</span> <span class="toc-text">Rabbit（兔子）解密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AES"><span class="toc-number">2.35.</span> <span class="toc-text">AES</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JS解密-混淆"><span class="toc-number">2.36.</span> <span class="toc-text">JS解密&#x2F;混淆</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ASP解密"><span class="toc-number">2.37.</span> <span class="toc-text">ASP解密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Snake解密（要密匙）"><span class="toc-number">2.38.</span> <span class="toc-text">Snake解密（要密匙）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GRB与十六进制的转换"><span class="toc-number">2.39.</span> <span class="toc-text">GRB与十六进制的转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#html隐写在线解密"><span class="toc-number">2.40.</span> <span class="toc-text">html隐写在线解密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shellcode编码（-x54-x68-x65-x7f）"><span class="toc-number">2.41.</span> <span class="toc-text">shellcode编码（\x54\x68\x65\x7f）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Quoted-printable编码"><span class="toc-number">2.42.</span> <span class="toc-text">Quoted-printable编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Escape-Unescape编码（-u0054-u0068-u0065）"><span class="toc-number">2.43.</span> <span class="toc-text">Escape&#x2F;Unescape编码（%u0054%u0068%u0065）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#敲击码-Tap-code"><span class="toc-number">2.44.</span> <span class="toc-text">敲击码(Tap code)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栅栏密码"><span class="toc-number">2.45.</span> <span class="toc-text">栅栏密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#曲路密码"><span class="toc-number">2.46.</span> <span class="toc-text">曲路密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#列移位密码"><span class="toc-number">2.47.</span> <span class="toc-text">列移位密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#埃特巴什码"><span class="toc-number">2.48.</span> <span class="toc-text">埃特巴什码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#希尔密码（利用矩阵）"><span class="toc-number">2.49.</span> <span class="toc-text">希尔密码（利用矩阵）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#夏多密码-曲折加密"><span class="toc-number">2.50.</span> <span class="toc-text">夏多密码(曲折加密)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编制密码表"><span class="toc-number">2.51.</span> <span class="toc-text">编制密码表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#维吉尼亚密码"><span class="toc-number">2.52.</span> <span class="toc-text">维吉尼亚密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自动密钥密码"><span class="toc-number">2.53.</span> <span class="toc-text">自动密钥密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#博福特密码"><span class="toc-number">2.54.</span> <span class="toc-text">博福特密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#滚动密钥密码"><span class="toc-number">2.55.</span> <span class="toc-text">滚动密钥密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Porta密码"><span class="toc-number">2.56.</span> <span class="toc-text">Porta密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#仿射密码"><span class="toc-number">2.57.</span> <span class="toc-text">仿射密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#培根密码"><span class="toc-number">2.58.</span> <span class="toc-text">培根密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ADFGX和ADFGVX密码（德军密码）"><span class="toc-number">2.59.</span> <span class="toc-text">ADFGX和ADFGVX密码（德军密码）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#双密码-Bifid-Cipher"><span class="toc-number">2.60.</span> <span class="toc-text">双密码 Bifid Cipher</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四方密码"><span class="toc-number">2.61.</span> <span class="toc-text">四方密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#跨棋盘密码"><span class="toc-number">2.62.</span> <span class="toc-text">跨棋盘密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#恩尼格玛密码（德国二战-机械密码）"><span class="toc-number">2.63.</span> <span class="toc-text">恩尼格玛密码（德国二战 机械密码）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CR4解密"><span class="toc-number">2.64.</span> <span class="toc-text">CR4解密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VBScript"><span class="toc-number">2.65.</span> <span class="toc-text">VBScript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#执行php文件"><span class="toc-number">2.66.</span> <span class="toc-text">执行php文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图片-BASE64转换"><span class="toc-number">2.67.</span> <span class="toc-text">图片&#x2F;BASE64转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SHA-散列-哈希"><span class="toc-number">2.68.</span> <span class="toc-text">SHA&#x2F;散列&#x2F;哈希</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#格雷编码"><span class="toc-number">2.69.</span> <span class="toc-text">格雷编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字母编码"><span class="toc-number">2.70.</span> <span class="toc-text">字母编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ASCII编码"><span class="toc-number">2.71.</span> <span class="toc-text">ASCII编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GBK-GBK2312编码"><span class="toc-number">2.72.</span> <span class="toc-text">GBK&#x2F;GBK2312编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jjencode"><span class="toc-number">2.73.</span> <span class="toc-text">jjencode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#aaencode"><span class="toc-number">2.74.</span> <span class="toc-text">aaencode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ppencode"><span class="toc-number">2.75.</span> <span class="toc-text">ppencode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rrencode"><span class="toc-number">2.76.</span> <span class="toc-text">rrencode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jother"><span class="toc-number">2.77.</span> <span class="toc-text">jother</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#猪圈密码"><span class="toc-number">2.78.</span> <span class="toc-text">猪圈密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#加密为汉字"><span class="toc-number">2.79.</span> <span class="toc-text">加密为汉字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#键盘密码-Keyboard-Cipher"><span class="toc-number">2.80.</span> <span class="toc-text">键盘密码 Keyboard Cipher</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#手机九宫格键盘密码"><span class="toc-number">2.81.</span> <span class="toc-text">手机九宫格键盘密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#条形码-二维码"><span class="toc-number">2.82.</span> <span class="toc-text">条形码&#x2F;二维码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#当铺密码"><span class="toc-number">2.83.</span> <span class="toc-text">当铺密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#核心价值观编码"><span class="toc-number">2.84.</span> <span class="toc-text">核心价值观编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码混淆加密"><span class="toc-number">2.85.</span> <span class="toc-text">代码混淆加密</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x02-References"><span class="toc-number">3.</span> <span class="toc-text">0x02 References</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x03-写在最后"><span class="toc-number">4.</span> <span class="toc-text">0x03 写在最后</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info-avatar"><img class="author-info-avatar-img" src="/avatar.gif"></div><div class="author-info-name">xcbyao</div><div class="author-info-description">凡心所向 素履以往 生如逆旅 一苇以航</div><div class="links-buttons"><a class="links-button button-hover" href="https://github.com/xcbyao" target="_blank">GitHub<i class="icon-dot bg-color6"></i></a><a class="links-button button-hover" href="https://twitter.com/xcbyao" target="_blank">Twitter<i class="icon-dot bg-color3"></i></a></div><div class="author-info-articles"><a class="author-info-articles-archives article-meta" href="/archives"><span class="pull-top">Posts</span><span class="pull-bottom">18</span></a><a class="author-info-articles-categories article-meta" href="/categories"><span class="pull-top">Categories</span><span class="pull-bottom">6</span></a></div><div class="friend-link"><a class="friend-link-text" href="http://riusksk.me/" target="_blank">riusksk's blog</a><a class="friend-link-text" href="https://www.zuozuovera.com/" target="_blank">薇拉航线🌺</a><a class="friend-link-text" href="http://keanchen.top/" target="_blank">Keyon Blog</a><a class="friend-link-text" href="https://xpoet.cn/" target="_blank">XPoet Blog</a><a class="friend-link-text" href="https://lv-fan.gitee.io/" target="_blank">吕钒的后花园</a><a class="friend-link-text" href="https://meethigher.top/blog/" target="_blank">Kit Chen's Blog</a><a class="friend-link-text" href="http://gv7.me/" target="_blank">回忆飘如雪</a><a class="friend-link-text" href="https://www.ddosi.com/" target="_blank">🔰雨苁ℒ🔰</a></div></div></div><div id="main-container"><header><div id="menu-outer"><i class="menu-list-icon fas fa-bars"></i><nav id="menu-inner"><a class="menu-item" href="/">Home</a><a class="menu-item" href="/categories">Categories</a><a class="menu-item" href="/archives">Archives</a><a class="menu-item" href="/about">About</a></nav><div class="right-info"><a class="title-name" href="/">Xcbyao's world</a><span id="now-time"></span></div></div></header><div id="content-outer"><div id="content-inner"><article id="post"><div class="post-header"><div class="title">Crypto 加解密网站总结</div><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> Published 2020-01-25 | Modified 2020-11-17</time><!--time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]--><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/categories/Crypto/">Crypto</a></div><div class="button-hover tags"></div></div></div><div class="main-content"><h2 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00 前言"></a>0x00 前言</h2><p>CTF 中 Crypto 题往往涉及到很多方面，无论是 web，还是 reverse，都能看到密码学的影子，所以掌握必要的密码学知识尤为重要，上文我整理分享了一些常见的加密方式，但略去了很多变种的加密方式，此间便做一个补充，也是方便在线解题，尽可能省去临时查找在线解密网站的时间。</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="xcbyao,pwn,crypto,reverse,hack">
+    <meta name="description" content="凡心所向 素履以往 生如逆旅 一苇以航">
+    <meta name="author" content="Keep team">
+    
+    <title>
+        
+            Crypto 加解密网站总结 |
+        
+        Keep Theme
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"xcbyao.github.io","root":"/","language":"en"};
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.0"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"};
+  </script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                Keep Theme
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Crypto 加解密网站总结</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Keep team</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2020-01-25 18:31:21
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Crypto/">Crypto</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00 前言"></a>0x00 前言</h2><p>CTF 中 Crypto 题往往涉及到很多方面，无论是 web，还是 reverse，都能看到密码学的影子，所以掌握必要的密码学知识尤为重要，上文我整理分享了一些常见的加密方式，但略去了很多变种的加密方式，此间便做一个补充，也是方便在线解题，尽可能省去临时查找在线解密网站的时间。</p>
 <h2 id="0x01-正文"><a href="#0x01-正文" class="headerlink" title="0x01 正文"></a>0x01 正文</h2><h3 id="综合性网站"><a href="#综合性网站" class="headerlink" title="综合性网站"></a>综合性网站</h3><p>网站中包含大多编码的解码。<br><a href="https://tool.lu/" target="_blank" rel="noopener">https://tool.lu/</a><br><a href="http://www.mxcz.net/tools/base64.aspx" target="_blank" rel="noopener">http://www.mxcz.net/tools/base64.aspx</a><br><a href="https://www.qqxiuzi.cn/daohang.htm" target="_blank" rel="noopener">https://www.qqxiuzi.cn/daohang.htm</a><br><a href="http://web2hack.org/xssee/" target="_blank" rel="noopener">http://web2hack.org/xssee/</a><br><a href="https://www.sojson.com/" target="_blank" rel="noopener">https://www.sojson.com/</a><br><a href="http://web.chacuo.net/" target="_blank" rel="noopener">http://web.chacuo.net/</a><br><a href="http://tool.chinaz.com/tools/unixtime.aspx" target="_blank" rel="noopener">http://tool.chinaz.com/tools/unixtime.aspx</a><br><a href="https://tool.chinaz.com/tools/textencrypt.aspx" target="_blank" rel="noopener">https://tool.chinaz.com/tools/textencrypt.aspx</a><br><a href="https://tool.chinaz.com/js.aspx" target="_blank" rel="noopener">https://tool.chinaz.com/js.aspx</a><br><a href="http://tools.jb51.net/password/zhmorse" target="_blank" rel="noopener">http://tools.jb51.net/password/zhmorse</a><br><a href="https://www.jb51.net/tools/morse.htm" target="_blank" rel="noopener">https://www.jb51.net/tools/morse.htm</a><br><a href="https://quipqiup.com（词频分析）" target="_blank" rel="noopener">https://quipqiup.com（词频分析）</a></p>
 <h3 id="文字倒序排列"><a href="#文字倒序排列" class="headerlink" title="文字倒序排列"></a>文字倒序排列</h3><p><a href="http://www.qqxiuzi.cn/zh/daoxu/" target="_blank" rel="noopener">http://www.qqxiuzi.cn/zh/daoxu/</a></p>
 <h3 id="cmd5解密"><a href="#cmd5解密" class="headerlink" title="cmd5解密"></a>cmd5解密</h3><p><a href="http://www.cmd5.com/" target="_blank" rel="noopener">http://www.cmd5.com/</a><br><a href="http://pmd5.com/" target="_blank" rel="noopener">http://pmd5.com/</a><br><a href="http://tool.chinaz.com/Tools/MD5.aspx" target="_blank" rel="noopener">http://tool.chinaz.com/Tools/MD5.aspx</a><br><a href="http://md5jiami.51240.com/" target="_blank" rel="noopener">http://md5jiami.51240.com/</a><br><a href="http://www.mxcz.net/tools/MD5.aspx" target="_blank" rel="noopener">http://www.mxcz.net/tools/MD5.aspx</a></p>
@@ -128,4 +269,163 @@ if (isPassword) {
 <h3 id="代码混淆加密"><a href="#代码混淆加密" class="headerlink" title="代码混淆加密"></a>代码混淆加密</h3><p>（1）asp混淆加密<br><a href="https://www.zhaoyuanma.com/aspfix.html" target="_blank" rel="noopener">https://www.zhaoyuanma.com/aspfix.html</a><br>（2）[php language=”混淆加密”][/php][/php]<br><a href="https://www.zhaoyuanma.com/phpjmvip.html" target="_blank" rel="noopener">https://www.zhaoyuanma.com/phpjmvip.html</a><br>（3）[css language=”/js混淆加密”][/css][/css]<br><a href="http://tool.css-js.com/" target="_blank" rel="noopener">http://tool.css-js.com/</a><br>（4）VBScript.Encode混淆加密<br><a href="http://www.zhaoyuanma.com/aspfix.html" target="_blank" rel="noopener">http://www.zhaoyuanma.com/aspfix.html</a></p>
 <h2 id="0x02-References"><a href="#0x02-References" class="headerlink" title="0x02 References"></a>0x02 References</h2><p><a href="http://www.mamicode.com/info-detail-2252602.html" target="_blank" rel="noopener">CTF中常见密码题解密网站总结</a><br><a href="http://blog.neargle.com/SecNewsBak/drops/CTF%E4%B8%AD%E9%82%A3%E4%BA%9B%E8%84%91%E6%B4%9E%E5%A4%A7%E5%BC%80%E7%9A%84%E7%BC%96%E7%A0%81%E5%92%8C%E5%8A%A0%E5%AF%86%20.html" target="_blank" rel="noopener">CTF中那些脑洞大开的编码和加密</a><br><a href="https://cloud.tencent.com/developer/article/1419464" target="_blank" rel="noopener">CTF必备技能之编码大全</a></p>
 <h2 id="0x03-写在最后"><a href="#0x03-写在最后" class="headerlink" title="0x03 写在最后"></a>0x03 写在最后</h2><p>基本上一些较为常见的加密方式，国内网站优先推荐，但是一些变种的加密方式如 base36 等国内目前没有找到免费的，而作为一个 CTFer ，心气还是有点高的（<del>其实是没钱</del>），so 多推荐国外的，谈到此间不得不提一句，国内找不到的资料，国外用 English 搜索，往往很轻松就能找到答案了，of course ，此间不能 GG 的朋友，Bing 国际版也是个不错的选择。</p>
-</div><div class="post-copyright"><div class="post-copyright-author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">xcbyao</a></span></div><div class="post-copyright-type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://xcbyao.github.io/2020/01/25/Crypto_online/">https://xcbyao.github.io/2020/01/25/Crypto_online/</a></span></div><div class="post-copyright-notice"><span class="post-copyright-meta">Copyright: </span><span class="post-copyright-info">All articles are used <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> License. Please indicate from <a href="https://xcbyao.github.io">Xcbyao's world</a>!</span></div></div></article><div id="pagination"><div class="prev-post pull-left"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/2020/02/02/Link/"><i class="fas fa-angle-left">&nbsp;</i><span>个人网址导航</span></a></div><div class="next-post pull-right"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/2020/01/21/Crypto_classical/"><span>Crypto 古典密码学总结</span><span>&nbsp;</span><i class="fas fa-angle-right"></i></a></div></div><!--div!= paginator()--></div></div><div class="button-hover" id="return-top"><i class="fas fa-arrow-up" aria-hidden="true"></i></div><footer><div id="footer"><div class="button-hover" id="side-button"><i class="fas fa-arrow-right"></i></div><div class="right-content"><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="far fa-eye"></i></span><span id="busuanzi_value_page_pv"></span><span></span></div><div class="copyright">&copy;2020 ～ 2021 By xcbyao</div></div></div></footer></div><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery-3.3.1.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/velocity.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery.mCustomScrollbar.concat.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/fan.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/canvas_bg.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/utils.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/scroll.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/sidebar.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/copy.js"></script><!--script(src=url)--></body></html>
+
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2020/02/02/Link/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">个人网址导航</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2020/01/21/Crypto_classical/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Crypto 古典密码学总结</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Keep team</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.0</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+<script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/header-shrink.js"></script><script src="/js/back2top.js"></script><script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+
+
+<div class="post-scripts">
+    
+</div>
+
+
+
+</body>
+</html>
