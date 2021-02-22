@@ -164,7 +164,7 @@
                     <div class="author">
                         <span class="name">xcbyao</span>
                         
-                            <span class="author-label">Architect</span>
+                            <span class="author-label">Engineer</span>
                         
                     </div>
                     <div class="meta-info">
@@ -189,7 +189,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>2.6k Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>2.7k Words</span>
         </span>
     
     
@@ -278,13 +278,17 @@
 </ul>
 <p><strong>“很多程序都缺少动态链接库，所以只是简单过了一遍，了解了大致的流程，后续通过实战再补充学习吧！”</strong></p>
 <ul>
-<li>《鸟哥的 Linux 私房菜（第四版）》（2020.1.6-2021.2.22）</li>
+<li>《鸟哥的 Linux 私房菜（第四版）》（2020.1.6-2021.2.23）</li>
 </ul>
-<p><strong>“前十二章学习了一遍，后面的大致过了一下，有些概念，用到时再精读。”</strong></p>
+<p><strong>“pwn 入门 Linux 知识储备，前十二章学习了一遍，后面的大致过了一下，有些概念，用到时再精读。”</strong></p>
 <ul>
-<li>《深入理解计算机系统（原书第三版)》（2.22-2.2）</li>
+<li>《深入理解计算机系统（原书第三版)》（2.23-2.2）</li>
 </ul>
-<p><strong>“”</strong></p>
+<p><strong>“pwn 入门基础必看书籍一，主要是前 7 章”</strong></p>
+<ul>
+<li>《程序员的自我修养–链接、装载与库》（2.）</li>
+</ul>
+<p><strong>“pwn 入门基础必看书籍二，了解体系结构和操作系统的相关知识”</strong></p>
 <ul>
 <li>《龙族》江南（-）</li>
 </ul>
@@ -534,6 +538,85 @@
         
 
         
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;Comments</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script data-pjax
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script data-pjax>
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: 'GHjr9A7BcsjDCu8fuLv3Yev2-MdYXbMMI',
+                    appKey: 'BwohkTMPdjQcGRYeFq6huB1E',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '😜 谢谢你看到最后，有什么想说的尽情吐槽吧~',
+                    lang: 'en'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'xcbyao';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('true') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
     </div>
 </div>
 
@@ -590,6 +673,10 @@
         
 
         <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
         
     </ul>
 </div>
