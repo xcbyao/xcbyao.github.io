@@ -9,6 +9,8 @@
     
     <title>
         
+            Category: Self-improvement |
+        
         踏雪无痕
     </title>
     <link rel="stylesheet" href="/css/style.css">
@@ -67,7 +69,7 @@
                         </li>
                     
                         <li class="menu-item">
-                            <a class=""
+                            <a class="active"
                                href="/categories"
                             >
                                 CATEGORIES
@@ -117,7 +119,7 @@
                 </li>
             
                 <li class="drawer-menu-item flex-center">
-                    <a class=""
+                    <a class="active"
                        href="/categories">CATEGORIES</a>
                 </li>
             
@@ -147,190 +149,80 @@
 
                 
                     <div class="fade-in-down-animation">
-    <div class="article-content-container">
-
-        <div class="article-title">
-            <span class="title-hover-animation"></span>
+    <div class="category-container">
+        <div class="category-name">
+            <i class="fas fa-folder"></i>&nbsp;Self-improvement
         </div>
-
-        
-            <div class="article-header">
-                <div class="avatar">
-                    <img src="/images/avatar.png">
-                </div>
-                <div class="info">
-                    <div class="author">
-                        <span class="name">xcbyao</span>
-                        
-                            <span class="author-label">Engineer</span>
-                        
-                    </div>
-                    <div class="meta-info">
-                        <div class="article-meta-info">
-    <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-01-23 19:59:15
-    </span>
-    
-    
-
-    
-    
-        <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>665 Words</span>
-        </span>
-    
-    
-    
-        <span class="article-pv article-meta-item">
-            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
-        </span>
-    
-</div>
-
-                    </div>
-                </div>
-            </div>
-        
-
-        <div class="article-content markdown-body">
-            <p>观察系统的使用状态：    如果要看目前有谁在线上，可以下达“who”这个指令，而如果要看<br>网络的连线状态，可以下达    “    netstat    -a    ”这个指令，而要看背景执行的程序可以执行“    ps<br>-aux    ”这个指令。</p>
-<p>chgrp    ：改变文件所属群组<br>chown    ：改变文件拥有者<br>chmod    ：改变文件的权限,    SUID,    SGID,    SBIT等等的特性</p>
-<p>因此FHS标准建议：根目录（/）所在分区应该越小越好，    且应用程序所安装的软件最好不要<br>与根目录放在同一个分区内，保持根目录越小越好。    如此不但性能较佳，根目录所在的文件<br>系统也较不容易发生问题。</p>
-<p>其实usr是Unix    Software    Resource的缩写，    也就<br>是“Unix操作系统软件资源”所放置的目录</p>
-<p>.                                    代表此层目录<br>..                                代表上一层目录</p>
-<ul>
-<li><pre><code>                               代表前一个工作目录
-</code></pre>
-~                                    代表“目前使用者身份”所在的主文件夹<br>~account        代表    account    这个使用者的主文件夹（account是个帐号名称</li>
-</ul>
-<p>cd：变换目录<br>pwd：显示目前的目录-P        ：显示出确实的路径，而非使用链接    （link）    路径。<br>mkdir：创建一个新的目录-m    ：设置文件的权限喔！直接设置，不需要看默认权限    （umask）    的脸色～<br>-p    ：帮助你直接将所需要的目录（包含上层目录）递回创建起来！<br>rmdir：删除一个空的目录-p    ：连同“上层”“空的”目录也一起删除</p>
-<p>将    ll    （L    的小写）    设置成为    ls    -l    </p>
-<p>cat    由第一行开始显示文件内容<br>tac    从最后一行开始显示，可以看出    tac    是    cat    的倒着写！<br>nl    显示的时候，顺道输出行号！<br>more    一页一页的显示文件内容<br>less    与    more    类似，但是比    more    更好的是，他可以往前翻页！<br>head    只看头几行<br>tail    只看尾巴几行<br>od    以二进制的方式读取文件内容！</p>
-<p>echo password    |    od    -t    oCc    echo  ASCII    对照</p>
-<p>如果你还想要从文字压缩文件当中找数据的话，可以通过    egrep    来搜寻关键字喔！而<br>不需要将压缩文件解开才以    grep    进行！    这对查询备份中的文本文件数据相当有用！</p>
-<p>另外值得一提的是，tar    打包出来的文件有没有进行压缩所得到文件称呼不同喔！    如果仅是打<br>包而已，就是“    tar    -cv    -f    file.tar    ”而已，这个文件我们称呼为    tarfile    。    如果还有进行压缩的支<br>持，例如“    tar    -jcv    -f    file.tar .bz2    ”时，我们就称呼为    tarball    </p>
-
-        </div>
-
-        
-
-        
-            <div class="article-nav">
-                
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/01/23/C_advanced_2/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">C 语言学习笔记之高级篇</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
-                
-                    <div class="article-next">
-                        <a class="next"
-                           rel="next"
-                           href="/2020/12/27/Fund/"
-                        >
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《解读基金：我的投资观与实践（修订版）》读书笔记</span>
-                                <span class="post-nav-item">Next posts</span>
-                            </span>
-                            <span class="right arrow-icon flex-center">
-                              <i class="fas fa-chevron-right"></i>
-                            </span>
-                        </a>
-                    </div>
-                
-            </div>
-        
-
-        
-            <div class="comment-container">
-                <div class="comments-container">
-    <div id="comment-anchor"></div>
-    <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;Comments</i>
-    </div>
-    
-
-        
+        <div class="category-post-list">
             
-    <div class="valine-container">
-        <script data-pjax
-                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
-        <div id="vcomments"></div>
-        <script data-pjax>
-            function loadValine() {
-                new Valine({
-                    el: '#vcomments',
-                    appId: 'GHjr9A7BcsjDCu8fuLv3Yev2-MdYXbMMI',
-                    appKey: 'BwohkTMPdjQcGRYeFq6huB1E',
-                    meta: ['nick', 'mail', 'link'],
-                    avatar: 'wavatar',
-                    enableQQ: true,
-                    placeholder: '😜 Thanks for reading. Please feel free to write.',
-                    lang: 'en'.toLowerCase()
-                });
-
-                function getAuthor(language) {
-                    switch (language) {
-                        case 'en':
-                            return 'Author';
-                        case 'zh-CN':
-                            return '博主';
-                        default:
-                            return 'Master';
-                    }
-                }
-
-                // Add "Author" identify
-                const getValineDomTimer = setInterval(() => {
-                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
-                    if (vcards.length > 0) {
-                        let author = 'xcbyao';
-
-                        if (author) {
-                            for (let vcard of vcards) {
-                                const vnick_dom = vcard.querySelector('.vhead .vnick');
-                                const vnick = vnick_dom.innerHTML;
-                                if (vnick === author) {
-                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
-                                }
-                            }
-                        }
-                        clearInterval(getValineDomTimer);
-                    } else {
-                        clearInterval(getValineDomTimer);
-                    }
-                }, 2000);
-            }
-
-            if ('true') {
-                const loadValineTimeout = setTimeout(() => {
-                    loadValine();
-                    clearTimeout(loadValineTimeout);
-                }, 1000);
-            } else {
-                window.addEventListener('DOMContentLoaded', loadValine);
-            }
-        </script>
-    </div>
-
-
-
-        
+<div class="archive-list-container">
+    
+        <section class="archive-item">
+            <div class="archive-item-header">
+                <span class="archive-year">2021</span>
+                <span class="archive-year-post-count">[2]</span>
+            </div>
+            <ul class="article-list">
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2021/01/31/List_summary/"
+                        >Book &amp; Tutorial &amp; Film &amp; Anime &amp; Game Summary</a>
+                        <span class="article-date">01-31</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2021/01/31/Depression/"
+                        >我与重抑斗争的那些事（慎入）</a>
+                        <span class="article-date">01-31</span>
+                    </li>
+                
+            </ul>
+        </section>
+    
+        <section class="archive-item">
+            <div class="archive-item-header">
+                <span class="archive-year">2020</span>
+                <span class="archive-year-post-count">[3]</span>
+            </div>
+            <ul class="article-list">
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2020/12/27/Fund/"
+                        >《解读基金：我的投资观与实践（修订版）》读书笔记</a>
+                        <span class="article-date">12-27</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2020/08/11/Appreciation/"
+                        >那些一眼爱上的文章 &amp; 句子</a>
+                        <span class="article-date">08-11</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2020/02/02/Link/"
+                        >Personal Website Summary</a>
+                        <span class="article-date">02-02</span>
+                    </li>
+                
+            </ul>
+        </section>
     
 </div>
 
-            </div>
-        
+        </div>
+    </div>
+    <div class="category-paginator">
+        <div class="paginator">
+    
+
+    
+</div>
+
     </div>
 </div>
 
@@ -376,27 +268,6 @@
     </div>
 
     
-        <div class="post-tools">
-            <div class="post-tools-container">
-    <ul class="tools-list">
-        <!-- TOC aside toggle -->
-        
-            <li class="tools-item page-aside-toggle">
-                <i class="fas fa-outdent"></i>
-            </li>
-        
-
-        <!-- go comment -->
-        
-            <li class="go-comment">
-                <i class="fas fa-comment"></i>
-            </li>
-        
-    </ul>
-</div>
-
-        </div>
-    
 
     <div class="right-bottom-side-tools">
         <div class="side-tools-container">
@@ -441,14 +312,6 @@
 
     </div>
 
-    
-        <aside class="page-aside">
-            <div class="post-toc-wrap">
-    <div class="post-toc">
-        
-    </div>
-</div>
-        </aside>
     
 
     <div class="image-viewer-container">
@@ -504,8 +367,6 @@
 
 
 <div class="post-scripts pjax">
-    
-        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.0/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.0/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.0/source/js/toc.js"></script>
     
 </div>
 
