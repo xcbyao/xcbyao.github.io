@@ -23,7 +23,7 @@
     KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"};
   </script>
 <meta name="generator" content="Hexo 5.3.0"></head>
-
+<link rel="stylesheet" href="/css/prism.css">
 
 <body>
 <div class="progress-bar-container">
@@ -216,7 +216,8 @@
 </ul>
 <p><img src="/images/od_windows.png"></p>
 <h4 id="1-反汇编窗口（disassembler）"><a href="#1-反汇编窗口（disassembler）" class="headerlink" title="1.反汇编窗口（disassembler）"></a>1.反汇编窗口（disassembler）</h4><p>吾爱破解版 OD 已经默认勾选了自动对主模块进行分析，OD 会分析程序显示它的附加信息</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Options -&gt; Debugging options -&gt; Analysis1 -&gt; Auto Start analysis of main module</span><br></pre></td></tr></table></figure>
+<pre><code class="language-none">Options -&gt; Debugging options -&gt; Analysis1 -&gt; Auto Start analysis of main module
+</code></pre>
 <p>通常 OD 显示程序的某些部分是不正确的，错误的将可执行代码解释为数据，这种情况，在<strong>反汇编窗口</strong>中右键选择 <code>Analysis -&gt; Remove analysis from module</code> 手动删除分析结果。</p>
 <p><img src="/images/delete_analysis.png"></p>
 <p>吾爱版已经默认高亮显示 jumps 和 calls，若需修改右键选择 <code>Appearance -&gt; Highlighting</code></p>
@@ -440,7 +441,14 @@
 </ul>
 <p><img src="/images/re_analysis.png"></p>
 <p><img src="/images/re_analysis2.png"></p>
-<h3 id="5-循环、字符串指令及寻址"><a href="#5-循环、字符串指令及寻址" class="headerlink" title="5. 循环、字符串指令及寻址"></a>5. 循环、字符串指令及寻址</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">XOR ECX,ECX</span><br><span class="line">ADD ECX,15 &#x2F; MOV ECX,15</span><br><span class="line">Label:</span><br><span class="line">DEC ECX</span><br><span class="line">;循环体</span><br><span class="line">TEST ECX,ECX &#x2F; CMP ECX,0</span><br><span class="line">JNE Label</span><br></pre></td></tr></table></figure>
+<h3 id="5-循环、字符串指令及寻址"><a href="#5-循环、字符串指令及寻址" class="headerlink" title="5. 循环、字符串指令及寻址"></a>5. 循环、字符串指令及寻址</h3><pre><code class="language-asm">XOR ECX,ECX
+ADD ECX,15 / MOV ECX,15
+Label:
+DEC ECX
+;循环体
+TEST ECX,ECX / CMP ECX,0
+JNE Label
+</code></pre>
 <p><img src="/images/loopd.png"></p>
 <ul>
 <li>LOOP<br>将计数器 ECX 的值减 1，判断 ECX 的值是否为 0，若为 0 就跳转到指定地址。</li>
@@ -477,9 +485,23 @@
 </ul>
 </li>
 <li><p>直接寻址<br>操作数中包含一个具体的地址。地址的值是纯数字。</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">MOV</span> <span class="string">DWORD</span> <span class="string">PTR</span> [<span class="number">00513450</span>]<span class="string">,</span> <span class="string">ECX</span></span><br><span class="line"></span><br><span class="line"><span class="string">MOV</span> <span class="string">AX,</span> <span class="string">WORD</span> <span class="string">PTR</span> [<span class="string">00510A25</span>]</span><br><span class="line"></span><br><span class="line"><span class="string">CALL</span> <span class="number">452200</span></span><br><span class="line"></span><br><span class="line"><span class="string">JMP</span> <span class="number">421000</span></span><br></pre></td></tr></table></figure></li>
-<li><p>间接寻址</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">MOV</span> <span class="string">DWORD</span> <span class="string">PTR[EAX],</span> <span class="string">ECX</span></span><br><span class="line"></span><br><span class="line"><span class="string">CALL</span> <span class="string">EAX</span></span><br><span class="line"></span><br><span class="line"><span class="string">JMP</span> [<span class="string">EBX</span> <span class="string">+</span> <span class="number">4</span>]</span><br></pre></td></tr></table></figure></li>
+<pre><code class="language-yml">MOV DWORD PTR [00513450], ECX
+</code></pre>
+</li>
+</ul>
+<p>MOV AX, WORD PTR [00510A25]</p>
+<p>CALL 452200</p>
+<p>JMP 421000</p>
+<pre><code>
+- 间接寻址
+```yml
+MOV DWORD PTR[EAX], ECX
+
+CALL EAX
+
+JMP [EBX + 4]
+</code></pre>
+<ul>
 <li><p>想在指令执行之前看到真实地址，需要在该指令上下断点，然后运行到断点，查看寄存器的值或解释窗口中的信息。<br>使用间接寻址的指令，只能在执行这条指令的时候获取地址当前的值。</p>
 </li>
 <li><p>调用任何子程序,堆栈顶部存放的都是返回地址。</p>
@@ -680,7 +702,7 @@
         
     </div>
 </footer>
-
+<script src="/js/prism.js" async></script>
         </div>
     </div>
 

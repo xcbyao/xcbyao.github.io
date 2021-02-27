@@ -23,7 +23,7 @@
     KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"};
   </script>
 <meta name="generator" content="Hexo 5.3.0"></head>
-
+<link rel="stylesheet" href="/css/prism.css">
 
 <body>
 <div class="progress-bar-container">
@@ -207,15 +207,55 @@
 
         <div class="article-content markdown-body">
             <h2 id="0x00-前言概览"><a href="#0x00-前言概览" class="headerlink" title="0x00 前言概览"></a>0x00 前言概览</h2><p>这个系列主要是整理 C 语言相关的一些知识，方便后期的复习与检索，适用者为学过基础的入门者编写程序时提供快捷便利的检索条件，纯小白可先收藏。此系列大致分为基础篇、进阶篇、高级篇，本文为基础篇，主要是一些零散知识点的整理，内容没有先后顺序，建议读者 Ctrl+F 查询；同时本着极简原则，一些知识点会直接举例说明。</p>
-<h2 id="0x01-切入正题"><a href="#0x01-切入正题" class="headerlink" title="0x01 切入正题"></a>0x01 切入正题</h2><h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*单多行注释*/</span></span><br><span class="line"><span class="comment">//单行注释（C99）</span></span><br></pre></td></tr></table></figure>
+<h2 id="0x01-切入正题"><a href="#0x01-切入正题" class="headerlink" title="0x01 切入正题"></a>0x01 切入正题</h2><h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><pre><code class="language-C">/*单多行注释*/
+//单行注释（C99）
+</code></pre>
 <h3 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h3><p>编译器只识别前 63 个字符，对于外部标识符只允许使用 31 个字符（C99/C11）；名称第一个字符必须是大小写字母或下划线，不能是数字，区分大小写，但标识符最好不要超过 8 位。</p>
 <h3 id="变量与常量"><a href="#变量与常量" class="headerlink" title="变量与常量"></a>变量与常量</h3><p>变量未初始化可能为 0 或垃圾值，不允许连续赋值，如 <code>int a=b=c=5;</code> 是不合法的。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">定义常量：<span class="meta">#<span class="meta-keyword">define</span> identifier value</span></span><br><span class="line"><span class="keyword">const</span> type variable = value;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-C">定义常量：#define identifier value
+const type variable = value;
+</code></pre>
 <h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>实参是传递给函数的特定值；形参是函数中用于存储值的变量。</p>
 <h3 id="编译器"><a href="#编译器" class="headerlink" title="编译器"></a>编译器</h3><p>编译器报错的位置比真正的错误位置滞后一行；无法检测语义错误，即遵循了 C 规则，但输出结果错误。</p>
 <p>使用调试器，通过跟踪程序执行步骤，记录每个变量，监视程序状态排错。</p>
-<h3 id="关键字和保留标识符"><a href="#关键字和保留标识符" class="headerlink" title="关键字和保留标识符"></a><a class="link"   target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-basic-syntax.html" >关键字和保留标识符<i class="fas fa-external-link-alt"></i></a></h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span>	声明自动变量</span><br><span class="line"><span class="keyword">break</span>	跳出当前循环</span><br><span class="line"><span class="keyword">case</span>	开关语句分支</span><br><span class="line"><span class="keyword">default</span>	开关语句中的其它分支</span><br><span class="line"><span class="keyword">char</span>	声明字符型变量或函数返回值类型</span><br><span class="line"><span class="keyword">const</span>	定义常量</span><br><span class="line"><span class="keyword">do</span>	循环语句的循环体</span><br><span class="line"><span class="keyword">float</span>	声明单精度浮点型变量或函数返回值类型</span><br><span class="line"><span class="keyword">double</span>	声明双精度浮点型变量或函数返回值类型</span><br><span class="line"><span class="keyword">else</span>	条件语句否定分支（与 <span class="keyword">if</span> 连用）</span><br><span class="line"><span class="keyword">static</span>	声明静态变量</span><br><span class="line"><span class="keyword">extern</span>	声明变量或函数是在其它文件或本文件的其他位置定义</span><br><span class="line"><span class="keyword">for</span>	循环语句</span><br><span class="line"><span class="keyword">goto</span>	无条件跳转语句</span><br><span class="line"><span class="keyword">if</span>	条件语句</span><br><span class="line"><span class="keyword">int</span>	声明整型变量或函数</span><br><span class="line"><span class="keyword">long</span>	声明长整型变量或函数返回值类型</span><br><span class="line"><span class="keyword">short</span>	声明短整型变量或函数返回值类型</span><br><span class="line"><span class="keyword">return</span>	子程序返回语句（参数可带可不带）</span><br><span class="line"><span class="keyword">signed</span>	声明有符号类型变量或函数</span><br><span class="line"><span class="keyword">sizeof</span>	计算数据类型或变量长度（即所占字节数）</span><br><span class="line"><span class="keyword">switch</span>	用于开关语句</span><br><span class="line"><span class="keyword">typedef</span>	用以给数据类型取别名</span><br><span class="line">struct	声明结构体类型</span><br><span class="line"><span class="keyword">union</span>	声明共用体类型</span><br><span class="line"><span class="keyword">enum</span>	声明枚举类型</span><br><span class="line"><span class="keyword">while</span>	循环语句的循环条件</span><br><span class="line"><span class="keyword">void</span>	声明函数无返回值或无参数，声明无类型指针</span><br><span class="line"><span class="keyword">volatile</span>	说明变量在程序执行中可被隐含地改变</span><br><span class="line"><span class="keyword">unsigned</span>	声明无符号类型变量或函数</span><br><span class="line"><span class="keyword">register</span>	声明寄存器变量</span><br><span class="line"><span class="keyword">continue</span>	结束当前循环，开始下一轮循环</span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C99 新增关键字</span><br><span class="line"><span class="built_in">_Bool</span>  布尔值  <span class="built_in">_Complex</span>  复数  <span class="built_in">_Imaginary</span>  虚数  <span class="keyword">inline</span>  <span class="keyword">restrict</span></span><br><span class="line">C11 新增关键字</span><br><span class="line">_Alignas  _Alignof  _Atomic  _Generic  _Noreturn  _Static_assert  _Thread_local</span><br></pre></td></tr></table></figure>
+<h3 id="关键字和保留标识符"><a href="#关键字和保留标识符" class="headerlink" title="关键字和保留标识符"></a><a class="link"   target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-basic-syntax.html" >关键字和保留标识符<i class="fas fa-external-link-alt"></i></a></h3><pre><code class="language-C">auto    声明自动变量
+break    跳出当前循环
+case    开关语句分支
+default    开关语句中的其它分支
+char    声明字符型变量或函数返回值类型
+const    定义常量
+do    循环语句的循环体
+float    声明单精度浮点型变量或函数返回值类型
+double    声明双精度浮点型变量或函数返回值类型
+else    条件语句否定分支（与 if 连用）
+static    声明静态变量
+extern    声明变量或函数是在其它文件或本文件的其他位置定义
+for    循环语句
+goto    无条件跳转语句
+if    条件语句
+int    声明整型变量或函数
+long    声明长整型变量或函数返回值类型
+short    声明短整型变量或函数返回值类型
+return    子程序返回语句（参数可带可不带）
+signed    声明有符号类型变量或函数
+sizeof    计算数据类型或变量长度（即所占字节数）
+switch    用于开关语句
+typedef    用以给数据类型取别名
+struct    声明结构体类型
+union    声明共用体类型
+enum    声明枚举类型
+while    循环语句的循环条件
+void    声明函数无返回值或无参数，声明无类型指针
+volatile    说明变量在程序执行中可被隐含地改变
+unsigned    声明无符号类型变量或函数
+register    声明寄存器变量
+continue    结束当前循环，开始下一轮循环
+</code></pre>
+<pre><code class="language-C">C99 新增关键字
+_Bool  布尔值  _Complex  复数  _Imaginary  虚数  inline  restrict
+C11 新增关键字
+_Alignas  _Alignof  _Atomic  _Generic  _Noreturn  _Static_assert  _Thread_local
+</code></pre>
 <h3 id="基本数据类型及取值范围"><a href="#基本数据类型及取值范围" class="headerlink" title="基本数据类型及取值范围"></a>基本数据类型及<a class="link"   target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-data-types.html" >取值范围<i class="fas fa-external-link-alt"></i></a></h3><p><img src="/images/data-type.png"></p>
 <p><img src="/images/data-type2.png"></p>
 <blockquote>
@@ -239,7 +279,28 @@
 <blockquote>
 <p>注释：<a class="link"   target="_blank" rel="noopener" href="https://zh.cppreference.com/w/c/language/operator_precedence#cite_note-1" >https://zh.cppreference.com/w/c/language/operator_precedence#cite_note-1<i class="fas fa-external-link-alt"></i></a></p>
 </blockquote>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">括号成员是老大;</span>      <span class="string">//</span> <span class="string">括号运算符</span> []<span class="string">()</span> <span class="string">成员运算符.</span>  <span class="string">-&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="string">全体单目排老二;</span>      <span class="string">//</span> <span class="string">所有的单目运算符比如</span> <span class="string">++、</span> <span class="string">--、</span> <span class="string">+(正)、</span> <span class="string">-(负)</span> <span class="string">、指针运算</span> <span class="string">*、&amp;</span></span><br><span class="line"></span><br><span class="line"><span class="string">乘除余三,加减四;</span>    <span class="string">//</span> <span class="string">这个&quot;余&quot;是指取余运算即</span> <span class="string">%</span></span><br><span class="line"></span><br><span class="line"><span class="string">移位五，关系六;</span>     <span class="string">//</span> <span class="string">移位运算符：&lt;&lt;</span> <span class="string">&gt;&gt;</span> <span class="string">关系运算符：&gt;</span> <span class="string">&lt;</span> <span class="string">&gt;=</span> <span class="string">&lt;=</span></span><br><span class="line"></span><br><span class="line"><span class="string">等与不等排行七;</span>     <span class="string">//</span> <span class="string">即</span> <span class="string">==</span> <span class="string">和</span> <span class="type">!=</span></span><br><span class="line"></span><br><span class="line"><span class="string">位与异或和位或;</span>     <span class="string">//</span> <span class="string">位运算:</span> <span class="string">位与(&amp;)</span> <span class="string">异或(^)</span> <span class="string">位或(|)</span>    </span><br><span class="line"></span><br><span class="line"><span class="string">&quot;三分天下&quot;</span><span class="string">八九十;</span>  </span><br><span class="line"></span><br><span class="line"><span class="string">逻辑与，逻辑或;</span>    <span class="string">//</span> <span class="string">逻辑运算符:</span> <span class="string">&amp;&amp;</span> <span class="string">和</span> <span class="string">||</span></span><br><span class="line"></span><br><span class="line"><span class="string">十一十二紧挨着;</span>    <span class="string">//</span> <span class="string">注意顺序:</span> <span class="string">&amp;&amp;</span> <span class="string">高于</span> <span class="string">||</span></span><br><span class="line"></span><br><span class="line"><span class="string">条件只比赋值高,</span>    <span class="string">//</span> <span class="string">三目运算符优先级排到</span> <span class="number">13</span> <span class="string">位只比赋值运算符和</span> <span class="string">&quot;,&quot;</span> <span class="string">高</span></span><br><span class="line"></span><br><span class="line"><span class="string">逗号运算最低级!</span>    <span class="string">//逗号运算符优先级最低</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-yml">括号成员是老大;      // 括号运算符 []() 成员运算符.  -&gt;
+
+全体单目排老二;      // 所有的单目运算符比如 ++、 --、 +(正)、 -(负) 、指针运算 *、&amp;
+
+乘除余三,加减四;    // 这个&quot;余&quot;是指取余运算即 %
+
+移位五，关系六;     // 移位运算符：&lt;&lt; &gt;&gt; 关系运算符：&gt; &lt; &gt;= &lt;=
+
+等与不等排行七;     // 即 == 和 !=
+
+位与异或和位或;     // 位运算: 位与(&amp;) 异或(^) 位或(|)    
+
+&quot;三分天下&quot;八九十;  
+
+逻辑与，逻辑或;    // 逻辑运算符: &amp;&amp; 和 ||
+
+十一十二紧挨着;    // 注意顺序: &amp;&amp; 高于 ||
+
+条件只比赋值高,    // 三目运算符优先级排到 13 位只比赋值运算符和 &quot;,&quot; 高
+
+逗号运算最低级!    //逗号运算符优先级最低
+</code></pre>
 <h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><ol>
 <li>在没有循环结构的情况下，<code>break</code> 不能用在单独的 <code>if-else</code> 语句中。</li>
 <li>在知道循环次数的情况下更适合使用 <code>for</code> 循环。</li>
@@ -257,13 +318,22 @@
 <li><code>default</code> 子句可以省略不用。</li>
 <li>自定义函数尽量放在 <code>main</code> 函数之前，若要放在 <code>main</code> 函数后面，需要在 <code>main</code> 函数之前先声明自定义函数。</li>
 </ol>
-<h3 id="存储类别"><a href="#存储类别" class="headerlink" title="存储类别"></a>存储类别</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">自动（<span class="keyword">auto</span>）</span><br><span class="line">静态（<span class="keyword">static</span>）</span><br><span class="line">寄存器（<span class="keyword">register</span>）</span><br><span class="line">外部（<span class="keyword">extern</span>）</span><br></pre></td></tr></table></figure>
+<h3 id="存储类别"><a href="#存储类别" class="headerlink" title="存储类别"></a>存储类别</h3><pre><code class="language-C">自动（auto）
+静态（static）
+寄存器（register）
+外部（extern）
+</code></pre>
 <p>只有 局部自动变量 和 形式参数 可以作为 寄存器变量；</p>
 <p>一个计算机系统中的寄存器数目有限，不能定义任意多个寄存器变量；</p>
 <p>局部静态变量 不能定义为 寄存器变量。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> 是局部变量的默认存储类, 限定变量只能在函数内部使用；</span><br><span class="line"><span class="keyword">register</span> 代表了寄存器变量，不在内存中使用；</span><br><span class="line"><span class="keyword">static</span> 是全局变量的默认存储类,表示变量在程序生命周期内可见；</span><br><span class="line"><span class="keyword">extern</span> 表示全局变量，即对程序内所有文件可见</span><br></pre></td></tr></table></figure>
+<pre><code class="language-C">auto 是局部变量的默认存储类, 限定变量只能在函数内部使用；
+register 代表了寄存器变量，不在内存中使用；
+static 是全局变量的默认存储类,表示变量在程序生命周期内可见；
+extern 表示全局变量，即对程序内所有文件可见
+</code></pre>
 <h3 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h3><p><img src="/images/string-functions.png"></p>
-<h3 id="获取数组长度"><a href="#获取数组长度" class="headerlink" title="获取数组长度"></a>获取数组长度</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> length = <span class="keyword">sizeof</span>(arr)/<span class="keyword">sizeof</span>(arr[<span class="number">0</span>]);</span><br></pre></td></tr></table></figure>
+<h3 id="获取数组长度"><a href="#获取数组长度" class="headerlink" title="获取数组长度"></a>获取数组长度</h3><pre><code class="language-C">int length = sizeof(arr)/sizeof(arr[0]);
+</code></pre>
 <p>二维数组定义的时候，可以不指定行的数量，但是必须指定列的数量。</p>
 <h2 id="0x02-References"><a href="#0x02-References" class="headerlink" title="0x02 References"></a>0x02 References</h2><blockquote>
 <p>《C Primer Plus》<br><a class="link"   target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000015699060" >C语言入门这一篇就够了-学习笔记<i class="fas fa-external-link-alt"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-tutorial.html" >C语言教程<i class="fas fa-external-link-alt"></i></a></p>
@@ -431,7 +501,7 @@
         
     </div>
 </footer>
-
+<script src="/js/prism.js" async></script>
         </div>
     </div>
 

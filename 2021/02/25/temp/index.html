@@ -23,7 +23,7 @@
     KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"};
   </script>
 <meta name="generator" content="Hexo 5.3.0"></head>
-
+<link rel="stylesheet" href="/css/prism.css">
 
 <body>
 <div class="progress-bar-container">
@@ -189,7 +189,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>766 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>767 Words</span>
         </span>
     
     
@@ -207,14 +207,100 @@
 
         <div class="article-content markdown-body">
             <h2 id="Perface"><a href="#Perface" class="headerlink" title="Perface"></a>Perface</h2><p>知识有没有用，主要是看你要实现的目标是什么。<br>编程的书看了不少，一直缺乏实战提高，正式开启算法训练，提高编程能力。</p>
-<h2 id="Main-body"><a href="#Main-body" class="headerlink" title="Main body"></a>Main body</h2><h3 id="Quicksort"><a href="#Quicksort" class="headerlink" title="Quicksort"></a>Quicksort</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">快速排序算法</span></span><br><span class="line"><span class="comment">核心：找到基准值的位置。</span></span><br><span class="line"><span class="comment">将小于基准值的元素放在基准值的前面，大于的元素放在后面。这一步通常被叫做 partition 操作，中文直译就是分割操作</span></span><br><span class="line"><span class="comment">partition 就是空出一个位置，反复地前后调换元素。</span></span><br><span class="line"><span class="comment">利用双指针进行前后迭代。前后两个指针，同时移动，后面小于基准值的放前面，前面大于基准值的放后面。</span></span><br><span class="line"><span class="comment">30 13 52 10 24 41 29 43</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX 10000</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DEBUG 1</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output</span><span class="params">(<span class="keyword">int</span>, <span class="keyword">int</span>, <span class="keyword">int</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// arr    : 用来存储待排序的元素</span></span><br><span class="line"><span class="comment">// n      : 代表元素数量</span></span><br><span class="line"><span class="comment">// output : 输出过程中的调试信息</span></span><br><span class="line"><span class="comment">// DEBUG  : 调试信息开关</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> arr[MAX], n;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">start</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;请输入元素数量：&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;请输入 %d 个整数：\n&quot;</span>, n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, arr + i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (getchar() != <span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 快速排序：对 arr 中 l 到 r 位进行排序</span></span><br><span class="line"><span class="comment">// l   : 待排序区间起始坐标</span></span><br><span class="line"><span class="comment">// r   : 待排序区间结束坐标</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span>* arr, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 递归的边界条件是区间中只有一个元素</span></span><br><span class="line">    <span class="comment">// x : 记录从前向后扫描的位置</span></span><br><span class="line">    <span class="comment">// y : 记录从后向前扫描的位置</span></span><br><span class="line">    <span class="comment">// z : 基准值，选择待排序区间的第一个元素</span></span><br><span class="line">    <span class="comment">// while 循环中是 partition 过程</span></span><br><span class="line">    <span class="comment">// 每一轮，先从后向前扫，再从前向后扫</span></span><br><span class="line">    <span class="keyword">if</span> (l &gt;= r) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> x = l, y = r, z = arr[l];</span><br><span class="line">    <span class="keyword">while</span> (x &lt; y) &#123;</span><br><span class="line">        <span class="keyword">while</span> (x &lt; y &amp;&amp; arr[y] &gt;= z) --y;</span><br><span class="line">        <span class="keyword">if</span> (x &lt; y) arr[x++] = arr[y];</span><br><span class="line">        <span class="keyword">while</span> (x &lt; y &amp;&amp; arr[x] &lt;= z) ++x;</span><br><span class="line">        <span class="keyword">if</span> (x &lt; y) arr[y--] = arr[x];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 将基准值 z 放入其正确位置数组的 x 位</span></span><br><span class="line">    <span class="comment">// 其实此时 x==y，所以 arr[y] = z 也行</span></span><br><span class="line">    <span class="comment">// 再分别对左右区间，进行快速排序</span></span><br><span class="line">    arr[x] = z;</span><br><span class="line">    output(l, x, r);</span><br><span class="line">    sort(arr, l, x - <span class="number">1</span>);</span><br><span class="line">    sort(arr, x + <span class="number">1</span>, r);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> x, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!DEBUG) <span class="keyword">return</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n待排序区间范围 [%d, %d]\n&quot;</span>, l, r);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;基准值：%d\n&quot;</span>, arr[x]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">char</span> str[<span class="number">30</span>];</span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="number">2</span>; <span class="comment">// 预留 &#x27;[ &#x27; 的空间</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; x; i++) &#123;</span><br><span class="line">        cnt += <span class="built_in">sprintf</span>(str, <span class="string">&quot;%d &quot;</span>, arr[i]); <span class="comment">//spritnf 返回了本次函数调用最终打印到字符缓冲区中的字符数目</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; l; i++) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, arr[i]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;[ &quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = l; i &lt;= r; i++) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;] &quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = r + <span class="number">1</span>; i &lt; n; i++) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, arr[i]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; cnt; i++) <span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;^\n&quot;</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;按回车继续...&quot;</span>);</span><br><span class="line">    <span class="keyword">while</span> (getchar() != <span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    start();</span><br><span class="line">    sort(arr, <span class="number">0</span>, n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, arr[i]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Main-body"><a href="#Main-body" class="headerlink" title="Main body"></a>Main body</h2><h3 id="Quicksort"><a href="#Quicksort" class="headerlink" title="Quicksort"></a>Quicksort</h3><pre><code class="language-C">/*
+快速排序算法
+核心：找到基准值的位置。
+将小于基准值的元素放在基准值的前面，大于的元素放在后面。这一步通常被叫做 partition 操作，中文直译就是分割操作
+partition 就是空出一个位置，反复地前后调换元素。
+利用双指针进行前后迭代。前后两个指针，同时移动，后面小于基准值的放前面，前面大于基准值的放后面。
+30 13 52 10 24 41 29 43
+*/
 
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#define MAX 10000
+#define DEBUG 1
+void output(int, int, int);
 
+// arr    : 用来存储待排序的元素
+// n      : 代表元素数量
+// output : 输出过程中的调试信息
+// DEBUG  : 调试信息开关
 
+int arr[MAX], n;
+void start() &#123;
+    printf(&quot;请输入元素数量：&quot;);
+    scanf(&quot;%d&quot;, &amp;n);
+    printf(&quot;请输入 %d 个整数：\n&quot;, n);
+    for (int i = 0; i &lt; n; i++) &#123;
+        scanf(&quot;%d&quot;, arr + i);
+    &#125;
+    while (getchar() != &#39;\n&#39;);
+    return;
+&#125;
 
+// 快速排序：对 arr 中 l 到 r 位进行排序
+// l   : 待排序区间起始坐标
+// r   : 待排序区间结束坐标
 
+void sort(int* arr, int l, int r) &#123;
+    // 递归的边界条件是区间中只有一个元素
+    // x : 记录从前向后扫描的位置
+    // y : 记录从后向前扫描的位置
+    // z : 基准值，选择待排序区间的第一个元素
+    // while 循环中是 partition 过程
+    // 每一轮，先从后向前扫，再从前向后扫
+    if (l &gt;= r) return;
+    int x = l, y = r, z = arr[l];
+    while (x &lt; y) &#123;
+        while (x &lt; y &amp;&amp; arr[y] &gt;= z) --y;
+        if (x &lt; y) arr[x++] = arr[y];
+        while (x &lt; y &amp;&amp; arr[x] &lt;= z) ++x;
+        if (x &lt; y) arr[y--] = arr[x];
+    &#125;
+    // 将基准值 z 放入其正确位置数组的 x 位
+    // 其实此时 x==y，所以 arr[y] = z 也行
+    // 再分别对左右区间，进行快速排序
+    arr[x] = z;
+    output(l, x, r);
+    sort(arr, l, x - 1);
+    sort(arr, x + 1, r);
+    return;
+&#125;
 
+void output(int l, int x, int r) &#123;
+    if (!DEBUG) return;
+    printf(&quot;\n待排序区间范围 [%d, %d]\n&quot;, l, r);
+    printf(&quot;基准值：%d\n&quot;, arr[x]);
 
+    char str[30];
+    int cnt = 2; // 预留 &#39;[ &#39; 的空间
+    for (int i = 0; i &lt; x; i++) &#123;
+        cnt += sprintf(str, &quot;%d &quot;, arr[i]); //spritnf 返回了本次函数调用最终打印到字符缓冲区中的字符数目
+    &#125;
+    for (int i = 0; i &lt; l; i++) printf(&quot;%d &quot;, arr[i]);
+    printf(&quot;[ &quot;);
+    for (int i = l; i &lt;= r; i++) &#123;
+        printf(&quot;%d &quot;, arr[i]);
+    &#125;
+    printf(&quot;] &quot;);
+    for (int i = r + 1; i &lt; n; i++) printf(&quot;%d &quot;, arr[i]);
+    printf(&quot;\n&quot;);
+    for (int i = 0; i &lt; cnt; i++) printf(&quot; &quot;);
+    printf(&quot;^\n&quot;);
+    printf(&quot;按回车继续...&quot;);
+    while (getchar() != &#39;\n&#39;);
+    return;
+&#125;
+
+int main() &#123;
+    start();
+    sort(arr, 0, n - 1);
+    for (int i = 0; i &lt; n; i++)
+        printf(&quot;%d &quot;, arr[i]);
+    return 0;
+&#125;
+</code></pre>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><em>《常用算法 25 讲》</em><br><em>《数据结构与算法之美》</em></p>
 
         </div>
@@ -363,7 +449,7 @@
         
     </div>
 </footer>
-
+<script src="/js/prism.js" async></script>
         </div>
     </div>
 

@@ -23,7 +23,7 @@
     KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"};
   </script>
 <meta name="generator" content="Hexo 5.3.0"></head>
-
+<link rel="stylesheet" href="/css/prism.css">
 
 <body>
 <div class="progress-bar-container">
@@ -233,8 +233,10 @@
 <p>*** — ___ 分割线</p>
 <p><del>删除线</del></p>
 <p>^上标^ ~下标~</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">|</span> <span class="string">左对齐</span> <span class="string">|</span> <span class="string">右对齐</span> <span class="string">|</span> <span class="string">居中对齐</span> <span class="string">|</span></span><br><span class="line"><span class="string">|</span> <span class="string">:-----</span> <span class="string">|</span> <span class="string">-----:</span> <span class="string">|</span> <span class="string">:----:</span> <span class="string">|</span></span><br><span class="line"><span class="string">|</span> <span class="string">单元格</span> <span class="string">|</span> <span class="string">单元格</span> <span class="string">|</span> <span class="string">单元格</span> <span class="string">|</span></span><br></pre></td></tr></table></figure>
-
+<pre><code class="language-yml">| 左对齐 | 右对齐 | 居中对齐 |
+| :----- | -----: | :----: |
+| 单元格 | 单元格 | 单元格 |
+</code></pre>
 <h2 id="Chrome-快捷键"><a href="#Chrome-快捷键" class="headerlink" title="Chrome 快捷键"></a>Chrome 快捷键</h2><p>打开主页 Alt + Home<br>关闭当前窗口 Alt + F4<br>打开菜单 Alt + f/e<br>跳转到地址栏 Alt + d</p>
 <p>切换用户 Ctrl + shift + m<br>当前页面补充<code>www.com</code> Ctrl + Enter<br>打开“清除浏览数据”选项 Ctrl + Shift + backspace</p>
 <p>打开新窗口 Ctrl + n<br>无痕打开新窗口 Ctrl + Shift + n<br>打开跳转新标签页 Ctrl + t<br>关闭当前标签页 Ctrl + W</p>
@@ -245,8 +247,8 @@
 <h2 id="Windows-快捷键"><a href="#Windows-快捷键" class="headerlink" title="Windows 快捷键"></a>Windows 快捷键</h2><p>Win + 上下左右<br>任务栏切换 Win + 数字<br>创建新文件夹 Ctrl + Shift + N</p>
 <p>显示桌面 win + d/m<br>显示设置 win + i<br>文件资源管理器 win + e<br>左侧工具栏 win + x<br>右侧设置 Win + a<br>锁定计算机 Win + L<br>任务视图 win + tab</p>
 <p>设置自启动 win+R 复制，添加快捷键</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start</span> <span class="string">Menu\Programs\Startup</span></span><br></pre></td></tr></table></figure>
-
+<pre><code class="language-yml">%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+</code></pre>
 <h2 id="Vimium-快捷键"><a href="#Vimium-快捷键" class="headerlink" title="Vimium 快捷键"></a>Vimium 快捷键</h2><p>向下/上/左/右移动 j/k/h/l<br>后退/前进网页 H/L<br>选择左/右标签 J/K<br><strong>向下/上跳动 d/u-e</strong><br>回到顶/尾部 gg/G</p>
 <p>本窗口/新窗口 f/F<br>刷新 r<br>创建/查看标签页 t/T(数字nt)<br>新标签打开多个链接 alt + f<br><strong>打开新页面并切换 S</strong><br>查找历史书签 o/O<br>查找书签 b/B</p>
 <p><strong>关闭/恢复标签 x/X-z</strong><br><strong>切换到刚才标签 ^-q</strong><br><strong>移动当前标签到左/右侧边 &lt;&lt;-&lt;/&gt;&gt;-&gt;</strong><br><strong>将标签页移动到新窗口 W-ww</strong></p>
@@ -257,61 +259,102 @@
 <p>当页标记 m + 一个小写字母<br>全局标记 m + 一个大写字母<br>跳转到当页标记 `小写字母<br>跳转到全局标记 `大写字母</p>
 <h2 id="Visual-Studio-快捷键"><a href="#Visual-Studio-快捷键" class="headerlink" title="Visual Studio 快捷键"></a>Visual Studio 快捷键</h2><p>ctrl + shift + a 新建项<br>alt + shift + a 现有项<br>ctrl + d 复制上一行<br>ctrl + b 生成</p>
 <p>F10 逐过程<br>F11 逐语句<br>ctrl + alt + d 反汇编<br>ctrl + backspace 删除整行</p>
-<h2 id="git-amp-hexo"><a href="#git-amp-hexo" class="headerlink" title="git &amp; hexo"></a>git &amp; hexo</h2><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">npm</span> <span class="string">install</span> <span class="string">hexo-deployer-git</span> <span class="string">--save</span></span><br></pre></td></tr></table></figure>
+<h2 id="git-amp-hexo"><a href="#git-amp-hexo" class="headerlink" title="git &amp; hexo"></a>git &amp; hexo</h2><pre><code class="language-yml">npm install hexo-deployer-git --save
+</code></pre>
 <p><code>hexo clean</code><br><code>hexo s -o</code> 实时预览<br><code>hexo d -g</code> 生成部署<br><code>hexo new &quot;post&quot;</code> 新建文章<br><code>hexo new page &quot;page&quot;</code> 新建页面</p>
 <hr>
-<h3 id="hexo-升级"><a href="#hexo-升级" class="headerlink" title="hexo 升级"></a>hexo 升级</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">npm</span> <span class="string">-v</span></span><br><span class="line"><span class="string">node</span> <span class="string">-v</span></span><br><span class="line"><span class="string">hexo</span> <span class="string">-v</span></span><br><span class="line"></span><br><span class="line"><span class="string">npm</span> <span class="string">install</span> <span class="string">npm@latest</span> <span class="string">-g</span>  <span class="string">//npm更新</span></span><br><span class="line">[<span class="string">node</span>]<span class="string">(https://nodejs.org/zh-cn/download/)</span> <span class="string">下载覆盖安装</span></span><br><span class="line"></span><br><span class="line"><span class="string">npm</span> <span class="string">install</span> <span class="string">-g</span> <span class="string">npm-check</span>     <span class="string">//安装</span> <span class="string">npm-check</span></span><br><span class="line"><span class="string">npm-check</span>                    <span class="string">//查看系统插件是否需要升级</span></span><br><span class="line"><span class="string">npm</span> <span class="string">install</span> <span class="string">-g</span> <span class="string">npm-upgrade</span>   <span class="string">//安装</span> <span class="string">npm-upgrade</span></span><br><span class="line"><span class="string">npm-upgrade</span>                  <span class="string">//更新</span> <span class="string">package.json</span></span><br><span class="line"><span class="string">//在执行</span> <span class="string">npm-upgrade</span> <span class="string">命令后会要求输入</span> <span class="literal">yes</span> <span class="string">或</span> <span class="literal">no</span> <span class="string">，直接输入</span> <span class="string">Y</span> <span class="string">即可</span></span><br><span class="line"><span class="string">npm</span> <span class="string">update</span> <span class="string">-g</span>                <span class="string">//更新全局插件</span></span><br><span class="line"><span class="string">npm</span> <span class="string">update</span> <span class="string">--save</span>            <span class="string">//更新系统插件</span></span><br></pre></td></tr></table></figure>
+<h3 id="hexo-升级"><a href="#hexo-升级" class="headerlink" title="hexo 升级"></a>hexo 升级</h3><pre><code class="language-yml">npm -v
+node -v
+hexo -v
+
+npm install npm@latest -g  //npm更新
+[node](https://nodejs.org/zh-cn/download/) 下载覆盖安装
+
+npm install -g npm-check     //安装 npm-check
+npm-check                    //查看系统插件是否需要升级
+npm install -g npm-upgrade   //安装 npm-upgrade
+npm-upgrade                  //更新 package.json
+//在执行 npm-upgrade 命令后会要求输入 yes 或 no ，直接输入 Y 即可
+npm update -g                //更新全局插件
+npm update --save            //更新系统插件
+</code></pre>
 <hr>
 <p><code>git init</code><br><code>git status</code><br><code>git add filename</code><br><code>git commit -m &quot;commit filename&quot;</code><br><code>git log</code> 按 Q 退出<br><code>git branch [a] [-d/D a]</code> 新建分支 a / 删除/强制删除分支 a<br><code>git push origin --delete</code> 删除远程分支<br><code>git checkout [a] [v1] [-b b]</code> 切换到 a 分支 / v1 标签 / 创建并切换到 b 分支<br><code>git merge [a]</code> 将 a 分支合并到 master 分支<br><code>git tag [v1]</code> 添加标签<br><code>git remote add origin url</code> 关联远程仓库<br><code>git pull/push origin master:djs</code> 拉/推 远程主机名 远程分支名:本地分支名</p>
 <hr>
-<h3 id="删除所有远程标签"><a href="#删除所有远程标签" class="headerlink" title="删除所有远程标签"></a>删除所有远程标签</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">show-ref</span> <span class="string">--tag</span> <span class="string">|</span> <span class="string">awk</span> <span class="string">&#x27;&#123;print &quot;:&quot; $2&#125;&#x27;</span> <span class="string">|</span> <span class="string">xargs</span> <span class="string">git</span> <span class="string">push</span> <span class="string">origin</span></span><br></pre></td></tr></table></figure>
-<h3 id="删除所有本地标签"><a href="#删除所有本地标签" class="headerlink" title="删除所有本地标签"></a>删除所有本地标签</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">tag</span> <span class="string">-l</span> <span class="string">|awk</span> <span class="string">&#x27;/1\.1\../&#x27;</span> <span class="string">|</span> <span class="string">xargs</span> <span class="string">git</span> <span class="string">tag</span> <span class="string">-d</span></span><br></pre></td></tr></table></figure>
-<h3 id="从远程仓库获取所有分支"><a href="#从远程仓库获取所有分支" class="headerlink" title="从远程仓库获取所有分支"></a>从远程仓库获取所有分支</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">clone</span> <span class="string">xxx</span></span><br><span class="line"><span class="string">git</span> <span class="string">branch</span> <span class="string">-r</span> <span class="string">|</span> <span class="string">grep</span> <span class="string">-v</span> <span class="string">&#x27;\-&gt;&#x27;</span> <span class="string">|</span> <span class="string">while</span> <span class="string">read</span> <span class="string">remote;</span> <span class="string">do</span> <span class="string">git</span> <span class="string">branch</span> <span class="string">--track</span> <span class="string">&quot;$&#123;remote#origin/&#125;&quot;</span> <span class="string">&quot;$remote&quot;</span><span class="string">;</span></span><br><span class="line"><span class="string">git</span> <span class="string">fetch</span> <span class="string">--all</span></span><br><span class="line"><span class="string">git</span> <span class="string">pull</span> <span class="string">--all</span></span><br></pre></td></tr></table></figure>
+<h3 id="删除所有远程标签"><a href="#删除所有远程标签" class="headerlink" title="删除所有远程标签"></a>删除所有远程标签</h3><pre><code class="language-yml">git show-ref --tag | awk &#39;&#123;print &quot;:&quot; $2&#125;&#39; | xargs git push origin
+</code></pre>
+<h3 id="删除所有本地标签"><a href="#删除所有本地标签" class="headerlink" title="删除所有本地标签"></a>删除所有本地标签</h3><pre><code class="language-yml">git tag -l |awk &#39;/1\.1\../&#39; | xargs git tag -d
+</code></pre>
+<h3 id="从远程仓库获取所有分支"><a href="#从远程仓库获取所有分支" class="headerlink" title="从远程仓库获取所有分支"></a>从远程仓库获取所有分支</h3><pre><code class="language-yml">git clone xxx
+git branch -r | grep -v &#39;\-&gt;&#39; | while read remote; do git branch --track &quot;$&#123;remote#origin/&#125;&quot; &quot;$remote&quot;;
+git fetch --all
+git pull --all
+</code></pre>
 <h3 id="合并两个仓库"><a href="#合并两个仓库" class="headerlink" title="合并两个仓库"></a>合并两个仓库</h3><p>现在有两个仓库 kktjs/kkt 和 kktjs/kkt-next 我们需要将 kkt-next 仓库合并到 kkt 并保留 kkt-next 的所有提交内容。</p>
 <blockquote>
 <p>1.克隆主仓库代码</p>
 </blockquote>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">clone</span> <span class="string">git@github.com:kktjs/kkt.git</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-yml">git clone git@github.com:kktjs/kkt.git
+</code></pre>
 <blockquote>
 <p>2.将 kkt-next 作为远程仓库，添加到 kkt 中，设置别名为 other</p>
 </blockquote>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">remote</span> <span class="string">add</span> <span class="string">other</span> <span class="string">git@github.com:kktjs/kkt-next.git</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-yml">git remote add other git@github.com:kktjs/kkt-next.git
+</code></pre>
 <blockquote>
 <p>3.从 kkt-next 仓库中拉取数据到本仓库</p>
 </blockquote>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">fetch</span> <span class="string">other</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-yml">git fetch other
+</code></pre>
 <blockquote>
 <p>4.将 kkt-next 仓库拉取的 master 分支作为新分支 checkout 到本地，新分支名设定为 kkt-next</p>
 </blockquote>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">checkout</span> <span class="string">-b</span> <span class="string">kkt-next</span> <span class="string">other/master</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-yml">git checkout -b kkt-next other/master
+</code></pre>
 <blockquote>
 <p>5.切换回 kkt 的 master 分支</p>
 </blockquote>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">checkout</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-yml">git checkout master
+</code></pre>
 <blockquote>
 <p>6.将 kkt-next 合并入 kkt 的 master 分支</p>
 </blockquote>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">merge</span> <span class="string">kkt-next</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-yml">git merge kkt-next
+</code></pre>
 <blockquote>
 <p>如果第 6 步报错 <code>fatal: refusing to merge unrelated histories</code>，执行下面：</p>
 </blockquote>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">merge</span> <span class="string">kkt-next</span> <span class="string">--allow-unrelated-histories</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-yml">git merge kkt-next --allow-unrelated-histories
+</code></pre>
 <p>在合并时有可能两个分支对同一个文件都做了修改，这时需要解决冲突，对文本文件来说很简单，根据需要对冲突的位置进行处理就可以。对于二进制文件，需要用到如下命令:</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">checkout</span> <span class="string">--theirs</span> <span class="string">YOUR_BINARY_FILES</span>     <span class="comment"># 保留需要合并进来的分支的修改</span></span><br><span class="line"><span class="string">git</span> <span class="string">checkout</span> <span class="string">--ours</span> <span class="string">YOUR_BINARY_FILES</span>       <span class="comment"># 保留自己的修改</span></span><br><span class="line"><span class="string">git</span> <span class="string">add</span> <span class="string">YOUR_BINARY_FILES</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-yml">git checkout --theirs YOUR_BINARY_FILES     # 保留需要合并进来的分支的修改
+git checkout --ours YOUR_BINARY_FILES       # 保留自己的修改
+git add YOUR_BINARY_FILES
+</code></pre>
 <hr>
-<h3 id="创建密钥"><a href="#创建密钥" class="headerlink" title="创建密钥"></a>创建密钥</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">ssh-keygen</span> <span class="string">-t</span> <span class="string">rsa</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">ssh</span> <span class="string">-T</span> <span class="string">git@github.com</span></span><br></pre></td></tr></table></figure>
-<h3 id="别名"><a href="#别名" class="headerlink" title="别名"></a>别名</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">alias.plm</span> <span class="string">&#x27;pull origin master&#x27;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">alias.psm</span> <span class="string">&#x27;push origin master&#x27;</span></span><br></pre></td></tr></table></figure>
-<h3 id="其他配置"><a href="#其他配置" class="headerlink" title="其他配置"></a>其他配置</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">config</span> <span class="string">-l</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">log</span> <span class="string">--graph</span> <span class="string">--pretty=format:&#x27;%Cred%h%Creset</span> <span class="bullet">-</span> <span class="string">%C(yellow)%d%Creset</span> <span class="string">%s</span> <span class="string">%Cgreen(%cr)</span> <span class="string">%C(bold</span> <span class="string">blue)&lt;%an&gt;%Creset&#x27;</span> <span class="string">--abbrev-commit</span> <span class="string">--date=relative</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">http.http://github.com.proxy</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span><span class="string">:10808</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">https.https://github.com.proxy</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span><span class="string">:10808</span></span><br></pre></td></tr></table></figure>
+<h3 id="创建密钥"><a href="#创建密钥" class="headerlink" title="创建密钥"></a>创建密钥</h3><pre><code class="language-yml">ssh-keygen -t rsa
+</code></pre>
+<pre><code class="language-yml">ssh -T git@github.com
+</code></pre>
+<h3 id="别名"><a href="#别名" class="headerlink" title="别名"></a>别名</h3><pre><code class="language-yml">git config --global alias.plm &#39;pull origin master&#39;
+</code></pre>
+<pre><code class="language-yml">git config --global alias.psm &#39;push origin master&#39;
+</code></pre>
+<h3 id="其他配置"><a href="#其他配置" class="headerlink" title="其他配置"></a>其他配置</h3><pre><code class="language-yml">git config -l
+</code></pre>
+<pre><code class="language-yml">git log --graph --pretty=format:&#39;%Cred%h%Creset - %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit --date=relative
+</code></pre>
+<pre><code class="language-yml">git config --global http.http://github.com.proxy 127.0.0.1:10808
+</code></pre>
+<pre><code class="language-yml">git config --global https.https://github.com.proxy 127.0.0.1:10808
+</code></pre>
 <h3 id="Failed-to-connect-to-github-com-port-443-Operation-timed-out"><a href="#Failed-to-connect-to-github-com-port-443-Operation-timed-out" class="headerlink" title="Failed to connect to github.com port 443: Operation timed out"></a>Failed to connect to github.com port 443: Operation timed out</h3><p><code>/etc/hosts</code> 把 Github 相关的几行代码注释掉，保存 hosts 文件<br>这种的 #192.30.253.112 github.com</p>
 <h3 id="Failed-to-connect-to-127-0-0-1-port-1080-Connection-refused"><a href="#Failed-to-connect-to-127-0-0-1-port-1080-Connection-refused" class="headerlink" title="Failed to connect to 127.0.0.1 port 1080: Connection refused"></a>Failed to connect to 127.0.0.1 port 1080: Connection refused</h3><p>查询是否使用代理：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">http.proxy</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-yml">git config --global http.proxy
+</code></pre>
 <p>取消代理：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">--unset</span> <span class="string">http.proxy</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-yml">git config --global --unset http.proxy
+</code></pre>
 <blockquote>
 <p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35246620/article/details/66973794" >https://blog.csdn.net/qq_35246620/article/details/66973794<i class="fas fa-external-link-alt"></i></a></p>
 </blockquote>
@@ -488,7 +531,7 @@
         
     </div>
 </footer>
-
+<script src="/js/prism.js" async></script>
         </div>
     </div>
 

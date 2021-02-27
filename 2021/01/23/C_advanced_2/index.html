@@ -23,7 +23,7 @@
     KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"};
   </script>
 <meta name="generator" content="Hexo 5.3.0"></head>
-
+<link rel="stylesheet" href="/css/prism.css">
 
 <body>
 <div class="progress-bar-container">
@@ -231,12 +231,18 @@
 </ul>
 </li>
 <li>二维数组不能直接传递给函数，更多维数组必须把它分解为几个维数更少的数组。</li>
-<li>从逻辑上删除一段代码：特别是代码内部有注释，<strong>注释不能嵌套！</strong><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">if</span> 0</span></span><br><span class="line">	statements</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure></li>
+<li>从逻辑上删除一段代码：特别是代码内部有注释，<strong>注释不能嵌套！</strong><pre><code class="language-C">#if 0
+  statements
+#endif
+</code></pre>
+</li>
 <li>假如这个程序的源代码由几个源文件所组成，那么使用该函数的源文件都必须写明该函数的原型。把原型放在头文件中并使用 <code>#include</code> 指令包含它们，可以避免由于同一个声明的多份拷贝而导致的维护性问题。</li>
 <li>数组参数是以引用形式调用的，即<strong>传址调用</strong>；标量和常量是按值传递的，即<strong>传值调用</strong>。在函数中对标量参数的任何修改都会在函数返回时丢失，因此，被调用函数无法修改调用函数以传值形式传递给它的参数。然而，当被调用函数修改数组参数的其中一个元素时，调用函数所传递的数组就会被实际地修改。</li>
 <li>gets() 丢弃换行符，在该行末尾存储一个 <code>NUL</code> 字节（一个 <code>NUL</code> 字节是指字节模式为全 0 的字节，类似 ‘\0’ 这样的字符常量）然后，gets() 返回一个非 <code>NULL</code> 值，表示该行已被成功读取。当 gets() 被调用但事实上不存在输入行时，它就返回 <code>NULL</code> 值，表示它到达了输入的末尾（文件尾）。</li>
 <li>字符串就是一串以 <code>NUL</code> 字节结尾的字符。<code>NUL</code> 作为字符串终止符，它本身并不被看作是字符串的一部分。<strong>字符串常量</strong>就是双引号括起来的一串字符。</li>
-<li>当 scanf() 对输入值进行转换时，它只读取需要读取的字符。这样该输入行包含了最后一个值的剩余部分仍会留在那里，等待被读取。while 循环将读取并丢弃这些剩余的字符。<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>((ch = getchar()) != EOF &amp;&amp; ch != <span class="string">&#x27;\n&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+<li>当 scanf() 对输入值进行转换时，它只读取需要读取的字符。这样该输入行包含了最后一个值的剩余部分仍会留在那里，等待被读取。while 循环将读取并丢弃这些剩余的字符。<pre><code class="language-C">while((ch = getchar()) != EOF &amp;&amp; ch != &#39;\n&#39;)
+</code></pre>
+</li>
 <li>如果输入中不再存在任何字符，函数就会返回常量 EOF（在 stdio.h 中定义），用于提示文件的结尾。EOF 需要的位数比字符型值所能提供的位数要多，这也是 getchar 返回一个整型值而不是字符值的原因。然而，把 getchar 的返回值首先存储于 ch 中将导致它被截短。</li>
 <li>如果一个多字节字符常量的前面有一个 L，那么它就是宽字符常量，如 L’abc’</li>
 <li>当一个字符串常量出现于一个表达式中时，表达式所使用的值就是这些字符所存储的地址，而不是这些字符本身。你不能把字符串常量赋值给一个字符数组，因为字符串常量的直接值是一个指针。</li>
@@ -250,8 +256,19 @@
 <li>|| &amp;&amp; 操作符具有短路求值性质，如果表达式的值根据左操作数可决定，就不再对右操作数求值；| &amp; 两边的操作数都要进行求值。</li>
 <li>连续赋值中各个变量的长度不一。</li>
 <li>C 可以用于设计和实现抽象数据类型 ADT，它可以限制函数和数据定义的作用域。这个技巧也被称为黑盒设计。通过 static 实现限制对那些并非接口的函数和数据的访问。</li>
-<li>strlen 的结果是个无符号数，下面两等式不相等；如果把 strlen 的返回值强制转换为 int，就可以消除这个问题。<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="built_in">strlen</span>(x) &gt;= <span class="built_in">strlen</span>(y))...</span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">strlen</span>(x) - <span class="built_in">strlen</span>(y) &gt;= <span class="number">0</span>)...</span><br></pre></td></tr></table></figure></li>
-<li>此时 sim 相当于类型名而不是结构标签。<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> a;</span><br><span class="line">&#125;sim;</span><br><span class="line"></span><br><span class="line">sim x;</span><br></pre></td></tr></table></figure></li>
+<li>strlen 的结果是个无符号数，下面两等式不相等；如果把 strlen 的返回值强制转换为 int，就可以消除这个问题。<pre><code class="language-C">if(strlen(x) &gt;= strlen(y))...
+if(strlen(x) - strlen(y) &gt;= 0)...
+</code></pre>
+</li>
+<li>此时 sim 相当于类型名而不是结构标签。<pre><code class="language-C">typedef struct&#123;
+  int a;
+&#125;sim;
+</code></pre>
+</li>
+</ul>
+<p>sim x;</p>
+<p>```</p>
+<ul>
 <li>对边界要求最严格的成员首先出现，对边界要求最弱的成员最后出现。这种做法可以最大限度地减少因边界对齐而带来的空间损失。(offsetof 宏)</li>
 <li>把位段成员显式地声明为 signed int 或 unsigned int，位段是不可移植的，使源代码中位的操作表达得更为清楚。</li>
 <li>如果操作系统无法向 malloc 提供更多的内存，就返回一个 NULL 指针，因此需要检查返回值。</li>
@@ -428,7 +445,7 @@
         
     </div>
 </footer>
-
+<script src="/js/prism.js" async></script>
         </div>
     </div>
 

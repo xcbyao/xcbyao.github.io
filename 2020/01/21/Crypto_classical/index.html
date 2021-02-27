@@ -23,7 +23,7 @@
     KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"};
   </script>
 <meta name="generator" content="Hexo 5.3.0"></head>
-
+<link rel="stylesheet" href="/css/prism.css">
 
 <body>
 <div class="progress-bar-container">
@@ -293,7 +293,13 @@
 </ul>
 <h3 id="Tap-Code敲击码"><a href="#Tap-Code敲击码" class="headerlink" title="Tap Code敲击码"></a>Tap Code敲击码</h3><p>敲击码是基于5×5方格波利比奥斯方阵来实现的，不同点是用K字母被整合到C中。</p>
 <p>敲击码表：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  1  2  3  4  5</span><br><span class="line">1 A  B C&#x2F;K D  E</span><br><span class="line">2 F  G  H  I  J </span><br><span class="line">3 L  M  N  O  P</span><br><span class="line">4 Q  R  S  T  U</span><br><span class="line">5 V  W  X  Y  Z</span><br></pre></td></tr></table></figure>
+<pre><code>  1  2  3  4  5
+1 A  B C/K D  E
+2 F  G  H  I  J 
+3 L  M  N  O  P
+4 Q  R  S  T  U
+5 V  W  X  Y  Z
+</code></pre>
 <p><img src="/images/knock-code.png"></p>
 <h3 id="Morse-Code摩尔斯电码"><a href="#Morse-Code摩尔斯电码" class="headerlink" title="Morse Code摩尔斯电码"></a>Morse Code摩尔斯电码</h3><p>摩尔斯电码主要由以下5种代码组成：</p>
 <ol>
@@ -323,17 +329,28 @@
 </ul>
 <h3 id="Curve-Cipher-曲路密码"><a href="#Curve-Cipher-曲路密码" class="headerlink" title="Curve Cipher 曲路密码"></a>Curve Cipher 曲路密码</h3><p>曲路密码是一种换位密码，需要事先双方约定密钥(也就是曲路路径)。</p>
 <p>填入3行7列表(事先约定填充的行列数)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f l a g &#123; T h</span><br><span class="line">i s i s a e x</span><br><span class="line">a m p l e ! &#125;</span><br></pre></td></tr></table></figure>
+<pre><code>f l a g &#123; T h
+i s i s a e x
+a m p l e ! &#125;
+</code></pre>
 <p>加密的回路线(事先约定填充的行列数)<br><img src="/images/curve.png"></p>
 <ul>
 <li>编码转换示例<br>明文：<code>flag&#123;This is a example!&#125;</code><br>密文：<code>&#125;xhTe!e a&#123;gslpi alsmaif</code></li>
 </ul>
 <h3 id="Columnar-Transposition-Cipher-列位移加密"><a href="#Columnar-Transposition-Cipher-列位移加密" class="headerlink" title="Columnar Transposition Cipher 列位移加密"></a>Columnar Transposition Cipher 列位移加密</h3><p>列移位密码通过一个简单的规则将明文打乱混合成密文。</p>
 <p>填入3行7列表(事先约定填充的行列数，如果明文不能填充完表格可以约定使用某个字母进行填充)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f l a g &#123; T h</span><br><span class="line">i s i s a e x</span><br><span class="line">a m p l e ! &#125;</span><br></pre></td></tr></table></figure>
+<pre><code>f l a g &#123; T h
+i s i s a e x
+a m p l e ! &#125;
+</code></pre>
 <p>密钥： how are u</p>
 <p>按how are u在字母表中的出现的先后顺序进行编号，我们就有a为1,e为2，h为3，o为4，r为5，u为6，w为7，所以先写出a列，其次e列，以此类推写出的结果便是密文。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">h o w a r e u</span><br><span class="line">3 4 7 1 5 2 6</span><br><span class="line">f l a g &#123; T h</span><br><span class="line">i s i s a e x</span><br><span class="line">a m p l e ! &#125;</span><br></pre></td></tr></table></figure>
+<pre><code>h o w a r e u
+3 4 7 1 5 2 6
+f l a g &#123; T h
+i s i s a e x
+a m p l e ! &#125;
+</code></pre>
 <ul>
 <li><p>编码转换示例<br>明文：<code>flag&#123;This is a example!&#125;</code><br>密文：<code>gsl Te! fia lsm &#123;ae hx&#125; aip</code></p>
 </li>
@@ -573,7 +590,7 @@
         
     </div>
 </footer>
-
+<script src="/js/prism.js" async></script>
         </div>
     </div>
 

@@ -23,7 +23,7 @@
     KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"};
   </script>
 <meta name="generator" content="Hexo 5.3.0"></head>
-
+<link rel="stylesheet" href="/css/prism.css">
 
 <body>
 <div class="progress-bar-container">
@@ -259,7 +259,13 @@
 <h3 id="shellcode编码（-x54-x68-x65-x7f）"><a href="#shellcode编码（-x54-x68-x65-x7f）" class="headerlink" title="shellcode编码（\x54\x68\x65\x7f）"></a>shellcode编码（\x54\x68\x65\x7f）</h3><p><a class="link"   target="_blank" rel="noopener" href="http://www.jb51.net/article/10399.htm" >http://www.jb51.net/article/10399.htm<i class="fas fa-external-link-alt"></i></a></p>
 <h3 id="Quoted-printable编码"><a href="#Quoted-printable编码" class="headerlink" title="Quoted-printable编码"></a>Quoted-printable编码</h3><p>我们收邮件，查看信件原始信息，经常会看到这种类型的编码！（=E6=95=8F=E6=8D=B7=E7=9A）<br>function quoted_printable_encode($string) {<br>    return preg_replace(‘/[^\r\n]{73}[^=\r\n]{2}/‘, “$0=\r\n”, str_replace(“%”,”=”,<br>rawurlencode($string)));<br>}<br><a class="link"   target="_blank" rel="noopener" href="http://www.mxcz.net/tools/QuotedPrintable.aspx" >http://www.mxcz.net/tools/QuotedPrintable.aspx<i class="fas fa-external-link-alt"></i></a></p>
 <h3 id="Escape-Unescape编码（-u0054-u0068-u0065）"><a href="#Escape-Unescape编码（-u0054-u0068-u0065）" class="headerlink" title="Escape/Unescape编码（%u0054%u0068%u0065）"></a>Escape/Unescape编码（%u0054%u0068%u0065）</h3><p><a class="link"   target="_blank" rel="noopener" href="https://escape.supfree.net/" >https://escape.supfree.net/<i class="fas fa-external-link-alt"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://tool.chinaz.com/tools/escape.aspx" >https://tool.chinaz.com/tools/escape.aspx<i class="fas fa-external-link-alt"></i></a><br><a class="link"   target="_blank" rel="noopener" href="http://web.chacuo.net/charsetescape" >http://web.chacuo.net/charsetescape<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="敲击码-Tap-code"><a href="#敲击码-Tap-code" class="headerlink" title="敲击码(Tap code)"></a>敲击码(Tap code)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">　1 2  3  4 5 </span><br><span class="line">1 A B C&#x2F;K D E </span><br><span class="line">2 F G  H  I J </span><br><span class="line">3 L M  N  O P </span><br><span class="line">4 Q R  S  T U </span><br><span class="line">5 V W  X  Y Z</span><br></pre></td></tr></table></figure>
+<h3 id="敲击码-Tap-code"><a href="#敲击码-Tap-code" class="headerlink" title="敲击码(Tap code)"></a>敲击码(Tap code)</h3><pre><code>　1 2  3  4 5 
+1 A B C/K D E 
+2 F G  H  I J 
+3 L M  N  O P 
+4 Q R  S  T U 
+5 V W  X  Y Z
+</code></pre>
 <p><a class="link"   target="_blank" rel="noopener" href="http://ctf.ssleye.com/tapcode.html" >http://ctf.ssleye.com/tapcode.html<i class="fas fa-external-link-alt"></i></a></p>
 <h3 id="栅栏密码"><a href="#栅栏密码" class="headerlink" title="栅栏密码"></a>栅栏密码</h3><p><a class="link"   target="_blank" rel="noopener" href="http://www.practicalcryptography.com/ciphers/classical-era/rail-fence/" >http://www.practicalcryptography.com/ciphers/classical-era/rail-fence/<i class="fas fa-external-link-alt"></i></a></p>
 <h3 id="曲路密码"><a href="#曲路密码" class="headerlink" title="曲路密码"></a>曲路密码</h3><p>需要事先双方约定密钥(也就是曲路路径)<br><img src="/images/curve2.png"></p>
@@ -308,7 +314,9 @@
 <p>顺序法：<br> Q W E R T Y U I O P<br> 1 2 3 4 5 6 7 8 9 10<br> A S D F G H J K L<br> 11 12 13 14 15 16 17 18 19<br> Z X C V B N M<br> 20 21 22 23 24 25 26<br> eq：密文：125947对应明文：story</p>
 </blockquote>
 <h3 id="手机九宫格键盘密码"><a href="#手机九宫格键盘密码" class="headerlink" title="手机九宫格键盘密码"></a>手机九宫格键盘密码</h3><p>密文用数字0-9表示a-z的字符集，字母不区分大小写 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">密文：21222331323341424351525361626371727381828391929394 </span><br><span class="line">明文：abcdefghijklmnopqrtuvwxyz </span><br></pre></td></tr></table></figure>
+<pre><code>密文：21222331323341424351525361626371727381828391929394 
+明文：abcdefghijklmnopqrtuvwxyz 
+</code></pre>
 <p>米斯特安全团队解密工具（公众号回复 米斯特，需要 java 环境）</p>
 <h3 id="条形码-二维码"><a href="#条形码-二维码" class="headerlink" title="条形码/二维码"></a>条形码/二维码</h3><p><a class="link"   target="_blank" rel="noopener" href="https://online-barcode-reader.inliteresearch.com/" >https://online-barcode-reader.inliteresearch.com/<i class="fas fa-external-link-alt"></i></a></p>
 <h3 id="当铺密码"><a href="#当铺密码" class="headerlink" title="当铺密码"></a>当铺密码</h3><p>密文由[0-9]数字组成（以当前汉字有多少笔画出头，就是转化成对应的数字）<br> <a class="link"   target="_blank" rel="noopener" href="http://www.zjslove.com/3.decode/dangpu/index.html" >http://www.zjslove.com/3.decode/dangpu/index.html<i class="fas fa-external-link-alt"></i></a></p>
@@ -478,7 +486,7 @@
         
     </div>
 </footer>
-
+<script src="/js/prism.js" async></script>
         </div>
     </div>
 
