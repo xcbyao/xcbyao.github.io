@@ -23,7 +23,6 @@
     KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"};
   </script>
 <meta name="generator" content="Hexo 5.3.0"></head>
-<link rel="stylesheet" href="/css/prism.css">
 
 <body>
 <div class="progress-bar-container">
@@ -309,14 +308,9 @@
 <hr>
 <ul>
 <li><p>二维数组计算元素地址公式：<br>double ary[5][8]; 求 ary[2][3] 的地址</p>
-<pre><code class="language-C">(int)ary + sizeof(double[8])*2 + sizeof(double)*3
-</code></pre>
-</li>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">int</span>)ary + <span class="keyword">sizeof</span>(<span class="keyword">double</span>[<span class="number">8</span>])*<span class="number">2</span> + <span class="keyword">sizeof</span>(<span class="keyword">double</span>)*<span class="number">3</span></span><br></pre></td></tr></table></figure></li>
 <li><p>三维数组计算元素地址公式：<br>type ary[N][M][L]<br>ary[i][j][k] address is：</p>
-<pre><code class="language-C">(int)ary + sizeof(type[M][L])*i + sizeof(type[L])*j + sizeof(type)*k
-</code></pre>
-</li>
-</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">int</span>)ary + <span class="keyword">sizeof</span>(type[M][L])*i + <span class="keyword">sizeof</span>(type[L])*j + <span class="keyword">sizeof</span>(type)*k</span><br></pre></td></tr></table></figure>
 <h3 id="变长数组（variable-length-array-VLA-C99）"><a href="#变长数组（variable-length-array-VLA-C99）" class="headerlink" title="变长数组（variable-length array, VLA, C99）"></a><strong>变长数组（variable-length array, VLA, C99）</strong></h3><ul>
 <li><p><code>float a[n];</code> 声明 VLA 时不能初始化，其必须是自动存储类别，不能使用 static 或 extern，VLA 创建后不能改变大小。</p>
 </li>
@@ -327,27 +321,22 @@
 <li><p><strong>变长数组允许动态内存分配</strong>，这说明可以在程序运行时指定数组大小。普通数组都是静态内存分配，即在编译时确定数组大小。</p>
 </li>
 </ul>
+</li>
+</ul>
 <hr>
 <h3 id="复合字面量"><a href="#复合字面量" class="headerlink" title="复合字面量"></a><strong>复合字面量</strong></h3><ul>
 <li><p><strong>字面量是除符号常量外的常量。</strong><code>(int ar[2]) &#123;10, 20&#125;</code> 去掉数组名，留下的 <code>int [2]</code> 即复合字面量的类型名。</p>
 </li>
 <li><p><strong>复合字面量是匿名的，不能先创建再使用它，必须在创建的同时使用它。</strong><br>使用<strong>指针记录地址</strong>就是一种用法：</p>
-<pre><code class="language-C">int* pt;
-pt = (int [2]) &#123;10, 20&#125;;
-</code></pre>
-</li>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>* pt;</span><br><span class="line">pt = (<span class="keyword">int</span> [<span class="number">2</span>]) &#123;<span class="number">10</span>, <span class="number">20</span>&#125;;</span><br></pre></td></tr></table></figure></li>
 <li><p>把复合字面量作为<strong>实参</strong>传递给带有匹配形式参数的函数：</p>
-<pre><code class="language-C">int sum(const int ar[], int n);
-int total;
-total = sum((int []) &#123;4,4,4,5,5,5&#125;, 6);
-</code></pre>
-</li>
-</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> ar[], <span class="keyword">int</span> n)</span></span>;</span><br><span class="line"><span class="keyword">int</span> total;</span><br><span class="line">total = sum((<span class="keyword">int</span> []) &#123;<span class="number">4</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">5</span>,<span class="number">5</span>&#125;, <span class="number">6</span>);</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>第 1 个实参是内含 6 个 int 类型值的数组，和数组名类似，这同时也是该数组首元素的地址。这种用法的好处是，把信息传入函数前不必先创建数组，这是复合字面量的典型用法。</p>
 </blockquote>
-<ul>
-<li><strong>复合字面量是提供只临时需要的值的一种手段。</strong>复合字面量具有块作用域。</li>
+</li>
+<li><p><strong>复合字面量是提供只临时需要的值的一种手段。</strong>复合字面量具有块作用域。</p>
+</li>
 </ul>
 <hr>
 <h3 id="字符串和字符串函数"><a href="#字符串和字符串函数" class="headerlink" title="字符串和字符串函数"></a><strong>字符串和字符串函数</strong></h3><ul>
@@ -422,10 +411,7 @@ total = sum((int []) &#123;4,4,4,5,5,5&#125;, 6);
 <blockquote>
 <p>C99 C11 标准要求编译器识别局部标识符的前 63 个字符和外部标识符的前 31 个字符。旧标准编译器识别局部标识符前 31 个字符和外部标识符前 6 个字符。<br>外部变量名比局部变量名的规则严格，因为外部变量名还要遵循局部环境规则，限制更多。外部变量只能初始化一次，且必须在定义该变量时进行。</p>
 </blockquote>
-<pre><code class="language-C">int tern = 1; /* tern被定义 */
-main() &#123;
-extern int tern; /* 使用在别处定义的tern */
-</code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> tern = <span class="number">1</span>; <span class="comment">/* tern被定义 */</span></span><br><span class="line">main() &#123;</span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">int</span> tern; <span class="comment">/* 使用在别处定义的tern */</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>第 1 次声明为变量预留了存储空间，该声明构成了变量的定义。第 2 次声明只告诉编译器使用之前已创建的 tern 变量，所以这不是定义。第 1 次声明被称为<strong>定义式声明（defining declaration）</strong>，第 2 次声明被称为<strong>引用式声明（referencing declaration）</strong>。关键字 extern 表明该声明不是定义，它指示编译器去别处查询其定义。</p>
 </blockquote>
@@ -456,9 +442,7 @@ extern int tern; /* 使用在别处定义的tern */
 <hr>
 <ul>
 <li><p>malloc() 函数接受一个参数：所需的内存字节数。会找到合适的空闲内存块，这样的内存是匿名的，但它会返回动态分配内存块的首字节地址。因此可以把该地址赋给一个指针变量，并使用指针访问这块内存。因为 char 表示 1 字节，其返回类型通常被定义为指向 char 的指针。</p>
-<pre><code class="language-C">double* ptd;
-ptd = (double*) malloc(n * sizeof(double));
-</code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span>* ptd;</span><br><span class="line">ptd = (<span class="keyword">double</span>*) <span class="built_in">malloc</span>(n * <span class="keyword">sizeof</span>(<span class="keyword">double</span>));</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>指针 ptd 被声明为指向一个 double 类型，而不是指向内含 n 个 double 类型值的块。使用强制类型转换更容易把 C 程序转换为 C++ 程序。</p>
 </blockquote>
@@ -468,10 +452,7 @@ ptd = (double*) malloc(n * sizeof(double));
 <li><p>实际上也许在循环结束之前就已耗尽所有的内存。这类问题被称为<strong>内存泄漏（memory leak）</strong>。在函数末尾处调用 free() 可避免这类问题发生。</p>
 </li>
 <li><p>分配内存还可以使用 calloc()：接受两个无符号整数作为参数。第 1 个参数是所需的存储单元数量，第 2 个参数是存储单元的大小（以字节为单位）</p>
-<pre><code class="language-C">long* newmem;
-newmem = (long*) calloc(100, sizeof(long));
-</code></pre>
-</li>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span>* newmem;</span><br><span class="line">newmem = (<span class="keyword">long</span>*) <span class="built_in">calloc</span>(<span class="number">100</span>, <span class="keyword">sizeof</span>(<span class="keyword">long</span>));</span><br></pre></td></tr></table></figure></li>
 <li><p>calloc() 还有一个特性：它把块中的所有位都设置为 0（在某些硬件系统中不是把所有位都设置为 0 来表示浮点值 0）可搭配 free()。</p>
 </li>
 <li><p><strong>使用动态内存通常比使用栈内存慢。</strong></p>
@@ -499,14 +480,7 @@ newmem = (long*) calloc(100, sizeof(long));
 <h3 id="文件输入-输出"><a href="#文件输入-输出" class="headerlink" title="文件输入/输出"></a><strong>文件输入/输出</strong></h3><p><img src="/images/file-IO.png"></p>
 <ul>
 <li><p><code>ch = getc(fp);</code> 从 fp 指定的文件中获取一个字符<br><code>putc(ch, fpout);</code> 把字符 ch 放入 FILE 指针 fpout 指定的文件</p>
-<pre><code class="language-C">int ch;
-FILE * fp;
-fp = fopen(&quot;wacky.txt&quot;, &quot;r&quot;);
-while (( ch = getc(fp)) != EOF) &#123;
-putchar(ch); //处理输入
-&#125;
-</code></pre>
-</li>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> ch;</span><br><span class="line">FILE * fp;</span><br><span class="line">fp = fopen(<span class="string">&quot;wacky.txt&quot;</span>, <span class="string">&quot;r&quot;</span>);</span><br><span class="line"><span class="keyword">while</span> (( ch = getc(fp)) != EOF) &#123;</span><br><span class="line"><span class="built_in">putchar</span>(ch); <span class="comment">//处理输入</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 <li><p>fclose() 关闭指定的文件，必要时刷新缓冲区。对于较正式的程序，应该检查是否成功关闭文件。成功关闭返回 0，否则返回 EOF。<br><code>if (fclose(fp) != 0) printf(&quot;Error in closing file %s\n&quot;, argv[1]); </code><br>如果磁盘已满、移动硬盘被移除或出现 I/O 错误，都会导致调用 fclose() 函数失败。<br><img src="/images/file-pointer.png"></p>
 </li>
 <li><p>fgets() 它的第 1 个参数和 gets() 函数一样，表示储存输入位置的地址（char* 类型）；第 2 个参数是一个整数，表示待输入字符串的大小；最后一个参数是文件指针，指定待读取的文件。<br><code>fgets(buf, STLEN, fp);</code>buf 是 char 类型数组的名称，STLEN 是字符串大小，fp 是指向 FILE 的指针。</p>
@@ -518,10 +492,7 @@ putchar(ch); //处理输入
 <li><p>fseek() 返回 int 类型值，第 1 个参数是 FILE 指针，指向待查找的文件，fopen() 应该已打开该文件；第 2 个参数是偏移量（offset），该参数表示从起始点开始要移动的距离，必须是一个 long 类型值，可以为正（前移）、负（后移）或 0（保持不动）；第 3 个是模式，该参数确定起始点。<br>根据 ANSI 标准，在 stdio.h 中规定了几个表示模式的明示常量。<br><img src="/images/file-mode.png"></p>
 </li>
 </ul>
-<pre><code class="language-C">fseek(fp, 0L, SEEK_SET); // 定位至文件开始处
-fseek(fp, 2L, SEEK_CUR); // 从文件当前位置前移 2 个字节
-fseek(fp, -10L, SEEK_END); // 从文件结尾处回退 10 个字节
-</code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fseek(fp, <span class="number">0L</span>, SEEK_SET); <span class="comment">// 定位至文件开始处</span></span><br><span class="line">fseek(fp, <span class="number">2L</span>, SEEK_CUR); <span class="comment">// 从文件当前位置前移 2 个字节</span></span><br><span class="line">fseek(fp, <span class="number">-10L</span>, SEEK_END); <span class="comment">// 从文件结尾处回退 10 个字节</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>ftell() 返回类型是 long，它返回的是文件中的当前位置。</li>
 </ul>
@@ -640,13 +611,7 @@ fseek(fp, -10L, SEEK_END); // 从文件结尾处回退 10 个字节
 </li>
 <li><p>移位运算符，针对 2 的幂提供快速有效的乘法和除法：<code>number &lt;&lt; n</code> number 乘以 2 的 n 次幂 <code>number &gt;&gt; n</code> 如果 number 为非负，除以 2 的 n 次幂</p>
 <ul>
-<li>移位运算符还可用于从较大单元中提取一些位。例如，假设用一个 unsigned long 类型的值表示颜色值，低阶位字节储存红色的强度，下一个字节储存绿色的强度，第 3 个字节储存蓝色的强度。随后你希望把每种颜色的强度分别储存在 3 个不同的 unsigned char 类型的变量中。那可以使用：<pre><code class="language-C">#define BYTE_MASK 0xff 
-unsigned long color = 0x002a162f;
-unsigned char blue, green, red;
-red = color &amp; BYTE_MASK;
-green = (color &gt;&gt; 8) &amp; BYTE_MASK;
-blue = (color &gt;&gt; 16) &amp; BYTE_MASK;
-</code></pre>
+<li>移位运算符还可用于从较大单元中提取一些位。例如，假设用一个 unsigned long 类型的值表示颜色值，低阶位字节储存红色的强度，下一个字节储存绿色的强度，第 3 个字节储存蓝色的强度。随后你希望把每种颜色的强度分别储存在 3 个不同的 unsigned char 类型的变量中。那可以使用：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BYTE_MASK 0xff </span></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">long</span> color = <span class="number">0x002a162f</span>;</span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">char</span> blue, green, red;</span><br><span class="line">red = color &amp; BYTE_MASK;</span><br><span class="line">green = (color &gt;&gt; <span class="number">8</span>) &amp; BYTE_MASK;</span><br><span class="line">blue = (color &gt;&gt; <span class="number">16</span>) &amp; BYTE_MASK;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>使用右移运算符将 8 位颜色值移动至低阶字节，然后使用掩码技术把低阶字节赋给指定的变量。</p>
 </blockquote>
@@ -656,13 +621,7 @@ blue = (color &gt;&gt; 16) &amp; BYTE_MASK;
 </ul>
 </li>
 <li><p>操控位的第 2 种方法是位字段（bit field）。位字段是一个 signed int 或 unsigned int 类型变量中的一组相邻的位（C99 和 C11新增了 _Bool 类型的位字段）。位字段通过一个结构声明来建立，该结构声明为每个字段提供标签， 并确定该字段的宽度。</p>
-<pre><code class="language-C">struct &#123; 
-unsigned int code1 : 2;
-unsigned int code2 : 2;
-unsigned int code3 : 8;
-&#125; prcode;
-</code></pre>
-</li>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> &#123;</span> </span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> code1 : <span class="number">2</span>;</span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> code2 : <span class="number">2</span>;</span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> code3 : <span class="number">8</span>;</span><br><span class="line">&#125; prcode;</span><br></pre></td></tr></table></figure></li>
 <li><p>一个字段不允许跨越两个 unsigned int 之间的边界。编译器会自动移动跨界的字段，保持 unsigned int 的边界对齐。一旦发生这种情况，第1个 unsigned int 中会留下一个未命名的“洞”。可以用未命名的字段宽度“填充”未命名的“洞”。使用一个宽度为 0 的未命名字段迫使下一个字段与下一个整数对齐。</p>
 </li>
 </ul>
@@ -707,10 +666,7 @@ unsigned int code3 : 8;
 </li>
 <li><p>使用其他指令创建条件编译<br><code>#ifdef</code> <code>#else</code> <code>#endif</code></p>
 <ul>
-<li>#ifdef 如果预处理器已定义了后面的标识符，则执行 #else 或 #endif 指令之前的所有指令并编译所有 C 代码（先出现哪个指令就执行到哪里）。如果预处理器未定义，且有 #else 指令，则执行 #else（如果需要） 和 #endif （必须存在）指令之间的所有代码。可以用这种方法调试程序：<pre><code class="language-C">#ifdef JUST_CHECKING printf(&quot;i=%d, running total = %d\n&quot;, i, total); 
-#endif
-</code></pre>
-</li>
+<li>#ifdef 如果预处理器已定义了后面的标识符，则执行 #else 或 #endif 指令之前的所有指令并编译所有 C 代码（先出现哪个指令就执行到哪里）。如果预处理器未定义，且有 #else 指令，则执行 #else（如果需要） 和 #endif （必须存在）指令之间的所有代码。可以用这种方法调试程序：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> JUST_CHECKING printf(<span class="meta-string">&quot;i=%d, running total = %d\n&quot;</span>, i, total); </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><p><code>#define SIZE 10 #include &quot;arrays.h&quot; </code><br>当执行到 #include “arrays.h” 这行，处理 array.h 中的代码时，由于 SIZE 是已定义的，所以跳过了 #define SIZE 100 这行代码。可以利用这种方法，用一个较小的数组测试程序。测试完毕后，移除 #define SIZE 10 并重新编译。这样就不用修改头文件数组本身了。</p>
@@ -720,12 +676,7 @@ unsigned int code3 : 8;
 <li><p>在首次定义一个宏的头文件中用 #ifndef 指令激活定义，随后在其他头文件中的定义都被忽略。</p>
 </li>
 <li><p>#if 指令后面跟整型常量表达式</p>
-<pre><code class="language-C">#if SYS == 1
-#elif SYS == 2
-#else
-#endif
-</code></pre>
-</li>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">if</span> SYS == 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">elif</span> SYS == 2</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure></li>
 <li><p>较新的编译器提供另一种方法测试名称是否已定义，即用 #if defined (VAX) 代替 #ifdef VAX。优点是它可以和 #elif 一起使用</p>
 </li>
 <li><p>C标准规定了一些预定义宏<br><img src="/images/Predefined-macro.jpg"></p>
@@ -735,10 +686,7 @@ unsigned int code3 : 8;
 <li><p>#line 指令重置 <code>_ _LINE_ _</code> 和 <code>_ _FILE_ _</code> 宏报告的行号和文件名。<br>#line 10 “cool.c” // 把行号重置为 10，把文件名重置为 cool.c</p>
 </li>
 <li><p>#error 指令让预处理器发出一条错误消息，该消息包含指令中的文本。 如果可能的话，编译过程应该中断。</p>
-<pre><code class="language-C">#if _ _STDC_VERSION_ _ != 201112
-#error Not C11
-#endif
-</code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">if</span> _ _STDC_VERSION_ _ != 201112</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">error</span> Not C11</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <hr>
@@ -972,7 +920,7 @@ unsigned int code3 : 8;
         
     </div>
 </footer>
-<script src="/js/prism.js" async></script>
+
         </div>
     </div>
 
