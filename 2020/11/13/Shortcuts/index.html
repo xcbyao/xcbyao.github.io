@@ -188,7 +188,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>3.1k Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>3.6k Words</span>
         </span>
     
     
@@ -338,7 +338,12 @@
 <p>1&gt;    ：以覆盖的方法将“正确的数据”输出到指定的文件或设备上；<br>1&gt;&gt;：以累加的方法将“正确的数据”输出到指定的文件或设备上；<br>2&gt;    ：以覆盖的方法将“错误的数据”输出到指定的文件或设备上；<br>2&gt;&gt;：以累加的方法将“错误的数据”输出到指定的文件或设备上；</p>
 <p>/dev/null    垃圾桶黑洞设备与特殊写法</p>
 <p>cmd    ;    cmd    （不考虑指令相关性的连续指令下达）<br>$?    （指令回传值）    与    &amp;&amp;    或    ||<br>(bash17)</p>
-<p>管线命令    （pipe）</p>
+<p>管线命令    （pipe）<br>管线命令仅会处理    standard    output，对于    standard    error    output    会予以忽略<br>管线命令必须要能够接受来自前一个指令的数据成为    standard    input    继续处理才行。</p>
+<p>撷取命令：    cut,    grep<br>(bash18)<br>cut在处理多空格相连的数据时，可能会比较吃力一点</p>
+<p>排序命令：    sort,    wc,    uniq<br>双向重导向：    tee<br>字符转换命令：    tr ,    col,    join,    paste,    expand<br>tr    可以用来删除一段讯息当中的文字，或者是进行文字讯息的替换！</p>
+<p>join    看字面上的意义    （加入/参加）    就可以知道，他是在处理两个文件之间的数据，    而且，<br>主要是在处理“两个文件当中，有    “相同数据”    的那一行，才将他加在一起”的意思。我们利用<br>下面的简单例子来说明：<br>在使用    join    之前，你所需要处理的文件应该要事先经过排序<br>（sort）    处理！    否则有些比对的项目会被略过呢</p>
+<p>这个    paste    就要比    join    简单多了！相对于    join    必须要比对两个文件的数据相关性，    paste    就<br>直接“将两行贴在一起，且中间以    [tab]    键隔开”而已</p>
+<p>分区命令：    split<br>参数代换：    xargs<br>xargs    是在做什么的呢？就以字面上的意义来看，    x    是加减乘除的乘号，args    则是<br>arguments    （参数）    的意思，所以说，这个玩意儿就是在产生某个指令的参数的意思！<br>xargs    可以读入    stdin    的数据，并且以空白字符或断行字符作为分辨，将    stdin    的数据分隔成<br>为    arguments    。    因为是以空白字符作为分隔，所以，如果有一些文件名或者是其他意义的名<br>词内含有空白字符的时候，    xargs    可能就会误判了～他的用法其实也还满简单的！就来看一<br>看先！</p>
 <h2 id="Google-hack"><a href="#Google-hack" class="headerlink" title="Google hack"></a>Google hack</h2><p>info:xx.com  返回一些基本信息<br>site:xx.com  返回所有与该有关的url<br>link:xx.com  返回所有与该站做了链接的站<br>filetype:    查找文件</p>
 
         </div>
