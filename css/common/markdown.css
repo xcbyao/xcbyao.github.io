@@ -28,9 +28,10 @@
 .markdown-body a .fas,
 .markdown-body a .far,
 .markdown-body a fab {
-  margin-left: 6px;
+  margin: 0 2px 0 6px;
   position: relative;
   color: var(--third-text-color);
+  font-size: 0.88rem;
 }
 .markdown-body a:hover {
   text-decoration: underline;
