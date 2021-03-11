@@ -1,24 +1,14 @@
 # xcbyao.github.io
-💻Record xcbyao' s HACK-PWN career by hexo-Fan.
+💻Record xcbyao' s Learning career.
 
-## 关于我
-- 我的名字：xcbyao
+## Profile
+- **Name:** xcbyao
 
-- 简述：这里是我和小梦的精神自留地，记录着我们的学习历程，还有生活上的点点滴滴。
+- **Bio:** 这里是小妖和小梦的精神自留地，记录着我们的学习历程，偶尔生活上的点点滴滴，我们彼此陪伴，心心相印 ~~纠缠不清~~哈……所以我们的一些社交平台是共用的呦
+小梦是个有强迫症和精神洁癖的写作者，闲暇时会一遍遍抠字眼，删去每个多余的字和标点。
 
-- 学习方向：二进制安全、全栈开发……
+- **学习方向:** 二进制安全、全栈开发……
 
-- 目前状况：长春本科在读，日常实验室打 CTF，分享技术文章和学习笔记，运营公众号『黑色键盘』
+- **目前状况:** 上海/长春本科在读
 
-- 技术栈：C/C++、汇编、二进制逆向、密码学……
-
----
-
-想更深入了解我，可以走访我的其他足迹——
-
-- 看雪：https://bbs.pediy.com/user-844201.htm
-- 简书：https://www.jianshu.com/u/8bf502c8fb30
-- 微博：https://weibo.com/xcbyao?is_all=1
-- Twitter：https://twitter.com/xcbyao
-- GitHub：https://github.com/xcbyao
-- 公众号：黑色键盘
+- **技术栈:** C/C++、汇编、二进制逆向、密码学……
