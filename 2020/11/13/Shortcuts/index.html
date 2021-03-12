@@ -232,7 +232,7 @@
 <p>*** — ___ 分割线</p>
 <p><del>删除线</del></p>
 <p>^上标^ ~下标~</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">|</span> <span class="string">左对齐</span> <span class="string">|</span> <span class="string">右对齐</span> <span class="string">|</span> <span class="string">居中对齐</span> <span class="string">|</span></span><br><span class="line"><span class="string">|</span> <span class="string">:-----</span> <span class="string">|</span> <span class="string">-----:</span> <span class="string">|</span> <span class="string">:----:</span> <span class="string">|</span></span><br><span class="line"><span class="string">|</span> <span class="string">单元格</span> <span class="string">|</span> <span class="string">单元格</span> <span class="string">|</span> <span class="string">单元格</span> <span class="string">|</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">|左|右|居中|</span></span><br><span class="line"><span class="string">|:--|--:|:-:|</span></span><br><span class="line"><span class="string">|单|元|格|</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="Chrome-Shortcut"><a href="#Chrome-Shortcut" class="headerlink" title="Chrome Shortcut"></a>Chrome Shortcut</h2><p>打开主页 Alt + Home<br>关闭当前窗口 Alt + F4<br>打开菜单 Alt + f/e<br>跳转到地址栏 Alt + d</p>
 <p>切换用户 Ctrl + shift + m<br>当前页面补充<code>www.com</code> Ctrl + Enter<br>打开“清除浏览数据”选项 Ctrl + Shift + backspace</p>
@@ -319,7 +319,8 @@
 <h2 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a><a class="link"   target="_blank" rel="noopener" href="https://www.zhihu.com/question/36974348" >GitHub<i class="fas fa-external-link-alt"></i></a></h2><p>shift + / 查看快捷键</p>
 <p>在github上任意项目加个”gh-pages”分支，通过github page/你项目的名称就可以访问到那个分支的静态文件<br>issue 模板 <a class="link"   target="_blank" rel="noopener" href="https://github.blog/2016-02-17-issue-and-pull-request-templates/" >https://github.blog/2016-02-17-issue-and-pull-request-templates/<i class="fas fa-external-link-alt"></i></a><br>小绿点可以通过修改系统时间再commit来控制形状。</p>
 <p>github.githistory.xyz</p>
-<h2 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a>Vim</h2><p>ctrl + f/b/d/u 向下/上移动一/半页<br>+/- 移动到非空白字符的下/上一列<br>n空格 向右移动 n 个字符<br>n回车 向下移动 n 行<br>0/Home $/End 移动到这一列最前/后面字符处<br>H/M/L 移动到屏幕最上方/中间/下方那一列的第一个字符<br>nG 移动到这个文件的第 n 列<br>/? 向下/上搜索字符</p>
+<h2 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a>Vim</h2><p>| 左对齐 | 右对齐 | 居中对齐 |<br>|:–|:–|:–|:–|<br>| 单元格 | 单元格 | 单元格 |</p>
+<p>ctrl + f/b/d/u 向下/上移动一/半页<br>+/- 移动到非空白字符下/上一列<br>n空格 向右移动 n 字符<br>n回车 向下移动 n 行<br>0/Home $/End 移动到这一列最前/后面字符处<br>H/M/L 移动到屏幕最上方/中间/下方那一列的第一个字符<br>nG 移动到这个文件的第 n 列<br>/? 向下/上搜索字符</p>
 <p>:n1,n2s/word1/word2/g 在第 n1 与 n2 列之间寻找 word1 字串，并将该字串取代为 word2<br>:1,$s/word1/word2/g / gc 从第一列到最后一列寻找 word1 字串，并将该字串取代为 word2 / 在取代前显示提示字符给使用者确认是否需要取代</p>
 <p>nx(del)/nX(backspace) 向后/前删除 n 个字符<br>ndd 删除光标所在的一整行/向下 n 行<br>nyy 复制光标所在的那一行/向下 n 行<br>p/P 将已复制数据在光标下/上一列贴上</p>
 <p>J 将光标所在列与下一列的数据结合成同一列<br>c 重复删除多个数据，例如向下删除 10 列，10cj<br>u 复原前一个动作<br>Ctrl + r 重做上一个动作<br>. 重复前一个动作</p>
