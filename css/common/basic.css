@@ -11,8 +11,8 @@
   --selection-color: #d14747;
   --shadow-color: rgba(0,0,0,0.2);
   --shadow-hover-color: rgba(0,0,0,0.28);
-  --scrollbar-color: #505050;
-  --scroll-bar-bg-color: #e6e6e6;
+  --scrollbar-color: rgba(200,200,200,0.6);
+  --scroll-bar-bg-color: #f0f0f0;
   --link-color: #484853;
   --copyright-info-color: #c03;
   --avatar-background-color: #06c;
@@ -32,8 +32,8 @@
     --selection-color: #d14747;
     --shadow-color: rgba(0,0,0,0.2);
     --shadow-hover-color: rgba(0,0,0,0.28);
-    --scrollbar-color: #505050;
-    --scroll-bar-bg-color: #e6e6e6;
+    --scrollbar-color: rgba(200,200,200,0.6);
+    --scroll-bar-bg-color: #f0f0f0;
     --link-color: #484853;
     --copyright-info-color: #c03;
     --avatar-background-color: #06c;
@@ -54,8 +54,8 @@
     --selection-color: #d14747;
     --shadow-color: rgba(128,128,128,0.2);
     --shadow-hover-color: rgba(128,128,128,0.28);
-    --scrollbar-color: #303030;
-    --scroll-bar-bg-color: #4a4c55;
+    --scrollbar-color: #32333a;
+    --scroll-bar-bg-color: #5c5e6a;
     --link-color: #c5c5cc;
     --copyright-info-color: #a30029;
     --avatar-background-color: #005cb8;
@@ -75,8 +75,8 @@
   --selection-color: #d14747;
   --shadow-color: rgba(0,0,0,0.2);
   --shadow-hover-color: rgba(0,0,0,0.28);
-  --scrollbar-color: #505050;
-  --scroll-bar-bg-color: #e6e6e6;
+  --scrollbar-color: rgba(200,200,200,0.6);
+  --scroll-bar-bg-color: #f0f0f0;
   --link-color: #484853;
   --copyright-info-color: #c03;
   --avatar-background-color: #06c;
@@ -95,8 +95,8 @@
   --selection-color: #d14747;
   --shadow-color: rgba(128,128,128,0.2);
   --shadow-hover-color: rgba(128,128,128,0.28);
-  --scrollbar-color: #303030;
-  --scroll-bar-bg-color: #4a4c55;
+  --scrollbar-color: #32333a;
+  --scroll-bar-bg-color: #5c5e6a;
   --link-color: #c5c5cc;
   --copyright-info-color: #a30029;
   --avatar-background-color: #005cb8;
@@ -243,6 +243,7 @@
 }
 *::-webkit-scrollbar-thumb {
   background: var(--scrollbar-color);
+  border-radius: 1px;
 }
 *::-webkit-scrollbar-track {
   background: var(--scroll-bar-bg-color);

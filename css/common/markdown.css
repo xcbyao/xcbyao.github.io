@@ -8,7 +8,9 @@
   color: var(--default-text-color);
   background: var(--second-background-color);
 }
-.markdown-body blockquote p {
+.markdown-body blockquote p,
+.markdown-body blockquote ul,
+.markdown-body blockquote ol {
   padding: 5px 5px 5px 10px;
 }
 .markdown-body p {
