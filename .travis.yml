@@ -30,5 +30,5 @@ deploy:
     branch: hexo                # 工作分支
   strategy: git
   provider: pages
-  token: $xcbyao.github.io      # GitHub     Token 变量
+  #token: $xcbyao.github.io      # GitHub     Token 变量
   keep_history: true            # 保持推送记录，以增量提交的方式
