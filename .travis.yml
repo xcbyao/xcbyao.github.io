@@ -27,8 +27,7 @@ install:
 script:                         
   - hexo clean                  # 清除 hexo 缓存
   - hexo generate               # 生成静态文件
-  - sed -i'' "s~git@github.com:~https://s~git@github.com:~https://${GIT_TOKEN}@github.com/~" _config.yml
-  #- sed -i "s/GIT_TOKEN/${GIT_TOKEN}/g" ./_config.yml
+  - sed -i "s/GIT_TOKEN/${GIT_TOKEN}/g" ./_config.yml
   - hexo deploy
 
 deploy:
