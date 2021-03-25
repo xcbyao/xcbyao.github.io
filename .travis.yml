@@ -1,0 +1,35 @@
+# 编译环境、语言
+dist: xenial
+os: linux
+language: node_js
+
+# Node.js 版本
+node_js:
+  - 14.15.5
+
+branches:
+  only:
+    - hexo                      # 只有 master 分支检出更改才触发 CI
+
+before_install:
+  - export TZ='Asia/Shanghai'   # 配置时区为东八区 UTC+8
+  - npm install hexo-cli        # 安装 hexo
+
+install:
+  - npm install                 # 安装 hexo 项目相关的依赖
+
+# 执行脚本 
+script:                         
+  - hexo clean                  # 清除 hexo 缓存
+  - hexo generate               # 生成静态文件
+
+deploy:
+  on:
+    branch: hexo                # 工作分支
+  strategy: git
+  provider: pages
+  skip_cleanup: true            # 跳过清理
+  token: $xcbyao.github.io      # GitHub     Token 变量
+  keep_history: true            # 保持推送记录，以增量提交的方式
+  local_dir: xcbyao.github.io   # 需要推送到 gh-pages 分支的静态文件目录
+  target_branch: master       # 推送的目标文件夹 local_dir(public) -> gh-pages 分支
