@@ -27,7 +27,7 @@ install:
 script:                         
   - hexo clean                  # 清除 hexo 缓存
   - hexo generate               # 生成静态文件
-  #- sed -i "s/xcbyao.github.io/${xcbyao.github.io}/g" ./_config.yml
+  - sed -i "s/GIT_TOKEN/${GIT_TOKEN}/g" ./_config.yml
   - hexo deploy
 
 deploy:
@@ -35,5 +35,5 @@ deploy:
     branch: hexo                # 工作分支
   strategy: git
   provider: pages
-  token: $xcbyao.github.io      # GitHub     Token 变量
+  token: $GIT_TOKEN      # GitHub     Token 变量
   keep_history: true            # 保持推送记录，以增量提交的方式
