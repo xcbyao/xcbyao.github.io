@@ -7,11 +7,6 @@ language: node_js
 node_js:
   - 14.15.5
 
-notifications:
-  campfire:
-    rooms:
-      secure: "ABC5OwLpwB7L6Ca...."
-
 branches:
   only:
     - hexo                      # 只有 master 分支检出更改才触发 CI
@@ -35,5 +30,6 @@ deploy:
     branch: hexo                # 工作分支
   strategy: git
   provider: pages
+  skip_cleanup: true
   token: $GIT_TOKEN      # GitHub     Token 变量
   keep_history: true            # 保持推送记录，以增量提交的方式
