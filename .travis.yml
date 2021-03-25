@@ -31,5 +31,5 @@ deploy:
   strategy: git
   provider: pages
   skip_cleanup: true
-  token: $GIT_TOKEN      # GitHub     Token 变量
+  token: $GIT_TOKEN      # GitHub Token 变量
   keep_history: true            # 保持推送记录，以增量提交的方式
