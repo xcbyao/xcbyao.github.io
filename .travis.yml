@@ -22,6 +22,8 @@ install:
 script:                         
   - hexo clean                  # 清除 hexo 缓存
   - hexo generate               # 生成静态文件
+  - sed -i "s/xcbyao.github.io/${xcbyao.github.io}/g" ./_config.yml
+  - hexo deploy
 
 deploy:
   on:
@@ -31,5 +33,3 @@ deploy:
   skip_cleanup: true            # 跳过清理
   token: $xcbyao.github.io      # GitHub     Token 变量
   keep_history: true            # 保持推送记录，以增量提交的方式
-  local_dir: xcbyao.github.io   # 需要推送到 gh-pages 分支的静态文件目录
-  target_branch: master       # 推送的目标文件夹 local_dir(public) -> gh-pages 分支
