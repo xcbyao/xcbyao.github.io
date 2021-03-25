@@ -7,6 +7,11 @@ language: node_js
 node_js:
   - 14.15.5
 
+notifications:
+  campfire:
+    rooms:
+      secure: "ABC5OwLpwB7L6Ca...."
+
 branches:
   only:
     - hexo                      # 只有 master 分支检出更改才触发 CI
