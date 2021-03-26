@@ -100,7 +100,7 @@ theme: keep
 deploy:
   type: 'git'
   repository: git@github.com:xcbyao/xcbyao.github.io.git
-  branch: master
+  branch: hexo
     
 search:
   path: search.json
