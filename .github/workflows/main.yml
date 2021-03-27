@@ -1,26 +1,29 @@
-- uses: actions/checkout@master
-  with:
-    submodules: true
+name: Deploy GitHub Pages
+on:
+  push:
+    branches:
+      - hexo
 
-- uses: actions/setup-node@master
-  with:
-    node-version: 14.15.5
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@xcbyao
+        with:
+          persist-credentials: false
 
-- name: Installation
-  run: |
-    npm install
-    npm install -g hexo-cli
+      - name: Build
+        run: npm install && npm run docs:build
 
-- name: Generate
-  run: hexo clean && hexo g
+      - name: Generate
+        run: hexo clean && hexo g
 
-- name: Deploy
-  uses: peaceiris/actions-gh-pages@v3
-  with:
-    github_token: ${{ secrets.ACTION_TOKEN }}
-    publish_dir: ./public
-    cname: g.blog.lgf.im
-
-
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACTION_TOKEN }}
+          BRANCH: master
+          FOLDER: docs/.vuepress/dist
 
 
