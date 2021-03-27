@@ -33,3 +33,8 @@ deploy:
   skip_cleanup: true
   token: $GIT_TOKEN      # GitHub Token 变量
   keep_history: true            # 保持推送记录，以增量提交的方式
+
+env:
+    global:
+        - GH_REF: github.com/xcbyao/xcbyao.github.io.git
+        - CD_REF: git.coding.net/xcbyao/xcbyao.git
