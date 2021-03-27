@@ -98,7 +98,7 @@ theme: keep
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: 'git'
+  type: git
   repository: git@github.com:xcbyao/xcbyao.github.io.git
   branch: master
     

@@ -7,6 +7,10 @@ language: node_js
 node_js:
   - 14.15.5
 
+env:
+ global:
+   - URL_REPO: github.com/xcbyao/xcbyao.github.io.git
+   
 branches:
   only:
     - hexo                      # 只有 master 分支检出更改才触发 CI
@@ -22,7 +26,7 @@ install:
 script:                         
   - hexo clean                  # 清除 hexo 缓存
   - hexo generate               # 生成静态文件
-  - sed -i "s/GIT_TOKEN/${GIT_TOKEN}/g" ./_config.yml
+  #- sed -i "s/GIT_TOKEN/${GIT_TOKEN}/g" ./_config.yml
   - hexo deploy
 
 deploy:
