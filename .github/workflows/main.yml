@@ -7,7 +7,7 @@ on:
 env:
   GIT_USER: xcbyao
   GIT_EMAIL: xcbyao@gmail.com
-  THEME_REPO: xcbyao/hexo-theme-keep
+  THEME_REPO: xcbyao/xcbyao.github.io
   THEME_BRANCH: hexo
   DEPLOY_REPO: xcbyao/xcbyao.github.io
   DEPLOY_BRANCH: hexo
