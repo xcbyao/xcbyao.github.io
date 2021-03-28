@@ -205,8 +205,40 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="OD"><a href="#OD" class="headerlink" title="OD"></a>OD</h2><p>设置/删除断点(F2)<br>打开新的可执行程序(F3)</p>
-<p>单步步入 Call(F7)<br>单步步过 Call(F8)</p>
+            <h2 id="OD"><a href="#OD" class="headerlink" title="OD"></a>OD</h2><table>
+<thead>
+<tr>
+<th align="left">断点</th>
+<th align="left">F2</th>
+<th align="left">打开 exe</th>
+<th align="left">F3</th>
+<th align="left">单步步入</th>
+<th align="left">F7</th>
+<th align="left">单步步过</th>
+<th align="left">F8</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
 <p>暂停执行 (F12)<br>运行(F9)<br>到返回 (Ctrl + F9)<br>跳过异常 (Shift + F9)</p>
 <p>重新运行 (Ctrl + F2)<br>关闭程序 (Alt + F2)</p>
 <p>跟踪步入 Call (Ctrl + F11)<br>跟踪步过 Call (Ctrl + F12)</p>
@@ -472,14 +504,41 @@ A, 输入字符串，按 ESC。
 <p>所谓的    T arball    文件，其实就是将软件的所有源代码文件先以    tar    打包，然后再以压缩技术来<br>压缩，通常最常见的就是以    gzip    来压缩了。因为利用了    tar    与    gzip    的功能，所以    tarball    文件<br>一般的扩展名就会写成    .tar .gz    或者是简写为    .tgz    啰！不过，近来由于    bzip2    与    xz    的压缩率<br>较佳，所以    T arball    渐渐的以    bzip2    及    xz    的压缩技术来取代    gzip    啰！因此文件名也会变成<br>.tar .bz2,    .tar .xz    之类</p>
 <p>T arball    是一个软件包，    你将他解压缩之后，里面的文件<br>通常就会有：<br>原始程序码文件；<br>侦测程序文件    （可能是    configure    或    config    等文件名）；<br>本软件的简易说明与安装说明    （INST ALL    或    README）。</p>
 <p>使用    gcc    编译时所加入的那个    -lm    是有意义的，他可以拆开成两部份来看：<br>-l    ：是“加入某个函数库（library）”的意思，<br>m    ：则是    libm.so    这个函数库，其中，    lib    与扩展名（.a    或    .so）不需要写<br>所以    -lm    表示使用    libm.so    （或    libm.a）    这个函数库的意思～至于那个    -L    后面接的路径呢？<br>这表示：    “我要的函数库    libm.so    请到    /lib    或    /lib64    里面搜寻！”<br>(1021-1091)</p>
-<h2 id="Google-hack"><a href="#Google-hack" class="headerlink" title="Google hack"></a>Google hack</h2><p>“” 精确匹配</p>
-<ul>
-<li> 排除关键词<br>.. 数字范围</li>
-</ul>
-<ul>
-<li> 通配符<br>and/or<br>filetype:  查找文件<br>site:  站内搜索<br>info:  基本信息<br>link:  含链接站<br>define:  单词含义<br>related:  域名相关站点<br>intext:  包含关键词页面</li>
-</ul>
-<h2 id="微软日语输入法"><a href="#微软日语输入法" class="headerlink" title="微软日语输入法"></a>微软日语输入法</h2><p>清音（以平假名为例，片假名是一样的）<br>あ a い i う u え e お o<br>か ka き ki く ku け ke こ ko<br>さ sa し shi す su せ se そ so<br>た ta ち chi つ tsu て te と to<br>な na に ni ぬ nu ね ne の no<br>は ha ひ hi ふ fu へ he ほ ho<br>ま ma み mi む mu め me も mo<br>や ya ゐ wi ゆ yu ゑ we よ yo<br>ら ra り ri る ru れ re ろ ro<br>わ wa を wo ん nn<br>·浊音<br>が ga ぎ gi ぐ gu げ ge ご go<br>ざ za じ ji ず zu ぜ ze ぞ zo<br>だ da ぢ di づ du で de ど do<br>ば ba び bi ぶ bu べ be ぼ bo<br>ぱ pa ぴ pi ぷ pu ぺ pe ぽ po<br>·拗音<br>诸如きゃ、きゅ、きょ，可输入kya、kyu、kyo。<br>把第一个字的母音去掉即可。<br>·其他<br>诸如てゃ、てぃ（ティ）、てゅ，可输入tha、thi、thu。</p>
+<h2 id="Google-hack"><a href="#Google-hack" class="headerlink" title="Google hack"></a>Google hack</h2><table>
+<thead>
+<tr>
+<th align="left">“”</th>
+<th align="left">精确匹配</th>
+<th align="left">-</th>
+<th align="left">排除关键词</th>
+<th align="left">..</th>
+<th align="left">数字范围</th>
+<th align="left">*</th>
+<th align="left">通配符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">and/or</td>
+<td align="left">关系</td>
+<td align="left">filetype:</td>
+<td align="left">查找文件</td>
+<td align="left">site:</td>
+<td align="left">站内搜索</td>
+<td align="left">info:</td>
+<td align="left">基本信息</td>
+</tr>
+<tr>
+<td align="left">link:</td>
+<td align="left">含链接站</td>
+<td align="left">define:</td>
+<td align="left">单词含义</td>
+<td align="left">related:</td>
+<td align="left">域名相关站点</td>
+<td align="left">intext:</td>
+<td align="left">包含关键词页面</td>
+</tr>
+</tbody></table>
+<h2 id="微软日语输入法"><a href="#微软日语输入法" class="headerlink" title="微软日语输入法"></a>微软日语输入法</h2><p>清音<br>あ a い i う u え e お o<br>か ka き ki く ku け ke こ ko<br>さ sa し shi す su せ se そ so<br>た ta ち chi つ tsu て te と to<br>な na に ni ぬ nu ね ne の no<br>は ha ひ hi ふ fu へ he ほ ho<br>ま ma み mi む mu め me も mo<br>や ya ゐ wi ゆ yu ゑ we よ yo<br>ら ra り ri る ru れ re ろ ro<br>わ wa を wo ん nn<br>·浊音<br>が ga ぎ gi ぐ gu げ ge ご go<br>ざ za じ ji ず zu ぜ ze ぞ zo<br>だ da ぢ di づ du で de ど do<br>ば ba び bi ぶ bu べ be ぼ bo<br>ぱ pa ぴ pi ぷ pu ぺ pe ぽ po<br>·拗音<br>诸如きゃ、きゅ、きょ，可输入kya、kyu、kyo。<br>把第一个字的母音去掉即可。<br>·其他<br>诸如てゃ、てぃ（ティ）、てゅ，可输入tha、thi、thu。</p>
 <p>2、促音（小つ）将后面的子音重写两个来表示。如：国家（こっか）kokka、雑志（ざっし）zasshi。但在つ的前面则加“t”来表示，<br>如：発着（はっちゃく）hatchaku。（但在输入时仍应输入hacchaku）</p>
 <table>
 <thead>
