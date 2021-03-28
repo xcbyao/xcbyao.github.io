@@ -10,7 +10,7 @@ categories: Self-improvement
 | [小资源栈](https://pymlovelyq.github.io/) | [🔰雨苁ℒ🔰暗网\|黑客\|极客](https://www.ddosi.com/) | [Internet Archive](https://archive.org/) | [华为定位](https://cloud.huawei.com/#/mobile) | [双拼练习](https://api.ihint.me/shuang/) |
 | [VPS 大玩家](https://www.vpsdawanjia.com/) | [虚拟卡大玩家](https://www.xunikawang.com/) | [小楠日语](http://o-oo.net.cn/) |  | [回忆飘如雪](http://gv7.me/) |
 
-### Image Tools
+### Media Tools
 | [PS 在线](https://www.uupoop.com/ps/) | [圆形剪切](https://crop-circle.imageonline.co/cn/) | [I 💙 IMG](https://www.iloveimg.com/zh-cn) | [I 🧡 PDF](https://www.ilovepdf.com/zh-cn) | [favicon 制作](https://tool.lu/favicon/) |
 | :-- | :-- | :-- | :-- | :-- |
 | [最优图像优化](https://zh.recompressor.com/) | [MP3 剪辑](https://mp3cut.net/cn/) | [定时刷新网页](http://www.mxcz.net/tools/Refresh.aspx) | [emoji 颜文字](https://emojixd.com/) |  |
@@ -21,24 +21,12 @@ categories: Self-improvement
 | [千千秀字](https://www.qqxiuzi.cn/daohang.htm) | [加密解密工具](http://www.atoolbox.net/Category.php?Id=27) | [解密在线工具](http://ctf.ssleye.com/) | [base64 图片转换](https://www.it399.com/image/base64) | [MD5](https://www.somd5.com/) |
 | :-- | :-- | :-- | :-- | :-- |
 | [RSA 大数分解](http://factordb.com/) | [SageMath](https://sagecell.sagemath.org/) | [新约佛论禅](http://hi.pcmoe.net/buddha.html) | [与佛论禅](http://www.keyfc.net/bbs/tools/tudoucode.aspx) | [二进制转字符](http://tool.huixiang360.com/str/from-binary.php) |
-|  |  |  | [脑洞大开的编码和加密](http://blog.neargle.com/SecNewsBak/drops/CTF%E4%B8%AD%E9%82%A3%E4%BA%9B%E8%84%91%E6%B4%9E%E5%A4%A7%E5%BC%80%E7%9A%84%E7%BC%96%E7%A0%81%E5%92%8C%E5%8A%A0%E5%AF%86%20.html) | [PwnHub](https://pwnhub.cn/index) |
+| [CTF竞赛权威指南](https://firmianay.gitbook.io/ctf-all-in-one/) |  |  | [脑洞大开的编码和加密](http://blog.neargle.com/SecNewsBak/drops/CTF%E4%B8%AD%E9%82%A3%E4%BA%9B%E8%84%91%E6%B4%9E%E5%A4%A7%E5%BC%80%E7%9A%84%E7%BC%96%E7%A0%81%E5%92%8C%E5%8A%A0%E5%AF%86%20.html) | [PwnHub](https://pwnhub.cn/index) |
 
 ### Other
-| [独立开发者社区](https://w2solo.com/) |  |  |  |  |
+| [独立开发者社区](https://w2solo.com/) | [安全圈 info](http://www.anquanquan.info/) |  |  |  |
 | :-- | :-- | :-- | :-- | :-- |
 |  |  |  |  |  |
-
-### 虚拟机直通
-[平台虚拟化软件比较](https://en.wikipedia.org/wiki/Comparison_of_platform_virtualization_software###Other_features)
-[VMware三个版本workstation、server、esxi的区别](https://blog.csdn.net/wuhen1226/article/details/25543811)
-[Hypervisor 浅谈](https://johnnyqian.net/blog/hypervisor-in-brief/)
-[不看后悔一辈子的VMware教程](https://zhuanlan.zhihu.com/p/110128514)
-[让 KVM 上的 Windows 虚拟机插上GVT-g 的翅膀](https://medium.com/@langleyhouge/%E8%AE%A9-kvm-%E4%B8%8A%E7%9A%84-windows-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%8F%92%E4%B8%8Agvt-g-%E7%9A%84%E7%BF%85%E8%86%80-ac0ac28b73b8)
-[VMware vs KVM](https://www.rippleweb.com/vmware-vs-kvm/)
-[虚拟化 - xen、kvm、vmware、hyper-v等虚拟化技术的比较](https://www.cnblogs.com/sammyliu/articles/4390371.html)
-
-### 安全圈info
-http://www.anquanquan.info/
 
 ### 匿名性检测
 [whoer](https://whoer.net/zh)
@@ -359,3 +347,8 @@ https://lala.im/27.html
 
 
 [zu1k](https://lgf.im/)
+
+### 虚拟机直通/穿透
+| [平台虚拟化软件比较](https://en.wikipedia.org/wiki/Comparison_of_platform_virtualization_software###Other_features) | [VMware三个版本workstation、server、esxi的区别](https://blog.csdn.net/wuhen1226/article/details/25543811) | [Hypervisor 浅谈](https://johnnyqian.net/blog/hypervisor-in-brief/) | [不看后悔一辈子的VMware教程](https://zhuanlan.zhihu.com/p/110128514) | [让 KVM 上的 Windows 虚拟机插上 GVT-g 的翅膀](https://medium.com/@langleyhouge/%E8%AE%A9-kvm-%E4%B8%8A%E7%9A%84-windows-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%8F%92%E4%B8%8Agvt-g-%E7%9A%84%E7%BF%85%E8%86%80-ac0ac28b73b8) |
+| :-- | :-- | :-- | :-- | :-- |
+| [VMware vs KVM](https://www.rippleweb.com/vmware-vs-kvm/) | [虚拟化 - xen、kvm、vmware、hyper-v等虚拟化技术的比较](https://www.cnblogs.com/sammyliu/articles/4390371.html) |  |  |  |
