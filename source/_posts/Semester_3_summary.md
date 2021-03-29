@@ -1,7 +1,7 @@
 ---
 title: 功不唐捐——大二上学期总结
 date: 2021-03-11 11:21:57
-categories: Relive Youth
+categories: Relive youth
 ---
 > 今年我们都经历了太多，最痛苦莫不过小梦人生中第一次生离死别，最治愈也许便是承认了彼此的感情……
 

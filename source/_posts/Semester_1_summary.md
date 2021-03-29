@@ -1,7 +1,7 @@
 ---
 title: 往事如烟——大一上学期总结
 date: 2020-02-16 23:55:13
-categories: Relive Youth
+categories: Relive youth
 ---
 **今年的疫情让我们难得有时间思考人生……**
 
