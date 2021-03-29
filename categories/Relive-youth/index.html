@@ -9,7 +9,7 @@
     
     <title>
         
-            Category: Relive youth |
+            Category: Relive Youth |
         
         踏雪无痕
     </title>
@@ -150,7 +150,7 @@
                     <div class="fade-in-down-animation">
     <div class="category-container">
         <div class="category-name">
-            <i class="fas fa-folder"></i>&nbsp;Relive youth
+            <i class="fas fa-folder"></i>&nbsp;Relive Youth
         </div>
         <div class="category-post-list">
             
@@ -341,33 +341,6 @@
                 '.page-container',
                 '.pjax'
             ],
-            history: true,
-            debug: false,
-            cacheBust: false,
-            timeout: 0,
-            analytics: false,
-            currentUrlFullReload: false,
-            scrollRestoration: false,
-            // scrollTo: true,
-        });
-
-        document.addEventListener('pjax:send', () => {
-            KEEP.utils.pjaxProgressBarStart();
-        });
-
-        document.addEventListener('pjax:complete', () => {
-            KEEP.utils.pjaxProgressBarEnd();
-            pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
-            KEEP.refresh();
-        });
-    });
-</script>
-
-
-
-</body>
-</html>
-    ],
             history: true,
             debug: false,
             cacheBust: false,
