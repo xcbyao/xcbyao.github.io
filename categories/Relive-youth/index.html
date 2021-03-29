@@ -9,7 +9,7 @@
     
     <title>
         
-            Category: Relive-Youth |
+            Category: Relive-youth |
         
         踏雪无痕
     </title>
@@ -150,7 +150,7 @@
                     <div class="fade-in-down-animation">
     <div class="category-container">
         <div class="category-name">
-            <i class="fas fa-folder"></i>&nbsp;Relive-Youth
+            <i class="fas fa-folder"></i>&nbsp;Relive-youth
         </div>
         <div class="category-post-list">
             
@@ -158,25 +158,8 @@
     
         <section class="archive-item">
             <div class="archive-item-header">
-                <span class="archive-year">2021</span>
-                <span class="archive-year-post-count">[1]</span>
-            </div>
-            <ul class="article-list">
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2021/03/11/Semester_3_summary/"
-                        >功不唐捐——大二上学期总结</a>
-                        <span class="article-date">03-11</span>
-                    </li>
-                
-            </ul>
-        </section>
-    
-        <section class="archive-item">
-            <div class="archive-item-header">
                 <span class="archive-year">2020</span>
-                <span class="archive-year-post-count">[2]</span>
+                <span class="archive-year-post-count">[1]</span>
             </div>
             <ul class="article-list">
                 
@@ -185,13 +168,6 @@
                            href="/2020/09/18/Semester_2_summary/"
                         >自律人生——大一下学期总结</a>
                         <span class="article-date">09-18</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2020/02/16/Semester_1_summary/"
-                        >往事如烟——大一上学期总结</a>
-                        <span class="article-date">02-16</span>
                     </li>
                 
             </ul>
@@ -365,6 +341,33 @@
                 '.page-container',
                 '.pjax'
             ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
+    ],
             history: true,
             debug: false,
             cacheBust: false,
