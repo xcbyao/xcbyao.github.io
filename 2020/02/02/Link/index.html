@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="xcbyao,pwn,crypto,reverse,hack">
+    <meta name="description" content="凡心所向 素履以往 生如逆旅 一苇以航">
+    <meta name="author" content="xcbyao">
+    
+    <title>
+        
+            Personal Website Summary |
+        
+        踏雪无痕
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"xcbyao.github.io","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":true},"style":{"primary_color":"#CC3333","avatar":"/images/avatar.png","favicon":"/images/favicon.ico","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","first_screen":{"enable":true,"background_img":"/images/bg.jpg","description":"凡是过往，皆为序曲。"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":false},"version":"3.4.2"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                踏雪无痕
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                LINKS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links">LINKS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Personal Website Summary</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">xcbyao</span>
+                        
+                            <span class="author-label">Engineer</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2020-02-02 02:48:37
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Self-improvement/">Self-improvement</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>2.1k Words</span>
+        </span>
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h3 id="Resource-Tools"><a href="#Resource-Tools" class="headerlink" title="Resource Tools"></a>Resource Tools</h3><table>
+<thead>
+<tr>
+<th align="left"><a class="link"   target="_blank" rel="noopener" href="https://www.materialtools.com/" >短信接码<i class="fas fa-external-link-alt"></i></a></th>
+<th align="left"><a class="link"   target="_blank" rel="noopener" href="https://zh.emailfake.com/channel7/" >虚假邮件生成器<i class="fas fa-external-link-alt"></i></a></th>
+<th align="left"><a class="link"   target="_blank" rel="noopener" href="https://zh.mytrashmailer.com/" >即弃电子邮箱<i class="fas fa-external-link-alt"></i></a></th>
+<th align="left"><a class="link"   target="_blank" rel="noopener" href="https://sina.lt/" >短网址生成<i class="fas fa-external-link-alt"></i></a></th>
+<th align="left"><a class="link"   target="_blank" rel="noopener" href="http://ex666.cn/" >自定义短网址工具<i class="fas fa-external-link-alt"></i></a></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="https://www.x6d.com/" >小刀资源网<i class="fas fa-external-link-alt"></i></a></td>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="https://tmioe.com/" >ZAPRO·杂铺<i class="fas fa-external-link-alt"></i></a></td>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="https://z-lib.org/" >Z-Library<i class="fas fa-external-link-alt"></i></a></td>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="https://allitbooks.net/" >All IT eBooks<i class="fas fa-external-link-alt"></i></a></td>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="http://libgen.rs/" >LibGen<i class="fas fa-external-link-alt"></i></a></td>
+</tr>
+<tr>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="https://pymlovelyq.github.io/" >小资源栈<i class="fas fa-external-link-alt"></i></a></td>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="https://www.ddosi.com/" >🔰雨苁ℒ🔰暗网|黑客|极客<i class="fas fa-external-link-alt"></i></a></td>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="https://archive.org/" >Internet Archive<i class="fas fa-external-link-alt"></i></a></td>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="https://cloud.huawei.com/#/mobile" >华为定位<i class="fas fa-external-link-alt"></i></a></td>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="https://api.ihint.me/shuang/" >双拼练习<i class="fas fa-external-link-alt"></i></a></td>
+</tr>
+<tr>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="https://www.vpsdawanjia.com/" >VPS 大玩家<i class="fas fa-external-link-alt"></i></a></td>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="https://www.xunikawang.com/" >虚拟卡大玩家<i class="fas fa-external-link-alt"></i></a></td>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="http://o-oo.net.cn/" >小楠日语<i class="fas fa-external-link-alt"></i></a></td>
+<td align="left"></td>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="http://gv7.me/" >回忆飘如雪<i class="fas fa-external-link-alt"></i></a></td>
+</tr>
+</tbody></table>
+<h3 id="Media-Tools"><a href="#Media-Tools" class="headerlink" title="Media Tools"></a>Media Tools</h3><table>
+<thead>
+<tr>
+<th align="left"><a class="link"   target="_blank" rel="noopener" href="https://www.uupoop.com/ps/" >PS 在线<i class="fas fa-external-link-alt"></i></a></th>
+<th align="left"><a class="link"   target="_blank" rel="noopener" href="https://crop-circle.imageonline.co/cn/" >圆形剪切<i class="fas fa-external-link-alt"></i></a></th>
+<th align="left"><a class="link"   target="_blank" rel="noopener" href="https://www.iloveimg.com/zh-cn" >I 💙 IMG<i class="fas fa-external-link-alt"></i></a></th>
+<th align="left"><a class="link"   target="_blank" rel="noopener" href="https://www.ilovepdf.com/zh-cn" >I 🧡 PDF<i class="fas fa-external-link-alt"></i></a></th>
+<th align="left"><a class="link"   target="_blank" rel="noopener" href="https://tool.lu/favicon/" >favicon 制作<i class="fas fa-external-link-alt"></i></a></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="https://zh.recompressor.com/" >最优图像优化<i class="fas fa-external-link-alt"></i></a></td>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="https://mp3cut.net/cn/" >MP3 剪辑<i class="fas fa-external-link-alt"></i></a></td>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="http://www.mxcz.net/tools/Refresh.aspx" >定时刷新网页<i class="fas fa-external-link-alt"></i></a></td>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="https://emojixd.com/" >emoji 颜文字<i class="fas fa-external-link-alt"></i></a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="http://tool.mkblog.cn/qrbtf/" >艺术二维码<i class="fas fa-external-link-alt"></i></a></td>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="https://www.it399.com/qrcode.jsp" >二维码模板<i class="fas fa-external-link-alt"></i></a></td>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="https://cli.im/" >草料二维码<i class="fas fa-external-link-alt"></i></a></td>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="http://yeelogo.com/#/" >YEELOGO_logo<i class="fas fa-external-link-alt"></i></a></td>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="https://hdqwalls.com/" >Hdqwalls<i class="fas fa-external-link-alt"></i></a></td>
+</tr>
+<tr>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="https://wallhaven.cc/" >wallhaven<i class="fas fa-external-link-alt"></i></a></td>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="https://bz.zzzmh.cn/" >二次元壁纸<i class="fas fa-external-link-alt"></i></a></td>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="https://www.tool22.com/" >兔二工具<i class="fas fa-external-link-alt"></i></a></td>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="http://tool.mkblog.cn/logoly/#/" >PornHub 风格<i class="fas fa-external-link-alt"></i></a></td>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="http://tool.mkblog.cn/bullshit/" >文章生成器<i class="fas fa-external-link-alt"></i></a></td>
+</tr>
+</tbody></table>
+<h3 id="CTF"><a href="#CTF" class="headerlink" title="CTF"></a>CTF</h3><table>
+<thead>
+<tr>
+<th align="left"><a class="link"   target="_blank" rel="noopener" href="https://www.qqxiuzi.cn/daohang.htm" >千千秀字<i class="fas fa-external-link-alt"></i></a></th>
+<th align="left"><a class="link"   target="_blank" rel="noopener" href="http://www.atoolbox.net/Category.php?Id=27" >加密解密工具<i class="fas fa-external-link-alt"></i></a></th>
+<th align="left"><a class="link"   target="_blank" rel="noopener" href="http://ctf.ssleye.com/" >解密在线工具<i class="fas fa-external-link-alt"></i></a></th>
+<th align="left"><a class="link"   target="_blank" rel="noopener" href="https://www.it399.com/image/base64" >base64 图片转换<i class="fas fa-external-link-alt"></i></a></th>
+<th align="left"><a class="link"   target="_blank" rel="noopener" href="https://www.somd5.com/" >MD5<i class="fas fa-external-link-alt"></i></a></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="http://factordb.com/" >RSA 大数分解<i class="fas fa-external-link-alt"></i></a></td>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="https://sagecell.sagemath.org/" >SageMath<i class="fas fa-external-link-alt"></i></a></td>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="http://hi.pcmoe.net/buddha.html" >新约佛论禅<i class="fas fa-external-link-alt"></i></a></td>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="http://www.keyfc.net/bbs/tools/tudoucode.aspx" >与佛论禅<i class="fas fa-external-link-alt"></i></a></td>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="http://tool.huixiang360.com/str/from-binary.php" >二进制转字符<i class="fas fa-external-link-alt"></i></a></td>
+</tr>
+<tr>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="https://firmianay.gitbook.io/ctf-all-in-one/" >CTF竞赛权威指南<i class="fas fa-external-link-alt"></i></a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="http://blog.neargle.com/SecNewsBak/drops/CTF%E4%B8%AD%E9%82%A3%E4%BA%9B%E8%84%91%E6%B4%9E%E5%A4%A7%E5%BC%80%E7%9A%84%E7%BC%96%E7%A0%81%E5%92%8C%E5%8A%A0%E5%AF%86%20.html" >脑洞大开的编码和加密<i class="fas fa-external-link-alt"></i></a></td>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="https://pwnhub.cn/index" >PwnHub<i class="fas fa-external-link-alt"></i></a></td>
+</tr>
+</tbody></table>
+<h3 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h3><table>
+<thead>
+<tr>
+<th align="left"><a class="link"   target="_blank" rel="noopener" href="https://w2solo.com/" >独立开发者社区<i class="fas fa-external-link-alt"></i></a></th>
+<th align="left"><a class="link"   target="_blank" rel="noopener" href="http://www.anquanquan.info/" >安全圈 info<i class="fas fa-external-link-alt"></i></a></th>
+<th align="left"></th>
+<th align="left"></th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h3 id="匿名性检测"><a href="#匿名性检测" class="headerlink" title="匿名性检测"></a>匿名性检测</h3><p><a class="link"   target="_blank" rel="noopener" href="https://whoer.net/zh" >whoer<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="威胁情报网站导航"><a href="#威胁情报网站导航" class="headerlink" title="威胁情报网站导航"></a>威胁情报网站导航</h3><p>1 ThreatCrowd<br><a class="link"   target="_blank" rel="noopener" href="https://www.threatcrowd.org/" >https://www.threatcrowd.org/<i class="fas fa-external-link-alt"></i></a></p>
+<p>2 VirusTotal<br><a class="link"   target="_blank" rel="noopener" href="https://www.virustotal.com/###/home/upload" >https://www.virustotal.com/###/home/upload<i class="fas fa-external-link-alt"></i></a></p>
+<p>3 ThreatBook (微步在线)<br><a class="link"   target="_blank" rel="noopener" href="https://x.threatbook.cn/" >https://x.threatbook.cn/<i class="fas fa-external-link-alt"></i></a></p>
+<p>4 360威胁情报中心<br><a class="link"   target="_blank" rel="noopener" href="https://ti.360.com/" >https://ti.360.com/<i class="fas fa-external-link-alt"></i></a></p>
+<p>5 SCAP 安全内容自动化协议中文社区/CVE/OVAL/CWE<br><a class="link"   target="_blank" rel="noopener" href="http://www.scap.org.cn/index.html" >http://www.scap.org.cn/index.html<i class="fas fa-external-link-alt"></i></a></p>
+<p>6 恶意软件<br><a class="link"   target="_blank" rel="noopener" href="https://malwr.com/" >https://malwr.com/<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="在线工具"><a href="#在线工具" class="headerlink" title="在线工具"></a>在线工具</h3><p>[1] <a class="link"   target="_blank" rel="noopener" href="http://tool.leavesongs.com/" >p牛渗透在线工具<i class="fas fa-external-link-alt"></i></a><br>[2] <a class="link"   target="_blank" rel="noopener" href="http://skyminehack.com/" >skymine在线工具集<i class="fas fa-external-link-alt"></i></a><br>[3] <a class="link"   target="_blank" rel="noopener" href="http://lu4n.com/security-tools/" >lu4n在线工具集<i class="fas fa-external-link-alt"></i></a><br>[4] <a class="link"   target="_blank" rel="noopener" href="http://2oep.com/index.dll" >穿山甲在线工具<i class="fas fa-external-link-alt"></i></a><br>[5] <a class="link"   target="_blank" rel="noopener" href="http://www.atool.org/port_scanner.php" >ATools 端口扫描<i class="fas fa-external-link-alt"></i></a><br>[6] <a class="link"   target="_blank" rel="noopener" href="https://www.browserling.com/" >浏览器模拟<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="安全导航页"><a href="#安全导航页" class="headerlink" title="安全导航页"></a>安全导航页</h3><p>[0] <a class="link"   target="_blank" rel="noopener" href="https://navisec.it/" >纳威安全导航<i class="fas fa-external-link-alt"></i></a><br>[2] <a class="link"   target="_blank" rel="noopener" href="http://thief.one/SecWeb/" >thief.one导航<i class="fas fa-external-link-alt"></i></a><br>[3] <a class="link"   target="_blank" rel="noopener" href="http://cmcc.ml/" >cmcc导航<i class="fas fa-external-link-alt"></i></a><br>[4] <a class="link"   target="_blank" rel="noopener" href="http://dingba.top/" >社工导航页-丁爸网<i class="fas fa-external-link-alt"></i></a><br>[5] <a class="link"   target="_blank" rel="noopener" href="http://www.cellid.cn/" >基站定位<i class="fas fa-external-link-alt"></i></a><br>[7] <a class="link"   target="_blank" rel="noopener" href="https://threathunter.org/" >threat hunter<i class="fas fa-external-link-alt"></i></a><br>[8] <a class="link"   target="_blank" rel="noopener" href="http://www.loner.fm/bugs/" >乌云镜像<i class="fas fa-external-link-alt"></i></a><br>[9] <a class="link"   target="_blank" rel="noopener" href="http://www.mytju.com/classcode/tools/urldecode_gb2312.asp" >URL decode GBK<i class="fas fa-external-link-alt"></i></a><br>[10] <a class="link"   target="_blank" rel="noopener" href="https://ctf-wiki.github.io/ctf-wiki/###/introduction" >CTF wiki<i class="fas fa-external-link-alt"></i></a><br>[14] <a class="link"   target="_blank" rel="noopener" href="http://msdn.itellyou.cn/" >MSDN I Tell YOU<i class="fas fa-external-link-alt"></i></a><br>[15] <a class="link"   target="_blank" rel="noopener" href="http://vipread.com/" >信息安全知识库<i class="fas fa-external-link-alt"></i></a></p>
+<p>[1] <a class="link"   target="_blank" rel="noopener" href="http://139.199.0.160:9000/" >成信工 Syclover ctf wiki<i class="fas fa-external-link-alt"></i></a><br>[2] <a class="link"   target="_blank" rel="noopener" href="http://ctf.sycsec.com/" >Syclover ctf platform<i class="fas fa-external-link-alt"></i></a></p>
+<p>[a] <a class="link"   target="_blank" rel="noopener" href="http://cloudeye.me/" >CloudEye HTTP Fuzzing/缓存攻击平台<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="投稿平台"><a href="#投稿平台" class="headerlink" title="投稿平台"></a>投稿平台</h3><p>[1] 阿里先知社区<br>[2] 360安全客<br>[3] freebuf<br>[4] 撕吼<br>[5] 安全脉搏<br>[6] 雷锋网宅客频道<br>[7] 安在/E安全/安全牛/华盟 等 自媒体或其他小团队</p>
+<h3 id="Security-Media"><a href="#Security-Media" class="headerlink" title="Security Media"></a>Security Media</h3><p>可以考虑限定聚合搜索</p>
+<p>[1] <a class="link"   target="_blank" rel="noopener" href="http://bobao.360.cn/" >360 - 安全客<i class="fas fa-external-link-alt"></i></a><br>[2] <a class="link"   target="_blank" rel="noopener" href="https://www.sec-wiki.com/" >Sec-wiki<i class="fas fa-external-link-alt"></i></a><br>[3] <a class="link"   target="_blank" rel="noopener" href="http://paper.seebug.org/" >seebug 安全paper<i class="fas fa-external-link-alt"></i></a><br>[4] <a class="link"   target="_blank" rel="noopener" href="http://www.freebuf.com/" >freebuf<i class="fas fa-external-link-alt"></i></a><br>[5] <a class="link"   target="_blank" rel="noopener" href="https://www.easyaq.com/" >E安全<i class="fas fa-external-link-alt"></i></a></p>
+<p>外网翻译质量尚可<br>[6] <a class="link"   target="_blank" rel="noopener" href="http://www.aqniu.com/" >安全牛<i class="fas fa-external-link-alt"></i></a><br>[7] <a class="link"   target="_blank" rel="noopener" href="http://www.4hou.com/" >撕吼专业版<i class="fas fa-external-link-alt"></i></a><br>[8] <a class="link"   target="_blank" rel="noopener" href="http://www.secpulse.com/" >安全脉搏<i class="fas fa-external-link-alt"></i></a><br>[9] <a class="link"   target="_blank" rel="noopener" href="http://www.mottoin.com/" >MottoIN<i class="fas fa-external-link-alt"></i></a><br>[10] 外网消息聚合 - 安全小飞侠<br>[11] 网安视界 - 公众号<br>[12] wooyun(dead)<br>[13] <a class="link"   target="_blank" rel="noopener" href="http://0day5.com/" >漏洞时代 - 搜索web类 0day/1day<i class="fas fa-external-link-alt"></i></a><br>[14] 玄武每日推送 微信号: XuanwuLab<br>[15] <a class="link"   target="_blank" rel="noopener" href="http://blkstone.github.io/2017/10/10/foreign-infosec-news-list/" >国外信息安全Feed源<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="二线"><a href="#二线" class="headerlink" title="二线"></a>二线</h3><p>[1] <a class="link"   target="_blank" rel="noopener" href="http://www.secdic.com/" >安全字典<i class="fas fa-external-link-alt"></i></a><br>[2] <a class="link"   target="_blank" rel="noopener" href="http://www.secbox.cn/" >安全盒子<i class="fas fa-external-link-alt"></i></a><br>[3] <a class="link"   target="_blank" rel="noopener" href="https://www.safewiki.org/portal.php" >安全文库<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="外文"><a href="#外文" class="headerlink" title="外文"></a>外文</h3><p>[1] <a class="link"   target="_blank" rel="noopener" href="https://hakin9.org/" >https://hakin9.org/<i class="fas fa-external-link-alt"></i></a><br>[2] <a class="link"   target="_blank" rel="noopener" href="http://magazine.hitb.org/" >http://magazine.hitb.org/<i class="fas fa-external-link-alt"></i></a><br>[3] <a class="link"   target="_blank" rel="noopener" href="http://sans.org/" >http://sans.org<i class="fas fa-external-link-alt"></i></a><br>[4] <a class="link"   target="_blank" rel="noopener" href="https://pentestmag.com/" >https://pentestmag.com/<i class="fas fa-external-link-alt"></i></a><br>[5] <a class="link"   target="_blank" rel="noopener" href="https://eforensicsmag.com/" >https://eforensicsmag.com/<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="bbs或半公开-搜索引擎难以访问"><a href="#bbs或半公开-搜索引擎难以访问" class="headerlink" title="bbs或半公开/ 搜索引擎难以访问"></a>bbs或半公开/ 搜索引擎难以访问</h3><p>[1] ichunqiu<br>[2] 52pj<br>[3] 看雪<br>[4] t00ls<br>[5] <a class="link"   target="_blank" rel="noopener" href="https://www.secquan.org/" >secquan<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="在线漏扫"><a href="#在线漏扫" class="headerlink" title="在线漏扫"></a>在线漏扫</h3><p>绿盟<br>bugscan 四叶草<br>安犬 安全狗</p>
+<h3 id="聚合列表"><a href="#聚合列表" class="headerlink" title="聚合列表"></a>聚合列表</h3><p><a class="link"   target="_blank" rel="noopener" href="http://www.freebuf.com/news/120254.html" >http://www.freebuf.com/news/120254.html<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="企业实验室"><a href="#企业实验室" class="headerlink" title="企业实验室"></a>企业实验室</h3><p>腾讯七大实验室<br>Keen Pwn2Own Binary<br>玄武实验室(MIG) Binary<br>湛泸实验室 Binary<br>云鼎实验室(SNG) 云安全<br>反诈骗实验室 设备指纹, domain black list<br>反病毒实验室<br>移动安全实验室</p>
+<p>启明星辰<br>ADLab 积极防御实验室<br>VenusEye金睛安全研究团队</p>
+<p>360<br>追日团队 APT<br>Unicorn Team(无线电硬件实验室) 杨卿 物联网/射频设备安全<br>WEB攻防团队 - 0KEE TEAM<br>移动安全团队 Vulpecker Team RAyH4c(宋申雷) 80sec<br>逆向攻防团队 Vulcan Team (MJ0011) 成立于 2015<br>网络攻防实验室 路羽(林伟) 车联网,IoT方向<br>烽火实验室 移动安全 Android 恶意软件分析<br>Alpha Team Pwn/固件逆向工程/安卓漏洞 负责人:龚广<br>网络安全研究院 数据科学+安全 负责人 宫一鸣 <a class="link"   href="mailto:&#108;&#x69;&#x66;&#x65;&#110;&#x67;&#x70;&#x65;&#x69;&#64;&#51;&#x36;&#48;&#x2e;&#99;&#x6e;" >&#108;&#x69;&#x66;&#x65;&#110;&#x67;&#x70;&#x65;&#x69;&#64;&#51;&#x36;&#48;&#x2e;&#99;&#x6e;<i class="fas fa-external-link-alt"></i></a><br>无线安全研究院 root团队<br>360网盾<br>360企业服务产品线<br>360天擎<br>360天眼<br>360天机<br>360天巡<br>360安域</p>
+<p>鹰眼<br>代码卫士<br>Amazon<br>安全部门</p>
+<p>知道创宇<br>n0tr00t 团队<br>安天<br>AVLTeam APT, Binary<br>盘古<br><a class="link"   target="_blank" rel="noopener" href="http://blog.pangu.io/" >http://blog.pangu.io/<i class="fas fa-external-link-alt"></i></a><br>永信至诚 i春秋</p>
+<h3 id="社区"><a href="#社区" class="headerlink" title="社区"></a>社区</h3><p>先知社区<br><a class="link"   target="_blank" rel="noopener" href="https://xianzhi.aliyun.com/forum/" >https://xianzhi.aliyun.com/forum/<i class="fas fa-external-link-alt"></i></a></p>
+<p>sobug<br><a class="link"   target="_blank" rel="noopener" href="https://pockr.org/account/login?uri=//pockr.org/" >https://pockr.org/account/login?uri=//pockr.org%2F<i class="fas fa-external-link-alt"></i></a></p>
+<p>MottoIN/ 勾陈安全实验室<br><a class="link"   target="_blank" rel="noopener" href="http://www.polaris-lab.com/" >http://www.polaris-lab.com/<i class="fas fa-external-link-alt"></i></a></p>
+<p>ThreatHunter (360 n1nty, Leon不会玩QEMU)<br><a class="link"   target="_blank" rel="noopener" href="https://threathunter.org/" >https://threathunter.org/<i class="fas fa-external-link-alt"></i></a></p>
+<p>3Year</p>
+<p>渗透测试/Web安全知识星球</p>
+<p>知识星球各个小组</p>
+<h3 id="公司型-小团队"><a href="#公司型-小团队" class="headerlink" title="公司型 小团队"></a>公司型 小团队</h3><p>inn0team 东巽科技 APT防御<br><a class="link"   target="_blank" rel="noopener" href="http://www.dongxuntech.com/about/view/zz" >http://www.dongxuntech.com/about/view/zz<i class="fas fa-external-link-alt"></i></a></p>
+<p>兰云科技银河实验室 威胁感知系统<br><a class="link"   target="_blank" rel="noopener" href="http://www.lanysec.com/about/about106.html" >http://www.lanysec.com/about/about106.html<i class="fas fa-external-link-alt"></i></a></p>
+<p>pkav 四川无声<br><a class="link"   target="_blank" rel="noopener" href="http://www.silence.com.cn/" >http://www.silence.com.cn/<i class="fas fa-external-link-alt"></i></a></p>
+<p>天际友盟(威胁情报)<br><a class="link"   target="_blank" rel="noopener" href="https://www.sec-un.com/" >https://www.sec-un.com/<i class="fas fa-external-link-alt"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://www.sec-un.org/" >https://www.sec-un.org/<i class="fas fa-external-link-alt"></i></a></p>
+<p>迪普科技 防火墙/硬件设备<br><a class="link"   target="_blank" rel="noopener" href="http://www.dptech.com/" >http://www.dptech.com/<i class="fas fa-external-link-alt"></i></a></p>
+<p>铸剑网络安全实验室(CSNS-Lab) 昆明嘲风信息技术有限公司</p>
+<h3 id="培训型小团队"><a href="#培训型小团队" class="headerlink" title="培训型小团队"></a>培训型小团队</h3><p>Cracer 培训<br><a class="link"   target="_blank" rel="noopener" href="http://cracer.com/" >http://cracer.com/<i class="fas fa-external-link-alt"></i></a></p>
+<p>西普学院 培训<br><a class="link"   target="_blank" rel="noopener" href="http://www.simpleware.com.cn/" >http://www.simpleware.com.cn/<i class="fas fa-external-link-alt"></i></a></p>
+<p>至安全(上海来晨网络科技) 培训<br><a class="link"   target="_blank" rel="noopener" href="http://zhiaq.com/" >http://zhiaq.com/<i class="fas fa-external-link-alt"></i></a></p>
+<p>农夫安全 培训<br><a class="link"   target="_blank" rel="noopener" href="http://www.farmsec.com/" >http://www.farmsec.com/<i class="fas fa-external-link-alt"></i></a></p>
+<p>米斯特安全 培训<br><a class="link"   target="_blank" rel="noopener" href="http://www.hi-ourlife.com/" >http://www.hi-ourlife.com/<i class="fas fa-external-link-alt"></i></a></p>
+<p>一叶知安 培训/在线靶场<br><a class="link"   target="_blank" rel="noopener" href="http://www.leafsec.com/" >http://www.leafsec.com/<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="小团队-多数偏向渗透和web安全"><a href="#小团队-多数偏向渗透和web安全" class="headerlink" title="小团队 多数偏向渗透和web安全"></a>小团队 多数偏向渗透和web安全</h3><p>网络尖刀 <a class="link"   target="_blank" rel="noopener" href="http://www.1aq.com/lab.html" >http://www.1aq.com/lab.html<i class="fas fa-external-link-alt"></i></a><br>白细胞 WhiteCellClub<br>破晓团队 <a class="link"   target="_blank" rel="noopener" href="http://secbug.org/" >http://secbug.org/<i class="fas fa-external-link-alt"></i></a><br>安全弱点实验室 <a class="link"   target="_blank" rel="noopener" href="https://secvul.com/" >https://secvul.com/<i class="fas fa-external-link-alt"></i></a><br>勾陈安全实验室(部分互联网企业甲方员工) <a class="link"   target="_blank" rel="noopener" href="http://polaris-lab.com/" >http://polaris-lab.com/<i class="fas fa-external-link-alt"></i></a><br>金乌网络安全实验室 <a class="link"   target="_blank" rel="noopener" href="http://www.jinwulab.com/" >http://www.jinwulab.com/<i class="fas fa-external-link-alt"></i></a><br>渔村安全 金山猎豹 猎豹科学院(珠海猎豹团队) <a class="link"   target="_blank" rel="noopener" href="http://weibo.com/u/5619198113" >http://weibo.com/u/5619198113<i class="fas fa-external-link-alt"></i></a><br>SSS安全<br>安全盒子<br>安全字典<br>226safe<br>风铃安全<br>飓风安全</p>
+<h3 id="建站运维"><a href="#建站运维" class="headerlink" title="建站运维"></a>建站运维</h3><p><a class="link"   target="_blank" rel="noopener" href="https://lala.im/27.html" >https://lala.im/27.html<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Reverse"><a href="#Reverse" class="headerlink" title="Reverse"></a>Reverse</h3><p>[1] [riusksk 林桠泉 漏洞战争：软件漏洞分析精要 <a class="link"   target="_blank" rel="noopener" href="http://riusksk.me/" >http://riusksk.me/<i class="fas fa-external-link-alt"></i></a> <a class="link"   target="_blank" rel="noopener" href="http://riusksk.blogbus.com/" >http://riusksk.blogbus.com/<i class="fas fa-external-link-alt"></i></a><br>[2] [ele7enxxh 360成都 Reverse,Fuzzing <a class="link"   target="_blank" rel="noopener" href="http://ele7enxxh.com/" >http://ele7enxxh.com/<i class="fas fa-external-link-alt"></i></a><br>[3] [flanker <a class="link"   target="_blank" rel="noopener" href="https://blog.flanker017.me/" >https://blog.flanker017.me/<i class="fas fa-external-link-alt"></i></a><br>[4] [提权大佬 zcgonvh <a class="link"   target="_blank" rel="noopener" href="http://www.zcgonvh.com/" >http://www.zcgonvh.com/<i class="fas fa-external-link-alt"></i></a><br>[5] [giantbranch <a class="link"   target="_blank" rel="noopener" href="http://www.giantbranch.cn/" >http://www.giantbranch.cn/<i class="fas fa-external-link-alt"></i></a><br>[6] [yuechen <a class="link"   target="_blank" rel="noopener" href="http://ww2.cs.fsu.edu/~ychen/" >http://ww2.cs.fsu.edu/~ychen/<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Security-Binary"><a href="#Security-Binary" class="headerlink" title="Security Binary"></a>Security Binary</h3><p>[1] [xuanwu lab (Tencent) <a class="link"   target="_blank" rel="noopener" href="http://xlab.tencent.com/en/" >http://xlab.tencent.com/en/<i class="fas fa-external-link-alt"></i></a><br>[2] [Keen Team <a class="link"   target="_blank" rel="noopener" href="http://keenlab.tencent.com/en/index.html" >http://keenlab.tencent.com/en/index.html<i class="fas fa-external-link-alt"></i></a><br>[3] [n0tr00t team (KnownSec) <a class="link"   target="_blank" rel="noopener" href="https://www.n0tr00t.com/" >https://www.n0tr00t.com/<i class="fas fa-external-link-alt"></i></a><br>[4] [maskray <a class="link"   target="_blank" rel="noopener" href="http://maskray.me/" >http://maskray.me/<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Red-Team"><a href="#Red-Team" class="headerlink" title="Red Team"></a>Red Team</h3><p>[1] [backlion <a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/backlion" >https://www.cnblogs.com/backlion<i class="fas fa-external-link-alt"></i></a><br>[2] [backlion2 <a class="link"   target="_blank" rel="noopener" href="http://www.backlion.org/" >http://www.backlion.org/<i class="fas fa-external-link-alt"></i></a><br>[3] [klionsec <a class="link"   target="_blank" rel="noopener" href="https://klionsec.github.io/archives/" >https://klionsec.github.io/archives/<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Normal"><a href="#Normal" class="headerlink" title="Normal"></a>Normal</h3><p>[1] [InnerAc <a class="link"   target="_blank" rel="noopener" href="http://innerac.github.io/" >http://innerac.github.io/<i class="fas fa-external-link-alt"></i></a><br>[2] [Sloriac <a class="link"   target="_blank" rel="noopener" href="http://sunzequn.com/" >http://sunzequn.com/<i class="fas fa-external-link-alt"></i></a><br>[3] [JetMuffin <a class="link"   target="_blank" rel="noopener" href="http://jetmuffin.github.io/" >http://jetmuffin.github.io/<i class="fas fa-external-link-alt"></i></a><br>[4] [NAP Group <a class="link"   target="_blank" rel="noopener" href="http://nap-group.herokuapp.com/" >http://nap-group.herokuapp.com/<i class="fas fa-external-link-alt"></i></a><br>[5] Legend4917 <a class="link"   target="_blank" rel="noopener" href="http://legend4917.github.io/" >http://legend4917.github.io/<i class="fas fa-external-link-alt"></i></a><br>[6] GMpj <a class="link"   target="_blank" rel="noopener" href="http://www.mapengju.com/" >http://www.mapengju.com/<i class="fas fa-external-link-alt"></i></a><br>[7] qilin <a class="link"   target="_blank" rel="noopener" href="http://www.qilinlirui.com/" >http://www.qilinlirui.com/<i class="fas fa-external-link-alt"></i></a><br>[8] qwertylevel3 <a class="link"   target="_blank" rel="noopener" href="http://qwertylevel3.github.io/" >http://qwertylevel3.github.io/<i class="fas fa-external-link-alt"></i></a><br>[9] 阿涛 <a class="link"   target="_blank" rel="noopener" href="http://zcatao.github.io/" >http://zcatao.github.io/<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="安全研发"><a href="#安全研发" class="headerlink" title="安全研发"></a>安全研发</h3><p>[1] 彦修 <a class="link"   target="_blank" rel="noopener" href="https://www.yanxiuer.com/" >https://www.yanxiuer.com/<i class="fas fa-external-link-alt"></i></a><br>[2] 安全盒子 王松 <a class="link"   target="_blank" rel="noopener" href="http://www.hackersb.cn/" >http://www.hackersb.cn/<i class="fas fa-external-link-alt"></i></a><br>[3] 360-0kee tbackdark <a class="link"   target="_blank" rel="noopener" href="http://www.tbackdark.com/" >http://www.tbackdark.com/<i class="fas fa-external-link-alt"></i></a><br>[4] Aliyun Tr3jer <a class="link"   target="_blank" rel="noopener" href="http://www.thinkings.org/" >http://www.thinkings.org/<i class="fas fa-external-link-alt"></i></a><br>[5] seay <a class="link"   target="_blank" rel="noopener" href="http://www.cnseay.com/" >http://www.cnseay.com/<i class="fas fa-external-link-alt"></i></a><br>[6] fooying 张祖优 <a class="link"   target="_blank" rel="noopener" href="http://www.fooying.com/" >http://www.fooying.com/<i class="fas fa-external-link-alt"></i></a><br>[7] atom kid <a class="link"   target="_blank" rel="noopener" href="http://www.atomsec.org/" >http://www.atomsec.org/<i class="fas fa-external-link-alt"></i></a><br>[8] 体验盒子 前端+安全 <a class="link"   target="_blank" rel="noopener" href="http://www.uedbox.com/" >http://www.uedbox.com/<i class="fas fa-external-link-alt"></i></a><br>[9] virusdefender <a class="link"   target="_blank" rel="noopener" href="https://virusdefender.net/" >https://virusdefender.net/<i class="fas fa-external-link-alt"></i></a><br>[10] 第八个记忆 Rapid7 <a class="link"   target="_blank" rel="noopener" href="http://jiyidian.com/about" >http://jiyidian.com/about<i class="fas fa-external-link-alt"></i></a><br>[11] 屌丝归档笔记 <a class="link"   target="_blank" rel="noopener" href="http://0cx.cc/" >http://0cx.cc/<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="安全甲方"><a href="#安全甲方" class="headerlink" title="安全甲方"></a>安全甲方</h3><p>[1] lewisec - 某制造业公司安全团队甲方 <a class="link"   target="_blank" rel="noopener" href="http://www.lewisec.com/" >http://www.lewisec.com/<i class="fas fa-external-link-alt"></i></a><br>[2] sixwhale - (滴滴 DSRC) <a class="link"   target="_blank" rel="noopener" href="http://sixwha1e.github.io/" >http://sixwha1e.github.io/<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Pentest"><a href="#Pentest" class="headerlink" title="Pentest!"></a>Pentest!</h3><p>[2] ChaMD5 hfuuss <a class="link"   target="_blank" rel="noopener" href="http://baka233.me/" >http://baka233.me/<i class="fas fa-external-link-alt"></i></a><br>[3] P牛 代码审计 phithon 离别歌 <a class="link"   target="_blank" rel="noopener" href="https://www.leavesongs.com/" >https://www.leavesongs.com/<i class="fas fa-external-link-alt"></i></a><br>[4] evi1cg Both ctf &amp; pentest <a class="link"   target="_blank" rel="noopener" href="https://evi1cg.me/" >https://evi1cg.me/<i class="fas fa-external-link-alt"></i></a><br>[5] 夏之冰雪 <a class="link"   target="_blank" rel="noopener" href="http://love.ranshy.com/" >http://love.ranshy.com/<i class="fas fa-external-link-alt"></i></a><br>[6] 3xp10it <a class="link"   target="_blank" rel="noopener" href="http://3xp10it.cc/" >http://3xp10it.cc/<i class="fas fa-external-link-alt"></i></a><br>[7] cnbraid <a class="link"   target="_blank" rel="noopener" href="http://www.cnbraid.com/" >http://www.cnbraid.com/<i class="fas fa-external-link-alt"></i></a><br>[8] Flanker Sky <a class="link"   target="_blank" rel="noopener" href="https://blog.flanker017.me/" >https://blog.flanker017.me/<i class="fas fa-external-link-alt"></i></a><br>[9] lostwolf <a class="link"   target="_blank" rel="noopener" href="http://wolvez.club/" >http://wolvez.club/<i class="fas fa-external-link-alt"></i></a><br>[10] lshack <a class="link"   target="_blank" rel="noopener" href="https://www.lshack.cn/" >https://www.lshack.cn/<i class="fas fa-external-link-alt"></i></a><br>[11] Mosuan’s Blog <a class="link"   target="_blank" rel="noopener" href="http://www.0aa.me/" >http://www.0aa.me/<i class="fas fa-external-link-alt"></i></a><br>[12] 戚名钰 <a class="link"   target="_blank" rel="noopener" href="http://qimingyu.github.io/" >http://qimingyu.github.io/<i class="fas fa-external-link-alt"></i></a><br>[13] NULL Joe <a class="link"   target="_blank" rel="noopener" href="http://www.infosec-wiki.com/" >http://www.infosec-wiki.com/<i class="fas fa-external-link-alt"></i></a><br>[14] lovehack <a class="link"   target="_blank" rel="noopener" href="http://www.lovehack.cn/" >http://www.lovehack.cn/<i class="fas fa-external-link-alt"></i></a><br>[15] Vins0n <a class="link"   target="_blank" rel="noopener" href="https://pwfee.com/about.html" >https://pwfee.com/about.html<i class="fas fa-external-link-alt"></i></a><br>[16] pr0mise’s blog <a class="link"   target="_blank" rel="noopener" href="https://www.ohvirus.com/" >https://www.ohvirus.com/<i class="fas fa-external-link-alt"></i></a><br>[17] Silver <a class="link"   target="_blank" rel="noopener" href="https://blog.iret.xyz/list.aspx/3" >https://blog.iret.xyz/list.aspx/3<i class="fas fa-external-link-alt"></i></a><br>[18] sh3ll <a class="link"   target="_blank" rel="noopener" href="http://sh3ll.me/" >http://sh3ll.me/<i class="fas fa-external-link-alt"></i></a><br>[19] cnbird <a class="link"   target="_blank" rel="noopener" href="http://www.cnbraid.com/" >http://www.cnbraid.com/<i class="fas fa-external-link-alt"></i></a><br>[20] wrfly <a class="link"   target="_blank" rel="noopener" href="http://wrfly.kfd.me/archive/" >http://wrfly.kfd.me/archive/<i class="fas fa-external-link-alt"></i></a><br>[21] wils0n <a class="link"   target="_blank" rel="noopener" href="http://blog.wils0n.cn/" >http://blog.wils0n.cn/<i class="fas fa-external-link-alt"></i></a><br>[22] expshell <a class="link"   target="_blank" rel="noopener" href="http://www.expshell.com/" >http://www.expshell.com/<i class="fas fa-external-link-alt"></i></a><br>[23] phpinfo-me <a class="link"   target="_blank" rel="noopener" href="https://phpinfo.me/" >https://phpinfo.me/<i class="fas fa-external-link-alt"></i></a><br>[24] yins0 <a class="link"   target="_blank" rel="noopener" href="http://www.yins0.me/" >http://www.yins0.me/<i class="fas fa-external-link-alt"></i></a><br>[25] 深夜 <a class="link"   target="_blank" rel="noopener" href="http://blog.163.com/sy_butian/profile/" >http://blog.163.com/sy_butian/profile/<i class="fas fa-external-link-alt"></i></a><br>[26] 0h1in9e <a class="link"   target="_blank" rel="noopener" href="https://www.ohlinge.cn/" >https://www.ohlinge.cn/<i class="fas fa-external-link-alt"></i></a><br>[27] wAnyBug <a class="link"   target="_blank" rel="noopener" href="https://wanybug.com/" >https://wanybug.com/<i class="fas fa-external-link-alt"></i></a><br>[28] 0nise <a class="link"   target="_blank" rel="noopener" href="http://hack-gov.com/" >http://hack-gov.com/<i class="fas fa-external-link-alt"></i></a><br>[29] 北风飘然 - 乙方渗透/安全研发/src漏洞挖掘 <a class="link"   target="_blank" rel="noopener" href="http://cuijianxiong.com/" >http://cuijianxiong.com/<i class="fas fa-external-link-alt"></i></a><br>[30] 明明是安全 <a class="link"   target="_blank" rel="noopener" href="http://www.srcbug.com/" >http://www.srcbug.com/<i class="fas fa-external-link-alt"></i></a><br>[31] 漏洞人生 <a class="link"   target="_blank" rel="noopener" href="http://www.vuln.cn/" >http://www.vuln.cn/<i class="fas fa-external-link-alt"></i></a><br>[32] lu4n <a class="link"   target="_blank" rel="noopener" href="http://lu4n.com/" >http://lu4n.com/<i class="fas fa-external-link-alt"></i></a><br>[33] 3xpl0it <a class="link"   target="_blank" rel="noopener" href="http://3xp10it.cc/" >http://3xp10it.cc/<i class="fas fa-external-link-alt"></i></a><br>[34] 疯子 - 乙方渗透/应急响应 <a class="link"   target="_blank" rel="noopener" href="https://blkstone.github.io/friend/www.miaofeng.org" >https://blkstone.github.io/friend/www.miaofeng.org<i class="fas fa-external-link-alt"></i></a><br>[35] 浩神博客 - 梁鹏浩(EN有详细资料) <a class="link"   target="_blank" rel="noopener" href="https://www.haohacker.com/" >https://www.haohacker.com/<i class="fas fa-external-link-alt"></i></a><br>[36] Atom Kid <a class="link"   target="_blank" rel="noopener" href="http://www.atomsec.org/" >http://www.atomsec.org/<i class="fas fa-external-link-alt"></i></a><br>[37] Yu1u Security Club <a class="link"   target="_blank" rel="noopener" href="https://www.yu1u.org/" >https://www.yu1u.org/<i class="fas fa-external-link-alt"></i></a></p>
+<p>[a] hypot <a class="link"   target="_blank" rel="noopener" href="http://hypotenuseleg.org/" >http://hypotenuseleg.org/<i class="fas fa-external-link-alt"></i></a><br>[b] evi1cg <a class="link"   target="_blank" rel="noopener" href="https://evi1cg.me/" >https://evi1cg.me/<i class="fas fa-external-link-alt"></i></a><br>[c] chybeta <a class="link"   target="_blank" rel="noopener" href="https://chybeta.github.io/" >https://chybeta.github.io/<i class="fas fa-external-link-alt"></i></a><br>[d] itfellover <a class="link"   target="_blank" rel="noopener" href="https://itfellover.com/" >https://itfellover.com/<i class="fas fa-external-link-alt"></i></a><br>[e] backlion <a class="link"   target="_blank" rel="noopener" href="http://www.cnblogs.com/backlion" >http://www.cnblogs.com/backlion<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://lgf.im/" >zu1k<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="虚拟机直通-穿透"><a href="#虚拟机直通-穿透" class="headerlink" title="虚拟机直通/穿透"></a>虚拟机直通/穿透</h3><table>
+<thead>
+<tr>
+<th align="left"><a class="link"   target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Comparison_of_platform_virtualization_software###Other_features" >平台虚拟化软件比较<i class="fas fa-external-link-alt"></i></a></th>
+<th align="left"><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/wuhen1226/article/details/25543811" >VMware三个版本workstation、server、esxi的区别<i class="fas fa-external-link-alt"></i></a></th>
+<th align="left"><a class="link"   target="_blank" rel="noopener" href="https://johnnyqian.net/blog/hypervisor-in-brief/" >Hypervisor 浅谈<i class="fas fa-external-link-alt"></i></a></th>
+<th align="left"><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/110128514" >不看后悔一辈子的VMware教程<i class="fas fa-external-link-alt"></i></a></th>
+<th align="left"><a class="link"   target="_blank" rel="noopener" href="https://medium.com/@langleyhouge/%E8%AE%A9-kvm-%E4%B8%8A%E7%9A%84-windows-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%8F%92%E4%B8%8Agvt-g-%E7%9A%84%E7%BF%85%E8%86%80-ac0ac28b73b8" >让 KVM 上的 Windows 虚拟机插上 GVT-g 的翅膀<i class="fas fa-external-link-alt"></i></a></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="https://www.rippleweb.com/vmware-vs-kvm/" >VMware vs KVM<i class="fas fa-external-link-alt"></i></a></td>
+<td align="left"><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/sammyliu/articles/4390371.html" >虚拟化 - xen、kvm、vmware、hyper-v等虚拟化技术的比较<i class="fas fa-external-link-alt"></i></a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2020/02/02/Custom_code_highlight/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">自定义 Hexo 代码高亮</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2020/01/25/Crypto_online/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Crypto 加解密网站总结</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;Comments</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script data-pjax
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script data-pjax>
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: 'GHjr9A7BcsjDCu8fuLv3Yev2-MdYXbMMI',
+                    appKey: 'BwohkTMPdjQcGRYeFq6huB1E',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '😜 Thanks for reading. Please feel free to write.',
+                    lang: 'en'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'xcbyao';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('true') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">xcbyao</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.2</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Resource-Tools"><span class="nav-number">1.</span> <span class="nav-text">Resource Tools</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Media-Tools"><span class="nav-number">2.</span> <span class="nav-text">Media Tools</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CTF"><span class="nav-number">3.</span> <span class="nav-text">CTF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Other"><span class="nav-number">4.</span> <span class="nav-text">Other</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BF%E5%90%8D%E6%80%A7%E6%A3%80%E6%B5%8B"><span class="nav-number">5.</span> <span class="nav-text">匿名性检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A8%81%E8%83%81%E6%83%85%E6%8A%A5%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA"><span class="nav-number">6.</span> <span class="nav-text">威胁情报网站导航</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7"><span class="nav-number">7.</span> <span class="nav-text">在线工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E5%AF%BC%E8%88%AA%E9%A1%B5"><span class="nav-number">8.</span> <span class="nav-text">安全导航页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%95%E7%A8%BF%E5%B9%B3%E5%8F%B0"><span class="nav-number">9.</span> <span class="nav-text">投稿平台</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Security-Media"><span class="nav-number">10.</span> <span class="nav-text">Security Media</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E7%BA%BF"><span class="nav-number">11.</span> <span class="nav-text">二线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%96%E6%96%87"><span class="nav-number">12.</span> <span class="nav-text">外文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bbs%E6%88%96%E5%8D%8A%E5%85%AC%E5%BC%80-%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E9%9A%BE%E4%BB%A5%E8%AE%BF%E9%97%AE"><span class="nav-number">13.</span> <span class="nav-text">bbs或半公开&#x2F; 搜索引擎难以访问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E7%BA%BF%E6%BC%8F%E6%89%AB"><span class="nav-number">14.</span> <span class="nav-text">在线漏扫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%81%9A%E5%90%88%E5%88%97%E8%A1%A8"><span class="nav-number">15.</span> <span class="nav-text">聚合列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%81%E4%B8%9A%E5%AE%9E%E9%AA%8C%E5%AE%A4"><span class="nav-number">16.</span> <span class="nav-text">企业实验室</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BE%E5%8C%BA"><span class="nav-number">17.</span> <span class="nav-text">社区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AC%E5%8F%B8%E5%9E%8B-%E5%B0%8F%E5%9B%A2%E9%98%9F"><span class="nav-number">18.</span> <span class="nav-text">公司型 小团队</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%B9%E8%AE%AD%E5%9E%8B%E5%B0%8F%E5%9B%A2%E9%98%9F"><span class="nav-number">19.</span> <span class="nav-text">培训型小团队</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E5%9B%A2%E9%98%9F-%E5%A4%9A%E6%95%B0%E5%81%8F%E5%90%91%E6%B8%97%E9%80%8F%E5%92%8Cweb%E5%AE%89%E5%85%A8"><span class="nav-number">20.</span> <span class="nav-text">小团队 多数偏向渗透和web安全</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E7%AB%99%E8%BF%90%E7%BB%B4"><span class="nav-number">21.</span> <span class="nav-text">建站运维</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reverse"><span class="nav-number">22.</span> <span class="nav-text">Reverse</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Security-Binary"><span class="nav-number">23.</span> <span class="nav-text">Security Binary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Red-Team"><span class="nav-number">24.</span> <span class="nav-text">Red Team</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Normal"><span class="nav-number">25.</span> <span class="nav-text">Normal</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E7%A0%94%E5%8F%91"><span class="nav-number">26.</span> <span class="nav-text">安全研发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E7%94%B2%E6%96%B9"><span class="nav-number">27.</span> <span class="nav-text">安全甲方</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pentest"><span class="nav-number">28.</span> <span class="nav-text">Pentest!</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9B%B4%E9%80%9A-%E7%A9%BF%E9%80%8F"><span class="nav-number">29.</span> <span class="nav-text">虚拟机直通&#x2F;穿透</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
