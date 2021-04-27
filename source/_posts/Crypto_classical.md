@@ -345,8 +345,8 @@ http://www.simonsingh.net/The_Black_Chamber/pigpen.html
 
 - 在线解码&工具
 https://www.qqxiuzi.cn/bianma/weijiniyamima.php
-http://planetcalc.com/2468/（已知密匙）
-http://rumkin.com/tools/cipher/gronsfeld.php（未知密匙）
+http://planetcalc.com/2468/（已知密匙，已崩）
+http://rumkin.com/tools/cipher/gronsfeld.php（未知密匙，已崩）
 http://www.zjslove.com/3.decode/weijiniya/index.html
 
 ### Baconian Cipher 培根密码
