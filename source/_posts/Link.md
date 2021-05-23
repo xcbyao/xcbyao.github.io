@@ -21,7 +21,7 @@ categories: Self-improvement
 | [千千秀字](https://www.qqxiuzi.cn/daohang.htm) | [加密解密工具](http://www.atoolbox.net/Category.php?Id=27) | [解密在线工具](http://ctf.ssleye.com/) | [base64 图片转换](https://www.it399.com/image/base64) | [MD5](https://www.somd5.com/) |
 | :-- | :-- | :-- | :-- | :-- |
 | [RSA 大数分解](http://factordb.com/) | [SageMath](https://sagecell.sagemath.org/) | [新约佛论禅](http://hi.pcmoe.net/buddha.html) | [与佛论禅](http://www.keyfc.net/bbs/tools/tudoucode.aspx) | [二进制转字符](http://tool.huixiang360.com/str/from-binary.php) |
-| [CTF竞赛权威指南](https://firmianay.gitbook.io/ctf-all-in-one/) |  |  | [脑洞大开的编码和加密](http://blog.neargle.com/SecNewsBak/drops/CTF%E4%B8%AD%E9%82%A3%E4%BA%9B%E8%84%91%E6%B4%9E%E5%A4%A7%E5%BC%80%E7%9A%84%E7%BC%96%E7%A0%81%E5%92%8C%E5%8A%A0%E5%AF%86%20.html) | [PwnHub](https://pwnhub.cn/index) |
+| [CTF竞赛权威指南](https://firmianay.gitbook.io/ctf-all-in-one/) | [Frequency](http://rumkin.com/tools/cipher/frequency.php) | [Manipulate](http://rumkin.com/tools/cipher/manipulate.php) | [脑洞大开的编码和加密](http://blog.neargle.com/SecNewsBak/drops/CTF%E4%B8%AD%E9%82%A3%E4%BA%9B%E8%84%91%E6%B4%9E%E5%A4%A7%E5%BC%80%E7%9A%84%E7%BC%96%E7%A0%81%E5%92%8C%E5%8A%A0%E5%AF%86%20.html) | [PwnHub](https://pwnhub.cn/index) |
 
 ### Other
 | [独立开发者社区](https://w2solo.com/) | [安全圈 info](http://www.anquanquan.info/) |  |  |  |

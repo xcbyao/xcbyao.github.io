@@ -103,6 +103,7 @@ API 函数 (Ctrl + N)
 
 
 ## [Windows Shortcut](https://support.microsoft.com/en-us/windows/windows-10-keyboard-tips-and-tricks-588e0b72-0fff-6d3f-aeee-6e5116097942)
+远程桌面 win+r mstsc
 Win + 上下左右
 任务栏切换 Win + 数字
 投影 Win + p
