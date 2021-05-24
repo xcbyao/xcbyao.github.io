@@ -1,17 +1,17 @@
 :root {
   --background-color: #fff;
   --second-background-color: #f7f7f7;
-  --primary-color: #c33;
+  --primary-color: #06c;
   --first-text-color: #484853;
   --second-text-color: #4c4c57;
   --third-text-color: #808091;
   --fourth-text-color: #ededef;
   --default-text-color: #50505c;
   --border-color: #b3b3b3;
-  --selection-color: #d14747;
+  --selection-color: #0075eb;
   --shadow-color: rgba(0,0,0,0.2);
   --shadow-hover-color: rgba(0,0,0,0.28);
-  --scrollbar-color: #585865;
+  --scrollbar-color: #595967;
   --scroll-bar-bg-color: #e6e6e6;
   --link-color: #484853;
   --copyright-info-color: #c03;
@@ -22,17 +22,17 @@
   :root {
     --background-color: #fff;
     --second-background-color: #f7f7f7;
-    --primary-color: #c33;
+    --primary-color: #06c;
     --first-text-color: #484853;
     --second-text-color: #4c4c57;
     --third-text-color: #808091;
     --fourth-text-color: #ededef;
     --default-text-color: #50505c;
     --border-color: #b3b3b3;
-    --selection-color: #d14747;
+    --selection-color: #0075eb;
     --shadow-color: rgba(0,0,0,0.2);
     --shadow-hover-color: rgba(0,0,0,0.28);
-    --scrollbar-color: #585865;
+    --scrollbar-color: #595967;
     --scroll-bar-bg-color: #e6e6e6;
     --link-color: #484853;
     --copyright-info-color: #c03;
@@ -44,14 +44,14 @@
   :root {
     --background-color: #383940;
     --second-background-color: #32333a;
-    --primary-color: #c33;
+    --primary-color: #06c;
     --first-text-color: #d2d2d7;
     --second-text-color: #cbcbd1;
     --third-text-color: #9595a2;
     --fourth-text-color: #242429;
     --default-text-color: #bebec6;
     --border-color: #5c5e6a;
-    --selection-color: #d14747;
+    --selection-color: #0075eb;
     --shadow-color: rgba(128,128,128,0.2);
     --shadow-hover-color: rgba(128,128,128,0.28);
     --scrollbar-color: #32333a;
@@ -65,17 +65,17 @@
 .light-mode {
   --background-color: #fff;
   --second-background-color: #f7f7f7;
-  --primary-color: #c33;
+  --primary-color: #06c;
   --first-text-color: #484853;
   --second-text-color: #4c4c57;
   --third-text-color: #808091;
   --fourth-text-color: #ededef;
   --default-text-color: #50505c;
   --border-color: #b3b3b3;
-  --selection-color: #d14747;
+  --selection-color: #0075eb;
   --shadow-color: rgba(0,0,0,0.2);
   --shadow-hover-color: rgba(0,0,0,0.28);
-  --scrollbar-color: #585865;
+  --scrollbar-color: #595967;
   --scroll-bar-bg-color: #e6e6e6;
   --link-color: #484853;
   --copyright-info-color: #c03;
@@ -85,14 +85,14 @@
 .dark-mode {
   --background-color: #383940;
   --second-background-color: #32333a;
-  --primary-color: #c33;
+  --primary-color: #06c;
   --first-text-color: #d2d2d7;
   --second-text-color: #cbcbd1;
   --third-text-color: #9595a2;
   --fourth-text-color: #242429;
   --default-text-color: #bebec6;
   --border-color: #5c5e6a;
-  --selection-color: #d14747;
+  --selection-color: #0075eb;
   --shadow-color: rgba(128,128,128,0.2);
   --shadow-hover-color: rgba(128,128,128,0.28);
   --scrollbar-color: #32333a;
@@ -104,7 +104,7 @@
 }
 .fade-in-down-animation {
   animation-fill-mode: both;
-  animation-duration: 0.8s;
+  animation-duration: 1s;
   animation-name: fade-in-down;
 }
 .title-hover-animation {
@@ -137,7 +137,7 @@
 @-moz-keyframes fade-in-down {
   0% {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-50px);
   }
   100% {
     opacity: 1;
@@ -147,7 +147,7 @@
 @-webkit-keyframes fade-in-down {
   0% {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-50px);
   }
   100% {
     opacity: 1;
@@ -157,7 +157,7 @@
 @-o-keyframes fade-in-down {
   0% {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-50px);
   }
   100% {
     opacity: 1;
@@ -167,7 +167,7 @@
 @keyframes fade-in-down {
   0% {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-50px);
   }
   100% {
     opacity: 1;
@@ -237,8 +237,8 @@
   transition-timing-function: ease, ease, ease, ease;
 }
 *::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
   transition: all 0.2s ease;
 }
 *::-webkit-scrollbar-thumb {
@@ -262,7 +262,7 @@ body {
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   width: 8px;
-  height: 6px;
+  height: 8px;
 }
 @media (max-width: 780px) {
   html,

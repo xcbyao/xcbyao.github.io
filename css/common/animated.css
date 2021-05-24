@@ -1,6 +1,6 @@
 .fade-in-down-animation {
   animation-fill-mode: both;
-  animation-duration: 0.8s;
+  animation-duration: 1s;
   animation-name: fade-in-down;
 }
 .title-hover-animation {
@@ -33,7 +33,7 @@
 @-moz-keyframes fade-in-down {
   0% {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-50px);
   }
   100% {
     opacity: 1;
@@ -43,7 +43,7 @@
 @-webkit-keyframes fade-in-down {
   0% {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-50px);
   }
   100% {
     opacity: 1;
@@ -53,7 +53,7 @@
 @-o-keyframes fade-in-down {
   0% {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-50px);
   }
   100% {
     opacity: 1;
@@ -63,7 +63,7 @@
 @keyframes fade-in-down {
   0% {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-50px);
   }
   100% {
     opacity: 1;
