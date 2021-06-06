@@ -38,10 +38,10 @@
   description: 一个纯粹的互联网爱好者
   avatar: https://cdn.jsdelivr.net/gh/aipaideer/pic/avatar.png
 
-- name: 
-  link: 
-  description: 
-  avatar: 
+- name: 阮一峰的网络日志
+  link: http://www.ruanyifeng.com/blog/
+  description: 科技爱好者周刊
+  avatar: http://www.ruanyifeng.com/blog/images/person2_s.jpg
 
 - name: 酷壳 – CoolShell
   link: https://coolshell.cn/
