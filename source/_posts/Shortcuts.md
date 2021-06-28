@@ -119,6 +119,7 @@ Win + 上下左右
 锁定计算机 Win + L
 任务视图 win + tab
 轻松使用 win + u
+蓝牙连接 win + k
 切换输入法 win + 空格 / alt + 左/右 shift
 创建虚拟桌面 Win + Ctrl + D
 关闭虚拟桌面 Win + Ctrl + F4
