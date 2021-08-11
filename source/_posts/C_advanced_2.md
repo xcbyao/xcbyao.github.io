@@ -78,6 +78,31 @@ sim x;
   - 函数体是用于执行有用工作的地方。
   - 函数跋用于在函数即将返回之前清理堆栈。
 
+- 引用型定义
+```C++
+void add(int a, int b, int &c){
+	c = a + b;
+}
+```
+
+对比转换：
+```C++
+int ret = 0;
+void getRet(int &r){
+	++r;
+}
+调用：getRet(ret);
+```
+plain C（纯 C 环境）
+```C
+int ret = 0;
+void getRet(int *r){
+	++(*r);
+}
+调用：getRet(&ret);
+```
+
+
 ## 0x02 Reference
 *《C陷阱与缺陷》*
 *《C专家编程》*
