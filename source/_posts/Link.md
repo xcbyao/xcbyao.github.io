@@ -24,7 +24,7 @@ categories: Self-improvement
 | [CTF竞赛权威指南](https://firmianay.gitbook.io/ctf-all-in-one/) | [Frequency](http://rumkin.com/tools/cipher/frequency.php) | [Manipulate](http://rumkin.com/tools/cipher/manipulate.php) | [脑洞大开的编码和加密](http://blog.neargle.com/SecNewsBak/drops/CTF%E4%B8%AD%E9%82%A3%E4%BA%9B%E8%84%91%E6%B4%9E%E5%A4%A7%E5%BC%80%E7%9A%84%E7%BC%96%E7%A0%81%E5%92%8C%E5%8A%A0%E5%AF%86%20.html) | [PwnHub](https://pwnhub.cn/index) |
 
 ### Other
-| [独立开发者社区](https://w2solo.com/) | [安全圈 info](http://www.anquanquan.info/) |  |  |  |
+| [独立开发者社区](https://w2solo.com/) | [安全圈 info](http://www.anquanquan.info/) | [美国地址生成器](https://www.meiguodizhi.com/) |  |  |
 | :-- | :-- | :-- | :-- | :-- |
 |  |  |  |  |  |
 
