@@ -77,8 +77,8 @@ https://malwr.com/
 [a] [CloudEye HTTP Fuzzing/缓存攻击平台](http://cloudeye.me/)
 
 ### 投稿平台
-[1] 阿里先知社区
-[2] 360安全客
+[1] 阿里先知社区 https://xz.aliyun.com/
+[2] 360安全客 https://www.anquanke.com/contribute/new
 [3] freebuf
 [4] 撕吼
 [5] 安全脉搏
