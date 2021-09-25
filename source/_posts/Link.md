@@ -13,7 +13,7 @@ categories: Self-improvement
 ### Media Tools
 | [PS 在线](https://www.uupoop.com/ps/) | [圆形剪切](https://crop-circle.imageonline.co/cn/) | [I 💙 IMG](https://www.iloveimg.com/zh-cn) | [I 🧡 PDF](https://www.ilovepdf.com/zh-cn) | [favicon 制作](https://tool.lu/favicon/) |
 | :-- | :-- | :-- | :-- | :-- |
-| [最优图像优化](https://zh.recompressor.com/) | [MP3 剪辑](https://mp3cut.net/cn/) | [定时刷新网页](http://www.mxcz.net/tools/Refresh.aspx) | [emoji 颜文字](https://emojixd.com/) |  |
+| [最优图像优化](https://zh.recompressor.com/) | [MP3 剪辑](https://mp3cut.net/cn/) | [定时刷新网页](http://www.mxcz.net/tools/Refresh.aspx) | [emoji 颜文字](https://emojixd.com/) | [音乐网下载](http://m.1kmn.com/) |
 | [艺术二维码](http://tool.mkblog.cn/qrbtf/) | [二维码模板](https://www.it399.com/qrcode.jsp) | [草料二维码](https://cli.im/) | [YEELOGO_logo](http://yeelogo.com/#/) | [Hdqwalls](https://hdqwalls.com/) |
 | [wallhaven](https://wallhaven.cc/) | [二次元壁纸](https://bz.zzzmh.cn/) | [兔二工具](https://www.tool22.com/) | [PornHub 风格](http://tool.mkblog.cn/logoly/#/) | [文章生成器](http://tool.mkblog.cn/bullshit/) |
 
