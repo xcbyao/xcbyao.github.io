@@ -26,7 +26,7 @@ categories: Self-improvement
 ### Other
 | [独立开发者社区](https://w2solo.com/) | [安全圈 info](http://www.anquanquan.info/) | [美国地址生成器](https://www.meiguodizhi.com/) |  |  |
 | :-- | :-- | :-- | :-- | :-- |
-|  |  |  |  |  |
+|  |  |  |  | [一缕青丝详细编制视频](https://www.iqiyi.com/w_19s6ia41u9.html) |
 
 ### 匿名性检测
 [whoer](https://whoer.net/zh)
