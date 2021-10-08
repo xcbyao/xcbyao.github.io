@@ -337,6 +337,9 @@ git config --global http.http://github.com.proxy 127.0.0.1:10808
 git config --global https.https://github.com.proxy 127.0.0.1:10808
 ```
 
+### ssh: connect to host github.com port 22: Connection timed out
+修改 `.ssh/known_hosts` 文件中任意一个 ip 为[当前 IP](https://whoer.net/)
+
 ### Failed to connect to github.com port 443: Operation timed out
 `/etc/hosts` 把 GitHub 相关的几行代码注释掉，保存 hosts 文件
 这种的 #192.30.253.112 github.com
