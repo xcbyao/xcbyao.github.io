@@ -344,7 +344,12 @@ https://www.tianchenyi.com/index.php/cross.html
 [c] chybeta https://chybeta.github.io/
 [d] itfellover https://itfellover.com/
 [e] backlion http://www.cnblogs.com/backlion
+https://xecades.xyz/
+https://blog.baoshuo.ren/
 
+把Win10变成Mac OS- MyDockFinder v5.9版本
+官网地址：https://www.mydockfinder.com
+下载地址：www.lanzoux.com/b03mlebmj
 
 [zu1k](https://lgf.im/)
 https://blog.rxliuli.com/
