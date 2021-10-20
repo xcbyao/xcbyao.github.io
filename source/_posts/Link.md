@@ -8,7 +8,7 @@ categories: Self-improvement
 | :-- | :-- | :-- | :-- | :-- |
 | [小刀资源网](https://www.x6d.com/) | [ZAPRO·杂铺](https://tmioe.com/) | [Z-Library](https://z-lib.org/) | [All IT eBooks](https://allitbooks.net/) | [LibGen](http://libgen.rs/) |
 | [小资源栈](https://pymlovelyq.github.io/) | [🔰雨苁ℒ🔰暗网\|黑客\|极客](https://www.ddosi.com/) | [Internet Archive](https://archive.org/) | [华为定位](https://cloud.huawei.com/#/mobile) | [双拼练习](https://api.ihint.me/shuang/) |
-| [VPS 大玩家](https://www.vpsdawanjia.com/) | [虚拟卡大玩家](https://www.xunikawang.com/) | [小楠日语](http://o-oo.net.cn/) |  | [回忆飘如雪](http://gv7.me/) |
+| [VPS 大玩家](https://www.vpsdawanjia.com/) | [虚拟卡大玩家](https://www.xunikawang.com/) | [小楠日语](http://o-oo.net.cn/) |  | [回忆飘如雪](http://gv7.me/) | [为键盘工作者设计的单词记忆与英语肌肉记忆锻炼软件](https://qwerty-learner.vercel.app) |
 
 ### Media Tools
 | [PS 在线](https://www.uupoop.com/ps/) | [圆形剪切](https://crop-circle.imageonline.co/cn/) | [I 💙 IMG](https://www.iloveimg.com/zh-cn) | [I 🧡 PDF](https://www.ilovepdf.com/zh-cn) | [favicon 制作](https://tool.lu/favicon/) |
@@ -16,6 +16,7 @@ categories: Self-improvement
 | [最优图像优化](https://zh.recompressor.com/) | [MP3 剪辑](https://mp3cut.net/cn/) | [定时刷新网页](http://www.mxcz.net/tools/Refresh.aspx) | [emoji 颜文字](https://emojixd.com/) | [音乐网下载](http://m.1kmn.com/) |
 | [艺术二维码](http://tool.mkblog.cn/qrbtf/) | [二维码模板](https://www.it399.com/qrcode.jsp) | [草料二维码](https://cli.im/) | [YEELOGO_logo](http://yeelogo.com/#/) | [Hdqwalls](https://hdqwalls.com/) |
 | [wallhaven](https://wallhaven.cc/) | [二次元壁纸](https://bz.zzzmh.cn/) | [兔二工具](https://www.tool22.com/) | [PornHub 风格](http://tool.mkblog.cn/logoly/#/) | [文章生成器](http://tool.mkblog.cn/bullshit/) |
+| 下载全世界的音乐https://myfreemp3music.com/ | [WALLPAPER](https://wall.alphacoders.com) |
 
 ### CTF
 | [千千秀字](https://www.qqxiuzi.cn/daohang.htm) | [加密解密工具](http://www.atoolbox.net/Category.php?Id=27) | [解密在线工具](http://ctf.ssleye.com/) | [base64 图片转换](https://www.it399.com/image/base64) | [MD5](https://www.somd5.com/) |
@@ -347,12 +348,46 @@ https://www.tianchenyi.com/index.php/cross.html
 https://xecades.xyz/
 https://blog.baoshuo.ren/
 
-把Win10变成Mac OS- MyDockFinder v5.9版本
+把Win10变成 Mac OS- MyDockFinder v5.9版本
 官网地址：https://www.mydockfinder.com
 下载地址：www.lanzoux.com/b03mlebmj
 
 [zu1k](https://lgf.im/)
 https://blog.rxliuli.com/
+
+
+海量精品 Mac Apps 免费分享
+https://www.digit77.com/macapps/
+
+5个免费的外文书籍下载网站
+1️BookYards 收录了24214本书籍，并且书量随时在增加。
+https://www.bookyards.com/en/welcome
+2️The Online Books Page 由宾夕法尼亚大学图书馆建立并维护，收录了几万本书籍。
+http://onlinebooks.library.upenn.edu/
+3️Ebookee 按主题分类，非常便于查找。
+https://www.ebookee.net/
+4️Planet eBook 所有的小说和书籍都是免费下载和共享。
+https://www.planetebook.com/
+5️Project Gutenberg 古登堡计划，藏书量超过6万本
+https://www.gutenberg.org/
+
+有很多libgen上都没有的学术著作pdf下载，很多都是新书，不知道有没有人分享过。
+https://oapen.org/
+
+百度网盘资源搜索引擎
+https://www.feizhupan.com/#/
+
+开源情报工具箱
+https://osint-labs.org/tools/
+
+翻译各种烦人的拼音缩写
+https://lab.magiconch.com/nbnhhsh/
+
+私人在线图库
+http://hefollo.com/
+
+单词键盘练习
+https://qwerty.kaiyi.cool/
 
 ### 虚拟机直通/穿透
 | [平台虚拟化软件比较](https://en.wikipedia.org/wiki/Comparison_of_platform_virtualization_software###Other_features) | [VMware三个版本workstation、server、esxi的区别](https://blog.csdn.net/wuhen1226/article/details/25543811) | [Hypervisor 浅谈](https://johnnyqian.net/blog/hypervisor-in-brief/) | [不看后悔一辈子的VMware教程](https://zhuanlan.zhihu.com/p/110128514) | [让 KVM 上的 Windows 虚拟机插上 GVT-g 的翅膀](https://medium.com/@langleyhouge/%E8%AE%A9-kvm-%E4%B8%8A%E7%9A%84-windows-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%8F%92%E4%B8%8Agvt-g-%E7%9A%84%E7%BF%85%E8%86%80-ac0ac28b73b8) |
