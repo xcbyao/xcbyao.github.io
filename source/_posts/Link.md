@@ -389,6 +389,19 @@ http://hefollo.com/
 单词键盘练习
 https://qwerty.kaiyi.cool/
 
+日语写作校对网站，可以针对最多1万字的日语进行校对，包括语法和用词上的错误
+http://www.kiji-check.com/
+
+天太热了，在群里装一个空调，有需要的家人自己吹，每次只能吹一天【群友 酷酷的麦斯尔 提供】
+https://ac.yunyoujun.cn/?from=groupmessage&isappinstalled=0
+https://www.yunyoujun.cn/
+
+艾宾浩斯记忆曲线自动生成计划表，不管是背单词或是复习还是制定任何计划都用得上
+https://exam4.us/
+
+
+
+
 ### 虚拟机直通/穿透
 | [平台虚拟化软件比较](https://en.wikipedia.org/wiki/Comparison_of_platform_virtualization_software###Other_features) | [VMware三个版本workstation、server、esxi的区别](https://blog.csdn.net/wuhen1226/article/details/25543811) | [Hypervisor 浅谈](https://johnnyqian.net/blog/hypervisor-in-brief/) | [不看后悔一辈子的VMware教程](https://zhuanlan.zhihu.com/p/110128514) | [让 KVM 上的 Windows 虚拟机插上 GVT-g 的翅膀](https://medium.com/@langleyhouge/%E8%AE%A9-kvm-%E4%B8%8A%E7%9A%84-windows-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%8F%92%E4%B8%8Agvt-g-%E7%9A%84%E7%BF%85%E8%86%80-ac0ac28b73b8) |
 | :-- | :-- | :-- | :-- | :-- |
