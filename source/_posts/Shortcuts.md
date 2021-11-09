@@ -7,53 +7,30 @@ sticky: 4
 ## OD
 |断点|F2|打开 exe|F3|单步步入|F7|单步步过|F8|
 |:-|:-|:-|:-|:-|:-|:-|:-|
-|||||||||
-|||||||||
-
-暂停执行 (F12)
-运行(F9)
-到返回 (Ctrl + F9)
-跳过异常 (Shift + F9)
-
-重新运行 (Ctrl + F2)
-关闭程序 (Alt + F2)
-
-跟踪步入 Call (Ctrl + F11)
-跟踪步过 Call (Ctrl + F12)
-
-撤销修改(Alt + backspace)
-
-查找地址(Ctrl + G)
-补丁窗口 (Ctrl + P)
-API 函数 (Ctrl + N)
-查找二进制字符串 (Ctrl + B)
-查找 (Ctrl + L)
-查找命令 (Ctrl + F)
-
-显示记录窗口 (Alt + L)
-显示模块窗口 (Alt + E)
-显示内存窗口 (Alt + M)
-显示 CPU 窗口 (Alt + C)
-显示呼叫堆栈 (Alt + K)
-显示断点窗口 (Alt + B)
-调试选项窗口 (Alt + O)
+|暂停执行|F12|运行|F9|到返回|Ctrl + F9|跳过异常|Shift + F9|
+|重新运行|Ctrl + F2|关闭程序|Alt + F2|跟踪步入 Call|Ctrl + F11|跟踪步过 Call|Ctrl + F12|
+|撤销修改|Alt + backspace|查找地址|Ctrl + G|补丁窗口|Ctrl + P|API 函数|Ctrl + N|
+|查找二进制字符串|Ctrl + B|查找|Ctrl + L|查找命令|Ctrl + F|
+|显示记录窗口|Alt + L|显示模块窗口|Alt + E|显示内存窗口|Alt + M|显示 CPU 窗口|Alt + C|
+|显示呼叫堆栈|Alt + K|显示断点窗口|Alt + B|调试选项窗口|Alt + O|
 
 
-## Markdown grammar
+## Markdown
 [toc]
 #1-6
 
 - “- + *” 与 “1.” 结合
   1. 开头两空格
+     - 开头五空格
 
 \ 转义
 
 \[名称](url) 图片前加 !
 
-> 但行好事，莫问前程。
- >>内层引用 前空一格
+> 引用第一层
+ >> 内层引用 前空一格
 
-*我是小妖怪* **吃人不眨眼** `hello world`
+*斜体* **粗体** `代码块`
 
 \*** --- ___ 分割线
 
@@ -69,16 +46,15 @@ API 函数 (Ctrl + N)
 
 
 ## Chrome Shortcut
-打开主页 Alt + Home
-关闭当前窗口 Alt + F4
-打开菜单 Alt + f/e
-跳转到地址栏 Alt + d
-
-切换用户 Ctrl + shift + m
-当前页面补充`www.com` Ctrl + Enter
-打开“清除浏览数据”选项 Ctrl + Shift + backspace
-
-打开新窗口 Ctrl + n
+|打开主页|Alt + Home|关闭当前窗口|Alt + F4|打开菜单|Alt + f/e|跳转到地址栏|Alt + d|
+|:-|:-|:-|:-|:-|:-|:-|:-|
+|切换用户|Ctrl + shift + m|当前页面补充`www.com`|Ctrl + Enter|清除浏览数据|Ctrl + Shift + backspace|打开新窗口|Ctrl + n|
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
 无痕打开新窗口 Ctrl + Shift + n
 打开跳转新标签页 Ctrl + t
 关闭当前标签页 Ctrl + W
@@ -428,6 +404,7 @@ b	Open blame view.
 |:-|:-|:-|
 |单|元|格|
 
+```
 ctrl + f/b/d/u 向下/上移动一/半页
 +/- 移动到非空白字符下/上一列
 n空格 向右移动 n 字符
@@ -949,3 +926,4 @@ m	：则是	libm.so	这个函数库，其中，	lib	与扩展名（.a	或	.so）
 
 用copy命令隐藏文件的技巧
 Copy 1.exe/b+1.txt 2.exe（把1.txt藏进2.exe文件）
+```
