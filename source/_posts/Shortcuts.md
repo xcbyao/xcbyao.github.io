@@ -945,3 +945,7 @@ m	：则是	libm.so	这个函数库，其中，	lib	与扩展名（.a	或	.so）
 
 
 
+
+
+用copy命令隐藏文件的技巧
+Copy 1.exe/b+1.txt 2.exe（把1.txt藏进2.exe文件）
