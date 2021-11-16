@@ -5,11 +5,15 @@ categories: Programming
 sticky: 4
 ---
 ## OD
-|断点|F2|打开 exe|F3|单步步入|F7|单步步过|F8|
-|:-|:-|:-|:-|:-|:-|:-|:-|
-|暂停执行|F12|运行|F9|到返回|Ctrl + F9|跳过异常|Shift + F9|
-|重新运行|Ctrl + F2|关闭程序|Alt + F2|跟踪步入 Call|Ctrl + F11|跟踪步过 Call|Ctrl + F12|
-|撤销修改|Alt + backspace|查找地址|Ctrl + G|补丁窗口|Ctrl + P|API 函数|Ctrl + N|
+|断点|F2|打开 exe|F3|
+|:-|:-|:-|:-|
+|单步步入|F7||单步步过|F8|
+|暂停执行|F12|运行|F9|
+|到返回|Ctrl + F9|跳过异常|Shift + F9|
+|重新运行|Ctrl + F2|关闭程序|Alt + F2|
+|跟踪步入 Call|Ctrl + F11|跟踪步过 Call|Ctrl + F12|
+|撤销修改|Alt + backspace|查找地址|Ctrl + G|
+|补丁窗口|Ctrl + P|API 函数|Ctrl + N|
 |查找二进制字符串|Ctrl + B|查找|Ctrl + L|查找命令|Ctrl + F|
 |显示记录窗口|Alt + L|显示模块窗口|Alt + E|显示内存窗口|Alt + M|显示 CPU 窗口|Alt + C|
 |显示呼叫堆栈|Alt + K|显示断点窗口|Alt + B|调试选项窗口|Alt + O|
@@ -45,69 +49,44 @@ sticky: 4
 ```
 
 
-## Chrome Shortcut
-|打开主页|Alt + Home|关闭当前窗口|Alt + F4|打开菜单|Alt + f/e|跳转到地址栏|Alt + d|
-|:-|:-|:-|:-|:-|:-|:-|:-|
-|切换用户|Ctrl + shift + m|当前页面补充`www.com`|Ctrl + Enter|清除浏览数据|Ctrl + Shift + backspace|打开新窗口|Ctrl + n|
-|||||||||
-|||||||||
-|||||||||
-|||||||||
-|||||||||
-|||||||||
-无痕打开新窗口 Ctrl + Shift + n
-打开跳转新标签页 Ctrl + t
-关闭当前标签页 Ctrl + W
-
-跳转到下一个标签页 Ctrl + PgDn
-跳转到上一个标签页 Ctrl + PgUp
-跳转到特定标签页 Ctrl + 1~8
-
-查找 Ctrl + f 或 F3 (切换 Ctrl + g)
-历史 Ctrl + h
-下载 Ctrl + j
-书签 Ctrl + Shift + o
-保存书签 Ctrl + d
-保存所有书签 Ctrl + Shift + d
-显示/隐藏书签栏 Ctrl + Shift + b
-
-检查 Ctrl + Shift + j/i 或 F12
-源代码 Ctrl + u
-
-放大/缩小 Ctrl +/-
-恢复大小 Ctrl + 0
+## [Chrome](https://support.google.com/chrome/answer/157179?hl=en)
+|打开主页|Alt + Home|关闭当前窗口|Alt + F4|
+|:-|:-|:-|:-|
+|打开菜单|Alt + F/E|跳转到地址栏|Alt + D|
+|切换用户|Ctrl + Shift + M|网址补充`www.com`|Ctrl + Enter|
+|清除浏览数据|Ctrl + Shift + backspace|打开新窗口|Ctrl + N|
+|无痕打开新窗口|Ctrl + Shift + N|打开跳转新标签页|Ctrl + T|
+|关闭当前标签页|Ctrl + W|跳转到特定标签页|Ctrl + 1~9|
+|跳转到下一个标签页|Ctrl + PgDn|跳转到上一个标签页|Ctrl + PgUp|
+|查找|Ctrl + F 或 F3|历史|Ctrl + H|
+|下载|Ctrl + J|书签|Ctrl + Shift + O|
+|保存书签|Ctrl + D|保存所有书签|Ctrl + Shift + D|
+|显示/隐藏书签栏|Ctrl + Shift + B|
+|放大/缩小|Ctrl +/-|恢复大小|Ctrl + 0|
+|源码|Ctrl + U|检查|Ctrl + Shift + J/I 或 F12|
 
 
-## [Windows Shortcut](https://support.microsoft.com/en-us/windows/windows-10-keyboard-tips-and-tricks-588e0b72-0fff-6d3f-aeee-6e5116097942)
-远程桌面 win+r mstsc
-Win + 上下左右
-任务栏切换 Win + 数字
-投影 Win + p
-创建新文件夹 Ctrl + Shift + N
+## [Windows](https://support.microsoft.com/en-us/Windows/Windows-10-keyboard-tips-and-tricks-588e0b72-0fff-6d3f-aeee-6e5116097942)
+|远程桌面|Win + R mstsc|布局|Win + ←↑→↓|
+|:-|:-|:-|:-|
+|任务栏切换|Win + 数字|投影|Win + P|
+|创建新文件夹|Ctrl + Shift + N|显示桌面|Win + D/M|
+|表情符号|Win + .|显示设置|Win + I|
+|文件资源管理器|Win + E|左侧工具栏|Win + X|
+|右侧设置|Win + A|锁定计算机|Win + L|
+|任务视图|Win + Tab|连接|Win + K|
+|切换输入法|Win + 空格 / Alt + 左/右 Shift|||
 
-显示桌面 win + d/m
-预览桌面 win + ，
-表情符号 win + .
-显示设置 win + i
-文件资源管理器 win + e
-左侧工具栏 win + x
-右侧设置 Win + a
-锁定计算机 Win + L
-任务视图 win + tab
-轻松使用 win + u
-蓝牙连接 win + k
-切换输入法 win + 空格 / alt + 左/右 shift
-创建虚拟桌面 Win + Ctrl + D
-关闭虚拟桌面 Win + Ctrl + F4
-切换虚拟桌面 Win + Ctrl + 左/右
-
-设置自启动 win+R 复制，添加快捷键
+设置自启动 Win+R 复制，添加快捷键
 ```yml
 %USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 ```
 
-【ctrl】+【Home】 光标到达txt文本最前面
-【ctrl】+【End】 光标到达txt文本最后面
+### 文本处理
+|Ctrl + Home|光标达到文本最前面|Ctrl + End|光标达到文本最后面|
+|:-|:-|:-|:-|
+|||||
+
 
 【ctrl】+【shift】+【Home】 选中光标所在位置到txt文本最前面的部分
 【ctrl】+【shift】+【End】 选中光标所在位置到txt文本最后面的部分
