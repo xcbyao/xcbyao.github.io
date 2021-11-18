@@ -82,7 +82,7 @@ sticky: 4
 %USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 ```
 
-### 文本处理
+## Text processing
 |Ctrl + Home|光标达到文本最前面|Ctrl + End|光标达到文本最后面|
 |:-|:-|:-|:-|
 |Ctrl + Shift + Home|光标所在位置到最前面的部分|Ctrl + Shift + End|光标所在位置到最前面的部分|
@@ -120,7 +120,7 @@ sticky: 4
 |反汇编|Ctrl + Alt + D|删除整行|Ctrl + backspace|
 
 
-## git & hexo
+## Git & Hexo
 ```yml
 npm install hexo-deployer-git --save
 ```
@@ -129,7 +129,7 @@ npm install hexo-deployer-git --save
 `hexo d -g` 生成部署
 `hexo new "post"` 新建文章
 `hexo new page "page"` 新建页面
----
+
 
 ### theme update
 ```git
@@ -138,9 +138,9 @@ git stash //将未提交修改保存至堆栈中
 git pull  //获取更新
 git stash pop //弹栈
 ```
----
 
-### hexo Upgrade
+
+### hexo upgrade
 ```yml
 npm -v
 node -v
@@ -157,7 +157,7 @@ npm-upgrade                  //更新 package.json
 npm update -g                //更新全局插件
 npm update --save            //更新系统插件
 ```
----
+
 
 `git init`
 `git status`
@@ -171,7 +171,7 @@ npm update --save            //更新系统插件
 `git tag [v1]` 添加标签
 `git remote add origin url` 关联远程仓库
 `git pull/push origin master:djs` 拉/推 远程主机名 远程分支名:本地分支名
----
+
 
 ### 删除所有远程标签
 ```yml
@@ -228,7 +228,7 @@ git checkout --theirs YOUR_BINARY_FILES     # 保留需要合并进来的分支�
 git checkout --ours YOUR_BINARY_FILES       # 保留自己的修改
 git add YOUR_BINARY_FILES
 ```
----
+
 
 ### 创建密钥
 ```yml
@@ -281,11 +281,11 @@ git config --global --unset http.proxy
 
 
 ## [GitHub](https://www.zhihu.com/question/36974348)
-shift + / 查看快捷键
+Shift + / 查看快捷键
 
 在github上任意项目加个"gh-pages"分支，通过github page/你项目的名称就可以访问到那个分支的静态文件
 issue 模板 https://github.blog/2016-02-17-issue-and-pull-request-templates/
-小绿点可以通过修改系统时间再commit来控制形状。
+小绿点可以通过修改系统时间再 commit 来控制形状。
 
 github.githistory.xyz
 
@@ -293,8 +293,6 @@ Site wide shortcuts
 s or / Focus the search bar.
 
 g n	Go to your notifications.
-
-esc	When focused on a user, issue, or pull request hovercard, closes the hovercard and refocuses on the element the hovercard is in
 
 Repositories
 g c	Go to the Code tab
@@ -347,9 +345,9 @@ b	Open blame view.
 
 
 ## Vim
-|左|右|居中|
-|:-|:-|:-|
-|单|元|格|
+|||||
+|:-|:-|:-|:-|
+|||||
 
 ```
 ctrl + f/b/d/u 向下/上移动一/半页
@@ -589,9 +587,10 @@ A, 输入字符串，按 ESC。
 <C-w>+ (或 <C-w>-) : 增加尺寸
 
 https://coolshell.cn/articles/11312.html#%E7%AA%97%E5%8F%A3%E5%88%86%E5%B1%8F%E6%B5%8F%E8%A7%88
-
+```
 
 ## Linux
+```
 观察系统的使用状态：	如果要看目前有谁在线上，可以下达“who”这个指令，而如果要看
 网络的连线状态，可以下达	“	netstat	-a	”这个指令，而要看背景执行的程序可以执行“	ps
 -aux	”这个指令。
