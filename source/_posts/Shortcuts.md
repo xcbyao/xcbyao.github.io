@@ -86,7 +86,7 @@ sticky: 4
 |Ctrl + Home|光标达到文本最前面|Ctrl + End|光标达到文本最后面|
 |:-|:-|:-|:-|
 |Ctrl + Shift + Home|光标所在位置到最前面的部分|Ctrl + Shift + End|光标所在位置到最前面的部分|
-|Ctrl + Shift + F|输入法繁简转换|||
+|Ctrl + Shift + F|输入法繁简转换|Ctrl + D|复制上一行|
 
 
 ## Vimium
@@ -115,7 +115,7 @@ sticky: 4
 ## Visual Studio
 |新建项|Ctrl + Shift + A|现有项|Alt + Shift + A|
 |:-|:-|:-|:-|
-|复制上一行|Ctrl + D|生成|Ctrl + B|
+|生成|Ctrl + B|||
 |逐过程|F10|逐语句|F11|
 |反汇编|Ctrl + Alt + D|删除整行|Ctrl + backspace|
 
