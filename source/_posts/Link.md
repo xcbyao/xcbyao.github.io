@@ -405,6 +405,9 @@ https://liferestart.syaro.io/view/
 中文 DOS 游戏集合
 https://dos.zczc.cz/
 
+Apple store
+https://buy.aneeo.com/
+
 
 
 ### 虚拟机直通/穿透
