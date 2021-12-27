@@ -408,6 +408,15 @@ https://dos.zczc.cz/
 Apple store
 https://buy.aneeo.com/
 
+微软产品密钥分享平台PKeyTool
+https://pkeytools.azurewebsites.net/ShareKeys
+
+认知偏差知识手册
+https://s75w5y7vut.feishu.cn/docs/doccn3BatnScBJe7wD7K3S5poFf
+
+语言的邀请
+https://dhbsfuhnfu.feishu.cn/docs/doccnQdzN2Op8nv7WLK53xFx46c
+
 
 
 ### 虚拟机直通/穿透
