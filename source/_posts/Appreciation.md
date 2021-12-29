@@ -3175,8 +3175,38 @@ https://baijiahao.baidu.com/s?id=1663502271467041219&wfr=spider&for=pc&searchwor
 
 恋爱，可以像是一场漫长的捕猎，确定了目标，猎人需要的就是足够的耐心和足够大的网
 
-[大学四年，如何高质量地度过？](https://www.zhihu.com/question/331077570/answer/1109447189)
-
 你大概不会再找到比校园更好的人了，因为这是唯一次能跨阶层恋爱的地方。出了校园踏入社会，人们开始考虑车、考虑房子、考虑彩礼、考虑家庭、背景、职业，考虑了很多，唯独不再考虑爱情。
 
+《百年孤独》里的有句话——
+生命中曾拥有的所有灿烂，原来终究，都需要寂寞来偿还。
+
+很喜欢电影《熔炉》里的一句话：我们一路奋战，不是为了改变世界，而是为了不让世界改变我们。
+功利心像一味猛药，能让人获得巨大的满足感，但也会给生活注入无尽的悲凉，等来人生的灾难。
+愿余生你我都能记得自己为何而出发，少些功利主义的追求，多些不为什么的坚持。
+
+You can't sit around and wait for others to arrange your life; if you want something, fight for it yourself.
+你不能等待别人来安排你的人生；自己想要的，自己争取。
+
+It is so nice when you can sit with someone and not have to talk.
+能和一个人坐在一起而不必交谈真好。
+
+Time goes on and on，never to an end but crossings.
+时间一直走，没有尽头，只有路口。
+
+Belief, like fear or love, is a force that determines the course of our lives.
+信仰，就像恐惧和爱一样，是一种决定我们人生走向的力量。
+
+One can never consent to creep when one feels an impulse to soar.
+当人有飞的渴望时，他绝不会满足于爬。
+
+There are billions and millions of unlived days for every day we live.
+我们每度过一天，都有千千万万个未曾活过的日子与我们擦肩而过。
+
+I thought I'd make a difference，but no one knows I'm here.
+我还妄想大展身手到头来还不是默默无闻。
+
+Death is not the end of life，forgetting is.
+死亡并不是生命的终点，遗忘才是。
+
+不去学，可能一辈子也不需要用。选择一种可能，去看见预料之外的风景，遇见意料之外的人，做认同的事
 
