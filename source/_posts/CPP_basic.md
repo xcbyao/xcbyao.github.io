@@ -10,7 +10,9 @@ categories: Programming
 
 
 ## 0x0 References
-> ()[https://github.com/AnkerLeng/Cpp-0-1-Resource]
+> [C++ 匠心之作](https://github.com/AnkerLeng/Cpp-0-1-Resource)
+> 《C++ Primer Plus（中文第6版）》
+> 《C++  Primer中文版（第五版）》
 
 ## 0x0 Postscript
 
