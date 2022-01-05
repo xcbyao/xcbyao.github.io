@@ -65,6 +65,12 @@ sticky: 4
 |放大/缩小|Ctrl +/-|恢复大小|Ctrl + 0|
 |源码|Ctrl + U|检查|Ctrl + Shift + J/I 或 F12|
 
+### chrome://flags
+国内环境推荐关闭 QUIC 协议：
+Experimental QUIC protocol 值改为 Disabled
+
+Parallel downloading 值改为 Enabled
+
 
 ## [Windows](https://support.microsoft.com/en-us/Windows/Windows-10-keyboard-tips-and-tricks-588e0b72-0fff-6d3f-aeee-6e5116097942)
 |远程桌面|Win + R mstsc|布局|Win + ←↑→↓|
