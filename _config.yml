@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Xcbyao's world
+title: Xcbyao's 信息熵洞
 subtitle: ''
 description: '凡心所向 素履以往 生如逆旅 一苇以航'
 keywords: xcbyao,pwn,crypto,reverse,hack
@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://xcbyao.github.io/
+url: https://xcbyao.com/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
