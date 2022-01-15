@@ -389,6 +389,15 @@ http://hefollo.com/
 单词键盘练习
 https://qwerty.kaiyi.cool/
 
+在线背单词
+http://www.danci88.com/
+
+可可英语
+http://www.kekenet.com/cet4/tl/
+
+英语真题在线
+https://zhenti.burningvocabulary.com/
+
 日语写作校对网站，可以针对最多1万字的日语进行校对，包括语法和用词上的错误
 http://www.kiji-check.com/
 
@@ -419,9 +428,6 @@ https://dhbsfuhnfu.feishu.cn/docs/doccnQdzN2Op8nv7WLK53xFx46c
 
 资源汇总
 https://bkfeng.top/2
-
-可可英语
-http://www.kekenet.com/cet4/tl/
 
 搜书网
 http://191030.06yun.cn/
