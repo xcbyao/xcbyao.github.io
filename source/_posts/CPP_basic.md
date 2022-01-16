@@ -1,5 +1,5 @@
 ---
-title: C++ 语言学习笔记之基础篇
+title: C++ 学习笔记之基础篇
 date: 2022-01-04 14:59:15
 categories: Programming
 ---
