@@ -4,9 +4,76 @@ date: 2022-01-04 14:59:15
 categories: Programming
 ---
 ## 0x00 Preface
-
+这个假期打算入门 C++，为后期刷 leetcode 做准备，此笔记主要整理不同于 C 的地方，补充明确之前没写到的细节，面向有 C 基础人群~
 
 ## 0x01 
+- 注：C++ 在创建变量时，必须给变量一个初始值，否则会报错
+
+### 关键字
+| asm        | do           | if               | return      | typedef  |
+| ---------- | ------------ | ---------------- | ----------- | -------- |
+| auto       | double       | inline           | short       | typeid   |
+| bool       | dynamic_cast | int              | signed      | typename |
+| break      | else         | long             | sizeof      | union    |
+| case       | enum         | mutable          | static      | unsigned |
+| catch      | explicit     | namespace        | static_cast | using    |
+| char       | export       | new              | struct      | virtual  |
+| class      | extern       | operator         | switch      | void     |
+| const      | false        | private          | template    | volatile |
+| const_cast | float        | protected        | this        | wchar_t  |
+| continue   | for          | public           | throw       | while    |
+| default    | friend       | register         | true        |          |
+| delete     | goto         | reinterpret_cast | try         |          |
+
+- 字符型变量并不是把字符本身放到内存中存储，而是将对应的ASCII编码放入到存储单元。
+
+### 转义字符
+| 转义字符 | 含义                                | ASCII 码值（十进制） |
+| ------------ | --------------------------------------- | ----------- |
+| \a           | 警报                                    | 007         |
+| \b           | 退格(BS) ，将当前位置移到前一列         | 008         |
+| \f           | 换页(FF)，将当前位置移到下页开头        | 012         |
+| **\n**       | **换行(LF) ，将当前位置移到下一行开头** | **010**     |
+| \r           | 回车(CR) ，将当前位置移到本行开头       | 013         |
+| **\t**       | **水平制表(HT)  （跳到下一个TAB位置）** | **009**     |
+| \v           | 垂直制表(VT)                            | 011         |
+| **\\\\**     | **代表一个反斜线字符**                 | **092**     |
+| \'           | 代表一个单引号字符                      | 039         |
+| \"           | 代表一个双引号字符                      | 034         |
+| \?           | 代表一个问号                            | 063         |
+| \0           | 数字 0                                  | 000         |
+| \ddd         | 8进制转义字符，d 范围 0~7                 | 3位8进制    |
+| \xhh         | 16进制转义字符，h 范围 0~9，a~f，A~F      | 3位16进制   |
+
+- 字符串型 `string 变量名 = "字符串值"`
+
+> 注：需加入 `#include <string>`
+
+输入：`cin >> 变量名`
+输出：`cout << 变量名`
+
+- 只有整型变量可以进行取模运算
+
+- switch 语句中表达式类型只能是整型或者字符型
+
+![](/images/cpp_for.png)
+
+- 值传递时，形参是修饰不了实参的
+
+- 在头文件中写函数声明，在源文件中写函数定义
+
+- 空指针：指针变量指向内存中编号为0的空间（内存编号 0 ~255 为系统占用内存，不允许用户访问）
+
+- 野指针：指针变量指向非法的内存空间
+
+
+
+
+
+
+
+
+
 
 
 ## 0x0 References

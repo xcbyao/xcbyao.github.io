@@ -771,3 +771,130 @@ int main() {
 }
 ```
 
+### 011 表白爱心
+```C
+#include <stdio.h>
+#include <windows.h>
+
+int main() {
+	float x, y, a;
+	for (y = 1.5; y > -1.5; y -= 0.1) {
+		for (x = -1.5; x < 1.5; x += 0.05) {
+			a = x * x + y * y - 1;
+			putchar(a * a * a - x * x * y * y * y <= 0.0 ? '*' : ' ');
+		}
+
+		system("color 0c");
+		putchar('\n');
+	}
+	return 0;
+}
+```
+
+### 012 逆序
+```C++
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+int main() {
+	std::string str;
+	std::cin >> str;
+	reverse(str.begin(), str.end());
+	std::cout << str << std::endl; return 0;
+}
+```
+
+### 013 String to ASCII
+```C
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+	char s[10000];
+	do {
+		printf("Enter string:\n");
+		scanf("%s", s);
+		for (int i = 0; s[i]; i++)
+			printf("%d ", s[i]);
+		printf("\nLength:%d\n\n", strlen(s));
+	} while (s);
+}
+```
+
+### 014 Big-Dec to Hex
+```C++
+#include <iostream>
+using namespace std;
+
+int main() {
+    while (1) {
+        cout << "输入十进制数" << endl; ///****************1.输入
+        string str;
+        cin >> str;
+        int len = str.size();
+
+        for (int i = 0; i < len; i++) { ///****************2.异常处理
+            if (str[i] < 48 || str[i] > 57) { // 0 的 ascll 码是 48，9 为 57
+                cout << "输入了非法字符" << endl;
+                return 0;
+            }
+        }
+
+        string result = ""; ///****************3.正式处理
+        string hex = "0123456789abcdef";
+        int i = 0;
+        char cnt2 = '0';
+
+        while (1) {
+            while (i < len && str[i] == '0')
+                i++;
+
+            if (i >= len)
+                break;
+
+            int cnt = 0;
+            for (; i < len; i++) {
+                int sum = cnt * 10 + (str[i] - '0');
+                str[i] = char(sum / 16 + '0');  //因为sum不会超过159，sum/16不会超过10，不会超过8位二进制表示，
+                cnt = sum % 16;                  //因此不会因为int转成char被截断而有误差。
+                cnt2 = hex[sum % 16];
+            }
+
+            i = 0;
+            result = cnt2 + result;
+        }
+
+        if (result == "") { //输入为0的时候，结果就是0
+            cout << 0 << endl;
+            return 0;
+        }
+
+        cout << result << endl;
+
+    }
+    return 0;
+}
+```
+
+### 015 
+```C
+
+```
+
+```C
+
+```
+
+```C
+
+```
+
+```C
+
+```
+
+```C
+
+```
+
