@@ -88,7 +88,6 @@ Parallel downloading 值改为 Enabled
 %USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 ```
 
-
 ## Text processing
 |Ctrl + Home|光标达到文本最前面|Ctrl + End|光标达到文本最后面|
 |:-|:-|:-|:-|
