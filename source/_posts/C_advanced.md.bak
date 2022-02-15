@@ -308,7 +308,6 @@ while (( ch = getc(fp)) != EOF) {
 putchar(ch); //处理输入
 }
 ```
-
 - fclose() 关闭指定的文件，必要时刷新缓冲区。对于较正式的程序，应该检查是否成功关闭文件。成功关闭返回 0，否则返回 EOF。
 `if (fclose(fp) != 0) printf("Error in closing file %s\n", argv[1]); `
 如果磁盘已满、移动硬盘被移除或出现 I/O 错误，都会导致调用 fclose() 函数失败。

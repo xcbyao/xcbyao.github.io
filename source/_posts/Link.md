@@ -423,6 +423,9 @@ https://go.hao8.top/
 闪电购
 http://www.sxxsa.com/
 
+在线手册
+http://shouce.jb51.net/
+
 微软产品密钥分享平台PKeyTool
 https://pkeytools.azurewebsites.net/ShareKeys
 
