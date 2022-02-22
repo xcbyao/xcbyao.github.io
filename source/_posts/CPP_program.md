@@ -514,6 +514,10 @@ case 6:  //清空联系人
 ```C++
 #pragma once
 #include <iostream>
+#include "worker.h"
+#include "employee.h"
+#include "manager.h"
+#include "boss.h"
 
 using namespace std;
 
@@ -884,18 +888,6 @@ int m_EmpNum;
 Worker ** m_EmpArray;
 ```
 
-在 `workerManager.cpp` 构造函数中初始化属性
-
-```C++
-WorkerManager::WorkerManager() {
-	//初始化人数
-	this->m_EmpNum = 0;
-
-	//初始化数组指针
-	this->m_EmpArray = NULL;
-}
-```
-
 在 `wokerManager.h` 中添加成员函数
 
 ```C++
@@ -1082,13 +1074,13 @@ bool m_FileIsEmpty;
 ifstream ifs;
 ifs.open(FILENAME, ios::in);
 
-//文件不存在情况
+//1.文件不存在情况
 if (!ifs.is_open()) {
 	cout << "文件不存在" << endl; //测试输出
 	this->m_EmpNum = 0;  //初始化人数
+	this->m_EmpArray = NULL; //初始化数组指针
 	this->m_FileIsEmpty = true; //初始化文件为空标志
-	this->m_EmpArray = NULL; //初始化数组
-	ifs.close(); //关闭文件
+	ifs.close();
 	return;
 }
 ```
@@ -1099,14 +1091,14 @@ if (!ifs.is_open()) {
 在workerManager.cpp中的构造函数追加代码：
 
 ```C++
-//文件存在，并且没有记录
+//2.文件存在，数据为空
 char ch;
 ifs >> ch;
 if (ifs.eof()) {
 	cout << "文件为空!" << endl;
 	this->m_EmpNum = 0;
-	this->m_FileIsEmpty = true;
 	this->m_EmpArray = NULL;
+	this->m_FileIsEmpty = true;
 	ifs.close();
 	return;
 }
@@ -1303,7 +1295,7 @@ void Del_Emp();
 
 因此添加该公告函数，以便后续调用
 
-在workerManager.h中添加成员函数 int IsExist(int id);
+在workerManager.h中添加成员函数：
 
 ```C++
 //按照职工编号判断职工是否存在，若存在返回职工在数组中位置，不存在返回 -1
@@ -1311,7 +1303,7 @@ int IsExist(int id);
 ```
 
 #### 职工是否存在函数实现
-在workerManager.cpp中实现成员函数 int IsExist(int id);
+在workerManager.cpp中实现成员函数：
 
 ```C++
 int WorkerManager::IsExist(int id) {
@@ -1330,7 +1322,7 @@ int WorkerManager::IsExist(int id) {
 ```
 
 #### 删除职工函数实现
-在workerManager.cpp中实现成员函数 void Del_Emp();
+在workerManager.cpp中实现成员函数：
 
 ```C++
 //删除职工

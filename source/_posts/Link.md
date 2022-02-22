@@ -456,6 +456,9 @@ https://xunihao.net/
 Daniel's mind paradise
 https://hustdanielhu.com/
 
+在线烟花模拟器
+https://niuaa.github.io/niua.github.io/fireworks/
+
 域名
 https://www.22.cn/news/2016/0425/6069.html
 https://cloud.tencent.com/act/domainsales?from=15856
