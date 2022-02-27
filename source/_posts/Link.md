@@ -474,6 +474,30 @@ https://juejin.cn/column/6976251170704588837
 https://search.google.com/search-console/about
 
 
+统计超过 2000篇 真实面经的高频面试题 
+https://osjobs.net/topk/
+
+互联网 Java 工程师进阶知识完全扫盲：涵盖高并发、分布式、高可用、微服务、海量数据处理等领域知识
+https://doocs.github.io/advanced-java/#/
+https://github.com/doocs/advanced-java
+
+一个干净、免费的编程资源网，无需注册，登录，内容全部免费。
+https://r2coding.com/#/
+GitHub地址：https://github.com/rd2coding/Road2Coding
+
+一个颇为实用的技术网站。里面整理了各种技术类型的速查表 ，其中包括 Git、Vim、Go、MySQL、Linux、VSCode、Vue 等各大常用技术的速查表清单！
+https://devhints.io/
+GitHub地址：https://github.com/rstacruz/cheatsheets
+这也是较为全面的一个速查网站
+https://quickref.me
+
+整理和搜集网络免费的项目实战课程，包括 Java 项目实战，Python 项目实战，C++ 项目实战等
+https://github.com/resumejob/free-project-course
+
+史上最全的家庭应急物资储备清单（买错了网）
+https://pan.baidu.com/s/153xMql6urcSlisrss3DLEQ?pwd 提取码：j0zx
+
+
 ### 虚拟机直通/穿透
 | [平台虚拟化软件比较](https://en.wikipedia.org/wiki/Comparison_of_platform_virtualization_software###Other_features) | [VMware三个版本workstation、server、esxi的区别](https://blog.csdn.net/wuhen1226/article/details/25543811) | [Hypervisor 浅谈](https://johnnyqian.net/blog/hypervisor-in-brief/) | [不看后悔一辈子的VMware教程](https://zhuanlan.zhihu.com/p/110128514) | [让 KVM 上的 Windows 虚拟机插上 GVT-g 的翅膀](https://medium.com/@langleyhouge/%E8%AE%A9-kvm-%E4%B8%8A%E7%9A%84-windows-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%8F%92%E4%B8%8Agvt-g-%E7%9A%84%E7%BF%85%E8%86%80-ac0ac28b73b8) |
 | :-- | :-- | :-- | :-- | :-- |

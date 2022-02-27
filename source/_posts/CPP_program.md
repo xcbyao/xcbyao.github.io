@@ -1704,7 +1704,7 @@ void WorkerManager::Clean_File() {
 
 在头文件和源文件之间兜兜转转中，本案例终制作完毕。
 
-> [Demo Source](/demos/职工管理系统)
+> [Demo Source](https://github.com/xcbyao/xcbyao.github.io/tree/master/demos/%E8%81%8C%E5%B7%A5%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F)
 
 
 ## 0x03 
