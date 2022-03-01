@@ -503,6 +503,13 @@ https://sspai.com/post/71678
 了解这些小技巧，今晚开始努力睡个好觉 [by 少数派编辑部]
 https://sspai.com/post/71679
 
+> 一个永久免费4K在线观影网站
+支持安卓、iOS、网站、TV端
+https://www.tkys.tv/
+
+各种视频网站下载工具教程 【都在群公告里】
+https://www.yuque.com/eureka007/ziyuan/facv1i
+
 
 ### 虚拟机直通/穿透
 | [平台虚拟化软件比较](https://en.wikipedia.org/wiki/Comparison_of_platform_virtualization_software###Other_features) | [VMware三个版本workstation、server、esxi的区别](https://blog.csdn.net/wuhen1226/article/details/25543811) | [Hypervisor 浅谈](https://johnnyqian.net/blog/hypervisor-in-brief/) | [不看后悔一辈子的VMware教程](https://zhuanlan.zhihu.com/p/110128514) | [让 KVM 上的 Windows 虚拟机插上 GVT-g 的翅膀](https://medium.com/@langleyhouge/%E8%AE%A9-kvm-%E4%B8%8A%E7%9A%84-windows-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%8F%92%E4%B8%8Agvt-g-%E7%9A%84%E7%BF%85%E8%86%80-ac0ac28b73b8) |
