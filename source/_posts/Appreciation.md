@@ -3357,3 +3357,27 @@ Education is what remains after one has forgotten everything one has learned in 
 
 《士兵突击》里许三多所说，“我们不应该太舒服，太舒服了会出问题”。
 
+读书如饮水，冷暖人自知，文字如清风，入眼入心底。
+
+---
+
+多数人因为看见而相信，少数人因为相信而看见。——马云
+
+写作目的，阅读对象，阅读场景。
+
+![](/images/writing_0.png)
+
+双向沟通式写作：平等的姿态，分享的口吻，聊天的感觉，调动着读者。
+
+![](/images/writing_1.png)
+
+
+
+
+
+![](/images/writing_1.png)
+
+——《粥左罗教你从零开始学写作》
+
+---
+
