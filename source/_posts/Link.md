@@ -456,7 +456,7 @@ https://xunihao.net/
 Daniel's mind paradise
 https://hustdanielhu.com/
 
-在线烟花模拟器
+烟花模拟器
 https://niuaa.github.io/niua.github.io/fireworks/
 
 域名
@@ -470,8 +470,14 @@ https://www.namecheap.com/domains/registration/results/?domain=xcbyao.com
 SSL证书
 https://juejin.cn/column/6976251170704588837
 
+Google analytics
+https://analytics.google.com/
 谷歌搜索优化
 https://search.google.com/search-console/about
+bing
+https://www.bing.com/webmasters/about
+百度
+https://ziyuan.baidu.com/site/index#/
 
 
 统计超过 2000篇 真实面经的高频面试题 
@@ -513,6 +519,119 @@ https://www.yuque.com/eureka007/ziyuan/facv1i
 http://blog.tianzheng.cool/
 
 https://hackingcpp.com/cpp/cheat_sheets.html
+
+Quick Cut 是一款轻量、强大、好用的视频处理软件。
+压缩视频、转码视频、倒放视频、合并片段、根据字幕裁切片段、自动配字幕、自动剪辑等功能
+【软件支持】Windows、Mac、Linux
+【官方网址】https://gitee.com/haujet/QuickCut
+【软件下载】https://gitee.com/haujet/QuickCut/releases
+
+文件传输网站：免注册 🙅‍♀️
+https://wetransfer.com/
+https://cp.ciding.cc
+
+英语
+https://quillbot.com/
+https://qishiya.com/?p=1366
+
+软件破解网站：提供Mac软件👨🏻‍💻
+ MacWk：https://macwk.com/
+ Digit77: https://www.digit77.com/
+
+多格式转换器
+https://www.online-convert.com/
+
+非常好用的在线计算器，用来对付高数非常棒
+https://www.mathway.com/eu/Calculus
+
+趣卡翻译
+https://fanyi.qukaa.com/
+使用教程：
+【非常好用，免费的翻译软件，生成中英pdf对照版本，可翻译一本书！！！-哔哩哔哩】 https://b23.tv/Kcs6z8r
+推荐：其他翻译软件合集：
+📑文献文档翻译工具
+https://www.yuque.com/eureka007/ziyuan/zx3udb
+
+Apple 维修记录追踪
+ ▍需要用到的APP：
+💬商店搜索： #Scriptable
+▍脚本地址：
+https://github.com/GideonSenku/Scriptable/blob/master/Apple/AppleRepair.js
+https://raw.githubusercontent.com/GideonSenku/Scriptable/master/Apple/AppleRepair.js
+▍使用操作：
+需要手动填入两个key：
+repairId：维修编号
+serialNumber：你的手机序列号
+
+天空影视
+https://www.tkys.tv/
+
+猫抓 chrome媒体嗅探插件
+https://github.com/xifangczy/cat-catch
+
+第一个是 Crossref 元数据。这个巨量的数据库通过 DOIs 索引研究论文，并提供论文作者、发表年份、标题和其他相关信息的元数据。该数据库包含超过 1.2 亿条记录及 API，用户可以通过 torrents 下载。
+网站地址：https://www.crossref.org/
+第二个是 General Index。该数据库可以索引到 1.07 亿篇学术论文。
+网站地址：https://archive.org/details/GeneralIndex
+第三个是 OpenCitations Corpus。这个免费开放的数据库提供了互引论文的相关信息。
+网站地址：https://opencitations.net/corpus
+第四个是 Scopus。该数据库虽然不是免费的，但有免费访问的科学期刊信息表，用户在注册后可以下载。
+网站地址：https://www.scopus.com/sources.uri?zone=TopNavBar&origin=searchbasic
+第五个是 Scimago Journal & Country Rank。这是一个免费访问的数据库，提供了科学期刊论文相关的内容。
+网站地址：https://www.scimagojr.com/
+
+麻辣短网址 - 短网址在线生成,短链接生成器,可修改原网址,自定义域名,活码二维码生成,域名拦截检测,免费提供API接口 
+https://www.maa.la/
+
+百度短网址 
+https://dwz.cn/console/operation
+
+水印删除
+https://theinpaint.com/
+
+wallhere
+https://wallhere.com
+Wallpaper abyss 是国外知名的壁纸下载网站，分享的壁纸数量很多。
+https://wall.alphacoders.com
+Wallhaven免费壁纸网站大全
+https://wallhaven.cc
+WallpaperCave 是国外知名的壁纸社区，分享的壁纸质量很高。
+https://wallpapercave.com
+unsplash
+https://unsplash.com/t/wallpapers
+piqsels
+https://www.piqsels.com/zh
+wallroom 质量较高，壁纸分辨率从 1920 到 8k 不等。
+https://wallroom.io
+
+逐步学习正则表达式，从零基础到高阶。
+https://regexlearn.com/zh-cn
+
+商务部出的《对外投资合作国别（地区）指南 》特别推荐！！！
+基本覆盖了整个世界，内容翔实，图文并茂，如图百科全书
+http://fec.mofcom.gov.cn/article/gbdqzn/indexphone.shtml
+
+苹果旧版本ID查询
+https://tools.lancely.tech/
+
+ios IPSW Downloads
+https://ipsw.me/
+
+如果您需要匿名发送文件，可以使用以下匿名文件共享服务之一： 
+• anonymousfiles.io
+• anonfiles.com
+• filedropper.com
+• privatlab.com
+• dropmefiles.com
+• wetransfer.com
+• onionshare.org
+有用的文件托管:
+SendGB.com - 最多 4 GB，7 天;
+Volafile.org - 最多 20 GB，2 天;
+Openload.co - 1-10 GB，60 天;
+Uploadfiles.io - 最大 5 GB，30 天;
+Gofile.io - 无限量，60 天.
+
 
 
 ### 虚拟机直通/穿透

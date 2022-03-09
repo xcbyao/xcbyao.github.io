@@ -3397,3 +3397,7 @@ Education is what remains after one has forgotten everything one has learned in 
 
 对自己也一样，浪费时间做一些“无用”的事，读一些“无用”的书，走一些“无用”的路，追求一些“无用”的东西，交一些“无用”的朋友。这些无用的事，就是人生存以外的个人生活价值。
 
+少年没有乌托邦，心向远方自明朗
+
+When all else is lost the future still remains~
+
