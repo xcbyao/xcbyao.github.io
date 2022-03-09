@@ -632,6 +632,13 @@ Openload.co - 1-10 GB，60 天;
 Uploadfiles.io - 最大 5 GB，30 天;
 Gofile.io - 无限量，60 天.
 
+[英文]技术面试手册
+https://www.techinterviewhandbook.org/
+
+【Mac】OwlOCR – 支持中文，免费的本地 OCR 文字识别工具
+实现不联网，本地 OCR 文字识别，对中文支持良好。可以从屏幕截屏、图片、PDF 文档进行 OCR，响应迅速。
+官网：https://owlocr.com/
+
 
 
 ### 虚拟机直通/穿透
