@@ -2,7 +2,7 @@
 title: Self-shortcuts & commands
 date: 2020-11-13 16:43:15
 categories: Programming
-sticky: 4
+sticky: 3
 ---
 ## OD
 |断点|F2|打开 exe|F3|

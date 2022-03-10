@@ -2,6 +2,7 @@
 title: Personal Website Summary
 date: 2020-02-02 02:48:37
 categories: Self-improvement
+sticky: 4
 ---
 ### Resource Tools
 | [短信接码](https://www.materialtools.com/) | [虚假邮件生成器](https://zh.emailfake.com/channel7/) | [即弃电子邮箱](https://zh.mytrashmailer.com/) | [短网址生成](https://sina.lt/) | [自定义短网址工具](http://ex666.cn/) |
