@@ -569,6 +569,13 @@ https://www.tkys.tv/
 猫抓 chrome媒体嗅探插件
 https://github.com/xifangczy/cat-catch
 
+Quick Cut 是一款轻量、强大、好用的视频处理软件。
+压缩视频、转码视频、倒放视频、合并片段、根据字幕裁切片段、自动配字幕、自动剪辑等功能
+【软件支持】Windows、Mac、Linux
+【官方网址】https://gitee.com/haujet/QuickCut
+【软件下载】https://gitee.com/haujet/QuickCut/releases
+
+
 第一个是 Crossref 元数据。这个巨量的数据库通过 DOIs 索引研究论文，并提供论文作者、发表年份、标题和其他相关信息的元数据。该数据库包含超过 1.2 亿条记录及 API，用户可以通过 torrents 下载。
 网站地址：https://www.crossref.org/
 第二个是 General Index。该数据库可以索引到 1.07 亿篇学术论文。
