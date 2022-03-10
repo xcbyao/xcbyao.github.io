@@ -643,11 +643,16 @@ Gofile.io - 无限量，60 天.
 [英文]技术面试手册
 https://www.techinterviewhandbook.org/
 
+[英语] 英语学习资料合集
+https://www.aliyundrive.com/s/aZkbQjsRyb8
+
+
 【Mac】OwlOCR – 支持中文，免费的本地 OCR 文字识别工具
 实现不联网，本地 OCR 文字识别，对中文支持良好。可以从屏幕截屏、图片、PDF 文档进行 OCR，响应迅速。
 官网：https://owlocr.com/
 
-
+拾音人
+http://www.shiyinren.com/
 
 ### 虚拟机直通/穿透
 | [平台虚拟化软件比较](https://en.wikipedia.org/wiki/Comparison_of_platform_virtualization_software###Other_features) | [VMware三个版本workstation、server、esxi的区别](https://blog.csdn.net/wuhen1226/article/details/25543811) | [Hypervisor 浅谈](https://johnnyqian.net/blog/hypervisor-in-brief/) | [不看后悔一辈子的VMware教程](https://zhuanlan.zhihu.com/p/110128514) | [让 KVM 上的 Windows 虚拟机插上 GVT-g 的翅膀](https://medium.com/@langleyhouge/%E8%AE%A9-kvm-%E4%B8%8A%E7%9A%84-windows-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%8F%92%E4%B8%8Agvt-g-%E7%9A%84%E7%BF%85%E8%86%80-ac0ac28b73b8) |
