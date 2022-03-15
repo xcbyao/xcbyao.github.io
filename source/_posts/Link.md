@@ -660,7 +660,16 @@ Markdown排版利器
 http://md.aclickall.com/
 
 
+黑苹果安装教程
+项目：https://github.com/sqlsec/Hackintosh
+网站：https://apple.sqlsec.com/
 
+表白代码收藏馆
+项目：https://github.com/sun0225SUN/Awesome-Love-Code
+网站：https://sun0225sun.github.io/Awesome-Love-Code/
+
+idea激活码
+https://key.words.run/en/
 
 
 ### 虚拟机直通/穿透
