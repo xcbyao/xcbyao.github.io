@@ -671,6 +671,53 @@ http://md.aclickall.com/
 idea激活码
 https://key.words.run/en/
 
+视觉化单词间的关系
+https://visuwords.com
+
+两个语料库，直线提升口语写作技能 http://www.easygpa.com/a48e8ee140.html
+https://ludwig.guru/
+`VS _ * [] {}` 五种用法
+https://linggle.com/
+
+http://www.easygpa.com/
+线上虚拟实习项目
+https://www.theforage.com/
+https://jobready.cn/
+Google+
+https://buildyourfuture.withgoogle.com/
+初创公司
+https://www.workatastartup.com/
+https://www.keyvalues.com/
+
+
+Numerology calculator
+https://www.babycentre.co.uk/t25017109/numerology-calculator
+1、Liam
+2、Noah
+3、Lucas
+4、Mason
+5、Oliver
+6、Logan
+7、Ethan
+8、Elijah
+9、Aiden
+10、James
+11、Benjamin
+13、Alexander
+14、Sebastian
+15、Jacob
+16、Carter
+17、Jayden
+18、Michael
+19、Daniel
+
+Antonio-Neo Joanna-Anna
+
+黑苹果安装教程
+项目：https://github.com/sqlsec/Hackintosh
+网站：https://apple.sqlsec.com/
+
+
 
 ### 虚拟机直通/穿透
 | [平台虚拟化软件比较](https://en.wikipedia.org/wiki/Comparison_of_platform_virtualization_software###Other_features) | [VMware三个版本workstation、server、esxi的区别](https://blog.csdn.net/wuhen1226/article/details/25543811) | [Hypervisor 浅谈](https://johnnyqian.net/blog/hypervisor-in-brief/) | [不看后悔一辈子的VMware教程](https://zhuanlan.zhihu.com/p/110128514) | [让 KVM 上的 Windows 虚拟机插上 GVT-g 的翅膀](https://medium.com/@langleyhouge/%E8%AE%A9-kvm-%E4%B8%8A%E7%9A%84-windows-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%8F%92%E4%B8%8Agvt-g-%E7%9A%84%E7%BF%85%E8%86%80-ac0ac28b73b8) |

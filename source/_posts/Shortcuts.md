@@ -69,6 +69,8 @@ sticky: 3
 国内环境推荐关闭 QUIC 协议：
 Experimental QUIC protocol 值改为 Disabled
 
+side-panel 值改为 Disabled
+
 [Search your screen with Google Lens](https://petapixel.com/2022/01/12/how-to-restore-reverse-image-search-with-right-click-in-chrome/) 值改为 Disabled
 
 Parallel downloading 值改为 Enabled
