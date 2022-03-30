@@ -72,6 +72,7 @@ Experimental QUIC protocol 值改为 Disabled
 side-panel 值改为 Disabled
 
 [Search your screen with Google Lens](https://petapixel.com/2022/01/12/how-to-restore-reverse-image-search-with-right-click-in-chrome/) 值改为 Disabled
+https://limbopro.com/archives/21070.html
 
 Parallel downloading 值改为 Enabled
 

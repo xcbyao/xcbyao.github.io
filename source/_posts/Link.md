@@ -717,6 +717,59 @@ Antonio-Neo Joanna-Anna
 项目：https://github.com/sqlsec/Hackintosh
 网站：https://apple.sqlsec.com/
 
+免费人像修复神器
+https://picwish.cn/unblur-image-portrait
+
+图片滤镜特效；在线照片一键美化 - Logo设计
+https://www.logosc.cn/filter/
+
+iOS利器“小火箭”（Shadowrocket）最全使用教程
+https://laob.me/2300/
+
+谈谈 iOS 平台上的几款代理软件
+https://blog.hly0928.com/post/talk-about-some-proxy-apps-on-ios/
+
+https://hexo.lyh.best/about/
+毒奶
+https://limbopro.com/archives/5230.html
+
+https://www.checkgfw.com/ 墙检测
+
+一份不负责任的机场使用手册
+https://xijie.wordpress.com/author/xijie/
+
+AppStore
+https://moglr.com/
+https://www.rocketgirls.space/product/
+https://lgappleid.top/
+
+低端影视
+https://ddrk.me/tag/douban-top250/
+
+密码暴力破解工具 PassFab for RAR、ZIP、PDF、Office
+https://wwc.lanzoul.com/b00vha19e 密码:43w9
+
+Greasyfork上的一个阿里云盘网页版油猴脚本
+阿里云盘：
+https://greasyfork.org/zh-CN/scripts/425955
+搭配下面这个PotPlayer 插件，可以实现PotPlayer在线播放阿里云盘视频外链
+PotPlayer 插件：
+https://github.com/gene9831/AliyunDrivePotPlayer
+
+能够根据关键词直接匹配颜色的配色神器
+https://picular.co/
+
+Freebookcentre：
+免费下载技术类书籍，包括计算机科学、编程、移动技术、物理学、医学等类型。
+http://www.freebookcentre.net/
+
+MetPublications：
+可在线阅读或下载艺术、文化、历史等书籍，目前有600多册，大多为pdf格式。
+https://www.metmuseum.org/art/metpublications/
+
+Forgotten Books：
+专门从事旧书的翻新，有小说也有非小说类作品。拥有129万本书可供在线阅读，或以电子书的形式下载，或以书面形式购买。
+https://www.forgottenbooks.com/en
 
 
 ### 虚拟机直通/穿透

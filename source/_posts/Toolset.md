@@ -33,6 +33,18 @@ categories: Software
 - **使用：**无需解释，开箱即用
 - **下载：**http://www.51xiazai.cn/soft/1191486.htm
 
+## 0x05 Gif123
+- **环境：**`Win All`
+- **介绍：**软件极简单，只有 3 个主要按钮：录制、预览、复制。
+- **使用：**FPS 调到 24 清晰度更佳
+- **下载：**https://github.com/aardio/gif123
+
+## 0x06 CrystalDiskInfo
+- **环境：**`Win All`
+- **介绍：**CrystalDiskInfo是一款硬盘检测工具，只要在装了SSD的电脑上，安装运行CrystalDiskInfo软件，即可检测到硬盘信息。
+- **使用：**开箱即用
+- **下载：**https://crystalmark.info/en/download/
+
 ## 0x0 
 - **环境：**
 - **介绍：**
