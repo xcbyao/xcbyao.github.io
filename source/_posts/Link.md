@@ -771,6 +771,16 @@ Forgotten Books：
 专门从事旧书的翻新，有小说也有非小说类作品。拥有129万本书可供在线阅读，或以电子书的形式下载，或以书面形式购买。
 https://www.forgottenbooks.com/en
 
+Github、Google Search等公益的镜像源
+https://www.library.ac.cn/
+
+上班摸鱼：经典俄罗斯方块，童年乐趣走起来！
+http://www.itmind.net/tetris/
+
+《如何高效学习英语》
+一位IT大神写的学习英语攻略方法。十分值得学习观看借鉴。
+https://byoungd.gitbook.io/english-level-up-tips/
+
 
 ### 虚拟机直通/穿透
 | [平台虚拟化软件比较](https://en.wikipedia.org/wiki/Comparison_of_platform_virtualization_software###Other_features) | [VMware三个版本workstation、server、esxi的区别](https://blog.csdn.net/wuhen1226/article/details/25543811) | [Hypervisor 浅谈](https://johnnyqian.net/blog/hypervisor-in-brief/) | [不看后悔一辈子的VMware教程](https://zhuanlan.zhihu.com/p/110128514) | [让 KVM 上的 Windows 虚拟机插上 GVT-g 的翅膀](https://medium.com/@langleyhouge/%E8%AE%A9-kvm-%E4%B8%8A%E7%9A%84-windows-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%8F%92%E4%B8%8Agvt-g-%E7%9A%84%E7%BF%85%E8%86%80-ac0ac28b73b8) |
