@@ -781,6 +781,22 @@ http://www.itmind.net/tetris/
 一位IT大神写的学习英语攻略方法。十分值得学习观看借鉴。
 https://byoungd.gitbook.io/english-level-up-tips/
 
+绕过一些网站需要付费才能看的内容
+比如：经济学人等
+https://12ft.io/
+https://github.com/iamadamdev/bypass-paywalls-chrome
+
+博客
+https://www.luckydesigner.space/
+
+博客创建搬运
+https://www.blogger.com/about/?hl=zh-CN
+
+三流的人做干电池，二流的人做充电电池，一流的人做核电站。
+https://0792z.blogspot.com/
+
+
+
 
 ### 虚拟机直通/穿透
 | [平台虚拟化软件比较](https://en.wikipedia.org/wiki/Comparison_of_platform_virtualization_software###Other_features) | [VMware三个版本workstation、server、esxi的区别](https://blog.csdn.net/wuhen1226/article/details/25543811) | [Hypervisor 浅谈](https://johnnyqian.net/blog/hypervisor-in-brief/) | [不看后悔一辈子的VMware教程](https://zhuanlan.zhihu.com/p/110128514) | [让 KVM 上的 Windows 虚拟机插上 GVT-g 的翅膀](https://medium.com/@langleyhouge/%E8%AE%A9-kvm-%E4%B8%8A%E7%9A%84-windows-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%8F%92%E4%B8%8Agvt-g-%E7%9A%84%E7%BF%85%E8%86%80-ac0ac28b73b8) |
