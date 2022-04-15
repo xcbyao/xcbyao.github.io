@@ -804,6 +804,9 @@ https://blog.csdn.net/happyday_d/article/details/83715440
 
 https://www.wallpaperflare.com/
 
+在线翻译任何文档格式为任意语言，并保持排版不变。免费。
+https://www.onlinedoctranslator.com/zh-CN/
+
 
 
 ### 虚拟机直通/穿透
