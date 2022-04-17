@@ -4,10 +4,12 @@ date: 2022-01-04 14:59:15
 categories: Programming
 ---
 ## 0x00 Preface
-这个假期打算入门 C++，为后期刷 leetcode 做准备，此笔记主要整理不同于 C 的地方，补充明确之前没写到的细节，面向有 C 基础人群~
+这个假期打算入门 C++，为后期刷 leetcode 做准备，此笔记主要整理不同于 C 的地方，补充之前没写到的细节，尤其是面向对象部分，面向有 C 基础人群~
+
 
 ## 0x01 main
 - 注：C++ 在创建变量时，必须给变量一个初始值，否则会报错
+
 
 ### 关键字
 | asm        | do           | if               | return      | typedef  |
@@ -774,7 +776,6 @@ void test01() {
 
 
 #### 读文件
-
 读文件与写文件步骤相似，但读取方式比较多
 
 1. 创建流对象
@@ -838,10 +839,13 @@ char c;
 函数原型：`istream& read(char *buffer, int len);`
 
 
+## C++ advanced
 ### 
 
 
 
+
+
 ```C++
 
 ```
@@ -861,6 +865,103 @@ char c;
 
 ```
 
+
+
+
+### 匈牙利命名法
+1. 宏、枚举、常量，用大写字母命名，复合词用下划线隔开。
+2. 类、类型定义和枚举型名的第一个字母大写。
+3. 函数名是复合词的，第一个词采用全部小写，随后每个单词第一个字母大写。
+4. 循环变量可采用 i, j, k 等。
+5. 类的成员变量词头为 m_。
+6. 全局变量词头为 g_ 。
+7. 临时变量词头为 tmp_ 。
+8. 对结构体内的变量命名，遵循变量的具体含义命名原则。
+9. 用小写字母的前缀表示变量的类型，前缀的下一个字母用大写。 
+10. 有些词头可以和其它词头组合。 
+
+```C
+#define ARRAY_SIZE 24
+int g_iFlag; 
+classMyClass {
+};
+void someFunc( ) {
+int nArray[ARRAY_SIZE];
+unsigned char uchByte;
+char szName[ ];
+char *pszName = szName;
+}
+```
+
+- 词头类型
+|ch|char|l|long|
+|--|--|--|--|
+|i|integer|u|unsigned|
+|b|boolean|p|pointer|
+|d|double|s|string|
+|st|structure|sz|ASCII string|
+|by|byte|n|short int|
+|H|handle|x,y|坐标|
+|dw|DWORD|fn|function|
+
+- 词头变量名
+|sig|signal|msg|message|
+|--|--|--|--|
+|sb|binary semaphores|wd|watchdog|
+|sm|mutual exclusion semaphores|tm|timer|
+|sc|counting semaphores|
+
+
+### 程序注释 
+分为文件、函数、功能注释。
+- 注释行的数量占到整个源程序的 1/3-1/2。
+
+- 文件注释位于整个源程序的最开始部分，注释后空两行开始程序正文。它包括：
+  - 程序标题
+  - 目的、功能说明
+  - 文件作者、当前版本、修改信息（最后修改日期等说明）
+	 - eg: 修改信息： `2000.06.05 John, Initial Version` `2000.07.05 Tom, Bug xxxx fixed`
+
+- 函数注释通常置于每函数或过程的开头部分，它应当给出函数或过程的整体说明对于理解程序本身具有引导作用。
+  - 模块标题
+  - 目的、功能说明
+  - 调用格式
+  - 接口说明：包括输入、输出、返回值、异常
+  - 算法。如果模块中采用了一些复杂的算法
+
+```C
+注释开头应和上一函数空两行
+格式：
+int assignmentComplete(int iCellId, char *pszMSGData) throw(exception1, exception2)
+输入：
+int iCellId: MS 所在的小区识别
+iCellId 取值：0x00-——0xff
+输出：
+char *pszMSGData：指配完成消息数据
+返回值: 0x00 正常
+异常：exception1 异常情况1, exception2 异常情况2
+注释后直接开始程序正文，不空行。
+```
+
+### 其他
+建议不要使用 `*=，^=, /=` 等运算符。
+一个函数不要超过 200 行。一个文件应避免超过 2000 行。
+避免采用多赋值语句。
+不鼓励采用 ?: 操作符。
+
+### 简单变量引用
+简单变量引用可以为同一变量取不同的名字
+
+`int Rat;`
+`int & Mouse=Rat;`
+这样定义之后，Rat 就是 Mouse，这两个名字指向同一内存单元，如:
+`Mouse=Mickey; //Rat=Mickey`
+一种更浅显的理解是把引用看成伪装的指针，如 Mouse 可能被编译器解释成 `*(& Rat)`，这种理解可能是正确的。
+由于引用严格来说不是对象，在使用时应注意：
+① 引用在声明时必须进行初始化；
+② 不能声明引用的引用；
+③ 不能声明引用数组成指向引用的指针(但可以声明对指针的引用)；
+④ 为引用提供的初始值必须是一个变量。
 
 
 
@@ -870,5 +971,6 @@ char c;
 > [C++ 匠心之作](https://github.com/AnkerLeng/Cpp-0-1-Resource)
 > 《C++ Primer Plus》
 > 《C++ Primer》
+
 
 ## 0x0 Postscript

@@ -115,6 +115,8 @@ _Alignas  _Alignof  _Atomic  _Generic  _Noreturn  _Static_assert  _Thread_local
 
 > 注释：https://zh.cppreference.com/w/c/language/operator_precedence#cite_note-1
 
+同一优先级的运算符，运算次序由结合方向所决定。
+
 ```yml
 括号成员是老大;      // 括号运算符 []() 成员运算符.  ->
 
