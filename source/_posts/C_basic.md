@@ -97,7 +97,7 @@ _Alignas  _Alignof  _Atomic  _Generic  _Noreturn  _Static_assert  _Thread_local
 ### 格式符/占位符
 ![](/images/format-character.png)
 
-`sizeof` 是内置运算符，以字节为单位给出指定类型的大小。C99 和 C11 提供 `%zd` 转换说明匹配 `sizeof` 的返回类型。一些不支持 C99 和 C11 的编译器可用 `%u` 或 `%lu` 代替 `%zd`。
+`sizeof` 是内置运算符，以字节为单位给出指定类型的大小。C99 和 C11 提供 `%zd` 转换说明匹配 `sizeof` 的返回类型。一些不支持 C99 和 C11 的编译器可用 `%u` 或 `%lu` 代替 `%zd`。默认右对齐，`%-d` 为左对齐。
 
 ### 转义序列
 用于代表难以表示或无法输入的字符。
