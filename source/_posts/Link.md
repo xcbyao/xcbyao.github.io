@@ -807,6 +807,10 @@ https://www.wallpaperflare.com/
 在线翻译任何文档格式为任意语言，并保持排版不变。免费。
 https://www.onlinedoctranslator.com/zh-CN/
 
+Data Structure Visualizations 数据结构动画
+https://www.cs.usfca.edu/~galles/visualization/Algorithms.html
+
+
 
 
 ### 虚拟机直通/穿透
