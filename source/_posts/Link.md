@@ -812,7 +812,15 @@ https://www.cs.usfca.edu/~galles/visualization/Algorithms.html
 
 一个正则表达式如何匹配输入的一段文本。http://regexpal.com/
 
+魔方 www.i-mofang.com
 
+GitHub鏡像站
+https://hub.gitfast.tk
+https://hub.gitslow.tk
+https://hub.verge.tk
+https://raw.gitfast.tk
+https://raw.gitslow.tk
+https://raw.verge.tk
 
 
 
