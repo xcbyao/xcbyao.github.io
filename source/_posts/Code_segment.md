@@ -1,8 +1,11 @@
 ---
-title: Code Segment
+title: Code Segment/那些年 CV 过的代码片段
 date: 2021-03-29 10:54:22
 categories: Programming
 ---
+### Preface
+注：尽可能整合了多种方案（如打印乘法表等），故部分不能直接运行，需注释部分代码方可。
+
 ### 000 判断一个整数是否是 2 的整数次幂
 ```C
 #include <stdio.h>
