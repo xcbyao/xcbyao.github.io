@@ -822,6 +822,10 @@ https://raw.gitfast.tk
 https://raw.gitslow.tk
 https://raw.verge.tk
 
+Apple 苹果产品参数中心
+苹果产品的区别对比
+http://www.onlineit.cn/apple/
+
 
 
 
