@@ -66,13 +66,17 @@ sticky: 3
 |源码|Ctrl + U|检查|Ctrl + Shift + J/I 或 F12|
 
 ### [chrome://flags](https://bynss.com/howto/300384.html)
-国内环境推荐关闭 QUIC 协议：
+国内环境推荐关闭 QUIC 协议：（影响不大）
 Experimental QUIC protocol 值改为 Disabled
 
-side-panel 值改为 Disabled
+side-panel 值改为 Disabled（已失效）
+
+[去掉更新Chrome浏览器后工具栏的扩展程序图标](https://blog.csdn.net/haocm08/article/details/112688788)
+只能启动时加 "--disable-features=ExtensionsToolbarMenu" (别忘带引号)
 
 [Search your screen with Google Lens](https://petapixel.com/2022/01/12/how-to-restore-reverse-image-search-with-right-click-in-chrome/) 值改为 Disabled
 https://limbopro.com/archives/21070.html
+Lens-Standalone 值改为 Disabled
 
 Parallel downloading 值改为 Enabled
 
@@ -94,6 +98,11 @@ Smooth Scrolling 值改为 Enabled
 ```yml
 %USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 ```
+
+搜索栏输入 cmd 后，Ctrl + shift + enter 直接进入管理员模式命令行
+
+![copy命令隐藏文件的技巧](https://www.jianshu.com/p/16aa7aa9fa6a)
+Copy /b 1.exe+1.txt 2.exe（把1.txt藏进2.exe文件）
 
 
 ## Text processing
@@ -135,9 +144,13 @@ Smooth Scrolling 值改为 Enabled
 
 
 ## Git & Hexo
+### 更换电脑部署
 ```yml
+npm install hexo-cli -g
+npm install
 npm install hexo-deployer-git --save
 ```
+
 `hexo clean`
 `hexo s -o` 实时预览
 `hexo d -g` 生成部署
@@ -160,7 +173,7 @@ npm -v
 node -v
 hexo -v
 
-npm install npm@latest -g  //npm更新
+npm install npm@latest -g  //npm 更新
 [node](https://nodejs.org/zh-cn/download/) 下载覆盖安装
 
 npm install -g npm-check     //安装 npm-check
@@ -887,6 +900,6 @@ m	：则是	libm.so	这个函数库，其中，	lib	与扩展名（.a	或	.so）
 
 
 
-用copy命令隐藏文件的技巧
-Copy 1.exe/b+1.txt 2.exe（把1.txt藏进2.exe文件）
 ```
+
+## MacOS

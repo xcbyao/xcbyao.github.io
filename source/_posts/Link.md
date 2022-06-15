@@ -713,9 +713,6 @@ https://www.babycentre.co.uk/t25017109/numerology-calculator
 
 Antonio-Neo Joanna-Anna
 
-黑苹果安装教程
-项目：https://github.com/sqlsec/Hackintosh
-网站：https://apple.sqlsec.com/
 
 免费人像修复神器
 https://picwish.cn/unblur-image-portrait
@@ -826,6 +823,148 @@ Apple 苹果产品参数中心
 苹果产品的区别对比
 http://www.onlineit.cn/apple/
 
+免费查重网站包括：
+万方免费查重（应届生免费一次）：
+chsi.wanfangtech.net
+PaperDay（标准版永久免费，旗舰版每日限免）：
+www.paperday.cn
+论文狗（每日免费一次）：
+  www.lunwengo.net
+PaperYY（每日免费一次，11点多免费两次）：
+www.paperyy.com
+FreeCheck（每日免费一次）：
+www.freecheck.cn
+WritePass（每日1000个免费名额）：
+www.writepass.cn
+超星大雅（免费看相似度）：
+dsa.dayainfo.com
+百度学术（免费使用PaperTime一次）：
+xueshu.baidu.com/usercenter/papercheck
+ 
+高效查重工具
+秘塔写作猫：写作改错和词语替换（需要注册）
+https://xiezuocat.com/#/
+火龙果写作：
+www.mypitaya.com
+
+免费论文下载网站：
+广西壮族自治区图书馆：
+www.gxlib.org.cn
+国家哲学社会科学文献中心：
+www.ncpssd.org
+全国图书馆参考联盟：
+www.ucdrs.superlib.net
+OALib：
+www.oalib.com
+
+https://ty2y.com/study/windows10bbqb.html
+LTSC激活方法，管理员CMD
+slmgr -ipk M7XTQ-FN8P6-TTKYV-9D4CC-J462D
+slmgr -skms kms.03k.org
+slmgr -ato
+slmgr -dlv
+
+第二种方法
+slmgr -skms kms.moeclub.org
+slmgr -ato
+
+其它：
+M7XTQ-FN8P6-TTKYV-9D4CC-J462D
+
+英语学习导航 最专业的英语学习导航 
+https://www.up-6.com/
+
+http://www.xihakan.com/
+嘻哈音乐网
+
+在线印章生成网站
+http://www.395.net.cn/
+
+Enpuz - 在线英语句子语法分析
+http://enpuz.com/
+
+矩阵计算器
+https://matrixcalc.org/zh
+
+苹果固件和beta描述文件下载
+https://www.applefirmwares.com/
+
+苹果beta描述文件下载
+https://betaprofiles.com/
+
+Mikutap
+地址：https://aidn.jp/mikutap/
+推荐！一个非常亦可赛艇的小游戏。兼容电脑和手机。
+点击 Start，然后用鼠标/手指点击屏幕，或随意按键盘上的任意键。
+配上背景音乐非常 Happy，一定要开音乐！
+
+听蛙纯音乐网
+地址：https://www.itingwa.com
+最好听的轻音乐纯音乐分享、试听、欣赏、下载、推荐、排行。
+
+小霸王，其乐无穷
+地址：https://www.yikm.net
+在线小霸王游戏机，上千款小霸王、红白机、街机游戏，各种类型应有尽有，找回童年的乐趣儿。
+支持电脑和手机，游戏非常丰富​，还可以和朋友一起联机玩耍。​
+
+煎蛋网
+地址：http://jandan.net
+地球上没有新鲜事，既涨姿势又有趣，很多热门​游戏都有。​
+
+今日热榜
+地址：https://tophub.today
+全网热点消息汇总，一站全知晓。包含了微博、知乎、微信、百度、抖音、B 站等几十个平台！
+
+网易云游戏平台
+地址：https://cg.163.com
+网易推出的在线游戏平台，无需安装，在线打开即玩，很多热门​游戏都有。​
+
+地址：http://slither.io
+在线贪吃蛇游戏，非常消磨时间~
+
+Maze Generator
+地址：http://www.mazegenerator.net
+自动生成迷宫图片，难度、大小等可以自定义。
+可以将图片打印出来；或者保存图片到本地，然后用涂鸦工具在上面画。
+
+Play Lines FRVR
+地址：https://lines.frvr.com
+将相同颜色的点连到一起，且画面中无空格，越往后遇难。“会说话的汤姆猫”里也有这个游戏。
+
+可以注册域名eu.org，永久免费不过期，只是申请周期有点长，要等
+
+系统重装维护相关
+Ps：不会操作的可去哔哩哔哩搜索教程，都有
+友情提醒：随身备一个U盘，方便随时维护，制作完成，不影响U盘存储其他数据
+---------------
+1. U盘启动维护系统
+可以解决系统引导失败，系统修复，数据恢复，开机密码破解等
+IT天空 - 优启通 
+https://www.itsk.com/thread-424686-1-1.html
+微PE工具箱
+https://www.wepe.com.cn
+WEPE工具箱VIP网络版
+https://pan.baidu.com/s/19EJLp9b33_eL1iZn2Dqyjg?pwd=hbsv
+
+---------------
+2. 操作系统镜像Ghost
+NEXT, ITELLYOU
+https://next.itellyou.cn/
+MSDN - 山己几子木
+https://msdn.sjjzm.com/
+TechBench
+https://tb.rg-adguard.net/public.php
+
+3 激活操作系统
+Qwins一键激活 ，运行前加入系统白名单。防误杀
+https://pan.baidu.com/s/1H3qAl-9OtXtHG9mdkk5p6A?pwd=h1qk 提取码：h1qk 
+HEU_KMS_Activator
+https://pan.baidu.com/s/1ENu-yrJ6QgZxjsG-u5peqw?pwd=626h 提取码：626h
+KMS 激活 Windows 系统
+https://kms.cx/
+https://other.ikxin.com/kms
+https://www.moerats.com/kms/
+https://kms.cangshui.net/
 
 
 
