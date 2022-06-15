@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "axm7ymo5bk");
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J3JRCY1BFK"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1764421546773661" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J3JRCY1BFK');
+</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="xcbyao,pwn,crypto,reverse,hack,信息熵洞,踏雪无痕">
+    <meta name="description" content="凡心所向 素履以往 生如逆旅 一苇以航">
+    <meta name="author" content="xcbyao">
+    
+    <title>
+        
+            Crypto 古典密码学总结 |
+        
+        Xcbyao&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"xcbyao.com","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":true},"style":{"primary_color":"#CC3333","avatar":"/images/avatar.png","favicon":"/images/favicon.ico","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.jpg","description":"我曾当年失意客，烟花依旧笑星空"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Xcbyao&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                LINKS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links">LINKS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Crypto 古典密码学总结</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">xcbyao</span>
+                        
+                            <span class="author-label">小妖</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2020-01-21 16:37:49</span>
+        <span class="mobile">2020-01-21 16:37</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Crypto/">Crypto</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>4.3k Words</span>
+        </span>
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>玩过 CTF 的小伙伴会遇到类似这样的问题：大表哥这是啥加密啊？其实 CTF 中的脑洞密码题，通常是非现代加密方式，一般都是各种古典密码的变形，出题者会对密文进行一些处理，但都会留下不少线索，当然也需要参赛者对于各种编码方式有所了解，这样更有利于快速入手解密，结合一定的脑洞，拿到 Flag 就 so easy 了。Crypto 题目考察各种加解密技术，包括古典加密技术、现代加密技术甚至出题者自创加密技术，以及一些常见编码解码，主要考查参赛选手密码学相关知识点，通常也会和其他题目相结合。</p>
+<blockquote>
+<p>注：decode()是解码，encode()是编码</p>
+</blockquote>
+<hr>
+<h2 id="常见编码"><a href="#常见编码" class="headerlink" title="常见编码"></a>常见编码</h2><h3 id="ASCII-编码"><a href="#ASCII-编码" class="headerlink" title="ASCII 编码"></a>ASCII 编码</h3><p>ASCII编码大致可以分作三部分组成：<br>第一部分是：ASCII非打印控制字符<br>第二部分是：ASCII打印字符，也就是CTF中常用到的转换<br>第三部分是：扩展ASCII打印字符</p>
+<p>0～31及127(共33个)是控制字符或通信专用字符，其余的为可显示字符。<br>32～126(共95个)是字符(32是空格），其中48～57为0到9十个阿拉伯数字。<br>65～90为26个大写英文字母，97～122号为26个小写英文字母，其余为一些标点符号、运算符号等。</p>
+<p><img src="/images/ASCII.jpg"></p>
+<ul>
+<li><p>编码转换示例<br>源文本：<code>flag&#123;This is a example!&#125;</code><br>编码后：<code>102 108 97 103 123 84 104 105 115 105 115 97 101 120 97 109 112 108 101 33 125</code><br>对应可以转换成二进制，八进制，十六进制等</p>
+</li>
+<li><p>在线解码<br><a target="_blank" rel="noopener" href="https://www.qqxiuzi.cn/bianma/ascii.htm">https://www.qqxiuzi.cn/bianma/ascii.htm</a></p>
+</li>
+</ul>
+<h3 id="Base64-32-16-36-58-62-91编码"><a href="#Base64-32-16-36-58-62-91编码" class="headerlink" title="Base64/32/16/36/58/62/91编码"></a>Base64/32/16/36/58/62/91编码</h3><p>base64的编码表是由（A-Z、a-z、0-9、+、/）64个可见字符构成，“=”符号用作后缀填充，末尾可能会出现1或2个“=”最多有2个。<br><img src="/images/Base64.png"></p>
+<p>base32的编码表是由（A-Z、2-7）32个可见字符构成，末尾可能会有‘=’，但最多有6个。</p>
+<p>base16的编码表是由16个字符（0-9,A-F）构成。</p>
+<p>base36密文是由36个字符（0-9,A-Z）组成，加密仅支持整数数字，解密仅支持字符串，不支持中文。</p>
+<p>base58密文是用于Bitcoin中使用的一种独特的编码方式，主要用于产生Bitcoin的钱包地址，不使用数字”0”，字母大写”O”，字母大写”I”，和字母小写”i”，以及”+”和”/”符号。</p>
+<p>base62密文是由62字符（0-9，a-z，A-Z）组成。</p>
+<p>base91密文是由91个字符（0-9，a-z，A-Z,!#$%&amp;()*+,./:;&lt;=&gt;?@[]^_`{|}~”）组成。</p>
+<ul>
+<li><p>编码转换示例<br>源文本：<code>flag&#123;This is a example!&#125;</code><br>编码后：<code>ZmxhZ3tUaGlzIGlzIGEgZXhhbXBsZSF9（base64）</code><br><code>MZWGCZ33KRUGS4ZANFZSAYJAMV4GC3LQNRSSC7I=（base32）</code><br><code>666C61677B546869732069732061206578616D706C65217D（base16）</code><br><code>727432 1375732 676 10 32488192274（base36）</code><br><code>ALZkyYM59XXnJxxFGfnbk4iqtDWaf9WXW（base58）</code><br><code>8nCDq36pFDV9sobcTXIgabAKmXmZWTdqH（base62）</code><br><code>@iH&lt;,&#123;&gt;ux#6timlLGB[Iy)kCH$&#125;utF（base91）</code></p>
+<blockquote>
+<p>注：以上常见为base64/32/16，其他编码存在不支持符号{}，及大小写编码问题，根据题目自行text，encode结果仅供参考，还有base85/92等后期有时间做一个集成工具或脚本分享</p>
+</blockquote>
+</li>
+<li><p>在线解码&amp;工具<br><a target="_blank" rel="noopener" href="https://www.qqxiuzi.cn/bianma/base64.htm%EF%BC%88base64%EF%BC%89">https://www.qqxiuzi.cn/bianma/base64.htm（base64）</a><br><a target="_blank" rel="noopener" href="https://www.qqxiuzi.cn/bianma/base.php%EF%BC%88base32%EF%BC%89">https://www.qqxiuzi.cn/bianma/base.php（base32）</a><br><a target="_blank" rel="noopener" href="https://www.qqxiuzi.cn/bianma/base.php?type=16%EF%BC%88base16%EF%BC%89">https://www.qqxiuzi.cn/bianma/base.php?type=16（base16）</a><br><a target="_blank" rel="noopener" href="https://www.dcode.fr/base-36-cipher%EF%BC%88base36%EF%BC%89%EF%BC%88%E5%9B%BD%E5%86%85%E6%B2%A1%E6%89%BE%E5%88%B0%E5%85%8D%E8%B4%B9%E7%9A%84%EF%BC%8C%E9%9C%80%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%EF%BC%89">https://www.dcode.fr/base-36-cipher（base36）（国内没找到免费的，需科学上网）</a><br><a target="_blank" rel="noopener" href="http://www.metools.info/code/c74.html%EF%BC%88base58%EF%BC%89">http://www.metools.info/code/c74.html（base58）</a><br><a target="_blank" rel="noopener" href="https://base62.io/%EF%BC%88%E6%94%AF%E6%8C%81%E4%B8%AD%E6%96%87%EF%BC%89%EF%BC%88base62%EF%BC%89">https://base62.io/（支持中文）（base62）</a><br><a target="_blank" rel="noopener" href="http://decode-base62.nichabi.com(base62)/">http://decode-base62.nichabi.com（base62）</a><br><a target="_blank" rel="noopener" href="https://www.dcode.fr/base-91-encoding%EF%BC%88base91%EF%BC%89%EF%BC%88%E5%9B%BD%E5%86%85%E6%B2%A1%E6%89%BE%E5%88%B0%E5%85%8D%E8%B4%B9%E7%9A%84%EF%BC%8C%E9%9C%80%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%EF%BC%89">https://www.dcode.fr/base-91-encoding（base91）（国内没找到免费的，需科学上网）</a></p>
+</li>
+</ul>
+<h3 id="Quoted-printable编码"><a href="#Quoted-printable编码" class="headerlink" title="Quoted-printable编码"></a>Quoted-printable编码</h3><p>它是多用途互联网邮件扩展（MIME) 一种实现方式。目前http协议中，很多采用MIME框架。quoted-printable 就是说用一些可打印常用字符，表示一个字节（8位）中所有非打印字符方法。每个末编码的二进制字符被编码成三个字符，即一个等号和一个十六进制的数字，如‘=AB’。 </p>
+<ul>
+<li><p>编码转换示例<br>源文本：<code>flag&#123;This is a example!&#125;</code><br>编码后：<code>flag&#123;This=20is=20a=20example!&#125;</code></p>
+</li>
+<li><p>在线解码&amp;工具<br><a target="_blank" rel="noopener" href="http://www.mxcz.net/tools/">http://www.mxcz.net/tools/</a><br><a target="_blank" rel="noopener" href="https://www.w3cschool.cn/tools/index?name=decode_encode_tool">https://www.w3cschool.cn/tools/index?name=decode_encode_tool</a></p>
+</li>
+</ul>
+<h3 id="XXencode编码"><a href="#XXencode编码" class="headerlink" title="XXencode编码"></a>XXencode编码</h3><p>只有数字，大小写字母（ +、-、0<del>9 、A</del>Z 、a~z） 一共64个字符，与base64打印字符相比，就是多一个“-” 字符，少一个”/” 字符。</p>
+<ul>
+<li><p>编码转换示例<br>源文本：<code>flag&#123;This is a example!&#125;</code><br>编码后：<code>MNalVNrhIO4Zn64Zn642UNLVVPL-gNG3x</code></p>
+</li>
+<li><p>在线解码&amp;工具<br><a target="_blank" rel="noopener" href="http://web.chacuo.net/charsetxxencode">http://web.chacuo.net/charsetxxencode</a><br><a target="_blank" rel="noopener" href="https://www.qqxiuzi.cn/bianma/uuencode.php">https://www.qqxiuzi.cn/bianma/uuencode.php</a></p>
+</li>
+</ul>
+<h3 id="UUencode编码"><a href="#UUencode编码" class="headerlink" title="UUencode编码"></a>UUencode编码</h3><p>begin 644一般为UUencode的标识<br>它的编码表有很多是特殊字符： !”#￥%&amp;‘（）*+=’ 等。</p>
+<ul>
+<li><p>编码转换示例<br>源文本：<code>flag&#123;This is a example!&#125;</code><br>编码后：<code>89FQA9WM4:&amp;ES(&amp;ES(&amp;$@97AA;7!L92%]</code></p>
+</li>
+<li><p>在线解码&amp;工具<br><a target="_blank" rel="noopener" href="http://web.chacuo.net/charsetxxencode">http://web.chacuo.net/charsetxxencode</a><br><a target="_blank" rel="noopener" href="https://www.qqxiuzi.cn/bianma/Unicode.htm">https://www.qqxiuzi.cn/bianma/Unicode.htm</a></p>
+</li>
+</ul>
+<h3 id="URL编码"><a href="#URL编码" class="headerlink" title="URL编码"></a>URL编码</h3><p>一个字符ascii码的十六进制，然后在前面加上%<br>url编码又叫百分号编码，是统一资源定位(URL)编码方式。</p>
+<ul>
+<li><p>编码转换示例<br>源文本：<code>flag&#123;This is a example!&#125;</code><br>编码后：<code>flag%7bThis+is+a+example!%7d</code></p>
+</li>
+<li><p>在线解码&amp;工具<br><a target="_blank" rel="noopener" href="http://web.chacuo.net/charseturlencode">http://web.chacuo.net/charseturlencode</a><br><a target="_blank" rel="noopener" href="http://tool.chinaz.com/tools/urlencode.aspx">http://tool.chinaz.com/tools/urlencode.aspx</a></p>
+</li>
+</ul>
+<h3 id="Unicode编码"><a href="#Unicode编码" class="headerlink" title="Unicode编码"></a>Unicode编码</h3><p>Unicode编码有以下四种编码方式：</p>
+<ol>
+<li>&amp;#x [Hex]：&#x0054;&#x0068;&amp;#x0065</li>
+<li>&amp;# [Decimal]：&#00084;&#00104;&amp;#00101</li>
+<li>\U [Hex]：\U0054\U0068\U0065</li>
+<li>\U+ [Hex]：\U+0054\U+0068\U+0065</li>
+</ol>
+<ul>
+<li><p>编码转换示例<br>源文本：<code>flag&#123;This is a example!&#125;</code><br>编码后：<code>&amp;#x0066;&amp;#x006C;&amp;#x0061;&amp;#x0067;&amp;#x007B;&amp;#x0054;&amp;#x0068;&amp;#x0069;&amp;#x0073;&amp;#x0020;&amp;#x0069;&amp;#x0073;&amp;#x0020;&amp;#x0061;&amp;#x0020;&amp;#x0065;&amp;#x0078;&amp;#x0061;&amp;#x006D;&amp;#x0070;&amp;#x006C;&amp;#x0065;&amp;#x0021;&amp;#x007D;（&amp;#x [Hex]）</code><br><code>&amp;#00102;&amp;#00108;&amp;#00097;&amp;#00103;&amp;#00123;&amp;#00084;&amp;#00104;&amp;#00105;&amp;#00115;&amp;#00032;&amp;#00105;&amp;#00115;&amp;#00032;&amp;#00097;&amp;#00032;&amp;#00101;&amp;#00120;&amp;#00097;&amp;#00109;&amp;#00112;&amp;#00108;&amp;#00101;&amp;#00033;&amp;#00125;（&amp;# [Decimal]）</code><br><code>\U0066\U006C\U0061\U0067\U007B\U0054\U0068\U0069\U0073\U0020\U0069\U0073\U0020\U0061\U0020\U0065\U0078\U0061\U006D\U0070\U006C\U0065\U0021\U007D（\U [Hex]）</code><br><code>\U+0066\U+006C\U+0061\U+0067\U+007B\U+0054\U+0068\U+0069\U+0073\U+0020\U+0069\U+0073\U+0020\U+0061\U+0020\U+0065\U+0078\U+0061\U+006D\U+0070\U+006C\U+0065\U+0021\U+007D（\U+ [Hex]）</code></p>
+</li>
+<li><p>在线解码&amp;工具<br><a target="_blank" rel="noopener" href="http://tool.chinaz.com/tools/unicode.aspx">http://tool.chinaz.com/tools/unicode.aspx</a><br><a target="_blank" rel="noopener" href="http://www.mxcz.net/tools/Unicode.aspx">http://www.mxcz.net/tools/Unicode.aspx</a><br><a target="_blank" rel="noopener" href="https://www.online-toolz.com/tools/text-unicode-entities-convertor.php%EF%BC%88%E5%8F%AF%E8%83%BD%E9%9C%80%E8%A6%81%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%EF%BC%89">https://www.online-toolz.com/tools/text-unicode-entities-convertor.php（可能需要科学上网）</a></p>
+</li>
+</ul>
+<h3 id="Escape-Unescape编码"><a href="#Escape-Unescape编码" class="headerlink" title="Escape/Unescape编码"></a>Escape/Unescape编码</h3><p>Escape/Unescape加密解码/编码解码,又叫%u编码，采用UTF-16BE模式，就是字符对应UTF-16 16进制表示方式前面加%u。</p>
+<ul>
+<li><p>编码转换示例<br>源文本：<code>flag&#123;This is a example!&#125;</code><br>编码后：<code>flag%7BThis%20is%20a%20example%21%7D</code></p>
+</li>
+<li><p>在线解码&amp;工具<br><a target="_blank" rel="noopener" href="https://tool.chinaz.com/tools/escape.aspx">https://tool.chinaz.com/tools/escape.aspx</a><br><a target="_blank" rel="noopener" href="https://escape.supfree.net/">https://escape.supfree.net/</a></p>
+</li>
+</ul>
+<h3 id="HTML实体编码"><a href="#HTML实体编码" class="headerlink" title="HTML实体编码"></a>HTML实体编码</h3><p><img src="/images/HTML.png"></p>
+<ul>
+<li><p>编码转换示例<br>源文本：<code>flag&#123;This is a example!&#125;</code><br>编码后：<code>flag&#123;This is a example!&#125;</code></p>
+</li>
+<li><p>在线解码&amp;工具<br><a target="_blank" rel="noopener" href="http://www.toolzl.com/tools/htmlende.html">http://www.toolzl.com/tools/htmlende.html</a></p>
+</li>
+</ul>
+<h3 id="Tap-Code敲击码"><a href="#Tap-Code敲击码" class="headerlink" title="Tap Code敲击码"></a>Tap Code敲击码</h3><p>敲击码是基于5×5方格波利比奥斯方阵来实现的，不同点是用K字母被整合到C中。</p>
+<p>敲击码表：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  1  2  3  4  5</span><br><span class="line">1 A  B C&#x2F;K D  E</span><br><span class="line">2 F  G  H  I  J </span><br><span class="line">3 L  M  N  O  P</span><br><span class="line">4 Q  R  S  T  U</span><br><span class="line">5 V  W  X  Y  Z</span><br></pre></td></tr></table></figure>
+<p><img src="/images/knock-code.png"></p>
+<h3 id="Morse-Code摩尔斯电码"><a href="#Morse-Code摩尔斯电码" class="headerlink" title="Morse Code摩尔斯电码"></a>Morse Code摩尔斯电码</h3><p>摩尔斯电码主要由以下5种代码组成：</p>
+<ol>
+<li>点（.）</li>
+<li>划（-）</li>
+<li>每个字符间短的停顿（通常用空格表示停顿）</li>
+<li>每个词之间中等的停顿（通常用 / 划分）</li>
+<li>以及句子之间长的停顿</li>
+</ol>
+<p>摩尔斯电码字母、数字及符号对应表：<br><img src="/images/Morse.png"></p>
+<ul>
+<li><p>编码转换示例<br>源文本：<code>flag&#123;This is a example!&#125;</code><br>编码后：<code>..-. .-.. .- --. - .... .. ... -....- .. ... -....- .- -....- . -..- .- -- .--. .-.. . </code>；<br><code>..-./.-../.-/--./----.--/-/..../../.../../.../.-/./-..-/.-/--/.--./.-.././-.-.--/-----.-</code>（不同网站对符号加解码不同）</p>
+</li>
+<li><p>在线解码&amp;工具<br><a target="_blank" rel="noopener" href="http://www.zhongguosou.com/zonghe/moErSiCodeConverter.aspx">http://www.zhongguosou.com/zonghe/moErSiCodeConverter.aspx</a><br><a target="_blank" rel="noopener" href="http://tools.jb51.net/password/zhmorse">http://tools.jb51.net/password/zhmorse</a><br><a target="_blank" rel="noopener" href="http://rumkin.com/tools/cipher/morse.php">http://rumkin.com/tools/cipher/morse.php</a><br><a target="_blank" rel="noopener" href="http://www.zou114.com/mesm/">http://www.zou114.com/mesm/</a><br><a target="_blank" rel="noopener" href="http://www.jb51.net/tools/morse.htm">http://www.jb51.net/tools/morse.htm</a></p>
+</li>
+</ul>
+<blockquote>
+<p>注：以上部分在线解码&amp;工具较为通用，如有失效的，请反馈给我，并尝试其他网站</p>
+</blockquote>
+<hr>
+<h2 id="换位加密"><a href="#换位加密" class="headerlink" title="换位加密"></a>换位加密</h2><h3 id="Rail-fence-Cipher-栅栏密码"><a href="#Rail-fence-Cipher-栅栏密码" class="headerlink" title="Rail-fence Cipher 栅栏密码"></a>Rail-fence Cipher 栅栏密码</h3><p>栅栏密码就是把要加密的明文分成N个一组，然后把每组的第1个字符组合，每组第2个字符组合……每组的第N(最后一个分组可能不足N个)个字符组合，最后把他们全部连接起来就是密文，下文以<strong>3栏</strong>栅栏加密为例。</p>
+<ul>
+<li><p>编码转换示例<br>明文：<code>flag&#123;This is a example!&#125;</code><br>去空格：<code>flag&#123;Thisisaexample!&#125;</code><br>分组：<code>fla g&#123;T his isa exa mpl e!&#125;</code><br>第一组：<code>fghieme</code><br>第二组：<code>l&#123;isxp!</code><br>第三组：<code>aTsaal&#125;</code><br>密文：<code>fghiemel&#123;isxp!aTsaal&#125;</code></p>
+</li>
+<li><p>在线解码&amp;工具<br><a target="_blank" rel="noopener" href="http://www.practicalcryptography.com/ciphers/classical-era/rail-fence/">http://www.practicalcryptography.com/ciphers/classical-era/rail-fence/</a></p>
+</li>
+</ul>
+<h3 id="Curve-Cipher-曲路密码"><a href="#Curve-Cipher-曲路密码" class="headerlink" title="Curve Cipher 曲路密码"></a>Curve Cipher 曲路密码</h3><p>曲路密码是一种换位密码，需要事先双方约定密钥(也就是曲路路径)。</p>
+<p>填入3行7列表(事先约定填充的行列数)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f l a g &#123; T h</span><br><span class="line">i s i s a e x</span><br><span class="line">a m p l e ! &#125;</span><br></pre></td></tr></table></figure>
+<p>加密的回路线(事先约定填充的行列数)<br><img src="/images/curve.png"></p>
+<ul>
+<li>编码转换示例<br>明文：<code>flag&#123;This is a example!&#125;</code><br>密文：<code>&#125;xhTe!e a&#123;gslpi alsmaif</code></li>
+</ul>
+<h3 id="Columnar-Transposition-Cipher-列位移加密"><a href="#Columnar-Transposition-Cipher-列位移加密" class="headerlink" title="Columnar Transposition Cipher 列位移加密"></a>Columnar Transposition Cipher 列位移加密</h3><p>列移位密码通过一个简单的规则将明文打乱混合成密文。</p>
+<p>填入3行7列表(事先约定填充的行列数，如果明文不能填充完表格可以约定使用某个字母进行填充)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f l a g &#123; T h</span><br><span class="line">i s i s a e x</span><br><span class="line">a m p l e ! &#125;</span><br></pre></td></tr></table></figure>
+<p>密钥： how are u</p>
+<p>按how are u在字母表中的出现的先后顺序进行编号，我们就有a为1,e为2，h为3，o为4，r为5，u为6，w为7，所以先写出a列，其次e列，以此类推写出的结果便是密文。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">h o w a r e u</span><br><span class="line">3 4 7 1 5 2 6</span><br><span class="line">f l a g &#123; T h</span><br><span class="line">i s i s a e x</span><br><span class="line">a m p l e ! &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>编码转换示例<br>明文：<code>flag&#123;This is a example!&#125;</code><br>密文：<code>gsl Te! fia lsm &#123;ae hx&#125; aip</code></p>
+</li>
+<li><p>在线解码&amp;工具<br><a target="_blank" rel="noopener" href="http://www.practicalcryptography.com/ciphers/classical-era/columnar-transposition/">http://www.practicalcryptography.com/ciphers/classical-era/columnar-transposition/</a></p>
+</li>
+</ul>
+<hr>
+<h2 id="替换加密"><a href="#替换加密" class="headerlink" title="替换加密"></a>替换加密</h2><h3 id="Atbash-Cipher-埃特巴什码"><a href="#Atbash-Cipher-埃特巴什码" class="headerlink" title="Atbash Cipher 埃特巴什码"></a>Atbash Cipher 埃特巴什码</h3><p>埃特巴什码是一种以字母倒序排列作为特殊密钥的替换加密，也就是下面的对应关系：</p>
+<blockquote>
+<p>ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>ZYXWVUTSRQPONMLKJIHGFEDCBA</p>
+</blockquote>
+<ul>
+<li><p>编码转换示例<br>明文：<code>flag&#123;This is a example!&#125;</code><br>密文：<code>uozt&#123;gsrh rh z vcznkov!&#125;</code></p>
+</li>
+<li><p>在线解码&amp;工具<br><a target="_blank" rel="noopener" href="http://www.practicalcryptography.com/ciphers/classical-era/atbash-cipher/">http://www.practicalcryptography.com/ciphers/classical-era/atbash-cipher/</a></p>
+</li>
+</ul>
+<h3 id="Caesar-Cipher-凯撒密码"><a href="#Caesar-Cipher-凯撒密码" class="headerlink" title="Caesar Cipher 凯撒密码"></a>Caesar Cipher 凯撒密码</h3><p>凯撒密码(恺撒加密、恺撒变换、变换加密、位移加密)是一种替换加密，明文中的所有字母都在字母表上向后（或向前）按照一个固定数目进行偏移后被替换成密文。<br><img src="/images/Caesar.jpg"></p>
+<ul>
+<li><p>编码转换示例<br>明文：<code>flag&#123;This is a example!&#125;</code><br>偏移量：<code>3</code><br>密文：<code>iodj&#123;wklv lv d hadpsoh!&#125;</code></p>
+</li>
+<li><p>在线解码&amp;工具<br><a target="_blank" rel="noopener" href="http://www.zjslove.com/3.decode/kaisa/index.html">http://www.zjslove.com/3.decode/kaisa/index.html</a><br><a target="_blank" rel="noopener" href="https://www.qqxiuzi.cn/bianma/kaisamima.php">https://www.qqxiuzi.cn/bianma/kaisamima.php</a><br><a target="_blank" rel="noopener" href="https://planetcalc.com/1434/">https://planetcalc.com/1434/</a></p>
+</li>
+</ul>
+<h3 id="ROT-5-13-18-47"><a href="#ROT-5-13-18-47" class="headerlink" title="ROT 5/13/18/47"></a>ROT 5/13/18/47</h3><blockquote>
+<p>ROT5/13/18/47是一种简单的码元位置顺序替换暗码。此类编码具有可逆性，可以自我解密，主要用于应对快速浏览，或者是机器的读取。<br>ROT5 是 rotate by 5 places 的简写，意思是旋转5个位置，其它皆同。下面分别说说它们的编码方式：</p>
+</blockquote>
+<blockquote>
+<p>ROT5：只对数字进行编码，用当前数字往前数的第5个数字替换当前数字，例如当前为0，编码后变成5，当前为1，编码后变成6，以此类推顺序循环。</p>
+</blockquote>
+<blockquote>
+<p>ROT13：只对字母进行编码，用当前字母往前数的第13个字母替换当前字母，例如当前为A，编码后变成N，当前为B，编码后变成O，以此类推顺序循环。</p>
+</blockquote>
+<blockquote>
+<p>ROT18：这是一个异类，本来没有，它是将ROT5和ROT13组合在一起，为了好称呼，将其命名为ROT18。</p>
+</blockquote>
+<blockquote>
+<p>ROT47：对数字、字母、常用符号进行编码，按照它们的ASCII值进行位置替换，用当前字符ASCII值往前数的第47位对应字符替换当前字符，例如当前为小写字母z，编码后变成大写字母K，当前为数字0，编码后变成符号_。用于ROT47编码的字符其ASCII值范围是33－126，具体参考ASCII编码，下面以ROT13为例。</p>
+</blockquote>
+<ul>
+<li><p>编码转换示例<br>明文：<code>flag&#123;This is a example!&#125;</code><br>密文：<code>synt&#123;Guvf vf n rknzcyr!&#125;（ROT13）</code></p>
+</li>
+<li><p>在线解码&amp;工具<br><a target="_blank" rel="noopener" href="http://www.qqxiuzi.cn/bianma/ROT5-13-18-47.php">http://www.qqxiuzi.cn/bianma/ROT5-13-18-47.php</a></p>
+</li>
+</ul>
+<h3 id="Hill-Cipher-希尔密码"><a href="#Hill-Cipher-希尔密码" class="headerlink" title="Hill Cipher 希尔密码"></a>Hill Cipher 希尔密码</h3><p>希尔密码是基于线性代数多重代换密码。每个字母转换成26进制数字：A=0, B=1, C=2…Z=25一串字母当成n维向量，跟一个n×n的矩阵相乘，再将得出的结果MOD26。详细原理见：<a target="_blank" rel="noopener" href="http://blog.neargle.com/SecNewsBak/drops/CTF%E4%B8%AD%E9%82%A3%E4%BA%9B%E8%84%91%E6%B4%9E%E5%A4%A7%E5%BC%80%E7%9A%84%E7%BC%96%E7%A0%81%E5%92%8C%E5%8A%A0%E5%AF%86%20.html">http://blog.neargle.com/SecNewsBak/drops/CTF%E4%B8%AD%E9%82%A3%E4%BA%9B%E8%84%91%E6%B4%9E%E5%A4%A7%E5%BC%80%E7%9A%84%E7%BC%96%E7%A0%81%E5%92%8C%E5%8A%A0%E5%AF%86%20.html</a></p>
+<ul>
+<li><p>编码转换示例<br>明文：<code>flag</code><br>key：<code>5 17 4 15</code><br>密文：<code>edym</code></p>
+</li>
+<li><p>在线解码&amp;工具<br><a target="_blank" rel="noopener" href="http://www.practicalcryptography.com/ciphers/hill-cipher/">http://www.practicalcryptography.com/ciphers/hill-cipher/</a></p>
+</li>
+</ul>
+<h3 id="Pigpen-Cipher-猪圈密码"><a href="#Pigpen-Cipher-猪圈密码" class="headerlink" title="Pigpen Cipher 猪圈密码"></a>Pigpen Cipher 猪圈密码</h3><p>猪圈密码(九宫格密码、朱高密码、共济会密码或共济会员密码)，是一种以格子为基础的简单替代式密码。<br><img src="/images/pigpen.jpg"><br><img src="/images/pigpen.png"></p>
+<ul>
+<li><p>编码转换示例<br>明文：<code>flag&#123;This is a example!&#125;</code><br>密文：<img src="/images/pigpen-crypto.png"></p>
+</li>
+<li><p>在线解码&amp;工具<br><a target="_blank" rel="noopener" href="http://www.simonsingh.net/The_Black_Chamber/pigpen.html">http://www.simonsingh.net/The_Black_Chamber/pigpen.html</a></p>
+</li>
+</ul>
+<h3 id="Polybius-Square-Cipher-波利比奥斯方阵密码"><a href="#Polybius-Square-Cipher-波利比奥斯方阵密码" class="headerlink" title="Polybius Square Cipher 波利比奥斯方阵密码"></a>Polybius Square Cipher 波利比奥斯方阵密码</h3><p>波利比奥斯方阵密码（波利比奥斯棋盘）是棋盘密码的一种，是利用波利比奥斯方阵进行加密的密码方式，简单的来说就是把字母排列好，用坐标(行列)的形式表现出来。<strong>字母是密文，明文便是字母的坐标，反之亦同。</strong><br><img src="/images/Polybios.png"></p>
+<ul>
+<li>编码转换示例<br>明文：<code>flag</code><br>密文：<code>12131122</code></li>
+</ul>
+<h3 id="夏多密码（曲折加密）"><a href="#夏多密码（曲折加密）" class="headerlink" title="夏多密码（曲折加密）"></a>夏多密码（曲折加密）</h3><p>夏多密码是作者麦克斯韦·格兰特在中篇小说《死亡之链》塑造夏多这一英雄人物中所自创的密码，如下图所示：<br><img src="/images/xiaduo.png"></p>
+<blockquote>
+<p>注：在以上所示的字母表密钥的底部，列有四个附加符号1，2，3，4.他们可以放在密文中的任何地方。每个附加符号指示，如何转动写有密文的纸张，再进行后续的加密或解密操作，直到出现另一个附加符号。可以把每个附加符号中的那根线看作是指示针，它指示了纸张的上端朝上，朝右，朝下，朝左。比如说：如果出现符号3，那么纸张就应该转动180度，使其上端朝下； 符号2表示纸张上端朝右，依次类推。</p>
+</blockquote>
+<h3 id="Vigenere-Cipher-维吉尼亚密码"><a href="#Vigenere-Cipher-维吉尼亚密码" class="headerlink" title="Vigenere Cipher 维吉尼亚密码"></a>Vigenere Cipher 维吉尼亚密码</h3><p>维吉尼亚密码是在单一恺撒密码的基础上扩展出多表代换密码，根据密钥(当密钥长度小于明文长度时一般为循环使用，密钥越长相对破解难度越大)来决定用哪一行的密表来进行替换，以此来对抗字频统计。<br><img src="/images/Virginia.png"></p>
+<ul>
+<li><p>编码转换示例<br>明文：<code>flag&#123;This is a example!&#125;</code><br>密钥：<code>password</code><br>密文：<code>ulsy&#123;Pvzv xs s wtodsae!&#125;</code></p>
+</li>
+<li><p>在线解码&amp;工具<br><a target="_blank" rel="noopener" href="https://www.qqxiuzi.cn/bianma/weijiniyamima.php">https://www.qqxiuzi.cn/bianma/weijiniyamima.php</a><br><a target="_blank" rel="noopener" href="http://planetcalc.com/2468/%EF%BC%88%E5%B7%B2%E7%9F%A5%E5%AF%86%E5%8C%99%EF%BC%8C%E5%B7%B2%E5%B4%A9%EF%BC%89">http://planetcalc.com/2468/（已知密匙，已崩）</a><br><a target="_blank" rel="noopener" href="http://rumkin.com/tools/cipher/gronsfeld.php%EF%BC%88%E6%9C%AA%E7%9F%A5%E5%AF%86%E5%8C%99%EF%BC%8C%E5%B7%B2%E5%B4%A9%EF%BC%89">http://rumkin.com/tools/cipher/gronsfeld.php（未知密匙，已崩）</a><br><a target="_blank" rel="noopener" href="http://www.zjslove.com/3.decode/weijiniya/index.html">http://www.zjslove.com/3.decode/weijiniya/index.html</a></p>
+</li>
+</ul>
+<h3 id="Baconian-Cipher-培根密码"><a href="#Baconian-Cipher-培根密码" class="headerlink" title="Baconian Cipher 培根密码"></a>Baconian Cipher 培根密码</h3><p>培根密码是一种替换密码，每个明文字母被一个由5字符组成的序列替换。以下是全部的对应关系(另一种对于关系是每个字母都有唯一对应序列，I和J与U/V各自都有不同对应序列)：<br><img src="/images/Bacon.png"></p>
+<ul>
+<li><p>编码转换示例<br>明文：<code>flag&#123;This is a example&#125;</code><br>密文：<code>AABABABABAAAAAAAABBA BAABAAABBBABAAABAAAB ABAAABAAAB AAAAA AABAABABABAAAAAABABBABBBAABABAAABAA</code></p>
+</li>
+<li><p>在线解码&amp;工具<br><a target="_blank" rel="noopener" href="http://rumkin.com/tools/cipher/baconian.php">http://rumkin.com/tools/cipher/baconian.php</a></p>
+</li>
+</ul>
+<h3 id="其他小技巧："><a href="#其他小技巧：" class="headerlink" title="其他小技巧："></a>其他小技巧：</h3><ul>
+<li>如果密文是十进制，字符范围为“0-9”，可以猜测是 ASCII 编码；</li>
+<li>如果密文由“a-z”“A-Z”和“=”构成，特别是末尾有“=”，那么可以判断为 Base64 编码；</li>
+<li>如果密文含有“%”，形式为 “%xx” 和 “%uxxxx”，字符范围又是十六进制“0-F”，判断是 escape() 编码，用 unescape() 解码；</li>
+<li>若密文由“[]，()，{}，+,！”字符组成的编码通常就通过 Jother 解密。</li>
+</ul>
+<hr>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a target="_blank" rel="noopener" href="http://blog.neargle.com/SecNewsBak/drops/CTF%E4%B8%AD%E9%82%A3%E4%BA%9B%E8%84%91%E6%B4%9E%E5%A4%A7%E5%BC%80%E7%9A%84%E7%BC%96%E7%A0%81%E5%92%8C%E5%8A%A0%E5%AF%86%20.html">CTF中那些脑洞大开的编码和加密</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/30319968">从零开始学习CTF</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/Chad97/article/details/82415509">ASCII码，HTML转义字符表，以及快捷键</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/nocbtm/article/details/90242650">CTF常见编码和加密特征</a><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/201aa3458a97">CTF：集合吧，字符编码</a><br><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1419464">CTF必备技能之编码大全</a><br><a target="_blank" rel="noopener" href="http://www.mamicode.com/info-detail-2252602.html">CTF中常见密码题解密网站总结</a></p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>上述没有提到的加解密情况还有很多，不过多为变种，基本原理相同，主要还是思路要灵活，下文会再整理一下在线加解密网站，方便查询。</p>
+<p>收集整理这些东西，一是方便我自己学习，尤其是在做 CTF 的 Crypto 题时，熟悉绝大多数的加密方式，可以更快判断出加密方式，从而进行接下来的分析；二是自然也希望可以帮到其他有需要的朋友，希望能结识更多志同道合的小伙伴，一起学习，共同进步，欢迎你们一起来讨论技术。</p>
+<p>当然我其实也是一个刚刚入门的小菜鸡，如果文中有错误的地方，请各位大神不吝赐教，也欢迎大家来捧场！</p>
+
+        </div>
+
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2020/01/25/Crypto_online/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Crypto 加解密网站总结</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;Comments</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script data-pjax
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script data-pjax>
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: 'GHjr9A7BcsjDCu8fuLv3Yev2-MdYXbMMI',
+                    appKey: 'BwohkTMPdjQcGRYeFq6huB1E',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '😜 Thanks for reading. Please feel free to write.',
+                    lang: 'en'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'xcbyao';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('true') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">xcbyao</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%BC%96%E7%A0%81"><span class="nav-number">2.</span> <span class="nav-text">常见编码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ASCII-%E7%BC%96%E7%A0%81"><span class="nav-number">2.1.</span> <span class="nav-text">ASCII 编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Base64-32-16-36-58-62-91%E7%BC%96%E7%A0%81"><span class="nav-number">2.2.</span> <span class="nav-text">Base64&#x2F;32&#x2F;16&#x2F;36&#x2F;58&#x2F;62&#x2F;91编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Quoted-printable%E7%BC%96%E7%A0%81"><span class="nav-number">2.3.</span> <span class="nav-text">Quoted-printable编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XXencode%E7%BC%96%E7%A0%81"><span class="nav-number">2.4.</span> <span class="nav-text">XXencode编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UUencode%E7%BC%96%E7%A0%81"><span class="nav-number">2.5.</span> <span class="nav-text">UUencode编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#URL%E7%BC%96%E7%A0%81"><span class="nav-number">2.6.</span> <span class="nav-text">URL编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unicode%E7%BC%96%E7%A0%81"><span class="nav-number">2.7.</span> <span class="nav-text">Unicode编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Escape-Unescape%E7%BC%96%E7%A0%81"><span class="nav-number">2.8.</span> <span class="nav-text">Escape&#x2F;Unescape编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML%E5%AE%9E%E4%BD%93%E7%BC%96%E7%A0%81"><span class="nav-number">2.9.</span> <span class="nav-text">HTML实体编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tap-Code%E6%95%B2%E5%87%BB%E7%A0%81"><span class="nav-number">2.10.</span> <span class="nav-text">Tap Code敲击码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Morse-Code%E6%91%A9%E5%B0%94%E6%96%AF%E7%94%B5%E7%A0%81"><span class="nav-number">2.11.</span> <span class="nav-text">Morse Code摩尔斯电码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8D%A2%E4%BD%8D%E5%8A%A0%E5%AF%86"><span class="nav-number">3.</span> <span class="nav-text">换位加密</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Rail-fence-Cipher-%E6%A0%85%E6%A0%8F%E5%AF%86%E7%A0%81"><span class="nav-number">3.1.</span> <span class="nav-text">Rail-fence Cipher 栅栏密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Curve-Cipher-%E6%9B%B2%E8%B7%AF%E5%AF%86%E7%A0%81"><span class="nav-number">3.2.</span> <span class="nav-text">Curve Cipher 曲路密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Columnar-Transposition-Cipher-%E5%88%97%E4%BD%8D%E7%A7%BB%E5%8A%A0%E5%AF%86"><span class="nav-number">3.3.</span> <span class="nav-text">Columnar Transposition Cipher 列位移加密</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%BF%E6%8D%A2%E5%8A%A0%E5%AF%86"><span class="nav-number">4.</span> <span class="nav-text">替换加密</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Atbash-Cipher-%E5%9F%83%E7%89%B9%E5%B7%B4%E4%BB%80%E7%A0%81"><span class="nav-number">4.1.</span> <span class="nav-text">Atbash Cipher 埃特巴什码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Caesar-Cipher-%E5%87%AF%E6%92%92%E5%AF%86%E7%A0%81"><span class="nav-number">4.2.</span> <span class="nav-text">Caesar Cipher 凯撒密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ROT-5-13-18-47"><span class="nav-number">4.3.</span> <span class="nav-text">ROT 5&#x2F;13&#x2F;18&#x2F;47</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hill-Cipher-%E5%B8%8C%E5%B0%94%E5%AF%86%E7%A0%81"><span class="nav-number">4.4.</span> <span class="nav-text">Hill Cipher 希尔密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pigpen-Cipher-%E7%8C%AA%E5%9C%88%E5%AF%86%E7%A0%81"><span class="nav-number">4.5.</span> <span class="nav-text">Pigpen Cipher 猪圈密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Polybius-Square-Cipher-%E6%B3%A2%E5%88%A9%E6%AF%94%E5%A5%A5%E6%96%AF%E6%96%B9%E9%98%B5%E5%AF%86%E7%A0%81"><span class="nav-number">4.6.</span> <span class="nav-text">Polybius Square Cipher 波利比奥斯方阵密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8F%E5%A4%9A%E5%AF%86%E7%A0%81%EF%BC%88%E6%9B%B2%E6%8A%98%E5%8A%A0%E5%AF%86%EF%BC%89"><span class="nav-number">4.7.</span> <span class="nav-text">夏多密码（曲折加密）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vigenere-Cipher-%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%AF%86%E7%A0%81"><span class="nav-number">4.8.</span> <span class="nav-text">Vigenere Cipher 维吉尼亚密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Baconian-Cipher-%E5%9F%B9%E6%A0%B9%E5%AF%86%E7%A0%81"><span class="nav-number">4.9.</span> <span class="nav-text">Baconian Cipher 培根密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E5%B0%8F%E6%8A%80%E5%B7%A7%EF%BC%9A"><span class="nav-number">4.10.</span> <span class="nav-text">其他小技巧：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-number">5.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-number">6.</span> <span class="nav-text">后记</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>

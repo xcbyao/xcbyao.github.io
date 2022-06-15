@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "axm7ymo5bk");
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J3JRCY1BFK"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1764421546773661" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J3JRCY1BFK');
+</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="xcbyao,pwn,crypto,reverse,hack,信息熵洞,踏雪无痕">
+    <meta name="description" content="凡心所向 素履以往 生如逆旅 一苇以航">
+    <meta name="author" content="xcbyao">
+    
+    <title>
+        
+            C 语言学习笔记之基础篇 |
+        
+        Xcbyao&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"xcbyao.com","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":true},"style":{"primary_color":"#CC3333","avatar":"/images/avatar.png","favicon":"/images/favicon.ico","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.jpg","description":"我曾当年失意客，烟花依旧笑星空"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Xcbyao&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                LINKS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links">LINKS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">C 语言学习笔记之基础篇</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">xcbyao</span>
+                        
+                            <span class="author-label">小妖</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2020-02-06 23:22:36</span>
+        <span class="mobile">2020-02-06 23:22</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Programming/">Programming</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>2.1k Words</span>
+        </span>
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="0x00-前言概览"><a href="#0x00-前言概览" class="headerlink" title="0x00 前言概览"></a>0x00 前言概览</h2><p>这个系列主要是整理 C 语言相关的一些知识，方便后期的复习与检索，适用者为学过基础的入门者编写程序时提供快捷便利的检索条件，纯小白可先收藏。此系列大致分为基础篇、进阶篇、高级篇，本文为基础篇，主要是一些零散知识点的整理，内容没有先后顺序，建议读者 Ctrl+F 查询；同时本着极简原则，一些知识点会直接举例说明。</p>
+<h2 id="0x01-切入正题"><a href="#0x01-切入正题" class="headerlink" title="0x01 切入正题"></a>0x01 切入正题</h2><h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*单多行注释*/</span></span><br><span class="line"><span class="comment">//单行注释（C99）</span></span><br></pre></td></tr></table></figure>
+<h3 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h3><p>编译器只识别前 63 个字符，对于外部标识符只允许使用 31 个字符（C99/C11）；名称第一个字符必须是大小写字母或下划线，不能是数字，区分大小写，但标识符最好不要超过 8 位。</p>
+<h3 id="变量与常量"><a href="#变量与常量" class="headerlink" title="变量与常量"></a>变量与常量</h3><p>变量未初始化可能为 0 或垃圾值，不允许连续赋值，如 <code>int a=b=c=5;</code> 是不合法的。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">定义常量：<span class="meta">#<span class="meta-keyword">define</span> identifier value</span></span><br><span class="line"><span class="keyword">const</span> type variable = value;</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>实参是传递给函数的特定值；形参是函数中用于存储值的变量。</p>
+<h3 id="编译器"><a href="#编译器" class="headerlink" title="编译器"></a>编译器</h3><p>编译器报错的位置比真正的错误位置滞后一行；无法检测语义错误，即遵循了 C 规则，但输出结果错误。</p>
+<p>使用调试器，通过跟踪程序执行步骤，记录每个变量，监视程序状态排错。</p>
+<h3 id="关键字和保留标识符"><a href="#关键字和保留标识符" class="headerlink" title="关键字和保留标识符"></a><a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-basic-syntax.html">关键字和保留标识符</a></h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span>	声明自动变量</span><br><span class="line"><span class="keyword">break</span>	跳出当前循环</span><br><span class="line"><span class="keyword">case</span>	开关语句分支</span><br><span class="line"><span class="keyword">default</span>	开关语句中的其它分支</span><br><span class="line"><span class="keyword">char</span>	声明字符型变量或函数返回值类型</span><br><span class="line"><span class="keyword">const</span>	定义常量</span><br><span class="line"><span class="keyword">do</span>	循环语句的循环体</span><br><span class="line"><span class="keyword">float</span>	声明单精度浮点型变量或函数返回值类型</span><br><span class="line"><span class="keyword">double</span>	声明双精度浮点型变量或函数返回值类型</span><br><span class="line"><span class="keyword">else</span>	条件语句否定分支（与 <span class="keyword">if</span> 连用）</span><br><span class="line"><span class="keyword">static</span>	声明静态变量</span><br><span class="line"><span class="keyword">extern</span>	声明变量或函数是在其它文件或本文件的其他位置定义</span><br><span class="line"><span class="keyword">for</span>	循环语句</span><br><span class="line"><span class="keyword">goto</span>	无条件跳转语句</span><br><span class="line"><span class="keyword">if</span>	条件语句</span><br><span class="line"><span class="keyword">int</span>	声明整型变量或函数</span><br><span class="line"><span class="keyword">long</span>	声明长整型变量或函数返回值类型</span><br><span class="line"><span class="keyword">short</span>	声明短整型变量或函数返回值类型</span><br><span class="line"><span class="keyword">return</span>	子程序返回语句（参数可带可不带）</span><br><span class="line"><span class="keyword">signed</span>	声明有符号类型变量或函数</span><br><span class="line"><span class="keyword">sizeof</span>	计算数据类型或变量长度（即所占字节数）</span><br><span class="line"><span class="keyword">switch</span>	用于开关语句</span><br><span class="line"><span class="keyword">typedef</span>	用以给数据类型取别名</span><br><span class="line">struct	声明结构体类型</span><br><span class="line"><span class="keyword">union</span>	声明共用体类型</span><br><span class="line"><span class="keyword">enum</span>	声明枚举类型</span><br><span class="line"><span class="keyword">while</span>	循环语句的循环条件</span><br><span class="line"><span class="keyword">void</span>	声明函数无返回值或无参数，声明无类型指针</span><br><span class="line"><span class="keyword">volatile</span>	说明变量在程序执行中可被隐含地改变</span><br><span class="line"><span class="keyword">unsigned</span>	声明无符号类型变量或函数</span><br><span class="line"><span class="keyword">register</span>	声明寄存器变量</span><br><span class="line"><span class="keyword">continue</span>	结束当前循环，开始下一轮循环</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C99 新增关键字</span><br><span class="line"><span class="built_in">_Bool</span>  布尔值  <span class="built_in">_Complex</span>  复数  <span class="built_in">_Imaginary</span>  虚数  <span class="keyword">inline</span>  <span class="keyword">restrict</span></span><br><span class="line">C11 新增关键字</span><br><span class="line">_Alignas  _Alignof  _Atomic  _Generic  _Noreturn  _Static_assert  _Thread_local</span><br></pre></td></tr></table></figure>
+<h3 id="基本数据类型及取值范围"><a href="#基本数据类型及取值范围" class="headerlink" title="基本数据类型及取值范围"></a>基本数据类型及<a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-data-types.html">取值范围</a></h3><p><img src="/images/data-type.png"></p>
+<p><img src="/images/data-type2.png"></p>
+<blockquote>
+<p>注：ANSI 标准定义 int 是占 2 个字节，TC 是按 ANSI 标准的，它的 int 是占 2 个字节的。但是在 VC 里，一个 int 是占 4 个字节的。</p>
+</blockquote>
+<h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><p>自动类型转换：如下图<br>强制类型转换：(数据类型) (表达式)</p>
+<blockquote>
+<p>注：转换后不会改变原数据的类型及变量值，只在本次运算中临时性转换；强制转换后的运算结果不遵循四舍五入原则。</p>
+</blockquote>
+<p><img src="/images/type-conversion.png"></p>
+<p>常用的算术转换是隐式地把值强制转换为相同的类型。编译器首先执行整数提升，如果操作数类型不同，则它们会被转换为上列层次中出现的最高层次的类型；常用的算术转换不适用于赋值运算符、逻辑运算符 &amp;&amp; 和 ||。</p>
+<p><code>printf</code> 输出 <code>double</code> 和 <code>float</code> 都可以用 <code>%f</code> 混用，而 <code>double</code> 还可用 <code>%lf</code>。而 <code>scanf</code> 输入情况下 <code>double</code> 必须用 <code>%lf</code>，<code>float</code> 必须用 <code>%f</code> 不能混用。</p>
+<h3 id="格式符-占位符"><a href="#格式符-占位符" class="headerlink" title="格式符/占位符"></a>格式符/占位符</h3><p><img src="/images/format-character.png"></p>
+<p><code>sizeof</code> 是内置运算符，以字节为单位给出指定类型的大小。C99 和 C11 提供 <code>%zd</code> 转换说明匹配 <code>sizeof</code> 的返回类型。一些不支持 C99 和 C11 的编译器可用 <code>%u</code> 或 <code>%lu</code> 代替 <code>%zd</code>。默认右对齐，<code>%-d</code> 为左对齐。</p>
+<h3 id="转义序列"><a href="#转义序列" class="headerlink" title="转义序列"></a>转义序列</h3><p>用于代表难以表示或无法输入的字符。</p>
+<p><img src="/images/escape-sequence.png"></p>
+<p>从 C90 开始，可以用十进制、八进制、十六进制形式表示字符常量。</p>
+<p><img src="/images/int-constant.png"></p>
+<h3 id="运算符及优先级"><a href="#运算符及优先级" class="headerlink" title="运算符及优先级"></a>运算符及优先级</h3><p><img src="/images/operator.png"></p>
+<p><img src="/images/priority.png"></p>
+<blockquote>
+<p>注释：<a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/c/language/operator_precedence#cite_note-1">https://zh.cppreference.com/w/c/language/operator_precedence#cite_note-1</a></p>
+</blockquote>
+<p>同一优先级的运算符，运算次序由结合方向所决定。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">括号成员是老大;</span>      <span class="string">//</span> <span class="string">括号运算符</span> []<span class="string">()</span> <span class="string">成员运算符.</span>  <span class="string">-&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="string">全体单目排老二;</span>      <span class="string">//</span> <span class="string">所有的单目运算符比如</span> <span class="string">++、</span> <span class="string">--、</span> <span class="string">+(正)、</span> <span class="string">-(负)</span> <span class="string">、指针运算</span> <span class="string">*、&amp;</span></span><br><span class="line"></span><br><span class="line"><span class="string">乘除余三,加减四;</span>    <span class="string">//</span> <span class="string">这个&quot;余&quot;是指取余运算即</span> <span class="string">%</span></span><br><span class="line"></span><br><span class="line"><span class="string">移位五，关系六;</span>     <span class="string">//</span> <span class="string">移位运算符：&lt;&lt;</span> <span class="string">&gt;&gt;</span> <span class="string">关系运算符：&gt;</span> <span class="string">&lt;</span> <span class="string">&gt;=</span> <span class="string">&lt;=</span></span><br><span class="line"></span><br><span class="line"><span class="string">等与不等排行七;</span>     <span class="string">//</span> <span class="string">即</span> <span class="string">==</span> <span class="string">和</span> <span class="type">!=</span></span><br><span class="line"></span><br><span class="line"><span class="string">位与异或和位或;</span>     <span class="string">//</span> <span class="string">位运算:</span> <span class="string">位与(&amp;)</span> <span class="string">异或(^)</span> <span class="string">位或(|)</span>    </span><br><span class="line"></span><br><span class="line"><span class="string">&quot;三分天下&quot;</span><span class="string">八九十;</span>  </span><br><span class="line"></span><br><span class="line"><span class="string">逻辑与，逻辑或;</span>    <span class="string">//</span> <span class="string">逻辑运算符:</span> <span class="string">&amp;&amp;</span> <span class="string">和</span> <span class="string">||</span></span><br><span class="line"></span><br><span class="line"><span class="string">十一十二紧挨着;</span>    <span class="string">//</span> <span class="string">注意顺序:</span> <span class="string">&amp;&amp;</span> <span class="string">高于</span> <span class="string">||</span></span><br><span class="line"></span><br><span class="line"><span class="string">条件只比赋值高,</span>    <span class="string">//</span> <span class="string">三目运算符优先级排到</span> <span class="number">13</span> <span class="string">位只比赋值运算符和</span> <span class="string">&quot;,&quot;</span> <span class="string">高</span></span><br><span class="line"></span><br><span class="line"><span class="string">逗号运算最低级!</span>    <span class="string">//逗号运算符优先级最低</span></span><br></pre></td></tr></table></figure>
+<h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><ol>
+<li>在没有循环结构的情况下，<code>break</code> 不能用在单独的 <code>if-else</code> 语句中。</li>
+<li>在知道循环次数的情况下更适合使用 <code>for</code> 循环。</li>
+<li>在不知道循环次数的情况下适合使用 <code>while</code> 或者 <code>do-while</code> 循环。</li>
+<li>如果有可能一次都不循环应考虑使用 <code>while</code> 循环。</li>
+<li>如果至少循环一次应考虑使用 <code>do-while</code> 循环。</li>
+</ol>
+<p>switch 语句时还应注意以下几点：</p>
+<ol>
+<li>在 <code>case</code> 后的各常量表达式的值不能相同，否则会出现错误。</li>
+<li>在 <code>case</code> 子句后如果没有 <code>break;</code> 会一直往后执行直到遇到 <code>break;</code> 才会跳出 <code>switch</code> 语句。</li>
+<li><code>switch</code> 后面的表达式语句只能是整型或者字符类型。</li>
+<li>在 <code>case</code> 后，允许有多个语句，可以不用 <code>&#123;&#125;</code> 括起来。</li>
+<li>各 <code>case</code> 和 <code>default</code> 子句的先后顺序可以变动，而不会影响程序执行结果。</li>
+<li><code>default</code> 子句可以省略不用。</li>
+<li>自定义函数尽量放在 <code>main</code> 函数之前，若要放在 <code>main</code> 函数后面，需要在 <code>main</code> 函数之前先声明自定义函数。</li>
+</ol>
+<blockquote>
+<p>编译器不优化情况下，for 循环里 ++i 比 i++ 要快一些。</p>
+</blockquote>
+<h3 id="存储类别"><a href="#存储类别" class="headerlink" title="存储类别"></a>存储类别</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">自动（<span class="keyword">auto</span>）</span><br><span class="line">静态（<span class="keyword">static</span>）</span><br><span class="line">寄存器（<span class="keyword">register</span>）</span><br><span class="line">外部（<span class="keyword">extern</span>）</span><br></pre></td></tr></table></figure>
+<p>只有 局部自动变量 和 形式参数 可以作为 寄存器变量；</p>
+<p>一个计算机系统中的寄存器数目有限，不能定义任意多个寄存器变量；</p>
+<p>局部静态变量 不能定义为 寄存器变量。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> 是局部变量的默认存储类, 限定变量只能在函数内部使用；</span><br><span class="line"><span class="keyword">register</span> 代表了寄存器变量，不在内存中使用；</span><br><span class="line"><span class="keyword">static</span> 是全局变量的默认存储类,表示变量在程序生命周期内可见；</span><br><span class="line"><span class="keyword">extern</span> 表示全局变量，即对程序内所有文件可见</span><br></pre></td></tr></table></figure>
+<p>VS2019 中，看任何变量的内存，将该变量取地址&amp;，拖入内存窗口来看</p>
+<p>微软的编译器设计，不同的变量之间有 8 个字节的保护空间（Mac 和 Linux是没有的）</p>
+<h3 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h3><p><img src="/images/string-functions.png"></p>
+<h3 id="获取数组长度"><a href="#获取数组长度" class="headerlink" title="获取数组长度"></a>获取数组长度</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> length = <span class="keyword">sizeof</span>(arr)/<span class="keyword">sizeof</span>(arr[<span class="number">0</span>]);</span><br></pre></td></tr></table></figure>
+<p>二维数组定义的时候，可以不指定行的数量，但是必须指定列的数量。</p>
+<h2 id="0x02-References"><a href="#0x02-References" class="headerlink" title="0x02 References"></a>0x02 References</h2><blockquote>
+<p>《C Primer Plus》<br><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000015699060">C语言入门这一篇就够了-学习笔记</a><br><a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-tutorial.html">C语言教程</a></p>
+</blockquote>
+<h2 id="0x03-写在最后"><a href="#0x03-写在最后" class="headerlink" title="0x03 写在最后"></a>0x03 写在最后</h2><p>因为基础篇的知识点比较零散，好在断断续续写了几天总算写完了，细心的朋友可以发现我在文中指出了一些 C99 和 C11 的新特性与 C89 和 C90 作为区分，以便在不同的编译器上能够更好的排错。还有很多知识点没有提到，后期补充时会写在进阶篇和高级篇中，文中难免有纰漏之处，请读者不吝指出。</p>
+
+        </div>
+
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2020/02/16/Semester_1_summary/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">往事如烟——大一上学期总结</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2020/02/02/Custom_code_highlight/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">自定义 Hexo 代码高亮</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;Comments</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script data-pjax
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script data-pjax>
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: 'GHjr9A7BcsjDCu8fuLv3Yev2-MdYXbMMI',
+                    appKey: 'BwohkTMPdjQcGRYeFq6huB1E',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '😜 Thanks for reading. Please feel free to write.',
+                    lang: 'en'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'xcbyao';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('true') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">xcbyao</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x00-%E5%89%8D%E8%A8%80%E6%A6%82%E8%A7%88"><span class="nav-number">1.</span> <span class="nav-text">0x00 前言概览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-%E5%88%87%E5%85%A5%E6%AD%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">0x01 切入正题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A"><span class="nav-number">2.1.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E5%90%8D"><span class="nav-number">2.2.</span> <span class="nav-text">命名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F"><span class="nav-number">2.3.</span> <span class="nav-text">变量与常量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E6%95%B0"><span class="nav-number">2.4.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E5%99%A8"><span class="nav-number">2.5.</span> <span class="nav-text">编译器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97%E5%92%8C%E4%BF%9D%E7%95%99%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="nav-number">2.6.</span> <span class="nav-text">关键字和保留标识符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%8F%96%E5%80%BC%E8%8C%83%E5%9B%B4"><span class="nav-number">2.7.</span> <span class="nav-text">基本数据类型及取值范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">2.8.</span> <span class="nav-text">类型转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%BC%E5%BC%8F%E7%AC%A6-%E5%8D%A0%E4%BD%8D%E7%AC%A6"><span class="nav-number">2.9.</span> <span class="nav-text">格式符&#x2F;占位符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AC%E4%B9%89%E5%BA%8F%E5%88%97"><span class="nav-number">2.10.</span> <span class="nav-text">转义序列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E5%8F%8A%E4%BC%98%E5%85%88%E7%BA%A7"><span class="nav-number">2.11.</span> <span class="nav-text">运算符及优先级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF"><span class="nav-number">2.12.</span> <span class="nav-text">循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E7%B1%BB%E5%88%AB"><span class="nav-number">2.13.</span> <span class="nav-text">存储类别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0"><span class="nav-number">2.14.</span> <span class="nav-text">字符串函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E6%95%B0%E7%BB%84%E9%95%BF%E5%BA%A6"><span class="nav-number">2.15.</span> <span class="nav-text">获取数组长度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-References"><span class="nav-number">3.</span> <span class="nav-text">0x02 References</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x03-%E5%86%99%E5%9C%A8%E6%9C%80%E5%90%8E"><span class="nav-number">4.</span> <span class="nav-text">0x03 写在最后</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
