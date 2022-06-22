@@ -45,6 +45,12 @@ categories: Software
 - **使用：**开箱即用
 - **下载：**https://crystalmark.info/en/download/
 
+## 0x07 BatteryInfoView
+- **环境：**`Win All`
+- **介绍：**检查笔记本电脑的电池状态
+- **使用：**开箱即用
+- **下载：**https://batteryinfoview.en.uptodown.com/windows/download
+
 ## 0x0 
 - **环境：**
 - **介绍：**
