@@ -976,6 +976,61 @@ https://weibo.com/1112829033/LiaLGece8
 
 https://www.luckydesigner.space/privacy-search-how-to-do/
 
+https://www.ttsp.tv/
+
+扩展 音视频下载
+https://cococut.net/
+
+工作党如何做好日常备餐？这是我的经验和食谱分享 [by 鸿苓]
+https://sspai.com/post/74169
+
+英语数字听力练习
+https://english-number.com/number-test
+
+https://diygod.me/obsidian/
+
+🌐 Chrome谷歌浏览器历史版本下载
+
+Chrome浏览器最新离线版下载
+https://www.chromedownloads.net/
+
+Index of /chromedriver/
+https://registry.npmmirror.com/binary.html?path=chromedriver/
+
+Chromium History Versions Download ↓
+https://mrseawave.github.io/chromium-history-page/
+
+Chrome 离线包 - 历史版本（官方）
+链接来自 Chromium 官网， 含 Mac、Linux、Windows、Android、ChromiumOS 等
+https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html
+
+GOOGLE CHROME 的旧版本
+https://google-chrome.cn.uptodown.com/windows/versions
+
+Chromium Portable Files
+https://sourceforge.net/projects/crportable/files/
+
+Google Chrome Older Versions Download (Windows, Linux & Mac)
+https://www.slimjet.com/chrome/google-chrome-old-version.php
+
+🏞 预览图生成器
+▎适合为博客文章生成适配 Twitter, Telegram 等媒介的预览图
+1. https://pika.style/open-graph-generator
+2. https://cards.microlink.io/editor
+3. https://poet.so/
+4. https://influencermarketinghub.com/instagram-ads-mockup/
+5. https://influencermarketinghub.com/facebook-ads-mockup/
+6. https://coverview.vercel.app/editor
+
+ 渐变图
+1. http://color.oulu.me/
+2. https://webkul.github.io/coolhue/
+4. https://uigradients.com/#GradeGrey
+5. https://webgradients.com/
+6. https://gradient.shapefactory.co/
+
+
+
 ### 虚拟机直通/穿透
 | [平台虚拟化软件比较](https://en.wikipedia.org/wiki/Comparison_of_platform_virtualization_software###Other_features) | [VMware三个版本workstation、server、esxi的区别](https://blog.csdn.net/wuhen1226/article/details/25543811) | [Hypervisor 浅谈](https://johnnyqian.net/blog/hypervisor-in-brief/) | [不看后悔一辈子的VMware教程](https://zhuanlan.zhihu.com/p/110128514) | [让 KVM 上的 Windows 虚拟机插上 GVT-g 的翅膀](https://medium.com/@langleyhouge/%E8%AE%A9-kvm-%E4%B8%8A%E7%9A%84-windows-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%8F%92%E4%B8%8Agvt-g-%E7%9A%84%E7%BF%85%E8%86%80-ac0ac28b73b8) |
 | :-- | :-- | :-- | :-- | :-- |
