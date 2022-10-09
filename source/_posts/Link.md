@@ -1029,6 +1029,107 @@ https://www.slimjet.com/chrome/google-chrome-old-version.php
 5. https://webgradients.com/
 6. https://gradient.shapefactory.co/
 
+http://www.banyun99.com/
+
+广告联盟推荐：popads
+https://www.ezloo.com/2022/03/popads.html
+
+MacOS 软件
+https://xclient.info/
+
+在线markdown
+https://www.zybuluo.com/mdeditor
+
+美国接码平台
+https://www.smscodes.io/
+
+硬件维修
+https://www.ifixit.com/
+
+gihtub star history
+https://star-history.com/
+
+GitHub成就获取
+https://blog.zhheo.com/p/e57c4cc6.html
+
+GitHub Achievements 个人页已知成就统计
+https://www.imaegoo.com/2022/github-achievements/
+
+uBlacklist
+https://chrome.google.com/webstore/detail/ublacklist/pncfbmialoiaghdehhbnbhkkgmjanfhe
+在谷歌的搜索结果中屏蔽特定的网站显示。
+
+notion 扩展
+
+学生必备网站导航 教育邮箱购买
+https://www.stulink.cn/
+https://us.mailschool.me/
+https://edumark.net/
+https://forms.office.com/pages/responsepage.aspx?id=GWaKoxSgwkeTa-Xpkv2SwKDGSyQ_2mZEqow765B9rh5UQlZNRkQ3NExNVzI4NDZKNUtITDE3U01ZRC4u
+
+https://xmb.ink/
+
+大学生活质量指北
+意在收集全世界各高校招生时不会写明但实实在在影响大学生活质量的详尽信息
+https://cn.colleges.chat/
+https://github.com/CollegesChat/university-information
+
+
+https://www.mp3juices.cc/e401c
+
+https://www.hifini.com/
+crewes@renliner.cf
+crewes
+
+https://eureka.mba/
+
+https://wallpaperscraft.com/
+
+每日一句
+中文
+https://hitokoto.cn/
+http://wufazhuce.com/
+https://github.com/azwcl/saying
+https://www.jinrishici.com/
+https://www.789dl.cn/
+英文
+https://www.defprogramming.com/
+http://quotes.stormconsultancy.co.uk/
+https://www.brainyquote.com/topics/programming
+
+接口API服务商
+https://wx.jdcloud.com/api
+https://www.apispace.com/
+https://apis.baidu.com/
+https://open.weibo.com/wiki/API
+http://ai.baidu.com/
+https://www.juhe.cn/
+https://www.faceplusplus.com.cn/
+https://www.rongcloud.cn/
+https://www.xfyun.cn/
+https://lbs.amap.com/
+
+有没有比 Grammarly 更先进的英语作文修改润色软件？ - 知乎
+https://www.zhihu.com/question/310372138
+
+你写论文时发现了哪些非常神的网站？ - 知乎
+https://www.zhihu.com/question/35931336
+
+如何在论文中画出漂亮的插图？ - CoderMan的回答 - 知乎
+https://www.zhihu.com/question/21664179/answer/2305672345
+数学公式怎么用英语念出来？ - 知乎
+https://www.zhihu.com/question/52818597
+
+各位都是在哪里下载无损音乐的呢？
+https://www.zhihu.com/question/269366084
+
+你们是从哪里找到电子版的教材，资料的？
+https://www.zhihu.com/question/357864509
+
+最萌云计算服务商
+https://www.ure.best/
+
+
 
 
 ### 虚拟机直通/穿透

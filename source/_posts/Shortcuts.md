@@ -65,6 +65,8 @@ sticky: 3
 |放大/缩小|Ctrl +/-|恢复大小|Ctrl + 0|
 |源码|Ctrl + U|检查|Ctrl + Shift + J/I 或 F12|
 
+- 快速按右键接着马上按 Alt 键，可以出现右键快捷键提示……
+
 ### [chrome://flags](https://bynss.com/howto/300384.html)
 国内环境推荐关闭 QUIC 协议：（影响不大）
 Experimental QUIC protocol 值改为 Disabled
