@@ -2,9 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xcbyao.com/2022/03/09/Apple_old_app/</loc>
+    
+    <lastmod>2022-10-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xcbyao.com/2020/08/11/Appreciation/</loc>
     
-    <lastmod>2022-10-09</lastmod>
+    <lastmod>2022-10-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xcbyao.com/2021/10/20/CS_408/</loc>
+    
+    <lastmod>2022-10-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -13,7 +31,7 @@
   <url>
     <loc>https://xcbyao.com/2021/01/31/List_summary/</loc>
     
-    <lastmod>2022-10-08</lastmod>
+    <lastmod>2022-10-09</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -32,15 +50,6 @@
     <loc>https://xcbyao.com/2020/02/02/Link/</loc>
     
     <lastmod>2022-10-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xcbyao.com/2021/10/20/CS_408/</loc>
-    
-    <lastmod>2022-10-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -113,15 +122,6 @@
     <loc>https://xcbyao.com/2022/04/20/Python/</loc>
     
     <lastmod>2022-04-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xcbyao.com/2022/03/09/Apple_old_app/</loc>
-    
-    <lastmod>2022-04-08</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -292,7 +292,7 @@
 
   <url>
     <loc>https://xcbyao.com/</loc>
-    <lastmod>2022-10-09</lastmod>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -302,56 +302,56 @@
   
   <url>
     <loc>https://xcbyao.com/categories/BUG/</loc>
-    <lastmod>2022-10-09</lastmod>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xcbyao.com/categories/Software/</loc>
-    <lastmod>2022-10-09</lastmod>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xcbyao.com/categories/Programming/</loc>
-    <lastmod>2022-10-09</lastmod>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xcbyao.com/categories/Crypto/</loc>
-    <lastmod>2022-10-09</lastmod>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xcbyao.com/categories/Relive-youth/</loc>
-    <lastmod>2022-10-09</lastmod>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xcbyao.com/categories/Algorithm/</loc>
-    <lastmod>2022-10-09</lastmod>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xcbyao.com/categories/Self-improvement/</loc>
-    <lastmod>2022-10-09</lastmod>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xcbyao.com/categories/Binary/</loc>
-    <lastmod>2022-10-09</lastmod>
+    <lastmod>2022-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
