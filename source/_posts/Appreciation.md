@@ -4037,6 +4037,7 @@ Eric/Corvus/Gemini/Gem/Antonio/Neo
 
 
 
+
 ---
 
 若还无力反抗命运，只需心怀勇气等待
@@ -4123,4 +4124,6 @@ Eric/Corvus/Gemini/Gem/Antonio/Neo
 如果你愿意，与我们一起，精致躺平每一周~
 敬请收看——
 <a href="https://mp.weixin.qq.com/">《躺平指南 0.1》</a>
+
+旧游无处不堪寻，无寻处，惟有少年心
 
