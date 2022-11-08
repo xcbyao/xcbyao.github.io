@@ -1152,6 +1152,31 @@ https://yinrss.com/
 https://make.mk/
 http://www.sankedan.com/
 
+https://www.yunpanziyuan.com/
+https://docs.qq.com/doc/DTVhJR1RibVNEUmJB
+
+http://scz.617.cn:8/
+飞花堂
+
+https://run.ialtone.xyz/message/index.php
+在线短信轰炸
+
+https://sspai.com/post/72622?utm_source=twitter&utm_medium=social
+二〇二二年，来试试双拼输入法吧
+
+https://www.mattkaydiary.com/
+
+https://macpai.cn/
+
+一亩三分地
+
+http://textconverter.net/
+
+ipa在线签名：https://sign.dumpapp.com/ ipa证书在线检测：https://check.dumpapp.com/ DumpApp主页：https://www.dumpapp.com/
+
+
+
+
 
 
 ### 虚拟机直通/穿透

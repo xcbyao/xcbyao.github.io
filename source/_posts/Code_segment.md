@@ -780,6 +780,9 @@ int main() {
 #include <windows.h>
 
 int main() {
+	printf("\n\t\t\t祝小妖小朋友\n");
+	printf("\t\t\t永远开心快乐\n");
+
 	float x, y, a;
 	for (y = 1.5; y > -1.5; y -= 0.1) {
 		for (x = -1.5; x < 1.5; x += 0.05) {
@@ -792,6 +795,50 @@ int main() {
 	}
 	return 0;
 }
+```
+
+```C
+/* 代码来源于：https://github.com/liuyubobobo/heart-curve-cplusplus/blob/master/main2.cpp 
+空心版*/
+#include <stdio.h>
+#include <math.h>
+ 
+// The first heart shape in hollow
+// (x^2+y^2-1)^3 - x^2*y^3 = 0
+// y ~ (-1.1 , 1.3 )
+// x ~ (-1.2 , 1.2 )
+int main() {
+ 
+    for( float y = 1.3 ; y >= -1.1 ; y -= 0.06 )
+	{
+        for( float x = -1.2 ; x <= 1.2 ; x += 0.025 )
+		{
+            if( pow((x*x+y*y-1.0),3) - x*x*y*y*y <= 0.0 )
+                printf(" ");
+            else
+                printf("*");
+		}
+        printf("\n");
+    }
+ 
+    return 0;
+}
+```
+
+```C
+
+```
+
+```C
+
+```
+
+```C
+
+```
+
+```C
+
 ```
 
 ### 012 逆序

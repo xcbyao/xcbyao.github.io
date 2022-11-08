@@ -96,6 +96,13 @@ Smooth Scrolling 值改为 Enabled
 |任务视图|Win + Tab|连接|Win + K|
 |切换输入法|Win + 空格 / Alt + 左/右 Shift|||
 
+计算器 Win + R calc
+屏幕键盘 Win + R osk
+Win + R 
+Win + R 
+
+Scroll lock 键：FN + K/C
+
 设置自启动 Win+R 复制，添加快捷键
 ```yml
 %USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
