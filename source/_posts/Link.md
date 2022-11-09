@@ -1174,6 +1174,15 @@ http://textconverter.net/
 
 ipa在线签名：https://sign.dumpapp.com/ ipa证书在线检测：https://check.dumpapp.com/ DumpApp主页：https://www.dumpapp.com/
 
+https://www.owenyoung.com/
+
+把中国当成地狱润出去的人，大概率会很开心。
+把外国当成天堂润出去的人，大概率会很后悔。
+https://twitter.com/NoCoLoRMoNkEy/status/1585097071048404992
+https://twitter.com/DrMaCaCa/status/1090413615637684225
+
+https://asciinema.org/
+
 
 
 
