@@ -626,7 +626,6 @@ ios IPSW Downloads
 https://ipsw.me/
 
 如果您需要匿名发送文件，可以使用以下匿名文件共享服务之一： 
-• anonymousfiles.io
 • anonfiles.com
 • filedropper.com
 • privatlab.com
@@ -1183,9 +1182,58 @@ https://twitter.com/DrMaCaCa/status/1090413615637684225
 
 https://asciinema.org/
 
+https://graphemica.com/
 
+https://ednovas.xyz/
 
+简历
+https://jianlixiazai.cn/
 
+苹果快捷指令
+https://www.rcuts.com/
+
+吃瓜
+https://998.su/
+
+https://bizhi.cheetahfun.com/
+
+https://www.artstation.com/?sort_by=community
+
+https://yunpan1.24kdh.cn/
+公众号 yunpan1
+疯狂动物城 https://www.aliyundrive.com/s/ZwavX1SiBpe
+
+Google 代码规范 C++ 风格指南
+https://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/
+
+https://www.ycombinator.com/
+
+https://www.1point3acres.com/bbs/
+
+https://gonglue.us/youtube-downloader
+YouTube 视频/音频下载推荐-美国攻略
+
+https://xd.x6d.com/
+小刀资源网
+
+http://www.qingshanzhang.com/about/
+
+[C++ Cheat Sheet 图表](https://hackingcpp.com/cpp/cheat_sheets.html)
+
+营销技巧，标题中用 7 等奇数更容易获得关注
+
+https://catcoding.me/p/publish-to-wechat/
+如何无痛苦更新公众号
+
+http://libgen.rs/
+书记查询
+
+浙江图书馆
+https://www.zjlib.cn/
+
+https://eureka.mba/posts/3f43dc72.html
+
+https://caj2pdf.cn/en
 
 
 ### 虚拟机直通/穿透
