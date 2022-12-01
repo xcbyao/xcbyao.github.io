@@ -169,6 +169,8 @@ npm install hexo-deployer-git --save
 
 ### theme update
 ```git
+git rm -rf --cached keep
+git add keep/*
 git add . //更新工作的状态树
 git stash //将未提交修改保存至堆栈中
 git pull  //获取更新

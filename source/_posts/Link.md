@@ -1239,6 +1239,8 @@ https://caj2pdf.cn/en
 http://louischeung.top:225/
 
 
+https://forum.freemdict.com/
+
 
 
 

@@ -103,8 +103,7 @@ COCA 20000 从高频到低频，剔除到第一个不认识的单词。（欧路
 至少一遍，保证读懂为止；
 保持记录背诵生词和语法现象的习惯。
 
-- 书单：
-前两本较短，建立信心；后两本最好一口气都读完，相互印证。
+- 书单：（前两本较短，建立信心；后两本最好一口气都读完，相互印证）
 1. A Planet of Viruses by Carl Zimmer
 2. The Alchemist by Paulo Coelho, Translated by Alan R. Clarke
 3. Outliers: The Story of Success by Malcolm Gladwell
@@ -172,7 +171,6 @@ Lexile Framework for Reading
 
 - 联合音变
 辅音 /t/ /d/ /s/ /z/ 分别遇到 /j/ 时，发音可能变化，规律如下：
-
   1. /t/+/j/ 变做 /tʃ/。例如，can’t you；
   2. /d/+/j/ 变做 /dʒ/。例如，would you；
   3. /s/+/j/ 变做 /ʃ/。例如，miss you;
@@ -226,8 +224,7 @@ Modern Family 摩登家庭
 
 
 ### 写作
-[The Great Writing Series](https://ngl.cengage.com/search/productOverview.do?N=201+4294918395+28&Ntk=P_EPI&Ntt=206085876248445131717135176731031330960&Ntx=mode%2Bmatchallpartial&homePage=false&noSingleAndSeriesResults=true&homePage=false)
-教程针对非英语母语人士。
+[The Great Writing Series](https://ngl.cengage.com/search/productOverview.do?N=201+4294918395+28&Ntk=P_EPI&Ntt=206085876248445131717135176731031330960&Ntx=mode%2Bmatchallpartial&homePage=false&noSingleAndSeriesResults=true&homePage=false) 教程针对非英语母语人士
 
 资源待补充
 

@@ -1,0 +1,139 @@
+base_info:
+  title: Xcbyao's Blog
+  author: xcbyao
+  url: https://xcbyao.com/
+  logo_img: 
+
+# ---------------------------------------------------------------------------------------
+# Theme style settings
+# ---------------------------------------------------------------------------------------
+style:
+  primary_color: '#CC3333'
+  avatar: /images/avatar.png
+  favicon: /images/favicon.ico
+
+  # Article image align position, value: left | center
+  article_img_align: left
+  left_side_width: 260px
+  content_max_width: 920px
+
+  # Mouse hover
+  hover:
+    shadow: false # shadow effect when the mouse hover
+    scale: false # scale effect when the mouse hover
+
+  # First screen
+  first_screen:
+    enable: true
+    background_img: /images/bg.jpg
+    description: 我曾当年失意客，烟花依旧笑星空
+
+  scroll:
+    progress_bar:
+      enable: true
+    percent:
+      enable: false
+
+# ---------------------------------------------------------------------------------------
+# Social contact link
+# ---------------------------------------------------------------------------------------
+social_contact:
+  enable: true
+  links:
+    youtube: https://www.youtube.com/c/XcbyaoAntonio
+    github: https://github.com/xcbyao
+    twitter: https://twitter.com/xcbyao
+    telegram: https://t.me/Joanna_vip
+    #gsvshk: 公众号图片
+    email: eGNieWFvQGdtYWlsLmNvbQ==
+
+menu:
+  # Home: /
+  Archives: /archives
+  Categories: /categories
+  # Tags: /tags
+  Links: /links
+  About: /about
+  # Changelog: /changelog
+
+# ---------------------------------------------------------------------------------------
+# Home page article block display settings
+# ---------------------------------------------------------------------------------------
+home_article:
+  category:
+    enable: true
+    limit: 3
+  tag:
+    enable: false
+    limit: 5
+
+post:
+  word_count:
+    enable: true
+    wordcount: true
+    min2read: false
+
+  author_label:
+    enable: true
+    auto: false
+    custom_label_list: ["小妖"]
+
+code_copy:
+  enable: true
+  style: mac  # default | mac
+
+toc:
+  enable: true
+  number: true
+  # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
+  expand_all: false
+  # If true, open TOC every time when you enter the article page
+  init_open: true
+
+# ---------------------------------------------------------------------------------------
+# Post copyright info
+# ---------------------------------------------------------------------------------------
+copyright_info:
+  enable: false
+
+website_count:
+  busuanzi_count:
+    enable: true
+    site_uv: true
+    site_pv: true
+    page_pv: true
+
+local_search:
+  enable: true
+  preload: true
+
+comment:
+  enable: true
+  use: valine  # values: valine | gitalk | twikoo
+
+  valine:  # https://console.leancloud.app/  https://valine.js.org/quickstart.html
+    appid: GHjr9A7BcsjDCu8fuLv3Yev2-MdYXbMMI
+    appkey: BwohkTMPdjQcGRYeFq6huB1E
+    placeholder: 😜 Thanks for reading. Please feel free to write. # 谢谢你看到最后，有什么想说的尽情吐槽吧
+    avatar: robohash
+    enableQQ: true
+    visitor: true
+    requiredFields: ['nick','mail']
+
+rss:
+  enable: false
+lazyload:
+  enable: false
+cdn:
+  enable: true
+
+pjax:
+  enable: true
+
+# ---------------------------------------------------------------------------------------
+# Footer settings
+# ---------------------------------------------------------------------------------------
+footer:
+  since: 2020
+
+version: 3.4.5
