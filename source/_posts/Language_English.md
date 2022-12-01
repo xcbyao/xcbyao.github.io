@@ -1,10 +1,10 @@
 ---
-title: post
+title: 英语练级全攻略
 date: 2022-09-27 14:04:38
-categories:
+categories: Self-improvement
 ---
 ## Preface
-因为这篇文章 [2021 极简三部曲终章：用 Notion 重新管理人生](https://sspai.com/post/71288) 正式结缘少数派，在社区闲逛之余自然又刷到了大约一年前看到过的郝海龙的《英语自学手册》，初看不知书中意，再看已是书中人啊！这次找到了一个 epub 版本（以后补上咳~），通读一遍后收获颇深，十分科学完善的一套方法论，值得尝试，遂整理一下核心方法体系，开始这场**英语学习的登台之旅~**
+因为这篇文章 [2021 极简三部曲终章：用 Notion 重新管理人生](https://sspai.com/post/71288) 正式结缘少数派，在社区闲逛之余自然又刷到了大约一年前看到过的郝海龙的《英语自学手册》，初看不知书中意，再看已是书中人啊！这次找到了一个 epub 版本（以后补上咳~），通读一遍后收获颇深，相当科学完善的一套方法论，值得尝试，遂整理一下核心方法体系，开始这场**英语学习的登台之旅**。
 
 
 ## Main
@@ -165,10 +165,10 @@ Lexile Framework for Reading
 特定词没听明白可问：What did/do you mean by xxx?
 
 - 音变现象
-  1. 连续与叠合：下标弧线连接前后部分
-  2. 失爆、同化与击穿：斜杠划掉不发音部分
-  3. 元音中插入 /j/ /w/：
-  4. 
+  1. 连读与叠合：下标弧线连接前后部分
+  2. 同化、失爆与击穿：斜杠划掉不发音部分
+  3. 元音中插入 /j/ /w/：前面单词尾音是 /i/ /ɪ/ /eɪ/ /ɔɪ/ /aɪ/，下一个单词以元音开头，插入 /j/；当 /u/ /əʊ/ /aʊ/ 时，插入 /w/
+  4. 弱读与缩读：单元音及常见 /ʌ/ /ɪ/ /ʊ/ 通常弱读为 /ə/
 
 - 联合音变
 辅音 /t/ /d/ /s/ /z/ 分别遇到 /j/ 时，发音可能变化，规律如下：
@@ -180,28 +180,72 @@ Lexile Framework for Reading
 
 
 #### 第二个台阶
+听力口语要学到 C1 以上，时间以 2000 小时（练习材料）为目标。
 
+Friends 老友记
+Modern Family 摩登家庭
 
+选定两小时的片段用来学习，如《老友记》六集；每天两小时跟读训练；完成后每天保持十五分以上练习即可。
+
+1. 关掉字幕，先看一遍，尽力看懂
+2. 打开字幕，再看一遍，全部看懂
+3. 逐句跟读（放一句录音跟读一遍，该句彻底跟读下来，再继续下一句；能跟下来就不看原文）
+4. 不看字幕，整集跟读
+5. 跟读 100 遍（从第一步完整过完一遍算起；剧情完全熟悉可只听音频；200 小时）
 
 
 #### 第三个台阶
+口语补足日常事务性表达：
+《牛津高阶英语词典第十版 Oxford Advanced Learner's Dictionary》电子版附录 Express Yourself 专题，共 40 组。
 
+待整理
 
+听力准备 18 个小时的练习材料，跟读 100 遍。
+电影、电视剧、演讲 TED、新闻 BBC/VOA、谈话节目 The Ellen Show/The Graham Norton Show
+
+1. 《疯狂动物城》2 小时
+2. 《寻梦环游记》
+3. 《乔布斯演讲》
+4. 《那个黑人大学演讲》
+5. 《怦然心动》
+6. 《垫底辣妹》
+7. 《风雨哈佛路》
+8. 《》
+9. 《》
+10. 《》
+11. 《》
+12. 《》
+13. 《》
+14. 《》
+15. 《》
+16. 《》
+17. 《》
+18. 《》
+19. 《》
+20. 《》
 
 
 ### 写作
-#### 第一个台阶
+[The Great Writing Series](https://ngl.cengage.com/search/productOverview.do?N=201+4294918395+28&Ntk=P_EPI&Ntt=206085876248445131717135176731031330960&Ntx=mode%2Bmatchallpartial&homePage=false&noSingleAndSeriesResults=true&homePage=false)
+教程针对非英语母语人士。
 
+资源待补充
 
+修辞手法：比喻（Simile and Metaphor）类比（Analogy）对比（Antithesis）
 
-
-#### 第二个台阶
-
-
-
-
-#### 第三个台阶
-
+- 写作辅助工具
+[欧路词典](https://my.eudic.net/studylist/import)
+[QuillBot](https://quillbot.com) 多功能写作润色器
+[Linggle](https://linggle.com) 语言参考搜索引擎
+[Ludwig](https://ludwig.guru) 结合语境的句子搜索引擎
+[Linguee](https://www.linguee.com) 多国语言语料库+词典
+[Text Analyzer](https://cefrlevels.com/textanalysis/index.html) CEFR 文本查询
+[English Profile](https://englishprofile.org/wordlists/evp) CEFR 词汇查询
+[Thesaurus](https://www.freethesaurus.com) 同义词典
+[FRAZE·IT](https://fraze.it) 英文语料库
+[QuoDB](https://www.quodb.com) 电影台词英文表达
+[Lang-8](https://lang-8.com) 多国语言学习交流平台
+[CEFR](https://cefr.duolingo.com) 多邻国 CEFR 查询（不可用）
 
 
 ## Reference
@@ -209,4 +253,4 @@ Lexile Framework for Reading
 
 
 ## Postscript
-
+这篇教程之于我最大的益处在于观念的重塑，让我知道坚持下去可以实现和达到的高度以及如何去更好的坚持，教程中提供和介绍的方法、书籍、工具也是非常不错。——blackcrow
