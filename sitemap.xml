@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://xcbyao.com/2022/09/27/Language_English/</loc>
+    <loc>https://xcbyao.com/2020/11/13/Shortcuts/</loc>
     
     <lastmod>2022-12-01</lastmod>
     
@@ -12,6 +12,15 @@
   
   <url>
     <loc>https://xcbyao.com/2020/02/02/Link/</loc>
+    
+    <lastmod>2022-12-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xcbyao.com/2022/09/27/Language_English/</loc>
     
     <lastmod>2022-12-01</lastmod>
     
@@ -41,15 +50,6 @@
     <loc>https://xcbyao.com/2021/03/29/Code_segment/</loc>
     
     <lastmod>2022-11-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xcbyao.com/2020/11/13/Shortcuts/</loc>
-    
-    <lastmod>2022-11-04</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
