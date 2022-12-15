@@ -9,7 +9,7 @@ sticky: 4
 | :-- | :-- | :-- | :-- | :-- |
 | [小刀资源网](https://www.x6d.com/) | [ZAPRO·杂铺](https://tmioe.com/) | [Z-Library](https://z-lib.org/) | [All IT eBooks](https://allitbooks.net/) | [LibGen](http://libgen.rs/) |
 | [小资源栈](https://pymlovelyq.github.io/) | [🔰雨苁ℒ🔰暗网\|黑客\|极客](https://www.ddosi.com/) | [Internet Archive](https://archive.org/) | [华为定位](https://cloud.huawei.com/#/mobile) | [双拼练习](https://api.ihint.me/shuang/) |
-| [VPS 大玩家](https://www.vpsdawanjia.com/) | [虚拟卡大玩家](https://www.xunikawang.com/) | [小楠日语](http://o-oo.net.cn/) |  | [回忆飘如雪](http://gv7.me/) | [为键盘工作者设计的单词记忆与英语肌肉记忆锻炼软件](https://qwerty-learner.vercel.app) |
+| [VPS 大玩家](https://www.vpsdawanjia.com/) | [虚拟卡大玩家](https://www.xunikawang.com/) | [小楠日语](http://o-oo.net.cn/) | [虚假邮箱](https://temp-mail.org/zh/view/638f1f71a7dbcb00ee1a5ad8) | [回忆飘如雪](http://gv7.me/) | [为键盘工作者设计的单词记忆与英语肌肉记忆锻炼软件](https://qwerty-learner.vercel.app) |
 
 ### Media Tools
 | [PS 在线](https://www.uupoop.com/ps/) | [圆形剪切](https://crop-circle.imageonline.co/cn/) | [I 💙 IMG](https://www.iloveimg.com/zh-cn) | [I 🧡 PDF](https://www.ilovepdf.com/zh-cn) | [favicon 制作](https://tool.lu/favicon/) |
@@ -1248,16 +1248,17 @@ https://imgcleaner.com
 
 quickfox 回国APP
 
-部落冲突指导
+部落冲突指导私服
 https://www.cocservice.top/
-
-虚假电邮
-https://temp-mail.org/zh/view/638f1f71a7dbcb00ee1a5ad8
+https://clashofmagic.io/
 
 
-
-
-
+英语外刊杂志
+https://magazinelib.com/ 免费，部分
+https://freemagazines.top/ 免费，经济学人 pdf+mp3
+https://www.waikanmao.com/ 免费下载最新两期经济学人，pdf+epub+mobi+docx+mp3
+https://www.ygzzg.com/ 积分下载，经济学人 pdf+epub+mobi+mp3
+https://rss2ebook.com/rss2ebook/subscribe/index 纯文本订阅
 
 
 

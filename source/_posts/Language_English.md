@@ -55,13 +55,50 @@ COCA 20000 从高频到低频，剔除到第一个不认识的单词。（欧路
 5.5 分以下：从《新概念英语》第三、四册开始，每练习半本书，再自测一次，达到 5.5 就使用下面的文章。
 5.5 分以上：练习 100 篇，每日一篇——
 
-魔鬼 66 篇：（根据时间可更新）
+魔鬼 100 篇：（根据时间可更新）
 托福 TPO 67-74 所有阅读文章，共 24 篇；
 剑雅 A 类 11 和 12 所有文章，共 24 篇；
-经济学人/时代周刊 中随机挑选 18 篇（每篇 700 词左右，选择不同领域的文章）。
+经济学人/时代周刊 中随机挑选 52 篇（每篇 700 词左右，选择不同领域的文章）。
 
-后续 34 篇：
-优先选择 经济学人/时代周刊。
+「The Economist」
+「The Economist」
+「The Economist」
+「The Economist」
+「The Economist」
+「The Economist」
+「The Economist」
+「The Economist」
+「The Economist」
+「The Economist」
+「The Economist」
+「The Economist」
+「The Economist」
+「The Economist」
+「The Economist」
+
+「Time」The Brief news
+「Time」The Brief 
+「Time」The Brief 
+「Time」The Brief 
+「Time」The Brief 
+「Time」The Brief sport
+「Time」The Brief health
+「Time」The Brief time with
+「Time」The Brief culture
+「Time」The Brief 
+「Time」The View opener
+「Time」The View inbox
+「Time」The View essay
+「Time」The View 
+「Time」The View 
+「Time」The View 
+「Time」Leadership series
+「Time」Culture
+「Time」Society
+「Time」Time Off books
+「Time」Time Off movies
+
+
 
 辅助精读法：（前三遍解决词汇问题，第四五遍解决语法问题，第六七遍体验母语阅读感觉，彻底读懂）
 - 第 1 遍
