@@ -1261,6 +1261,28 @@ https://www.ygzzg.com/ 积分下载，经济学人 pdf+epub+mobi+mp3
 https://rss2ebook.com/rss2ebook/subscribe/index 纯文本订阅
 
 
+新冠
+https://www.mojidoc.com/03dbc-fgimwhphhvabnbzbxigh6cdnji-00b
+
+名称：富爸爸穷爸爸系列（共32册）-罗伯特.T.清崎
+
+描述：《富爸爸穷爸爸》——富人和穷人的区别在于财商教育
+《富爸爸为什么A等生为C等生工作》——富爸爸为家长教育子女而量身打造的财商教育指
+《富爸爸点石成金》——BI三角形之沟通与领导力
+《富爸爸女人一定要有钱》——财富能让女人自立
+《富爸爸提高你的财商》——训练与提高财商的技巧
+《富爸爸杠杆致富》——学习正确使用财富杠杆
+《富爸爸不公平的优势》——良好的财商教育是富人相对于普通人不公平的优势
+《富爸爸成功创业的10堂必修课》——决定创业之前，要先看这本书
+....
+
+链接：https://www.aliyundrive.com/s/WS9UuFoQrdn
+
+果书网址：https://applemart.me 果书频道：https://t.me/icloudxz
+
+
+
+
 
 
 ### 虚拟机直通/穿透
