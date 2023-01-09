@@ -1280,7 +1280,73 @@ https://www.mojidoc.com/03dbc-fgimwhphhvabnbzbxigh6cdnji-00b
 
 果书网址：https://applemart.me 果书频道：https://t.me/icloudxz
 
+图片背景更换消除
+https://www.remove.bg/zh
 
+http://kgaalsjzcz3o2ydu4tvdwcwxyabx26sx2tbdbtmqmc6tamyptpdhk5id.onion
+t3s7/t3s7
+
+https://caj2pdf.cn/
+
+互联网公司高频leetcode题网站 炼码：https://www.lintcode.com/
+
+上海交通大学生存手册
+https://survivesjtu.gitbook.io/survivesjtumanual/
+
+摸鱼网
+https://fishpi.cn/activities
+
+元气壁纸
+https://bizhi.cheetahfun.com/
+
+【OCR工具集1.0】搜狗网络OCR+本地离线OCR （免key登录+还原天若OCR操作）
+网站：https://www.52pojie.cn/thread-1730984-1-1.html
+
+微软语音合成工具，使用 Electron + Vue + ElementPlus + Vite 构建
+https://github.com/LokerL/tts-vue/
+
+FutureTools —— AI 工具收集
+收集了 162 个各类 AI 工具，可根据聊天、金融、娱乐、视频、代码等多个筛选找到自己心仪的 AI 工具
+https://www.futuretools.io/
+
+一键取消关注公众号
+https://wwpj.lanzoul.com/iBwu00jc3a9e
+
+
+https://www.tuyitu.com/photoshop/
+
+https://strrl.dev/
+
+Manjusaka
+Stay simple && Stay Naive
+https://www.manjusaka.blog/
+
+投资兔子洞
+https://rabbit-hole.notion.site/
+
+产品沉思录 ProductThinking
+https://pmthinking.com/
+
+񆡚-Library电子书下载网站
+1. https://zlib.cydiar.com/
+2. https://zh.annas-archive.org
+集合了 Z-Library、Library Genesis 和 Sci-Hub 三个巨型图书馆的内容，资源数量更胜 Z-Library
+
+IP定位
+https://www.ipplus360.com/
+
+艾园
+https://aiyuan.wordpress.com/
+
+万能验证码自动输入（升级版）
+https://greasyfork.org/zh-CN/scripts/418942-万能验证码自动输入-升级版
+
+基于Python半自动化给PDF加书签
+https://github.com/Davy-Zhou/pdf_add_bookmark_semi
+
+Wereadscan
+一个用于的将微信读书上的图书扫描转换本地PDF的爬虫库.
+https://algebra-fun.github.io/WeReadScan/
 
 
 

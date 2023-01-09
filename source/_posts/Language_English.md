@@ -60,44 +60,84 @@ COCA 20000 从高频到低频，剔除到第一个不认识的单词。（欧路
 剑雅 A 类 11 和 12 所有文章，共 24 篇；
 经济学人/时代周刊 中随机挑选 52 篇（每篇 700 词左右，选择不同领域的文章）。
 
-「The Economist」
-「The Economist」
-「The Economist」
-「The Economist」
-「The Economist」
-「The Economist」
-「The Economist」
-「The Economist」
-「The Economist」
-「The Economist」
-「The Economist」
-「The Economist」
-「The Economist」
-「The Economist」
-「The Economist」
+「The Economist-22/12/24-」
+「The Economist-22/12/24-647」Country of the year
+「The Economist-22/12/24-786」Social media
+「The Economist-22/12/24-6」Mental health
+「The Economist-22/12/24-654」Argentina
+「The Economist-22/12/24-819」Urban redevelopment II
+「The Economist-22/12/24-820」Health care
+「The Economist-22/12/24-」Population ethics
+「The Economist-22/12/24-」Food and mental health
+「The Economist-22/12/24-」Dog breeds
+「The Economist-22/12/24-」The economics of thinness
+「The Economist-22/12/24-」The new tech worldview
+「The Economist-22/12/24-」Copyright
+「The Economist-22/12/24-」Classical verse
+「The Economist-22/12/24-665」Death in France
+「The Economist-22/12/24-」Immigrants and their children
+「The Economist-22/12/24-618」Sino-American business
+「The Economist-22/12/24-」Bartleby Making the most of LinkedIn
+「The Economist-22/12/24-」After the pandemic Zero zero-covid
+「The Economist-22/12/24-」Nanotechnology Layering it on
+「The Economist-22/12/24-」The art of war
 
-「Time」The Brief news
-「Time」The Brief 
-「Time」The Brief 
-「Time」The Brief 
-「Time」The Brief 
-「Time」The Brief sport
-「Time」The Brief health
-「Time」The Brief time with
-「Time」The Brief culture
-「Time」The Brief 
-「Time」The View opener
-「Time」The View inbox
-「Time」The View essay
-「Time」The View 
-「Time」The View 
-「Time」The View 
-「Time」Leadership series
-「Time」Culture
-「Time」Society
-「Time」Time Off books
-「Time」Time Off movies
+「The Economist-22/12/17-1441」Menstrual products
 
+「The Economist-22/12/10-715」
+「The Economist-22/12/10-675」Toon wars
+「The Economist-22/12/10-737」Vaccinating the vulnerable
+「The Economist-22/12/10-721」Dissidents v censors
+「The Economist-22/12/10-686」Information technology
+「The Economist-22/12/10-660」Neuroscience
+
+「The Economist-22/12/03-720」
+「The Economist-22/12/03-716」The gaming market
+「The Economist-22/12/03-716」Sex
+「The Economist-22/12/03-679」Morticians
+「The Economist-22/12/03-747」Crimes against Indian women
+「The Economist-22/12/03-655」Sexual health
+
+「The Economist-22/11/26-716」Frozen out
+「The Economist-22/11/26-707」Drug policy in New York
+「The Economist-22/11/26-737」Banyan Lessons from the doghouse
+「The Economist-22/11/26-730」West Africa
+「The Economist-22/11/26-680」Bartleby How to do lay­offs right
+「The Economist-22/11/26-726」Understanding Tokyo
+
+「Time-22/12/26-767」The Year In Guns
+「Time-22/12/26-634」Best Of Culture
+
+「Time-22/12/05-651」The Brief News
+「Time-22/12/05-643」The Brief Sports
+「Time-22/12/05-」The Brief Health
+「Time-22/12/05-690+」The View Opener
+「Time-22/12/05-1459」The View Essay
+「Time-22/12/05-682」Leadership Series
+「Time-22/12/05-685」Society
+「Time-22/12/05-762」Time Off Movies
+
+「Time-22/11/21-687」The Brief Opener
+「Time-22/11/21-842」The Brief Society
+「Time-22/11/21-」The Brief Health
+「Time-22/11/21-685+」The View Opener
+「Time-22/11/21-744」Politics
+「Time-22/11/21-1356」Time Off Opener
+「Time-22/11/21-1509」Time Off books
+
+「Time-22/11/07-」The Brief World
+「Time-22/11/07-」How to be
+「Time-22/11/07」The Brief Time With
+「Time-22/11/07」The View Essay
+「Time-22/11/07-734」Climate World
+
+「Time-22/08/15-605」The Brief Business
+「Time-22/08/15」The Brief Health
+「Time-22/08/15」The View Essay Nation
+「Time-22/08/15」Technology
+「Time-22/08/15」Business: Electric Vehicles
+「Time-22/08/15」Culture
+「Time-22/08/15-657」Time Off Reviews
 
 
 辅助精读法：（前三遍解决词汇问题，第四五遍解决语法问题，第六七遍体验母语阅读感觉，彻底读懂）
@@ -289,3 +329,4 @@ Modern Family 摩登家庭
 ## Postscript
 这篇教程之于我最大的益处在于观念的重塑，让我知道坚持下去可以实现和达到的高度以及如何去更好的坚持，教程中提供和介绍的方法、书籍、工具也是非常不错。——blackcrow
 「待更！资源获取请在公众号——**XXX**回复**英语攻略**」
+我们需要把收集和积累的所有“材料”都转化成包含重要行动、项目和有用信息的明确清单。
