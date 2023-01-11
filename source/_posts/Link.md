@@ -1348,6 +1348,9 @@ Wereadscan
 一个用于的将微信读书上的图书扫描转换本地PDF的爬虫库.
 https://algebra-fun.github.io/WeReadScan/
 
+如何把你本机的Socks的代理设置成SSH的代理
+https://twitter.com/haoel/status/1605424396176306176?s=20&t=Fwm6MVwCkCf2K15L4Z-lRA
+
 
 
 

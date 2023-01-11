@@ -60,84 +60,49 @@ COCA 20000 从高频到低频，剔除到第一个不认识的单词。（欧路
 剑雅 A 类 11 和 12 所有文章，共 24 篇；
 经济学人/时代周刊 中随机挑选 52 篇（每篇 700 词左右，选择不同领域的文章）。
 
-「The Economist-22/12/24-」
-「The Economist-22/12/24-647」Country of the year
-「The Economist-22/12/24-786」Social media
-「The Economist-22/12/24-6」Mental health
-「The Economist-22/12/24-654」Argentina
-「The Economist-22/12/24-819」Urban redevelopment II
-「The Economist-22/12/24-820」Health care
-「The Economist-22/12/24-」Population ethics
-「The Economist-22/12/24-」Food and mental health
-「The Economist-22/12/24-」Dog breeds
-「The Economist-22/12/24-」The economics of thinness
-「The Economist-22/12/24-」The new tech worldview
-「The Economist-22/12/24-」Copyright
-「The Economist-22/12/24-」Classical verse
-「The Economist-22/12/24-665」Death in France
-「The Economist-22/12/24-」Immigrants and their children
-「The Economist-22/12/24-618」Sino-American business
-「The Economist-22/12/24-」Bartleby Making the most of LinkedIn
-「The Economist-22/12/24-」After the pandemic Zero zero-covid
-「The Economist-22/12/24-」Nanotechnology Layering it on
-「The Economist-22/12/24-」The art of war
+1.「The Economist-22/12/24」What 2022 meant for the world
+2.「The Economist-22/12/24」Is forced treatment for the mentally ill ever humane?
+3.「The Economist-22/12/24」How food affects the mind, as well as the body
+4.5.「The Economist-22/12/24」The new tech worldview
+6.「The Economist-22/12/24」The children of Britain’s eastern European immigrants are changing the country
+7.「The Economist-22/12/24」A golden sandwich that demists your windscreen
+8.9.「The Economist-22/12/17」Period pains
+10.「The Economist-22/12/10」Young Americans increasingly end their own lives
+11.「The Economist-22/12/10」Japanese Manga is being eclipsed by Korean webtoons
+12.「The Economist-22/12/10」Getting China’s old people vaccinated has been slow work
+13.「The Economist-22/12/10」How Chinese netizens breached the great firewall
+14.「The Economist-22/12/10」Artificial intelligence is permeating business at last
+15.「The Economist-22/12/10」How adult brains learn the new without forgetting the old
+16.「The Economist-22/12/03」Xi Jinping’s zero-covid policy has turned a health crisis into a political one
+17.「The Economist-22/12/03」Why Russia’s cyber-attacks have fallen flat
+18.「The Economist-22/12/03」Sexual problems can wreck lives. Yet remedies are often simple
+19.「The Economist-22/12/03」Women are revitalising America’s funeral-services industry
+20.「The Economist-22/12/03」What two crimes reveal about violence against Indian women
+21.「The Economist-22/12/03」The taboos around sexual health are weakening
+22.「The Economist-22/11/26」Europe faces an enduring crisis of energy and geopolitics
+23.「The Economist-22/11/26」New York state reckons it’s got cannabis legalisation right
+24.「The Economist-22/11/26」Australia emerges from China’s doghouse
+25.「The Economist-22/11/26」Why the African cocoa cartel is a bad idea
+26.「The Economist-22/11/26」How to do lay-offs right
+27.「The Economist-22/11/26」Can Tokyo’s charms be replicated elsewhere?
 
-「The Economist-22/12/17-1441」Menstrual products
-
-「The Economist-22/12/10-715」
-「The Economist-22/12/10-675」Toon wars
-「The Economist-22/12/10-737」Vaccinating the vulnerable
-「The Economist-22/12/10-721」Dissidents v censors
-「The Economist-22/12/10-686」Information technology
-「The Economist-22/12/10-660」Neuroscience
-
-「The Economist-22/12/03-720」
-「The Economist-22/12/03-716」The gaming market
-「The Economist-22/12/03-716」Sex
-「The Economist-22/12/03-679」Morticians
-「The Economist-22/12/03-747」Crimes against Indian women
-「The Economist-22/12/03-655」Sexual health
-
-「The Economist-22/11/26-716」Frozen out
-「The Economist-22/11/26-707」Drug policy in New York
-「The Economist-22/11/26-737」Banyan Lessons from the doghouse
-「The Economist-22/11/26-730」West Africa
-「The Economist-22/11/26-680」Bartleby How to do lay­offs right
-「The Economist-22/11/26-726」Understanding Tokyo
-
-「Time-22/12/26-767」The Year In Guns
-「Time-22/12/26-634」Best Of Culture
-
-「Time-22/12/05-651」The Brief News
-「Time-22/12/05-643」The Brief Sports
-「Time-22/12/05-」The Brief Health
-「Time-22/12/05-690+」The View Opener
-「Time-22/12/05-1459」The View Essay
-「Time-22/12/05-682」Leadership Series
-「Time-22/12/05-685」Society
-「Time-22/12/05-762」Time Off Movies
-
-「Time-22/11/21-687」The Brief Opener
-「Time-22/11/21-842」The Brief Society
-「Time-22/11/21-」The Brief Health
-「Time-22/11/21-685+」The View Opener
-「Time-22/11/21-744」Politics
-「Time-22/11/21-1356」Time Off Opener
-「Time-22/11/21-1509」Time Off books
-
-「Time-22/11/07-」The Brief World
-「Time-22/11/07-」How to be
-「Time-22/11/07」The Brief Time With
-「Time-22/11/07」The View Essay
-「Time-22/11/07-734」Climate World
-
-「Time-22/08/15-605」The Brief Business
-「Time-22/08/15」The Brief Health
-「Time-22/08/15」The View Essay Nation
-「Time-22/08/15」Technology
-「Time-22/08/15」Business: Electric Vehicles
-「Time-22/08/15」Culture
-「Time-22/08/15-657」Time Off Reviews
+28.「Time-22/12/26」A time of senseless tragedy and cautious progress
+29.「Time-22/12/05」Why women-led protests are more successful
+30.「Time-22/12/05」America returns to the World Cup with young, diverse talent
+31.「Time-22/12/05」Not Just Child’s Play
+32.「Time-22/12/05」Reluctant teen cannibals, in love and on the lam
+33.「Time-22/11/21」They should pay me. If that gets instituted, I’m gone like Enron.’
+34.「Time-22/11/21」5 ways to become a morning person
+35.「Time-22/11/21」NEXT YEAR’S ENERGY CRISIS 
+36.「Time-22/11/21」Caught between Democratic fecklessness and Republican lunacy
+37.38.「Time-22/11/21」A lot of my friends describeYellowstone as a red-state show made by blue-state people.’
+39.40.「Time-22/11/21」The funny thing about aging
+41.「Time-22/11/07」Somalia faces its worst drought ever, as the world looks away
+42.「Time-22/11/07」How to be both ambitious and fulfilled
+43.「Time-22/11/07」In search of a hero, biographer Stacy Schiff pulled Samuel Adams out of the shadows
+44.45.46.「Time-22/11/07」The art of persuasion in a polarized age
+47.「Time-22/08/15」Democratizing real estate investment
+48.49.50.51.52.「Time-22/08/15」THE COMING WORLDS
 
 
 辅助精读法：（前三遍解决词汇问题，第四五遍解决语法问题，第六七遍体验母语阅读感觉，彻底读懂）
@@ -308,18 +273,22 @@ Modern Family 摩登家庭
 修辞手法：比喻（Simile and Metaphor）类比（Analogy）对比（Antithesis）
 
 - 写作辅助工具
-[欧路词典](https://my.eudic.net/studylist/import)
 [QuillBot](https://quillbot.com) 多功能写作润色器
+[Grammarly](https://www.grammarly.com) 写作语法检查器
+[Hemingway Editor](https://hemingwayapp.com) 检测长难句
+[句解霸](http://www.en998.com) 英语句子成分分析
+[Rewordify](http://rewordify.com) 改善阅读，重写润色
+[欧路词典](https://my.eudic.net)
 [Linggle](https://linggle.com) 语言参考搜索引擎
 [Ludwig](https://ludwig.guru) 结合语境的句子搜索引擎
 [Linguee](https://www.linguee.com) 多国语言语料库+词典
 [Text Analyzer](https://cefrlevels.com/textanalysis/index.html) CEFR 文本查询
 [English Profile](https://englishprofile.org/wordlists/evp) CEFR 词汇查询
-[Thesaurus](https://www.freethesaurus.com) 同义词典
+[Thesaurus](https://www.thesaurus.com) 高级同义词汇
+[freeThesaurus](https://www.freethesaurus.com) 高级词汇引申
 [FRAZE·IT](https://fraze.it) 英文语料库
+[YouGlish](https://youglish.com) 油管发音
 [QuoDB](https://www.quodb.com) 电影台词英文表达
-[Lang-8](https://lang-8.com) 多国语言学习交流平台
-[CEFR](https://cefr.duolingo.com) 多邻国 CEFR 查询（不可用）
 
 
 ## Reference
