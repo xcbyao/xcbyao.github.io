@@ -1351,7 +1351,9 @@ https://algebra-fun.github.io/WeReadScan/
 如何把你本机的Socks的代理设置成SSH的代理
 https://twitter.com/haoel/status/1605424396176306176?s=20&t=Fwm6MVwCkCf2K15L4Z-lRA
 
-
+核电站
+https://hwv430.blogspot.com/
+https://wc41.blogspot.com/
 
 
 ### 虚拟机直通/穿透
