@@ -1358,6 +1358,29 @@ https://wc41.blogspot.com/
 动漫岛
 dm55.cc 和 dmd8.com
 
+微X模块
+https://github.com/Xposed-Modules-Repo/com.fkzhang.wechatxposed
+
+个人收款码收款 - 三合一免费在线合成
+上传收款码，微信支付宝qq，一键生成合体的收款码～
+1. https://www.rocschool.com/tool/qr/
+2. https://qr.no0a.cn/
+
+黑客会议收集
+https://www.hackinn.com/
+
+分享一个 #润学 小技巧, 如何证明自己的工作经验, 除了完税证明, 社保证明, 还有一个神奇的东西叫《工作介绍信》, 移民局也认, 在海外公司做背景调查公司也认. 我做了个模版, 分享给需要的朋友. 出国前找所有的前公司, 都开一份.  模版地址在这里: https://chenyilong.notion.site/0b0c9e391447448a9d178aa6b335b428
+
+圆角图片生成器
+https://www.dute.org/image-round
+
+九宫切图工具
+https://www.dute.org/image-clip
+
+App 图标在线制作
+https://www.pgyer.com/tools/appIcon
+
+
 
 
 ### 虚拟机直通/穿透
