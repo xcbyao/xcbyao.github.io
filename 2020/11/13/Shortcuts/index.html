@@ -210,7 +210,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>8.7k Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>17.7k Words</span>
         </span>
     
     
@@ -622,8 +622,60 @@
 <tbody><tr>
 <td align="left">生成</td>
 <td align="left">Ctrl + B</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">反汇编</td>
+<td align="left">Ctrl + Alt + D</td>
+</tr>
+</tbody></table>
+<h2 id="Visual-Studio-Code"><a href="#Visual-Studio-Code" class="headerlink" title="Visual Studio Code"></a>Visual Studio Code</h2><table>
+<thead>
+<tr>
+<th align="left">行复制</th>
+<th align="left">Ctrl + c</th>
+<th align="left">行移动</th>
+<th align="left">Alt + ↑/↓</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">行复制</td>
+<td align="left">Alt + Shift + ↑/↓</td>
+<td align="left">格式化</td>
+<td align="left">Alt + Shift + F</td>
+</tr>
+<tr>
+<td align="left">行注释</td>
+<td align="left">Ctrl + /</td>
+<td align="left">块注释</td>
+<td align="left">Alt + Shit + A</td>
+</tr>
+<tr>
+<td align="left">整行缩进</td>
+<td align="left">Ctrl + ]/[</td>
+<td align="left">切换编辑点</td>
+<td align="left">Alt + →/←</td>
+</tr>
+<tr>
+<td align="left">跳转括号</td>
+<td align="left">Ctrl + Shift + \</td>
+<td align="left">重开一行</td>
+<td align="left">shift + enter</td>
+</tr>
+<tr>
+<td align="left">Ctrl+Space</td>
+<td align="left">代码模板</td>
+<td align="left">Ctrl + Shift + P</td>
+<td align="left">命令窗口</td>
+</tr>
+<tr>
+<td align="left">断点</td>
+<td align="left">F9</td>
+<td align="left">Ctrl + \</td>
+<td align="left">分裂窗口</td>
+</tr>
+<tr>
+<td align="left">Ctrl+Shift+V</td>
+<td align="left">md 预览</td>
+<td align="left">Ctrl+K V</td>
+<td align="left">侧栏 md 预览</td>
 </tr>
 <tr>
 <td align="left">逐过程</td>
@@ -632,10 +684,46 @@
 <td align="left">F11</td>
 </tr>
 <tr>
-<td align="left">反汇编</td>
-<td align="left">Ctrl + Alt + D</td>
-<td align="left">删除整行</td>
+<td align="left">裁剪尾随空格</td>
+<td align="left">Ctrl + shift + x</td>
+<td align="left">自动换行</td>
+<td align="left">alt + Z</td>
+</tr>
+<tr>
+<td align="left">回到上一个光标</td>
+<td align="left">Ctrl+U</td>
+<td align="left">删除一行</td>
+<td align="left">Ctrl+Shift+K</td>
+</tr>
+<tr>
+<td align="left">选中每行末加光标</td>
+<td align="left">Alt+Shift+i</td>
+<td align="left">行跳转</td>
+<td align="left">Ctrl + G</td>
+</tr>
+<tr>
+<td align="left">跳转到函数定义</td>
+<td align="left">F12</td>
+<td align="left">跳转到函数实现</td>
+<td align="left">Ctrl + f12</td>
+</tr>
+<tr>
+<td align="left">跳转到函数引用</td>
+<td align="left">Shift + F12</td>
+<td align="left">代码重构</td>
+<td align="left">F2</td>
+</tr>
+<tr>
+<td align="left">删除光标左部</td>
 <td align="left">Ctrl + backspace</td>
+<td align="left">删除光标左部</td>
+<td align="left">Ctrl + Delete</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
 </tr>
 </tbody></table>
 <h2 id="Git-amp-Hexo"><a href="#Git-amp-Hexo" class="headerlink" title="Git &amp; Hexo"></a>Git &amp; Hexo</h2><h3 id="更换电脑部署"><a href="#更换电脑部署" class="headerlink" title="更换电脑部署"></a>更换电脑部署</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">npm</span> <span class="string">install</span> <span class="string">hexo-cli</span> <span class="string">-g</span></span><br><span class="line"><span class="string">npm</span> <span class="string">install</span></span><br><span class="line"><span class="string">npm</span> <span class="string">install</span> <span class="string">hexo-deployer-git</span> <span class="string">--save</span></span><br></pre></td></tr></table></figure>
@@ -744,7 +832,579 @@
 </tbody></table>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br></pre></td><td class="code"><pre><span class="line">ctrl + f&#x2F;b&#x2F;d&#x2F;u 向下&#x2F;上移动一&#x2F;半页</span><br><span class="line">+&#x2F;- 移动到非空白字符下&#x2F;上一列</span><br><span class="line">n空格 向右移动 n 字符</span><br><span class="line">n回车 向下移动 n 行</span><br><span class="line">0&#x2F;Home $&#x2F;End 移动到这一列最前&#x2F;后面字符处</span><br><span class="line">H&#x2F;M&#x2F;L 移动到屏幕最上方&#x2F;中间&#x2F;下方那一列的第一个字符</span><br><span class="line">nG 移动到这个文件的第 n 列</span><br><span class="line">&#x2F;? 向下&#x2F;上搜索</span><br><span class="line"></span><br><span class="line">:n1,n2s&#x2F;word1&#x2F;word2&#x2F;g 在第 n1 与 n2 列之间寻找 word1 字串，并将该字串取代为 word2</span><br><span class="line">:1,$s&#x2F;word1&#x2F;word2&#x2F;g &#x2F; gc 从第一列到最后一列寻找 word1 字串，并将该字串取代为 word2 &#x2F; 在取代前显示提示字符给使用者确认是否需要取代</span><br><span class="line"></span><br><span class="line">nx(del)&#x2F;nX(backspace) 向后&#x2F;前删除 n 个字符</span><br><span class="line">ndd 删除光标所在的一整行&#x2F;向下 n 行</span><br><span class="line">nyy 复制光标所在的那一行&#x2F;向下 n 行</span><br><span class="line">p&#x2F;P 将已复制数据在光标下&#x2F;上一列贴上</span><br><span class="line"></span><br><span class="line">J 将光标所在列与下一列的数据结合成同一列</span><br><span class="line">c 重复删除多个数据，例如向下删除 10 列，10cj</span><br><span class="line">u 复原前一个动作</span><br><span class="line">Ctrl + r 重做上一个动作</span><br><span class="line">. 重复前一个动作</span><br><span class="line"></span><br><span class="line">i&#x2F;I 从目前光标处插入&#x2F;在目前所在列的第一个非空白字符处开始插入</span><br><span class="line">a&#x2F;A 从目前光标所在的下一个字符处插入&#x2F;从光标所在列的最后一个字符处插入</span><br><span class="line">o&#x2F;O 在目前光标所在的下&#x2F;上一列处插入新的一列</span><br><span class="line">r&#x2F;R 取代模式，取代光标所在的那一个字符一次&#x2F;一直取代光标所在的文字，直到 ESC</span><br><span class="line"></span><br><span class="line">:w 写入硬盘文件</span><br><span class="line">:q! （强制离开不储存）离开</span><br><span class="line">:wq 储存后离开</span><br><span class="line">ZZ 文件没有更动，则不储存离开&#x2F;文件已经更动过，则储存后离开</span><br><span class="line">:w file 另存新文件</span><br><span class="line">:r file 在编辑的数据中，读入另一个文件的数据</span><br><span class="line">:n1,n2 w file 将 n1 到 n2 的内容储存成 file</span><br><span class="line">:! command 暂时离开 vi 到命令行界面下执行 command 的显示结果</span><br><span class="line"></span><br><span class="line">:set nu 显示行号</span><br><span class="line">:set nonu 取消行号</span><br><span class="line">:set	hlsearch	:setnohlsearch 高亮度搜寻</span><br><span class="line">:set	autoindent	:set noautoindent 自动缩排</span><br><span class="line">（setting）</span><br><span class="line">自建 ~&#x2F;.vimrc </span><br><span class="line">[dmtsai@study	~]$	vim	~&#x2F;.vimrc</span><br><span class="line">&quot;这个文件的双引号	（&quot;）	是注解</span><br><span class="line">set	hlsearch												&quot;高亮度反白</span><br><span class="line">set	backspace&#x3D;2									&quot;可随时用倒退键删除</span><br><span class="line">set	autoindent										&quot;自动缩排</span><br><span class="line">set	ruler															&quot;可显示最后一列的状态</span><br><span class="line">set	showmode												&quot;左下角那一列的状态</span><br><span class="line">set	nu																		&quot;可以在每一列的最前面显示行号啦！</span><br><span class="line">set	bg&#x3D;dark													&quot;显示不同的底色色调</span><br><span class="line">syntax	on															&quot;进行语法检验，颜色显示。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">:files 列出目前这个 vim 的打开的所有文件 :n&#x2F;N</span><br><span class="line">:sp &#123;filename&#125; 多窗口 ctrl + w + j&#x2F;k 先按下	[ctrl]	不放，	再按下	w	后放开所有的按键，然后再按下	j	（或向下方向键），则光标可移动到下方的窗口</span><br><span class="line">[ctrl]+x	-&gt;	[ctrl]+n 通过目前正在编辑的这个“文件的内容文字”作为关键字，予以补齐</span><br><span class="line">[ctrl]+x	-&gt;	[ctrl]+f 以当前目录内的“文件名”作为关键字，予以补齐</span><br><span class="line">[ctrl]+x	-&gt;	[ctrl]+o 以扩展名作为语法补充，以	vim	内置的关键字，予以补齐</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">按下‘q’键让vim开始记录，然后按任意键，来告诉vim你想把保存的记录下次通过这个键来调出。本次案例中，这个键设置为‘a’，所以完整的指令就是‘qa’。</span><br><span class="line">执行你的命令。</span><br><span class="line">按下‘q’来结束记录。</span><br><span class="line">需要重复保存的系列动作时，输入‘@a’即可。</span><br><span class="line"></span><br><span class="line">相对行号</span><br><span class="line">.vimrc中加入set relativenumber</span><br><span class="line">删除其后的25行：25dd</span><br><span class="line"></span><br><span class="line">.vimrc中加入以下指令：</span><br><span class="line">set clipboard&#x3D;unnamed </span><br><span class="line">set clipboard&#x3D;unnamedplus </span><br><span class="line">加入这项指令后，在vim中复制粘贴文本就从“CTRL+V”, 和“CTRL+C”这一过程变为简单地输入‘p’。</span><br><span class="line">如果你想在不重写你的寄存器的情况下删除文本，你可以在指令前加上“_符号：“_dd 来删除一行。</span><br><span class="line"></span><br><span class="line">重映射Escape操作</span><br><span class="line">.vimrc中加入：</span><br><span class="line">cnoremap kj &lt;C-C&gt; </span><br><span class="line">cnoremap jk &lt;C-C&gt; </span><br><span class="line">键入’jk’或者‘kj’来离开一个指令</span><br><span class="line"></span><br><span class="line">动词+修饰词+宾语</span><br><span class="line"></span><br><span class="line">处理空白格(White space fixing)</span><br><span class="line">.vimrc加入：</span><br><span class="line">set list</span><br><span class="line">这个指令会在每行结尾显示一个$符号，并且用^I代替tabs。你从而能更容易地识别出tabs和行尾。除此之外，下面的例子中，使用了空代替所有的tabs，这也让空白格更加便于处理：</span><br><span class="line"></span><br><span class="line">快速查找(navigate)</span><br><span class="line">敲击‘gg’来移动到文档的顶部，‘G’来移动到最底部。</span><br><span class="line">敲击CTRL+F来快速向前移动，CTRL+B来快速向后移动。</span><br><span class="line">敲击‘zz’来重新定位页的中心，这也你的光标就成为新的中心。</span><br><span class="line">遇到上括号像‘&#123;’或者‘(’，你可以敲击‘%’来移动到它们所匹配的下括号。</span><br><span class="line">‘&#x2F;’可以开始查找你想要的词。</span><br><span class="line"></span><br><span class="line">日期(date)</span><br><span class="line">nmap &lt;F3&gt; i&lt;C-R&gt;&#x3D;strftime(&quot;%Y-%m-%d %a %I:%M %p&quot;)&lt;CR&gt;&lt;Esc&gt; </span><br><span class="line">imap &lt;F3&gt; &lt;C-R&gt;&#x3D;strftime(&quot;%Y-%m-%d %a %I:%M %p&quot;)&lt;CR&gt; </span><br><span class="line">从而可以只通过键入F3来给文档加日期和时间。</span><br><span class="line"></span><br><span class="line">x → 删当前光标所在的一个字符。</span><br><span class="line">:wq → 存盘 + 退出 (:w 存盘, :q 退出)   （陈皓注：:w 后可以跟文件名）</span><br><span class="line">dd → 删除当前行，并把删除的行存到剪贴板里</span><br><span class="line">p → 粘贴剪贴板</span><br><span class="line">:help &lt;command&gt; → 显示相关命令的帮助。你也可以就输入 :help 而不跟命令。（陈皓注：退出帮助需要输入:q）</span><br><span class="line"></span><br><span class="line">a → 在光标后插入</span><br><span class="line">o → 在当前行后插入一个新行</span><br><span class="line">O → 在当前行前插入一个新行</span><br><span class="line">cw → 替换从光标所在位置后到一个单词结尾的字符</span><br><span class="line"></span><br><span class="line">0 → 数字零，到行头</span><br><span class="line">^ → 到本行第一个不是blank字符的位置（所谓blank字符就是空格，tab，换行，回车等）</span><br><span class="line">$ → 到本行行尾</span><br><span class="line">g_ → 到本行最后一个不是blank字符的位置。</span><br><span class="line">&#x2F;pattern → 搜索 pattern 的字符串（陈皓注：如果搜索出多个匹配，可按n键到下一个）</span><br><span class="line"></span><br><span class="line">P → 粘贴</span><br><span class="line">yy → 拷贝当前行当行于 ddP</span><br><span class="line">p&#x2F;P都可以，p是表示在当前位置之后，P表示在当前位置之前）</span><br><span class="line"></span><br><span class="line">u → undo</span><br><span class="line">&lt;C-r&gt; → redo</span><br><span class="line"></span><br><span class="line">:e &lt;path&#x2F;to&#x2F;file&gt; → 打开一个文件</span><br><span class="line">:w → 存盘</span><br><span class="line">:saveas &lt;path&#x2F;to&#x2F;file&gt; → 另存为 &lt;path&#x2F;to&#x2F;file&gt;</span><br><span class="line">:x， ZZ 或 :wq → 保存并退出 (:x 表示仅在需要时保存，ZZ不需要输入冒号并回车)</span><br><span class="line">:q! → 退出不保存 :qa! 强行退出所有的正在编辑的文件，就算别的文件有更改。</span><br><span class="line">:bn 和 :bp → 你可以同时打开很多文件，使用这两个命令来切换下一个或上一个文件。（陈皓注：我喜欢使用:n到下一个文件）</span><br><span class="line"></span><br><span class="line">. → (小数点) 可以重复上一次的命令</span><br><span class="line">N&lt;command&gt; → 重复某个命令N次</span><br><span class="line"></span><br><span class="line">NG → 到第 N 行 （陈皓注：注意命令中的G是大写的，另我一般使用 : N 到第N行，如 :137 到第137行）</span><br><span class="line">gg → 到第一行。（陈皓注：相当于1G，或 :1）</span><br><span class="line">G → 到最后一行。</span><br><span class="line">w → 到下一个单词的开头。</span><br><span class="line">e → 到下一个单词的结尾。</span><br><span class="line">如果你认为单词是由默认方式，那么就用小写的e和w。默认上来说，一个单词由字母，数字和下划线组成（陈皓注：程序变量）</span><br><span class="line">&gt; 如果你认为单词是由blank字符分隔符，那么你需要使用大写的E和W。（陈皓注：程序语句）</span><br><span class="line"></span><br><span class="line">% : 匹配括号移动，包括 (, &#123;, [. （陈皓注：你需要把光标先移到括号上）</span><br><span class="line">* 和 #:  匹配光标当前所在的单词，移动光标到下一个（或上一个）匹配单词（*是下一个，#是上一个）</span><br><span class="line"></span><br><span class="line">&lt;start position&gt;&lt;command&gt;&lt;end position&gt;</span><br><span class="line">0y$ 命令意味着：</span><br><span class="line">0 → 先到行头</span><br><span class="line">y → 从这里开始拷贝</span><br><span class="line">$ → 拷贝到本行最后一个字符</span><br><span class="line"></span><br><span class="line">d (删除 )</span><br><span class="line">v (可视化的选择)</span><br><span class="line">gU (变大写)</span><br><span class="line">gu (变小写)</span><br><span class="line">可视化选择是一个很有意思的命令，你可以先按v，然后移动光标，你就会看到文本被选择，然后，你可能d，也可y，也可以变大写等）</span><br><span class="line"></span><br><span class="line">在当前行上移动光标:</span><br><span class="line">0 → 到行头</span><br><span class="line">^ → 到本行的第一个非blank字符</span><br><span class="line">$ → 到行尾</span><br><span class="line">g_ → 到本行最后一个不是blank字符的位置。</span><br><span class="line">fa → 到下一个为a的字符处，你也可以fs到下一个为s的字符。</span><br><span class="line">t, → 到逗号前的第一个字符。逗号可以变成其它字符。</span><br><span class="line">3fa → 在当前行查找第三个出现的a。</span><br><span class="line">F 和 T → 和 f 和 t 一样，只不过是相反方向。</span><br><span class="line"></span><br><span class="line">dt&quot; → 删除所有的内容，直到遇到双引号—— &quot;</span><br><span class="line"></span><br><span class="line">区域选择</span><br><span class="line">在visual 模式下</span><br><span class="line">&lt;action&gt;a&lt;object&gt; 和 &lt;action&gt;i&lt;object&gt;</span><br><span class="line">action可以是任何的命令，如 d (删除), y (拷贝), v (可以视模式选择)。</span><br><span class="line">object 可能是： w 一个单词， W 一个以空格为分隔的单词， s 一个句字， p 一个段落。也可以是一个特别的字符：&quot;、 &#39;、 )、 &#125;、 ]。</span><br><span class="line"></span><br><span class="line">假设你有一个字符串 (map (+) (&quot;foo&quot;)).而光标键在第一个 o 的位置。</span><br><span class="line"></span><br><span class="line">vi&quot; → 会选择 foo.</span><br><span class="line">va&quot; → 会选择 &quot;foo&quot;.</span><br><span class="line">vi) → 会选择 &quot;foo&quot;.</span><br><span class="line">va) → 会选择(&quot;foo&quot;).</span><br><span class="line">v2i) → 会选择 map (+) (&quot;foo&quot;)</span><br><span class="line">v2a) → 会选择 (map (+) (&quot;foo&quot;))</span><br><span class="line"></span><br><span class="line">块操作，典型的操作： 0 &lt;C-v&gt; &lt;C-d&gt; I-- [ESC]</span><br><span class="line"></span><br><span class="line">^ → 到行头</span><br><span class="line">&lt;C-v&gt; → 开始块操作</span><br><span class="line">&lt;C-d&gt; → 向下移动 (你也可以使用hjkl来移动光标，或是使用%，或是别的)</span><br><span class="line">I-- [ESC] → I是插入，插入“--”，按ESC键来为每一行生效。</span><br><span class="line"></span><br><span class="line">自动提示： &lt;C-n&gt; 和 &lt;C-p&gt;</span><br><span class="line">在 Insert 模式下，你可以输入一个词的开头，然后按 &lt;C-p&gt;或是&lt;C-n&gt;，自动补齐功能就出现了……</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">宏录制： qa 操作序列 q, @a, @@</span><br><span class="line">qa 把你的操作记录在寄存器 a。</span><br><span class="line">于是 @a 会replay被录制的宏。</span><br><span class="line">@@ 是一个快捷键用来replay最新录制的宏。</span><br><span class="line"></span><br><span class="line">在一个只有一行且这一行只有“1”的文本中，键入如下命令：</span><br><span class="line"></span><br><span class="line">qaYp&lt;C-a&gt;q→</span><br><span class="line">qa 开始录制</span><br><span class="line">Yp 复制行.</span><br><span class="line">&lt;C-a&gt; 增加1.</span><br><span class="line">q 停止录制.</span><br><span class="line">@a → 在1下面写下 2</span><br><span class="line">@@ → 在2 正面写下3</span><br><span class="line">现在做 100@@ 会创建新的100行，并把数据增加到 103.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">可视化选择： v,V,&lt;C-v&gt;</span><br><span class="line">前面，我们看到了 &lt;C-v&gt;的示例 （在Windows下应该是&lt;C-q&gt;），我们可以使用 v 和 V。一但被选好了，你可以做下面的事：</span><br><span class="line"></span><br><span class="line">J → 把所有的行连接起来（变成一行）</span><br><span class="line">&lt; 或 &gt; → 左右缩进</span><br><span class="line">&#x3D; → 自动给缩进</span><br><span class="line">在所有被选择的行后加上点东西：</span><br><span class="line"></span><br><span class="line">&lt;C-v&gt;</span><br><span class="line">选中相关的行 (可使用 j 或 &lt;C-d&gt; 或是 &#x2F;pattern 或是 % 等……)</span><br><span class="line">$ 到行最后</span><br><span class="line">A, 输入字符串，按 ESC。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">分屏: :split 和 vsplit</span><br><span class="line">:help split</span><br><span class="line">:split → 创建分屏 (:vsplit创建垂直分屏)</span><br><span class="line">&lt;C-w&gt;&lt;dir&gt; : dir就是方向，可以是 hjkl 或是 ←↓↑→ 中的一个，其用来切换分屏。</span><br><span class="line">&lt;C-w&gt;_ (或 &lt;C-w&gt;|) : 最大化尺寸 (&lt;C-w&gt;| 垂直分屏)</span><br><span class="line">&lt;C-w&gt;+ (或 &lt;C-w&gt;-) : 增加尺寸</span><br><span class="line"></span><br><span class="line">https:&#x2F;&#x2F;coolshell.cn&#x2F;articles&#x2F;11312.html#%E7%AA%97%E5%8F%A3%E5%88%86%E5%B1%8F%E6%B5%8F%E8%A7%88</span><br></pre></td></tr></table></figure>
 <h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br></pre></td><td class="code"><pre><span class="line">观察系统的使用状态：	如果要看目前有谁在线上，可以下达“who”这个指令，而如果要看</span><br><span class="line">网络的连线状态，可以下达	“	netstat	-a	”这个指令，而要看背景执行的程序可以执行“	ps</span><br><span class="line">-aux	”这个指令。</span><br><span class="line"></span><br><span class="line">chgrp	：改变文件所属群组</span><br><span class="line">chown	：改变文件拥有者</span><br><span class="line">chmod	：改变文件的权限,	SUID,	SGID,	SBIT等等的特性</span><br><span class="line"></span><br><span class="line">因此FHS标准建议：根目录（&#x2F;）所在分区应该越小越好，	且应用程序所安装的软件最好不要</span><br><span class="line">与根目录放在同一个分区内，保持根目录越小越好。	如此不但性能较佳，根目录所在的文件</span><br><span class="line">系统也较不容易发生问题。</span><br><span class="line"></span><br><span class="line">其实usr是Unix	Software	Resource的缩写，	也就</span><br><span class="line">是“Unix操作系统软件资源”所放置的目录</span><br><span class="line"></span><br><span class="line">.									代表此层目录</span><br><span class="line">..								代表上一层目录</span><br><span class="line">-									代表前一个工作目录</span><br><span class="line">~									代表“目前使用者身份”所在的主文件夹</span><br><span class="line">~account		代表	account	这个使用者的主文件夹（account是个帐号名称</span><br><span class="line"></span><br><span class="line">cd：变换目录</span><br><span class="line">pwd：显示目前的目录-P		：显示出确实的路径，而非使用链接	（link）	路径。</span><br><span class="line">mkdir：创建一个新的目录-m	：设置文件的权限喔！直接设置，不需要看默认权限	（umask）	的脸色～</span><br><span class="line">-p	：帮助你直接将所需要的目录（包含上层目录）递回创建起来！</span><br><span class="line">rmdir：删除一个空的目录-p	：连同“上层”“空的”目录也一起删除</span><br><span class="line"></span><br><span class="line">将	ll	（L	的小写）	设置成为	ls	-l	</span><br><span class="line"></span><br><span class="line">cat	由第一行开始显示文件内容</span><br><span class="line">tac	从最后一行开始显示，可以看出	tac	是	cat	的倒着写！</span><br><span class="line">nl	显示的时候，顺道输出行号！</span><br><span class="line">more	一页一页的显示文件内容</span><br><span class="line">less	与	more	类似，但是比	more	更好的是，他可以往前翻页！</span><br><span class="line">head	只看头几行</span><br><span class="line">tail	只看尾巴几行</span><br><span class="line">od	以二进制的方式读取文件内容！</span><br><span class="line"></span><br><span class="line">echo password	|	od	-t	oCc	echo  ASCII	对照</span><br><span class="line"></span><br><span class="line">如果你还想要从文字压缩文件当中找数据的话，可以通过	egrep	来搜寻关键字喔！而</span><br><span class="line">不需要将压缩文件解开才以	grep	进行！	这对查询备份中的文本文件数据相当有用！</span><br><span class="line"></span><br><span class="line">另外值得一提的是，tar	打包出来的文件有没有进行压缩所得到文件称呼不同喔！	如果仅是打</span><br><span class="line">包而已，就是“	tar	-cv	-f	file.tar	”而已，这个文件我们称呼为	tarfile	。	如果还有进行压缩的支</span><br><span class="line">持，例如“	tar	-jcv	-f	file.tar .bz2	”时，我们就称呼为	tarball	</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">linux cat&#x2F;proc&#x2F;cpuinfo及Ispci命令</span><br><span class="line">- Ctrl + Alt + F1\~F6</span><br><span class="line">变量\~符号代表的是“使用者的主文件夹”</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">^M$ CRLF 转换成 LF</span><br><span class="line">#	mount	&#x2F;dev&#x2F;sr0	&#x2F;mnt</span><br><span class="line">#	rpm	-ivh	&#x2F;mnt&#x2F;Packages&#x2F;dos2unix-*</span><br><span class="line"># umount	&#x2F;mnt</span><br><span class="line">#	exit</span><br><span class="line">(transformer)</span><br><span class="line"></span><br><span class="line">bash</span><br><span class="line">[ctrl]+u&#x2F;[ctrl]+k 分别是从光标处向前删除指令串	（[ctrl]+u）	及向后删除指令串（[ctrl]+k）。</span><br><span class="line">[ctrl]+a&#x2F;[ctrl]+e 分别是让光标移动到整个指令串的最前面	（[ctrl]+a）	或最后面（[ctrl]+e）。</span><br><span class="line"></span><br><span class="line">echo	$PATH echo	$&#123;HOME&#125;</span><br><span class="line">(base)</span><br><span class="line">变量与变量内容以一个等号“&#x3D;”来链接</span><br><span class="line">等号两边不能直接接空白字符</span><br><span class="line">变量名称只能是英文字母与数字，但是开头字符不能是数字</span><br><span class="line"></span><br><span class="line">如你想要让该变量内容继续的在子程序中使用，那么就请执行： export	变量名称</span><br><span class="line"></span><br><span class="line">环境变量转成自订变量 declare</span><br><span class="line">declare	&#x2F;	typeset</span><br><span class="line"></span><br><span class="line">基本上，指令运行的顺序可以这样看</span><br><span class="line">1 .	 以相对&#x2F;绝对路径执行指令，例如“	&#x2F;bin&#x2F;ls	”或“	.&#x2F;ls	”；</span><br><span class="line">2 .	 由	alias	找到该指令来执行；</span><br><span class="line">3 .	 由	bash	内置的	（builtin）	指令来执行；</span><br><span class="line">4 .	 通过	$P A TH	这个变量的顺序搜寻到的第一个指令来执行。</span><br><span class="line">通过	type	-a	ls 查询</span><br><span class="line"></span><br><span class="line">bash	的进站与欢迎讯息(bash12)</span><br><span class="line"></span><br><span class="line">1 .	 标准输入　　（stdin）	：代码为	0	，使用	&lt;	或	&lt;&lt;	；</span><br><span class="line">2 .	 标准输出　　（stdout）：代码为	1	，使用	&gt;	或	&gt;&gt;	；</span><br><span class="line">3 .	 标准错误输出（stderr）：代码为	2	，使用	2&gt;	或	2&gt;&gt;	；</span><br><span class="line"></span><br><span class="line">1&gt;	：以覆盖的方法将“正确的数据”输出到指定的文件或设备上；</span><br><span class="line">1&gt;&gt;：以累加的方法将“正确的数据”输出到指定的文件或设备上；</span><br><span class="line">2&gt;	：以覆盖的方法将“错误的数据”输出到指定的文件或设备上；</span><br><span class="line">2&gt;&gt;：以累加的方法将“错误的数据”输出到指定的文件或设备上；</span><br><span class="line"></span><br><span class="line">&#x2F;dev&#x2F;null	垃圾桶黑洞设备与特殊写法</span><br><span class="line"></span><br><span class="line">cmd	;	cmd	（不考虑指令相关性的连续指令下达）</span><br><span class="line">$?	（指令回传值）	与	&amp;&amp;	或	||</span><br><span class="line">(bash17)</span><br><span class="line"></span><br><span class="line">管线命令	（pipe）</span><br><span class="line">管线命令仅会处理	standard	output，对于	standard	error	output	会予以忽略</span><br><span class="line">管线命令必须要能够接受来自前一个指令的数据成为	standard	input	继续处理才行。</span><br><span class="line"></span><br><span class="line">撷取命令：	cut,	grep</span><br><span class="line">(bash18)</span><br><span class="line">cut在处理多空格相连的数据时，可能会比较吃力一点</span><br><span class="line"></span><br><span class="line">排序命令：	sort,	wc,	uniq</span><br><span class="line">双向重导向：	tee</span><br><span class="line">字符转换命令：	tr ,	col,	join,	paste,	expand</span><br><span class="line">tr	可以用来删除一段讯息当中的文字，或者是进行文字讯息的替换！</span><br><span class="line"></span><br><span class="line">join	看字面上的意义	（加入&#x2F;参加）	就可以知道，他是在处理两个文件之间的数据，	而且，</span><br><span class="line">主要是在处理“两个文件当中，有	&quot;相同数据&quot;	的那一行，才将他加在一起”的意思。我们利用</span><br><span class="line">下面的简单例子来说明：</span><br><span class="line">在使用	join	之前，你所需要处理的文件应该要事先经过排序</span><br><span class="line">（sort）	处理！	否则有些比对的项目会被略过呢</span><br><span class="line"></span><br><span class="line">这个	paste	就要比	join	简单多了！相对于	join	必须要比对两个文件的数据相关性，	paste	就</span><br><span class="line">直接“将两行贴在一起，且中间以	[tab]	键隔开”而已</span><br><span class="line"></span><br><span class="line">分区命令：	split</span><br><span class="line">参数代换：	xargs</span><br><span class="line">xargs	是在做什么的呢？就以字面上的意义来看，	x	是加减乘除的乘号，args	则是</span><br><span class="line">arguments	（参数）	的意思，所以说，这个玩意儿就是在产生某个指令的参数的意思！</span><br><span class="line">xargs	可以读入	stdin	的数据，并且以空白字符或断行字符作为分辨，将	stdin	的数据分隔成</span><br><span class="line">为	arguments	。	因为是以空白字符作为分隔，所以，如果有一些文件名或者是其他意义的名</span><br><span class="line">词内含有空白字符的时候，	xargs	可能就会误判了～他的用法其实也还满简单的！就来看一</span><br><span class="line">看先！</span><br><span class="line"></span><br><span class="line">正则表达式	（Regular	Expression,	RE</span><br><span class="line">（bash19）568</span><br><span class="line"></span><br><span class="line">shell script</span><br><span class="line">直接指令下达：	shell.sh	文件必须要具备可读与可执行	（rx）	的权限，然后：</span><br><span class="line">绝对路径：使用	&#x2F;home&#x2F;dmtsai&#x2F;shell.sh	来下达指令；</span><br><span class="line">相对路径：假设工作目录在	&#x2F;home&#x2F;dmtsai&#x2F;	，则使用	.&#x2F;shell.sh	来执行</span><br><span class="line">变量“P A TH”功能：将	shell.sh	放在	P A TH	指定的目录内，例如：	~&#x2F;bin&#x2F;</span><br><span class="line">以	bash	程序来执行：通过“	bash	shell.sh	”或“	sh	shell.sh	”来执行</span><br><span class="line"></span><br><span class="line">var&#x3D;$（（运算内容））</span><br><span class="line"></span><br><span class="line">执行方式差异</span><br><span class="line">利用直接执行的方式来执行	script</span><br><span class="line">当使用前一小节提到的直接指令下达	（不论是绝对路径&#x2F;相对路径还是	$&#123;P A TH&#125;	内），或者是</span><br><span class="line">利用	bash	（或	sh）	来下达脚本时，	该	script	都会使用一个新的	bash	环境来执行脚本内的</span><br><span class="line">指令！也就是说，使用这种执行方式时，	其实	script	是在子程序的	bash	内执行的</span><br><span class="line">利用	source	来执行脚本：在父程序中执行</span><br><span class="line"></span><br><span class="line">利用	test	指令的测试功能</span><br><span class="line">（608-633）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">计算	Linux	日期的时间是以	1970	年	1月	1	日作为	1	而累加的日期</span><br><span class="line"></span><br><span class="line">touch file</span><br><span class="line">groups 有效与支持群组的观察</span><br><span class="line">newgrp:	有效群组的切换</span><br><span class="line">exit			#	注意！记得离开	newgrp	的环境喔！</span><br><span class="line"></span><br><span class="line">（user）</span><br><span class="line">如果想要完整的将某个帐号完整的移除，最好可以在下达	userdel	-r	username	之前，	先以“	find	&#x2F;	-user	username	”查出整个系统内属于	username	的文件，然后再加以删除吧！</span><br><span class="line">id finger默认不安装</span><br><span class="line">chfn	有点像是：	change	finger	的意思</span><br><span class="line">chsh  change	shell	的简写</span><br><span class="line"></span><br><span class="line">(grp)</span><br><span class="line">最好能够使用“	groupadd	-r	群组名”的方式来创建</span><br><span class="line"></span><br><span class="line">(su)</span><br><span class="line">su	就这样简单的介绍完毕，总结一下他的用法是这样的：</span><br><span class="line">若要完整的切换到新使用者的环境，必须要使用“	su	-	username	”或“	su	-l	username	”，</span><br><span class="line">才会连同	P A TH&#x2F;USER&#x2F;MAIL	等变量都转成新使用者的环境；</span><br><span class="line">如果仅想要执行一次	root	的指令，可以利用“	su	-	-c	&quot;指令串&quot;	”的方式来处理；</span><br><span class="line">使用	root	切换成为任何使用者时，并不需要输入新使用者的密码；</span><br><span class="line"></span><br><span class="line">仅有规范到	&#x2F;etc&#x2F;sudoers	内的用户才能够执行	sudo	这个指令</span><br><span class="line">(sudo)</span><br><span class="line">visudo	与	&#x2F;etc&#x2F;sudoers</span><br><span class="line"></span><br><span class="line">last	可以列出从系统创建之后到目前为止的所有登陆者信息</span><br><span class="line">目前已登陆在系统上面的使用者呢？可以通过	w	或	who	来查询</span><br><span class="line">如果您想要知道每个帐号的最近登陆的时间，则可以使用	lastlog	这个指令喔！	lastlog会去读取	&#x2F;var&#x2F;log&#x2F;lastlog	文件</span><br><span class="line"></span><br><span class="line">使用者对谈：	write,	mesg,	wall</span><br><span class="line">write	使用者帐号	[使用者所在终端接口]</span><br><span class="line">[crtl]-d	来结束输入</span><br><span class="line">mesg	n&#x2F;y 不接受信息</span><br><span class="line">#	wall	&quot;I	will&quot;</span><br><span class="line">mail	-s	&quot;邮件标题&quot;	username@localhost</span><br><span class="line">结束时，最后一行输入小数点	.</span><br><span class="line">（mail）</span><br><span class="line"></span><br><span class="line">帐号相关的检查工具</span><br><span class="line">pwck	这个指令在检查	&#x2F;etc&#x2F;passwd	这个帐号配置文件内的信息，与实际的主文件夹是否存在</span><br><span class="line">等信息，	还可以比对	&#x2F;etc&#x2F;passwd	&#x2F;etc&#x2F;shadow	的信息是否一致，另外，如果	&#x2F;etc&#x2F;passwd	内</span><br><span class="line">的数据字段错误时，会提示使用者修订。	一般来说，我只是利用这个玩意儿来检查我的输入</span><br><span class="line">是否正确就是了。</span><br><span class="line">群组查询 grpck</span><br><span class="line">pwconv 这个指令主要的目的是在“将	&#x2F;etc&#x2F;passwd	内的帐号与密码，移动到	&#x2F;etc&#x2F;shadow	当中</span><br><span class="line">chpasswd	是个挺有趣的指令，他可以“读入未加密前的密码，并且经过加密后，	将加密后的密码写入	&#x2F;etc&#x2F;shadow	当中</span><br><span class="line">echo	&quot;vbird3:abcdefg&quot;	|	chpasswd</span><br><span class="line"></span><br><span class="line">Tarball</span><br><span class="line">Makefile	怎么写？	通常软件开发商都会写一支</span><br><span class="line">侦测程序来侦测使用者的作业环境，	以及该作业环境是否有软件开发商所需要的其他功能，</span><br><span class="line">该侦测程序侦测完毕后，就会主动的创建这个	Makefile	的规则文件啦！通常这支侦测程序的</span><br><span class="line">文件名为	configure	或者是	config	。</span><br><span class="line"></span><br><span class="line">所谓的	T arball	文件，其实就是将软件的所有源代码文件先以	tar	打包，然后再以压缩技术来</span><br><span class="line">压缩，通常最常见的就是以	gzip	来压缩了。因为利用了	tar	与	gzip	的功能，所以	tarball	文件</span><br><span class="line">一般的扩展名就会写成	.tar .gz	或者是简写为	.tgz	啰！不过，近来由于	bzip2	与	xz	的压缩率</span><br><span class="line">较佳，所以	T arball	渐渐的以	bzip2	及	xz	的压缩技术来取代	gzip	啰！因此文件名也会变成</span><br><span class="line">.tar .bz2,	.tar .xz	之类</span><br><span class="line"></span><br><span class="line">T arball	是一个软件包，	你将他解压缩之后，里面的文件</span><br><span class="line">通常就会有：</span><br><span class="line">原始程序码文件；</span><br><span class="line">侦测程序文件	（可能是	configure	或	config	等文件名）；</span><br><span class="line">本软件的简易说明与安装说明	（INST ALL	或	README）。</span><br><span class="line"></span><br><span class="line">使用	gcc	编译时所加入的那个	-lm	是有意义的，他可以拆开成两部份来看：</span><br><span class="line">-l	：是“加入某个函数库（library）”的意思，</span><br><span class="line">m	：则是	libm.so	这个函数库，其中，	lib	与扩展名（.a	或	.so）不需要写</span><br><span class="line">所以	-lm	表示使用	libm.so	（或	libm.a）	这个函数库的意思～至于那个	-L	后面接的路径呢？</span><br><span class="line">这表示：	“我要的函数库	libm.so	请到	&#x2F;lib	或	&#x2F;lib64	里面搜寻！”</span><br><span class="line">(1021-1091)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## Google hack</span><br><span class="line">|&quot;&quot;|精确匹配|-|排除关键词|..|数字范围|\*|通配符|</span><br><span class="line">|:-|:-|:-|:-|:-|:-|:-|:-|</span><br><span class="line">|and&#x2F;or|关系|filetype:|查找文件|site:|站内搜索|info:|基本信息|</span><br><span class="line">|link:|含链接站|define:|单词含义|related:|域名相关站点|intext:|包含关键词页面|</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 微软日语输入法</span><br><span class="line">清音</span><br><span class="line">あ a い i う u え e お o</span><br><span class="line">か ka き ki く ku け ke こ ko</span><br><span class="line">さ sa し shi す su せ se そ so</span><br><span class="line">た ta ち chi つ tsu て te と to</span><br><span class="line">な na に ni ぬ nu ね ne の no</span><br><span class="line">は ha ひ hi ふ fu へ he ほ ho</span><br><span class="line">ま ma み mi む mu め me も mo</span><br><span class="line">や ya ゐ wi ゆ yu ゑ we よ yo</span><br><span class="line">ら ra り ri る ru れ re ろ ro</span><br><span class="line">わ wa を wo ん nn</span><br><span class="line">·浊音</span><br><span class="line">が ga ぎ gi ぐ gu げ ge ご go</span><br><span class="line">ざ za じ ji ず zu ぜ ze ぞ zo</span><br><span class="line">だ da ぢ di づ du で de ど do</span><br><span class="line">ば ba び bi ぶ bu べ be ぼ bo</span><br><span class="line">ぱ pa ぴ pi ぷ pu ぺ pe ぽ po</span><br><span class="line">·拗音</span><br><span class="line">诸如きゃ、きゅ、きょ，可输入kya、kyu、kyo。</span><br><span class="line">把第一个字的母音去掉即可。</span><br><span class="line">·其他</span><br><span class="line">诸如てゃ、てぃ（ティ）、てゅ，可输入tha、thi、thu。</span><br><span class="line"></span><br><span class="line">2、促音（小つ）将后面的子音重写两个来表示。如：国家（こっか）kokka、雑志（ざっし）zasshi。但在つ的前面则加“t”来表示，</span><br><span class="line">如：発着（はっちゃく）hatchaku。（但在输入时仍应输入hacchaku）</span><br><span class="line"></span><br><span class="line">|Alt + ~|英文假名切换|Alt&#x2F;Ctrl&#x2F;Shift + Caps Lock|片假名&#x2F;平假名&#x2F;英文平假名|</span><br><span class="line">|:-|:-|:-|:-|</span><br><span class="line">|F6|平假名|F7&#x2F;F8|全&#x2F;半角片假名|</span><br><span class="line">|F9&#x2F;F10|全&#x2F;半角英文数字|F5|偏旁发音输入|</span><br><span class="line">|きごう + F5|所有记号|たんい|单位符号|</span><br><span class="line">|すうがく|数学符号|ぎりしゃ|希腊字母符号|</span><br><span class="line">|前 x&#x2F;l|小假名|ゐ 输入 wi|ゑ 输入 we|</span><br><span class="line">|||||</span><br><span class="line">|||||</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="MacOS"><a href="#MacOS" class="headerlink" title="MacOS"></a>MacOS</h2>
+<h2 id="MacOS"><a href="#MacOS" class="headerlink" title="MacOS"></a>MacOS</h2><hr>
+<p>title: Self-shortcuts &amp; commands<br>date: 2020-11-13 16:43:15<br>categories: Programming<br>sticky: 3</p>
+<hr>
+<h2 id="OD-1"><a href="#OD-1" class="headerlink" title="OD"></a>OD</h2><table>
+<thead>
+<tr>
+<th align="left">断点</th>
+<th align="left">F2</th>
+<th align="left">打开 exe</th>
+<th align="left">F3</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">单步步入</td>
+<td align="left">F7</td>
+<td align="left"></td>
+<td align="left">单步步过</td>
+</tr>
+<tr>
+<td align="left">暂停执行</td>
+<td align="left">F12</td>
+<td align="left">运行</td>
+<td align="left">F9</td>
+</tr>
+<tr>
+<td align="left">到返回</td>
+<td align="left">Ctrl + F9</td>
+<td align="left">跳过异常</td>
+<td align="left">Shift + F9</td>
+</tr>
+<tr>
+<td align="left">重新运行</td>
+<td align="left">Ctrl + F2</td>
+<td align="left">关闭程序</td>
+<td align="left">Alt + F2</td>
+</tr>
+<tr>
+<td align="left">跟踪步入 Call</td>
+<td align="left">Ctrl + F11</td>
+<td align="left">跟踪步过 Call</td>
+<td align="left">Ctrl + F12</td>
+</tr>
+<tr>
+<td align="left">撤销修改</td>
+<td align="left">Alt + backspace</td>
+<td align="left">查找地址</td>
+<td align="left">Ctrl + G</td>
+</tr>
+<tr>
+<td align="left">补丁窗口</td>
+<td align="left">Ctrl + P</td>
+<td align="left">API 函数</td>
+<td align="left">Ctrl + N</td>
+</tr>
+<tr>
+<td align="left">查找二进制字符串</td>
+<td align="left">Ctrl + B</td>
+<td align="left">查找</td>
+<td align="left">Ctrl + L</td>
+</tr>
+<tr>
+<td align="left">显示记录窗口</td>
+<td align="left">Alt + L</td>
+<td align="left">显示模块窗口</td>
+<td align="left">Alt + E</td>
+</tr>
+<tr>
+<td align="left">显示呼叫堆栈</td>
+<td align="left">Alt + K</td>
+<td align="left">显示断点窗口</td>
+<td align="left">Alt + B</td>
+</tr>
+</tbody></table>
+<h2 id="Markdown-1"><a href="#Markdown-1" class="headerlink" title="Markdown"></a>Markdown</h2><p>[toc]<br>#1-6</p>
+<ul>
+<li>“- + *” 与 “1.” 结合<ul>
+<li>开头两空格<ul>
+<li>开头五空格</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>\ 转义</p>
+<p>[名称](url) 图片前加 !</p>
+<blockquote>
+<p>引用第一层</p>
+<blockquote>
+<p>内层引用 前空一格</p>
+</blockquote>
+</blockquote>
+<p><em>斜体</em> <strong>粗体</strong> <code>代码块</code></p>
+<p>*** — ___ 分割线</p>
+<p><del>删除线</del></p>
+<p>^上标^ ~下标~</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">|左|右|居中|</span></span><br><span class="line"><span class="string">|:--|--:|:-:|</span></span><br><span class="line"><span class="string">|单|元|格|</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Chrome-1"><a href="#Chrome-1" class="headerlink" title="Chrome"></a><a class="link"   target="_blank" rel="noopener" href="https://support.google.com/chrome/answer/157179?hl=en" >Chrome<i class="fas fa-external-link-alt"></i></a></h2><table>
+<thead>
+<tr>
+<th align="left">打开主页</th>
+<th align="left">Alt + Home</th>
+<th align="left">关闭当前窗口</th>
+<th align="left">Alt + F4</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">打开菜单</td>
+<td align="left">Alt + F/E</td>
+<td align="left">跳转到地址栏</td>
+<td align="left">Alt + D</td>
+</tr>
+<tr>
+<td align="left">切换用户</td>
+<td align="left">Ctrl + Shift + M</td>
+<td align="left">网址补充<code>www.com</code></td>
+<td align="left">Ctrl + Enter</td>
+</tr>
+<tr>
+<td align="left">清除浏览数据</td>
+<td align="left">Ctrl + Shift + backspace</td>
+<td align="left">打开新窗口</td>
+<td align="left">Ctrl + N</td>
+</tr>
+<tr>
+<td align="left">无痕打开新窗口</td>
+<td align="left">Ctrl + Shift + N</td>
+<td align="left">打开跳转新标签页</td>
+<td align="left">Ctrl + T</td>
+</tr>
+<tr>
+<td align="left">关闭当前标签页</td>
+<td align="left">Ctrl + W</td>
+<td align="left">跳转到特定标签页</td>
+<td align="left">Ctrl + 1~9</td>
+</tr>
+<tr>
+<td align="left">跳转到下一个标签页</td>
+<td align="left">Ctrl + PgDn</td>
+<td align="left">跳转到上一个标签页</td>
+<td align="left">Ctrl + PgUp</td>
+</tr>
+<tr>
+<td align="left">查找</td>
+<td align="left">Ctrl + F 或 F3</td>
+<td align="left">历史</td>
+<td align="left">Ctrl + H</td>
+</tr>
+<tr>
+<td align="left">下载</td>
+<td align="left">Ctrl + J</td>
+<td align="left">书签</td>
+<td align="left">Ctrl + Shift + O</td>
+</tr>
+<tr>
+<td align="left">保存书签</td>
+<td align="left">Ctrl + D</td>
+<td align="left">保存所有书签</td>
+<td align="left">Ctrl + Shift + D</td>
+</tr>
+<tr>
+<td align="left">显示/隐藏书签栏</td>
+<td align="left">Ctrl + Shift + B</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">放大/缩小</td>
+<td align="left">Ctrl +/-</td>
+<td align="left">恢复大小</td>
+<td align="left">Ctrl + 0</td>
+</tr>
+<tr>
+<td align="left">源码</td>
+<td align="left">Ctrl + U</td>
+<td align="left">检查</td>
+<td align="left">Ctrl + Shift + J/I 或 F12</td>
+</tr>
+</tbody></table>
+<ul>
+<li>快速按右键接着马上按 Alt 键，可以出现右键快捷键提示……</li>
+</ul>
+<h3 id="chrome-flags-1"><a href="#chrome-flags-1" class="headerlink" title="chrome://flags"></a><a class="link"   target="_blank" rel="noopener" href="https://bynss.com/howto/300384.html" >chrome://flags<i class="fas fa-external-link-alt"></i></a></h3><p>国内环境推荐关闭 QUIC 协议：（影响不大）<br>Experimental QUIC protocol 值改为 Disabled</p>
+<p>side-panel 值改为 Disabled（已失效）</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/haocm08/article/details/112688788" >去掉更新Chrome浏览器后工具栏的扩展程序图标<i class="fas fa-external-link-alt"></i></a><br>只能启动时加 “–disable-features=ExtensionsToolbarMenu” (别忘带引号)</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://petapixel.com/2022/01/12/how-to-restore-reverse-image-search-with-right-click-in-chrome/" >Search your screen with Google Lens<i class="fas fa-external-link-alt"></i></a> 值改为 Disabled<br><a class="link"   target="_blank" rel="noopener" href="https://limbopro.com/archives/21070.html" >https://limbopro.com/archives/21070.html<i class="fas fa-external-link-alt"></i></a><br>Lens-Standalone 值改为 Disabled</p>
+<p>Parallel downloading 值改为 Enabled</p>
+<p>Smooth Scrolling 值改为 Enabled</p>
+<h2 id="Windows-1"><a href="#Windows-1" class="headerlink" title="Windows"></a><a class="link"   target="_blank" rel="noopener" href="https://support.microsoft.com/en-us/Windows/Windows-10-keyboard-tips-and-tricks-588e0b72-0fff-6d3f-aeee-6e5116097942" >Windows<i class="fas fa-external-link-alt"></i></a></h2><table>
+<thead>
+<tr>
+<th align="left">远程桌面</th>
+<th align="left">Win + R mstsc</th>
+<th align="left">布局</th>
+<th align="left">Win + ←↑→↓</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">任务栏切换</td>
+<td align="left">Win + 数字</td>
+<td align="left">投影</td>
+<td align="left">Win + P</td>
+</tr>
+<tr>
+<td align="left">创建新文件夹</td>
+<td align="left">Ctrl + Shift + N</td>
+<td align="left">显示桌面</td>
+<td align="left">Win + D/M</td>
+</tr>
+<tr>
+<td align="left">表情符号</td>
+<td align="left">Win + .</td>
+<td align="left">显示设置</td>
+<td align="left">Win + I</td>
+</tr>
+<tr>
+<td align="left">文件资源管理器</td>
+<td align="left">Win + E</td>
+<td align="left">左侧工具栏</td>
+<td align="left">Win + X</td>
+</tr>
+<tr>
+<td align="left">右侧设置</td>
+<td align="left">Win + A</td>
+<td align="left">锁定计算机</td>
+<td align="left">Win + L</td>
+</tr>
+<tr>
+<td align="left">任务视图</td>
+<td align="left">Win + Tab</td>
+<td align="left">连接</td>
+<td align="left">Win + K</td>
+</tr>
+<tr>
+<td align="left">切换输入法</td>
+<td align="left">Win + 空格 / Alt + 左/右 Shift</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p>计算器 Win + R calc<br>屏幕键盘 Win + R osk<br>Win + R<br>Win + R </p>
+<p>Scroll lock 键：FN + K/C</p>
+<p>设置自启动 Win+R 复制，添加快捷键</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start</span> <span class="string">Menu\Programs\Startup</span></span><br></pre></td></tr></table></figure>
+<p>搜索栏输入 cmd 后，Ctrl + shift + enter 直接进入管理员模式命令行</p>
+<p><img src="https://www.jianshu.com/p/16aa7aa9fa6a" alt="copy命令隐藏文件的技巧"><br>Copy /b 1.exe+1.txt 2.exe（把1.txt藏进2.exe文件）</p>
+<h2 id="Text-processing-1"><a href="#Text-processing-1" class="headerlink" title="Text processing"></a>Text processing</h2><table>
+<thead>
+<tr>
+<th align="left">Ctrl + Home</th>
+<th align="left">光标达到文本最前面</th>
+<th align="left">Ctrl + End</th>
+<th align="left">光标达到文本最后面</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Ctrl + Shift + Home</td>
+<td align="left">光标所在位置到最前面的部分</td>
+<td align="left">Ctrl + Shift + End</td>
+<td align="left">光标所在位置到最前面的部分</td>
+</tr>
+<tr>
+<td align="left">Ctrl + Shift + F</td>
+<td align="left">输入法繁简转换</td>
+<td align="left">Ctrl + D</td>
+<td align="left">复制上一行</td>
+</tr>
+</tbody></table>
+<h2 id="Vimium-1"><a href="#Vimium-1" class="headerlink" title="Vimium"></a>Vimium</h2><table>
+<thead>
+<tr>
+<th align="left">向下/上/左/右移动</th>
+<th align="left">j/k/h/l</th>
+<th align="left">后退/前进网页</th>
+<th align="left">H/L</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">选择左/右标签</td>
+<td align="left">J/K</td>
+<td align="left"><strong>向下/上跳动</strong></td>
+<td align="left">d/u-e</td>
+</tr>
+<tr>
+<td align="left">回到顶/尾部</td>
+<td align="left">gg/G</td>
+<td align="left">本窗口/新窗口</td>
+<td align="left">f/F</td>
+</tr>
+<tr>
+<td align="left">刷新</td>
+<td align="left">r</td>
+<td align="left">创建/查看标签页</td>
+<td align="left">t/T(数字nt)</td>
+</tr>
+<tr>
+<td align="left">新标签打开多个链接</td>
+<td align="left">Alt + f</td>
+<td align="left"><strong>打开新页面并切换</strong></td>
+<td align="left">S</td>
+</tr>
+<tr>
+<td align="left">查找历史书签</td>
+<td align="left">o/O</td>
+<td align="left">查找书签</td>
+<td align="left">b/B</td>
+</tr>
+<tr>
+<td align="left"><strong>关闭/恢复标签</strong></td>
+<td align="left">x/X-z</td>
+<td align="left"><strong>切换到刚才标签</strong></td>
+<td align="left">^-q</td>
+</tr>
+<tr>
+<td align="left"><strong>移动当前标签到左/右侧边</strong></td>
+<td align="left">&lt;&lt;-&lt;/&gt;&gt;-&gt;</td>
+<td align="left"><strong>将标签页移动到新窗口</strong></td>
+<td align="left">W-ww</td>
+</tr>
+<tr>
+<td align="left">搜索剪贴板关键字</td>
+<td align="left">p/P</td>
+<td align="left">开/关静音</td>
+<td align="left">Alt + m</td>
+</tr>
+<tr>
+<td align="left">固定标签栏</td>
+<td align="left">Alt + p</td>
+<td align="left"><strong>上/下一页</strong></td>
+<td align="left"><code>[[,]]-[,]</code></td>
+</tr>
+<tr>
+<td align="left">复制当前页面</td>
+<td align="left">yt</td>
+<td align="left">第 n 个输入框</td>
+<td align="left">ngi</td>
+</tr>
+<tr>
+<td align="left">复制当前网址</td>
+<td align="left">yy</td>
+<td align="left">编辑当前网址</td>
+<td align="left">ge/gE</td>
+</tr>
+<tr>
+<td align="left">复制网址拷贝</td>
+<td align="left">yf</td>
+<td align="left">显示网页源代码</td>
+<td align="left">gs</td>
+</tr>
+<tr>
+<td align="left">跳转到当前 url 上一级/最高级</td>
+<td align="left">gu/gU</td>
+<td align="left">切换到第一个 tab</td>
+<td align="left">g0</td>
+</tr>
+<tr>
+<td align="left"><strong>切换到最后一个 tab</strong></td>
+<td align="left">g$-g9</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">当页标记</td>
+<td align="left">m + 一个小写字母</td>
+<td align="left">跳转到当页标记</td>
+<td align="left">`小写字母</td>
+</tr>
+<tr>
+<td align="left">全局标记</td>
+<td align="left">m + 一个大写字母</td>
+<td align="left">跳转到全局标记</td>
+<td align="left">`大写字母</td>
+</tr>
+<tr>
+<td align="left">插入模式</td>
+<td align="left">i</td>
+<td align="left">查找模式</td>
+<td align="left">/</td>
+</tr>
+<tr>
+<td align="left">下/上一个匹配</td>
+<td align="left">n/N</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h2 id="Visual-Studio-1"><a href="#Visual-Studio-1" class="headerlink" title="Visual Studio"></a>Visual Studio</h2><table>
+<thead>
+<tr>
+<th align="left">新建项</th>
+<th align="left">Ctrl + Shift + A</th>
+<th align="left">现有项</th>
+<th align="left">Alt + Shift + A</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">生成</td>
+<td align="left">Ctrl + B</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">逐过程</td>
+<td align="left">F10</td>
+<td align="left">逐语句</td>
+<td align="left">F11</td>
+</tr>
+<tr>
+<td align="left">反汇编</td>
+<td align="left">Ctrl + Alt + D</td>
+<td align="left">删除整行</td>
+<td align="left">Ctrl + backspace</td>
+</tr>
+</tbody></table>
+<h2 id="Visual-Studio-Code-1"><a href="#Visual-Studio-Code-1" class="headerlink" title="Visual Studio Code"></a>Visual Studio Code</h2><table>
+<thead>
+<tr>
+<th align="left">行复制</th>
+<th align="left">Ctrl + c</th>
+<th align="left">行移动</th>
+<th align="left">Alt + ↑/↓</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">行复制</td>
+<td align="left">Shift + Alt + ↑/↓</td>
+<td align="left">格式化</td>
+<td align="left">Alt + Shit + F</td>
+</tr>
+<tr>
+<td align="left">行注释</td>
+<td align="left">Ctrl + /</td>
+<td align="left">块注释</td>
+<td align="left">Alt + Shit + A</td>
+</tr>
+<tr>
+<td align="left">Ctrl + ]/[</td>
+<td align="left">整行缩进</td>
+<td align="left">Alt + →/←</td>
+<td align="left">切换编辑点</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h2 id="Git-amp-Hexo-1"><a href="#Git-amp-Hexo-1" class="headerlink" title="Git &amp; Hexo"></a>Git &amp; Hexo</h2><h3 id="更换电脑部署-1"><a href="#更换电脑部署-1" class="headerlink" title="更换电脑部署"></a>更换电脑部署</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">npm</span> <span class="string">install</span> <span class="string">hexo-cli</span> <span class="string">-g</span></span><br><span class="line"><span class="string">npm</span> <span class="string">install</span></span><br><span class="line"><span class="string">npm</span> <span class="string">install</span> <span class="string">hexo-deployer-git</span> <span class="string">--save</span></span><br></pre></td></tr></table></figure>
+<p><code>hexo clean</code><br><code>hexo s -o</code> 实时预览<br><code>hexo d -g</code> 生成部署<br><code>hexo new &quot;post&quot;</code> 新建文章<br><code>hexo new page &quot;page&quot;</code> 新建页面</p>
+<h3 id="theme-update-1"><a href="#theme-update-1" class="headerlink" title="theme update"></a>theme update</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git rm -rf --cached keep</span><br><span class="line">git add keep&#x2F;*</span><br><span class="line">git add . &#x2F;&#x2F;更新工作的状态树</span><br><span class="line">git stash &#x2F;&#x2F;将未提交修改保存至堆栈中</span><br><span class="line">git pull  &#x2F;&#x2F;获取更新</span><br><span class="line">git stash pop &#x2F;&#x2F;弹栈</span><br></pre></td></tr></table></figure>
+
+<h3 id="hexo-upgrade-1"><a href="#hexo-upgrade-1" class="headerlink" title="hexo upgrade"></a>hexo upgrade</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">npm</span> <span class="string">-v</span></span><br><span class="line"><span class="string">node</span> <span class="string">-v</span></span><br><span class="line"><span class="string">hexo</span> <span class="string">-v</span></span><br><span class="line"></span><br><span class="line"><span class="string">npm</span> <span class="string">install</span> <span class="string">npm@latest</span> <span class="string">-g</span>  <span class="string">//npm</span> <span class="string">更新</span></span><br><span class="line">[<span class="string">node</span>]<span class="string">(https://nodejs.org/zh-cn/download/)</span> <span class="string">下载覆盖安装</span></span><br><span class="line"></span><br><span class="line"><span class="string">npm</span> <span class="string">install</span> <span class="string">-g</span> <span class="string">npm-check</span>     <span class="string">//安装</span> <span class="string">npm-check</span></span><br><span class="line"><span class="string">npm-check</span>                    <span class="string">//查看系统插件是否需要升级</span></span><br><span class="line"><span class="string">npm</span> <span class="string">install</span> <span class="string">-g</span> <span class="string">npm-upgrade</span>   <span class="string">//安装</span> <span class="string">npm-upgrade</span></span><br><span class="line"><span class="string">npm-upgrade</span>                  <span class="string">//更新</span> <span class="string">package.json</span></span><br><span class="line"><span class="string">//在执行</span> <span class="string">npm-upgrade</span> <span class="string">命令后会要求输入</span> <span class="literal">yes</span> <span class="string">或</span> <span class="literal">no</span> <span class="string">，直接输入</span> <span class="string">Y</span> <span class="string">即可</span></span><br><span class="line"><span class="string">npm</span> <span class="string">update</span> <span class="string">-g</span>                <span class="string">//更新全局插件</span></span><br><span class="line"><span class="string">npm</span> <span class="string">update</span> <span class="string">--save</span>            <span class="string">//更新系统插件</span></span><br></pre></td></tr></table></figure>
+
+<p><code>git init</code><br><code>git status</code><br><code>git add filename</code><br><code>git commit -m &quot;commit filename&quot;</code><br><code>git log</code> 按 Q 退出<br><code>git branch [a] [-d/D a]</code> 新建分支 a / 删除/强制删除分支 a<br><code>git push origin --delete</code> 删除远程分支<br><code>git checkout [a] [v1] [-b b]</code> 切换到 a 分支 / v1 标签 / 创建并切换到 b 分支<br><code>git merge [a]</code> 将 a 分支合并到 master 分支<br><code>git tag [v1]</code> 添加标签<br><code>git remote add origin url</code> 关联远程仓库<br><code>git pull/push origin master:djs</code> 拉/推 远程主机名 远程分支名:本地分支名</p>
+<h3 id="删除所有远程标签-1"><a href="#删除所有远程标签-1" class="headerlink" title="删除所有远程标签"></a>删除所有远程标签</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">show-ref</span> <span class="string">--tag</span> <span class="string">|</span> <span class="string">awk</span> <span class="string">&#x27;&#123;print &quot;:&quot; $2&#125;&#x27;</span> <span class="string">|</span> <span class="string">xargs</span> <span class="string">git</span> <span class="string">push</span> <span class="string">origin</span></span><br></pre></td></tr></table></figure>
+<h3 id="删除所有本地标签-1"><a href="#删除所有本地标签-1" class="headerlink" title="删除所有本地标签"></a>删除所有本地标签</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">tag</span> <span class="string">-l</span> <span class="string">|awk</span> <span class="string">&#x27;/1\.1\../&#x27;</span> <span class="string">|</span> <span class="string">xargs</span> <span class="string">git</span> <span class="string">tag</span> <span class="string">-d</span></span><br></pre></td></tr></table></figure>
+<h3 id="从远程仓库获取所有分支-1"><a href="#从远程仓库获取所有分支-1" class="headerlink" title="从远程仓库获取所有分支"></a>从远程仓库获取所有分支</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">clone</span> <span class="string">xxx</span></span><br><span class="line"><span class="string">git</span> <span class="string">branch</span> <span class="string">-r</span> <span class="string">|</span> <span class="string">grep</span> <span class="string">-v</span> <span class="string">&#x27;\-&gt;&#x27;</span> <span class="string">|</span> <span class="string">while</span> <span class="string">read</span> <span class="string">remote;</span> <span class="string">do</span> <span class="string">git</span> <span class="string">branch</span> <span class="string">--track</span> <span class="string">&quot;$&#123;remote#origin/&#125;&quot;</span> <span class="string">&quot;$remote&quot;</span><span class="string">;</span></span><br><span class="line"><span class="string">git</span> <span class="string">fetch</span> <span class="string">--all</span></span><br><span class="line"><span class="string">git</span> <span class="string">pull</span> <span class="string">--all</span></span><br></pre></td></tr></table></figure>
+<h3 id="合并两个仓库-1"><a href="#合并两个仓库-1" class="headerlink" title="合并两个仓库"></a>合并两个仓库</h3><p>现在有两个仓库 kktjs/kkt 和 kktjs/kkt-next 我们需要将 kkt-next 仓库合并到 kkt 并保留 kkt-next 的所有提交内容。</p>
+<blockquote>
+<p>1.克隆主仓库代码</p>
+</blockquote>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">clone</span> <span class="string">git@github.com:kktjs/kkt.git</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>2.将 kkt-next 作为远程仓库，添加到 kkt 中，设置别名为 other</p>
+</blockquote>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">remote</span> <span class="string">add</span> <span class="string">other</span> <span class="string">git@github.com:kktjs/kkt-next.git</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>3.从 kkt-next 仓库中拉取数据到本仓库</p>
+</blockquote>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">fetch</span> <span class="string">other</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>4.将 kkt-next 仓库拉取的 master 分支作为新分支 checkout 到本地，新分支名设定为 kkt-next</p>
+</blockquote>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">checkout</span> <span class="string">-b</span> <span class="string">kkt-next</span> <span class="string">other/master</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>5.切换回 kkt 的 master 分支</p>
+</blockquote>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">checkout</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>6.将 kkt-next 合并入 kkt 的 master 分支</p>
+</blockquote>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">merge</span> <span class="string">kkt-next</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果第 6 步报错 <code>fatal: refusing to merge unrelated histories</code>，执行下面：</p>
+</blockquote>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">merge</span> <span class="string">kkt-next</span> <span class="string">--allow-unrelated-histories</span></span><br></pre></td></tr></table></figure>
+<p>在合并时有可能两个分支对同一个文件都做了修改，这时需要解决冲突，对文本文件来说很简单，根据需要对冲突的位置进行处理就可以。对于二进制文件，需要用到如下命令:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">checkout</span> <span class="string">--theirs</span> <span class="string">YOUR_BINARY_FILES</span>     <span class="comment"># 保留需要合并进来的分支的修改</span></span><br><span class="line"><span class="string">git</span> <span class="string">checkout</span> <span class="string">--ours</span> <span class="string">YOUR_BINARY_FILES</span>       <span class="comment"># 保留自己的修改</span></span><br><span class="line"><span class="string">git</span> <span class="string">add</span> <span class="string">YOUR_BINARY_FILES</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="创建密钥-1"><a href="#创建密钥-1" class="headerlink" title="创建密钥"></a>创建密钥</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">ssh-keygen</span> <span class="string">-t</span> <span class="string">rsa</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">ssh</span> <span class="string">-T</span> <span class="string">git@github.com</span></span><br></pre></td></tr></table></figure>
+<h3 id="别名-1"><a href="#别名-1" class="headerlink" title="别名"></a>别名</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">alias.plm</span> <span class="string">&#x27;pull origin master&#x27;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">alias.psm</span> <span class="string">&#x27;push origin master&#x27;</span></span><br></pre></td></tr></table></figure>
+<h3 id="其他配置-1"><a href="#其他配置-1" class="headerlink" title="其他配置"></a>其他配置</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">config</span> <span class="string">-l</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">log</span> <span class="string">--graph</span> <span class="string">--pretty=format:&#x27;%Cred%h%Creset</span> <span class="bullet">-</span> <span class="string">%C(yellow)%d%Creset</span> <span class="string">%s</span> <span class="string">%Cgreen(%cr)</span> <span class="string">%C(bold</span> <span class="string">blue)&lt;%an&gt;%Creset&#x27;</span> <span class="string">--abbrev-commit</span> <span class="string">--date=relative</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">http.http://github.com.proxy</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span><span class="string">:10808</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">https.https://github.com.proxy</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span><span class="string">:10808</span></span><br></pre></td></tr></table></figure>
+<h3 id="ssh-connect-to-host-github-com-port-22-Connection-timed-out-1"><a href="#ssh-connect-to-host-github-com-port-22-Connection-timed-out-1" class="headerlink" title="ssh: connect to host github.com port 22: Connection timed out"></a>ssh: connect to host github.com port 22: Connection timed out</h3><p>修改 <code>.ssh/known_hosts</code> 文件中任意一个 ip 为<a class="link"   target="_blank" rel="noopener" href="https://whoer.net/" >当前 IP<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Failed-to-connect-to-github-com-port-443-Operation-timed-out-1"><a href="#Failed-to-connect-to-github-com-port-443-Operation-timed-out-1" class="headerlink" title="Failed to connect to github.com port 443: Operation timed out"></a>Failed to connect to github.com port 443: Operation timed out</h3><p><code>/etc/hosts</code> 把 GitHub 相关的几行代码注释掉，保存 hosts 文件<br>这种的 #192.30.253.112 github.com</p>
+<h3 id="Failed-to-connect-to-127-0-0-1-port-1080-Connection-refused-1"><a href="#Failed-to-connect-to-127-0-0-1-port-1080-Connection-refused-1" class="headerlink" title="Failed to connect to 127.0.0.1 port 1080: Connection refused"></a>Failed to connect to 127.0.0.1 port 1080: Connection refused</h3><p>查询是否使用代理：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">http.proxy</span></span><br></pre></td></tr></table></figure>
+<p>取消代理：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">--unset</span> <span class="string">http.proxy</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35246620/article/details/66973794" >https://blog.csdn.net/qq_35246620/article/details/66973794<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<h2 id="GitHub-1"><a href="#GitHub-1" class="headerlink" title="GitHub"></a><a class="link"   target="_blank" rel="noopener" href="https://www.zhihu.com/question/36974348" >GitHub<i class="fas fa-external-link-alt"></i></a></h2><p>Shift + / 查看快捷键</p>
+<p>在github上任意项目加个”gh-pages”分支，通过github page/你项目的名称就可以访问到那个分支的静态文件<br>issue 模板 <a class="link"   target="_blank" rel="noopener" href="https://github.blog/2016-02-17-issue-and-pull-request-templates/" >https://github.blog/2016-02-17-issue-and-pull-request-templates/<i class="fas fa-external-link-alt"></i></a><br>小绿点可以通过修改系统时间再 commit 来控制形状。</p>
+<p>github.githistory.xyz</p>
+<p>Site wide shortcuts<br>s or / Focus the search bar.</p>
+<p>g n    Go to your notifications.</p>
+<p>Repositories<br>g c    Go to the Code tab</p>
+<p>g i    Go to the Issues tab. </p>
+<p>g p    Go to the Pull requests tab.</p>
+<p>g a    Go to the Actions tab.</p>
+<p>g b    Go to the Projects tab.</p>
+<p>g w    Go to the Wiki tab.</p>
+<p>Source code editing<br>e    Open source code file in the Edit file tab</p>
+<p>control f or command f    Start searching in file editor</p>
+<p>control g or command g    Find next</p>
+<p>shift control g or shift command g    Find previous</p>
+<p>shift control f or command option f    Replace</p>
+<p>shift control r or shift command option f    Replace all</p>
+<p>alt g    Jump to line</p>
+<p>control z or command z    Undo</p>
+<p>control y or command y    Redo</p>
+<p>cmd + shift + p    Toggles between the Edit file and Preview changes tabs</p>
+<p>Source code browsing<br>t    Activates the file finder</p>
+<p>l    Jump to a line in your code</p>
+<p>w    Switch to a new branch or tag</p>
+<p>y    Expand a URL to its canonical form</p>
+<p>i    Show or hide comments on diffs.</p>
+<p>a    Show or hide annotations on diffs</p>
+<p>b    Open blame view.</p>
+<h2 id="Vim-1"><a href="#Vim-1" class="headerlink" title="Vim"></a>Vim</h2><p><img src="/images/vim.jpg"></p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left"></th>
+<th align="left"></th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br></pre></td><td class="code"><pre><span class="line">ctrl + f&#x2F;b&#x2F;d&#x2F;u 向下&#x2F;上移动一&#x2F;半页</span><br><span class="line">+&#x2F;- 移动到非空白字符下&#x2F;上一列</span><br><span class="line">n空格 向右移动 n 字符</span><br><span class="line">n回车 向下移动 n 行</span><br><span class="line">0&#x2F;Home $&#x2F;End 移动到这一列最前&#x2F;后面字符处</span><br><span class="line">H&#x2F;M&#x2F;L 移动到屏幕最上方&#x2F;中间&#x2F;下方那一列的第一个字符</span><br><span class="line">nG 移动到这个文件的第 n 列</span><br><span class="line">&#x2F;? 向下&#x2F;上搜索</span><br><span class="line"></span><br><span class="line">:n1,n2s&#x2F;word1&#x2F;word2&#x2F;g 在第 n1 与 n2 列之间寻找 word1 字串，并将该字串取代为 word2</span><br><span class="line">:1,$s&#x2F;word1&#x2F;word2&#x2F;g &#x2F; gc 从第一列到最后一列寻找 word1 字串，并将该字串取代为 word2 &#x2F; 在取代前显示提示字符给使用者确认是否需要取代</span><br><span class="line"></span><br><span class="line">nx(del)&#x2F;nX(backspace) 向后&#x2F;前删除 n 个字符</span><br><span class="line">ndd 删除光标所在的一整行&#x2F;向下 n 行</span><br><span class="line">nyy 复制光标所在的那一行&#x2F;向下 n 行</span><br><span class="line">p&#x2F;P 将已复制数据在光标下&#x2F;上一列贴上</span><br><span class="line"></span><br><span class="line">J 将光标所在列与下一列的数据结合成同一列</span><br><span class="line">c 重复删除多个数据，例如向下删除 10 列，10cj</span><br><span class="line">u 复原前一个动作</span><br><span class="line">Ctrl + r 重做上一个动作</span><br><span class="line">. 重复前一个动作</span><br><span class="line"></span><br><span class="line">i&#x2F;I 从目前光标处插入&#x2F;在目前所在列的第一个非空白字符处开始插入</span><br><span class="line">a&#x2F;A 从目前光标所在的下一个字符处插入&#x2F;从光标所在列的最后一个字符处插入</span><br><span class="line">o&#x2F;O 在目前光标所在的下&#x2F;上一列处插入新的一列</span><br><span class="line">r&#x2F;R 取代模式，取代光标所在的那一个字符一次&#x2F;一直取代光标所在的文字，直到 ESC</span><br><span class="line"></span><br><span class="line">:w 写入硬盘文件</span><br><span class="line">:q! （强制离开不储存）离开</span><br><span class="line">:wq 储存后离开</span><br><span class="line">ZZ 文件没有更动，则不储存离开&#x2F;文件已经更动过，则储存后离开</span><br><span class="line">:w file 另存新文件</span><br><span class="line">:r file 在编辑的数据中，读入另一个文件的数据</span><br><span class="line">:n1,n2 w file 将 n1 到 n2 的内容储存成 file</span><br><span class="line">:! command 暂时离开 vi 到命令行界面下执行 command 的显示结果</span><br><span class="line"></span><br><span class="line">:set nu 显示行号</span><br><span class="line">:set nonu 取消行号</span><br><span class="line">:set	hlsearch	:setnohlsearch 高亮度搜寻</span><br><span class="line">:set	autoindent	:set noautoindent 自动缩排</span><br><span class="line">（setting）</span><br><span class="line">自建 ~&#x2F;.vimrc </span><br><span class="line">[dmtsai@study	~]$	vim	~&#x2F;.vimrc</span><br><span class="line">&quot;这个文件的双引号	（&quot;）	是注解</span><br><span class="line">set	hlsearch												&quot;高亮度反白</span><br><span class="line">set	backspace&#x3D;2									&quot;可随时用倒退键删除</span><br><span class="line">set	autoindent										&quot;自动缩排</span><br><span class="line">set	ruler															&quot;可显示最后一列的状态</span><br><span class="line">set	showmode												&quot;左下角那一列的状态</span><br><span class="line">set	nu																		&quot;可以在每一列的最前面显示行号啦！</span><br><span class="line">set	bg&#x3D;dark													&quot;显示不同的底色色调</span><br><span class="line">syntax	on															&quot;进行语法检验，颜色显示。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">:files 列出目前这个 vim 的打开的所有文件 :n&#x2F;N</span><br><span class="line">:sp &#123;filename&#125; 多窗口 ctrl + w + j&#x2F;k 先按下	[ctrl]	不放，	再按下	w	后放开所有的按键，然后再按下	j	（或向下方向键），则光标可移动到下方的窗口</span><br><span class="line">[ctrl]+x	-&gt;	[ctrl]+n 通过目前正在编辑的这个“文件的内容文字”作为关键字，予以补齐</span><br><span class="line">[ctrl]+x	-&gt;	[ctrl]+f 以当前目录内的“文件名”作为关键字，予以补齐</span><br><span class="line">[ctrl]+x	-&gt;	[ctrl]+o 以扩展名作为语法补充，以	vim	内置的关键字，予以补齐</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">按下‘q’键让vim开始记录，然后按任意键，来告诉vim你想把保存的记录下次通过这个键来调出。本次案例中，这个键设置为‘a’，所以完整的指令就是‘qa’。</span><br><span class="line">执行你的命令。</span><br><span class="line">按下‘q’来结束记录。</span><br><span class="line">需要重复保存的系列动作时，输入‘@a’即可。</span><br><span class="line"></span><br><span class="line">相对行号</span><br><span class="line">.vimrc中加入set relativenumber</span><br><span class="line">删除其后的25行：25dd</span><br><span class="line"></span><br><span class="line">.vimrc中加入以下指令：</span><br><span class="line">set clipboard&#x3D;unnamed </span><br><span class="line">set clipboard&#x3D;unnamedplus </span><br><span class="line">加入这项指令后，在vim中复制粘贴文本就从“CTRL+V”, 和“CTRL+C”这一过程变为简单地输入‘p’。</span><br><span class="line">如果你想在不重写你的寄存器的情况下删除文本，你可以在指令前加上“_符号：“_dd 来删除一行。</span><br><span class="line"></span><br><span class="line">重映射Escape操作</span><br><span class="line">.vimrc中加入：</span><br><span class="line">cnoremap kj &lt;C-C&gt; </span><br><span class="line">cnoremap jk &lt;C-C&gt; </span><br><span class="line">键入’jk’或者‘kj’来离开一个指令</span><br><span class="line"></span><br><span class="line">动词+修饰词+宾语</span><br><span class="line"></span><br><span class="line">处理空白格(White space fixing)</span><br><span class="line">.vimrc加入：</span><br><span class="line">set list</span><br><span class="line">这个指令会在每行结尾显示一个$符号，并且用^I代替tabs。你从而能更容易地识别出tabs和行尾。除此之外，下面的例子中，使用了空代替所有的tabs，这也让空白格更加便于处理：</span><br><span class="line"></span><br><span class="line">快速查找(navigate)</span><br><span class="line">敲击‘gg’来移动到文档的顶部，‘G’来移动到最底部。</span><br><span class="line">敲击CTRL+F来快速向前移动，CTRL+B来快速向后移动。</span><br><span class="line">敲击‘zz’来重新定位页的中心，这也你的光标就成为新的中心。</span><br><span class="line">遇到上括号像‘&#123;’或者‘(’，你可以敲击‘%’来移动到它们所匹配的下括号。</span><br><span class="line">‘&#x2F;’可以开始查找你想要的词。</span><br><span class="line"></span><br><span class="line">日期(date)</span><br><span class="line">nmap &lt;F3&gt; i&lt;C-R&gt;&#x3D;strftime(&quot;%Y-%m-%d %a %I:%M %p&quot;)&lt;CR&gt;&lt;Esc&gt; </span><br><span class="line">imap &lt;F3&gt; &lt;C-R&gt;&#x3D;strftime(&quot;%Y-%m-%d %a %I:%M %p&quot;)&lt;CR&gt; </span><br><span class="line">从而可以只通过键入F3来给文档加日期和时间。</span><br><span class="line"></span><br><span class="line">x → 删当前光标所在的一个字符。</span><br><span class="line">:wq → 存盘 + 退出 (:w 存盘, :q 退出)   （陈皓注：:w 后可以跟文件名）</span><br><span class="line">dd → 删除当前行，并把删除的行存到剪贴板里</span><br><span class="line">p → 粘贴剪贴板</span><br><span class="line">:help &lt;command&gt; → 显示相关命令的帮助。你也可以就输入 :help 而不跟命令。（陈皓注：退出帮助需要输入:q）</span><br><span class="line"></span><br><span class="line">a → 在光标后插入</span><br><span class="line">o → 在当前行后插入一个新行</span><br><span class="line">O → 在当前行前插入一个新行</span><br><span class="line">cw → 替换从光标所在位置后到一个单词结尾的字符</span><br><span class="line"></span><br><span class="line">0 → 数字零，到行头</span><br><span class="line">^ → 到本行第一个不是blank字符的位置（所谓blank字符就是空格，tab，换行，回车等）</span><br><span class="line">$ → 到本行行尾</span><br><span class="line">g_ → 到本行最后一个不是blank字符的位置。</span><br><span class="line">&#x2F;pattern → 搜索 pattern 的字符串（陈皓注：如果搜索出多个匹配，可按n键到下一个）</span><br><span class="line"></span><br><span class="line">P → 粘贴</span><br><span class="line">yy → 拷贝当前行当行于 ddP</span><br><span class="line">p&#x2F;P都可以，p是表示在当前位置之后，P表示在当前位置之前）</span><br><span class="line"></span><br><span class="line">u → undo</span><br><span class="line">&lt;C-r&gt; → redo</span><br><span class="line"></span><br><span class="line">:e &lt;path&#x2F;to&#x2F;file&gt; → 打开一个文件</span><br><span class="line">:w → 存盘</span><br><span class="line">:saveas &lt;path&#x2F;to&#x2F;file&gt; → 另存为 &lt;path&#x2F;to&#x2F;file&gt;</span><br><span class="line">:x， ZZ 或 :wq → 保存并退出 (:x 表示仅在需要时保存，ZZ不需要输入冒号并回车)</span><br><span class="line">:q! → 退出不保存 :qa! 强行退出所有的正在编辑的文件，就算别的文件有更改。</span><br><span class="line">:bn 和 :bp → 你可以同时打开很多文件，使用这两个命令来切换下一个或上一个文件。（陈皓注：我喜欢使用:n到下一个文件）</span><br><span class="line"></span><br><span class="line">. → (小数点) 可以重复上一次的命令</span><br><span class="line">N&lt;command&gt; → 重复某个命令N次</span><br><span class="line"></span><br><span class="line">NG → 到第 N 行 （陈皓注：注意命令中的G是大写的，另我一般使用 : N 到第N行，如 :137 到第137行）</span><br><span class="line">gg → 到第一行。（陈皓注：相当于1G，或 :1）</span><br><span class="line">G → 到最后一行。</span><br><span class="line">w → 到下一个单词的开头。</span><br><span class="line">e → 到下一个单词的结尾。</span><br><span class="line">如果你认为单词是由默认方式，那么就用小写的e和w。默认上来说，一个单词由字母，数字和下划线组成（陈皓注：程序变量）</span><br><span class="line">&gt; 如果你认为单词是由blank字符分隔符，那么你需要使用大写的E和W。（陈皓注：程序语句）</span><br><span class="line"></span><br><span class="line">% : 匹配括号移动，包括 (, &#123;, [. （陈皓注：你需要把光标先移到括号上）</span><br><span class="line">* 和 #:  匹配光标当前所在的单词，移动光标到下一个（或上一个）匹配单词（*是下一个，#是上一个）</span><br><span class="line"></span><br><span class="line">&lt;start position&gt;&lt;command&gt;&lt;end position&gt;</span><br><span class="line">0y$ 命令意味着：</span><br><span class="line">0 → 先到行头</span><br><span class="line">y → 从这里开始拷贝</span><br><span class="line">$ → 拷贝到本行最后一个字符</span><br><span class="line"></span><br><span class="line">d (删除 )</span><br><span class="line">v (可视化的选择)</span><br><span class="line">gU (变大写)</span><br><span class="line">gu (变小写)</span><br><span class="line">可视化选择是一个很有意思的命令，你可以先按v，然后移动光标，你就会看到文本被选择，然后，你可能d，也可y，也可以变大写等）</span><br><span class="line"></span><br><span class="line">在当前行上移动光标:</span><br><span class="line">0 → 到行头</span><br><span class="line">^ → 到本行的第一个非blank字符</span><br><span class="line">$ → 到行尾</span><br><span class="line">g_ → 到本行最后一个不是blank字符的位置。</span><br><span class="line">fa → 到下一个为a的字符处，你也可以fs到下一个为s的字符。</span><br><span class="line">t, → 到逗号前的第一个字符。逗号可以变成其它字符。</span><br><span class="line">3fa → 在当前行查找第三个出现的a。</span><br><span class="line">F 和 T → 和 f 和 t 一样，只不过是相反方向。</span><br><span class="line"></span><br><span class="line">dt&quot; → 删除所有的内容，直到遇到双引号—— &quot;</span><br><span class="line"></span><br><span class="line">区域选择</span><br><span class="line">在visual 模式下</span><br><span class="line">&lt;action&gt;a&lt;object&gt; 和 &lt;action&gt;i&lt;object&gt;</span><br><span class="line">action可以是任何的命令，如 d (删除), y (拷贝), v (可以视模式选择)。</span><br><span class="line">object 可能是： w 一个单词， W 一个以空格为分隔的单词， s 一个句字， p 一个段落。也可以是一个特别的字符：&quot;、 &#39;、 )、 &#125;、 ]。</span><br><span class="line"></span><br><span class="line">假设你有一个字符串 (map (+) (&quot;foo&quot;)).而光标键在第一个 o 的位置。</span><br><span class="line"></span><br><span class="line">vi&quot; → 会选择 foo.</span><br><span class="line">va&quot; → 会选择 &quot;foo&quot;.</span><br><span class="line">vi) → 会选择 &quot;foo&quot;.</span><br><span class="line">va) → 会选择(&quot;foo&quot;).</span><br><span class="line">v2i) → 会选择 map (+) (&quot;foo&quot;)</span><br><span class="line">v2a) → 会选择 (map (+) (&quot;foo&quot;))</span><br><span class="line"></span><br><span class="line">块操作，典型的操作： 0 &lt;C-v&gt; &lt;C-d&gt; I-- [ESC]</span><br><span class="line"></span><br><span class="line">^ → 到行头</span><br><span class="line">&lt;C-v&gt; → 开始块操作</span><br><span class="line">&lt;C-d&gt; → 向下移动 (你也可以使用hjkl来移动光标，或是使用%，或是别的)</span><br><span class="line">I-- [ESC] → I是插入，插入“--”，按ESC键来为每一行生效。</span><br><span class="line"></span><br><span class="line">自动提示： &lt;C-n&gt; 和 &lt;C-p&gt;</span><br><span class="line">在 Insert 模式下，你可以输入一个词的开头，然后按 &lt;C-p&gt;或是&lt;C-n&gt;，自动补齐功能就出现了……</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">宏录制： qa 操作序列 q, @a, @@</span><br><span class="line">qa 把你的操作记录在寄存器 a。</span><br><span class="line">于是 @a 会replay被录制的宏。</span><br><span class="line">@@ 是一个快捷键用来replay最新录制的宏。</span><br><span class="line"></span><br><span class="line">在一个只有一行且这一行只有“1”的文本中，键入如下命令：</span><br><span class="line"></span><br><span class="line">qaYp&lt;C-a&gt;q→</span><br><span class="line">qa 开始录制</span><br><span class="line">Yp 复制行.</span><br><span class="line">&lt;C-a&gt; 增加1.</span><br><span class="line">q 停止录制.</span><br><span class="line">@a → 在1下面写下 2</span><br><span class="line">@@ → 在2 正面写下3</span><br><span class="line">现在做 100@@ 会创建新的100行，并把数据增加到 103.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">可视化选择： v,V,&lt;C-v&gt;</span><br><span class="line">前面，我们看到了 &lt;C-v&gt;的示例 （在Windows下应该是&lt;C-q&gt;），我们可以使用 v 和 V。一但被选好了，你可以做下面的事：</span><br><span class="line"></span><br><span class="line">J → 把所有的行连接起来（变成一行）</span><br><span class="line">&lt; 或 &gt; → 左右缩进</span><br><span class="line">&#x3D; → 自动给缩进</span><br><span class="line">在所有被选择的行后加上点东西：</span><br><span class="line"></span><br><span class="line">&lt;C-v&gt;</span><br><span class="line">选中相关的行 (可使用 j 或 &lt;C-d&gt; 或是 &#x2F;pattern 或是 % 等……)</span><br><span class="line">$ 到行最后</span><br><span class="line">A, 输入字符串，按 ESC。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">分屏: :split 和 vsplit</span><br><span class="line">:help split</span><br><span class="line">:split → 创建分屏 (:vsplit创建垂直分屏)</span><br><span class="line">&lt;C-w&gt;&lt;dir&gt; : dir就是方向，可以是 hjkl 或是 ←↓↑→ 中的一个，其用来切换分屏。</span><br><span class="line">&lt;C-w&gt;_ (或 &lt;C-w&gt;|) : 最大化尺寸 (&lt;C-w&gt;| 垂直分屏)</span><br><span class="line">&lt;C-w&gt;+ (或 &lt;C-w&gt;-) : 增加尺寸</span><br><span class="line"></span><br><span class="line">https:&#x2F;&#x2F;coolshell.cn&#x2F;articles&#x2F;11312.html#%E7%AA%97%E5%8F%A3%E5%88%86%E5%B1%8F%E6%B5%8F%E8%A7%88</span><br></pre></td></tr></table></figure>
+<h2 id="Linux-1"><a href="#Linux-1" class="headerlink" title="Linux"></a>Linux</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br></pre></td><td class="code"><pre><span class="line">观察系统的使用状态：	如果要看目前有谁在线上，可以下达“who”这个指令，而如果要看</span><br><span class="line">网络的连线状态，可以下达	“	netstat	-a	”这个指令，而要看背景执行的程序可以执行“	ps</span><br><span class="line">-aux	”这个指令。</span><br><span class="line"></span><br><span class="line">chgrp	：改变文件所属群组</span><br><span class="line">chown	：改变文件拥有者</span><br><span class="line">chmod	：改变文件的权限,	SUID,	SGID,	SBIT等等的特性</span><br><span class="line"></span><br><span class="line">因此FHS标准建议：根目录（&#x2F;）所在分区应该越小越好，	且应用程序所安装的软件最好不要</span><br><span class="line">与根目录放在同一个分区内，保持根目录越小越好。	如此不但性能较佳，根目录所在的文件</span><br><span class="line">系统也较不容易发生问题。</span><br><span class="line"></span><br><span class="line">其实usr是Unix	Software	Resource的缩写，	也就</span><br><span class="line">是“Unix操作系统软件资源”所放置的目录</span><br><span class="line"></span><br><span class="line">.									代表此层目录</span><br><span class="line">..								代表上一层目录</span><br><span class="line">-									代表前一个工作目录</span><br><span class="line">~									代表“目前使用者身份”所在的主文件夹</span><br><span class="line">~account		代表	account	这个使用者的主文件夹（account是个帐号名称</span><br><span class="line"></span><br><span class="line">cd：变换目录</span><br><span class="line">pwd：显示目前的目录-P		：显示出确实的路径，而非使用链接	（link）	路径。</span><br><span class="line">mkdir：创建一个新的目录-m	：设置文件的权限喔！直接设置，不需要看默认权限	（umask）	的脸色～</span><br><span class="line">-p	：帮助你直接将所需要的目录（包含上层目录）递回创建起来！</span><br><span class="line">rmdir：删除一个空的目录-p	：连同“上层”“空的”目录也一起删除</span><br><span class="line"></span><br><span class="line">将	ll	（L	的小写）	设置成为	ls	-l	</span><br><span class="line"></span><br><span class="line">cat	由第一行开始显示文件内容</span><br><span class="line">tac	从最后一行开始显示，可以看出	tac	是	cat	的倒着写！</span><br><span class="line">nl	显示的时候，顺道输出行号！</span><br><span class="line">more	一页一页的显示文件内容</span><br><span class="line">less	与	more	类似，但是比	more	更好的是，他可以往前翻页！</span><br><span class="line">head	只看头几行</span><br><span class="line">tail	只看尾巴几行</span><br><span class="line">od	以二进制的方式读取文件内容！</span><br><span class="line"></span><br><span class="line">echo password	|	od	-t	oCc	echo  ASCII	对照</span><br><span class="line"></span><br><span class="line">如果你还想要从文字压缩文件当中找数据的话，可以通过	egrep	来搜寻关键字喔！而</span><br><span class="line">不需要将压缩文件解开才以	grep	进行！	这对查询备份中的文本文件数据相当有用！</span><br><span class="line"></span><br><span class="line">另外值得一提的是，tar	打包出来的文件有没有进行压缩所得到文件称呼不同喔！	如果仅是打</span><br><span class="line">包而已，就是“	tar	-cv	-f	file.tar	”而已，这个文件我们称呼为	tarfile	。	如果还有进行压缩的支</span><br><span class="line">持，例如“	tar	-jcv	-f	file.tar .bz2	”时，我们就称呼为	tarball	</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">linux cat&#x2F;proc&#x2F;cpuinfo及Ispci命令</span><br><span class="line">- Ctrl + Alt + F1\~F6</span><br><span class="line">变量\~符号代表的是“使用者的主文件夹”</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">^M$ CRLF 转换成 LF</span><br><span class="line">#	mount	&#x2F;dev&#x2F;sr0	&#x2F;mnt</span><br><span class="line">#	rpm	-ivh	&#x2F;mnt&#x2F;Packages&#x2F;dos2unix-*</span><br><span class="line"># umount	&#x2F;mnt</span><br><span class="line">#	exit</span><br><span class="line">(transformer)</span><br><span class="line"></span><br><span class="line">bash</span><br><span class="line">[ctrl]+u&#x2F;[ctrl]+k 分别是从光标处向前删除指令串	（[ctrl]+u）	及向后删除指令串（[ctrl]+k）。</span><br><span class="line">[ctrl]+a&#x2F;[ctrl]+e 分别是让光标移动到整个指令串的最前面	（[ctrl]+a）	或最后面（[ctrl]+e）。</span><br><span class="line"></span><br><span class="line">echo	$PATH echo	$&#123;HOME&#125;</span><br><span class="line">(base)</span><br><span class="line">变量与变量内容以一个等号“&#x3D;”来链接</span><br><span class="line">等号两边不能直接接空白字符</span><br><span class="line">变量名称只能是英文字母与数字，但是开头字符不能是数字</span><br><span class="line"></span><br><span class="line">如你想要让该变量内容继续的在子程序中使用，那么就请执行： export	变量名称</span><br><span class="line"></span><br><span class="line">环境变量转成自订变量 declare</span><br><span class="line">declare	&#x2F;	typeset</span><br><span class="line"></span><br><span class="line">基本上，指令运行的顺序可以这样看</span><br><span class="line">1 .	 以相对&#x2F;绝对路径执行指令，例如“	&#x2F;bin&#x2F;ls	”或“	.&#x2F;ls	”；</span><br><span class="line">2 .	 由	alias	找到该指令来执行；</span><br><span class="line">3 .	 由	bash	内置的	（builtin）	指令来执行；</span><br><span class="line">4 .	 通过	$P A TH	这个变量的顺序搜寻到的第一个指令来执行。</span><br><span class="line">通过	type	-a	ls 查询</span><br><span class="line"></span><br><span class="line">bash	的进站与欢迎讯息(bash12)</span><br><span class="line"></span><br><span class="line">1 .	 标准输入　　（stdin）	：代码为	0	，使用	&lt;	或	&lt;&lt;	；</span><br><span class="line">2 .	 标准输出　　（stdout）：代码为	1	，使用	&gt;	或	&gt;&gt;	；</span><br><span class="line">3 .	 标准错误输出（stderr）：代码为	2	，使用	2&gt;	或	2&gt;&gt;	；</span><br><span class="line"></span><br><span class="line">1&gt;	：以覆盖的方法将“正确的数据”输出到指定的文件或设备上；</span><br><span class="line">1&gt;&gt;：以累加的方法将“正确的数据”输出到指定的文件或设备上；</span><br><span class="line">2&gt;	：以覆盖的方法将“错误的数据”输出到指定的文件或设备上；</span><br><span class="line">2&gt;&gt;：以累加的方法将“错误的数据”输出到指定的文件或设备上；</span><br><span class="line"></span><br><span class="line">&#x2F;dev&#x2F;null	垃圾桶黑洞设备与特殊写法</span><br><span class="line"></span><br><span class="line">cmd	;	cmd	（不考虑指令相关性的连续指令下达）</span><br><span class="line">$?	（指令回传值）	与	&amp;&amp;	或	||</span><br><span class="line">(bash17)</span><br><span class="line"></span><br><span class="line">管线命令	（pipe）</span><br><span class="line">管线命令仅会处理	standard	output，对于	standard	error	output	会予以忽略</span><br><span class="line">管线命令必须要能够接受来自前一个指令的数据成为	standard	input	继续处理才行。</span><br><span class="line"></span><br><span class="line">撷取命令：	cut,	grep</span><br><span class="line">(bash18)</span><br><span class="line">cut在处理多空格相连的数据时，可能会比较吃力一点</span><br><span class="line"></span><br><span class="line">排序命令：	sort,	wc,	uniq</span><br><span class="line">双向重导向：	tee</span><br><span class="line">字符转换命令：	tr ,	col,	join,	paste,	expand</span><br><span class="line">tr	可以用来删除一段讯息当中的文字，或者是进行文字讯息的替换！</span><br><span class="line"></span><br><span class="line">join	看字面上的意义	（加入&#x2F;参加）	就可以知道，他是在处理两个文件之间的数据，	而且，</span><br><span class="line">主要是在处理“两个文件当中，有	&quot;相同数据&quot;	的那一行，才将他加在一起”的意思。我们利用</span><br><span class="line">下面的简单例子来说明：</span><br><span class="line">在使用	join	之前，你所需要处理的文件应该要事先经过排序</span><br><span class="line">（sort）	处理！	否则有些比对的项目会被略过呢</span><br><span class="line"></span><br><span class="line">这个	paste	就要比	join	简单多了！相对于	join	必须要比对两个文件的数据相关性，	paste	就</span><br><span class="line">直接“将两行贴在一起，且中间以	[tab]	键隔开”而已</span><br><span class="line"></span><br><span class="line">分区命令：	split</span><br><span class="line">参数代换：	xargs</span><br><span class="line">xargs	是在做什么的呢？就以字面上的意义来看，	x	是加减乘除的乘号，args	则是</span><br><span class="line">arguments	（参数）	的意思，所以说，这个玩意儿就是在产生某个指令的参数的意思！</span><br><span class="line">xargs	可以读入	stdin	的数据，并且以空白字符或断行字符作为分辨，将	stdin	的数据分隔成</span><br><span class="line">为	arguments	。	因为是以空白字符作为分隔，所以，如果有一些文件名或者是其他意义的名</span><br><span class="line">词内含有空白字符的时候，	xargs	可能就会误判了～他的用法其实也还满简单的！就来看一</span><br><span class="line">看先！</span><br><span class="line"></span><br><span class="line">正则表达式	（Regular	Expression,	RE</span><br><span class="line">（bash19）568</span><br><span class="line"></span><br><span class="line">shell script</span><br><span class="line">直接指令下达：	shell.sh	文件必须要具备可读与可执行	（rx）	的权限，然后：</span><br><span class="line">绝对路径：使用	&#x2F;home&#x2F;dmtsai&#x2F;shell.sh	来下达指令；</span><br><span class="line">相对路径：假设工作目录在	&#x2F;home&#x2F;dmtsai&#x2F;	，则使用	.&#x2F;shell.sh	来执行</span><br><span class="line">变量“P A TH”功能：将	shell.sh	放在	P A TH	指定的目录内，例如：	~&#x2F;bin&#x2F;</span><br><span class="line">以	bash	程序来执行：通过“	bash	shell.sh	”或“	sh	shell.sh	”来执行</span><br><span class="line"></span><br><span class="line">var&#x3D;$（（运算内容））</span><br><span class="line"></span><br><span class="line">执行方式差异</span><br><span class="line">利用直接执行的方式来执行	script</span><br><span class="line">当使用前一小节提到的直接指令下达	（不论是绝对路径&#x2F;相对路径还是	$&#123;P A TH&#125;	内），或者是</span><br><span class="line">利用	bash	（或	sh）	来下达脚本时，	该	script	都会使用一个新的	bash	环境来执行脚本内的</span><br><span class="line">指令！也就是说，使用这种执行方式时，	其实	script	是在子程序的	bash	内执行的</span><br><span class="line">利用	source	来执行脚本：在父程序中执行</span><br><span class="line"></span><br><span class="line">利用	test	指令的测试功能</span><br><span class="line">（608-633）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">计算	Linux	日期的时间是以	1970	年	1月	1	日作为	1	而累加的日期</span><br><span class="line"></span><br><span class="line">touch file</span><br><span class="line">groups 有效与支持群组的观察</span><br><span class="line">newgrp:	有效群组的切换</span><br><span class="line">exit			#	注意！记得离开	newgrp	的环境喔！</span><br><span class="line"></span><br><span class="line">（user）</span><br><span class="line">如果想要完整的将某个帐号完整的移除，最好可以在下达	userdel	-r	username	之前，	先以“	find	&#x2F;	-user	username	”查出整个系统内属于	username	的文件，然后再加以删除吧！</span><br><span class="line">id finger默认不安装</span><br><span class="line">chfn	有点像是：	change	finger	的意思</span><br><span class="line">chsh  change	shell	的简写</span><br><span class="line"></span><br><span class="line">(grp)</span><br><span class="line">最好能够使用“	groupadd	-r	群组名”的方式来创建</span><br><span class="line"></span><br><span class="line">(su)</span><br><span class="line">su	就这样简单的介绍完毕，总结一下他的用法是这样的：</span><br><span class="line">若要完整的切换到新使用者的环境，必须要使用“	su	-	username	”或“	su	-l	username	”，</span><br><span class="line">才会连同	P A TH&#x2F;USER&#x2F;MAIL	等变量都转成新使用者的环境；</span><br><span class="line">如果仅想要执行一次	root	的指令，可以利用“	su	-	-c	&quot;指令串&quot;	”的方式来处理；</span><br><span class="line">使用	root	切换成为任何使用者时，并不需要输入新使用者的密码；</span><br><span class="line"></span><br><span class="line">仅有规范到	&#x2F;etc&#x2F;sudoers	内的用户才能够执行	sudo	这个指令</span><br><span class="line">(sudo)</span><br><span class="line">visudo	与	&#x2F;etc&#x2F;sudoers</span><br><span class="line"></span><br><span class="line">last	可以列出从系统创建之后到目前为止的所有登陆者信息</span><br><span class="line">目前已登陆在系统上面的使用者呢？可以通过	w	或	who	来查询</span><br><span class="line">如果您想要知道每个帐号的最近登陆的时间，则可以使用	lastlog	这个指令喔！	lastlog会去读取	&#x2F;var&#x2F;log&#x2F;lastlog	文件</span><br><span class="line"></span><br><span class="line">使用者对谈：	write,	mesg,	wall</span><br><span class="line">write	使用者帐号	[使用者所在终端接口]</span><br><span class="line">[crtl]-d	来结束输入</span><br><span class="line">mesg	n&#x2F;y 不接受信息</span><br><span class="line">#	wall	&quot;I	will&quot;</span><br><span class="line">mail	-s	&quot;邮件标题&quot;	username@localhost</span><br><span class="line">结束时，最后一行输入小数点	.</span><br><span class="line">（mail）</span><br><span class="line"></span><br><span class="line">帐号相关的检查工具</span><br><span class="line">pwck	这个指令在检查	&#x2F;etc&#x2F;passwd	这个帐号配置文件内的信息，与实际的主文件夹是否存在</span><br><span class="line">等信息，	还可以比对	&#x2F;etc&#x2F;passwd	&#x2F;etc&#x2F;shadow	的信息是否一致，另外，如果	&#x2F;etc&#x2F;passwd	内</span><br><span class="line">的数据字段错误时，会提示使用者修订。	一般来说，我只是利用这个玩意儿来检查我的输入</span><br><span class="line">是否正确就是了。</span><br><span class="line">群组查询 grpck</span><br><span class="line">pwconv 这个指令主要的目的是在“将	&#x2F;etc&#x2F;passwd	内的帐号与密码，移动到	&#x2F;etc&#x2F;shadow	当中</span><br><span class="line">chpasswd	是个挺有趣的指令，他可以“读入未加密前的密码，并且经过加密后，	将加密后的密码写入	&#x2F;etc&#x2F;shadow	当中</span><br><span class="line">echo	&quot;vbird3:abcdefg&quot;	|	chpasswd</span><br><span class="line"></span><br><span class="line">Tarball</span><br><span class="line">Makefile	怎么写？	通常软件开发商都会写一支</span><br><span class="line">侦测程序来侦测使用者的作业环境，	以及该作业环境是否有软件开发商所需要的其他功能，</span><br><span class="line">该侦测程序侦测完毕后，就会主动的创建这个	Makefile	的规则文件啦！通常这支侦测程序的</span><br><span class="line">文件名为	configure	或者是	config	。</span><br><span class="line"></span><br><span class="line">所谓的	T arball	文件，其实就是将软件的所有源代码文件先以	tar	打包，然后再以压缩技术来</span><br><span class="line">压缩，通常最常见的就是以	gzip	来压缩了。因为利用了	tar	与	gzip	的功能，所以	tarball	文件</span><br><span class="line">一般的扩展名就会写成	.tar .gz	或者是简写为	.tgz	啰！不过，近来由于	bzip2	与	xz	的压缩率</span><br><span class="line">较佳，所以	T arball	渐渐的以	bzip2	及	xz	的压缩技术来取代	gzip	啰！因此文件名也会变成</span><br><span class="line">.tar .bz2,	.tar .xz	之类</span><br><span class="line"></span><br><span class="line">T arball	是一个软件包，	你将他解压缩之后，里面的文件</span><br><span class="line">通常就会有：</span><br><span class="line">原始程序码文件；</span><br><span class="line">侦测程序文件	（可能是	configure	或	config	等文件名）；</span><br><span class="line">本软件的简易说明与安装说明	（INST ALL	或	README）。</span><br><span class="line"></span><br><span class="line">使用	gcc	编译时所加入的那个	-lm	是有意义的，他可以拆开成两部份来看：</span><br><span class="line">-l	：是“加入某个函数库（library）”的意思，</span><br><span class="line">m	：则是	libm.so	这个函数库，其中，	lib	与扩展名（.a	或	.so）不需要写</span><br><span class="line">所以	-lm	表示使用	libm.so	（或	libm.a）	这个函数库的意思～至于那个	-L	后面接的路径呢？</span><br><span class="line">这表示：	“我要的函数库	libm.so	请到	&#x2F;lib	或	&#x2F;lib64	里面搜寻！”</span><br><span class="line">(1021-1091)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## Google hack</span><br><span class="line">|&quot;&quot;|精确匹配|-|排除关键词|..|数字范围|\*|通配符|</span><br><span class="line">|:-|:-|:-|:-|:-|:-|:-|:-|</span><br><span class="line">|and&#x2F;or|关系|filetype:|查找文件|site:|站内搜索|info:|基本信息|</span><br><span class="line">|link:|含链接站|define:|单词含义|related:|域名相关站点|intext:|包含关键词页面|</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 微软日语输入法</span><br><span class="line">清音</span><br><span class="line">あ a い i う u え e お o</span><br><span class="line">か ka き ki く ku け ke こ ko</span><br><span class="line">さ sa し shi す su せ se そ so</span><br><span class="line">た ta ち chi つ tsu て te と to</span><br><span class="line">な na に ni ぬ nu ね ne の no</span><br><span class="line">は ha ひ hi ふ fu へ he ほ ho</span><br><span class="line">ま ma み mi む mu め me も mo</span><br><span class="line">や ya ゐ wi ゆ yu ゑ we よ yo</span><br><span class="line">ら ra り ri る ru れ re ろ ro</span><br><span class="line">わ wa を wo ん nn</span><br><span class="line">·浊音</span><br><span class="line">が ga ぎ gi ぐ gu げ ge ご go</span><br><span class="line">ざ za じ ji ず zu ぜ ze ぞ zo</span><br><span class="line">だ da ぢ di づ du で de ど do</span><br><span class="line">ば ba び bi ぶ bu べ be ぼ bo</span><br><span class="line">ぱ pa ぴ pi ぷ pu ぺ pe ぽ po</span><br><span class="line">·拗音</span><br><span class="line">诸如きゃ、きゅ、きょ，可输入kya、kyu、kyo。</span><br><span class="line">把第一个字的母音去掉即可。</span><br><span class="line">·其他</span><br><span class="line">诸如てゃ、てぃ（ティ）、てゅ，可输入tha、thi、thu。</span><br><span class="line"></span><br><span class="line">2、促音（小つ）将后面的子音重写两个来表示。如：国家（こっか）kokka、雑志（ざっし）zasshi。但在つ的前面则加“t”来表示，</span><br><span class="line">如：発着（はっちゃく）hatchaku。（但在输入时仍应输入hacchaku）</span><br><span class="line"></span><br><span class="line">|Alt + ~|英文假名切换|Alt&#x2F;Ctrl&#x2F;Shift + Caps Lock|片假名&#x2F;平假名&#x2F;英文平假名|</span><br><span class="line">|:-|:-|:-|:-|</span><br><span class="line">|F6|平假名|F7&#x2F;F8|全&#x2F;半角片假名|</span><br><span class="line">|F9&#x2F;F10|全&#x2F;半角英文数字|F5|偏旁发音输入|</span><br><span class="line">|きごう + F5|所有记号|たんい|单位符号|</span><br><span class="line">|すうがく|数学符号|ぎりしゃ|希腊字母符号|</span><br><span class="line">|前 x&#x2F;l|小假名|ゐ 输入 wi|ゑ 输入 we|</span><br><span class="line">|||||</span><br><span class="line">|||||</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="MacOS-1"><a href="#MacOS-1" class="headerlink" title="MacOS"></a>MacOS</h2>
         </div>
 
         
@@ -984,7 +1644,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#OD"><span class="nav-number">1.</span> <span class="nav-text">OD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown"><span class="nav-number">2.</span> <span class="nav-text">Markdown</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chrome"><span class="nav-number">3.</span> <span class="nav-text">Chrome</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#chrome-flags"><span class="nav-number">3.1.</span> <span class="nav-text">chrome:&#x2F;&#x2F;flags</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows"><span class="nav-number">4.</span> <span class="nav-text">Windows</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Text-processing"><span class="nav-number">5.</span> <span class="nav-text">Text processing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vimium"><span class="nav-number">6.</span> <span class="nav-text">Vimium</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Visual-Studio"><span class="nav-number">7.</span> <span class="nav-text">Visual Studio</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-amp-Hexo"><span class="nav-number">8.</span> <span class="nav-text">Git &amp; Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%E9%83%A8%E7%BD%B2"><span class="nav-number">8.1.</span> <span class="nav-text">更换电脑部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#theme-update"><span class="nav-number">8.2.</span> <span class="nav-text">theme update</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-upgrade"><span class="nav-number">8.3.</span> <span class="nav-text">hexo upgrade</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E8%BF%9C%E7%A8%8B%E6%A0%87%E7%AD%BE"><span class="nav-number">8.4.</span> <span class="nav-text">删除所有远程标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E6%9C%AC%E5%9C%B0%E6%A0%87%E7%AD%BE"><span class="nav-number">8.5.</span> <span class="nav-text">删除所有本地标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8E%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E8%8E%B7%E5%8F%96%E6%89%80%E6%9C%89%E5%88%86%E6%94%AF"><span class="nav-number">8.6.</span> <span class="nav-text">从远程仓库获取所有分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E4%BB%93%E5%BA%93"><span class="nav-number">8.7.</span> <span class="nav-text">合并两个仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%AF%86%E9%92%A5"><span class="nav-number">8.8.</span> <span class="nav-text">创建密钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%AB%E5%90%8D"><span class="nav-number">8.9.</span> <span class="nav-text">别名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE"><span class="nav-number">8.10.</span> <span class="nav-text">其他配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ssh-connect-to-host-github-com-port-22-Connection-timed-out"><span class="nav-number">8.11.</span> <span class="nav-text">ssh: connect to host github.com port 22: Connection timed out</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Failed-to-connect-to-github-com-port-443-Operation-timed-out"><span class="nav-number">8.12.</span> <span class="nav-text">Failed to connect to github.com port 443: Operation timed out</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Failed-to-connect-to-127-0-0-1-port-1080-Connection-refused"><span class="nav-number">8.13.</span> <span class="nav-text">Failed to connect to 127.0.0.1 port 1080: Connection refused</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GitHub"><span class="nav-number">9.</span> <span class="nav-text">GitHub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vim"><span class="nav-number">10.</span> <span class="nav-text">Vim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux"><span class="nav-number">11.</span> <span class="nav-text">Linux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MacOS"><span class="nav-number">12.</span> <span class="nav-text">MacOS</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#OD"><span class="nav-number">1.</span> <span class="nav-text">OD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown"><span class="nav-number">2.</span> <span class="nav-text">Markdown</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chrome"><span class="nav-number">3.</span> <span class="nav-text">Chrome</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#chrome-flags"><span class="nav-number">3.1.</span> <span class="nav-text">chrome:&#x2F;&#x2F;flags</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows"><span class="nav-number">4.</span> <span class="nav-text">Windows</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Text-processing"><span class="nav-number">5.</span> <span class="nav-text">Text processing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vimium"><span class="nav-number">6.</span> <span class="nav-text">Vimium</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Visual-Studio"><span class="nav-number">7.</span> <span class="nav-text">Visual Studio</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Visual-Studio-Code"><span class="nav-number">8.</span> <span class="nav-text">Visual Studio Code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-amp-Hexo"><span class="nav-number">9.</span> <span class="nav-text">Git &amp; Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%E9%83%A8%E7%BD%B2"><span class="nav-number">9.1.</span> <span class="nav-text">更换电脑部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#theme-update"><span class="nav-number">9.2.</span> <span class="nav-text">theme update</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-upgrade"><span class="nav-number">9.3.</span> <span class="nav-text">hexo upgrade</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E8%BF%9C%E7%A8%8B%E6%A0%87%E7%AD%BE"><span class="nav-number">9.4.</span> <span class="nav-text">删除所有远程标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E6%9C%AC%E5%9C%B0%E6%A0%87%E7%AD%BE"><span class="nav-number">9.5.</span> <span class="nav-text">删除所有本地标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8E%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E8%8E%B7%E5%8F%96%E6%89%80%E6%9C%89%E5%88%86%E6%94%AF"><span class="nav-number">9.6.</span> <span class="nav-text">从远程仓库获取所有分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E4%BB%93%E5%BA%93"><span class="nav-number">9.7.</span> <span class="nav-text">合并两个仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%AF%86%E9%92%A5"><span class="nav-number">9.8.</span> <span class="nav-text">创建密钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%AB%E5%90%8D"><span class="nav-number">9.9.</span> <span class="nav-text">别名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE"><span class="nav-number">9.10.</span> <span class="nav-text">其他配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ssh-connect-to-host-github-com-port-22-Connection-timed-out"><span class="nav-number">9.11.</span> <span class="nav-text">ssh: connect to host github.com port 22: Connection timed out</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Failed-to-connect-to-github-com-port-443-Operation-timed-out"><span class="nav-number">9.12.</span> <span class="nav-text">Failed to connect to github.com port 443: Operation timed out</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Failed-to-connect-to-127-0-0-1-port-1080-Connection-refused"><span class="nav-number">9.13.</span> <span class="nav-text">Failed to connect to 127.0.0.1 port 1080: Connection refused</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GitHub"><span class="nav-number">10.</span> <span class="nav-text">GitHub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vim"><span class="nav-number">11.</span> <span class="nav-text">Vim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux"><span class="nav-number">12.</span> <span class="nav-text">Linux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MacOS"><span class="nav-number">13.</span> <span class="nav-text">MacOS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OD-1"><span class="nav-number">14.</span> <span class="nav-text">OD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-1"><span class="nav-number">15.</span> <span class="nav-text">Markdown</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chrome-1"><span class="nav-number">16.</span> <span class="nav-text">Chrome</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#chrome-flags-1"><span class="nav-number">16.1.</span> <span class="nav-text">chrome:&#x2F;&#x2F;flags</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows-1"><span class="nav-number">17.</span> <span class="nav-text">Windows</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Text-processing-1"><span class="nav-number">18.</span> <span class="nav-text">Text processing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vimium-1"><span class="nav-number">19.</span> <span class="nav-text">Vimium</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Visual-Studio-1"><span class="nav-number">20.</span> <span class="nav-text">Visual Studio</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Visual-Studio-Code-1"><span class="nav-number">21.</span> <span class="nav-text">Visual Studio Code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-amp-Hexo-1"><span class="nav-number">22.</span> <span class="nav-text">Git &amp; Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%E9%83%A8%E7%BD%B2-1"><span class="nav-number">22.1.</span> <span class="nav-text">更换电脑部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#theme-update-1"><span class="nav-number">22.2.</span> <span class="nav-text">theme update</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-upgrade-1"><span class="nav-number">22.3.</span> <span class="nav-text">hexo upgrade</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E8%BF%9C%E7%A8%8B%E6%A0%87%E7%AD%BE-1"><span class="nav-number">22.4.</span> <span class="nav-text">删除所有远程标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E6%9C%AC%E5%9C%B0%E6%A0%87%E7%AD%BE-1"><span class="nav-number">22.5.</span> <span class="nav-text">删除所有本地标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8E%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E8%8E%B7%E5%8F%96%E6%89%80%E6%9C%89%E5%88%86%E6%94%AF-1"><span class="nav-number">22.6.</span> <span class="nav-text">从远程仓库获取所有分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E4%BB%93%E5%BA%93-1"><span class="nav-number">22.7.</span> <span class="nav-text">合并两个仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%AF%86%E9%92%A5-1"><span class="nav-number">22.8.</span> <span class="nav-text">创建密钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%AB%E5%90%8D-1"><span class="nav-number">22.9.</span> <span class="nav-text">别名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE-1"><span class="nav-number">22.10.</span> <span class="nav-text">其他配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ssh-connect-to-host-github-com-port-22-Connection-timed-out-1"><span class="nav-number">22.11.</span> <span class="nav-text">ssh: connect to host github.com port 22: Connection timed out</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Failed-to-connect-to-github-com-port-443-Operation-timed-out-1"><span class="nav-number">22.12.</span> <span class="nav-text">Failed to connect to github.com port 443: Operation timed out</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Failed-to-connect-to-127-0-0-1-port-1080-Connection-refused-1"><span class="nav-number">22.13.</span> <span class="nav-text">Failed to connect to 127.0.0.1 port 1080: Connection refused</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GitHub-1"><span class="nav-number">23.</span> <span class="nav-text">GitHub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vim-1"><span class="nav-number">24.</span> <span class="nav-text">Vim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-1"><span class="nav-number">25.</span> <span class="nav-text">Linux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MacOS-1"><span class="nav-number">26.</span> <span class="nav-text">MacOS</span></a></li></ol>
     </div>
 </div>
         </aside>
