@@ -3947,6 +3947,12 @@ Eric/Corvus/Gemini/Gem/Antonio/Neo
 表情和神态是一个人内心的折射，几十年的积累足以使一个人的内心变得“不俗”，于是，表情跟着“从容”、神态跟着“睿智”。
 在一个所有人都匆匆忙忙的世界里，想放慢节奏实在是一件非常难的事情。但是，我们应该记住的是：凡是值得做的事情，都值得慢慢去做，做很久很久。
 《把时间当作朋友-二刷》
+所谓的情商，就是擅长创造共赢的局面。
+友情中最有价值的部分来自各自的成长或者共同成长。
+
+
+> 《定投改变命运》
+
 
 
 > 《新生——七年就是一辈子》
@@ -5585,6 +5591,84 @@ Fitness Toolkit: Protocol & Tools to Optimize Physical Health
 ，我只想告訴你一個祕密
  從琴房到教室一共是108步
 ——《不能說的祕密》
+
+我在情感上的愚钝就像是门窗紧闭的屋子
+虽然爱情的脚步在屋前走过来又走过去
+我也听到了可是我觉得那是路过的脚步
+那是走向别人的脚步
+直到有一天，
+这个脚步停留在这里，
+然后门铃响了。—-余华《第七天》
+
+即使以为自己的感情已经干涸得无法给予，也总会有一个时刻一样东西能拨动心灵深处的弦，我们毕竟不是生来就享受孤独的。 
+——马尔克斯《百年孤独》
+
+每次回家，都在鲁迅的《故乡》里打转。所谓乡愁，无所谓有，也无所谓无，漩涡似的存在，越是挣扎，越是挣脱，一遍遍更深。
+苏珊·史都华《渴望》：怀旧情绪是­一种没有对象的感伤，是一种渴望，渴望那种­不曾真正存在过的完美的过去。
+
+不采而佩，于兰何伤？兰之猗猗，扬扬其香
+
+花有花期人有时运，怀爱与诚静等来日，在自己的世界里独善其身，在别人的世界里顺其自然。——晴
+
+威廉·德雷谢维奇：
+“绝对不要为你的一辈子做好计划，因为人的变化在两三年内都是巨大的，而且时刻会产生新的想法；你真正可以做到的是，想好现在要做什么。”
+
+朋友说，“好想恋爱啊”只是一种无助时刻的吐槽，其实根本不想。
+其实就是缺乏一个可靠的可以依靠，缺乏一个会倾听的人可以聊天，缺乏一个不会厌烦的人满足分享欲。
+
+今天高铁上一堆人在餐车排队付款，结果一大段路没网络信号。车上 100 的也找不开。我很得意的跑到队首，掏出钱包，有零有整的什么钞票都有，买到一堆吃喝。
+睿智的人到哪里都能独领风骚。
+
+很幸运一路都是自己撑过来的所以少了谁的陪伴都无关紧要
+
+官宣吧 就用鲁迅的风格https://mp.weixin.qq.com/s?__biz=Mzg5NDYyNjQ2Mw==&mid=2247484919&idx=1&sn=1aa885b02707be476e1703d89835b60c&chksm=c01dfa07f76a7311ebeaa1f7633dee375434641206b21b9fb7cafab6fa5c6f953f773edd2be2&scene=132#wechat_redirect
+问了问心 它说情不自禁
+我大抵不再是一个人了 身边有你 身后有你 身后亦是你
+告诉桃花不用开了 我等的人来了
+路灯的三个影子一个是我的 另一个也是我的 还有一个是我们的
+心事是藏不住的 用嘴巴捂住就会从眼睛里冒出来
+我寄给你的信 总要送往邮局 不喜欢放在街边的绿色邮筒中 我总是疑心那里会慢一点
+我真傻 真的  我单知道我喜欢他 不知道他竟也喜欢我
+以后的每个春夏秋冬我都会陪着你直到从青涩时光到 白发苍苍
+近视的感觉不太好受就是奇怪模糊的世界总能认出你
+
+V2EX 这套系统设计的初衷，是关于时间的隐喻。
+你在这里所做的每一件事情，都会消耗你的时间。倘若一件事情做完之后，无法得到任何有意义的回应，那么这件事情就像是白做了。如果一个人持续做那些无意义的事情，那么他实际上就是在浪费他的时间。
+
+> [30 岁，让我成熟和改变的不是生日而是生活](https://sspai.com/post/75151)
+You are what you do. Not what you say, not what you believe, not how you vote, but what you spend your time on.
+你的所作所为将决定你是怎样的人。重要的不是说什么，信什么，或站在哪边，而是把时间花在什么上。（理解认识他人也一样）
+
+For a great payoff be especially curious about the things you are not interested in.
+为了获得巨大回报，要对自己不感兴趣的事情特别好奇。（好奇是最好的动力）
+
+You are as big as the things that make you angry.
+让你生气的事情有多大，你的心胸就有多大。（有一句类似的更火的中文版：人的胸怀是委屈撑大的。）
+
+Three things you need: The ability to not give up something till it works, the ability to give up something that does not work, and the trust in other people to help you distinguish between the two.
+你需要三样东西：不奏效不放弃的毅力、不奏效敢放弃的魄力，以及对能够帮你分辨两者的人的信任。（敢于放弃也敢于不放弃，更重要的是明白何时做出选择）
+
+Don’t be the smartest person in the room. Hangout with, and learn from, people smarter than yourself. Even better, find smart people who will disagree with you.
+不要做房间里最聪明的人。和比你聪明的人在一起，并向他们学习，找到那些不同意你观点的聪明人更好。
+
+Recipe for success: under-promise and over-deliver.
+成功的秘诀在于谨慎承诺和超出预期。
+
+Work to become, not to acquire.
+工作是为了成为而不是获得。
+
+If you can avoid seeking approval of others, your power is limitless.
+如果你能避免寻求别人的认可，你的力量就是无限的。
+
+Don’t be the best. Be the only.
+不要做最好的。做唯一的。
+
+人们总是高估自己一天能做的事情，却低估自己一年能做的事情。
+
+风起月渐明，雨落草更青。
+
+He who has great power should use it lightly.
+有权者当慎用之。
 
 
 

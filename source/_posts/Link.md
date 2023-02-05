@@ -1377,8 +1377,61 @@ https://www.dute.org/image-round
 九宫切图工具
 https://www.dute.org/image-clip
 
-App 图标在线制作
-https://www.pgyer.com/tools/appIcon
+hotpot 图标
+https://hotpot.ai/icon-resizer
+
+🏳‍icon图标网站
+https://fonts.google.com/icons
+https://tablericons.com
+https://simpleicons.org
+https://boxicons.com
+https://streamlinehq.com/icons
+https://lucide.dev
+https://feathericons.com
+https://3dicons.co
+https://iconfinder.com
+https://flaticon.com
+https://fontawesome.com
+https://tabler-icons.io
+https://iconmonstr.com
+https://www.iconbolt.com/
+
+
+https://tmioe.com/
+
+GV
+https://www.henduohao.com/product/1071.html
+
+
+【供参考】计算机编程远程工作统计
+涵盖：薪酬、经验、公司、地点等统计信息
+https://remoteok.com/remote-work-statistics
+
+CS自学指南
+https://csdiy.wiki/
+
+中英混排文档在线排版工具
+https://cyc2018.github.io/Text-Typesetting/
+
+ios 多功能站
+https://zwjpai.com/
+
+TDEE 熱量計算機
+https://serialdater.net/tdee-calculator/
+
+公交线路辐射图
+https://bus.daibor.com/#/
+
+地图搜租房
+https://house2048.cn/app/house-map/#/
+
+
+
+
+
+
+
+
 
 
 
