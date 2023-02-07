@@ -171,7 +171,6 @@ Copy /b 1.exe+1.txt 2.exe（把1.txt藏进2.exe文件）
 |终端|Ctrl + \`|清空终端|Ctrl + k|
 |底部面板|Ctrl + j|侧边栏|Ctrl + b|
 |||||
-|||||
 
 
 ## Git & Hexo
