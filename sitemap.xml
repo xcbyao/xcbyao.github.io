@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xcbyao.com/2021/03/11/Semester_3_summary/</loc>
+    
+    <lastmod>2023-02-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xcbyao.com/2020/09/18/Semester_2_summary/</loc>
+    
+    <lastmod>2023-02-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xcbyao.com/2023/02/07/Semester_6_7_summary/</loc>
     
     <lastmod>2023-02-07</lastmod>
@@ -12,6 +30,15 @@
   
   <url>
     <loc>https://xcbyao.com/2020/02/16/Semester_1_summary/</loc>
+    
+    <lastmod>2023-02-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xcbyao.com/2021/01/31/List_summary/</loc>
     
     <lastmod>2023-02-07</lastmod>
     
@@ -41,15 +68,6 @@
     <loc>https://xcbyao.com/2020/08/11/Appreciation/</loc>
     
     <lastmod>2023-02-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xcbyao.com/2021/01/31/List_summary/</loc>
-    
-    <lastmod>2023-02-06</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -182,15 +200,6 @@
   </url>
   
   <url>
-    <loc>https://xcbyao.com/2021/03/11/Semester_3_summary/</loc>
-    
-    <lastmod>2021-08-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xcbyao.com/2020/05/06/Nine_story_demon_tower/</loc>
     
     <lastmod>2021-04-27</lastmod>
@@ -203,15 +212,6 @@
     <loc>https://xcbyao.com/2020/01/21/Crypto_classical/</loc>
     
     <lastmod>2021-04-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xcbyao.com/2020/09/18/Semester_2_summary/</loc>
-    
-    <lastmod>2021-03-29</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
