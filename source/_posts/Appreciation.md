@@ -5701,6 +5701,10 @@ You don't love someone because they're perfect. You love them in spite of the fa
 
 烟火星辰，所愿皆成真。
 
+春去秋往万事胜意，山高水长终有回甘。
+
+万般熙攘化清风朗月，四方梦想皆如愿以偿。
+
 > 《言叶之庭》
 
 
