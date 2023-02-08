@@ -4,16 +4,31 @@ date: 2020-01-31 20:18:55
 comment: true
 ---
 ## Profile
-- **Name:** Xcbyao Antonio（小妖 & 梦）
 
-- **Bio:** 这里是我的精神自留地，记录着我的学习历程和总结~
-一个有强迫症和精神洁癖的博主们，闲暇时会一遍遍抠字眼，删去每个多余的字和标点。
+- **Name:** Xcbyao 「」
 
-- **目标方向:** 纯业余全栈开发、二进制安全
+- **Bio:** 极简主义，强迫症，精神洁癖，舒适区叛逃者，虚假文学爱好者；
+闲暇时会抠字眼，删去多余的字和标点。
 
-- **目前状况:** 躺尸中
+- **Goal:** 业余全栈开发、二进制安全
 
-- **技术栈:** 还没有……
+- **Skill:** 还没有……
+
+- **YouTube:** [书漫日记](https://www.youtube.com/@xcbyao)
+
+- **哔哩哔哩:** [Xcbyao](https://space.bilibili.com/1228129879)
+
+- **知乎:** [Xcbyao](https://www.zhihu.com/people/xcbyao)
+
+- **公众号:** 读白
 
 #### 通往火星的登机票 😀
+
 ![https://mars.nasa.gov/layout/embed/send-your-name/future/certificate/?cn=659647228418](/images/NASA.png)
+
+## Timeline
+
+22/01/11 `xcbyao.com` 域名注册
+21/05/07 换主题 hexo-keep
+20/08/15 hexo-cactus 主题换到 hexo-fan
+2017-2019 `hackwm.com` WordPress 黑客挽梦；`dfsxz.com` Xiuno 暗循论坛

@@ -5691,7 +5691,15 @@ Home is not where you live but where they understand you.
 You don't love someone because they're perfect. You love them in spite of the fact that they're not.
 爱一个人，并非因为TA完美无瑕，而是明知不完美，仍旧会爱上TA。
 
+人间烟火气，最抚凡人心。
+
+车如流水马如龙，花月正春风。
+
+远方又是风乍起，坐看余生云涌时。
+
 浮云一别后，流水十年间。
+
+烟火星辰，所愿皆成真。
 
 > 《言叶之庭》
 
