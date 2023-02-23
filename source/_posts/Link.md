@@ -1431,13 +1431,22 @@ https://ohevan.com/
 
 https://blog.x-lf.com/
 
+Mac软件之家
+https://www.macapp.so/
 
+Mac毒
+https://www.macdo.cn/
 
+https://wallroom.io/
 
+美国电话号码检测
+https://www.phonevalidator.com/
 
+接码平台
+https://sms-activate.org/
 
-
-
+ChatGPT 共享账号
+https://terobox.com/
 
 
 
