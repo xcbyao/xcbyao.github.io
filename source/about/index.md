@@ -22,12 +22,16 @@ comment: true
 
 - **公众号:** 读白
 
+![]()
+
 #### 通往火星的登机票 😀
 
 ![https://mars.nasa.gov/layout/embed/send-your-name/future/certificate/?cn=659647228418](/images/NASA.png)
 
 ## Timeline
 
+
+22/02/01 Google AdSense 注册，广告代码放在了 `\themes\keep\layout\_partial\head.ejs`
 22/01/11 `xcbyao.com` 域名注册
 21/05/07 换主题 hexo-keep
 20/08/15 hexo-cactus 主题换到 hexo-fan

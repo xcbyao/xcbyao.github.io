@@ -98,8 +98,8 @@ Smooth Scrolling 值改为 Enabled
 
 计算器 Win + R calc
 屏幕键盘 Win + R osk
-Win + R 
-Win + R 
+Win + R
+Win + R
 
 Scroll lock 键：FN + K/C
 
@@ -356,7 +356,7 @@ g n	Go to your notifications.
 Repositories
 g c	Go to the Code tab
 
-g i	Go to the Issues tab. 
+g i	Go to the Issues tab.
 
 g p	Go to the Pull requests tab.
 
@@ -454,7 +454,7 @@ ZZ 文件没有更动，则不储存离开/文件已经更动过，则储存后�
 :set	hlsearch	:setnohlsearch 高亮度搜寻
 :set	autoindent	:set noautoindent 自动缩排
 （setting）
-自建 ~/.vimrc 
+自建 ~/.vimrc
 [dmtsai@study	~]$	vim	~/.vimrc
 "这个文件的双引号	（"）	是注解
 set	hlsearch												"高亮度反白
@@ -485,15 +485,15 @@ syntax	on															"进行语法检验，颜色显示。
 删除其后的25行：25dd
 
 .vimrc中加入以下指令：
-set clipboard=unnamed 
-set clipboard=unnamedplus 
+set clipboard=unnamed
+set clipboard=unnamedplus
 加入这项指令后，在vim中复制粘贴文本就从“CTRL+V”, 和“CTRL+C”这一过程变为简单地输入‘p’。
 如果你想在不重写你的寄存器的情况下删除文本，你可以在指令前加上“_符号：“_dd 来删除一行。
 
 重映射Escape操作
 .vimrc中加入：
-cnoremap kj <C-C> 
-cnoremap jk <C-C> 
+cnoremap kj <C-C>
+cnoremap jk <C-C>
 键入’jk’或者‘kj’来离开一个指令
 
 动词+修饰词+宾语
@@ -511,8 +511,8 @@ set list
 ‘/’可以开始查找你想要的词。
 
 日期(date)
-nmap <F3> i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc> 
-imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR> 
+nmap <F3> i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
+imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
 从而可以只通过键入F3来给文档加日期和时间。
 
 x → 删当前光标所在的一个字符。
@@ -684,7 +684,7 @@ mkdir：创建一个新的目录-m	：设置文件的权限喔！直接设置，
 -p	：帮助你直接将所需要的目录（包含上层目录）递回创建起来！
 rmdir：删除一个空的目录-p	：连同“上层”“空的”目录也一起删除
 
-将	ll	（L	的小写）	设置成为	ls	-l	
+将	ll	（L	的小写）	设置成为	ls	-l
 
 cat	由第一行开始显示文件内容
 tac	从最后一行开始显示，可以看出	tac	是	cat	的倒着写！
@@ -702,7 +702,7 @@ echo password	|	od	-t	oCc	echo  ASCII	对照
 
 另外值得一提的是，tar	打包出来的文件有没有进行压缩所得到文件称呼不同喔！	如果仅是打
 包而已，就是“	tar	-cv	-f	file.tar	”而已，这个文件我们称呼为	tarfile	。	如果还有进行压缩的支
-持，例如“	tar	-jcv	-f	file.tar .bz2	”时，我们就称呼为	tarball	
+持，例如“	tar	-jcv	-f	file.tar .bz2	”时，我们就称呼为	tarball
 
 
 linux cat/proc/cpuinfo及Ispci命令
@@ -939,12 +939,47 @@ m	：则是	libm.so	这个函数库，其中，	lib	与扩展名（.a	或	.so）
 ```
 
 ## MacOS
----
-title: Self-shortcuts & commands
-date: 2020-11-13 16:43:15
-categories: Programming
-sticky: 3
----
+关闭和退出程序窗口
+
+⌘ + W 关闭当前的软件窗口（软件并没有真正退出进程），相当于点了左上角的红色叉叉。
+⌘ + Q 真正退出软件。
+⌘ + option + esc 强制退出某个软件。通常在软件无响应时使用。
+
+撤销
+
+⌘ + Z 键撤销。在 Mac 下，撤销快捷键不仅可以撤销文本输入，甚至可以撤销刚刚不小心的操作！
+
+比如你刚刚删除了一张图片，但是你马上又后悔了，你当然可以点开废纸篓，找到刚刚删除的图片，然后放回原处。或者在删除文件后马上点击 ⌘+Z，这时刚删除的文件又回到原来的位置！
+
+
+删除
+
+⌘ + delete 删除，即把文件移至废纸篓。
+
+保存
+
+⌘ + S 保存。
+
+新建
+
+⌘ + N 新建，比如你在用 Safari，那 ⌘+N 就是新建一个 Safari 窗口。你在用 Photoshop，⌘+N 就是新建一个 PS 文稿。
+
+快速打开聚焦搜索
+
+⌘ + 空格键可以快速打开聚焦搜索框。聚焦搜索有时候非常高效。
+
+快速切换软件
+
+⌘ + tab 可以快速切换已经打开的软看，试一下你就明白了。
+
+有些快捷键可以到系统偏好设置里修改成你喜欢（习惯）的，比如切换输入法，打开聚焦搜索等。
+
+空格（space）键
+
+这又是一个神奇的按键。在 macOS 里，几乎所有文件都可以直接用空格键快速查看预览。如视频、图片、音乐、页面、文档、PDF等等。拿图片举例，只要点选文件夹里某张图片，点击空格键就打开了，再点击上下左右键可切换浏览其他图片。而不用每次都双击打开，再关闭，再双击打开另一张，再关闭……
+
+
+
 ## OD
 |断点|F2|打开 exe|F3|
 |:-|:-|:-|:-|
@@ -1039,8 +1074,8 @@ Smooth Scrolling 值改为 Enabled
 
 计算器 Win + R calc
 屏幕键盘 Win + R osk
-Win + R 
-Win + R 
+Win + R
+Win + R
 
 Scroll lock 键：FN + K/C
 
@@ -1288,7 +1323,7 @@ g n	Go to your notifications.
 Repositories
 g c	Go to the Code tab
 
-g i	Go to the Issues tab. 
+g i	Go to the Issues tab.
 
 g p	Go to the Pull requests tab.
 
@@ -1386,7 +1421,7 @@ ZZ 文件没有更动，则不储存离开/文件已经更动过，则储存后�
 :set	hlsearch	:setnohlsearch 高亮度搜寻
 :set	autoindent	:set noautoindent 自动缩排
 （setting）
-自建 ~/.vimrc 
+自建 ~/.vimrc
 [dmtsai@study	~]$	vim	~/.vimrc
 "这个文件的双引号	（"）	是注解
 set	hlsearch												"高亮度反白
@@ -1417,15 +1452,15 @@ syntax	on															"进行语法检验，颜色显示。
 删除其后的25行：25dd
 
 .vimrc中加入以下指令：
-set clipboard=unnamed 
-set clipboard=unnamedplus 
+set clipboard=unnamed
+set clipboard=unnamedplus
 加入这项指令后，在vim中复制粘贴文本就从“CTRL+V”, 和“CTRL+C”这一过程变为简单地输入‘p’。
 如果你想在不重写你的寄存器的情况下删除文本，你可以在指令前加上“_符号：“_dd 来删除一行。
 
 重映射Escape操作
 .vimrc中加入：
-cnoremap kj <C-C> 
-cnoremap jk <C-C> 
+cnoremap kj <C-C>
+cnoremap jk <C-C>
 键入’jk’或者‘kj’来离开一个指令
 
 动词+修饰词+宾语
@@ -1443,8 +1478,8 @@ set list
 ‘/’可以开始查找你想要的词。
 
 日期(date)
-nmap <F3> i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc> 
-imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR> 
+nmap <F3> i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
+imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
 从而可以只通过键入F3来给文档加日期和时间。
 
 x → 删当前光标所在的一个字符。
@@ -1584,6 +1619,8 @@ https://coolshell.cn/articles/11312.html#%E7%AA%97%E5%8F%A3%E5%88%86%E5%B1%8F%E6
 ```
 
 ## Linux
+
+
 ```
 观察系统的使用状态：	如果要看目前有谁在线上，可以下达“who”这个指令，而如果要看
 网络的连线状态，可以下达	“	netstat	-a	”这个指令，而要看背景执行的程序可以执行“	ps
@@ -1612,7 +1649,7 @@ mkdir：创建一个新的目录-m	：设置文件的权限喔！直接设置，
 -p	：帮助你直接将所需要的目录（包含上层目录）递回创建起来！
 rmdir：删除一个空的目录-p	：连同“上层”“空的”目录也一起删除
 
-将	ll	（L	的小写）	设置成为	ls	-l	
+将	ll	（L	的小写）	设置成为	ls	-l
 
 cat	由第一行开始显示文件内容
 tac	从最后一行开始显示，可以看出	tac	是	cat	的倒着写！
@@ -1630,7 +1667,7 @@ echo password	|	od	-t	oCc	echo  ASCII	对照
 
 另外值得一提的是，tar	打包出来的文件有没有进行压缩所得到文件称呼不同喔！	如果仅是打
 包而已，就是“	tar	-cv	-f	file.tar	”而已，这个文件我们称呼为	tarfile	。	如果还有进行压缩的支
-持，例如“	tar	-jcv	-f	file.tar .bz2	”时，我们就称呼为	tarball	
+持，例如“	tar	-jcv	-f	file.tar .bz2	”时，我们就称呼为	tarball
 
 
 linux cat/proc/cpuinfo及Ispci命令
