@@ -411,6 +411,9 @@ b	Open blame view.
 |:-|:-|:-|:-|
 |||||
 
+
+
+
 ```
 ctrl + f/b/d/u 向下/上移动一/半页
 +/- 移动到非空白字符下/上一列
@@ -651,7 +654,71 @@ A, 输入字符串，按 ESC。
 https://coolshell.cn/articles/11312.html#%E7%AA%97%E5%8F%A3%E5%88%86%E5%B1%8F%E6%B5%8F%E8%A7%88
 ```
 
+## 正则表达式
+
+
+
 ## Linux
+[命令查询](http://cmd.oldboyedu.com/)
+
+1.重启关机
+shutdown -h now 关机
+shutdown -r now 重启
+shutdown -c 取消
+
+2.帮助
+man
+help
+info
+命令--help
+
+3.快捷键
+ctrl+l clear 清屏
+ctrl+a 光标到行首
+ctrl+e 光标到行尾
+ctrl+u 把光标到行首的内容剪切
+ctrl+k 把光标到行尾的内容剪切
+ctrl+c 取消
+ctrl+y 粘贴
+ctrl+s 锁屏
+ctrl+q 解锁
+ctrl+z 暂停当前进程
+bg 把任务放入后台
+fg 把任务拿回前台
+jobs 查看当前队列
+
+4.文件和目录操作
+
+
+5.用户管理及信息查询
+
+
+6.文件属性
+
+
+7.打包压缩
+
+
+8.特殊符号
+
+
+9.文件处理
+
+
+10.系统管理
+
+
+11.磁盘管理
+
+
+12.进程管理
+
+
+13.网络命令
+
+
+14.防火墙命令
+
 
 
 
@@ -1618,8 +1685,7 @@ A, 输入字符串，按 ESC。
 https://coolshell.cn/articles/11312.html#%E7%AA%97%E5%8F%A3%E5%88%86%E5%B1%8F%E6%B5%8F%E8%A7%88
 ```
 
-## Linux
-
+linux
 
 ```
 观察系统的使用状态：	如果要看目前有谁在线上，可以下达“who”这个指令，而如果要看
@@ -1903,4 +1969,3 @@ m	：则是	libm.so	这个函数库，其中，	lib	与扩展名（.a	或	.so）
 
 ```
 
-## MacOS

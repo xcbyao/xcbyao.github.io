@@ -5889,6 +5889,9 @@ You don't love someone because they're perfect. You love them in spite of the fa
 
 成年人相处最好的方式，就是来时珍惜，去时释然，尽己所能，顺其自然。
 
+梭罗在《瓦尔登湖》中感慨过：
+“把人生中最美好的阶段用来赚钱，以便能够在人生中最没价值的阶段，享受一点值得怀疑的自由。”
+
 
 
 > 《言叶之庭》
