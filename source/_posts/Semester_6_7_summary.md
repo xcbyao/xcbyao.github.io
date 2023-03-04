@@ -193,8 +193,7 @@ Blogger 搭建第二博客站点—— [信息熵](https://xcbyao.blogspot.com)
 
 ### Obsidian
 
-工具上的转变：
-弃用 VS 2019、Notepad++，体验 Obsidian，转向 VS Code
+工具上的转变：弃用 VS 2019、Notepad++，体验 Obsidian，转向 VS Code
 
 ![](/images/obsidian.jpg)
 
