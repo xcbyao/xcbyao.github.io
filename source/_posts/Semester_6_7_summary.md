@@ -237,7 +237,7 @@ Hotkeys for templates
 Hotkeys++
 一些本来不能设置快捷键的功能也变得能设置了。
 
-> Obsidian的性能还是和 VS Code 差很多的。我现在最需要的 Obsidian 功能是键入两个中括号后，他可以直接生成一个 Markdown Style 的内部链接。不知道有没有 VSCode 插件有这个功能。- 2022.03.27 后续： 没找到类似的插件，所以修改了原版 Foam 的插件，发布了 [Foam Lite](https://marketplace.visualstudio.com/items?itemName=theowenyoung.foam-lite-vscode) 插件，功能很少，但很必要。完美满足了我的需求。
+> Obsidian 的性能还是和 VS Code 差很多的。我现在最需要的 Obsidian 功能是键入两个中括号后，他可以直接生成一个 Markdown Style 的内部链接。不知道有没有 VSCode 插件有这个功能。- 2022.03.27 后续：没找到类似的插件，所以修改了原版 Foam 的插件，发布了 [Foam Lite](https://marketplace.visualstudio.com/items?itemName=theowenyoung.foam-lite-vscode)，功能很少，但完美满足了我的需求。
 
 ## 生活经验与感慨
 
