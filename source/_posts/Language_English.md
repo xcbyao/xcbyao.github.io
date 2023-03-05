@@ -1,5 +1,5 @@
 ---
-title: 英语练级全攻略
+title: 英语练级攻略
 date: 2022-09-27 14:04:38
 categories: Self-improvement
 sticky: 2
