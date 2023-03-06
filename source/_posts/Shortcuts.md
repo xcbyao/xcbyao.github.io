@@ -171,6 +171,45 @@ Copy /b 1.exe+1.txt 2.exe（把1.txt藏进2.exe文件）
 |终端|Ctrl + \`|清空终端|Ctrl + k|
 |底部面板|Ctrl + j|侧边栏|Ctrl + b|
 |打开文件位置|alt+shift+R R|||
+### Bookmarks
+```json
+{
+    "key": "alt+b",
+    "key": "alt+k",
+    "key": "alt+j",
+
+> 子节点
++ 兄弟节点
+* 乘法
+# ID
+. 类名
+    "key": "alt+w r",
+    "command": "editor.emmet.action.wrapWithAbbreviation"
+
+Ctrl+Alt+N  run
+Ctrl+Alt+M  stop
+Ctrl+Alt+J  select
+
+### Code Spell Checker
+```json
+Ctrl+.
+
+Alt + C  Check task list
+Alt + S  StrikeThrough
+Alt + shift + f  Table formatter
+
+### Paste Image
+```json
+ctrl + alt + V
+
+### Trailing Spaces
+```json
+{
+    "key": "alt+t",
+
+{   "key": "alt+q",
+    "command": "workbench.action.quickSwitchWindow"
+
 
 
 ## Git & Hexo
