@@ -5959,6 +5959,8 @@ Time you enjoy wasting, was not wasted.
 
 而今识得愁滋味，欲说还休，欲说还休，却道天凉好个秋。
 
+You have to force yourself to be good，and then live proudly 请逼自己优秀，然后骄傲的生活
+
 
 
 > 《言叶之庭》
