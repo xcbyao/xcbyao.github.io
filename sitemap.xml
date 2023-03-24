@@ -2,18 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://xcbyao.com/2020/11/13/Shortcuts/</loc>
-    
-    <lastmod>2023-03-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xcbyao.com/2020/08/11/Appreciation/</loc>
     
-    <lastmod>2023-03-19</lastmod>
+    <lastmod>2023-03-24</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -21,6 +12,24 @@
   
   <url>
     <loc>https://xcbyao.com/2021/01/31/List_summary/</loc>
+    
+    <lastmod>2023-03-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xcbyao.com/2020/02/02/Link/</loc>
+    
+    <lastmod>2023-03-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xcbyao.com/2020/11/13/Shortcuts/</loc>
     
     <lastmod>2023-03-19</lastmod>
     
@@ -39,15 +48,6 @@
   
   <url>
     <loc>https://xcbyao.com/2023/02/07/Semester_6_7_summary/</loc>
-    
-    <lastmod>2023-03-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xcbyao.com/2020/02/02/Link/</loc>
     
     <lastmod>2023-03-04</lastmod>
     
@@ -292,7 +292,7 @@
 
   <url>
     <loc>https://xcbyao.com/</loc>
-    <lastmod>2023-03-19</lastmod>
+    <lastmod>2023-03-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -302,56 +302,56 @@
   
   <url>
     <loc>https://xcbyao.com/categories/BUG/</loc>
-    <lastmod>2023-03-19</lastmod>
+    <lastmod>2023-03-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xcbyao.com/categories/Software/</loc>
-    <lastmod>2023-03-19</lastmod>
+    <lastmod>2023-03-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xcbyao.com/categories/Programming/</loc>
-    <lastmod>2023-03-19</lastmod>
+    <lastmod>2023-03-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xcbyao.com/categories/Crypto/</loc>
-    <lastmod>2023-03-19</lastmod>
+    <lastmod>2023-03-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xcbyao.com/categories/Relive-youth/</loc>
-    <lastmod>2023-03-19</lastmod>
+    <lastmod>2023-03-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xcbyao.com/categories/Algorithm/</loc>
-    <lastmod>2023-03-19</lastmod>
+    <lastmod>2023-03-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xcbyao.com/categories/Self-improvement/</loc>
-    <lastmod>2023-03-19</lastmod>
+    <lastmod>2023-03-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xcbyao.com/categories/Binary/</loc>
-    <lastmod>2023-03-19</lastmod>
+    <lastmod>2023-03-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
