@@ -1454,7 +1454,12 @@ https://www.appinn.com/
 
 http://www.java1234.com/
 
+https://www.zaixianai.cn/voiceCompose
+http://www.peiyinwa.com/
 
+https://onlinealarmkur.com/timer/zh-cn/#2700
+
+https://www.luckydesigner.space/
 
 
 ### 虚拟机直通/穿透
