@@ -291,11 +291,11 @@ Modern Family 摩登家庭
 [FRAZE·IT](https://fraze.it) 英文语料库
 [YouGlish](https://youglish.com) 油管发音
 [QuoDB](https://www.quodb.com) 电影台词英文表达
-
+[Bionic Reading](https://app.bionic-reading.com)
 
 ## Reference
 > [《英语自学手册》](https://sspai.com/series/77)
-
+[只要字母加得够粗，你就追不上我的阅读速度](https://www.topys.cn/article/32834)
 
 ## Postscript
 > 这篇教程之于我最大的益处在于观念的重塑，让我知道坚持下去可以实现和达到的高度以及如何去更好的坚持，教程中提供和介绍的方法、书籍、工具也是非常不错。——blackcrow

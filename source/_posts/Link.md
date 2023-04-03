@@ -1465,6 +1465,33 @@ https://www.16xx8.com/
 
 https://iyideng.vip/note/telegram-group-channel-and-robot-summary.html
 
+https://www.egouz.com/
+
+https://www.topys.cn/
+
+起名大师
+https://namelix.com
+
+https://www.topys.cn/article/33523
+
+闭着眼都能P好图
+https://playgroundai.com
+
+局部清除
+https://magicstudio.com/zh/magiceraser
+
+帮我做个图标
+https://magician.design
+
+缺演员？AI助你一臂之力
+https://hourone.ai/generative-ai-video-des/
+
+
+
+
+
+
+
 
 
 
