@@ -6243,6 +6243,72 @@ Love comes fast.You either risk it,or you regret it.
 
 每一段感情，都要经历期盼与失望;陌生与熟悉;自由与束缚;犹豫与坚定;甜蜜与心碎哭泣和伤痛并不重要，只要我们曾经微笑，事后有过思念。那么你还是对这个人有感情的，然后我们可以再去回忆或者继续寻找没有一种爱是不需要反复验证就可以成功的，所以我们不必失望。
 
+First I need your hand ,then forever can begin.
+我需要牵着你的手，才能告诉你什么是永远
+
+Actually I wanted to say on that day,Shall we never get apart,OK?
+其实，那天我想说的是，“我们永远不要分开了好不好?”
+
+Happiness can be found even in the darkest of times. - Albus Dumbledore.
+即使在最黑暗的日子里，也能寻到幸福。
+
+Don't judge someone's past, when you haven't walked their journey!
+如果你没有经历过别人所经历的事情，就不要去评判一个人的过去!
+
+Fading is true while flowering is past.
+凋谢是真实的，盛开只是一种过去
+
+all or nothing, now or never.
+要么没有，要么全部。要么现在，要么永不。
+
+Before finding the right people, the only need to do is to make yourself good enough.
+在找到合适的人之前，唯一需要做的，就是让自己足够的优秀。
+
+You have no wrong, I am not wrong just a gust of wind, blew the comm.
+你没有错，我没有错只是一阵风，吹熄了承诺。
+
+Don't wait to be lonely, to recognize the value of a friend.
+不要等到孤独了，才明白朋友的价值。
+
+Everytime you come to mind, I realize I'm smiling.
+每次想到你，我就发现自己是微笑着的。
+
+Forgetting someone doesn't mean never think of him, but thinking of him with a calm heart.
+忘记一个人，并非不再想起，而是偶尔想起，心中却不再有波澜。
+
+I apply to get into your life.
+我申请，加入你的人生。
+
+I regret to know you, you let me feel the pain when you are not around me.
+很后悔认识了你，你让我感受到你不在我身边时的痛苦。
+
+Ask you a silly question, if I like you, how should I do?
+问你一个好傻的问题，如果我喜欢上了你，该怎么办?
+
+Don’t let a little dispute break up a great friendship;
+不要让小小的争端损毁了一场伟大的友谊
+
+《剪刀手爱德华》
+我爱你不是因为你是谁，而是我在你面前可以是谁。
+I love you not for who you are, but for who I am with you.
+
+《蓝莓之夜》
+一个人总要走陌生的路，看陌生的风景，听陌生的歌，然后在某个不经意的瞬间，你会发现，原本是费尽心机想要忘记的事情真的就那么忘记了。
+One is always on a strange road, watching strange scenery and listening to strange music. Then one day, you will find that the things you try hard to forget are already gone.
+
+《恋夏500天》
+爱情，要么让人成熟，要么让人堕落。
+Love makes man grow up or sink down.
+
+《当哈利遇见莎莉》
+爱情是灯，友情是影子，当灯灭了，你会发现你的周围都是影子。朋友，是在最后可以给你力量的人。
+Love is a lamp, while friendship is the shadow. When the lamp is off,you will find the shadow everywhere. Friend is who can give you strength at last.
+
+有些事，不是不在意，而是在意了又能怎样。人生没有如果，只有后果和结果。成熟，就是用微笑来面对一切小事。
+
+走过流年悲喜沉浮，历阅尘世沧海桑田，喜欢这样的自己，恬静浅笑，安然面对生活给予的苦辣酸甜。握一份懂得，盈一怀暖意与淡泊穿行于浮华俗世，以一袭最温婉姿态，于淡淡的疼痛中温暖清寒岁月，轻舞时光，向暖流年，痛到泪流，不言苍凉，回眸处，我自从容，傲视沧桑，即使心已百孔千疮，步履已然蹒跚。
+
+
 
 
 
