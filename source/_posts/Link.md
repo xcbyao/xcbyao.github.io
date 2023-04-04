@@ -1486,9 +1486,15 @@ https://magician.design
 缺演员？AI助你一臂之力
 https://hourone.ai/generative-ai-video-des/
 
+俄罗斯接码平台
+https://sms-activate.org/
 
+免费接码平台
+https://anonymsms.com/
+https://smsnator.online/
+https://receive-sms.cc/
 
-
+https://www.xnbeast.com/create-openai-chatgpt-account/
 
 
 

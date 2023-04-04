@@ -6126,6 +6126,124 @@ You have to force yourself to be good，and then live proudly 请逼自己优秀
 一个人懂得太多就会发现，要不撒谎很难。
 ——维特根斯坦《文化与价值》
 
+[十一个古代表达爱情的唯美爱情诗句](https://www.egouz.com/yuedu/topics/373.html)
+《君生我未生，我生君已老》
+
+君生我未生，我生君已老。 君恨我生迟，我恨君生早。
+
+君生我未生，我生君已老。 恨不生同时，日日与君好。
+
+我生君未生，君生我已老。 我离君天涯，君隔我海角。
+
+我生君未生，君生我已老。 化蝶去寻花，夜夜栖芳草。
+
+《卜算子》 李之仪
+
+我住长江头，君住长江尾。 日日思君不见君，共饮长江水。
+
+此水几时休，此恨何时已。 只愿君心似我心，定不负相思意。
+
+《诗经•邶风•击鼓》
+
+击鼓其镗，踊跃用兵。土国城漕，我独南行。
+
+从孙子仲，平陈与宋。不我以归，忧心有忡。
+
+爰居爰处?爰丧其马?于以求之?于林之下。
+
+死生契阔，与子成说。执子之手，与子偕老。
+
+于嗟阔兮，不我活兮。于嗟洵兮，不我信兮。
+
+《上邪》
+
+上邪! 我欲与君相知，长命无绝衰。
+
+山无陵，江水为竭，冬雷震震，夏雨雪，天地合，乃敢与君绝!
+
+《鹊桥仙》 秦观
+
+纤云弄巧，飞星传恨，银汉迢迢暗度。金风玉露一相逢，便胜却、人间无数。
+
+柔情似水，佳期如梦，忍顾鹊桥归路!两情若是久长时，又岂在、朝朝暮暮!
+
+《雁邱词》 元好问
+
+问世间情是何物，直教生死相许。
+
+天南地北双飞客，老翅几回寒暑。
+
+欢乐趣，离别苦，就中更有痴儿女。
+
+君应有语，渺万里层云，千山暮雪，只影向谁去。
+
+横汾路，寂寞当年箫鼓，荒烟依旧平楚。
+
+招魂楚些何嗟及，山鬼暗啼风雨。
+
+天也妒，未信与，莺儿燕子俱黄土。
+
+千秋万古，为留待骚人，狂歌痛饮，来访雁邱处。
+
+《江城子》 苏轼
+
+十年生死两茫茫，不思量，自难忘。
+
+千里孤坟，无处话凄凉。 纵使相逢应不识，尘满面，鬓如霜。
+
+夜来幽梦忽还乡，小轩窗，正梳妆。
+
+相顾无言，惟有泪千行。料得年年肠断处，明月夜，短松冈。
+
+《离思》 元稹
+
+曾经沧海难为水，除却巫山不是云。取次花丛懒回顾，半缘修道半缘君。
+
+《蝶恋花》 柳永
+
+伫倚危楼风细细，望极春愁，黯黯生天际。草色烟光残照里，无言谁会凭栏意。
+
+拟把疏狂图一醉，对酒当歌，强乐还无味。衣带渐宽终不悔，为伊消得人憔悴。
+
+The worst part of life is waiting. The best part of life is having something worth waiting.
+人生最痛苦的莫过于等待，然而最美好的却是等待最值得期待的东西。
+
+To lose is not terrible, but it is that you are stuck on the “lose” idea.
+失去并不可怕，可怕的是你执着于“失去”这个念头。
+
+[英文爱情语录：我喜欢现在的自己，我怀念过去的我们。](https://www.egouz.com/yuedu/topics/3500.html)
+I like to present myself,I miss our past.
+我喜欢现在的自己，我怀念过去的我们。
+
+Those that have gone won’t come back again.Those coming back are no longer perfect.
+过去的不再回来，回来的不再完美。
+
+I wait you don’t know how much courage.It’s far more than I love you three word more need courage.
+一句我等你，不知道需要多大的勇气。它远比我爱你三个字，更需要勇气。
+
+Sometimes,the same thing,we can go to the comfort of others,but failed to convince yourself.
+有时候，同样的一件事情，我们可以去安慰别人，却说服不了自己。
+
+Good day gives you joy while bad day gives you experience.So never regret every single day of your life!
+美好的日子给你带来快乐，阴暗的日子给你带来经验。所以，不要对生命中的任何一天怀有遗憾。
+
+Be yourself,don’t change for anyone.If they don’t like you at your worst,then they don’t deserve you at your best.
+勇敢的做自己，不要为任何人而改变。如果他们不能接受最差的你，也不配拥有最好的你。
+
+Without respect,love lost.Without caring,love boring.Without honesty,love unhappy.Without trust,love unstable.
+没有尊重，爱会走掉。没有在乎，爱会无聊。没有诚实，爱会不爽。没有信任，爱会不牢。
+
+Don t set your goals by what other people deem important.Only you know what is best for you.
+别人认为重要的，并不就是你的追求。只有自己才知道什么最适合自己。
+
+Love comes fast.You either risk it,or you regret it.
+爱来的这么快——要么冒险，要么后悔。
+
+适应了鞋子舒服的束缚，逃避光脚的自由是自然的选择。
+
+每一段感情，都要经历期盼与失望;陌生与熟悉;自由与束缚;犹豫与坚定;甜蜜与心碎哭泣和伤痛并不重要，只要我们曾经微笑，事后有过思念。那么你还是对这个人有感情的，然后我们可以再去回忆或者继续寻找没有一种爱是不需要反复验证就可以成功的，所以我们不必失望。
+
+
 
 
 > 《言叶之庭》
