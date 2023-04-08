@@ -1496,6 +1496,18 @@ https://receive-sms.cc/
 
 https://www.xnbeast.com/create-openai-chatgpt-account/
 
+https://www.macsofter.com/
+
+https://www.smzdm.com/
+
+https://poe.com/
+
+微信模拟器/点赞模拟器
+【手机打开】
+https://itakeo.com/wx/#homePage
+【电脑打开】
+https://akarin.dev/WechatMomentScreenshot/
+
 
 
 
