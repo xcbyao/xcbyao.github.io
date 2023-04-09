@@ -1508,6 +1508,22 @@ https://itakeo.com/wx/#homePage
 【电脑打开】
 https://akarin.dev/WechatMomentScreenshot/
 
+https://www.bmpi.dev/dev/chatgpt-development-notes/my-gpt-reader/#%E5%9F%BA%E4%BA%8E-chatgpt-%E7%9A%84%E5%BA%94%E7%94%A8%E7%B1%BB%E5%9E%8B
+
+https://openprompt.co/
+
+https://learnprompting.org/
+
+IOS限免软件
+https://mergeek.com/free/apps
+https://app.so/xianmian/
+https://appsliced.co/
+https://toucharcade.com/
+https://gofans.cn/
+https://free.apprcn.com/
+
+https://n-tool.com/t/favicon/
+
 
 
 
