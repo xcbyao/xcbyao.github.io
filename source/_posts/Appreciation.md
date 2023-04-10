@@ -6333,6 +6333,8 @@ Love is a lamp, while friendship is the shadow. When the lamp is off,you will fi
 故亭漫步旧时路，均不再，难别求。
 路遇故人相回头，顾无言，泪便流。
 
+孤独到极致就是自由！
+
 
 
 > 《言叶之庭》

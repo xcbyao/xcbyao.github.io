@@ -1524,6 +1524,10 @@ https://free.apprcn.com/
 
 https://n-tool.com/t/favicon/
 
+https://www.qijishow.com/Brand/Brand69/index.html
+
+https://www.koudaizy.com/
+
 
 
 
