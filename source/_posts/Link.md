@@ -1211,7 +1211,7 @@ https://www.ycombinator.com/
 https://www.1point3acres.com/bbs/
 
 https://gonglue.us/youtube-downloader
-YouTube 视频/音频下载推荐-美国攻略
+YouTube 视频/音频下载推荐-美国攻略（YouTubepi）
 
 https://xd.x6d.com/
 小刀资源网
@@ -1527,6 +1527,22 @@ https://n-tool.com/t/favicon/
 https://www.qijishow.com/Brand/Brand69/index.html
 
 https://www.koudaizy.com/
+
+Photoshop 最新快捷键大全&速查表 共36个大类
+https://www.xiaoheiwoo.com/photoshop-keyboard-shortcuts/
+
+Swift 学习指南：2022年 10个最佳 Swift & iOS 开发课程
+https://www.xiaoheiwoo.com/best-swift-courses/
+
+https://chatbot.theb.ai
+https://freegpt.one
+https://poe.com/chatgpt
+
+https://chat.openai.com/chat
+https://platform.openai.com/playground/p/default-chat?mode=chat&model=gpt-3.5-turbo
+
+
+
 
 
 
