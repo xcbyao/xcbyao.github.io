@@ -1524,6 +1524,7 @@ https://free.apprcn.com/
 
 https://n-tool.com/t/favicon/
 
+快捷指令
 https://www.qijishow.com/Brand/Brand69/index.html
 
 https://www.koudaizy.com/
@@ -1540,6 +1541,32 @@ https://poe.com/chatgpt
 
 https://chat.openai.com/chat
 https://platform.openai.com/playground/p/default-chat?mode=chat&model=gpt-3.5-turbo
+
+
+6.PaperYY（免费！（通过积分）)
+https://www.paperyy.com
+
+8.PaperBye (可免费查询！)
+https://www.paperbye.com
+
+5.百度学术论文查重（可付费可免费！整合了其他检测网站。）
+http://xueshu.baidu.com/usercenter/papercheck/?tag=check&upload=1&site=newala
+
+28款毕业论文查重降重网站软件，重复率45%降到5%并不难！
+https://docs.qq.com/doc/DRktGbG9LWGRUS2lv
+
+https://carbon.now.sh/
+代码图分享生成
+
+苹果快捷指令网站
+https://www.rcuts.com/
+https://routinehub.co/
+http://jiejinghe.com/
+
+文字版密室逃脱
+形式新颖的文字解谜类游戏，在线就能玩
+由于网站访问人数多，导致网站加载速度慢，耐心等几秒
+https://nodes-escape.hzfe.org/
 
 
 
