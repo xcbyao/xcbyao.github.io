@@ -1358,6 +1358,9 @@ https://wc41.blogspot.com/
 动漫岛
 dm55.cc 和 dmd8.com
 
+樱花动漫
+http://www.yinghuacd.com/
+
 微X模块
 https://github.com/Xposed-Modules-Repo/com.fkzhang.wechatxposed
 
@@ -1458,6 +1461,7 @@ https://www.zaixianai.cn/voiceCompose
 http://www.peiyinwa.com/
 
 https://onlinealarmkur.com/timer/zh-cn/#2700
+
 
 https://www.luckydesigner.space/
 
@@ -1567,6 +1571,9 @@ http://jiejinghe.com/
 形式新颖的文字解谜类游戏，在线就能玩
 由于网站访问人数多，导致网站加载速度慢，耐心等几秒
 https://nodes-escape.hzfe.org/
+
+https://nnyy.in/
+努努影院
 
 
 
