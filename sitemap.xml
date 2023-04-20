@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://xcbyao.com/2020/08/11/Appreciation/</loc>
+    <loc>https://xcbyao.com/2023/04/20/write/</loc>
     
     <lastmod>2023-04-20</lastmod>
     
@@ -11,7 +11,43 @@
   </url>
   
   <url>
-    <loc>https://xcbyao.com/2020/02/02/Link/</loc>
+    <loc>https://xcbyao.com/2023/02/07/semester_6_7_summary/</loc>
+    
+    <lastmod>2023-04-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xcbyao.com/2021/03/29/code_segment/</loc>
+    
+    <lastmod>2023-04-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xcbyao.com/2020/02/02/link/</loc>
+    
+    <lastmod>2023-04-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xcbyao.com/2020/08/11/appreciation/</loc>
+    
+    <lastmod>2023-04-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xcbyao.com/2021/01/31/list_summary/</loc>
     
     <lastmod>2023-04-19</lastmod>
     
@@ -20,16 +56,7 @@
   </url>
   
   <url>
-    <loc>https://xcbyao.com/2021/01/31/List_summary/</loc>
-    
-    <lastmod>2023-04-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xcbyao.com/2022/09/27/Language_English/</loc>
+    <loc>https://xcbyao.com/2022/09/27/language_English/</loc>
     
     <lastmod>2023-04-03</lastmod>
     
@@ -38,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://xcbyao.com/2020/11/13/Shortcuts/</loc>
+    <loc>https://xcbyao.com/2020/11/13/shortcuts/</loc>
     
     <lastmod>2023-04-01</lastmod>
     
@@ -47,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://xcbyao.com/2022/04/20/Python/</loc>
+    <loc>https://xcbyao.com/2022/04/20/python/</loc>
     
     <lastmod>2023-03-25</lastmod>
     
@@ -56,9 +83,9 @@
   </url>
   
   <url>
-    <loc>https://xcbyao.com/2023/02/07/Semester_6_7_summary/</loc>
+    <loc>https://xcbyao.com/2022/01/04/cpp_basis/</loc>
     
-    <lastmod>2023-03-04</lastmod>
+    <lastmod>2023-03-18</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -74,7 +101,7 @@
   </url>
   
   <url>
-    <loc>https://xcbyao.com/2022/02/27/Semester_5_summary/</loc>
+    <loc>https://xcbyao.com/2022/02/27/semester_5_summary/</loc>
     
     <lastmod>2023-02-09</lastmod>
     
@@ -83,7 +110,7 @@
   </url>
   
   <url>
-    <loc>https://xcbyao.com/2021/08/16/Semester_4_summary/</loc>
+    <loc>https://xcbyao.com/2021/08/16/semester_4_summary/</loc>
     
     <lastmod>2023-02-08</lastmod>
     
@@ -92,7 +119,7 @@
   </url>
   
   <url>
-    <loc>https://xcbyao.com/2021/03/11/Semester_3_summary/</loc>
+    <loc>https://xcbyao.com/2021/03/11/semester_3_summary/</loc>
     
     <lastmod>2023-02-07</lastmod>
     
@@ -101,7 +128,7 @@
   </url>
   
   <url>
-    <loc>https://xcbyao.com/2020/09/18/Semester_2_summary/</loc>
+    <loc>https://xcbyao.com/2020/09/18/semester_2_summary/</loc>
     
     <lastmod>2023-02-07</lastmod>
     
@@ -110,18 +137,9 @@
   </url>
   
   <url>
-    <loc>https://xcbyao.com/2020/02/16/Semester_1_summary/</loc>
+    <loc>https://xcbyao.com/2020/02/16/semester_1_summary/</loc>
     
     <lastmod>2023-02-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xcbyao.com/2021/03/29/Code_segment/</loc>
-    
-    <lastmod>2022-11-08</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -137,7 +155,7 @@
   </url>
   
   <url>
-    <loc>https://xcbyao.com/2022/03/10/Toolset/</loc>
+    <loc>https://xcbyao.com/2022/03/10/toolset/</loc>
     
     <lastmod>2022-06-22</lastmod>
     
@@ -146,16 +164,7 @@
   </url>
   
   <url>
-    <loc>https://xcbyao.com/2022/01/04/CPP_basic/</loc>
-    
-    <lastmod>2022-05-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xcbyao.com/2022/01/28/CPP_program/</loc>
+    <loc>https://xcbyao.com/2022/01/28/cpp_program/</loc>
     
     <lastmod>2022-05-08</lastmod>
     
@@ -173,7 +182,7 @@
   </url>
   
   <url>
-    <loc>https://xcbyao.com/2020/02/06/C_basic/</loc>
+    <loc>https://xcbyao.com/2020/02/06/C_basis/</loc>
     
     <lastmod>2022-04-21</lastmod>
     
@@ -191,7 +200,7 @@
   </url>
   
   <url>
-    <loc>https://xcbyao.com/2022/01/02/Anti_VM/</loc>
+    <loc>https://xcbyao.com/2022/01/02/anti_vmware/</loc>
     
     <lastmod>2022-01-02</lastmod>
     
@@ -200,7 +209,7 @@
   </url>
   
   <url>
-    <loc>https://xcbyao.com/2020/05/06/Nine_story_demon_tower/</loc>
+    <loc>https://xcbyao.com/2020/05/06/Crypto_demon_tower/</loc>
     
     <lastmod>2021-04-27</lastmod>
     
@@ -227,7 +236,7 @@
   </url>
   
   <url>
-    <loc>https://xcbyao.com/2020/02/02/Custom_code_highlight/</loc>
+    <loc>https://xcbyao.com/2020/02/02/custom_code_highlight/</loc>
     
     <lastmod>2021-02-27</lastmod>
     
@@ -236,7 +245,7 @@
   </url>
   
   <url>
-    <loc>https://xcbyao.com/2020/03/22/Ollydbg/</loc>
+    <loc>https://xcbyao.com/2020/03/22/OD/</loc>
     
     <lastmod>2021-02-25</lastmod>
     
@@ -245,7 +254,7 @@
   </url>
   
   <url>
-    <loc>https://xcbyao.com/2020/12/27/Fund/</loc>
+    <loc>https://xcbyao.com/2020/12/27/fund/</loc>
     
     <lastmod>2021-02-25</lastmod>
     
@@ -254,7 +263,7 @@
   </url>
   
   <url>
-    <loc>https://xcbyao.com/2020/05/05/Stack/</loc>
+    <loc>https://xcbyao.com/2020/05/05/stack/</loc>
     
     <lastmod>2021-02-25</lastmod>
     
