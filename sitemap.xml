@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xcbyao.com/2023/04/20/write/</loc>
+    
+    <lastmod>2023-04-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xcbyao.com/2022/04/20/python_basis/</loc>
+    
+    <lastmod>2023-04-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xcbyao.com/2023/04/23/python_program/</loc>
     
     <lastmod>2023-04-23</lastmod>
@@ -23,24 +41,6 @@
     <loc>https://xcbyao.com/2022/01/28/cpp_program/</loc>
     
     <lastmod>2023-04-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xcbyao.com/2022/04/20/python_basis/</loc>
-    
-    <lastmod>2023-04-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xcbyao.com/2023/04/20/write/</loc>
-    
-    <lastmod>2023-04-20</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
