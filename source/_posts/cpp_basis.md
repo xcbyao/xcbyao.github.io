@@ -361,7 +361,7 @@ Person(int age) {
 ```C++
 void test() {
 	Person * p = NULL;
-	p->ShowClassName(); 
+	p->ShowClassName();
 }
 ```
 
@@ -440,7 +440,7 @@ Person operator+(const Person& p1, const Person& p2) {
 	return temp;
 }
 
-//运算符重载 可以发生函数重载 
+//运算符重载 可以发生函数重载
 Person operator+(const Person& p2, int val) {
 	Person temp;
 	temp.m_A = p2.m_A + val;
@@ -558,7 +558,7 @@ void test02() {
 	int ret = add(10, 10);
 	cout << "ret = " << ret << endl;
 
-	//匿名对象调用  
+	//匿名对象调用
 	cout << "MyAdd()(100,100) = " << MyAdd()(100, 100) << endl;
 }
 ```
@@ -875,7 +875,7 @@ void test01()
 {
 	int a = 10;
 	int b = 20;
-	
+
 	//swapInt(a, b);
 
 	//利用模板实现交换
@@ -974,7 +974,7 @@ int myAdd01(int a, int b)
 
 //函数模板
 template<class T>
-T myAdd02(T a, T b)  
+T myAdd02(T a, T b)
 {
 	return a + b;
 }
@@ -985,7 +985,7 @@ void test01()
 	int a = 10;
 	int b = 20;
 	char c = 'c';
-	
+
 	cout << myAdd01(a, c) << endl; //正确，将char类型的'c'隐式转换为int类型  'c' 对应 ASCII码 99
 
 	//myAdd02(a, c); // 报错，使用自动类型推导时，不会发生隐式类型转换
@@ -1021,15 +1021,15 @@ void myPrint(int a, int b)
 }
 
 template<typename T>
-void myPrint(T a, T b) 
-{ 
+void myPrint(T a, T b)
+{
 	cout << "调用的模板" << endl;
 }
 
 template<typename T>
-void myPrint(T a, T b, T c) 
-{ 
-	cout << "调用重载的模板" << endl; 
+void myPrint(T a, T b, T c)
+{
+	cout << "调用重载的模板" << endl;
 }
 
 void test01()
@@ -1070,7 +1070,7 @@ int main() {
 ```C++
 	template<class T>
 	void f(T a, T b)
-	{ 
+	{
     	a = b;
     }
 ```
@@ -1078,7 +1078,7 @@ int main() {
 ```C++
 	template<class T>
 	void f(T a, T b)
-	{ 
+	{
     	if(a > b) { ... }
     }
 ```
@@ -1261,7 +1261,7 @@ int main() {
 ```C++
 #include <string>
 //类模板
-template<class NameType, class AgeType> 
+template<class NameType, class AgeType>
 class Person
 {
 public:
@@ -1304,7 +1304,7 @@ int main() {
 ```C++
 #include <string>
 //类模板
-template<class NameType, class AgeType = int> 
+template<class NameType, class AgeType = int>
 class Person
 {
 public:
@@ -1389,7 +1389,7 @@ public:
 void test01()
 {
 	MyClass<Person1> m;
-	
+
 	m.fun1();
 
 	//m.fun2();//编译会出错，说明函数调用才会去创建成员函数
@@ -1418,7 +1418,7 @@ int main() {
 ```C++
 #include <string>
 //类模板
-template<class NameType, class AgeType = int> 
+template<class NameType, class AgeType = int>
 class Person
 {
 public:
@@ -1437,7 +1437,7 @@ public:
 };
 
 //1、指定传入的类型
-void printPerson1(Person<string, int> &p) 
+void printPerson1(Person<string, int> &p)
 {
 	p.showPerson();
 }
@@ -1674,7 +1674,7 @@ int main() {
 template<class T1, class T2> class Person;
 
 //如果声明了函数模板，可以将实现写到后面，否则需要将实现体写到类的前面让编译器提前看到
-//template<class T1, class T2> void printPerson2(Person<T1, T2> & p); 
+//template<class T1, class T2> void printPerson2(Person<T1, T2> & p);
 
 template<class T1, class T2>
 void printPerson2(Person<T1, T2> & p)
@@ -1759,7 +1759,7 @@ template<class T>
 class MyArray
 {
 public:
-    
+
 	//构造函数
 	MyArray(int capacity)
 	{
@@ -1896,7 +1896,7 @@ void test01()
 //测试自定义数据类型
 class Person {
 public:
-	Person() {} 
+	Person() {}
 		Person(string name, int age) {
 		this->m_Name = name;
 		this->m_Age = age;
@@ -2057,7 +2057,7 @@ void test01() {
 		pBegin++;
 	}
 
-	
+
 	//第二种遍历方式：
 	for (vector<int>::iterator it = v.begin(); it != v.end(); it++) {
 		cout << *it << endl;
@@ -2150,7 +2150,7 @@ void test02() {
 int main() {
 
 	test01();
-    
+
 	test02();
 
 	system("pause");
@@ -2353,7 +2353,7 @@ void test01()
 	str1 += "爱玩游戏";
 
 	cout << "str1 = " << str1 << endl;
-	
+
 	str1 += ':';
 
 	cout << "str1 = " << str1 << endl;
@@ -2419,7 +2419,7 @@ void test01()
 	{
 		cout << "pos = " << pos << endl;
 	}
-	
+
 
 	pos = str1.rfind("de");
 
@@ -2538,7 +2538,7 @@ void test01()
 	str[0] = 'x';
 	str.at(1) = 'x';
 	cout << str << endl;
-	
+
 }
 
 int main() {
@@ -2679,7 +2679,7 @@ void test01()
 
 	vector<int> v3(10, 100);
 	printVector(v3);
-	
+
 	vector<int> v4(v3);
 	printVector(v4);
 }
@@ -3077,7 +3077,7 @@ void test01()
 int main() {
 
 	test01();
-    
+
 	system("pause");
 
 	return 0;
@@ -3123,7 +3123,7 @@ deque(const deque &deq); //拷贝构造函数
 ```C++
 #include <deque>
 
-void printDeque(const deque<int>& d) 
+void printDeque(const deque<int>& d)
 {
 	for (deque<int>::const_iterator it = d.begin(); it != d.end(); it++) {
 		cout << *it << " ";
@@ -3178,7 +3178,7 @@ assign(n, elem); //将n个elem拷贝赋值给本身。
 ```C++
 #include <deque>
 
-void printDeque(const deque<int>& d) 
+void printDeque(const deque<int>& d)
 {
 	for (deque<int>::const_iterator it = d.begin(); it != d.end(); it++) {
 		cout << *it << " ";
@@ -3244,7 +3244,7 @@ deque.resize(num, elem); //重新指定容器的长度为num,若容器变长，�
 ```C++
 #include <deque>
 
-void printDeque(const deque<int>& d) 
+void printDeque(const deque<int>& d)
 {
 	for (deque<int>::const_iterator it = d.begin(); it != d.end(); it++) {
 		cout << *it << " ";
@@ -3329,7 +3329,7 @@ erase(pos); //删除pos位置的数据，返回下一个数据的位置。
 ```C++
 #include <deque>
 
-void printDeque(const deque<int>& d) 
+void printDeque(const deque<int>& d)
 {
 	for (deque<int>::const_iterator it = d.begin(); it != d.end(); it++) {
 		cout << *it << " ";
@@ -3408,7 +3408,7 @@ int main() {
 	//test02();
 
     test03();
-    
+
 	system("pause");
 
 	return 0;
@@ -3438,7 +3438,7 @@ back(); //返回容器中最后一个数据元素
 ```C++
 #include <deque>
 
-void printDeque(const deque<int>& d) 
+void printDeque(const deque<int>& d)
 {
 	for (deque<int>::const_iterator it = d.begin(); it != d.end(); it++) {
 		cout << *it << " ";
@@ -3503,7 +3503,7 @@ sort(iterator beg, iterator end) //对beg和end区间内元素进行排序
 #include <deque>
 #include <algorithm>
 
-void printDeque(const deque<int>& d) 
+void printDeque(const deque<int>& d)
 {
 	for (deque<int>::const_iterator it = d.begin(); it != d.end(); it++) {
 		cout << *it << " ";
@@ -3795,15 +3795,15 @@ void test01() {
 	q.push(p3);
 	q.push(p4);
 
-	//队列不提供迭代器，更不支持随机访问	
+	//队列不提供迭代器，更不支持随机访问
 	while (!q.empty()) {
 		//输出队头元素
-		cout << "队头元素-- 姓名： " << q.front().m_Name 
+		cout << "队头元素-- 姓名： " << q.front().m_Name
               << " 年龄： "<< q.front().m_Age << endl;
-        
-		cout << "队尾元素-- 姓名： " << q.back().m_Name  
+
+		cout << "队尾元素-- 姓名： " << q.back().m_Name
               << " 年龄： " << q.back().m_Age << endl;
-        
+
 		cout << endl;
 		//弹出队头元素
 		q.pop();
@@ -4144,7 +4144,7 @@ void test01()
 	printList(L);
 	L.remove(10000);
 	printList(L);
-    
+
     //清空
 	L.clear();
 	printList(L);
@@ -4191,7 +4191,7 @@ void test01()
 	L1.push_back(30);
 	L1.push_back(40);
 
-	
+
 	//cout << L1.at(0) << endl;//错误 不支持at访问数据
 	//cout << L1[0] << endl; //错误  不支持[]方式访问数据
 	cout << "第一个元素为： " << L1.front() << endl;
@@ -4330,7 +4330,7 @@ void test01() {
 	L.push_back(p6);
 
 	for (list<Person>::iterator it = L.begin(); it != L.end(); it++) {
-		cout << "姓名： " << it->m_Name << " 年龄： " << it->m_Age 
+		cout << "姓名： " << it->m_Name << " 年龄： " << it->m_Age
               << " 身高： " << it->m_Height << endl;
 	}
 
@@ -4338,7 +4338,7 @@ void test01() {
 	L.sort(ComparePerson); //排序
 
 	for (list<Person>::iterator it = L.begin(); it != L.end(); it++) {
-		cout << "姓名： " << it->m_Name << " 年龄： " << it->m_Age 
+		cout << "姓名： " << it->m_Name << " 年龄： " << it->m_Age
               << " 身高： " << it->m_Height << endl;
 	}
 }
@@ -4456,7 +4456,7 @@ void test01()
 {
 
 	set<int> s1;
-	
+
 	s1.insert(10);
 	s1.insert(30);
 	s1.insert(20);
@@ -4603,7 +4603,7 @@ void test01()
 	s1.insert(30);
 	s1.insert(20);
 	s1.insert(40);
-	
+
 	//查找
 	set<int>::iterator pos = s1.find(30);
 
@@ -4667,7 +4667,7 @@ void test01()
 	else {
 		cout << "第二次插入失败!" << endl;
 	}
-    
+
 	//multiset
 	multiset<int> ms;
 	ms.insert(10);
@@ -4741,15 +4741,15 @@ set容器默认排序规则为从小到大，掌握如何改变排序规则
 ```C++
 #include <set>
 
-class MyCompare 
+class MyCompare
 {
 public:
 	bool operator()(int v1, int v2) {
 		return v1 > v2;
 	}
 };
-void test01() 
-{    
+void test01()
+{
 	set<int> s1;
 	s1.insert(10);
 	s1.insert(40);
@@ -5038,7 +5038,7 @@ void test01()
 	//第三种插入方式
 	m.insert(map<int, int>::value_type(3, 30));
 	//第四种插入方式
-	m[4] = 40; 
+	m[4] = 40;
 	printMap(m);
 
 	//删除
@@ -5085,7 +5085,7 @@ count(key); //统计key的元素个数
 //查找和统计
 void test01()
 {
-	map<int, int>m; 
+	map<int, int>m;
 	m.insert(pair<int, int>(1, 10));
 	m.insert(pair<int, int>(2, 20));
 	m.insert(pair<int, int>(3, 30));
@@ -5139,7 +5139,7 @@ public:
 	}
 };
 
-void test01() 
+void test01()
 {
 	//默认从小到大排序
 	//利用仿函数实现从大到小排序
@@ -5230,7 +5230,7 @@ void setGroup(vector<Worker>&v,multimap<int,Worker>&m)
 	for (vector<Worker>::iterator it = v.begin(); it != v.end(); it++)
 	{
 		//产生随机部门编号
-		int deptId = rand() % 3; // 0 1 2 
+		int deptId = rand() % 3; // 0 1 2
 
 		//将员工插入到分组中
 		//key部门编号，value具体员工
@@ -5712,15 +5712,15 @@ for_each(iterator beg, iterator end, _func);
 #include <vector>
 
 //普通函数
-void print01(int val) 
+void print01(int val)
 {
 	cout << val << " ";
 }
 //函数对象
-class print02 
+class print02
 {
  public:
-	void operator()(int val) 
+	void operator()(int val)
 	{
 		cout << val << " ";
 	}
@@ -5730,7 +5730,7 @@ class print02
 void test01() {
 
 	vector<int> v;
-	for (int i = 0; i < 10; i++) 
+	for (int i = 0; i < 10; i++)
 	{
 		v.push_back(i);
 	}
@@ -5864,11 +5864,11 @@ void test01() {
 	}
 	//查找容器中是否有 5 这个元素
 	vector<int>::iterator it = find(v.begin(), v.end(), 5);
-	if (it == v.end()) 
+	if (it == v.end())
 	{
 		cout << "没有找到!" << endl;
 	}
-	else 
+	else
 	{
 		cout << "找到:" << *it << endl;
 	}
@@ -5876,15 +5876,15 @@ void test01() {
 
 class Person {
 public:
-	Person(string name, int age) 
+	Person(string name, int age)
 	{
 		this->m_Name = name;
 		this->m_Age = age;
 	}
 	//重载==
-	bool operator==(const Person& p) 
+	bool operator==(const Person& p)
 	{
-		if (this->m_Name == p.m_Name && this->m_Age == p.m_Age) 
+		if (this->m_Name == p.m_Name && this->m_Age == p.m_Age)
 		{
 			return true;
 		}
@@ -5912,11 +5912,11 @@ void test02() {
 	v.push_back(p4);
 
 	vector<Person>::iterator it = find(v.begin(), v.end(), p2);
-	if (it == v.end()) 
+	if (it == v.end())
 	{
 		cout << "没有找到!" << endl;
 	}
-	else 
+	else
 	{
 		cout << "找到姓名:" << it->m_Name << " 年龄: " << it->m_Age << endl;
 	}
@@ -6207,7 +6207,7 @@ void test02()
 	v.push_back(p3);
 	v.push_back(p4);
 	v.push_back(p5);
-    
+
     Person p("诸葛亮",35);
 
 	int num = count(v.begin(), v.end(), p);
@@ -6484,7 +6484,7 @@ void test01()
 {
 	vector<int> v1;
 	vector<int> v2;
-	for (int i = 0; i < 10 ; i++) 
+	for (int i = 0; i < 10 ; i++)
     {
 		v1.push_back(i);
 		v2.push_back(i + 1);
@@ -7005,7 +7005,7 @@ void test01()
 	vTarget.resize(min(v1.size(), v2.size()));
 
 	//返回目标容器的最后一个元素的迭代器地址
-	vector<int>::iterator itEnd = 
+	vector<int>::iterator itEnd =
         set_intersection(v1.begin(), v1.end(), v2.begin(), v2.end(), vTarget.begin());
 
 	for_each(vTarget.begin(), itEnd, myPrint());
@@ -7068,7 +7068,7 @@ void test01()
 	vTarget.resize(v1.size() + v2.size());
 
 	//返回目标容器的最后一个元素的迭代器地址
-	vector<int>::iterator itEnd = 
+	vector<int>::iterator itEnd =
         set_union(v1.begin(), v1.end(), v2.begin(), v2.end(), vTarget.begin());
 
 	for_each(vTarget.begin(), itEnd, myPrint());
@@ -7132,7 +7132,7 @@ void test01()
 
 	//返回目标容器的最后一个元素的迭代器地址
 	cout << "v1与v2的差集为： " << endl;
-	vector<int>::iterator itEnd = 
+	vector<int>::iterator itEnd =
         set_difference(v1.begin(), v1.end(), v2.begin(), v2.end(), vTarget.begin());
 	for_each(vTarget.begin(), itEnd, myPrint());
 	cout << endl;
@@ -7352,7 +7352,6 @@ virtual
 ## 0x0 References
 > [C++ 匠心之作](https://github.com/AnkerLeng/Cpp-0-1-Resource)
 > 《C专家编程》
-> 《C++ Primer Plus》
 > 《C++ Primer》
 
 
