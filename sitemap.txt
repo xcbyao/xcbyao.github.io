@@ -1,5 +1,6 @@
-https://xcbyao.com/2023/04/20/write/
+https://xcbyao.com/2023/04/24/debug/
 https://xcbyao.com/2022/04/20/python_basis/
+https://xcbyao.com/2023/04/20/write/
 https://xcbyao.com/2023/04/23/python_program/
 https://xcbyao.com/2022/01/04/cpp_basis/
 https://xcbyao.com/2022/01/28/cpp_program/
@@ -41,3 +42,4 @@ https://xcbyao.com/categories/Relive-youth/
 https://xcbyao.com/categories/Algorithm/
 https://xcbyao.com/categories/Self-improvement/
 https://xcbyao.com/categories/Binary/
+https://xcbyao.com/categories/programming/
