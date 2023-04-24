@@ -1062,12 +1062,198 @@ if __name__ == '__main__':
 | compile()     | globals()   | map()        | reversed()   | __import  |
 | complex()     | hasattr()   | max()        | round()      |
 
-# 
+# Git 版本控制
+
+1. 创建文件夹 git_practice
+2. 创建程序 hello_git.py
+
+```python
+print("Hello Git!")
+```
+
+3. 忽略文件 .gitignore
+
+```git
+__pycache__/
+```
+
+> git bash: `touch .gitignore`
+dos: `ren n.txt .gitignore`
+
+4. 初始化仓库
+当前文件夹下打开终端窗口执行：`git init`
+输出表明 Git 在 git_practice 中初始化了一个空仓库
+`Initialized empty Git repository in git_practice/.git/`
+
+> Git 用来管理仓库的文件都存储在 .git 中，不用管它但不能删除。
+
+5. 检查状态
+
+```git
+$ git status
+
+On branch main
+
+No commits yet
+
+Untracked files: # 指出未被跟踪的文件
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        hello_git.py
+# 尚未将任何东西添加到当前提交中，但指出了可能需要加入仓库的未跟踪文件
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+6. 加入仓库
+
+```git
+$ git add . # 项目中未被跟踪的文件都加入仓库中，但未提交
+$ git status
+
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   .gitignore
+        new file:   hello_git.py
+```
+
+7. 执行提交
+
+```git
+$ git commit -m "Started project." # 标志 -m 让后面信息记录到项目的历史记录中。
+
+[main (root-commit) a3f6a37] Started project.
+ 2 files changed, 2 insertion(+)
+ create mode 100644 .gitignore
+ create mode 100644 hello_git.py
+
+$ git status
+
+On branch master
+nothing to commit, working tree clean
+# 工作树是干净的，若非如此，可能提交前忘记了添加文件。
+```
+
+8. 查看提交历史
+
+```git
+$ git log
+
+commit b4a4af78247b33c27de89b57d4dde2369f712ab4 (HEAD -> main)
+Author: xxx <xxx@gmail.com>
+Date:   Mon Apr 24 16:34:50 2023 +0800
+
+    Started project.
+```
+
+每次提交 Git 都会生成唯一的引用 ID，长 40 字符。
+记录提交人，提交时间，及提交时的指定信息。下面是精简版：
+
+```git
+$ git log --pretty=oneline
+
+b4a4af78247b33c27de89b57d4dde2369f712ab4 (HEAD -> main) Started project.
+```
+
+9. 第二次提交
+
+```python
+'''hello_git.py'''
+print("Hello Git!")
+print("Hello everyone.")
+```
+
+```git
+$ git status
+
+# 指出所做修改未提交
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello_git.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+# 标志 -a 让仓库中所有修改了的文件都加入当前提交中
+$ git commit -am "Extended greeting."
+
+[main 35530cb] Entended greeting.
+ 1 file changed, 1 insertion(+)
+
+# 查看状态和记录，同上
+```
+
+10. 撤销修改
+
+```python
+'''hello_git.py'''
+print("Hello Git!")
+print("Hello everyone.")
+
+print("Oh no, I broke the project!")
+```
+
+```git
+$ git checkout .
+
+Updated 1 path from the index
+
+# 查看状态，输出工作树干净，文件中最后一行代码被删除。
+```
+
+git checkout 能恢复到以前的任意提交。
+git checkout . 放弃最后一次提交后所做的修改，将项目恢复到最后一次提交的状态。
+
+11. 检出以前的提交
+
+git check 末尾指定该提交的引用 ID 前 6 字符。
+
+```git
+$ git checkout b4a4af
+
+Note: switching to 'b4a4af'...
+HEAD is now at b4a4af7 Started project.
+
+$ git checkout main
+
+Previous HEAD position was b4a4af7 Started project.
+Switched to branch 'main'
+```
+
+检出以前的提交后，将离开分支 main，进入分离头指针（detached HEAD）状态。
+HEAD 指针表示当前提交的项目状态。
+
+```git
+# 将项目重置到以前的提交
+$ git reset --hard b4a4af
+```
+
+12. 删除仓库
+
+当仓库的历史记录弄乱了，无法恢复时，个人可删除历史记录，再重建仓库，不影响文件当前状态。
+可直接删除 .git 或如下：
+
+```git
+'''git bash'''
+$ rm -rf .git
+
+'''Windows'''
+rmdir /s .git
+```
+
+
+
+
 
 # Refer
 
 《Python编程快速上手——让繁琐工作自动化第一版》
 《python编程从入门到实践第二版》
+[git - Windows下创建 .gitignore 文件](https://blog.csdn.net/972301/article/details/49586273)
 
 # PS
 
