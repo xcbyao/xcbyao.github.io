@@ -192,7 +192,7 @@ payload = b'a'*8 + p32(0x00000786)
 二进制 `==` 没有找到接受 `std::basic_istream<char,std::char_traits<char>>` 类型的左操作数的运算符(或没有可接受的转换)
 - Cause: `while ((cin >> weight) == 0)` VS2019 编译器对于流对象和布尔类型的比较操作进行了限制。
 - Solve: 显式转换布尔类型
-```cpp
+```C++
 bool cin_weight = static_cast<bool>(cin >> weight); //第一种
 /*
 (cin >> weight) 的返回值是流对象 cin，而不是读取的值。这里实际上是将流对象隐式转换为布尔类型，若不需要处理读取操作失败的情况，可直接使用 while (cin >> weight) 来循环读取输入。
@@ -209,7 +209,7 @@ while (bool(cin >> weight) == 0) {
 }
 ```
 - Refer:
-GPT-3.5
+小型超市商品管理系统 GPT-3.5
 
 
 

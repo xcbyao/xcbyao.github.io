@@ -72,7 +72,7 @@ categories: Self-improvement
 
 ## 行长
 
-建议每行不超过 79 字符，可设置垂直参考线（python）
+建议每行不超过 80 字符，可设置垂直参考线（python）
 
 ## 函数编写
 

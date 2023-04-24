@@ -915,12 +915,12 @@ OK
 
 unittest 模块中的断言方法，只能在继承 unittest.TestCase 的类中使用这些方法
 
-| 方法                      | 用途                   |
-| ------------------------- | ---------------------- |
-| assertEqual(a, b)         | 核实 a == b             |
-| assertNotEqual(a, b)      | 核实 a != b             |
-| assertTrue(x)             | 核实 x 为True           |
-| assertFalse(x)            | 核实 x 为False          |
+| 方法                     | 用途                   |
+| ------------------------ | ---------------------- |
+| assertEqual(a, b)        | 核实 a == b            |
+| assertNotEqual(a, b)     | 核实 a != b            |
+| assertTrue(x)            | 核实 x 为True          |
+| assertFalse(x)           | 核实 x 为False         |
 | assertIn(item, list )    | 核实 item 在 list 中   |
 | assertNotIn(item, list ) | 核实 item 不在 list 中 |
 
@@ -1032,6 +1032,35 @@ if __name__ == '__main__':
 > 注：运行测试用例时，每完成一个单元测试，都打印一个字符：
 通过时打印一个句点，报错时打印一个 E，
 而测试导致断言失败时则打印一个 F。
+
+# 关键字
+
+| False  | await    | else    | import   | pass   |
+| ------ | -------- | ------- | -------- | ------ |
+| None   | break    | except  | in       | raise  |
+| True   | class    | finally | is       | return |
+| and    | continue | for     | lambda   | try    |
+| as     | def      | from    | nonlocal | while  |
+| assert | del      | global  | not      | with   |
+| async  | elif     | if      | or       | yield  |
+
+# 内置函数
+
+| abs()         | delattr()   | hash()       | memoryview() | set()     |
+| ------------- | ----------- | ------------ | ------------ | --------- |
+| all()         | dict()      | help()       | min()        | setattr() |
+| any()         | dir()       | hex()        | next()       | slice()   |
+| ascii()       | divmod()    | id()         | object()     | sorted()  |
+| bin()         | enumerate() | input()      | oct()        | staticme  |
+| bool()        | eval()      | int()        | open()       | str()     |
+| breakpoint()  | exec()      | isinstance() | ord()        | sum()     |
+| bytearray()   | filter()    | issubclass() | pow()        | super()   |
+| bytes()       | float()     | iter()       | print()      | tuple()   |
+| callable()    | format()    | len()        | property()   | type()    |
+| chr()         | frozenset() | list()       | range()      | vars()    |
+| classmethod() | getattr()   | locals()     | repr()       | zip()     |
+| compile()     | globals()   | map()        | reversed()   | __import  |
+| complex()     | hasattr()   | max()        | round()      |
 
 # 
 
