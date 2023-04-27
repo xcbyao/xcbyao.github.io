@@ -3,7 +3,7 @@ title: python 学习笔记之基础篇
 date: 2022-04-20 21:10:19
 categories: Programming
 ---
-# Preface
+# Pref
 
 逢居家懈怠，为缓解焦虑，更好利用空闲时间，启动容易上手的 py 学习！另，我已有 C 的基础，故一些相同知识点会略过。
 
