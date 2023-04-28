@@ -22,6 +22,7 @@ categories: Programming
 title() 首字母大写
 upper() 全大写
 lower() 全小写
+str()
 
 ```python
 first_name = "ada"
@@ -46,7 +47,14 @@ rstrip()
 | -          | 减                     |
 | +          | 加                     |
 
-- 大数，可下划线分组
+int()
+float()
+
+## 类假值
+
+0、0.0 和 ' '（空字符串）被认为是 False（类假值）
+
+## 大数 —— 下划线分组
 
 ```python
 >>> universe_age = 14_000_000_000
@@ -54,13 +62,14 @@ rstrip()
 14000000000
 ```
 
-- 多变量赋值
+## 多变量赋值
 
 ```python
 >>> x, y, z = 0, 0, 0
 ```
 
-- 变量名
+## 变量名
+
 1. 只能包含**字母、数字和下划线**
 2. 不能以数字开头
 3. 区分大小写，常用**小写**
@@ -81,17 +90,20 @@ insert(0, '') 插入元素
 del bicycles[0] 仅删除元素
 pop() 删除列表末元素
 pop(0) 删除元素，可赋值使用
-remove() 根据值删除元素，重复只删除第一个
+remove() 根据值删除元素，有重复则只删第一个
 
 sort(reverse=True) 字母顺序排序（逆序）
 sorted() 临时字母顺序排序，不改变原列表
 
-> 非所有值是小写时，按字母顺序排列列表变复杂。
+> 非所有元素值是小写时，按字母顺序排列列表变复杂。
 
 reverse() 逆序
 len() 长度
+min()
+max()
+sum() 数字列表总和
 
-- 遍历
+## 遍历
 
 ```python
 cats = ['alice', 'david', 'carolina']
@@ -101,7 +113,7 @@ for cat in cats:
 
 range(5) 生成数值 0-4
 range(1,5) 生成数值 1-4
-range(1,5,2) 生成数值 1、3
+range(5, -1, -1) 生成数值 5-0
 
 - list() 生成列表
 
@@ -111,40 +123,35 @@ print(numbers)
 >>> [1, 2, 3, 4, 5]
 ```
 
-min()
-max()
-sum() 数字列表总和
-
-- 列表解析
+## 列表解析
 
 ```python
 # 一般写法
 squares = []
-for value in range(1, 4)
+for value in range(1, 4):
     squares.append(value**2)
 print(squares)
 
 # 列表解析
 squares = [value**2 for value in range(1, 4)]
 print(squares)
->>> [1, 4, 9]
 ```
 
-- 切片
+## 切片
 
 ```python
-players = ['charles', 'martina', 'michael']
+players = ['charles', 'martina', 'alice']
 print(players[0:2]) # [:2] [-2:] [0:3:2]
 ```
 
-- 复制列表
+## 复制列表
 
 ```python
 my_foods = ['pizza', 'falafel', 'cake']
 friend_foods = my_foods[:]
 ```
 
-- 元组：不可变的列表
+## 元组：不可变的列表
 
 ```python
 dimensions = (50,)
@@ -165,8 +172,10 @@ for dimension in dimensions:
 
 # if 语句
 
+在所有算术、比较操作符求值后，依次求值 not，and，or
+
 ```python
-# 圆括号只是提高可读性，and or
+# 圆括号只是提高可读性，布尔操作符 and or not
 (age_0 >= 21) and (age_1 >= 21)
 ```
 
@@ -177,8 +186,6 @@ dogs = ['alice', 'tom']
 'tom' in dogs
 'jam' not in dogs
 ```
-
-布尔表达式：True False
 
 ```python
 # 依次判断，满足则执行后退出
@@ -237,68 +244,93 @@ for value in set(alien.values()): # 集合 set，用花括号创建集合，用�
 # while 循环
 
 input() 接受一个参数做 prompt，提示输入内容，返回字符串
-int() 返回数值
+
+`Ctrl + C` 向程序发送 KeyboardInterrupt 错误，退出无限循环
+
+## 一般循环
 
 ```python
 prompt = "\nTell me something: "
 prompt += "\nEnter 'q' to quit."
 msg = ""
-# 一般循环
+
 while msg != 'q':
     msg = input(prompt)
     if msg != 'q':
         print(msg)
+```
 
-# 标志循环
+## 标志循环
+
+```python
 active = True
+
 while active:
     msg = input(prompt)
     if msg == 'q':
         active = False
     else:
         print(msg)
+```
 
-# 退出循环
+## break
+
+```python
 while True:
     msg = input(prompt)
     if msg == 'q':
         break
     else:
         print(msg)
+```
 
-# 继续循环
+## continue
+
+```python
 n = 0
+
 while n < 10:
     n += 1
     if n % 2 == 0: # 打印奇数
         continue
     print(n)
+```
 
-# 在列表间移动元素
+## 在列表间移动元素
+
+```python
 names = ['alice', 'brian']
 new_names = []
+
 while names:
     temp = names.pop()
     new_names.append(temp)
 for new_name in new_names:
     print(new_name)
+```
 
-# 删除为特定值的所有列表元素
+## 删除为特定值的所有列表元素
+
+```python
 pets = ['dog', 'cat', 'dog', 'cat', 'rabbit', 'cat']
+
 while 'cat' in pets:
     pets.remove('cat')
 print(pets)
+```
 
-# 使用用户输入来填充字典
+## 使用用户输入来填充字典
+
+```python
 responses = {}
-active = True
-while active:
+
+while True:
     name = input("\nname: ")
     response = input("response: ")
     responses[name] = response
-    repeat = input("Enter 'y' to continue or 'n' to quit.")
+    repeat = input("Enter anything to continue or 'n' to quit.")
     if repeat == 'n':
-        active = False
+        break
 for name, response in responses.items():
     print(f"{name}: {response}")
 ```
@@ -313,9 +345,11 @@ for name, response in responses.items():
 ```python
 def user_age(name, age):
     print(f"{name}: {age}")
+
 user_age('Tom', '18') # 位置实参
 user_age(name='Tom', age='18') # 关键字实参
 def user_age(name, age='18'): # 默认值，必须先列出无默认值形参
+
 def user_age(name, age, gender=''): # 让实参变可选
     if gender:
         user = f"{name} {age} {gender}"
@@ -323,6 +357,9 @@ def user_age(name, age, gender=''): # 让实参变可选
         user = f"{name} {age}"
     return user
 ```
+
+print() 有可选变元 end 和 sep，分别指定在参数末尾打印什么，在参数之间用什么隔开
+`print('Hello', end='')` 禁用换行
 
 ## 返回字典
 
