@@ -11,6 +11,15 @@
   </url>
   
   <url>
+    <loc>https://xcbyao.com/2023/04/20/write/</loc>
+    
+    <lastmod>2023-04-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xcbyao.com/2023/04/24/code_debug/</loc>
     
     <lastmod>2023-04-29</lastmod>
@@ -50,15 +59,6 @@
     <loc>https://xcbyao.com/2020/08/11/appreciation/</loc>
     
     <lastmod>2023-04-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xcbyao.com/2023/04/20/write/</loc>
-    
-    <lastmod>2023-04-24</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
