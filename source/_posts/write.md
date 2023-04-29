@@ -162,3 +162,4 @@ def function_name(
 [代码风格](https://www.programmercarl.com)
 《clean code-代码整洁之道》
 《python编程从入门到实践第2版》
+[python格式化代码【自动排版】 yapf、black风格选择](https://blog.csdn.net/sinat_28442665/article/details/118901285)

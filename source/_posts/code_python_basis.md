@@ -755,35 +755,42 @@ def count_words(filename):
 filename = 'alice.txt' # 处理单文件
 count_words(filename)
 
-filenames = ['alice.txt', 'siddhartha.txt', 'moby_dick.txt'] # 处理多文件
+filenames = ['alice.txt', 'siddhartha.txt'] # 处理多文件
 for filename in filenames:
     count_words(filename)
 ```
 
-# 存储数据
+# 存储数据 - json
+
 JSON（JavaScript Object Notation）
 
+## dump() load()
 
 ```python
 import json
 
 numbers = [2, 3, 5, 7, 11, 13]
 filename = 'numbers.json'
+
 with open(filename, 'w') as f:
-    # 该函数接受两个实参：存储的数据，存储的文件对象
+    # 该函数接受两个实参：存储的数据、文件对象
     json.dump(numbers, f)
 
 with open(filename) as f:
     numbers = json.load(f) # 加载信息
+
 print(numbers)
+```
 
+## 保存和读取用户生成的数据
 
-# 保存和读取用户生成的数据
+```python
 # 如果以前存储了用户名，就加载它。
 # 否则，提示用户输入用户名并存储它。
 import json
 
 filename = 'username.json'
+
 try:
     with open(filename) as f:
         username = json.load(f)
@@ -794,12 +801,13 @@ except FileNotFoundError:
         print(f"We'll remember you when you come back, {username}!")
 else:
     print(f"Welcome back, {username}!")
-
+```
 
 # 重构
+
+```python
 '''
-代码能正确运行，但将其划分为便于改进的
-一系列完成具体工作的函数，该过程称为重构。
+代码能正确运行，但将其划分为便于改进的一系列完成具体工作的函数，该过程称为重构。
 '''
 import json
 
@@ -818,13 +826,14 @@ def greet_user():
         print(f"Welcome back, {username}!")
 
 greet_user()
+```
 
+## 重构 greet_user()
 
-# 重构 greet_user()
+```python
 import json
 
 def get_stored_username():
-    """如果存储了用户名，就获取它。"""
     filename = 'username.json'
     try:
         with open(filename) as f:
@@ -835,7 +844,6 @@ def get_stored_username():
         return username
 
 def get_new_username():
-    """提示用户输入用户名。"""
     username = input("What is your name? ")
     filename = 'username.json'
     with open(filename, 'w') as f:
@@ -843,7 +851,6 @@ def get_new_username():
     return username
 
 def greet_user():
-    """问候用户，并指出其名字。"""
     username = get_stored_username()
     if username:
         print(f"Welcome back, {username}!")
@@ -856,7 +863,7 @@ greet_user()
 
 # 测试
 
-## 定义模块函数
+## 模块函数的定义和调用
 
 ```python
 '''name_function.py'''
@@ -865,25 +872,24 @@ def get_formatted_name(first, last):
     return full_name.title()
 ```
 
-## 调用模块函数
-
 ```python
 '''names.py'''
-from name_function import get_formatted_name
+import name_function
 
 print("Enter 'q' at any time to quit.")
+
 while True:
-    first = input("\nPlease give me a first name: ")
+    first = input("\nfirst name: ")
     if first == 'q':
         break
-    last = input("Please give me a last name: ")
+    last = input("last name: ")
     if last == 'q':
         break
     formatted_name = get_formatted_name(first, last)
     print(f"\tNeatly formatted name: {formatted_name}.")
 ```
 
-## 单元测试和测试用例
+## 单元测试和测试用例 - unittest
 
 ```python
 '''
@@ -895,7 +901,6 @@ import unittest
 from name_function import get_formatted_name
 
 class NamesTestCase(unittest.TestCase):
-    """测试 name_function.py。"""
     def test_first_last_name(self):
         """能够正确地处理像 Janis Joplin 这样的姓名吗？"""
         formatted_name = get_formatted_name('janis', 'joplin')
@@ -910,8 +915,7 @@ if __name__ == '__main__':
 '''
 运行测试文件，输出如下：
 第一行句点表明有一个测试通过了；
-第三行指出运行了一个测试，消耗时间 0.001 秒；
-最后的 OK 表明该测试用例中的所有单元测试都通过了。
+OK 表明该测试用例中的所有单元测试都通过了。
 '''
 .
 ----------------------
@@ -927,7 +931,6 @@ OK
 '''
 '''name_function.py'''
 def get_formatted_name(first, middle, last):
-    """生成整洁的姓名。"""
     full_name = f"{first} {middle} {last}"
     return full_name.title()
 
@@ -937,8 +940,7 @@ def get_formatted_name(first, middle, last):
 第三行指出 NamesTestCase 中的 test_first_last_name() 导致了错误；
 Traceback 指出函数调用 get_formatted_name(...) 有问题，
 缺少一个必不可少的位置实参；
-接下来，运行了一个单元测试，耗时 0.001 秒；
-最后，指出整个测试用例未通过，因为发生了一个错误。
+最后指出整个测试用例未通过，因为发生了一个错误。
 '''
 E
 ================================
@@ -978,16 +980,13 @@ class NamesTestCase(unittest.TestCase):
         --snip--
 
     def test_first_last_middle_name(self):
-    """能正确处理像 Wolf Amadeus Mozart 这样的姓名吗？"""
-    formatted_name = get_formatted_name(
-        'wolf', 'mozart', 'amadeus')
+    formatted_name = get_formatted_name('wolf', 'mozart', 'amadeus')
     self.assertEqual(formatted_name, 'Wolf Amadeus Mozart')
 
 if __name__ == '__main__':
     unittest.main()
 
 '''
-运行测试文件，输出如下：
 第一行句点表明有两个测试通过了……
 '''
 ..
@@ -1000,23 +999,22 @@ OK
 
 unittest 模块中的断言方法，只能在继承 unittest.TestCase 的类中使用这些方法
 
-| 方法                     | 用途                   |
-| ------------------------ | ---------------------- |
-| assertEqual(a, b)        | 核实 a == b            |
-| assertNotEqual(a, b)     | 核实 a != b            |
-| assertTrue(x)            | 核实 x 为True          |
-| assertFalse(x)           | 核实 x 为False         |
-| assertIn(item, list )    | 核实 item 在 list 中   |
-| assertNotIn(item, list ) | 核实 item 不在 list 中 |
+| 方法                     | 用途                 |
+| ------------------------ | -------------------- |
+| assertEqual(a, b)        | 核实 a == b          |
+| assertNotEqual(a, b)     | 核实 a != b          |
+| assertTrue(x)            | 核实 x 为 True       |
+| assertFalse(x)           | 核实 x 为 False      |
+| assertIn(item, list )    | 核实 item 在 list 中 |
+| assertNotIn(item, list ) | 核实 item 不在 list  |
 
-## 定义模块类
+## 模块类定义与调用
 
 ```python
 '''survey.py'''
 class AnonymousSurvey:
     """收集匿名调查问卷的答案。"""
     def __init__(self, question):
-        """存储一个问题，并为存储答案做准备。"""
         self.question = question
         self.responses = []
 
@@ -1024,7 +1022,6 @@ class AnonymousSurvey:
         print(self.question)
 
     def store_response(self, new_response):
-        """存储单份调查答卷。"""
         self.responses.append(new_response)
 
     def show_results(self):
@@ -1032,8 +1029,6 @@ class AnonymousSurvey:
         for response in self.responses:
             print(f"- {response}")
 ```
-
-## 调用模块类
 
 ```python
 '''language_survey.py'''
@@ -1043,7 +1038,8 @@ question = "What language did you first learn to speak?"
 my_survey = AnonymousSurvey(question)
 
 my_survey.show_question()
-print("Enter 'q' at any time to quit.\n")
+print("Enter 'q' at any time to quit.")
+
 while True:
     response = input("Language: ")
     if response == 'q':
@@ -1069,7 +1065,6 @@ class TestAnonymousSurvey(unittest.TestCase):
         self.assertIn('English', my_survey.responses)
 
     def test_store_three_responses(self):
-        """测试三个答案会被妥善存储。"""
         question = "What language did you first learn to speak?"
         my_survey = AnonymousSurvey(question)
         responses = ['English', 'Spanish', 'Mandarin']
@@ -1085,8 +1080,7 @@ if __name__ == '__main__':
 ## 方法 setUp()
 
 ```python
-# 上文测试中有重复之处，提高效率；
-# 若 TestCase 类中包含 setUp()，python 将先运行它，再运行以test_ 打头的方法。
+# 若 TestCase 类中包含 setUp()，python 将先运行它，再运行以 test_ 打头的方法。
 '''test_survey.py'''
 import unittest
 from survey import AnonymousSurvey
@@ -1099,12 +1093,10 @@ class TestAnonymousSurvey(unittest.TestCase):
         self.responses = ['English', 'Spanish', 'Mandarin']
 
     def test_store_single_response(self):
-        """测试单个答案会被妥善存储。"""
         self.my_survey.store_response(self.responses[0])
         self.assertIn(self.responses[0], self.my_survey.responses)
 
     def test_store_three_responses(self):
-        """测试三个答案会被妥善存储。"""
         for response in self.responses:
             self.my_survey.store_response(response)
         for response in self.responses:
@@ -1149,101 +1141,91 @@ if __name__ == '__main__':
 
 # Git 版本控制
 
-1. 创建文件夹 git_practice
-2. 创建程序 hello_git.py
+## 1. 创建文件夹 git_practice
+
+## 2. 创建程序 `hello_git.py`
 
 ```python
 print("Hello Git!")
 ```
 
-3. 忽略文件 .gitignore
+## 3. 忽略文件 .gitignore
 
 ```git
-__pycache__/
+__pycache__
 ```
 
 > git bash: `touch .gitignore`
 dos: `ren n.txt .gitignore`
 
-4. 初始化仓库
-当前文件夹下打开终端窗口执行：`git init`
-输出表明 Git 在 git_practice 中初始化了一个空仓库
+## 4. 初始化仓库 `git init`
+
 `Initialized empty Git repository in git_practice/.git/`
 
 > Git 用来管理仓库的文件都存储在 .git 中，不用管它但不能删除。
 
-5. 检查状态
+## 5. 检查状态 `git status`
 
 ```git
-$ git status
-
 On branch main
-
 No commits yet
-
 Untracked files: # 指出未被跟踪的文件
   (use "git add <file>..." to include in what will be committed)
         .gitignore
         hello_git.py
-# 尚未将任何东西添加到当前提交中，但指出了可能需要加入仓库的未跟踪文件
+# 当前无提交，但指出了可能需要加入仓库的未跟踪文件
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-6. 加入仓库
+## 6. 加入仓库 `git add .`
+
+项目中未被跟踪的文件都加入仓库中，但未提交
 
 ```git
-$ git add . # 项目中未被跟踪的文件都加入仓库中，但未提交
-$ git status
-
 On branch main
-
 No commits yet
-
 Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
         new file:   .gitignore
         new file:   hello_git.py
 ```
 
-7. 执行提交
+## 7. 执行提交 `git commit -m "Started project"`
+
+标志 -m 让后面信息记录到项目的历史记录中。
 
 ```git
-$ git commit -m "Started project." # 标志 -m 让后面信息记录到项目的历史记录中。
-
-[main (root-commit) a3f6a37] Started project.
+[main (root-commit) a3f6a37] Started project
  2 files changed, 2 insertion(+)
  create mode 100644 .gitignore
  create mode 100644 hello_git.py
-
-$ git status
 
 On branch master
 nothing to commit, working tree clean
 # 工作树是干净的，若非如此，可能提交前忘记了添加文件。
 ```
 
-8. 查看提交历史
+## 8. 查看提交历史 `git log`
 
 ```git
-$ git log
-
 commit b4a4af78247b33c27de89b57d4dde2369f712ab4 (HEAD -> main)
 Author: xxx <xxx@gmail.com>
 Date:   Mon Apr 24 16:34:50 2023 +0800
-
-    Started project.
+    Started project
 ```
 
 每次提交 Git 都会生成唯一的引用 ID，长 40 字符。
-记录提交人，提交时间，及提交时的指定信息。下面是精简版：
+记录提交人，提交时间，及提交时的指定信息。
+
+精简版：`git log --pretty=oneline`
 
 ```git
-$ git log --pretty=oneline
-
-b4a4af78247b33c27de89b57d4dde2369f712ab4 (HEAD -> main) Started project.
+b4a4af78247b33c27de89b57d4dde2369f712ab4 (HEAD -> main) Started project
 ```
 
-9. 第二次提交
+## 9. 第二次提交 `git commit -am "Extended greeting"`
+
+标志 -a 让仓库中所有修改了的文件都加入当前提交中
 
 ```python
 '''hello_git.py'''
@@ -1252,85 +1234,71 @@ print("Hello everyone.")
 ```
 
 ```git
-$ git status
-
-# 指出所做修改未提交
+# 检查状态，指出所做修改未提交
 On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
         modified:   hello_git.py
-
 no changes added to commit (use "git add" and/or "git commit -a")
 
-# 标志 -a 让仓库中所有修改了的文件都加入当前提交中
-$ git commit -am "Extended greeting."
-
-[main 35530cb] Entended greeting.
+[main 35530cb] Entended greeting
  1 file changed, 1 insertion(+)
 
 # 查看状态和记录，同上
 ```
 
-10. 撤销修改
-
-```python
-'''hello_git.py'''
-print("Hello Git!")
-print("Hello everyone.")
-
-print("Oh no, I broke the project!")
-```
+## 10. 撤销修改 `git checkout .`
 
 ```git
-$ git checkout .
-
 Updated 1 path from the index
 
 # 查看状态，输出工作树干净，文件中最后一行代码被删除。
 ```
 
 git checkout 能恢复到以前的任意提交。
-git checkout . 放弃最后一次提交后所做的修改，将项目恢复到最后一次提交的状态。
+git checkout . 放弃最后一次**提交后**所做的修改，恢复到**最后一次提交**的状态。
 
-11. 检出以前的提交
+## 11. 检出以前的提交 `git checkout b4a4af`
 
-git check 末尾指定该提交的引用 ID 前 6 字符。
+末尾指定该提交的引用 ID 前 6 字符。
 
 ```git
-$ git checkout b4a4af
-
 Note: switching to 'b4a4af'...
-HEAD is now at b4a4af7 Started project.
+HEAD is now at b4a4af7 Started project
 
-$ git checkout main
+git checkout main
 
-Previous HEAD position was b4a4af7 Started project.
+Previous HEAD position was b4a4af7 Started project
 Switched to branch 'main'
 ```
 
 检出以前的提交后，将离开分支 main，进入分离头指针（detached HEAD）状态。
 HEAD 指针表示当前提交的项目状态。
 
-```git
-# 将项目重置到以前的提交
-$ git reset --hard b4a4af
-```
+## 12. 重置到以前的提交 `git reset --hard b4a4af`
 
-12. 删除仓库
+## 13. 删除仓库 `rm -rf .git`
 
 当仓库的历史记录弄乱了，无法恢复时，个人可删除历史记录，再重建仓库，不影响文件当前状态。
-可直接删除 .git 或如下：
 
-```git
-'''git bash'''
-$ rm -rf .git
+可直接删除 .git 或 cmd 下：
 
-'''Windows'''
+```cmd
 rmdir /s .git
 ```
 
+# todo
 
+
+
+# 第三方模块
+
+## 自动排版
+
+```python
+pip install yapf
+```
 
 
 
@@ -1340,6 +1308,7 @@ rmdir /s .git
 《python编程从入门到实践第二版》
 [git - Windows下创建 .gitignore 文件](https://blog.csdn.net/972301/article/details/49586273)
 [Python 字符串前面加u,r,b,f的含义](https://blog.csdn.net/sinat_38682860/article/details/108848994)
+[python格式化代码【自动排版】 yapf、black风格选择](https://blog.csdn.net/sinat_28442665/article/details/118901285)
 
 # PS
 
