@@ -303,7 +303,7 @@
 <li>Error:<br><code>TypeError: can only concatenate str (not &quot;bytes&quot;) to str</code></li>
 <li>Cause: python2/3 版本差异</li>
 <li>Solve: 前缀 b 指明格式<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">out = response.replace(<span class="string">&#x27;;&#x27;</span>, <span class="string">&#x27;;\n&#x27;</span>)  out = response.replace(<span class="string">b&#x27;;&#x27;</span>, <span class="string">b&#x27;;\n&#x27;</span>)</span><br><span class="line">context.log_level = <span class="string">&#x27;debug&#x27;</span></span><br><span class="line">payload = <span class="string">b&#x27;a&#x27;</span>*<span class="number">8</span> + p32(<span class="number">0x00000786</span>)</span><br></pre></td></tr></table></figure></li>
-<li>Refer:<br><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/260185255#:~:text=b%22%20%22%E5%89%8D%E7%BC%80%E8%A1%A8%E7%A4%BA%EF%BC%9A%E5%90%8E%E9%9D%A2,%E5%8F%AA%E8%AE%A4bytes%20%E7%B1%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E3%80%82" >Python 字符串前面加u,r,b,f的含义<i class="fas fa-external-link-alt"></i></a></li>
+<li>Refer:<br><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_38682860/article/details/108848994" >Python 字符串前面加u,r,b,f的含义<i class="fas fa-external-link-alt"></i></a></li>
 </ul>
 <h1 id="C-C"><a href="#C-C" class="headerlink" title="C/C++"></a>C/C++</h1><h2 id="流对象和布尔类型的比较"><a href="#流对象和布尔类型的比较" class="headerlink" title="流对象和布尔类型的比较"></a>流对象和布尔类型的比较</h2><ul>
 <li>Date: 23/04/14</li>
