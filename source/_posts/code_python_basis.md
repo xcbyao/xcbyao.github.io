@@ -5,7 +5,7 @@ categories: Programming
 ---
 # Pref
 
-逢居家懈怠，为缓解焦虑，更好利用空闲时间，启动容易上手的 py 学习！另，我已有 C 的基础，故一些相同知识点会略过。
+逢居家懈怠，为缓解焦虑，更好利用空闲时间，启动容易上手的 python3 学习！另，我已有 C 的基础，故一些相同知识点会略过。
 
 # 注释
 
@@ -22,13 +22,26 @@ categories: Programming
 title() 首字母大写
 upper() 全大写
 lower() 全小写
+print() 返回 None 值
 str()
+
+u「Unicode」以 Unicode 格式进行编码，常用于中文字符串
+r 去掉反斜杠的转义机制，常用于正则表达式，对应 re 模块
+b「bytes」bytes 类型字符串
+f「format」拼接字符串
 
 ```python
 first_name = "ada"
 last_name = "lovelace"
-full_name = f"{first_name} {last_name}" # 字符串中插入变量的值——f 字符串「format」
+full_name = f"{first_name} {last_name}" # 字符串中插入变量的值
 print(full_name)
+```
+
+## bytes 和 str 互相转换
+
+```python
+str.encode('utf-8')
+bytes.decode('utf-8')
 ```
 
 strip() 删除首尾空白
@@ -619,88 +632,105 @@ choice(players)
 
 # 文件
 
+## 读取整个文件 - read()
+
 ```python
-# 读取整个文件
 '''
 函数 open() 返回一个表示文件的对象，
 赋给 file_object（只在 with 内可用），用方法 read() 读取；
 关键字 with 在不再需要访问文件后将其关闭；
 close() 关闭文件可能存在各种问题；
 read() 到达文件尾时返回一个空字符串，表现为空行；
-文本文件内容都被解读为字符串
+文本文件内容都被解读为字符串。
 '''
 with open('demo.txt') as file_object:
     contents = file_object.read()
 print(contents.rstrip()) # 删除多余空行
+```
 
+## 逐行读取 - for 循环
 
-# 逐行读取
+```python
 '''
-输出可能每行中间有一个空行
-print() 调用有一个换行符，文件本身有一个换行符
+输出可能每行中间有一个空行，
+print() 调用有一个换行符，文件本身有一个换行符。
 '''
 filename = 'demo.txt'
+
 with open(filename) as file_object:
     for line in file_object:
         print(line.rstrip())
+```
 
+## 创建包含文件各行内容的列表 - readlines()
 
-# 创建包含文件各行内容的列表
+```python
 filename = 'demo.txt'
-with open(filename) as file_object:
-    lines = file_object.readlines() # readlines() 读取文件每一行，并存储在列表中
 
+with open(filename) as file_object:
+    lines = file_object.readlines() # 读取文件每一行，并存储在列表中
 for line in lines:
     print(line.rstrip())
+```
 
+## 使用文件内容 - 空字符串
 
-# 使用文件内容
+```python
 filename = 'demo.txt'
+
 with open(filename) as file_object:
     lines = file_object.readlines()
 
 use = ''
 for line in lines:
     use += line.rstrip()
+
 print(use)
+```
 
+## 写入文件 - write() - rwar+
 
-# 写入文件
+```python
 '''
 读取模式：r 读、w 写、a 附加、r+ 读写；
 省略模式实参，默认只读模式打开文件；
 写入文件不存在自动创建，存在则覆盖重写；
-只能将字符串写入文本文件
+只能将字符串写入文本文件。
 '''
 filename = 'demo.txt'
+
 with open(filename, 'w') as file_object:
     file_object.write('anything')
 
 with open(filename, 'a') as file_object: # 附加内容
-    file_object.write('addition')
+    file_object.write('\naddition')
 ```
 
 > 注：Windows 使用 \ 显示文件路径，但在代码中用 /
 绝对路径较长，赋给一个变量使用；
-python 可处理的数据量没有限制，只要系统内存足够
+python 可处理的数据量没有限制，只要系统内存足够。
 
-# 异常
+# 异常处理
+
+## ZeroDivisionError 异常
 
 ```python
 '''
 python 用特殊对象「异常」来管理程序执行期间发生的错误；
 避免用户看到 traceback
 '''
-# 处理 ZeroDivisionError 异常
-try:
-    print(5/0)
-except ZeroDivisionError:
-    print("You can't divide by zero!")
-else:
-    print("No error.")
+def spam(divideBy):
+    try:
+        return 42 / divideBy
+    except ZeroDivisionError:
+       print("You can't divide by zero!")
 
+print(spam(0))
+```
 
-# 处理 FileNotFoundError 异常
+## FileNotFoundError 异常
+
+```python
 def count_words(filename):
     try:
         # 一般用 f 表示文件对象；
@@ -1309,6 +1339,7 @@ rmdir /s .git
 《Python编程快速上手——让繁琐工作自动化第一版》
 《python编程从入门到实践第二版》
 [git - Windows下创建 .gitignore 文件](https://blog.csdn.net/972301/article/details/49586273)
+[Python 字符串前面加u,r,b,f的含义](https://blog.csdn.net/sinat_38682860/article/details/108848994)
 
 # PS
 

@@ -181,7 +181,7 @@ context.log_level = 'debug'
 payload = b'a'*8 + p32(0x00000786)
 ```
 - Refer:
-[Python 字符串前面加u,r,b,f的含义](https://zhuanlan.zhihu.com/p/260185255#:~:text=b%22%20%22%E5%89%8D%E7%BC%80%E8%A1%A8%E7%A4%BA%EF%BC%9A%E5%90%8E%E9%9D%A2,%E5%8F%AA%E8%AE%A4bytes%20%E7%B1%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E3%80%82)
+[Python 字符串前面加u,r,b,f的含义](https://blog.csdn.net/sinat_38682860/article/details/108848994)
 
 # C/C++
 
