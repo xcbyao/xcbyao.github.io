@@ -2,9 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://xcbyao.com/2022/04/20/python_basis/</loc>
+    <loc>https://xcbyao.com/2022/04/20/code_python_basis/</loc>
     
-    <lastmod>2023-04-28</lastmod>
+    <lastmod>2023-04-29</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://xcbyao.com/2023/04/23/python_program/</loc>
+    <loc>https://xcbyao.com/2023/04/23/code_python_program/</loc>
     
     <lastmod>2023-04-26</lastmod>
     
@@ -56,7 +56,7 @@
   </url>
   
   <url>
-    <loc>https://xcbyao.com/2023/04/24/debug/</loc>
+    <loc>https://xcbyao.com/2023/04/24/code_debug/</loc>
     
     <lastmod>2023-04-24</lastmod>
     
@@ -65,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://xcbyao.com/2022/01/04/cpp_basis/</loc>
+    <loc>https://xcbyao.com/2022/01/04/code_cpp_basis/</loc>
     
     <lastmod>2023-04-23</lastmod>
     
@@ -74,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://xcbyao.com/2022/01/28/cpp_program/</loc>
+    <loc>https://xcbyao.com/2022/01/28/code_cpp_program/</loc>
     
     <lastmod>2023-04-23</lastmod>
     
@@ -191,7 +191,7 @@
   </url>
   
   <url>
-    <loc>https://xcbyao.com/2020/05/19/C_advanced/</loc>
+    <loc>https://xcbyao.com/2020/05/19/code_C_advanced/</loc>
     
     <lastmod>2022-04-22</lastmod>
     
@@ -200,7 +200,7 @@
   </url>
   
   <url>
-    <loc>https://xcbyao.com/2020/02/06/C_basis/</loc>
+    <loc>https://xcbyao.com/2020/02/06/code_C_basis/</loc>
     
     <lastmod>2022-04-21</lastmod>
     
@@ -209,7 +209,7 @@
   </url>
   
   <url>
-    <loc>https://xcbyao.com/2021/01/23/C_advanced_2/</loc>
+    <loc>https://xcbyao.com/2021/01/23/code_C_advanced_2/</loc>
     
     <lastmod>2022-01-16</lastmod>
     
@@ -319,7 +319,7 @@
 
   <url>
     <loc>https://xcbyao.com/</loc>
-    <lastmod>2023-04-28</lastmod>
+    <lastmod>2023-04-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -329,63 +329,63 @@
   
   <url>
     <loc>https://xcbyao.com/categories/BUG/</loc>
-    <lastmod>2023-04-28</lastmod>
+    <lastmod>2023-04-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xcbyao.com/categories/Software/</loc>
-    <lastmod>2023-04-28</lastmod>
+    <lastmod>2023-04-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xcbyao.com/categories/Programming/</loc>
-    <lastmod>2023-04-28</lastmod>
+    <lastmod>2023-04-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xcbyao.com/categories/Crypto/</loc>
-    <lastmod>2023-04-28</lastmod>
+    <lastmod>2023-04-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xcbyao.com/categories/Relive-youth/</loc>
-    <lastmod>2023-04-28</lastmod>
+    <lastmod>2023-04-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xcbyao.com/categories/Algorithm/</loc>
-    <lastmod>2023-04-28</lastmod>
+    <lastmod>2023-04-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xcbyao.com/categories/Self-improvement/</loc>
-    <lastmod>2023-04-28</lastmod>
+    <lastmod>2023-04-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xcbyao.com/categories/Binary/</loc>
-    <lastmod>2023-04-28</lastmod>
+    <lastmod>2023-04-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xcbyao.com/categories/programming/</loc>
-    <lastmod>2023-04-28</lastmod>
+    <lastmod>2023-04-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
