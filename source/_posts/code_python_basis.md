@@ -370,6 +370,7 @@ def build_person(first_name, last_name, age=None):
     if age:
         person['age'] = age
     return person
+
 user = build_person('tom', 'antonio', age=18)
 print(user)
 ```
@@ -380,7 +381,8 @@ print(user)
 def users(names):
     for name in names:
         msg = f"Hello, {name.title()}!"
-    print(msg)
+        print(msg)
+
 usernames = ['hannah', 'ty', 'margot']
 users(usernames)
 ```
@@ -402,9 +404,12 @@ new_usernames = []
 
 change(usernames, new_usernames)
 show(new_usernames)
+```
 
-# 禁止函数修改列表，切片表示法 [:] 创建列表副本
-change(usernames[:], new_usernames) # 原表不会清空
+## 禁止函数修改列表，切片表示法 [:] 创建列表副本
+
+```python
+change(usernames[:], new_usernames)
 ```
 
 ## 传递任意数量的实参
@@ -415,6 +420,7 @@ def make_pizza(size, *toppings):
     print(f"size: {size}")
     for topping in toppings:
         print(f"{topping}")
+
 make_pizza(6, 'pepperoni')
 make_pizza(8, 'mushrooms', 'green peppers')
 ```
@@ -427,11 +433,12 @@ def build_profile(first, last, **info):
     info['first_name'] = first
     info['last_name'] = last
     return info
+
 profile = build_profile('albert', 'einstein', location='princeton', field='physics')
 print(profile)
 ```
 
-## 函数模块化
+## 函数模块化及别名
 
 ```python
 '''pizza.py'''
@@ -452,11 +459,19 @@ from pizza import make_pizza, show # 导入模块中特定函数
 
 make_pizza(6, 'pepperoni')
 
-from pizza import * # 星号导入模块所有函数，可能与当前程序的函数覆盖
+from pizza import * # 星号导入模块所有函数，可能与当前程序的函数覆盖，不建议用
 
-from pizza import make_pizza as mp # 指定函数别名
 import pizza as p # 指定模块别名
+from pizza import make_pizza as mp # 指定函数别名
 ```
+
+## 作用域
+
+- 全局作用域中代码不能使用局部变量
+- 局部作用域可访问全局变量
+- 不同的作用域中，可以用相同的名字命名不同的变量
+
+- global 语句强制函数中的一个变量引用该全局变量
 
 # 类
 
@@ -468,7 +483,7 @@ import pizza as p # 指定模块别名
 方法是一个指向实例本身的引用，让实例能够访问类中的属性和方法；
 Car 类创建实例时，只需给其他形参提供值；
 前缀为 self 的变量可供类中所有方法使用，可通过任何实例访问；
-类看作是如何创建实例的说明
+类看作是如何创建实例的说明。
 '''
 class Car:
     def __init__(self, make, model, year):
@@ -510,7 +525,7 @@ car.increment_odometer(10) # 通过方法递增属性值
 
 ```python
 '''
-创建子类时，父类必须包含在当前文件中，且位于子类前
+创建子类时，父类必须包含在当前文件中，且位于子类前；
 父类也称超类（superclass）
 '''
 class Car:
@@ -555,9 +570,8 @@ class EletricCar(Car):
 
 el_car = EletricCar('tesla', 'model s', 2019)
 print(el_car.info())
-# 在实例 el_car 中查找属性 battery，并对存储在该属性中的Battery 实例调用方法 info_battery()
+# 在实例 el_car 中查找属性 battery，并对存储在该属性中的 Battery 实例调用方法 info_battery()
 el_car.battery.info_battery()
-el_car.battery.get_range()
 ```
 
 ## 导入类
@@ -587,6 +601,8 @@ my_car.read_odometer()
 
 # 标准库
 
+## random
+
 ```python
 # 创建与安全相关的应用程序时，勿用 random
 from random import randint, choice
@@ -598,6 +614,8 @@ randint(1, 6)
 players = ['charles', 'michael', 'florence', 'eli']
 choice(players)
 ```
+
+
 
 # 文件
 
