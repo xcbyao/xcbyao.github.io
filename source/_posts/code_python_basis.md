@@ -93,20 +93,50 @@ float()
 
 列表名用**复数**
 
+`[['a','b'],'c']` 可嵌套
+
+## 子列表副本 `[:]`
+
+## 访问最后一个元素 `[-1]`
+
+## 列表连接 `+` 列表复制 `*`
+
 ```python
 bicycles = ['trek', 'cannondale', 'redline']
-print(bicycles[-1]) # 访问最后一个元素
+print(bicycles[-2])
 ```
 
-append() 列表末添加元素
-insert(0, '') 插入元素
-del bicycles[0] 仅删除元素
-pop() 删除列表末元素
-pop(0) 删除元素，可赋值使用
-remove() 根据值删除元素，有重复则只删第一个
+## 方法
 
-sort(reverse=True) 字母顺序排序（逆序）
-sorted() 临时字母顺序排序，不改变原列表
+返回值是 None，方法属于单个数据类型，只能在列表上调用。
+
+### index() 在列表中查找值
+
+传入一个值，存在于列表中，就返回下标；不在就报 ValueError；有重复就返回第一次出现的下标。
+
+```python
+spam = ['hello', 'hi', 'howdy']
+spam.index('hello')
+```
+
+### append() 列表末添加元素，只能一个
+
+### insert(0, '') 插入元素
+
+### del bicycles[0] 仅删除元素
+
+### pop() 删除列表末元素
+
+### pop(0) 删除元素，可赋值使用
+
+### remove() 根据值删除元素，有重复则只删第一个
+
+### sort(reverse=True) 字母顺序排序（逆序）
+
+使用 ASCII 字符顺序；
+按照字典顺序排序，指定 key 关键字参数为 str.lower，`spam.sort(key=str.lower)`，这将导致 sort() 将列表中所有的表项当成小写
+
+### sorted() 临时字母顺序排序，不改变原列表
 
 > 非所有元素值是小写时，按字母顺序排列列表变复杂。
 
@@ -116,6 +146,15 @@ min()
 max()
 sum() 数字列表总和
 
+## 可变和不可变数据类型
+
+字符串可看作是单个文本字符的列表，列表相关操作也用于字符串。
+
+```python
+name = 'Zophie a cat'
+newName = name[0:7] + 'the' + name[8:12]
+```
+
 ## 遍历
 
 ```python
@@ -124,16 +163,37 @@ for cat in cats:
     print(cat)
 ```
 
+## 迭代
+
+```python
+spam = ['a', 'b', 'c']
+for i in range(len(spam)):
+    print(str(i) + ' in spam is ' + spam[i])
+```
+
+## 多重赋值技巧
+
+列表的值为多个变量赋值，变量数目和列表长度必须严格相等。
+
+```python
+cat = ['fat', 'black', 'loud']
+size, color, disposition = cat
+```
+
 range(5) 生成数值 0-4
 range(1,5) 生成数值 1-4
 range(5, -1, -1) 生成数值 5-0
 
-- list() 生成列表
+- list() 返回传递值的列表版本
+- tuple() 返回传递值元组版本
 
 ```python
 numbers = list(range(1, 6))
 print(numbers)
 >>> [1, 2, 3, 4, 5]
+
+list('hello') #可把字符串转成列表
+>>> ['h', 'e', 'l', 'l', 'o']
 ```
 
 ## 列表解析
@@ -164,7 +224,7 @@ my_foods = ['pizza', 'falafel', 'cake']
 friend_foods = my_foods[:]
 ```
 
-## 元组：不可变的列表
+## 元组 tuple：值不可变的列表，可优化比列表快
 
 ```python
 dimensions = (50,)
@@ -219,40 +279,73 @@ print(f"Price is ${price}.")
 ```python
 alien = {} # 创建空字典
 alien = {'color': 'red'} # 定义字典
-alien['point'] = 5 # 添加键值对
-print(alien)
-alien['point'] = 3 # 修改字典值
-del alien['color'] # 删除必须指定字典名和键
 aline = {
     'color': 'red',
     'point': '3', # 最后的键值对建议加上逗号
     }
 
+alien['point'] = 5 # 添加键值对
+print(alien)
+alien['point'] = 3 # 修改字典值
+del alien['color'] # 删除必须指定字典名和键
+
 print(speed['fast']) # KeyError
 speed_value = alien.get('speed', 'No speed value assigned.') # 用 get() 访问值，避免报错，第一个参数（必选）指定键，第二个参数（可选）返回键不存在时的值，留空默认 None
+```
 
-# 遍历所有键值对
-for key, value in alien.items(): # items() 返回键值对列表
+## 遍历所有键值对 items()
+
+```python
+for key, value in alien.items(): # items() 返回键值对元组
     print(f"\nkey: {key}")
     print(f"value: {value}")
+```
 
-# 遍历所有键
+这些数据类型（dict_keys、dict_values、dict_items）可用于 for 循环，不能被修改。
+
+## 遍历所有键 keys()
+
+```python
 for key in alien: # 遍历字典，默认遍历所有键
 for key in alien.keys(): # keys() 返回键列表
     print(key)
+```
 
-# 按特定顺序遍历所有键
+## 按特定顺序遍历所有键 sorted()
+
+```python
 for key in sorted(alien.key()):
+```
 
-# 遍历所有值
+## 遍历所有值 values()
+
+```python
 for value in alien.values(): # values() 返回值列表
     print(value)
+```
 
-# 无重复遍历所有值
+## 无重复遍历所有值 set()
+
+```python
 for value in set(alien.values()): # 集合 set，用花括号创建集合，用逗号分隔元素
 ```
 
 > 不同于列表和字典，集合不会以特定的顺序存储元素
+
+## 多重赋值技巧
+
+在 for 循环中将键和值赋给不同的变量
+
+```python
+spam = {'color': 'red', 'age': 42}
+for k, v in spam.items():
+    print('Key: ' + k + ' Value: ' + str(v)) #必须将整型转换成字符型
+```
+
+## 某键设置默认值 setdefault()
+
+两参数：检查并为字典中某键设置一个默认值；
+该键不存在或没有值时使用它；若存在，方法就会返回键的值，不做修改
 
 # while 循环
 
@@ -419,7 +512,7 @@ change(usernames, new_usernames)
 show(new_usernames)
 ```
 
-## 禁止函数修改列表，切片表示法 [:] 创建列表副本
+## 禁止函数修改列表，[:] 创建列表副本
 
 ```python
 change(usernames[:], new_usernames)
@@ -1291,6 +1384,11 @@ rmdir /s .git
 # todo
 
 
+
+# 缩进规则的例外
+
+> 在源码文件中，列表可以跨越几行，直到结束方括号。
+行末使用续行字符 `\`，将一条指令写成多行。
 
 # 第三方模块
 
