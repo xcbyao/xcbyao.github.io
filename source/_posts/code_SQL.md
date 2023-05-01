@@ -9,6 +9,12 @@ categories: Programming
 
 # Basis
 
+数据库（database）保存有组织的数据的容器（通常是一个或一组文件）
+
+表（table）某种特定类型数据的结构化清单。
+
+模式（schema）关于数据库和表的布局及特性的信息。
+
 
 
 # 检索数据

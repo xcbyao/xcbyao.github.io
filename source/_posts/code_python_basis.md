@@ -19,11 +19,48 @@ categories: Programming
 字符串复制 `'a' * 5`
 单双引号均可用，包含时区分开，如 " ' "
 
+print() 返回 None 值
+str()
+
 title() 首字母大写
 upper() 全大写
 lower() 全小写
-print() 返回 None 值
-str()
+
+istitle() 字符串只包含首字母大写
+isupper() 返回布尔值，所有字母是大写
+islower()
+
+isalpha() 字符串只包含字母
+isalnum() 字符串只包含字母和数字
+isdecimal() 字符串只包含数字
+isspace() 字符串只包含空格、制表符和换行
+
+startswith()
+endswith() 所调用的字符串以该方法传入的字符串开始或结束
+
+join() 参数是一个字符串列表，返回的字符串由传入的列表中每个字符串连接而成。
+
+```python
+' '.join(['My', 'name', 'is', 'Simon'])
+'My name is Simon'
+```
+
+split() 默认以空格为分隔符拆分字符串，返回一个列表
+
+ljust() 左对齐
+rjust()
+center() 居中
+返回字符串的填充版本，通过插入空格来对齐文本；第一个参数是整数长度，第二个可选参数指定一个填充字符。
+
+strip() 删除首尾空白，第二参数可选指定字符删除，字符顺序不重要
+lstrip()
+rstrip()
+
+```python
+spam = 'SpamSpamBaconSpamEggsSpamSpam'
+spam.strip('ampS')
+'BaconSpamEggs'
+```
 
 u「Unicode」以 Unicode 格式进行编码，常用于中文字符串
 r 去掉反斜杠的转义机制，常用于正则表达式，对应 re 模块
@@ -44,9 +81,292 @@ str.encode('utf-8')
 bytes.decode('utf-8')
 ```
 
-strip() 删除首尾空白
-lstrip()
-rstrip()
+# 正则表达式 regex
+
+正则表达式的函数都在 re 模块
+
+## 创建对象 re.compile()
+
+传入一个字符串值，表示正则表达式，返回一个 Regex 模式对象
+
+## 匹配对象 search() group()
+
+Regex 对象的 search() 方法，未找到返回 None；找到返回一个 Match 对象。
+
+Match 对象的 group() 方法，返回被查找字符串中实际匹配的文本。
+mo 是一个通用变量名，用于 Match 对象。
+
+```python
+phoneNumRegex = re.compile(r'\d{3}-\d{3}-\d{4}')
+mo = phoneNumRegex.search('My number is 415-555-4242.')
+print('Phone number found: ' + mo.group())
+```
+
+## 括号分组
+
+向 group() 传入整数 1 等，取得匹配文本的不同分组；传入 0 或无参数，返回整个匹配文本。
+groups() 获取所有分组。
+
+```python
+phoneNumRegex = re.compile(r'(\d\d\d)-(\d\d\d-\d\d\d\d)')
+mo = phoneNumRegex.search('My number is 415-555-4242.')
+mo.group(1)
+'415'
+
+mo.groups()
+('415', '555-4242')
+
+areaCode, mainNumber = mo.groups()
+print(areaCode)
+415
+
+# \( \) 将匹配实际的括号字符
+phoneNumRegex = re.compile(r'(\(\d\d\d\)) (\d\d\d-\d\d\d\d)')
+mo = phoneNumRegex.search('My phone number is (415) 555-4242.')
+mo.group(1)
+'(415)'
+```
+
+## 管道匹配多个分组 |
+
+### 返回第一次出现的匹配文本
+
+```python
+heroRegex = re.compile (r'Batman|Tina Fey')
+mo1 = heroRegex.search('Batman and Tina Fey.')
+mo1.group()
+'Batman'
+```
+
+### 只指定一次前缀
+
+```python
+batRegex = re.compile(r'Bat(man|mobile|bat)')
+mo = batRegex.search('Batmobile lost a wheel')
+mo.group()
+'Batmobile'
+
+mo.group(1)
+'mobile'
+```
+
+## 问号匹配零次或一次
+
+字符 `?` 表明它前面的分组在这个模式中是可选的。
+
+```python
+batRegex = re.compile(r'Bat(wo)?man')
+mo1 = batRegex.search('The Adventures of Batman')
+mo1.group()
+'Batman'
+
+mo2 = batRegex.search('The Adventures of Batwoman')
+mo2.group()
+'Batwoman'
+```
+
+## 星号匹配零次或多次
+
+字符 `*` 之前的分组可以出现零次或多次。
+
+```python
+batRegex = re.compile(r'Bat(wo)*man')
+mo3 = batRegex.search('The Adventures of Batwowowowoman')
+mo3.group()
+'Batwowowowoman'
+```
+
+## 加号匹配一次或多次
+
+字符 `+` 之前的分组可以出现一次或多次。
+
+```python
+batRegex = re.compile(r'Bat(wo)+man')
+mo3 = batRegex.search('The Adventures of Batman')
+mo3 == None
+True
+```
+
+## 花括号匹配特定次数
+
+字符 `{}` 表示前面模块或分组重复特定次数。
+除了一个数字，还可以指定一个范围（最小值，最大值）或不限定最值之一。
+
+(Ha){3} 将匹配字符串 'HaHaHa'
+
+(Ha){3,5} 将匹配 'HaHaHa'、'HaHaHaHa'、'HaHaHaHaHa'。
+
+## 贪心和非贪心匹配
+
+Python 的 Regex 默认是贪心的，表示在有二义的情况下，它们会尽可能匹配最长的字符串。
+花括号的非贪心版本匹配尽可能最短的字符串，即在结束的花括号后跟着一个问号。
+
+```python
+greedyHaRegex = re.compile(r'(Ha){3,5}')
+mo1 = greedyHaRegex.search('HaHaHaHaHa')
+mo1.group()
+'HaHaHaHaHa'
+
+nongreedyHaRegex = re.compile(r'(Ha){3,5}?')
+mo2 = nongreedyHaRegex.search('HaHaHaHaHa')
+mo2.group()
+'HaHaHa
+```
+
+## findall() 方法
+
+包含被查找字符串中的所有匹配。不是返回一个 Match 对象。
+在正则表达式中没有分组，返回一个字符串列表。
+有分组，则返回元组列表。
+
+```python
+phoneNumRegex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')
+phoneNumRegex.findall('Cell: 415-555-9999 Work: 212-555-0000')
+['415-555-9999', '212-555-0000']
+
+phoneNumRegex = re.compile(r'(\d\d\d)-(\d\d\d)-(\d\d\d\d)')
+phoneNumRegex.findall('Cell: 415-555-9999 Work: 212-555-0000')
+[('415', '555', '1122'), ('212', '555', '0000')]
+```
+
+## 字符分类
+
+| 缩写字符 | 表示                                 |
+| -------- | ------------------------------------ |
+| \d       | 任何一位数字                         |
+| \D       | 除 0-9 以外的任何字符                |
+| \w       | 任何字母、数字或下划线字符           |
+| \W       | 除字母、数字和下划线以外的任何字符   |
+| \s       | 空格、制表符或换行符「匹配空白」     |
+| \S       | 除空格、制表符和换行符以外的任何字符 |
+
+### 自定义字符分类 []
+
+[a-zA-Z0-9] 匹配所有小写、大写字母和数字。
+
+方括号内，普通的正则表达式符号不会被解释，不需要转义。
+
+### 非字符类 ^
+
+匹配不在这个字符类中的所有字符。
+
+consonantRegex = re.compile(r'[^aeiouAEIOU]')
+
+### 开始字符 ^ 结束字符 $
+
+正则表达式的开始处使用插入符号 `^`，表明匹配必须发生在被查找文本开始处。
+末尾加上美元符号 `$`，表示该字符串必须以这个正则表达式的模式结束。
+同时使用，表明整个字符串必须匹配该模式。如 `r'^\d+$'` 匹配从开始到结束都是数字的字符串。
+
+```python
+beginsWithHello = re.compile(r'^Hello')
+beginsWithHello.search('Hello world!')
+<re.Match object; span=(0, 5), match='Hello'>
+
+endsWithNumber = re.compile(r'\d$') # 匹配数字结尾字符
+endsWithNumber.search('Your number is 42')
+<re.Match object; span=(16, 17), match='2'>
+```
+
+### 通配符 . 匹配除换行外所有字符，只匹配一个字符
+
+```python
+atRegex = re.compile(r'.at')
+atRegex.findall('The cat in the hat sat on the flat mat.')
+['cat', 'hat', 'sat', 'lat', 'mat']
+```
+
+### .* 匹配除换行外所有字符
+
+```python
+nameRegex = re.compile(r'First Name: (.*) Last Name: (.*)')
+mo = nameRegex.search('First Name: Al Last Name: Sweigart')
+mo.group(1)
+'Al'
+mo.group(2)
+'Sweigart
+```
+
+`.*` 贪心模式，匹配尽可能多的文本。
+`.*?` 非贪心模式，匹配尽可能少的文本。
+
+```python
+greedyRegex = re.compile(r'<.*>')
+mo = greedyRegex.search('<To serve man> for dinner.>')
+mo.group()
+'<To serve man> for dinner.>'
+
+nongreedyRegex = re.compile(r'<.*?>')
+mo = nongreedyRegex.search('<To serve man> for dinner.>')
+mo.group()
+'<To serve man>'
+```
+
+### re.DOTALL 匹配换行
+
+传入 `re.DOTALL` 作为 `re.compile()` 第二个参数，让通配符匹配所有字符，包括换行。
+
+```python
+NewlineRegex = re.compile('.*', re.DOTALL)
+NewlineRegex.search('First\nSecond\nThird').group()
+'First\nSecond\nThird'
+```
+
+## re.IGNORECASE 不区分大小写匹配
+
+传入 `re.IGNORECASE` 或 `re.I` 作为 `re.compile()` 第二个参数。
+
+### sub() 方法替换字符串
+
+Regex 对象的 sub() 传入两个参数。返回替换完成后的字符串。
+第一个是一个字符串，用于取代发现的匹配；
+第二个是一个字符串，要搜索的字符串。
+
+```python
+namesRegex = re.compile(r'Agent \w+')
+namesRegex.sub('CENSORED', 'Agent Alice gave the documents to Agent Bob.')
+'CENSORED gave the documents to CENSORED.'
+```
+
+使用匹配的文本本身，作为替换的一部分。sub() 第一个参数中输入 \1、 \2 表示输入分组 1、2 的文本。
+
+只显示姓名的第一个字母：`Agent (\w)\w*`
+传入 `r'\1****'` 作为 sub() 第一个参数。
+字符串中的 \1 将由分组 1 匹配的文本所替代，即 `(\w)` 分组。
+
+```python
+agentNamesRegex = re.compile(r'Agent (\w)\w*') # (\w) 匹配 A，\w* 匹配 lice
+agentNamesRegex.sub(r'\1****', 'Agent Alice told Agent Carol.')
+A**** told C****.
+```
+
+## 管理复杂的正则表达式
+
+忽略正则表达式字符串中的空白符和注释。
+向 `re.compile()` 传入变量 `re.VERBOSE`，作为第二参数。
+
+难以阅读的正则表达式：
+
+```python
+phoneRegex = re.compile(r'((\d{3}|\(\d{3}\))?(\s|-|\.)?\d{3}(\s|-|\.)\d{4}(\s*(ext|x|ext.)\s*\d{2,5})?)')
+```
+
+多行书写，加上注释：
+
+```python
+phoneRegex = re.compile(r'''(
+(\d{3}|\(\d{3}\))? # area code
+(\s|-|\.)? # separator
+\d{3} # first 3 digits
+(\s|-|\.) # separator
+\d{4} # last 4 digits
+(\s*(ext|x|ext.)\s*\d{2,5})? # extension
+)''', re.VERBOSE)
+```
+
+```python
+someRegexValue = re.compile('foo', re.IGNORECASE | re.DOTALL | re.VERBOSE)
+```
 
 # 数
 
@@ -70,15 +390,15 @@ float()
 ## 大数 —— 下划线分组
 
 ```python
->>> universe_age = 14_000_000_000
->>> print(universe_age)
+universe_age = 14_000_000_000
+print(universe_age)
 14000000000
 ```
 
 ## 多变量赋值
 
 ```python
->>> x, y, z = 0, 0, 0
+x, y, z = 0, 0, 0
 ```
 
 ## 变量名
@@ -190,10 +510,10 @@ range(5, -1, -1) 生成数值 5-0
 ```python
 numbers = list(range(1, 6))
 print(numbers)
->>> [1, 2, 3, 4, 5]
+[1, 2, 3, 4, 5]
 
 list('hello') #可把字符串转成列表
->>> ['h', 'e', 'l', 'l', 'o']
+['h', 'e', 'l', 'l', 'o']
 ```
 
 ## 列表解析
@@ -705,24 +1025,6 @@ my_car.odometer = 23
 my_car.read_odometer()
 ```
 
-# 标准库
-
-## random
-
-```python
-# 创建与安全相关的应用程序时，勿用 random
-from random import randint, choice
-
-# 随机返回两个整数之间（含）的整数
-randint(1, 6)
-
-# 列表/元组为参数，随机返回其中一个元素
-players = ['charles', 'michael', 'florence', 'eli']
-choice(players)
-```
-
-
-
 # 文件
 
 ## 读取整个文件 - read()
@@ -840,7 +1142,6 @@ def count_words(filename):
     '''
     else:
         # 分析文本
-        # split() 以空格为分隔符拆分字符串，并存储到一个列表
         words = contents.split()
         num_words = len(words)
         print(f"{filename} has about {num_words} words.")
@@ -1203,6 +1504,8 @@ if __name__ == '__main__':
 通过时打印一个句点，报错时打印一个 E，
 而测试导致断言失败时则打印一个 F。
 
+
+
 # 关键字
 
 | False  | await    | else    | import   | pass   |
@@ -1381,14 +1684,28 @@ HEAD 指针表示当前提交的项目状态。
 rmdir /s .git
 ```
 
-# todo
-
-
-
 # 缩进规则的例外
 
 > 在源码文件中，列表可以跨越几行，直到结束方括号。
 行末使用续行字符 `\`，将一条指令写成多行。
+
+# 标准库
+
+## random
+
+```python
+# 创建与安全相关的应用程序时，勿用 random
+from random import randint, choice
+
+# 随机返回两个整数之间（含）的整数
+randint(1, 6)
+
+# 列表/元组为参数，随机返回其中一个元素
+players = ['charles', 'michael', 'florence', 'eli']
+choice(players)
+```
+
+
 
 # 第三方模块
 
