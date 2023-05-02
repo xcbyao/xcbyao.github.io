@@ -15,6 +15,25 @@ categories: Programming
 
 模式（schema）关于数据库和表的布局及特性的信息。
 
+列（column）表中的一个字段。表都是由一个或多个列组成的。
+
+数据类型（datatype）定义了列可以存储哪些数据种类。
+
+行（row）表中的一个记录。也称记录（record），行才是正确术语。
+
+主键（primary key）一列或几列，其值能够唯一标识表中每一行。
+
+> 注：应总是定义主键，可能不需要，但保证创建的每个表具有一个主键，便于以后的数据操作管理。
+
+满足条件：
+
+- 任意两行都不具有相同的主键值；
+- 每一行都必须具有一个主键值（主键列不允许空值 NULL）；
+- 主键列中的值不允许修改或更新；
+- 主键值不能重用（若某行从表中删除，其主键不能再赋给新行）
+
+SQL（发音 sequel）（Structured Query Language）结构化查询语言。
+
 
 
 # 检索数据
@@ -160,6 +179,654 @@ categories: Programming
 
 ## 数据库安全
 
+
+# 样例表脚本
+
+## Vendors 表
+
+列 说 明
+vend_id（主键） 唯一的供应商ID
+vend_name 供应商名
+vend_address 供应商的地址
+vend_city 供应商所在城市
+vend_state 供应商所在州
+vend_zip 供应商地址邮政编码
+vend_country 供应商所在国家
+
+## Products 表
+
+列 说 明
+prod_id（主键） 唯一的产品ID
+vend_id 产品供应商ID（关联到Vendors表的vend_id）
+prod_name 产品名
+prod_price 产品价格
+prod_desc 产品描述
+
+> 为实施引用完整性，在 vend_id 上定义一个外键，关联到 Vendors 的 vend_id 列。
+
+## Customers 表
+
+列 说 明
+cust_id（主键） 唯一的顾客ID
+cust_name 顾客名
+cust_address 顾客的地址
+cust_city 顾客所在城市
+cust_state 顾客所在州
+cust_zip 顾客地址邮政编码
+cust_country 顾客所在国家
+cust_contact 顾客的联系名
+cust_email 顾客的电子邮件地址
+
+## Orders 表
+
+列 说 明
+order_num 唯一的订单号
+order_date 订单日期
+cust_id 订单顾客ID（关联到Customers表的cust_id）
+
+> cust_id 上定义外键，关联到 Customers 的 cust_id 列。
+
+## OrderItems 表
+
+列 说 明
+order_num（主键） 订单号（关联到Orders表的order_num）
+order_item（主键） 订单物品号（订单内的顺序）
+prod_id 产品ID（关联到Products表的prod_id）
+quantity 物品数量
+item_price 物品价格
+
+> 关联 order_num 到 Orders 的 order_num 列；
+> 关联 prod_id 到 Products的 prod_id 列。
+
+![](/images/five_tables.bmp)
+
+create.txt 包含创建 5 个数据库表（包括定义所有主键和外键约束）的 SQL 语句。
+populate.txt 包含用来填充这些表的 SQL INSERT 语句。
+README 文件，它提供了针对特定 DBMS 的具体设置和安装步骤。
+
+# SQL 语句语法
+
+## 约定
+
+| 符号指出多选择之一；
+[] 包含关键字或子句是可选的。
+
+## ALTER TABLE
+
+更新已存在表结构。
+
+```sql
+ALTER TABLE tablename
+(
+    ADD|DROP    column    datatype    [NULL|NOT NULL]    [CONSTRAINTS],
+    ADD|DROP    column    datatype    [NULL|NOT NULL]    [CONSTRAINTS],
+    ...
+);
+```
+
+## COMMIT
+
+将事务写入数据库。
+
+```sql
+COMMIT [TRANSACTION]
+```
+
+## CREATE INDEX
+
+再一个或多个列上创建索引。
+
+```sql
+CREATE INDEX indexname
+ON tablename (column, ...);
+```
+
+## CREATE PROCEDURE
+
+创建存储过程。Oracle 语法不同。
+
+```sql
+CREATE PROCEDURE procedurename [parameters] [options]
+AS
+SQL statement;
+```
+
+## CREATE TABLE
+
+```sql
+CREATE TABLE tablename
+(
+    column    datatype    [NULL|NOT NULL]    [CONSTRAINTS],
+    column    datatype    [NULL|NOT NULL]    [CONSTRAINTS],
+    ...
+);
+```
+
+## CREATE VIEW
+
+创建一个或多个表上的视图。
+
+```sql
+CREATE VIEW viewname AS
+SELECT columns, ...
+FROM tables, ...
+[WHERE ...]
+[GROUP BY ...]
+[HAVING ...];
+```
+
+## DELETE
+
+从表中删除一行或多行。
+
+```sql
+DELETE FROM tablename
+[WHERE ...];
+```
+
+## DROP
+
+永久删除数据库对象（表、视图、索引等）。
+
+```sql
+DROP INDEX|PROCEDURE|TABLE|VIEW indexname|procedure|tablename|viewname;
+```
+
+## INSERT
+
+为表添加一行。
+
+```sql
+INSERT INTO tablename [(columns, ...)]
+VALUES(values, ...);
+```
+
+## INSERT SELECT
+
+将 SELECT 的结果插入到一个表。
+
+```sql
+INSERT INTO tablename [(columns, ...)]
+SELECT columns, ... FROM tablename, ...
+[WHERE ...];
+```
+
+## ROLLBACK
+
+撤销一个事务块。
+
+```sql
+ROLLBACK [TO savepointname];
+或
+ROLLBACK TRANSACTION;
+```
+
+## SELECT
+
+从一个或多个表（视图）中检索数据。
+
+```sql
+SELECT columnname, ...
+FROM tablename, ...
+[WHERE ...]
+[UNION ...]
+[GROUP BY ...]
+[HAVING ...]
+[ORDER BY ...];
+```
+
+## UPDATE
+
+更新表中的一行或多行。
+
+```sql
+UPDATE tablename
+SET columnname = value, ...
+[WHERE ...];
+```
+
+# SQL 数据类型
+
+## 字符串（单引号内）
+
+| 数据类型                             | 说 明                                                                     |
+| ------------------------------------ | ------------------------------------------------------------------------- |
+| CHAR                                 | 1～ 255 个字符的定长字符串。它的长度必须在创建时规定                      |
+| NCHAR                                | CHAR的特殊形式，用来支持多字节或 Unicode 字符（此类型的不同实现变化很大） |
+| NVARCHAR                             | TEXT 的特殊形式，用来支持多字节或 Unicode 字符                            |
+| TEXT（也称为LONG、 MEMO 或 VARCHAR） | 变长文本                                                                  |
+
+定长字符串的长度在创建表时指定，空余字符用空格填充，或根据需要补为 NULL。
+
+## 数值（不用引号）
+
+| 数据类型             | 说 明                                             |
+| -------------------- | ------------------------------------------------- |
+| BIT                  | 单个二进制位值，或者为0或者为1，主要用于开/关标志 |
+| DECIMAL（或NUMERIC） | 定点或精度可变的浮点值                            |
+| FLOAT（或NUMBER）    | 浮点值                                            |
+| INT（或INTEGER）     | 4 字节整数值，支持 −2147483648～2147483647        |
+| REAL                 | 4 字节浮点值                                      |
+| SMALLINT             | 2 字节整数值，支持−32768～32767                   |
+| TINYINT              | 1 字节整数值，支持0～255                          |
+
+### 货币数据类型
+
+MONEY 或 CURRENCY，有特定取值范围的 DECIMAL 数据类型。
+
+## 日期和时间
+
+| 数据类型                | 说 明                              |
+| ----------------------- | ---------------------------------- |
+| DATE                    | 日期值                             |
+| DATETIME（或TIMESTAMP） | 日期时间值                         |
+| SMALLDATETIME           | 日期时间值，精确到分（无秒或毫秒） |
+| TIME                    | 时间值                             |
+
+### ODBC 日期
+
+该格式对每种数据库都起作用。
+
+日期 `{d '2020-12-30'}`
+时间 `{t '12:30:59'}`
+日期时间 `{ts '2020-12-30 12:30:59'}`
+
+## 二进制
+
+兼容性最差，最少使用，可包含任何数据。
+
+| 数据类型                | 说 明                                                                 |
+| ----------------------- | --------------------------------------------------------------------- |
+| BINARY                  | 定长二进制数据（最大长度从255 B到8000 B，有赖于具体的实现）           |
+| LONG RAW                | 变长二进制数据，最长2 GB                                              |
+| RAW（某些实现为BINARY） | 定长二进制数据，最多255 B                                             |
+| VARBINARY               | 变长二进制数据（最大长度一般在255 B到8000 B间变化，依赖于具体的实现） |
+
+# SQL 保留字
+
+<details><summary>保留字</summary>
+
+```sql
+ABORT
+ABSOLUTE
+ACTION
+ACTIVE
+ADD
+AFTER
+ALL
+ALLOCATE
+ALTER
+ANALYZE
+AND
+ANY
+ARE
+AS
+ASC
+ASCENDING
+ASSERTION
+AT
+AUTHORIZATION
+AUTO
+AUTO-INCREMENT
+AUTOINC
+AVG
+BACKUP
+BEFORE
+BEGIN
+BETWEEN
+BIGINT
+BINARY
+BIT
+BLOB
+BOOLEAN
+BOTH
+BREAK
+BROWSE
+BULK
+BY
+BYTES
+CACHE
+CALL
+CASCADE
+CASCADED
+CASE
+CAST
+CATALOG
+CHANGE
+CHAR
+CHARACTER
+CHARACTER_LENGTH
+CHECK
+CHECKPOINT
+CLOSE
+CLUSTER
+CLUSTERED
+COALESCE
+COLLATE
+COLUMN
+COLUMNS
+COMMENT
+COMMIT
+COMMITTED
+COMPUTE
+COMPUTED
+CONDITIONAL
+CONFIRM
+CONNECT
+CONNECTION
+CONSTRAINT
+CONSTRAINTS
+CONTAINING
+CONTAINS
+CONTAINSTABLE
+CONTINUE
+CONTROLROW
+CONVERT
+COPY
+COUNT
+CREATE
+CROSS
+CSTRING
+CUBE
+CURRENT
+CURRENT_DATE
+CURRENT_TIME
+CURRENT_TIMESTAMP
+CURRENT_USER
+CURSOR
+DATABASE
+DATABASES
+DATE
+DATETIME
+DAY
+DBCC
+DEALLOCATE
+DEBUG
+DEC
+DECIMAL
+DECLARE
+DEFAULT
+DELETE
+DENY
+DESC
+DESCENDING
+DESCRIBE
+DISCONNECT
+DISK
+DISTINCT
+DISTRIBUTED
+DIV
+DO
+DOMAIN
+DOUBLE
+DROP
+DUMMY
+DUMP
+ELSE
+ELSEIF
+ENCLOSED
+END
+ERRLVL
+ERROREXIT
+ESCAPE
+ESCAPED
+EXCEPT
+EXCEPTION
+EXEC
+EXECUTE
+EXISTS
+EXIT
+EXPLAIN
+EXTEND
+EXTERNAL
+EXTRACT
+FALSE
+FETCH
+FIELD
+FIELDS
+FILE
+FILLFACTOR
+FILTER
+FLOAT
+FLOPPY
+FOR
+FORCE
+FOREIGN
+FOUND
+FREETEXT
+FREETEXTTABLE
+FROM
+FULL
+FUNCTION
+GENERATOR
+GET
+GLOBAL
+GO
+GOTO
+GRANT
+GROUP
+HAVING
+HOLDLOCK
+HOUR
+IDENTITY
+IF
+IN
+INACTIVE
+INDEX
+INDICATOR
+INFILE
+INNER
+INOUT
+INPUT
+INSENSITIVE
+INSERT
+INT
+INTEGER
+INTERSECT
+INTERVAL
+INTO
+IS
+ISOLATION
+JOIN
+KEY
+KILL
+LANGUAGE
+LAST
+LEADING
+LEFT
+LENGTH
+LEVEL
+LIKE
+LIMIT
+LINENO
+LINES
+LISTEN
+LOAD
+LOCAL
+LOCK
+LOGFILE
+LONG
+LOWER
+MANUAL
+MATCH
+MAX
+MERGE
+MESSAGE
+MIN
+MINUTE
+MIRROREXIT
+MODULE
+MONEY
+MONTH
+MOVE
+NAMES
+NATIONAL
+NATURAL
+NCHAR
+NEXT
+NEW
+NO
+NOCHECK
+NONCLUSTERED
+NONE
+NOT
+NULL
+NULLIF
+NUMERIC
+OF
+OFF
+OFFSET
+OFFSETS
+ON
+ONCE
+ONLY
+OPEN
+OPTION
+OR
+ORDER
+OUTER
+OUTPUT
+OVER
+OVERFLOW
+OVERLAPS
+PAD
+PAGE
+PAGES
+PARAMETER
+PARTIAL
+PASSWORD
+PERCENT
+PERM
+PERMANENT
+PIPE
+PLAN
+POSITION
+PRECISION
+PREPARE
+PRIMARY
+PRINT
+PRIOR
+PRIVILEGES
+PROC
+PROCEDURE
+PROCESSEXIT
+PROTECTED
+PUBLIC
+PURGE
+RAISERROR
+READ
+READTEXT
+REAL
+REFERENCES
+REGEXP
+RELATIVE
+RENAME
+REPEAT
+REPLACE
+REPLICATION
+REQUIRE
+RESERV
+RESERVING
+RESET
+RESTORE
+RESTRICT
+RETAIN
+RETURN
+RETURNS
+REVOKE
+RIGHT
+ROLLBACK
+ROLLUP
+ROWCOUNT
+RULE
+SAVE
+SAVEPOINT
+SCHEMA
+SECOND
+SECTION
+SEGMENT
+SELECT
+SENSITIVE
+SEPARATOR
+SEQUENCE
+SESSION_USER
+SET
+SETUSER
+SHADOW
+SHARED
+SHOW
+SHUTDOWN
+SINGULAR
+SIZE
+SMALLINT
+SNAPSHOT
+SOME
+SORT
+SPACE
+SQL
+SQLCODE
+SQLERROR
+STABILITY
+STARTING
+STARTS
+STATISTICS
+SUBSTRING
+SUM
+SUSPEND
+TABLE
+TABLES
+TEMP
+TEMPORARY
+TEXT
+TEXTSIZE
+THEN
+TIME
+TIMESTAMP
+TO
+TOP
+TRAILING
+TRAN
+TRANSACTION
+TRANSLATE
+TRIGGER
+TRIM
+TRUE
+TRUNCATE
+TYPE
+UNCOMMITTED
+UNION
+UNIQUE
+UNTIL
+UPDATE
+UPDATETEXT
+UPPER
+USAGE
+USE
+USER
+USING
+VALUE
+VALUES
+VARCHAR
+VARIABLE
+VARYING
+VERBOSE
+VIEW
+VOLUME
+WAIT
+WAITFOR
+WHEN
+WHERE
+WHILE
+WITH
+WORK
+WRITE
+WRITETEXT
+XOR
+YEAR
+ZONE
+```
+
+</details>
 
 
 
