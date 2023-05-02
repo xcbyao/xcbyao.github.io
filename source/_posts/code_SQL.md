@@ -34,41 +34,208 @@ categories: Programming
 
 SQL（发音 sequel）（Structured Query Language）结构化查询语言。
 
+多条 SQL 语句必须以分号（；）分隔，部分 DBMS 需要单条语句后都加。
+
+SQL 语句不区分大小写。
+
+处理 SQL 语句时，空格都被忽略。
+
+SQL 语句一般返回无格式的数据。
+
+子句（clause）SQL 语句由子句构成。一个子句通常由一个关键字加上所提供的数据组成。
+
 
 
 # 检索数据
 
-
-## SELECT 语句
-
 ## 检索单个列
 
+```sql
+SELECT prod_name
+FROM Products;
+```
+
+从 Products 表中检索 prod_name 列。
+
+![](/images/select_1_column.png)
+
+根据具体 DBMS 和客户端，会得出检索行数和时间。
+如 MySQL——`9 rows in set (0.01 sec)`
 
 ## 检索多个列
 
+> 选择多列时，列名之间加逗号，最后一个不加，否则报错。
+
+```sql
+SELECT prod_id, prod_name, prod_price
+FROM Products;
+```
+
+![](/images/select_2_column.png)
 
 ## 检索所有列
 
+```sql
+SELECT *
+FROM Products;
+```
 
 ## 检索不同值
 
+```sql
+SELECT vend_id
+FROM Products;
+```
 
-## 限制结果
+![](/images/select_id.png)
 
+返回 9 行（即使表中只有 3 个产品供应商），因为 Products 表中有 9 种产品。
+
+DISTINCT 关键字，指示数据库只返回不同的值。
+
+```sql
+SELECT DISTINCT vend_id
+FROM Products;
+```
+
+![](/images/select_id2.png)
+
+> 注：不能部分使用 DISTINCT。作用于所有列，不单是跟在其后的那一列。
+
+## 限制结果（DBMS 实现不同）
+
+### SQL Server
+
+```sql
+SELECT TOP 5 prod_name
+FROM Products;
+```
+
+![](/images/select_top.png)
+
+### DB2
+
+```sql
+SELECT prod_name
+FROM Products
+FETCH FIRST 5 ROWS ONLY;
+```
+
+### Oracle
+
+ROWNUM（行计数器）
+
+```sql
+SELECT prod_name
+FROM Products
+WHERE ROWNUM <=5;
+```
+
+### MySQL、MariaDB、PostgreSQL 或 SQLite
+
+```sql
+SELECT prod_name
+FROM Products
+LIMIT 5;
+```
+
+第一个数字是检索的行数，第二个数字是指从哪开始。
+如下：返回从第 5 行起的 5 行数据。只有 9 种产品，所以只返回了 4 行数据。
+
+> 注：第一个被检索的行是第 0 行。`LIMIT 1 OFFSET 1` 会检索第 2 行。
+
+```sql
+SELECT prod_name
+FROM Products
+LIMIT 5 OFFSET 5;
+```
+
+![](/images/select_offset.png)
+
+#### MySQL、MariaDB 和 SQLite 捷径
+
+可以把 `LIMIT 4 OFFSET 3` 简化为 `LIMIT 3,4`
 
 ## 注释
 
+```sql
+SELECT prod_name -- 注释，很多都支持
+FROM Products;
+```
+
+```sql
+# 注释，有些不支持
+SELECT prod_name
+FROM Products;
+```
+
+```sql
+/* 多行注释 */
+SELECT prod_name
+FROM Products;
+```
+
 # 排序
 
-## 排序数据
+## 按单/多列排序
 
-## 按多列排序
+该子句取一个或多个列名，以字母顺序排序数据。
+
+```sql
+SELECT prod_name
+FROM Products
+ORDER BY prod_name; -- 按单列排序
+ORDER BY prod_price, prod_name; -- 按多列排序
+```
+
+> 注： ORDER BY 子句的位置应该是 SELECT 语句中最后一条子句，否则会报错。
+
+![](/images/select_order.jpeg)
+
+![](/images/select_order2.png)
+
+仅在多个行具有相同的 prod_price 值时，才对产品按 prod_name 进行排序。如果 prod_price 列中所有的值都是唯一的，则不会按 prod_name 排序。
 
 ## 按列位置排序
 
+```sql
+SELECT prod_id, prod_price, prod_name -- 按列位置排序
+FROM Products
+ORDER BY 2, 3;
+```
+
+![](/images/select_order3.jpeg)
+
+`ORDER BY 2，3` 表示先按 prod_price，再按 prod_name 进行排序。
+
 ## 指定排序方向
 
+```sql
+SELECT prod_id, prod_price, prod_name
+FROM Products
+ORDER BY prod_price DESC; -- 降序，默认是升序 A-Z
+```
+
+![](/images/select_order4.png)
+
+```sql
+SELECT prod_id, prod_price, prod_name
+FROM Products
+ORDER BY prod_price DESC, prod_name; -- 多列分别排序
+```
+
+![](/images/select_order5.jpeg)
+
+prod_price 列以降序排序，prod_name 列（在每个价格内）按升序排序。
+
+> 注：若想在多列上进行降序排序，必须对每一列指定 DESC。
+> DESCENDING 是全写，亦可使用。
+> ASCENDING「ASC」升序，默认无需指定。
+> 区分大小写和排序顺序：
+在字典（dictionary）排序顺序中，大小写相同，是多数 DBMS 默认做法，同时允许改变。
+
 # 过滤数据
+
 
 ## WHERE 子句
 
@@ -442,7 +609,7 @@ MONEY 或 CURRENCY，有特定取值范围的 DECIMAL 数据类型。
 | RAW（某些实现为BINARY） | 定长二进制数据，最多255 B                                             |
 | VARBINARY               | 变长二进制数据（最大长度一般在255 B到8000 B间变化，依赖于具体的实现） |
 
-# SQL 保留字
+# SQL 关键字
 
 <details><summary>保留字</summary>
 

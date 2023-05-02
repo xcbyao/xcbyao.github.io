@@ -6449,6 +6449,20 @@ Love is a lamp, while friendship is the shadow. When the lamp is off,you will fi
 因为你害怕承认自己的普通，却不知道，人没法驾驭超过个人能力的事情。
 在这种情况下，你越卖力，越会弄巧成拙。
 
+当没人知道你在干什么的时候，生活会变得更好。
+
+This is your permission to stop looking to be liked by people don't even like themselves.
+不必让所有人都喜欢你，他们甚至连自己都不喜欢。
+
+Happy people are ok with not pleasing everyone
+快乐的人可以不取悦所有人。
+
+Maturity is understanding why someone behaves the way they do, while also understanding we're not responsible for what people have gone through in their past. If someone is hurtful or abusive, it's not our job to try to fix them. lt's theirs.
+真正的成熟是理解某些人的某些行为，同时也明白我们不必为他们的过去而负责。如果对方受到某些伤害或者虐待，我们的工作也不是去解决，因为这是他们自己的事情。
+
+We say we fall in love, but authentic love makes us rise.
+我们说我们坠入爱河，但真正的爱让我们振作起来。
+
 
 
 > 《言叶之庭》
