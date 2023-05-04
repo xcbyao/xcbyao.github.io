@@ -44,7 +44,7 @@ SQL 语句一般返回无格式的数据。
 
 子句（clause）SQL 语句由子句构成。一个子句通常由一个关键字加上所提供的数据组成。
 
-
+可移植（portable）可在多个系统上运行。
 
 # 检索数据
 
@@ -236,37 +236,299 @@ prod_price 列以降序排序，prod_name 列（在每个价格内）按升序�
 
 # 过滤数据
 
-
 ## WHERE 子句
 
+搜索条件（search criteria）也称过滤条件（filter condition）
 
-## 子句操作符
+```sql
+SELECT prod_name, prod_price
+FROM Products
+WHERE prod_price = 3.49;
+```
 
+![](/images/select_where.png)
+
+> ORDER BY 位于 WHERE 之后，否则将报错。
+
+## WHERE 操作符
+
+操作符（operator）用来联结或改变 WHERE 子句中的子句的关键字，也称为逻辑操作符（logical operator）。
+
+| 操 作 符 | 说 明    | 操 作 符 | 说 明                    |
+| -------- | -------- | -------- | ------------------------ |
+| =        | 等于     | >        | 大于                     |
+| < >      | 不等于   | >=       | 大于等于                 |
+| !=       | 不等于   | !>       | 不大于                   |
+| <        | 小于     | BETWEEN  | 指定两个值之间（都包括） |
+| <=       | 小于等于 | IS NULL  | 为NULL值                 |
+| !<       | 不小于   |
+
+```sql
+SELECT prod_name, prod_price
+FROM Products
+WHERE prod_price < 10; -- 检查单个值
+WHERE vend_id <> 'DLL01'; -- 不匹配检查
+WHERE prod_price BETWEEN 5 AND 10; -- 范围值检查
+WHERE prod_price IS NULL; -- 空值检查
+```
+
+NULL 无值（no value），与字段包含 0、空字符串或仅空格不同。
+如上，返回空 prod_price 字段，不是价格为 0。
+
+![](/images/select_where2.png)
+
+![](/images/select_where3.png)
+
+![](/images/select_where4.png)
 
 # 高级数据过滤
 
-## 组成 WHERE 子句
+## 组合 WHERE 子句，AND OR IN NOT 操作符
 
-## IN 操作符
+```sql
+SELECT prod_id, prod_price, prod_name
+FROM Products
+WHERE vend_id = 'DLL01' AND prod_price <= 4;
+WHERE vend_id = 'DLL01' OR vend_id = 'BRS01';
+```
 
-## NOT 操作符
+![](/images/select_where_and.png)
 
-# 通配符过滤
+许多 DBMS 在 OR WHERE 子句的第一个条件满足时，就不再计算第二个条件了。
 
-## LIKE 操作符
+![](/images/select_where_or.png)
 
+### 求值顺序，() 明确分组
+
+```sql
+SELECT prod_name, prod_price
+FROM Products
+WHERE (vend_id = 'DLL01' OR vend_id = 'BRS01')
+    AND prod_price >= 10;
+```
+
+![](/images/select_where_().png)
+
+```sql
+SELECT prod_name, prod_price
+FROM Products
+WHERE vend_id IN ('DLL01','BRS01') -- IN 与 OR 功能相当
+ORDER BY prod_name;
+
+SELECT prod_name, prod_price
+FROM Products
+WHERE vend_id = 'DLL01' OR vend_id = 'BRS01'
+ORDER BY prod_name;
+```
+
+检索由供应商 DLL01 和 BRS01 制造的所有产品，以上两种表达一样。
+
+![](/images/select_where_in.png)
+
+- IN 优点：
+IN 操作符的语法更直观；
+在与 AND 和 OR 组合使用 IN 时，求值顺序更容易管理；
+IN 一般比一组 OR 执行更快；
+IN 最大优点是可包含其他 SELECT 语句，能更动态地建立 WHERE 子句。
+
+NOT 从不单独使用（总是与其他操作符一起使用），所以它的语法与其他操作符不同。可以用在要过滤的列前，而不仅是在其后。
+
+```sql
+SELECT prod_name
+FROM Products
+WHERE NOT vend_id = 'DLL01' -- NOT 与 <> 功能相当
+ORDER BY prod_name;
+
+SELECT prod_name
+FROM Products
+WHERE vend_id <> 'DLL01'
+ORDER BY prod_name;
+```
+
+![](/images/select_where_not.png)
+
+> MariaDB 支持使用 NOT 否定 IN、BETWEEN 和 EXISTS 子句。大多数
+DBMS 允许使用 NOT 否定任何条件。
+
+# 通配符过滤 LINK
+
+通配符（wildcard）用来匹配值的一部分的特殊字符。
+
+搜索模式（search pattern）由字面值、通配符或两者组合构成的搜索条件。
+
+谓词（predicate）即操作符作为谓词时。从技术上说，LIKE 是谓词。虽然最终的结果是相同的。
+
+通配符搜索只能用于文本字段（字符串）。
+
+## 通配符 % _ []
+
+`%` 表示任何字符出现任意次数（包括 0）。
+子句 `WHERE prod_name LIKE '%'` 不会匹配产品名称为 NULL 的行。
+
+`_` 只匹配单个字符。（DB2 不支持通配符 `_`）
+
+`[]` 用来指定一个字符集，必须匹配指定位置的一个字符。
+（SQL Server 支持集合，MySQL，Oracle，DB2，SQLite 都不支持。）
+此通配符可以用前缀字符 `^`（脱字号）来否定。
+
+```sql
+SELECT prod_id, prod_name
+FROM Products
+WHERE prod_name LIKE 'Fish%'; -- 所有以 Fish 开头产品，大小写区分根据 DBMS 配置
+WHERE prod_name LIKE '%bean bag%'; -- 可使用多个通配符
+WHERE prod_name LIKE '__ inch teddy bear';
+```
+
+![](/images/link_%.png)
+
+![](/images/link_%2.png)
+
+![](/images/link__.png)
+
+> 注：字符串后面可能用空格填充，故匹配以某字母结尾，需要后面加百分号 `y%`
+
+```sql
+SELECT cust_contact
+FROM Customers
+WHERE cust_contact LIKE '[JM]%' -- 找出名字以 J 或 M 起头的联系人
+# WHERE cust_contact LIKE '[^JM]%' -- 更简化
+# WHERE NOT cust_contact LIKE '[JM]%' -- 与 ^ 结果相同
+ORDER BY cust_contact;
+```
+
+![](/images/link_[].png)
 
 ## 通配符技巧
+
+不要过度使用通配符。耗时长，优先使用其他能达到相同目的的操作符。
+尽量不要把它们用在搜索模式的开始处，这样搜索起来是最慢的。
 
 # 创建计算字段
 
 ## 计算字段
 
+计算字段是运行时在 SELECT 语句内创建的。
+
+字段（field）基本上与列的意思相同，经常互换使用，不过数据库列一般称为列，而字段这个术语通常在计算字段这种场合下使用。
+
 ## 拼接字段
+
+拼接（concatenate）将值联结到一起（将一个值附加到另一个值）构成单个值。
+
+SQL Server 使用 `+` 号。
+DB2、Oracle、PostgreSQL 和 SQLite 使用 `||`。
+MySQL 和 MariaDB 使用特殊函数 `Concat`。
+
+```sql
+SELECT vend_name + ' (' + vend_country + ')'
+# SELECT vend_name || ' (' || vend_country || ')'
+# SELECT Concat(vend_name, ' (', vend_country, ')')
+FROM Vendors
+ORDER BY vend_name;
+```
+
+![](/images/+.png)
+
+许多数据库保存填充为列宽的文本值，不需要这些空格时如下：
+
+```sql
+SELECT RTRIM(vend_name) + ' (' + RTRIM(vend_country) + ')'
+FROM Vendors
+ORDER BY vend_name;
+```
+
+![](/images/+2.png)
+
+## 别名 AS
+
+别名（alias）有时也称导出列（derived column）
+
+```sql
+SELECT RTRIM(vend_name) + ' (' + RTRIM(vend_country) + ')'
+ AS vend_title
+FROM Vendors
+ORDER BY vend_name;
+```
+
+![](/images/alias.png)
 
 ## 执行算术计算
 
+```sql
+SELECT prod_id,
+    quantity,
+    item_price,
+    quantity*item_price AS expanded_price
+FROM OrderItems
+WHERE order_num = 20008;
+```
+
+![](/images/expanded.png)
+
+操作符：`+` 加 `-` 减 `*` 乘 `/` 除
+
 # 函数
+
+| 函 数                | 语 法               |
+| -------------------- | ---------------- |
+| 提取字符串的组成部分 | DB2、Oracle、PostgreSQL 和 SQLite 使用 SUBSTR()；MariaDB、MySQL 和 SQL Server 使用 SUBSTRING()                                           |
+| 数据类型转换         | Oracle 每种类型的转换有一个函数；DB2 和 PostgreSQL 使用 CAST()；MariaDB、MySQL 和 SQL Server 使用 CONVERT()                              |
+| 取当前日期           | DB2 和 PostgreSQL 使用 CURRENT_DATE；MariaDB 和 MySQL 使用 CURDATE()；Oracle 使用 SYSDATE；SQL Server 使用 GETDATE()；SQLite 使用 DATE() |
+
+多数 SQL 支持以下类型函数：
+
+- 处理文本字符串的文本函数；
+- 数值数据上进行算术操作的数值函数；
+- 处理日期时间并提取特定成分的日期和时间函数；
+- 格式化函数，如货币符号和千分位表示金额；
+- 返回 DBMS 正使用的特殊信息的系统函数。
+
+## 文本处理函数
+
+```sql
+SELECT vend_name, UPPER(vend_name) AS vend_name_upcase
+FROM Vendors
+ORDER BY vend_name;
+```
+
+![](/images/upper.jpeg)
+
+| 函 数                         | 说 明                  |
+| ----------------------------- | ---------------------- |
+| LEFT()（或使用子字符串函数）  | 返回字符串左边的字符   |
+| RIGHT()（或使用子字符串函数） | 返回字符串右边的字符   |
+| LENGTH() DATALENGTH() LEN()   | 返回字符串的长度       |
+| LOWER()                       | 将字符串转换为小写     |
+| UPPER()                       | 将字符串转换为大写     |
+| LTRIM()                       | 去掉字符串左边的空格   |
+| RTRIM()                       | 去掉字符串右边的空格   |
+| TRIM()                        | 去掉字符串两边的空格   |
+| SUBSTR() SUBSTRING()          | 提取字符串的组成部分   |
+| SOUNDEX()                     | 返回字符串的 SOUNDEX值 |
+
+SOUNDEX 是一个将任何文本串转换为描述其语音表示的字母数字模式的算法。能对字符串进行发音比较而不是字母比较。虽然 SOUNDEX 不是 SQL 概念，但多数 DBMS 都提供支持。
+
+> PostgreSQL 不支持 SOUNDEX()。
+如果在创建 SQLite 时使用了 SQLITE_SOUNDEX 编译时选项，那么 SOUNDEX() 才可用。因为 SQLITE_SOUNDEX 不是默认编译时选项，所以多数 SQLite 实现不支持 SOUNDEX()。
+
+```sql
+SELECT cust_name, cust_contact
+FROM Customers
+# WHERE cust_contact = 'Michael Green'; -- 用正确拼写无法检索
+WHERE SOUNDEX(cust_contact) = SOUNDEX('Michael Green');
+```
+
+表中的联系名是 Michelle Green 有误，正确拼写是 Michael Green。
+
+
+## 数值函数
+
+## 日期和时间函数
+
+## 格式化函数
+
+
+## 系统函数
 
 # 汇总数据
 
