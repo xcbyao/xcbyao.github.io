@@ -732,18 +732,148 @@ SELECT 对 Customers 表中每个顾客返回三列： cust_name、
 cust_state 和 orders。
 orders 是一个计算字段，由括号中子查询建立。该子查询对检索出的每个顾客执行一次。
 
-# 联结（join）表
+# 联结表
+
+**联结（join）**是一种机制，用来在一条 SELECT 语句中关联表。要保证所有联结都有 WHERE 子句。
 
 **关系表**的设计就是要把信息分解成多个表，一类数据一个表。各表通过某些共同的值互相关联（所以才叫关系数据库）。
 
 **可伸缩（scale）**能够适应不断增加的工作量而不失败。设计良好的数据库或应用程序称为可伸缩性好（scale well）
 
+## 创建联结
+
+```sql
+SELECT vend_name, prod_name, prod_price
+FROM Vendors, Products
+WHERE Vendors.vend_id = Products.vend_id; -- 指示 DBMS 将 Vendors 表中的 vend_id 与 Products 表中的匹配起来。
+```
+
+![](/images/join.png)
+
+**笛卡儿积（cartesian product）**由没有联结条件的表关系返回的结果为笛卡儿积。检索出的行的数目将是第一个表中的行数乘以第二个表中的行数。返回笛卡儿积的联结，也称**叉联结（cross join）**
+
+```sql
+SELECT vend_name, prod_name, prod_price
+FROM Vendors, Products; -- 返回笛卡尔积
+```
+
+## 内联结
+
+以上联结称为**等值联结（equijoin）**，基于两个表之间的相等测试。也称为**内联结（inner join）**
+
+```sql
+SELECT vend_name, prod_name, prod_price
+FROM Vendors
+INNER JOIN Products ON Vendors.vend_id = Products.vend_id;
+```
+
+两个表之间的关系是以 INNER JOIN 指定的部分 FROM 子句。联结条件用特定的 ON 子句而不是 WHERE 子句给出。传递给 ON 的实际条件与传递给 WHERE 的相同。
+
+> ANSI SQL 规范首选 INNER JOIN 语法。
+
+## 联结多个表
+
+```sql
+SELECT prod_name, vend_name, prod_price, quantity
+FROM OrderItems, Products, Vendors
+WHERE Products.vend_id = Vendors.vend_id
+  AND OrderItems.prod_id = Products.prod_id
+  AND order_num = 20007;
+```
+
+![](/images/join2.png)
+
+这个例子显示订单 20007 中的物品。订单物品存储在 OrderItems 表中。
+每个产品按其产品 ID 存储，它引用 Products 表中的产品。这些产品通
+过供应商 ID 联结到 Vendors 表中相应的供应商，供应商 ID 存储在每个
+产品的记录中。
+
+> DBMS 对联结中表的最大数目有限制。
+
+```sql
+SELECT cust_name, cust_contact
+FROM Customers
+WHERE cust_id IN (SELECT cust_id
+                  FROM Orders
+                  WHERE order_num IN (SELECT order_num
+                                      FROM OrderItems
+                                      WHERE prod_id = 'RGAN01'));
+
+# 联结更有效
+SELECT cust_name, cust_contact
+FROM Customers, Orders, OrderItems
+WHERE Customers.cust_id = Orders.cust_id
+  AND Orders.order_num = OrderItems.order_num
+  AND prod_id = 'RGAN01';
+```
+
+![](/images/join3.png)
 
 # 高级联结
 
 ## 表别名
 
+表别名只在查询执行中使用。
+
+```sql
+SELECT cust_name, cust_contact
+FROM Customers AS C, Orders AS O, OrderItems AS OI
+WHERE C.cust_id = O.cust_id
+  AND O.order_num = OI.order_num
+  AND prod_id = 'RGAN01';
+```
+
+> Oracle 不支持 AS 关键字，直接指定即可 `Customers C`
+
 ## 不同类型的联结
+
+### 自联结（self-join）
+
+```sql
+SELECT cust_id, cust_name, cust_contact
+FROM Customers
+WHERE cust_name = (SELECT cust_name
+                   FROM Customers
+                   WHERE cust_contact = 'Jim Jones');
+
+# 使用联结的相同查询
+SELECT c1.cust_id, c1.cust_name, c1.cust_contact
+FROM Customers AS c1, Customers AS c2
+WHERE c1.cust_name = c2.cust_name
+AND c2.cust_contact = 'Jim Jones';
+```
+
+![](/images/join4.png)
+
+此查询中需要的两个表实际上是相同的表，因此 Customers 表在 FROM
+子句中出现了两次。虽然这是完全合法的，但对 Customers 的引用具有
+歧义性，因此使用表别名。
+
+- 用自联结而不用子查询
+自联结通常作为外部语句，用来替代从相同表中检索数据的使用子查询语句。许多 DBMS 处理联结远比子查询快。
+
+### 自然联结（natural join）
+
+标准联结（内联结）返回所有数据，相同的列甚至多次出现。
+自然联结排除多次出现，使每一列只返回一次。
+
+自然联结只能选择唯一的列，一般通过对一个表使用通配符（SELECT *），而对其他表的列使用明确的子集来完成。
+
+```sql
+SELECT C.*, O.order_num, O.order_date,
+       OI.prod_id, OI.quantity, OI.item_price
+FROM Customers AS C, Orders AS O, OrderItems AS OI
+WHERE C.cust_id = O.cust_id
+  AND OI.order_num = O.order_num
+  AND prod_id = 'RGAN01';
+```
+
+> 很可能永远都不会用到不是自然联结的内联结。
+
+### 外联结（outer join）
+
+联结包含了那些在相关表中没有关联行的行。
+
 
 ## 带聚集函数的联结
 
