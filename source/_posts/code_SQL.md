@@ -46,6 +46,10 @@ SQL 语句一般返回无格式的数据。
 
 可移植（portable）可在多个系统上运行。
 
+查询（query）任何 SQL 语句都是查询。但一般指 SELECT 语句。
+
+子查询（subquery）即嵌套在其他查询中的查询。
+
 # 检索数据
 
 ## 检索单个列
@@ -469,8 +473,8 @@ WHERE order_num = 20008;
 
 # 函数
 
-| 函 数                | 语 法               |
-| -------------------- | ---------------- |
+| 函 数                | 语 法                                                                                                                                    |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | 提取字符串的组成部分 | DB2、Oracle、PostgreSQL 和 SQLite 使用 SUBSTR()；MariaDB、MySQL 和 SQL Server 使用 SUBSTRING()                                           |
 | 数据类型转换         | Oracle 每种类型的转换有一个函数；DB2 和 PostgreSQL 使用 CAST()；MariaDB、MySQL 和 SQL Server 使用 CONVERT()                              |
 | 取当前日期           | DB2 和 PostgreSQL 使用 CURRENT_DATE；MariaDB 和 MySQL 使用 CURDATE()；Oracle 使用 SYSDATE；SQL Server 使用 GETDATE()；SQLite 使用 DATE() |
@@ -493,18 +497,18 @@ ORDER BY vend_name;
 
 ![](/images/upper.jpeg)
 
-| 函 数                         | 说 明                  |
-| ----------------------------- | ---------------------- |
-| LEFT()（或使用子字符串函数）  | 返回字符串左边的字符   |
-| RIGHT()（或使用子字符串函数） | 返回字符串右边的字符   |
-| LENGTH() DATALENGTH() LEN()   | 返回字符串的长度       |
-| LOWER()                       | 将字符串转换为小写     |
-| UPPER()                       | 将字符串转换为大写     |
-| LTRIM()                       | 去掉字符串左边的空格   |
-| RTRIM()                       | 去掉字符串右边的空格   |
-| TRIM()                        | 去掉字符串两边的空格   |
-| SUBSTR() SUBSTRING()          | 提取字符串的组成部分   |
-| SOUNDEX()                     | 返回字符串的 SOUNDEX值 |
+| 函 数                         | 说 明                                                   |
+| ----------------------------- | ------------------------------------------------------- |
+| LEFT()（或使用子字符串函数）  | 返回字符串左边的字符 DB2, PostgreSQL, MySQL, SQL Server |
+| RIGHT()（或使用子字符串函数） | 返回字符串右边的字符                                    |
+| LENGTH() DATALENGTH() LEN()   | 返回字符串的长度                                        |
+| LOWER()                       | 将字符串转换为小写                                      |
+| UPPER()                       | 将字符串转换为大写                                      |
+| LTRIM()                       | 去掉字符串左边的空格                                    |
+| RTRIM()                       | 去掉字符串右边的空格                                    |
+| TRIM()                        | 去掉字符串两边的空格                                    |
+| SUBSTR() SUBSTRING()          | 提取字符串的组成部分 Oracle, SQLite                     |
+| SOUNDEX()                     | 返回字符串的 SOUNDEX值                                  |
 
 SOUNDEX 是一个将任何文本串转换为描述其语音表示的字母数字模式的算法。能对字符串进行发音比较而不是字母比较。虽然 SOUNDEX 不是 SQL 概念，但多数 DBMS 都提供支持。
 
@@ -520,43 +524,220 @@ WHERE SOUNDEX(cust_contact) = SOUNDEX('Michael Green');
 
 表中的联系名是 Michelle Green 有误，正确拼写是 Michael Green。
 
+## 日期和时间函数
+
+```sql
+SELECT order_num
+FROM Orders
+WHERE DATEPART(yy, order_date) = 2020; -- SQL Server。参数：返回的成分和从中返回成分的日期。
+# WHERE DATE_PART('year', order_date) = 2020; -- PostgreSQL
+# WHERE EXTRACT(year FROM order_date) = 2020; -- Oracle, PostgreSQL
+# WHERE order_date BETWEEN to_date('2020-01-01', 'yyyy-mm-dd')
+AND to_date('2020-12-31', 'yyyy-mm-dd'); -- Oracle，将两个字符串转换为日期；SQL Server 不支持 to_date()，但这里换成 DATEPART() 支持
+# WHERE YEAR(order_date) = 2020; -- DB2，MySQL 和 MariaDB 具有各种日期处理函数，但没有 DATEPART()
+# WHERE strftime('%Y', order_date) = '2020'; -- SQLite
+```
+
+![](/images/date.png)
 
 ## 数值函数
 
-## 日期和时间函数
-
-## 格式化函数
-
-
-## 系统函数
+| 函 数  | 说 明              |
+| ------ | ------------------ |
+| ABS()  | 返回一个数的绝对值 |
+| SIN()  | 返回一个角度的正弦 |
+| COS()  | 返回一个角度的余弦 |
+| TAN()  | 返回一个角度的正切 |
+| EXP()  | 返回一个数的指数值 |
+| SQRT() | 返回一个数的平方根 |
+| PI()   | 返回圆周率 π 的值  |
 
 # 汇总数据
 
 ## 聚集函数
 
+聚集函数（aggregate function）对某些行运行的函数，计算并返回一个值。
+
+| 函 数   | 说 明            |
+| ------- | ---------------- |
+| AVG()   | 返回某列的平均值 |
+| COUNT() | 返回某列的行数   |
+| MAX()   | 返回某列的最大值 |
+| MIN()   | 返回某列的最小值 |
+| SUM()   | 返回某列值之和   |
+
+```sql
+SELECT AVG(prod_price) AS avg_price -- AVG() 只用于单列，忽略列值为 NULL 的行。
+FROM Products; -- 表中所有产品
+```
+
+![](/images/avg().png)
+
+使用 COUNT(*) 对表中行的数目进行计数，包括空值（NULL）。
+使用 COUNT(column) 对特定列中具有值的行进行计数，忽略 NULL 值。
+
+```sql
+SELECT COUNT(*) AS num_cust
+# SELECT COUNT(cust_email) AS num_cust
+FROM Customers;
+```
+
+![](/images/count().png)
+
+MAX() 一般用来找出最大的数值或日期值；用于文本数据时，返回按该列排序后的最后一行，忽略列值为 NULL 的行。MIN() 相反。
+
+```sql
+SELECT SUM(item_price*quantity) AS total_price -- 计算总价钱
+FROM OrderItems
+WHERE order_num = 20005;
+```
+
+![](/images/sum().png)
+
 ## 聚集不同值
+
+对所有行执行计算，指定 ALL 参数（默认）或不指定参数。
+只包含不同的值，指定 DISTINCT 参数。
+
+```sql
+SELECT AVG(DISTINCT prod_price) AS avg_price -- 平均值只考虑各个不同的价格，相同价格会排除
+FROM Products
+WHERE vend_id = 'DLL01';
+# 输出：4.2400
+```
+
+DISTINCT 不能用于 COUNT(*)，只能用于 COUNT()。
+DISTINCT 必须使用列名，不能用于计算或表达式。
 
 ## 组合聚集函数
 
+```sql
+SELECT COUNT(*) AS num_items,
+    MIN(prod_price) AS price_min,
+    MAX(prod_price) AS price_max,
+    AVG(prod_price) AS price_avg
+FROM Products;
+```
+
+![](/images/count()2.png)
+
+> 注：最好指定别名以包含某个聚集函数的结果。否则许多 SQL 可能会产生错误消息。
+
 # 分组
 
-## 数据分组
+## 创建分组 GROUP BY
 
-## 创建分组
+```sql
+SELECT vend_id, COUNT(*) AS num_prods
+FROM Products
+GROUP BY vend_id; -- 按 vend_id 排序并分组数据
+```
+
+![](/images/group.png)
+
+GROUP BY 子句可以包含任意数目的列，还可以嵌套，但不能是聚集函数。
+如果在 SELECT 中使用表达式，则必须在 GROUP BY 中指定相同的表达式，不能使用别名。
+多数 SQL 实现不允许 GROUP BY 列带有长度可变的数据类型（如文本或备注型字段）
+除聚集计算语句外，SELECT 语句中的每一列都必须在 GROUP BY 中给出。
+如果分组列中包含具有 NULL 值的行，则 NULL 将作为一个分组返回。列中多行 NULL 值，将分为一组。
+GROUP BY 必须出现在 WHERE 之后，ORDER BY 之前。
+
+> SQL Server 等有些 SQL 实现在 GROUP BY 中支持可选的 ALL 子句。用来返回所有分组，即使是没有匹配行的分组也返回（在此情况下，聚集将返回 NULL）。
+
+> 通过相对位置指定列：
+有些 SQL 实现允许根据 SELECT 列表中的位置指定 GROUP BY 的列。
+如 `GROUP BY 2, 1` 表示按选择的第二个列分组，再按第一个列分组。
 
 ## 过滤分组
 
+WHERE 过滤行，HAVING 过滤分组。HAVING 支持所有 WHERE 操作符。
+WHERE 在数据分组前进行过滤，HAVING 在分组后过滤。
+WHERE 排除的行不包括在分组中，可能会改变计算值，从而影响 HAVING 中基于这些值过滤掉的分组。
+使用 HAVING 时应该结合 GROUP BY，而 WHERE 用于标准的行级过滤。
+
+```sql
+SELECT cust_id, COUNT(*) AS orders
+FROM Orders
+GROUP BY cust_id
+HAVING COUNT(*) >= 2;
+```
+
+![](/images/having.png)
+
 ## 分组和排序
 
+| ORDER BY                       | GROUP BY                                             |
+| ------------------------------ | ---------------------------------------------------- |
+| 对产生的输出排序               | 对行分组，输出可能不是分组的顺序                     |
+| 任意列都可用（甚至非选择的列） | 只能使用选择列或表达式列，且必须使用每个选择列表达式 |
+| 不一定需要                     | 如果与聚集函数一起使用列（或表达式），则必须使用     |
+
+> 一般在使用 GROUP BY 时，也给出 ORDER BY。这是保证数据正确排序的唯一方法。
+
+```sql
+SELECT order_num, COUNT(*) AS items
+FROM OrderItems
+GROUP BY order_num
+HAVING COUNT(*) >= 3
+ORDER BY items, order_num;
+```
+
+![](/images/group2.png)
+
 ## SELECT 子句顺序
+
+| 子 句    | 说 明              | 是否必须使用           |
+| -------- | ------------------ | ---------------------- |
+| SELECT   | 要返回的列或表达式 | 是                     |
+| FROM     | 从中检索数据的表   | 仅在从表选择数据时使用 |
+| WHERE    | 行级过滤           | 否                     |
+| GROUP BY | 分组说明           | 仅在按组计算聚集时使用 |
+| HAVING   | 组级过滤           | 否                     |
+| ORDER BY | 输出排序顺序       | 否                     |
 
 # 子查询
 
 ## 子查询过滤
 
+```sql
+SELECT cust_name, cust_contact
+FROM Customers
+WHERE cust_id IN (SELECT cust_id
+                  FROM Orders
+                  WHERE order_num IN (SELECT order_num
+                                      FROM OrderItems
+                                      WHERE prod_id = 'RGAN01'));
+```
+
+![](/images/subquery.png)
+
+子查询的 SELECT 语句只能查询单个列。
+
 ## 作为计算字段使用
 
-# 联结表
+```sql
+SELECT cust_name,
+       cust_state,
+       (SELECT COUNT(*)
+        FROM Orders
+        WHERE Orders.cust_id = Customers.cust_id) AS orders
+        -- 完全限定列名，指定表名和列名，比较 Orders 表中的 cust_id 和正从 Customers 表中检索的 cust_id
+FROM Customers
+ORDER BY cust_name;
+```
+
+![](/images/subquery2.png)
+
+SELECT 对 Customers 表中每个顾客返回三列： cust_name、
+cust_state 和 orders。
+orders 是一个计算字段，由括号中子查询建立。该子查询对检索出的每个顾客执行一次。
+
+# 联结（join）表
+
+**关系表**的设计就是要把信息分解成多个表，一类数据一个表。各表通过某些共同的值互相关联（所以才叫关系数据库）。
+
+**可伸缩（scale）**能够适应不断增加的工作量而不失败。设计良好的数据库或应用程序称为可伸缩性好（scale well）
+
 
 # 高级联结
 
