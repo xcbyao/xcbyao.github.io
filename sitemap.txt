@@ -1,10 +1,11 @@
+https://xcbyao.com/2023/05/07/tool_vscode/
+https://xcbyao.com/2023/04/24/code_debug/
 https://xcbyao.com/2021/01/31/list_summary/
 https://xcbyao.com/2020/02/02/link/
 https://xcbyao.com/2023/04/29/code_SQL/
 https://xcbyao.com/2020/08/11/appreciation/
 https://xcbyao.com/2022/04/20/code_python_basis/
 https://xcbyao.com/2023/04/20/write/
-https://xcbyao.com/2023/04/24/code_debug/
 https://xcbyao.com/2023/04/23/code_python_program/
 https://xcbyao.com/2022/01/04/code_cpp_basis/
 https://xcbyao.com/2022/01/28/code_cpp_program/
@@ -19,7 +20,7 @@ https://xcbyao.com/2021/03/11/semester_3_summary/
 https://xcbyao.com/2020/09/18/semester_2_summary/
 https://xcbyao.com/2020/02/16/semester_1_summary/
 https://xcbyao.com/2022/03/09/Apple_old_app/
-https://xcbyao.com/2022/03/10/toolset/
+https://xcbyao.com/2022/03/10/tool_toolset/
 https://xcbyao.com/2020/05/19/code_C_advanced/
 https://xcbyao.com/2020/02/06/code_C_basis/
 https://xcbyao.com/2021/01/23/code_C_advanced_2/
@@ -28,9 +29,9 @@ https://xcbyao.com/2020/05/06/Crypto_demon_tower/
 https://xcbyao.com/2020/01/21/Crypto_classical/
 https://xcbyao.com/2021/02/25/temp/
 https://xcbyao.com/2020/02/02/custom_code_highlight/
-https://xcbyao.com/2020/03/22/OD/
+https://xcbyao.com/2020/03/22/Reverse_OD/
 https://xcbyao.com/2020/12/27/fund/
-https://xcbyao.com/2020/05/05/stack/
+https://xcbyao.com/2020/05/05/Reverse_stack/
 https://xcbyao.com/links/
 https://xcbyao.com/2020/01/25/Crypto_online/
 https://xcbyao.com/categories/
@@ -43,4 +44,3 @@ https://xcbyao.com/categories/Relive-youth/
 https://xcbyao.com/categories/Algorithm/
 https://xcbyao.com/categories/Self-improvement/
 https://xcbyao.com/categories/Binary/
-https://xcbyao.com/categories/programming/
