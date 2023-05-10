@@ -50,6 +50,8 @@ SQL 语句一般返回无格式的数据。
 
 子查询（subquery）即嵌套在其他查询中的查询。
 
+结果集（result set）SQL 查询所检索出的结果。
+
 # 检索数据
 
 ## 检索单个列
@@ -163,20 +165,9 @@ LIMIT 5 OFFSET 5;
 ## 注释
 
 ```sql
-SELECT prod_name -- 注释，很多都支持
-FROM Products;
-```
-
-```sql
-# 注释，有些不支持
-SELECT prod_name
-FROM Products;
-```
-
-```sql
 /* 多行注释 */
-SELECT prod_name
-FROM Products;
+SELECT prod_name -- 注释，都支持
+FROM Products; # 注释，有些不支持
 ```
 
 # 排序
@@ -308,7 +299,7 @@ WHERE vend_id = 'DLL01' OR vend_id = 'BRS01';
 SELECT prod_name, prod_price
 FROM Products
 WHERE (vend_id = 'DLL01' OR vend_id = 'BRS01')
-    AND prod_price >= 10;
+   AND prod_price >= 10;
 ```
 
 ![](/images/select_where_().png)
@@ -777,8 +768,8 @@ INNER JOIN Products ON Vendors.vend_id = Products.vend_id;
 SELECT prod_name, vend_name, prod_price, quantity
 FROM OrderItems, Products, Vendors
 WHERE Products.vend_id = Vendors.vend_id
-  AND OrderItems.prod_id = Products.prod_id
-  AND order_num = 20007;
+ AND OrderItems.prod_id = Products.prod_id
+ AND order_num = 20007;
 ```
 
 ![](/images/join2.png)
@@ -803,8 +794,8 @@ WHERE cust_id IN (SELECT cust_id
 SELECT cust_name, cust_contact
 FROM Customers, Orders, OrderItems
 WHERE Customers.cust_id = Orders.cust_id
-  AND Orders.order_num = OrderItems.order_num
-  AND prod_id = 'RGAN01';
+ AND Orders.order_num = OrderItems.order_num
+ AND prod_id = 'RGAN01';
 ```
 
 ![](/images/join3.png)
@@ -819,8 +810,8 @@ WHERE Customers.cust_id = Orders.cust_id
 SELECT cust_name, cust_contact
 FROM Customers AS C, Orders AS O, OrderItems AS OI
 WHERE C.cust_id = O.cust_id
-  AND O.order_num = OI.order_num
-  AND prod_id = 'RGAN01';
+ AND O.order_num = OI.order_num
+ AND prod_id = 'RGAN01';
 ```
 
 > Oracle 不支持 AS 关键字，直接指定即可 `Customers C`
@@ -864,8 +855,8 @@ SELECT C.*, O.order_num, O.order_date,
        OI.prod_id, OI.quantity, OI.item_price
 FROM Customers AS C, Orders AS O, OrderItems AS OI
 WHERE C.cust_id = O.cust_id
-  AND OI.order_num = O.order_num
-  AND prod_id = 'RGAN01';
+ AND OI.order_num = O.order_num
+ AND prod_id = 'RGAN01';
 ```
 
 > 很可能永远都不会用到不是自然联结的内联结。
@@ -874,51 +865,856 @@ WHERE C.cust_id = O.cust_id
 
 联结包含了那些在相关表中没有关联行的行。
 
+```sql
+SELECT Customers.cust_id, Orders.order_num
+FROM Customers
+ LEFT OUTER JOIN Orders ON Customers.cust_id = Orders.cust_id;
+```
+
+![](/images/join5.jpeg)
+
+使用 OUTER JOIN 时，必须使用 RIGHT 或 LEFT 关键字指定包括其所有行的表。RIGHT 指出的是 OUTER JOIN 右边的表，LEFT 指左边。
+
+> SQLite 支持 LEFT OUTER JOIN，但不支持 RIGHT OUTER JOIN。
+
+**全外联结（full outer join）**检索两个表中的所有行并关联那些可以关联的行。
+
+```sql
+SELECT Customers.cust_id, Orders.order_num
+FROM Customers
+ FULL OUTER JOIN Orders ON Customers.cust_id = Orders.cust_id;
+```
+
+> MariaDB、MySQL 和 SQLite 不支持全外联结。
 
 ## 带聚集函数的联结
 
-## 联结条件
+```sql
+SELECT Customers.cust_id,
+       COUNT(Orders.order_num) AS num_ord
+FROM Customers
+ LEFT OUTER JOIN Orders ON Customers.cust_id = Orders.cust_id
+GROUP BY Customers.cust_id;
+```
 
-# 组合查询
+![](/images/join6.png)
 
-# 插入数据
+> 一般使用内联结，但使用外联结也有效。
+总是提供联结条件，否则会得出笛卡儿积。
 
-## 从一个表复制到另一个表
+# 组合查询 UNION
+
+组合查询通常称为**并（union）**或**复合查询（compound query）**
+
+使用情况：
+在一个查询中从不同的表返回结构数据；
+对一个表执行多个查询，按一个查询返回数据。
+
+```sql
+SELECT cust_name, cust_contact, cust_email
+FROM Customers
+WHERE cust_state IN ('IL','IN','MI')
+UNION
+SELECT cust_name, cust_contact, cust_email
+FROM Customers
+WHERE cust_name = 'Fun4All';
+
+# WHERE 相同结果
+SELECT cust_name, cust_contact, cust_email
+FROM Customers
+WHERE cust_state IN ('IL','IN','MI') OR cust_name = 'Fun4All';
+```
+
+![](/images/union.png)
+
+## UNION 规则
+
+UNION 必须由两条或以上的 SELECT 语句组成，语句之间用 UNION 分隔；
+UNION 中每个查询必须包含相同的列、表达式或聚集函数；
+列数据类型必须兼容：类型不必完全相同，但必须是 DBMS 可以隐含转换的类型（如，不同数值类型或不同日期类型）。
+
+> 注：结合 UNION 使用的 SELECT 语句遇到不同的列名，会返回第一个名字，其他语句使用时也必须以第一个为准，否则报错。
+
+## 包含或取消重复的行 UNION ALL
+
+```sql
+SELECT cust_name, cust_contact, cust_email
+FROM Customers
+WHERE cust_state IN ('IL','IN','MI')
+UNION ALL -- 返回所有匹配行，可能有重复
+SELECT cust_name, cust_contact, cust_email
+FROM Customers
+WHERE cust_name = 'Fun4All';
+```
+
+![](/images/union_all.png)
+
+## 对组合查询结果排序
+
+使用 UNION 时，只能使用一条 ORDER BY，必须位于最后一条 SELECT 语句之后。
+
+```sql
+SELECT cust_name, cust_contact, cust_email
+FROM Customers
+WHERE cust_state IN ('IL','IN','MI')
+UNION
+SELECT cust_name, cust_contact, cust_email
+FROM Customers
+WHERE cust_name = 'Fun4All'
+ORDER BY cust_name, cust_contact;
+```
+
+![](/images/union2.png)
+
+> 某些 DBMS 还支持其他 UNION：`EXCEPT`（有时称为 `MINUS`）用来检索只在第一个表中存在而在第二个表中不存在的行；而 `INTERSECT` 用来检索两个表中都存在的行。实际上这两种很少使用，因为相同结果可用联结得到。
+
+# 插入数据 INSERT
+
+## 插入完整行
+
+必须给每一列提供一个值，没有值则指定 NULL。
+
+```sql
+# 不安全，避免使用，次序要和表一致。
+INSERT INTO Customers
+VALUES(1000000006,
+       'Toy Land',
+       '123 Any Street',
+       'New York',
+       'NY',
+       '11111',
+       'USA',
+       NULL,
+       NULL);
+```
+
+```sql
+# 更安全，次序随意，以列名匹配。
+INSERT INTO Customers(cust_id,
+                      cust_name,
+                      cust_address,
+                      cust_city,
+                      cust_state,
+                      cust_zip,
+                      cust_country,
+                      cust_contact,
+                      cust_email)
+VALUES(1000000006,
+       'Toy Land',
+       '123 Any Street',
+       'New York',
+       'NY',
+       '11111',
+       'USA',
+       NULL,
+       NULL);
+```
+
+> 不能插入同一条记录两次，主键（cust_id）的值必须有唯一性。
+
+## 插入部分行
+
+```sql
+INSERT INTO Customers(cust_id,
+                      cust_name,
+                      cust_address,
+                      cust_city,
+                      cust_state,
+                      cust_zip,
+                      cust_country)
+VALUES(1000000006,
+       'Toy Land',
+       '123 Any Street',
+       'New York',
+       'NY',
+       '11111',
+       'USA');
+```
+
+- 省略列
+该列定义为允许 NULL 值（无值或空值）；
+在表定义中给出默认值。
+
+## 插入检索出的数据
+
+从 CustNew 表中读出数据并插入到 Customers 表。
+
+```sql
+INSERT INTO Customers(cust_id,
+                      cust_contact,
+                      cust_email,
+                      cust_name,
+                      cust_address,
+                      cust_city,
+                      cust_state,
+                      cust_zip,
+                      cust_country)
+SELECT cust_id,
+       cust_contact,
+       cust_email,
+       cust_name,
+       cust_address,
+       cust_city,
+       cust_state,
+       cust_zip,
+       cust_country
+FROM CustNew;
+```
+
+> 注：INSERT SELECT 中的列名，这里不一定要求列名匹配，以两个表对应的列位置匹配。
+
+INSERT 通常只插入一行。要插入多行，必须执行多个 INSERT 语句。INSERT SELECT 是例外。
+
+## 一个表复制到另一个表
+
+CREATE SELECT 语句（SQL Server 也可用 SELECT INTO）（DB2 不支持 CREATE SELECT）。
+
+```sql
+CREATE TABLE CustCopy AS SELECT * FROM Customers; -- MySQL, MariaDB, Oracle, PostgreSQL, SQLite
+# SELECT * INTO CustCopy FROM Customers; -- SQL Server
+```
+
+> SELECT INTO 是试验新 SQL 语句前进行表复制的很好工具，不影响实际数据。
+
+### SELECT INTO 注意事项
+
+任何 SELECT 选项和子句都可使用；
+可利用联结从多个表插入数据；
+不管从多少表中检索数据，数据只能插入到一个表中。
 
 # 更新数据
 
+不要省略 WHERE 子句。UPDATE 语句以 WHERE 结束，它告诉 DBMS 更新哪一行。
+
+```sql
+UPDATE Customers -- 要更新的表
+SET cust_contact = 'Sam Roberts',
+    cust_email = 'kim@thetoystore.com' -- 列名和新值
+    # cust_email = NULL -- 删除值
+WHERE cust_id = 1000000005; -- 过滤条件
+```
+
 # 删除数据
 
-## 更新删除指导原则
+```sql
+DELETE FROM Customers
+WHERE cust_id = 1000000006;
+```
+
+使用外键确保引用完整性的一个好处是 DBMS 通常可以防止删除某数据与其他表相关联的行。
+如，要从 Products 表中删除一个产品，而这个产品用在 OrderItems 的已有订单中，那么 DELETE 语句将抛出错误并中止。这是总要定义外键的另一个理由。
+
+DELETE 删除整行而不是列。删除指定列，用 UPDATE 语句。
+
+想从表中删除所有行，可使用 `TRUNCATE TABLE` 语句速度更快（因为不记录数据的变动）。
+
+## 更新和删除指导原则
+
+除非打算更新和删除每一行，否则绝对带着 WHERE 子句。
+
+在 UPDATE 或 DELETE 语句使用 WHERE 子句前，应先用 SELECT 进行测试，保证它过滤的是正确的记录，以防编写的 WHERE 子句不正确。
+
+```sql
+SELECT * FROM Customers
+WHERE cust_id = 1000000042;
+DELETE Customers
+WHERE cust_id = 1000000042;
+```
 
 # 表
 
-## 创建表
+## 创建表 CREATE TABLE
 
-## 更新表
+```sql
+CREATE TABLE Products -- 新表名
+( -- 表列的名字和定义，逗号分隔
+    prod_id CHAR(10) NOT NULL,
+    vend_id CHAR(10) NOT NULL,
+    prod_name CHAR(254) NOT NULL,
+    prod_price DECIMAL(8,2) NOT NULL,
+    prod_desc VARCHAR(1000) NULL -- DB2 必须从最后一列中去掉 NULL
+);
+```
 
-## 删除表
+允许 NULL 值的列也允许在插入行时不给出该列的值。
+不允许的列不接受没有列值的行，即插入或更新行时，该列必须有值。
+只有不允许 NULL 值的列可作为主键。
+
+NULL 值不是空字符串，如果指定 `''`（其间无字符），这在 NOT NULL 列中是允许的。空字符串是一个有效的值，它不是无值。
+
+## 指定默认值 DEFAULT
+
+```sql
+CREATE TABLE OrderItems
+(
+    order_num INTEGER NOT NULL,
+    order_item INTEGER NOT NULL,
+    prod_id CHAR(10) NOT NULL,
+    quantity INTEGER NOT NULL DEFAULT 1,
+    item_price DECIMAL(8,2) NOT NULL
+);
+```
+
+- 获得系统日期
+| DBMS       | 函数/变量      |
+| ---------- | -------------- |
+| DB2        | CURRENT_DATE   |
+| MySQL      | CURRENT_DATE() |
+| Oracle     | SYSDATE        |
+| PostgreSQL | CURRENT_DATE   |
+| SQL Server | GETDATE()      |
+| SQLite     | date('now')    |
+
+## 更新表 ALTER TABLE
+
+许多 DBMS 不允许删除或更改表中的列，允许重命名；
+限制对已经填有数据的列进行更改，对未填有数据的列几乎无限制。
+
+```sql
+ALTER TABLE Vendors
+ADD vend_phone CHAR(20);
+# DROP COLUMN vend_phone; -- 部分 DBMS 支持
+```
+
+> SQLite 不支持用 ALTER TABLE 定义主键和外键，必须在最初创建表时指定。
+
+- 复杂的表结构更改一般需要手动删除：
+1. 创建一个新表；
+2. 用 INSERT SELECT 语句从旧表复制数据到新表，按需要修改；
+3. 检验包含所需数据的新表；
+4. 重命名旧表（若确定，可删除它）；
+5. 用旧表名字重命名新表；
+6. 重新创建触发器、存储过程、索引和外键。
+
+## 删除表 DROP TABLE
+
+删除表没有确认步骤，不能撤销，将永久删除。
+
+```sql
+DROP TABLE CustCopy;
+```
 
 ## 重命名表
 
+DB2、MariaDB、MySQL、Oracle、PostgreSQL 使用 RENAME 语句；
+SQL Server 使用 sp_rename 存储过程；
+SQLite 使用 ALTER TABLE 语句。
+
 # 视图
+
+视图是虚拟的表。表包含数据，视图只包含使用时动态检索数据的查询。
+
+> SQLite 仅支持只读视图，所以视图可以创建、读，但内容不能更改。
+> 所有 DBMS 一致支持视图创建语法。
+
+删除视图，`DROP VIEW viewname;`
+覆盖或更新视图，必须先删除再重新创建。
+
+```sql
+SELECT cust_name, cust_contact
+FROM Customers, Orders, OrderItems
+WHERE Customers.cust_id = Orders.cust_id
+AND OrderItems.order_num = Orders.order_num
+AND prod_id = 'RGAN01';
+
+-- 把上面查询包装成虚拟表 ProductCustomers
+SELECT cust_name, cust_contact
+FROM ProductCustomers
+WHERE prod_id = 'RGAN01';
+```
+
+## 视图应用
+
+重用 SQL 语句。
+简化复杂的 SQL 操作。
+使用表的一部分而不是整个表。
+保护数据。可以授予用户访问表的特定部分的权限，而不是整个表的访问权限。
+更改数据格式和表示。视图可返回与底层表的表示和格式不同的数据。
+
+## 视图规则和限制
+
+视图必须唯一命名，不能和其他表名重复。
+创建的视图数目没有限制，必须具有足够的访问权限。
+视图可以嵌套，即可以利用从其他视图中检索数据的查询来构造视图。所允许的嵌套层数在不同的 DBMS 中有所不同（嵌套视图可能会严重降低查询性能，因此使用前应进行全面测试）。
+许多 DBMS 禁止在视图查询中使用 ORDER BY 子句。
+有些 DBMS 要求对返回的所有列进行命名，如果列是计算字段，则需要使用别名。
+视图不能索引，也不能有关联的触发器或默认值。
+有些 DBMS 把视图作为只读的查询，这表示可以从视图检索数据，但不能将数据写回底层表。
+有些 DBMS 允许创建这样的视图，它不能进行导致行不再属于视图的插入或更新。例如有一个视图，只检索带有邮件地址的顾客。如果更新某个顾客，删除他的电子邮件地址，将使该顾客不再属于视图。这是允许的默认行为，但有的 DBMS 可能会阻止。
+
+## 用视图简化复杂的联结
+
+```sql
+CREATE VIEW ProductCustomers AS
+SELECT cust_name, cust_contact, prod_id
+FROM Customers, Orders, OrderItems
+WHERE Customers.cust_id = Orders.cust_id
+ AND OrderItems.order_num = Orders.order_num;
+```
+
+```sql
+SELECT cust_name, cust_contact
+FROM ProductCustomers
+WHERE prod_id = 'RGAN01';
+```
+
+![](/images/view.png)
+
+## 用视图重新格式化检索出的数据
+
+```sql
+SELECT RTRIM(vend_name) + ' (' + RTRIM(vend_country) + ')'
+    AS vend_title
+FROM Vendors
+ORDER BY vend_name;
+```
+
+![](/images/view2.png)
+
+```sql
+-- 视图格式化
+CREATE VIEW VendorLocations AS
+SELECT RTRIM(vend_name) + ' (' + RTRIM(vend_country) + ')'
+    AS vend_title
+FROM Vendors;
+
+-- 检索数据
+SELECT * FROM VendorLocations;
+```
+
+## 用视图过滤不想要的数据
+
+```sql
+CREATE VIEW CustomerEMailList AS
+SELECT cust_id, cust_name, cust_email
+FROM Customers
+WHERE cust_email IS NOT NULL;
+
+SELECT * FROM CustomerEMailList;
+```
+
+![](/images/view3.png)
+
+## 使用视图与计算字段
+
+```sql
+CREATE VIEW OrderItemsExpanded AS
+SELECT order_num,
+       prod_id,
+       quantity,
+       item_price,
+       quantity*item_price AS expanded_price
+FROM OrderItems
+
+SELECT * FROM OrderItemsExpanded
+WHERE order_num = 20008;
+```
+
+![](/images/view4.png)
 
 # 存储过程
 
+存储过程就是为以后使用而保存的一条或多条 SQL 语句。可将其视为批文件。通常以编译过的形式存储，所以 DBMS 处理命令所需的工作量少，提高了性能。
+
+> SQLite 不支持存储过程。
+
+## 执行存储过程
+
+EXECUTE 接受存储过程名和需要传递给它的任何参数。
+
+```sql
+EXECUTE AddNewProduct('JTS01', -- 供应商 ID（Vendors 表的主键）
+                      'Stuffed Eiffel Tower', -- 产品名
+                      6.49, -- 价格
+                      'Description'); -- 描述
+```
+
+这 4 个参数匹配存储过程中 4 个预期变量（定义为存储过程自身的组成部分）。此存储过程将新行添加到 Products 表，并将传入的属性赋给相应的列。
+另一个需要值的 prod_id 列是这个表的主键，最好是使生成此 ID 的过程自动化（而不是依赖于最终用户的输入）。
+
+- 存储过程所完成的工作：
+验证传递的数据，保证所有参数都有值；
+生成用作主键的唯一 ID；
+将新产品插入表，在合适的列中存储生成的主键和传递的数据。
+
+- 具体可选项：
+参数可选，具有不提供参数时的默认值。
+不按次序给出参数，以「参数=值」方式给出参数值。
+输出参数，允许存储过程在正执行的应用程序中更新所用的参数。
+用 SELECT 语句检索数据。
+返回代码，允许存储过程返回一个值到正在执行的应用程序。
+
+## 创建存储过程
+
+```sql
+-- Oracle 版本，对邮件发送清单中具有邮件地址的顾客进行计数。
+CREATE PROCEDURE MailingListCount (
+    ListCount OUT INTEGER
+)
+IS
+v_rows INTEGER;
+BEGIN
+    SELECT COUNT(*) INTO v_rows
+    FROM Customers
+    WHERE NOT cust_email IS NULL;
+    ListCount := v_rows;
+END;
+/*
+ListCount 参数从存储过程返回一个值。关键字 OUT 用来指示这种行为。
+Oracle 支持 IN（传递值给存储过程）、OUT（从存储过程返回值）、INOUT（既传递又返回值）类型的参数。
+存储过程的代码括在 BEGIN 和 END 语句中，用检索出的行数设置 ListCount（要传递的输出参数）
+*/
+
+-- SQL Server 版本
+CREATE PROCEDURE MailingListCount
+AS
+DECLARE @cnt INTEGER
+SELECT @cnt = COUNT(*)
+FROM Customers
+WHERE NOT cust_email IS NULL;
+RETURN @cnt;
+
+/*
+此存储过程没有参数。调用程序检索 SQL Server 返回代码提供的值。
+用 DECLARE 语句声明了一个局部变量（SQL Server 中所有局部变量名都以@ 起头）；在 SELECT 语句中让它包含 COUNT() 函数返回的值；最后用 RETURN @cnt 语句将计数返回给调用程序。
+*/
+```
+
+```sql
+-- 调用 Oracle 版本
+var ReturnValue NUMBER
+EXEC MailingListCount(:ReturnValue);
+SELECT ReturnValue;
+
+-- 调用 SQL Server 版本
+DECLARE @ReturnValue INT
+EXECUTE @ReturnValue=MailingListCount;
+SELECT @ReturnValue;
+```
+
+```sql
+-- SQL Server
+CREATE PROCEDURE NewOrder @cust_id CHAR(10)
+AS
+-- 插入新订单
+INSERT INTO Orders(cust_id)
+VALUES(@cust_id)
+-- 返回订单号
+SELECT order_num = @@IDENTITY;
+```
+
+SQL Server 中称这些自动增量的列为标识字段（identity field）
+其他 DBMS 称之为自动编号（auto number）或序列（sequence）
+DBMS 对日期使用默认值（GETDATE() 函数），订单号自动生成。
+在 SQL Server 上可在全局变量 @@IDENTITY 中得到，它返回到调用程序（这里的 SELECT）。
+
 # 事务处理
 
-# 游标
+使用事务处理（transaction processing），通过确保成批的 SQL 操作完全执行或完全不执行，来维护数据库完整性。
+
+事务（transaction）一组 SQL 语句；
+回退（rollback）撤销指定 SQL 语句的过程；
+提交（commit）将未存储的 SQL 语句结果写入数据库表；
+保留点（savepoint）事务处理中设置的临时占位符（placeholder），可以对它发布回退（与回退整个事务处理不同）。
+
+事务处理用来管理 INSERT、UPDATE 和 DELETE 语句。不能回退 SELECT 语句，也没必要，也不能回退 CREATE 或 DROP 操作。进行回退时，这些操作也不撤销。
+
+## 控制事务处理
+
+```sql
+-- SQL Server
+BEGIN TRANSACTION -- 明确事务处理块的开始和结束
+... -- 实际代码
+COMMIT TRANSACTION
+
+-- MariaDB 和 MySQL
+START TRANSACTION
+...
+
+-- Oracle
+SET TRANSACTION
+...
+
+-- PostgreSQL 使用 ANSI SQL 语法
+BEGIN
+...
+```
+
+## ROLLBACK
+
+```sql
+DELETE FROM Orders;
+ROLLBACK;
+```
+
+## COMMIT
+
+一般 SQL 语句都是针对数据库表直接执行和编写的，即隐式提交（implicit commit），提交（写或保存）操作是自动进行的。
+在事务处理块中，提交不会隐式进行。有的 DBMS 按隐式提交处理事务端。
+
+```sql
+-- SQL Server
+BEGIN TRANSACTION -- 利用事务保证完全删除订单
+DELETE OrderItems WHERE order_num = 12345
+DELETE Orders WHERE order_num = 12345
+COMMIT TRANSACTION
+
+-- Oracle
+SET TRANSACTION
+DELETE OrderItems WHERE order_num = 12345;
+DELETE Orders WHERE order_num = 12345;
+COMMIT;
+```
+
+## 保留点
+
+每个保留点都要取能够标识它的唯一名字。保留点越多越好。
+
+```sql
+-- MariaDB、MySQL 和 Oracle
+SAVEPOINT delete1;
+
+ROLLBACK TO delete1; -- 回退
+
+-- SQL Server
+SAVE TRANSACTION delete1;
+
+ROLLBACK TRANSACTION delete1; -- 回退
+```
+
+# 游标 cursor
+
+游标是一个存储在 DBMS 服务器上的数据库查询，它不是一条 SELECT 语句，而是被该语句检索出来的结果集。在存储了游标之后，应用程序可以根据需要滚动或浏览其中的数据。
+
+> SQLite 支持的游标称为步骤（step）
+
+## 常见特性
+
+能标记游标为只读；
+能控制可以执行的定向操作（向前、向后、第一、最后、绝对位置和相对位置等）；
+能标记某些列为可编辑的，某些不可编辑；
+规定范围，使游标对创建它的特定请求（如存储过程）或对所有请求可访问；
+指示 DBMS 对检索出的数据进行复制，使数据在游标打开和访问期间不变化。
+
+## 使用游标
+
+使用游标前，必须声明。这个过程实际上没有检索数据，只是定义要使用的 SELECT 语句和游标选项；
+一旦声明，就必须打开游标以供使用。这个过程用前面定义的 SELECT 语句把数据实际检索出来；
+对于填有数据的游标，根据需要检索各行；
+结束游标使用时，必须关闭游标，可能的话，释放游标（有赖于具体 DBMS）。
+
+## 创建游标 DECLARE
+
+```sql
+-- DB2、MariaDB、MySQL 和 SQL Server
+DECLARE CustCursor CURSOR
+FOR
+SELECT * FROM Customers
+WHERE cust_email IS NULL;
+
+-- Oracle 和 PostgreSQL
+DECLARE CURSOR CustCursor
+IS
+SELECT * FROM Customers
+WHERE cust_email IS NULL;
+```
+
+## 使用游标 OPEN CURSOR
+
+```sql
+OPEN CURSOR CustCursor
+```
+
+FETCH 指出要检索哪些行，从何处检索它们以及将它们放于何处（如变量名）。
+
+```sql
+-- Oracle
+DECLARE TYPE CustCursor IS REF CURSOR
+    RETURN Customers%ROWTYPE;
+DECLARE CustRecord Customers%ROWTYPE
+BEGIN
+    OPEN CustCursor;
+    LOOP
+    FETCH CustCursor INTO CustRecord; -- 自动从第一行开始检索
+    EXIT WHEN CustCursor%NOTFOUND; -- 取不出行时退出循环
+        ... -- 具体处理代码
+    END LOOP;
+    CLOSE CustCursor;
+END;
+```
+
+## 关闭游标 CLOSE
+
+```sql
+-- DB2、 Oracle 和 PostgreSQL
+CLOSE CustCursor
+
+-- SQL Server
+CLOSE CustCursor
+DEALLOCATE CURSOR CustCursor
+```
 
 # 高级 SQL 特性
 
-## 约束
+## 约束 constraint
 
-## 索引
+约束：管理如何插入或处理数据库数据的规则。
+大多数约束是在表定义中定义的。
+
+### 主键
+
+主键是一种特殊的约束，用来保证一列（或一组列）中的值是唯一的，而且永不改动。
+
+表中任意列只要满足以下条件，都可用于主键。
+任意两行的主键值都不相同。
+每行都具有一个主键值（即列中不允许 NULL 值）。
+包含主键值的列从不修改或更新。（大多数 DBMS 不允许这么做）
+主键值不能重用。如果从表中删除某一行，其主键值不分配给新行。
+
+```sql
+CREATE TABLE Vendors
+(
+    vend_id CHAR(10) NOT NULL PRIMARY KEY, -- 通过创建定义主键
+    vend_name CHAR(50) NOT NULL,
+    vend_address CHAR(50) NULL,
+    vend_city CHAR(50) NULL,
+    vend_state CHAR(5) NULL,
+    vend_zip CHAR(10) NULL,
+    vend_country CHAR(50) NULL
+);
+
+-- 另一种定义主键
+ALTER TABLE Vendors
+ADD CONSTRAINT PRIMARY KEY (vend_id);
+```
+
+> SQLite 不允许使用 ALTER TABLE 定义键，要求在初始的 CREATE TABLE 语句中定义它们。
+
+### 外键
+
+外键是表中的一列，其值必须列在另一表的主键中。
+
+REFERENCES 关键字，表示 cust_id 中的任何值都必须是 Customers 表的 cust_id 中的值。
+```sql
+CREATE TABLE Orders
+(
+    order_num INTEGER NOT NULL PRIMARY KEY,
+    order_date DATETIME NOT NULL,
+    cust_id CHAR(10) NOT NULL REFERENCES Customers(cust_id)
+);
+
+-- 相同工作
+ALTER TABLE Orders
+ADD CONSTRAINT
+FOREIGN KEY (cust_id) REFERENCES Customers (cust_id);
+```
+
+> 有的 DBMS 支持级联删除（cascading delete）特性。如果启用，该特性在从一个表中删除行时删除所有相关的数据。如，从 Customers 表中删除某个顾客，则任何关联的订单行也会被自动删除。
+
+### 唯一约束
+
+唯一约束用来保证一列（或一组列）中的数据是唯一的。类似于主键，但存在以下重要区别：
+
+- 表可包含多个唯一约束，但每个表只允许一个主键。
+- 唯一约束列可包含 NULL 值。
+- 唯一约束列可修改或更新。
+- 唯一约束列的值可重复使用。
+- 与主键不一样，唯一约束不能用来定义外键。
+
+唯一约束既可以用 UNIQUE 关键字在表定义中定义，也可以用单独的 CONSTRAINT 定义。
+
+### 检查约束
+
+检查约束用来保证一列（或一组列）中的数据满足一组指定的条件。
+
+常见用途：
+- 检查最小或最大值。如，防止 0 个物品的订单。
+- 指定范围。
+- 只允许特定的值。
+
+```sql
+CREATE TABLE OrderItems
+(
+    order_num INTEGER NOT NULL,
+    order_item INTEGER NOT NULL,
+    prod_id CHAR(10) NOT NULL,
+    quantity INTEGER NOT NULL CHECK (quantity > 0),
+    item_price MONEY NOT NULL
+);
+
+-- 检查 gender 列只包含 M 或 F
+ADD CONSTRAINT CHECK (gender LIKE '[MF]');
+```
+
+## 索引 CREATE INDEX
+
+索引用来排序数据以加快搜索和排序操作的速度。
+
+开始创建索引前：
+- 索引改善检索操作的性能，但降低了数据插入、修改和删除的性能。在执行这些操作时，DBMS 必须动态地更新索引。
+- 索引数据可能要占用大量的存储空间。
+- 并非所有数据都适合做索引。
+- 索引用于数据过滤和排序。
+- 可在索引中定义多个列（如州加上城市）。这样的索引仅在以州加城市的顺序排序时有用。
+
+```sql
+-- 不同 DBMS 创建索引的语句变化很大
+CREATE INDEX prod_name_ind -- 索引必须唯一命名
+ON Products (prod_name);
+```
 
 ## 触发器
 
+触发器是特殊的存储过程，它在特定的数据库活动发生时自动执行。
+触发器可与特定表上的 INSERT、UPDATE 和 DELETE 操作相关联。
+
+与存储过程不一样，触发器与单个的表相关联。与 Orders 表上的 INSERT 操作相关联的触发器只在 Orders 表中插入行时执行。
+
+触发器内的代码具有以下数据的访问权：
+- INSERT 操作中的所有新数据；
+- UPDATE 操作中的所有新旧数据；
+- DELETE 操作中删除的数据。
+
+常见用途：
+- 保证数据一致。如，在 INSERT 操作中将所有州名转换为大写。
+- 基于某个表的变动在其他表上执行活动。如，每当更新或删除一行时将审计跟踪记录写入某个日志表。
+- 进行额外的验证并根据需要回退数据。如，保证某个顾客的可用资金不超限定，如果已经超出，则阻塞插入。
+- 计算计算列的值或更新时间戳。
+
+```sql
+-- SQL Server
+CREATE TRIGGER customer_state
+ON Customers
+FOR INSERT, UPDATE
+AS
+UPDATE Customers
+SET cust_state = Upper(cust_state)
+WHERE Customers.cust_id = inserted.cust_id;
+
+-- Oracle 和 PostgreSQL
+CREATE TRIGGER customer_state
+AFTER INSERT OR UPDATE
+FOR EACH ROW
+BEGIN
+UPDATE Customers
+SET cust_state = Upper(cust_state)
+WHERE Customers.cust_id = :OLD.cust_id
+END;
+```
+
+> 一般来说，约束处理比触发器快，因此应该尽量使用约束。
+
 ## 数据库安全
 
+一般说来，需要保护的操作：
+- 对数据库管理功能（创建表、更改或删除已存在的表等）的访问；
+- 对特定数据库或表的访问；
+- 访问的类型（只读、对特定列的访问等）；
+- 仅通过视图或存储过程对表进行访问；
+- 创建多层次的安全措施，从而允许多种基于登录的访问和控制；
+- 限制管理用户账号的能力。
+
+安全性使用 SQL 的 GRANT 和 REVOKE 语句来管理，不过大多数 DBMS 提供了交互式的管理实用程序，在内部使用 GRANT 和 REVOKE。
 
 # 样例表脚本
 
@@ -982,7 +1778,176 @@ item_price 物品价格
 
 create.txt 包含创建 5 个数据库表（包括定义所有主键和外键约束）的 SQL 语句。
 populate.txt 包含用来填充这些表的 SQL INSERT 语句。
-README 文件，它提供了针对特定 DBMS 的具体设置和安装步骤。
+
+```sql
+-- Example table creation scripts for MySQL & MariaDB
+
+-- Create Customers table
+CREATE TABLE Customers
+(
+  cust_id      char(10)  NOT NULL ,
+  cust_name    char(50)  NOT NULL ,
+  cust_address char(50)  NULL ,
+  cust_city    char(50)  NULL ,
+  cust_state   char(5)   NULL ,
+  cust_zip     char(10)  NULL ,
+  cust_country char(50)  NULL ,
+  cust_contact char(50)  NULL ,
+  cust_email   char(255) NULL 
+);
+
+-- Create OrderItems table
+CREATE TABLE OrderItems
+(
+  order_num  int          NOT NULL ,
+  order_item int          NOT NULL ,
+  prod_id    char(10)     NOT NULL ,
+  quantity   int          NOT NULL ,
+  item_price decimal(8,2) NOT NULL 
+);
+
+-- Create Orders table
+CREATE TABLE Orders
+(
+  order_num  int      NOT NULL ,
+  order_date datetime NOT NULL ,
+  cust_id    char(10) NOT NULL 
+);
+
+-- Create Products table
+CREATE TABLE Products
+(
+  prod_id    char(10)      NOT NULL ,
+  vend_id    char(10)      NOT NULL ,
+  prod_name  char(255)     NOT NULL ,
+  prod_price decimal(8,2)  NOT NULL ,
+  prod_desc  text          NULL 
+);
+
+-- Create Vendors table
+CREATE TABLE Vendors
+(
+  vend_id      char(10) NOT NULL ,
+  vend_name    char(50) NOT NULL ,
+  vend_address char(50) NULL ,
+  vend_city    char(50) NULL ,
+  vend_state   char(5)  NULL ,
+  vend_zip     char(10) NULL ,
+  vend_country char(50) NULL 
+);
+
+-- Define primary keys
+ALTER TABLE Customers ADD PRIMARY KEY (cust_id);
+ALTER TABLE OrderItems ADD PRIMARY KEY (order_num, order_item);
+ALTER TABLE Orders ADD PRIMARY KEY (order_num);
+ALTER TABLE Products ADD PRIMARY KEY (prod_id);
+ALTER TABLE Vendors ADD PRIMARY KEY (vend_id);
+
+-- Define foreign keys
+ALTER TABLE OrderItems ADD CONSTRAINT FK_OrderItems_Orders FOREIGN KEY (order_num) REFERENCES Orders (order_num);
+ALTER TABLE OrderItems ADD CONSTRAINT FK_OrderItems_Products FOREIGN KEY (prod_id) REFERENCES Products (prod_id);
+ALTER TABLE Orders ADD CONSTRAINT FK_Orders_Customers FOREIGN KEY (cust_id) REFERENCES Customers (cust_id);
+ALTER TABLE Products ADD CONSTRAINT FK_Products_Vendors FOREIGN KEY (vend_id) REFERENCES Vendors (vend_id);
+
+
+-- Example table population scripts for MySQL & MariaDB
+
+-- Populate Customers table
+INSERT INTO Customers(cust_id, cust_name, cust_address, cust_city, cust_state, cust_zip, cust_country, cust_contact, cust_email)
+VALUES('1000000001', 'Village Toys', '200 Maple Lane', 'Detroit', 'MI', '44444', 'USA', 'John Smith', 'sales@villagetoys.com');
+INSERT INTO Customers(cust_id, cust_name, cust_address, cust_city, cust_state, cust_zip, cust_country, cust_contact)
+VALUES('1000000002', 'Kids Place', '333 South Lake Drive', 'Columbus', 'OH', '43333', 'USA', 'Michelle Green');
+INSERT INTO Customers(cust_id, cust_name, cust_address, cust_city, cust_state, cust_zip, cust_country, cust_contact, cust_email)
+VALUES('1000000003', 'Fun4All', '1 Sunny Place', 'Muncie', 'IN', '42222', 'USA', 'Jim Jones', 'jjones@fun4all.com');
+INSERT INTO Customers(cust_id, cust_name, cust_address, cust_city, cust_state, cust_zip, cust_country, cust_contact, cust_email)
+VALUES('1000000004', 'Fun4All', '829 Riverside Drive', 'Phoenix', 'AZ', '88888', 'USA', 'Denise L. Stephens', 'dstephens@fun4all.com');
+INSERT INTO Customers(cust_id, cust_name, cust_address, cust_city, cust_state, cust_zip, cust_country, cust_contact)
+VALUES('1000000005', 'The Toy Store', '4545 53rd Street', 'Chicago', 'IL', '54545', 'USA', 'Kim Howard');
+
+-- Populate Vendors table
+INSERT INTO Vendors(vend_id, vend_name, vend_address, vend_city, vend_state, vend_zip, vend_country)
+VALUES('BRS01','Bears R Us','123 Main Street','Bear Town','MI','44444', 'USA');
+INSERT INTO Vendors(vend_id, vend_name, vend_address, vend_city, vend_state, vend_zip, vend_country)
+VALUES('BRE02','Bear Emporium','500 Park Street','Anytown','OH','44333', 'USA');
+INSERT INTO Vendors(vend_id, vend_name, vend_address, vend_city, vend_state, vend_zip, vend_country)
+VALUES('DLL01','Doll House Inc.','555 High Street','Dollsville','CA','99999', 'USA');
+INSERT INTO Vendors(vend_id, vend_name, vend_address, vend_city, vend_state, vend_zip, vend_country)
+VALUES('FRB01','Furball Inc.','1000 5th Avenue','New York','NY','11111', 'USA');
+INSERT INTO Vendors(vend_id, vend_name, vend_address, vend_city, vend_state, vend_zip, vend_country)
+VALUES('FNG01','Fun and Games','42 Galaxy Road','London', NULL,'N16 6PS', 'England');
+INSERT INTO Vendors(vend_id, vend_name, vend_address, vend_city, vend_state, vend_zip, vend_country)
+VALUES('JTS01','Jouets et ours','1 Rue Amusement','Paris', NULL,'45678', 'France');
+
+-- Populate Products table
+INSERT INTO Products(prod_id, vend_id, prod_name, prod_price, prod_desc)
+VALUES('BR01', 'BRS01', '8 inch teddy bear', 5.99, '8 inch teddy bear, comes with cap and jacket');
+INSERT INTO Products(prod_id, vend_id, prod_name, prod_price, prod_desc)
+VALUES('BR02', 'BRS01', '12 inch teddy bear', 8.99, '12 inch teddy bear, comes with cap and jacket');
+INSERT INTO Products(prod_id, vend_id, prod_name, prod_price, prod_desc)
+VALUES('BR03', 'BRS01', '18 inch teddy bear', 11.99, '18 inch teddy bear, comes with cap and jacket');
+INSERT INTO Products(prod_id, vend_id, prod_name, prod_price, prod_desc)
+VALUES('BNBG01', 'DLL01', 'Fish bean bag toy', 3.49, 'Fish bean bag toy, complete with bean bag worms with which to feed it');
+INSERT INTO Products(prod_id, vend_id, prod_name, prod_price, prod_desc)
+VALUES('BNBG02', 'DLL01', 'Bird bean bag toy', 3.49, 'Bird bean bag toy, eggs are not included');
+INSERT INTO Products(prod_id, vend_id, prod_name, prod_price, prod_desc)
+VALUES('BNBG03', 'DLL01', 'Rabbit bean bag toy', 3.49, 'Rabbit bean bag toy, comes with bean bag carrots');
+INSERT INTO Products(prod_id, vend_id, prod_name, prod_price, prod_desc)
+VALUES('RGAN01', 'DLL01', 'Raggedy Ann', 4.99, '18 inch Raggedy Ann doll');
+INSERT INTO Products(prod_id, vend_id, prod_name, prod_price, prod_desc)
+VALUES('RYL01', 'FNG01', 'King doll', 9.49, '12 inch king doll with royal garments and crown');
+INSERT INTO Products(prod_id, vend_id, prod_name, prod_price, prod_desc)
+VALUES('RYL02', 'FNG01', 'Queen doll', 9.49, '12 inch queen doll with royal garments and crown');
+
+-- Populate Orders table
+INSERT INTO Orders(order_num, order_date, cust_id)
+VALUES(20005, '2020-05-01', '1000000001');
+INSERT INTO Orders(order_num, order_date, cust_id)
+VALUES(20006, '2020-01-12', '1000000003');
+INSERT INTO Orders(order_num, order_date, cust_id)
+VALUES(20007, '2020-01-30', '1000000004');
+INSERT INTO Orders(order_num, order_date, cust_id)
+VALUES(20008, '2020-02-03', '1000000005');
+INSERT INTO Orders(order_num, order_date, cust_id)
+VALUES(20009, '2020-02-08', '1000000001');
+
+-- Populate OrderItems table
+INSERT INTO OrderItems(order_num, order_item, prod_id, quantity, item_price)
+VALUES(20005, 1, 'BR01', 100, 5.49);
+INSERT INTO OrderItems(order_num, order_item, prod_id, quantity, item_price)
+VALUES(20005, 2, 'BR03', 100, 10.99);
+INSERT INTO OrderItems(order_num, order_item, prod_id, quantity, item_price)
+VALUES(20006, 1, 'BR01', 20, 5.99);
+INSERT INTO OrderItems(order_num, order_item, prod_id, quantity, item_price)
+VALUES(20006, 2, 'BR02', 10, 8.99);
+INSERT INTO OrderItems(order_num, order_item, prod_id, quantity, item_price)
+VALUES(20006, 3, 'BR03', 10, 11.99);
+INSERT INTO OrderItems(order_num, order_item, prod_id, quantity, item_price)
+VALUES(20007, 1, 'BR03', 50, 11.49);
+INSERT INTO OrderItems(order_num, order_item, prod_id, quantity, item_price)
+VALUES(20007, 2, 'BNBG01', 100, 2.99);
+INSERT INTO OrderItems(order_num, order_item, prod_id, quantity, item_price)
+VALUES(20007, 3, 'BNBG02', 100, 2.99);
+INSERT INTO OrderItems(order_num, order_item, prod_id, quantity, item_price)
+VALUES(20007, 4, 'BNBG03', 100, 2.99);
+INSERT INTO OrderItems(order_num, order_item, prod_id, quantity, item_price)
+VALUES(20007, 5, 'RGAN01', 50, 4.49);
+INSERT INTO OrderItems(order_num, order_item, prod_id, quantity, item_price)
+VALUES(20008, 1, 'RGAN01', 5, 4.99);
+INSERT INTO OrderItems(order_num, order_item, prod_id, quantity, item_price)
+VALUES(20008, 2, 'BR03', 5, 11.99);
+INSERT INTO OrderItems(order_num, order_item, prod_id, quantity, item_price)
+VALUES(20008, 3, 'BNBG01', 10, 3.49);
+INSERT INTO OrderItems(order_num, order_item, prod_id, quantity, item_price)
+VALUES(20008, 4, 'BNBG02', 10, 3.49);
+INSERT INTO OrderItems(order_num, order_item, prod_id, quantity, item_price)
+VALUES(20008, 5, 'BNBG03', 10, 3.49);
+INSERT INTO OrderItems(order_num, order_item, prod_id, quantity, item_price)
+VALUES(20009, 1, 'BNBG01', 250, 2.49);
+INSERT INTO OrderItems(order_num, order_item, prod_id, quantity, item_price)
+VALUES(20009, 2, 'BNBG02', 250, 2.49);
+INSERT INTO OrderItems(order_num, order_item, prod_id, quantity, item_price)
+VALUES(20009, 3, 'BNBG03', 250, 2.49);
+```
 
 # SQL 语句语法
 

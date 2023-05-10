@@ -1,7 +1,7 @@
 ---
-title: debug
+title: debug resolution
 date: 2023-04-24 10:21:53
-categories: programming
+categories: Programming
 ---
 # Pref
 

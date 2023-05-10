@@ -5960,7 +5960,7 @@ Time you enjoy wasting, was not wasted.
 
 而今识得愁滋味，欲说还休，欲说还休，却道天凉好个秋。
 
-You have to force yourself to be good，and then live proudly 请逼自己优秀，然后骄傲的生活
+You have to force yourself to be good, and then live proudly. 请逼自己优秀，然后骄傲的生活
 
 很遗憾的是，我们没当面说分手；很遗憾的是，我们没有兑现所有承诺就分开；很遗憾的是，我并不知道那一次，是我们最后一次见面，就这样了。
 讲真的，我从来都不相信，一个人一生，只会爱一个人，但我可以肯定的是，总有那么一段岁月，你会碰到一个，你想用一生去爱那个人。
@@ -6463,11 +6463,29 @@ Maturity is understanding why someone behaves the way they do, while also unders
 We say we fall in love, but authentic love makes us rise.
 我们说我们坠入爱河，但真正的爱让我们振作起来。
 
+恰是韶华，正逢年少，怎得辜负青春一场。
+
+外向是生活所需，孤独是自我享受
+
+理解得越多，就越痛苦。知道得越多，就越撕裂。但是，他有着同痛苦相对称的清澈，与绝望相均衡的坚韧。
+——勒内·夏尔
+
 
 
 > 《言叶之庭》
 
 
+
+> 《嫌疑人X的献身》
+一个人对他所不了解的东西，总是会有一些夸张失真的想法。
+最通情达理的方式就是不要勉强自己。
+好像之前的那场暴怒消除了我精神上的痛苦，也清空了我的希望。面对这个布满启示和星星的夜晚，我第一次敞开心扉， 接受了这个世界温柔的冷漠。
+
+
+
+> 《局外人》
+> 《罗生门》
+> 《我是猫》
 
 
 
