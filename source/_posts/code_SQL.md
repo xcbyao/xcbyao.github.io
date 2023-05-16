@@ -1793,7 +1793,7 @@ CREATE TABLE Customers
   cust_zip     char(10)  NULL ,
   cust_country char(50)  NULL ,
   cust_contact char(50)  NULL ,
-  cust_email   char(255) NULL 
+  cust_email   char(255) NULL
 );
 
 -- Create OrderItems table
@@ -1803,7 +1803,7 @@ CREATE TABLE OrderItems
   order_item int          NOT NULL ,
   prod_id    char(10)     NOT NULL ,
   quantity   int          NOT NULL ,
-  item_price decimal(8,2) NOT NULL 
+  item_price decimal(8,2) NOT NULL
 );
 
 -- Create Orders table
@@ -1811,7 +1811,7 @@ CREATE TABLE Orders
 (
   order_num  int      NOT NULL ,
   order_date datetime NOT NULL ,
-  cust_id    char(10) NOT NULL 
+  cust_id    char(10) NOT NULL
 );
 
 -- Create Products table
@@ -1821,7 +1821,7 @@ CREATE TABLE Products
   vend_id    char(10)      NOT NULL ,
   prod_name  char(255)     NOT NULL ,
   prod_price decimal(8,2)  NOT NULL ,
-  prod_desc  text          NULL 
+  prod_desc  text          NULL
 );
 
 -- Create Vendors table
@@ -1833,7 +1833,7 @@ CREATE TABLE Vendors
   vend_city    char(50) NULL ,
   vend_state   char(5)  NULL ,
   vend_zip     char(10) NULL ,
-  vend_country char(50) NULL 
+  vend_country char(50) NULL
 );
 
 -- Define primary keys
@@ -2533,12 +2533,10 @@ ZONE
 
 </details>
 
-
-
 # Refer
 
 《SQL必知必会（第5版）》
 
-
 # PS
 
+数据库除了语法全大写有点看不习惯，整体语句还是比较简单的，SQL 学完后就是针对性学习各类 DBMS 了。
