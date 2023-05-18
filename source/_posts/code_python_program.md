@@ -328,6 +328,76 @@ datetime.datetime(2019, 2, 19, 1, 55, 31, 98500, tzinfo=<UTC>)
 要通过外键关系获取数据，可使用相关模型的小写名称、下划线和单词 set。
 Topping 通过一个外键关联到 Pizza。如果有一个名为 my_pizza 的 Pizza 对象，就可使用 my_pizza.topping_set.all() 来获取这张比萨的所有配料。
 
+> 注：每次修改模型后，都要重启 shell。退出 shell 会话，按 Ctrl + D。Windows 按 Ctrl + Z，回车键。
+
+## 创建页面：学习笔记主页
+
+### 映射 URL
+
+urls.py 中 admin.site.urls，该模块定义了可在管理网站中请求的所有 URL。
+
+```python
+'''urls.py'''
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('learning_logs.urls')),
+]
+```
+
+现在在文件夹 learning_logs 中再创建一个 urls.py，输入如下代码：
+
+```python
+'''urls.py'''
+"""定义 learning_logs 的 URL 模式。"""
+from django.urls import path
+from . import views # 句点让 Python 从当前 urls.py 模块所在的文件夹导入 views.py。
+
+app_name = 'learning_logs' # 让 Django 能将这个 urls.py 同项目内其他同名文件区分开。
+urlpatterns = [
+    # 主页
+    path('', views.index, name='index'),
+    '''
+    第一个是一个字符串，帮助 Django 正确地路由（route）请求。
+    力图将请求路由给一个视图。Django 忽略项目基础 URL（http://localhost:8000/），因此空字符串（''）与基础 URL 匹配。
+    其他 URL 都与这个模式不匹配。都不匹配，返回一个错误页面。
+
+    第二个实参指定了要调用 view.py 中哪个函数。
+    请求的 URL 与前述正则表达式匹配时，Django 将调用 view.py 中的函数 index()。
+
+    第三个实参指定这个 URL 模式的名称，方便在其他地方引用。
+    每当需要提供到这个主页的链接时，都将使用这个名称，而不编写 URL。
+    '''
+]
+```
+
+### 编写视图
+
+learning_logs 中 views.py 是执行命令 `python manage.py startapp` 时自动生成的，添加为主页编写视图的代码：
+
+```python
+'''views.py'''
+# render() 根据视图提供的数据渲染响应。
+
+def index(request):
+    """学习笔记的主页。"""
+    return render(request, 'learning_logs/index.html')
+    # 两个实参：对象 request 以及一个可用于创建页面的模板。
+```
+
+### 编写模板
+
+模板让你能够访问视图提供的任何数据。
+
+learning_logs 中新建一个文件夹 templates。
+templates 中新建一个文件夹， 并将其命名为learning_logs。 这好像有点多余（在文件夹learning_logs中创建文件夹templates， 又在这个文件夹中创建文件夹learning_logs） ， 但是建立了Django能够明确解读的结构， 即便项目很大、 包含很多应用程序亦如此。 在最里面的文件夹learning_logs中， 新建一个文件， 并将其命名为index.html（这个文件的路径为learning_log/learning_logs/templates/ learning_logs/index.html）：
+
+```html
+'''index.html'''
+<p>Learning Log</p>
+<p>Learning Log helps you keep track of your learning, for any topic you're
+learning about.</p>
+```
+
 
 
 
