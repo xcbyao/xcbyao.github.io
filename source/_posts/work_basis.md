@@ -7,9 +7,17 @@ categories: Self-improvement
 
 找工作那些事，八股文、面试。
 
-#
+# OS
 
-七张图片转换成目录
+
+
+
+
+
+
+
+
+
 
 # 计网
 
@@ -1944,15 +1952,6 @@ SQL 线程 ：负责读取中继日志，解析出主服务器已经执行的数
 
 
 
-
-
-
-
-
-
-
-
-
 Linux 的系统调用主要有以下这些：
 
 Task|Commands
@@ -2096,6 +2095,10 @@ Task|Commands
 介绍一下公司薪酬福利待遇
 
 
+# Other
+
+七张图片转换成目录
+
 
 
 # Refer
@@ -2108,6 +2111,3 @@ Task|Commands
 [代码随想录-最强八股文-第3版](https://www.programmercarl.com)
 《用面试官的思维写简历》
 [招聘信息里对技术的要求有“了解”、“熟悉”、“精通”，该怎么界定？](https://www.zhihu.com/question/19557902)
-
-# PS
-
