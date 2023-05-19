@@ -6,6 +6,7 @@ categories: Software
 # 插件
 
 ## Emmet（内置）
+
 ```json
 > 子节点
 + 兄弟节点
@@ -23,6 +24,7 @@ categories: Software
 ## background
 
 ## Bookmarks
+
 ```json
 {
     "key": "alt+b",
@@ -43,15 +45,18 @@ categories: Software
 
 ## C/C++
 
-
 ## Code Spell Checker
+
 ```json
 Ctrl+.
 ```
 
 ## Import Cost
 
+## LeetCode
+
 ## Markdown All in One
+
 ```json
 Alt + C  Check task list
 Alt + S  StrikeThrough
@@ -59,15 +64,17 @@ Alt + shift + f  Table formatter
 ```
 
 ## Paste Image
+
 ```json
 ctrl + alt + V
 ```
 
 ## Path Intellisense
+
 ```json
 {
-    "key": ".",
-    "command": ""
+  "key": ".",
+  "command": ""
 }
 ```
 
@@ -76,11 +83,12 @@ ctrl + alt + V
 ## Python
 
 ## Trailing Spaces
+
 ```json
 {
-    "key": "alt+t",
-    "command": "trailing-spaces.deleteTrailingSpaces",
-    "when": "editorTextFocus"
+  "key": "alt+t",
+  "command": "trailing-spaces.deleteTrailingSpaces",
+  "when": "editorTextFocus"
 }
 ```
 
@@ -89,14 +97,23 @@ ctrl + alt + V
 # 未装插件
 
 ## vim
+
 ## Better C++ Syntax
+
 ## Auto Close Tag
+
 ## Color Highlight
+
 ## open in browser
+
 ## Stylelint
+
 ## JavaScript (ES6) code snippets
+
 ## Volar
+
 ## Code Runner
+
 ```json
 Ctrl+Alt+N  run
 Ctrl+Alt+M  stop
@@ -109,23 +126,20 @@ Ctrl+Alt+J  select
 > import settings from a profile
 > open settings
 
-
-
-
 # Refer
 
 [极客教程 VSCode](https://geek-docs.com/vscode/vscode-tutorials)
 [VSCode 官方教程](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
-[跟我一起在Visual Studio Code 添加自定义snippet（代码段），附详细配置](https://blog.csdn.net/maokelong95/article/details/54379046)
+[跟我一起在 Visual Studio Code 添加自定义 snippet（代码段），附详细配置](https://blog.csdn.net/maokelong95/article/details/54379046)
 [snippet-generator](https://snippet-generator.app)
 [vscode 代码片段如何输出$符号](https://blog.csdn.net/weixin_41642136/article/details/113812943)
 [语言标识符](https://code.visualstudio.com/docs/languages/identifiers)
 [VS Code 代码编辑器入门指南：核心组件与概念](https://sspai.com/post/60116)
 [VS Code 代码编辑器入门指南下篇：场景化应用介绍](https://sspai.com/post/60117)
 [Visual Studio Code 菜鸟教程：从入门到精通](https://blog.csdn.net/maokelong95/article/details/88805589)
-[Visual Studio Code 使用指南(vscode技巧)](https://blog.51cto.com/u_12161400/4601421)
-[史上最全vscode配置使用教程](https://zhuanlan.zhihu.com/p/113222681)
-[vscode手动备份配置文件](https://zhuanlan.zhihu.com/p/522284876)
-[Code Runner: 代码一键运行，支持超过40种语言](https://zhuanlan.zhihu.com/p/54861567)
-[VS Code必备前端插件，你值得拥有！](https://juejin.cn/post/7032101930155376671)
-[vscode显示120字符或者80字符提示线或者显示垂直标尺](https://www.jianshu.com/p/5cbf7b336d66)
+[Visual Studio Code 使用指南(vscode 技巧)](https://blog.51cto.com/u_12161400/4601421)
+[史上最全 vscode 配置使用教程](https://zhuanlan.zhihu.com/p/113222681)
+[vscode 手动备份配置文件](https://zhuanlan.zhihu.com/p/522284876)
+[Code Runner: 代码一键运行，支持超过 40 种语言](https://zhuanlan.zhihu.com/p/54861567)
+[VS Code 必备前端插件，你值得拥有！](https://juejin.cn/post/7032101930155376671)
+[vscode 显示 120 字符或者 80 字符提示线或者显示垂直标尺](https://www.jianshu.com/p/5cbf7b336d66)
