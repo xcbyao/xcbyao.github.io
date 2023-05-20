@@ -18,7 +18,76 @@ class Solution:
         return [celsius + 273.15, celsius * 1.80 + 32.00]
 ```
 
-# 
+# Smallest Even Multiple - Easy
+
+最小偶倍数：
+Given a positive integer n, return the smallest positive integer that is a multiple of both 2 and n.
+
+```python
+class Solution:
+    def smallestEvenMultiple(self, n: int) -> int:
+        return n if n % 2 == 0 else n * 2
+        # return n << (n & 1)
+        '''
+        位运算避免分支判断。常用 n & 1 判断奇数，二进制奇数最低位一定为 1，
+        因此，若按位与结果为 1，则最后一位为 1，n 为奇数；若为 0，则为偶数。
+        '''
+        # return (n % 2) == 0 ? n : n * 2
+```
+
+# XOR Operation in an Array - Easy
+
+给你两个整数，n 和 start。
+
+定义 nums[i] = start + 2*i（下标从 0 开始）且 n == nums.length。
+
+请返回 nums 中所有元素按位异或后得到的结果。
+
+输入：n = 5, start = 0
+输出：8
+解释：数组 nums 为 [0, 2, 4, 6, 8]，其中 (0 ^ 2 ^ 4 ^ 6 ^ 8) = 8 。
+
+```python
+# 模拟
+class Solution:
+    def xorOperation(self, n: int, start: int) -> int:
+        ans = 0
+        for i in range(n):
+            ans ^= (start + i * 2)
+        return ans
+```
+
+[方法二：数学](https://leetcode.cn/problems/xor-operation-in-an-array/solution/shu-zu-yi-huo-cao-zuo-by-leetcode-solution)
+
+# Number of Good Pairs - Easy
+
+好数对的数目：
+给你一个整数数组 nums。
+
+如果一组数字 (i,j) 满足 nums[i] == nums[j] 且 i < j ，就可以认为这是一组好数对。
+
+返回好数对的数目。
+
+输入：nums = [1,2,3,1,1,3]
+输出：4
+解释：有 4 组好数对，分别是 (0,3), (0,4), (3,4), (2,5) ，下标从 0 开始
+
+```python
+# 暴力统计
+class Solution:
+    def numIdenticalPairs(self, nums: List[int]) -> int:
+        ans = 0
+        for i in range(len(nums)):
+            for j in range(i + 1, len(nums)):
+                if nums[i] == nums[j]:
+                    ans += 1
+        return ans
+```
+
+[方法二：组合计数](https://leetcode.cn/problems/number-of-good-pairs/solution/hao-shu-dui-de-shu-mu-by-leetcode-solution)
+
+#
+
 
 
 
@@ -50,4 +119,4 @@ class Solution:
 
 # PS
 
-期待有一天 LeetCode 都刷遍……
+期待有一天 LeetCode 基本刷遍……

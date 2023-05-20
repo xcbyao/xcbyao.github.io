@@ -3,6 +3,7 @@ title: VS Code personalization
 date: 2023-05-07 14:38:12
 categories: Software
 ---
+
 # 插件
 
 ## Emmet（内置）
@@ -53,8 +54,6 @@ Ctrl+.
 
 ## Import Cost
 
-## LeetCode
-
 ## Markdown All in One
 
 ```json
@@ -95,6 +94,8 @@ ctrl + alt + V
 ## vscode-icons
 
 # 未装插件
+
+## LeetCode
 
 ## vim
 
