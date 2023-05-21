@@ -48,6 +48,7 @@ categories: Self-improvement
 
 设置电脑自定义短语「yh」第四五位固定为「」『』
 
+
 # 代码规范
 
 ## 变量命名
@@ -79,6 +80,7 @@ categories: Self-improvement
 小写字母和下划线；（python）
 函数定义后紧跟文档字符串格式的注释，描述函数功能；
 形参指定默认值，调用关键字实参，等号两边不要有空格。
+
 ```python
 # 形参过长分行标准
 def function_name(
@@ -95,20 +97,15 @@ def function_name(
 模块中，可使用两个空行来分隔类。
 先导入标准库，再导入自编模块，之间一个空行。
 
+## SQL
+
+最后 ; 单独一行；
+and，or，逗号等放行首，便于修改条件；
 
 ## todo
 
 
 
-
-
-
-
-
-
-
-
----
 
 # Obsidian
 
@@ -152,6 +149,7 @@ def function_name(
 
 > Obsidian 的性能还是和 VS Code 差很多的。我现在最需要的 Obsidian 功能是键入两个中括号后，他可以直接生成一个 Markdown Style 的内部链接。不知道有没有 VSCode 插件有这个功能。- 2022.03.27 后续：没找到类似的插件，所以修改了原版 Foam 的插件，发布了 [Foam Lite](https://marketplace.visualstudio.com/items?itemName=theowenyoung.foam-lite-vscode)，功能很少，但完美满足了我的需求。
 
+
 # Refer
 
 [中文文案排版指北](https://github.com/sparanoid/chinese-copywriting-guidelines)
@@ -161,5 +159,5 @@ def function_name(
 [时代弃婴——大三下大四上学期总结](https://xcbyao.com/2023/02/07/Semester_6_7_summary)
 [代码风格](https://www.programmercarl.com)
 《clean code-代码整洁之道》
-《python编程从入门到实践第2版》
-[python格式化代码【自动排版】 yapf、black风格选择](https://blog.csdn.net/sinat_28442665/article/details/118901285)
+《python 编程从入门到实践第 2 版》
+[python 格式化代码【自动排版】 yapf、black 风格选择](https://blog.csdn.net/sinat_28442665/article/details/118901285)
