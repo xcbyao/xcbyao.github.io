@@ -1,3 +1,4 @@
+https://xcbyao.com/2023/04/20/write/
 https://xcbyao.com/2023/05/19/code_LeetCode/
 https://xcbyao.com/2023/05/21/code_algorithm/
 https://xcbyao.com/2020/08/11/appreciation/
@@ -9,7 +10,6 @@ https://xcbyao.com/about/
 https://xcbyao.com/2023/04/29/code_SQL/
 https://xcbyao.com/2023/04/24/code_debug/
 https://xcbyao.com/2022/04/20/code_python_basis/
-https://xcbyao.com/2023/04/20/write/
 https://xcbyao.com/2022/01/04/code_cpp_basis/
 https://xcbyao.com/2022/01/28/code_cpp_program/
 https://xcbyao.com/2023/02/07/semester_6_7_summary/
