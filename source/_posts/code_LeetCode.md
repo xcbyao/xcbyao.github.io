@@ -86,6 +86,53 @@ class Solution:
 
 [方法二：组合计数](https://leetcode.cn/problems/number-of-good-pairs/solution/hao-shu-dui-de-shu-mu-by-leetcode-solution)
 
+# Count Good Triplets - Easy
+
+一个整数数组 arr，以及 a、b 、c 三个整数。
+
+如果三元组 (arr[i], arr[j], arr[k]) 满足下列全部条件，则认为它是一个好三元组。
+
+0 <= i < j < k < arr.length
+|arr[i] - arr[j]| <= a
+|arr[j] - arr[k]| <= b
+|arr[i] - arr[k]| <= c
+其中 |x| 表示 x 的绝对值。
+
+返回好三元组的数量。
+
+输入：arr = [3,0,1,1,9,7], a = 7, b = 2, c = 3
+输出：4
+解释：一共 4 个好三元组：[(3,0,1), (3,0,1), (3,1,1), (0,1,1)]
+
+```python
+# 枚举
+class Solution:
+    def countGoodTriplets(self, arr: List[int], a: int, b: int, c: int) -> int:
+        n = len(arr)
+        cnt = 0
+        for i in range(n):
+            for j in range(i + 1, n):
+                for k in range(j + 1, n):
+                    if abs(arr[i] - arr[j]) <= a and abs(arr[j] - arr[k]) <= b and abs(arr[i] - arr[k]) <= c:
+                        cnt += 1
+        return cnt
+
+# 暴力法三重循环可以提前判断终止最内层的计算
+class Solution:
+    def countGoodTriplets(self, arr: List[int], a: int, b: int, c: int) -> int:
+        size = len(arr)
+        cnt = 0
+        for i in range(size-2):
+            for j in range(i+1,size-1):
+                if abs(arr[i] - arr[j]) <= a:
+                    for k in range(j+1, size):
+                        if abs(arr[j] - arr[k]) <= b and abs(arr[i] - arr[k]) <= c:
+                            cnt += 1
+        return cnt
+```
+
+[方法二：枚举优化](https://leetcode.cn/problems/count-good-triplets/solution/tong-ji-hao-san-yuan-zu-by-leetcode-solution)
+
 #
 
 
