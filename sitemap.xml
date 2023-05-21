@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xcbyao.com/2023/05/19/code_LeetCode/</loc>
+    
+    <lastmod>2023-05-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xcbyao.com/2023/05/21/code_algorithm/</loc>
     
     <lastmod>2023-05-21</lastmod>
@@ -32,15 +41,6 @@
     <loc>https://xcbyao.com/2020/02/02/link/</loc>
     
     <lastmod>2023-05-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xcbyao.com/2023/05/19/code_LeetCode/</loc>
-    
-    <lastmod>2023-05-20</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
