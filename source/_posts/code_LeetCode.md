@@ -5,7 +5,7 @@ categories: Programming
 ---
 # Pref
 
-LeetCode 刷题记录。Easy Medium Hard
+LeetCode 刷题记录。 Medium Hard
 
 # Convert the Temperature - Easy
 
@@ -21,6 +21,7 @@ class Solution:
 # Smallest Even Multiple - Easy
 
 最小偶倍数：
+
 Given a positive integer n, return the smallest positive integer that is a multiple of both 2 and n.
 
 ```python
@@ -62,6 +63,7 @@ class Solution:
 # Number of Good Pairs - Easy
 
 好数对的数目：
+
 给你一个整数数组 nums。
 
 如果一组数字 (i,j) 满足 nums[i] == nums[j] 且 i < j ，就可以认为这是一组好数对。
@@ -133,8 +135,168 @@ class Solution:
 
 [方法二：枚举优化](https://leetcode.cn/problems/count-good-triplets/solution/tong-ji-hao-san-yuan-zu-by-leetcode-solution)
 
+# Add Digits - Easy
+
+各位相加：
+
+给定一个非负整数 num，反复将各个位上的数字相加，直到结果为一位数。返回这个结果。
+
+输入: num = 38
+输出: 2
+解释: 各位相加的过程为：
+38 --> 3 + 8 --> 11
+11 --> 1 + 1 --> 2
+
+```python
+# 模拟
+class Solution:
+    def addDigits(self, num: int) -> int:
+        while num >= 10:
+            sum = 0
+            while num:
+                sum += num % 10
+                num //= 10
+            num = sum
+        return num
+
+# 数学
+class Solution:
+    def addDigits(self, num: int) -> int:
+        return (num - 1) % 9 + 1 if num else 0
+```
+
+[方法二：数学](https://leetcode.cn/problems/add-digits/solution/ge-wei-xiang-jia-by-leetcode-solution-u4kj)
+
+# Subtract the Product and Sum of Digits of an Integer - Easy
+
+整数的各位积和之差：
+
+整数 n，计算并返回该整数「各位数字之积」与「各位数字之和」的差。
+
+输入：n = 234
+输出：15
+解释：
+各位数之积 = 2 * 3 * 4 = 24
+各位数之和 = 2 + 3 + 4 = 9
+结果 = 24 - 9 = 15
+
+```python
+# 模拟
+class Solution:
+    def subtractProductAndSum(self, n: int) -> int:
+        add, mul = 0, 1
+        while n > 0:
+            add += n % 10
+            mul *= n % 10
+            n //= 10
+        return mul - add
+
+# 暴力
+class Solution:
+    def subtractProductAndSum(self, n: int) -> int:
+        add, mul = 0, 1
+        for num in str(n):
+            num = int(num)
+            add += num
+            mul *= num
+        return mul - add
+```
+
 #
 
+# Database
+
+## Find Customer Referee - Easy
+
+寻找用户推荐人：
+
+```none
+Table: Customer
++----+------+------------+
+| id | name | referee_id |
++----+------+------------+
+| 1  | Will | null       |
+| 2  | Jane | null       |
+| 3  | Alex | 2          |
+| 4  | Bill | null       |
+| 5  | Zack | 1          |
+| 6  | Mark | 2          |
++----+------+------------+
+```
+
+写一个查询语句，返回一个客户列表，列表中客户的推荐人的编号都不是 2。
+
+```none
+Output:
++------+
+| name |
++------+
+| Will |
+| Jane |
+| Bill |
+| Zack |
++------+
+```
+
+MySQL 使用三值逻辑 —— TRUE, FALSE 和 UNKNOWN。任何与 NULL 值进行的比较都会与第三种值 UNKNOWN 做比较。
+
+```sql
+SELECT name FROM customer WHERE referee_id <> 2 OR referee_id IS NULL;
+
+-- MySQL
+SELECT name FROM customer WHERE referee_id != 2 OR referee_id IS NULL;
+
+-- 用安全等于取反
+SELECT name FROM customer WHERE NOT referee_id <=> 2;
+/*
+因此，最后一句意思是选择所有 referee_id 不等于 2 的行，包括 NULL  行。
+<=> 是 MySQL 特有的运算符，用于比较两个值是否相等，包括 NULL 值。使用方式：
+
+如果两个值都不是 NULL，"<=>" 的作用与 "=" 相同，即比较两个值是否相等。
+如果其中一个值为 NULL，那么 "<=>" 的结果为 FALSE（不相等），而"=" 的结果为 UNKNOWN（未知）。
+如果两个值都为 NULL，那么 "<=>" 的结果为 TRUE（相等），而"=" 的结果为 UNKNOWN（未知）。
+*/
+```
+
+# Recyclable and Low Fat Products
+
+可回收且低脂的产品：
+
+```none
+Table: Products
++-------------+----------+------------+
+| product_id  | low_fats | recyclable |
++-------------+----------+------------+
+| 0           | Y        | N          |
+| 1           | Y        | Y          |
+| 2           | N        | Y          |
+| 3           | Y        | Y          |
+| 4           | N        | N          |
++-------------+----------+------------+
+
+product_id 是这个表的主键。
+low_fats 是枚举类型，取值为以下两种 ('Y', 'N')，其中 'Y' 表示该产品是低脂产品，'N' 则不是。
+recyclable 同上。
+```
+
+查找既是低脂又是可回收的产品编号。返回结果无顺序要求。
+
+```none
+Output:
++-------------+
+| product_id  |
++-------------+
+| 1           |
+| 3           |
++-------------+
+```
+
+```sql
+-- MySQL
+SELECT product_id FROM products WHERE low_fats = 'Y' AND recyclable = 'Y';
+```
+
+#
 
 
 

@@ -6570,6 +6570,8 @@ Life is getting late, beyond the darkness is the dawn, why is the endless runnin
 
 【白玫瑰】它的花语是：“我足以与你相配，你不知道，为了你，我想变成更好的人，因此发奋，以实现这句话。”
 
+智者不入爱河，愚者自甘堕落，遇你难做智者，甘愿沦为愚者，虽说万家灯火，缺无一盏为我，愿你游遍山河，仍觉人间值得。
+
 
 
 > 《言叶之庭》
