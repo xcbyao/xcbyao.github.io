@@ -124,9 +124,6 @@ print(areaCode)
 
 # \( \) 将匹配实际的括号字符
 phoneNumRegex = re.compile(r'(\(\d\d\d\)) (\d\d\d-\d\d\d\d)')
-mo = phoneNumRegex.search('My phone number is (415) 555-4242.')
-mo.group(1)
-'(415)'
 ```
 
 ## 管道匹配多个分组 |
@@ -154,49 +151,44 @@ mo.group(1)
 
 ## 问号匹配零次或一次
 
-字符 `?` 表明它前面的分组在这个模式中是可选的。
+指代字符之前的分组，下同。
 
 ```python
 batRegex = re.compile(r'Bat(wo)?man')
-mo1 = batRegex.search('The Adventures of Batman')
+mo1 = batRegex.search('The Batman')
 mo1.group()
 'Batman'
 
-mo2 = batRegex.search('The Adventures of Batwoman')
+mo2 = batRegex.search('The Batwoman')
 mo2.group()
 'Batwoman'
 ```
 
 ## 星号匹配零次或多次
 
-字符 `*` 之前的分组可以出现零次或多次。
-
 ```python
 batRegex = re.compile(r'Bat(wo)*man')
-mo3 = batRegex.search('The Adventures of Batwowowowoman')
+mo3 = batRegex.search('The Batwowowowoman')
 mo3.group()
 'Batwowowowoman'
 ```
 
 ## 加号匹配一次或多次
 
-字符 `+` 之前的分组可以出现一次或多次。
-
 ```python
 batRegex = re.compile(r'Bat(wo)+man')
-mo3 = batRegex.search('The Adventures of Batman')
+mo3 = batRegex.search('The Batman')
 mo3 == None
 True
 ```
 
 ## 花括号匹配特定次数
 
-字符 `{}` 表示前面模块或分组重复特定次数。
-除了一个数字，还可以指定一个范围（最小值，最大值）或不限定最值之一。
+一个数字，或指定一个范围（最小值，最大值）或不限定最值之一。
 
-(Ha){3} 将匹配字符串 'HaHaHa'
+(Ha){3} 匹配字符串 'HaHaHa'。
 
-(Ha){3,5} 将匹配 'HaHaHa'、'HaHaHaHa'、'HaHaHaHaHa'。
+(Ha){3,5} 匹配 'HaHaHa'、'HaHaHaHa'、'HaHaHaHaHa'。
 
 ## 贪心和非贪心匹配
 
@@ -204,14 +196,9 @@ Python 的 Regex 默认是贪心的，表示在有二义的情况下，它们会
 花括号的非贪心版本匹配尽可能最短的字符串，即在结束的花括号后跟着一个问号。
 
 ```python
-greedyHaRegex = re.compile(r'(Ha){3,5}')
-mo1 = greedyHaRegex.search('HaHaHaHaHa')
-mo1.group()
-'HaHaHaHaHa'
-
 nongreedyHaRegex = re.compile(r'(Ha){3,5}?')
-mo2 = nongreedyHaRegex.search('HaHaHaHaHa')
-mo2.group()
+mo = nongreedyHaRegex.search('HaHaHaHaHa')
+mo.group()
 'HaHaHa
 ```
 
@@ -252,12 +239,12 @@ phoneNumRegex.findall('Cell: 415-555-9999 Work: 212-555-0000')
 
 匹配不在这个字符类中的所有字符。
 
-consonantRegex = re.compile(r'[^aeiouAEIOU]')
+`consonantRegex = re.compile(r'[^aeiouAEIOU]')`
 
 ### 开始字符 ^ 结束字符 $
 
-正则表达式的开始处使用插入符号 `^`，表明匹配必须发生在被查找文本开始处。
-末尾加上美元符号 `$`，表示该字符串必须以这个正则表达式的模式结束。
+开始处用插入符号 `^`，表明匹配必须发生在被查找文本开始处。
+末尾加上美元符号 `$`，表示该字符串必须以这个 Regex 的模式结束。
 同时使用，表明整个字符串必须匹配该模式。如 `r'^\d+$'` 匹配从开始到结束都是数字的字符串。
 
 ```python
@@ -282,15 +269,13 @@ atRegex.findall('The cat in the hat sat on the flat mat.')
 
 ```python
 nameRegex = re.compile(r'First Name: (.*) Last Name: (.*)')
-mo = nameRegex.search('First Name: Al Last Name: Sweigart')
+mo = nameRegex.search('First Name: Alice Last Name: Sweigart')
 mo.group(1)
-'Al'
-mo.group(2)
-'Sweigart
+'Alice'
 ```
 
-`.*` 贪心模式，匹配尽可能多的文本。
-`.*?` 非贪心模式，匹配尽可能少的文本。
+`.*` 贪心模式。
+`.*?` 非贪心模式。
 
 ```python
 greedyRegex = re.compile(r'<.*>')
@@ -306,23 +291,21 @@ mo.group()
 
 ### re.DOTALL 匹配换行
 
-传入 `re.DOTALL` 作为 `re.compile()` 第二个参数，让通配符匹配所有字符，包括换行。
-
 ```python
-NewlineRegex = re.compile('.*', re.DOTALL)
+NewlineRegex = re.compile('.*', re.DOTALL) # 让通配符匹配所有字符，包括换行。
 NewlineRegex.search('First\nSecond\nThird').group()
 'First\nSecond\nThird'
 ```
 
-## re.IGNORECASE 不区分大小写匹配
+### re.IGNORECASE 不区分大小写匹配
 
 传入 `re.IGNORECASE` 或 `re.I` 作为 `re.compile()` 第二个参数。
 
 ### sub() 方法替换字符串
 
-Regex 对象的 sub() 传入两个参数。返回替换完成后的字符串。
+Regex 对象的 sub() 传入两个参数。返回替换后的字符串。
 第一个是一个字符串，用于取代发现的匹配；
-第二个是一个字符串，要搜索的字符串。
+第二个是要搜索的字符串。
 
 ```python
 namesRegex = re.compile(r'Agent \w+')
@@ -332,8 +315,6 @@ namesRegex.sub('CENSORED', 'Agent Alice gave the documents to Agent Bob.')
 
 使用匹配的文本本身，作为替换的一部分。sub() 第一个参数中输入 \1、 \2 表示输入分组 1、2 的文本。
 
-只显示姓名的第一个字母：`Agent (\w)\w*`
-传入 `r'\1****'` 作为 sub() 第一个参数。
 字符串中的 \1 将由分组 1 匹配的文本所替代，即 `(\w)` 分组。
 
 ```python

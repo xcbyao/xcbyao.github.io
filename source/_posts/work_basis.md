@@ -2111,3 +2111,4 @@ Task|Commands
 [代码随想录-最强八股文-第3版](https://www.programmercarl.com)
 《用面试官的思维写简历》
 [招聘信息里对技术的要求有“了解”、“熟悉”、“精通”，该怎么界定？](https://www.zhihu.com/question/19557902)
+[校招时间节点、简历编写、笔试、HR面、实习等注意事项💪](https://tobebetterjavaer.com/nice-article/weixin/youdxzhhmjzlycfx.html)
