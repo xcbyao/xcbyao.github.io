@@ -11,6 +11,15 @@
   </url>
   
   <url>
+    <loc>https://xcbyao.com/2023/05/16/work_basis/</loc>
+    
+    <lastmod>2023-05-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xcbyao.com/2022/09/27/language_English/</loc>
     
     <lastmod>2023-05-23</lastmod>
@@ -77,15 +86,6 @@
     <loc>https://xcbyao.com/2023/05/07/tool_vscode/</loc>
     
     <lastmod>2023-05-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xcbyao.com/2023/05/16/work_basis/</loc>
-    
-    <lastmod>2023-05-19</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
