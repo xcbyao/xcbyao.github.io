@@ -26,8 +26,8 @@ title() 首字母大写
 upper() 全大写
 lower() 全小写
 
-istitle() 字符串只包含首字母大写
-isupper() 返回布尔值，所有字母是大写
+istitle() 返回布尔值，字符串只包含首字母大写
+isupper()
 islower()
 
 isalpha() 字符串只包含字母
@@ -38,7 +38,7 @@ isspace() 字符串只包含空格、制表符和换行
 startswith()
 endswith() 所调用的字符串以该方法传入的字符串开始或结束
 
-join() 参数是一个字符串列表，返回的字符串由传入的列表中每个字符串连接而成。
+join() 参数是一个字符串列表。
 
 ```python
 ' '.join(['My', 'name', 'is', 'Simon'])
@@ -50,7 +50,7 @@ split() 默认以空格为分隔符拆分字符串，返回一个列表
 ljust() 左对齐
 rjust()
 center() 居中
-返回字符串的填充版本，通过插入空格来对齐文本；第一个参数是整数长度，第二个可选参数指定一个填充字符。
+插入空格来对齐文本；第一个参数是整数长度，第二个可选参数指定一个填充字符。
 
 strip() 删除首尾空白，第二参数可选指定字符删除，字符顺序不重要
 lstrip()
@@ -61,6 +61,8 @@ spam = 'SpamSpamBaconSpamEggsSpamSpam'
 spam.strip('ampS')
 'BaconSpamEggs'
 ```
+
+## u r b f 前缀
 
 u「Unicode」以 Unicode 格式进行编码，常用于中文字符串
 r 去掉反斜杠的转义机制，常用于正则表达式，对应 re 模块
@@ -87,13 +89,13 @@ bytes.decode('utf-8')
 
 ## 创建对象 re.compile()
 
-传入一个字符串值，表示正则表达式，返回一个 Regex 模式对象
+传入一个字符串值，表示正则表达式，返回一个 Regex 模式对象。
 
-## 匹配对象 search() group()
+## 匹配对象 search() group() 方法
 
-Regex 对象的 search() 方法，未找到返回 None；找到返回一个 Match 对象。
+Regex 对象的 search()，未找到返回 None；找到返回一个 Match 对象。
 
-Match 对象的 group() 方法，返回被查找字符串中实际匹配的文本。
+Match 对象的 group()，返回被查找字符串中实际匹配的文本。
 mo 是一个通用变量名，用于 Match 对象。
 
 ```python
