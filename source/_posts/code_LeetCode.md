@@ -202,7 +202,73 @@ class Solution:
         return mul - add
 ```
 
-#
+# Power of Two - Easy
+
+给你一个整数 n，请你判断该整数是否是 2 的幂次方。如果是，返回 true；否则返回 false。
+
+输入：n = 1
+输出：true
+解释：2^0 = 1
+
+```python
+# 判断是否为最大 2 的幂的约数
+class Solution:
+    BIG = 2**30
+
+    def isPowerOfTwo(self, n: int) -> bool:
+        return n > 0 and Solution.BIG % n == 0
+```
+
+[方法一：二进制表示](https://leetcode.cn/problems/power-of-two/solution/2de-mi-by-leetcode-solution-rny3)
+
+# Power of Three - Easy
+
+```python
+# 试除法
+class Solution:
+    def isPowerOfThree(self, n: int) -> bool:
+        while n and n % 3 == 0:
+            n //= 3
+        return n == 1
+
+# 判断是否为最大 3 的幂的约数
+# 这里限定范围最大 3 的幂为 3^19 = 1162261467
+class Solution:
+    def isPowerOfThree(self, n: int) -> bool:
+        return n > 0 and 1162261467 % n == 0
+```
+
+# Ugly Number - Easy
+
+丑数：只包含质因数 2、3 和 5 的正整数。
+
+1 没有质因数，因此它的全部质因数是 {2, 3, 5} 的空集。习惯上将其视作第一个丑数。
+
+给你一个整数 n，请你判断 n 是否为丑数。如果是，返回 true；否则返回 false。
+
+输入：n = 6
+输出：true
+解释：6 = 2 × 3
+
+```python
+# 数学
+class Solution:
+    def isUgly(self, n: int) -> bool:
+        if n <= 0:
+            return False
+
+        factors = [2, 3, 5]
+        for factor in factors:
+            while n % factor == 0:
+                n //= factor
+
+        return n == 1
+```
+
+
+
+
+
 
 # Database
 
