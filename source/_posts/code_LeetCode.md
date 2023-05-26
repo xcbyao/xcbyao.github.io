@@ -5,7 +5,7 @@ categories: Programming
 ---
 # Pref
 
-LeetCode 刷题记录。 Medium Hard
+LeetCode 刷题记录。 Hard
 
 # Convert the Temperature - Easy
 
@@ -265,6 +265,178 @@ class Solution:
         return n == 1
 ```
 
+# Shuffle the Array - Easy
+
+重新排序数组：
+
+给你一个数组 nums，数组中有 2n 个元素，按 [x1,x2,...,xn,y1,y2,...,yn] 的格式排列。
+
+请你将数组按 [x1,y1,x2,y2,...,xn,yn] 格式重新排列返回。
+
+```python
+# 一次遍历
+class Solution:
+    def shuffle(self, nums: List[int], n: int) -> List[int]:
+        ans = [0] * (2 * n)
+        for i in range(n):
+            ans[2 * i] = nums[i]
+            ans[2 * i + 1] = nums[n + i]
+        return ans
+
+# 切片赋值
+class Solution:
+    def shuffle(self, nums: List[int], n: int) -> List[int]:
+        nums[::2], nums[1::2] = nums[:n], nums[n:]
+        return nums
+
+# 模拟
+class Solution:
+    def shuffle(self, nums: List[int], n: int) -> List[int]:
+        ans = []
+        for i in range(n):
+            ans.append(nums[i])
+            ans.append(nums[n + i])
+        return ans
+```
+
+# Transpose Matrix - Easy
+
+二维整数数组 matrix，返回 matrix 的转置矩阵。
+
+输入：`matrix = [[1,2,3],[4,5,6],[7,8,9]]`
+输出：`[[1,4,7],[2,5,8],[3,6,9]]`
+
+```python
+# 模拟
+class Solution:
+    def transpose(self, matrix: List[List[int]]) -> List[List[int]]:
+        m, n = len(matrix), len(matrix[0])
+        transposed = [[0] * m for _ in range(n)]
+        for i in range(m):
+            for j in range(n):
+                transposed[j][i] = matrix[i][j]
+        return transposed
+
+# 模拟 python3_oneline
+class Solution:
+    def transpose(self, matrix: List[List[int]]) -> List[List[int]]:
+        return list(list(row) for row in zip(*matrix))
+        # return [list(row) for row in zip(*matrix)] # 强制转换返回列表值
+
+# 迭代器
+class Solution:
+    def transpose(self, matrix: List[List[int]]):
+        return zip(*matrix)
+
+# numpy 库
+class Solution:
+    def transpose(self, matrix: List[List[int]]) -> List[List[int]]:
+        import numpy as np
+        return np.array(matrix).T.tolist()
+```
+
+# Maximum Score After Splitting a String - Easy
+
+分割字符串的最大得分：
+
+由若干 0 和 1 组成的字符串 s，计算并返回将该字符串分割成两个非空子字符串（即左和右子字符串）所能获得的最大得分。
+
+「分割字符串的得分」为左子字符串中 0 的数量加上右子字符串中 1 的数量。
+
+输入：s = "011101"
+输出：5
+解释：
+将字符串 s 划分为两个非空子字符串的可行方案有：
+左子字符串 = "0" 且 右子字符串 = "11101"，得分 = 1 + 4 = 5
+左子字符串 = "01" 且 右子字符串 = "1101"，得分 = 1 + 3 = 4
+左子字符串 = "011" 且 右子字符串 = "101"，得分 = 1 + 2 = 3
+左子字符串 = "0111" 且 右子字符串 = "01"，得分 = 1 + 1 = 2
+左子字符串 = "01110" 且 右子字符串 = "1"，得分 = 2 + 1 = 3
+
+```python
+# 枚举每个分割点
+class Solution:
+    def maxScore(self, s: str) -> int:
+        return max(s[:i].count('0') + s[i:].count('1') for i in range(1, len(s)))
+
+# 两次遍历
+class Solution:
+    def maxScore(self, s: str) -> int:
+        ans = score = (s[0] == '0') + s[1:].count('1')
+        for c in s[1:-1]:
+            score += 1 if c == '0' else -1
+            ans = max(ans, score)
+        return ans
+```
+
+# Count the Number of Vowel Strings in Range - Easy
+
+统计范围内的元音字符串数：
+
+给你一个下标从 0 开始的字符串数组 words 和两个整数：left 和 right。
+
+如果字符串以元音字母开头并以元音字母结尾，那么该字符串就是一个元音字符串，其中元音字母是 'a'、'e'、'i'、'o'、'u'。
+
+返回 words[i] 是元音字符串的数目，其中 i 在闭区间 [left, right] 内。
+
+输入：words = ["are","amy","u"], left = 0, right = 2
+输出：2
+解释：
+- "are" 是一个元音字符串，因为它以 'a' 开头并以 'e' 结尾。
+- "amy" 不是元音字符串，因为它没有以元音字母结尾。
+- "u" 是一个元音字符串，因为它以 'u' 开头并以 'u' 结尾。
+在上述范围中的元音字符串数目为 2 。
+
+```python
+class Solution:
+    def vowelStrings(self, words: List[str], left: int, right: int) -> int:
+        return sum(s[0] in "aeiou" and s[-1] in "aeiou" for s in words[left:right+1])
+```
+
+# Peak Index in a Mountain Array - Medium
+
+山脉数组的峰顶索引：
+
+符合下列属性的数组 arr 称为 山脉数组：
+arr.length >= 3
+存在 i（0 < i < arr.length - 1）使得：
+arr[0] < arr[1] < ... arr[i-1] < arr[i]
+arr[i] > arr[i+1] > ... > arr[arr.length - 1]
+
+给你由整数组成的山脉数组 arr，返回满足 arr[0] < arr[1] < ... arr[i - 1] < arr[i] > arr[i + 1] > ... > arr[arr.length - 1] 的下标 i。
+
+设计并实现时间复杂度为 O(logn) 的解决方案。
+
+输入：arr = [0,2,1,0]
+输出：1
+
+```python
+# 枚举，时间复杂度 O(n)
+class Solution:
+    def peakIndexInMountainArray(self, arr: List[int]) -> int:
+        ans = -1
+
+        for i in range(1, len(arr)-1):
+            if arr[i] > arr[i+1]:
+                ans = i
+                break
+        return ans
+
+# 二分查找
+class Solution:
+    def peakIndexInMountainArray(self, arr: List[int]) -> int:
+        left, right, ans = 1, len(arr) - 2, 0
+
+        while left <= right:
+            mid = (left + right) // 2
+            if arr[mid] > arr[mid + 1]:
+                ans = mid
+                right = mid - 1
+            else:
+                left = mid + 1
+        return ans
+```
+
 
 
 
@@ -324,7 +496,7 @@ SELECT name FROM customer WHERE NOT referee_id <=> 2;
 */
 ```
 
-# Recyclable and Low Fat Products
+## Recyclable and Low Fat Products - Easy
 
 可回收且低脂的产品：
 
@@ -362,7 +534,77 @@ Output:
 SELECT product_id FROM products WHERE low_fats = 'Y' AND recyclable = 'Y';
 ```
 
-#
+## Big Countries
+
+```none
+Table: World
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| name        | varchar |
+| continent   | varchar |
+| area        | int     |
+| population  | int     |
+| gdp         | bigint  |
++-------------+---------+
+name is the primary key column
+```
+
+面积至少为 300 万平方公里，或人口至少为 2500 万。
+编写一个 SQL 查询以报告大国的国家名称、人口和面积。
+
+按任意顺序返回结果表。
+
+```none
+Input:
+World table:
++-------------+-----------+---------+------------+--------------+
+| name        | continent | area    | population | gdp          |
++-------------+-----------+---------+------------+--------------+
+| Afghanistan | Asia      | 652230  | 25500100   | 20343000000  |
+| Albania     | Europe    | 28748   | 2831741    | 12960000000  |
+| Algeria     | Africa    | 2381741 | 37100000   | 188681000000 |
+| Andorra     | Europe    | 468     | 78115      | 3712000000   |
+| Angola      | Africa    | 1246700 | 20609294   | 100990000000 |
++-------------+-----------+---------+------------+--------------+
+Output:
++-------------+------------+---------+
+| name        | population | area    |
++-------------+------------+---------+
+| Afghanistan | 25500100   | 652230  |
+| Algeria     | 37100000   | 2381741 |
++-------------+------------+---------+
+```
+
+```sql
+-- MySQL
+-- 使用 OR
+SELECT name, population, area
+FROM world
+WHERE population >= 25000000 OR area >= 3000000
+;
+
+-- 使用 or 可能会使索引失效，在数据量较大的时候查找效率较低，通常建议使用 union。
+-- 使用 UNION，比上一种速度更块，但差别不大
+SELECT name, population, area
+FROM world
+WHERE population >= 25000000
+
+UNION
+
+SELECT name, population, area
+FROM world
+WHERE area >= 3000000
+;
+```
+
+## Article Views I
+
+文章浏览 1：
+
+
+
+
 
 
 
