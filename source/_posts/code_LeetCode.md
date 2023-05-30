@@ -531,10 +531,11 @@ Output:
 
 ```sql
 -- MySQL
-SELECT product_id FROM products WHERE low_fats = 'Y' AND recyclable = 'Y';
+SELECT product_id FROM products WHERE low_fats = 'Y' AND recyclable = 'Y'
+;
 ```
 
-## Big Countries
+## Big Countries - Easy
 
 ```none
 Table: World
@@ -598,9 +599,717 @@ WHERE area >= 3000000
 ;
 ```
 
-## Article Views I
+## Article Views I - Easy
 
-文章浏览 1：
+文章浏览 I：
+
+```none
+Table: Views
++---------------+---------+
+| Column Name   | Type    |
++---------------+---------+
+| article_id    | int     |
+| author_id     | int     |
+| viewer_id     | int     |
+| view_date     | date    |
++---------------+---------+
+此表无主键，因此可能会存在重复行。
+此表的每一行都表示某人在某天浏览了某位作者的某篇文章。
+同一人的 author_id 和 viewer_id 是相同的。
+```
+
+找出所有浏览过自己文章的作者，结果按照 id 升序排列。
+
+```none
+Input:
+Views table:
++------------+-----------+-----------+------------+
+| article_id | author_id | viewer_id | view_date  |
++------------+-----------+-----------+------------+
+| 1          | 3         | 5         | 2019-08-01 |
+| 1          | 3         | 6         | 2019-08-02 |
+| 2          | 7         | 7         | 2019-08-01 |
+| 2          | 7         | 6         | 2019-08-02 |
+| 4          | 7         | 1         | 2019-07-22 |
+| 3          | 4         | 4         | 2019-07-21 |
+| 3          | 4         | 4         | 2019-07-21 |
++------------+-----------+-----------+------------+
+Output:
++------+
+| id   |
++------+
+| 4    |
+| 7    |
++------+
+```
+
+```sql
+-- MySQL
+SELECT DISTINCT author_id AS id
+FROM  Views
+WHERE author_id = viewer_id
+ORDER BY author_id
+;
+```
+
+## Invalid Tweets - Easy
+
+```none
+Table: Tweets
++----------------+---------+
+| Column Name    | Type    |
++----------------+---------+
+| tweet_id       | int     |
+| content        | varchar |
++----------------+---------+
+tweet_id is the primary key.
+```
+
+查询所有无效推文的编号（ID）。当推文内容中的字符数严格大于 15 时，该推文是无效的。
+
+以任意顺序返回结果表。
+
+```none
+Input:
+Tweets table:
++----------+----------------------------------+
+| tweet_id | content                          |
++----------+----------------------------------+
+| 1        | Vote for Biden                   |
+| 2        | Let us make America great again! |
++----------+----------------------------------+
+Output:
++----------+
+| tweet_id |
++----------+
+| 2        |
++----------+
+Explanation:
+Tweet 1 has length = 14. It is a valid tweet.
+Tweet 2 has length = 32. It is an invalid tweet.
+```
+
+```sql
+-- MySQL
+SELECT tweet_id
+FROM tweets
+WHERE CHAR_LENGTH(content) > 15
+;
+```
+
+## Replace Employee ID With The Unique Identifier - Easy
+
+使用唯一标识码替换员工 ID：
+
+```none
+Table: Employees
++---------------+---------+
+| Column Name   | Type    |
++---------------+---------+
+| id            | int     |
+| name          | varchar |
++---------------+---------+
+id is the primary key.
+
+Table: EmployeeUNI
++---------------+---------+
+| Column Name   | Type    |
++---------------+---------+
+| id            | int     |
+| unique_id     | int     |
++---------------+---------+
+```
+
+展示每位用户的唯一标识码（unique ID ）；如果某位员工没有唯一标识码，使用 null 填充即可。
+
+你可以以任意顺序返回结果表。
+
+```none
+Input:
+Employees table:
++----+----------+
+| id | name     |
++----+----------+
+| 1  | Alice    |
+| 7  | Bob      |
+| 11 | Meir     |
+| 90 | Winston  |
+| 3  | Jonathan |
++----+----------+
+EmployeeUNI table:
++----+-----------+
+| id | unique_id |
++----+-----------+
+| 3  | 1         |
+| 11 | 2         |
+| 90 | 3         |
++----+-----------+
+Output:
++-----------+----------+
+| unique_id | name     |
++-----------+----------+
+| null      | Alice    |
+| null      | Bob      |
+| 2         | Meir     |
+| 3         | Winston  |
+| 1         | Jonathan |
++-----------+----------+
+```
+
+```sql
+-- MySQL
+SELECT unique_id, name
+FROM employees
+LEFT JOIN employeeUNI
+ON employees.id = employeeUNI.id
+;
+```
+
+## Product Sales Analysis I - Easy
+
+产品销售分析 I:
+
+```none
+Table: Sales
++-------------+-------+
+| Column Name | Type  |
++-------------+-------+
+| sale_id     | int   |
+| product_id  | int   |
+| year        | int   |
+| quantity    | int   |
+| price       | int   |
++-------------+-------+
+(sale_id, year) is the primary key of this table.
+product_id is a foreign key to Product table.
+
+Table: Product
++--------------+---------+
+| Column Name  | Type    |
++--------------+---------+
+| product_id   | int     |
+| product_name | varchar |
++--------------+---------+
+product_id is the primary key of this table.
+```
+
+获取 Sales 表中所有产品对应的产品名称 product_name 以及该产品的所有售卖年份 year 和价格 price。
+
+查询结果中的顺序无特定要求。
+
+```none
+Input:
+Sales table:
++---------+------------+------+----------+-------+
+| sale_id | product_id | year | quantity | price |
++---------+------------+------+----------+-------+
+| 1       | 100        | 2008 | 10       | 5000  |
+| 2       | 100        | 2009 | 12       | 5000  |
+| 7       | 200        | 2011 | 15       | 9000  |
++---------+------------+------+----------+-------+
+Product table:
++------------+--------------+
+| product_id | product_name |
++------------+--------------+
+| 100        | Nokia        |
+| 200        | Apple        |
+| 300        | Samsung      |
++------------+--------------+
+Output:
++--------------+-------+-------+
+| product_name | year  | price |
++--------------+-------+-------+
+| Nokia        | 2008  | 5000  |
+| Nokia        | 2009  | 5000  |
+| Apple        | 2011  | 9000  |
++--------------+-------+-------+
+```
+
+```sql
+-- MySQL
+SELECT p.product_name, s.year, s.price
+FROM sales s
+LEFT JOIN product p
+ON s.product_id = p.product_id
+;
+```
+
+## Customer Who Visited but Did Not Make Any Transactions - Easy
+
+进店却未进行过交易的顾客：
+
+```none
+Table: Visits
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| visit_id    | int     |
+| customer_id | int     |
++-------------+---------+
+visit_id is the primary key for this table.
+
+Table: Transactions
++----------------+---------+
+| Column Name    | Type    |
++----------------+---------+
+| transaction_id | int     |
+| visit_id       | int     |
+| amount         | int     |
++----------------+---------+
+transaction_id is the primary key for this table.
+```
+
+有一些顾客可能光顾了购物中心但没有进行交易。请你编写一个 SQL 查询，来查找这些顾客的 ID，以及他们只光顾不交易的次数。
+
+返回以 任何顺序 排序的结果表。
+
+```none
+Input:
+Visits
++----------+-------------+
+| visit_id | customer_id |
++----------+-------------+
+| 1        | 23          |
+| 2        | 9           |
+| 4        | 30          |
+| 5        | 54          |
+| 6        | 96          |
+| 7        | 54          |
+| 8        | 54          |
++----------+-------------+
+Transactions
++----------------+----------+--------+
+| transaction_id | visit_id | amount |
++----------------+----------+--------+
+| 2              | 5        | 310    |
+| 3              | 5        | 300    |
+| 9              | 5        | 200    |
+| 12             | 1        | 910    |
+| 13             | 2        | 970    |
++----------------+----------+--------+
+Output:
++-------------+----------------+
+| customer_id | count_no_trans |
++-------------+----------------+
+| 54          | 2              |
+| 30          | 1              |
+| 96          | 1              |
++-------------+----------------+
+解释:
+ID = 23 的顾客曾经逛过一次购物中心，并在 ID = 12 的访问期间进行了一笔交易。
+ID = 9 的顾客曾经逛过一次购物中心，并在 ID = 13 的访问期间进行了一笔交易。
+ID = 30 的顾客曾经去过购物中心，并且没有进行任何交易。
+ID = 54 的顾客三度造访了购物中心。在 2 次访问中，他们没有进行任何交易，在 1 次访问中，他们进行了 3 次交易。
+ID = 96 的顾客曾经去过购物中心，并且没有进行任何交易。
+如我们所见，ID 为 30 和 96 的顾客一次没有进行任何交易就去了购物中心。顾客 54 也两次访问了购物中心并且没有进行任何交易。
+```
+
+```sql
+-- MySQL
+SELECT customer_id, count(customer_id) count_no_trans
+FROM visits v
+LEFT JOIN transactions t
+ON v.visit_id = t.visit_id
+WHERE amount IS NULL
+GROUP BY customer_id
+;
+```
+
+## Rising Temperature - Easy
+
+```none
+Table: Weather
++---------------+---------+
+| Column Name   | Type    |
++---------------+---------+
+| id            | int     |
+| recordDate    | date    |
+| temperature   | int     |
++---------------+---------+
+id is the primary key for this table.
+```
+
+查找与之前（昨天的）日期相比温度更高的所有日期的 id。
+
+返回结果不排序。
+
+```none
+Input:
+Weather table:
++----+------------+-------------+
+| id | recordDate | temperature |
++----+------------+-------------+
+| 1  | 2015-01-01 | 10          |
+| 2  | 2015-01-02 | 25          |
+| 3  | 2015-01-03 | 20          |
+| 4  | 2015-01-04 | 30          |
++----+------------+-------------+
+Output:
++----+
+| id |
++----+
+| 2  |
+| 4  |
++----+
+解释：
+2015-01-02 的温度比前一天高（10 -> 25）
+2015-01-04 的温度比前一天高（20 -> 30）
+```
+
+```sql
+-- MySQL
+SELECT a.id
+FROM weather a
+CROSS JOIN weather b
+ON datediff(a.recorddate, b.recorddate) = 1
+WHERE a.temperature > b.temperature
+
+SELECT a.id
+FROM weather a
+CROSS JOIN weather b
+ON timestampdiff(day, a.recorddate, b.recorddate) = -1
+WHERE a.temperature > b.temperature
+;
+```
+
+## Average Time of Process per Machine - Easy
+
+每台机器的进程平均运行时间：
+
+```none
+Table: Activity
++----------------+---------+
+| Column Name    | Type    |
++----------------+---------+
+| machine_id     | int     |
+| process_id     | int     |
+| activity_type  | enum    |
+| timestamp      | float   |
++----------------+---------+
+(machine_id, process_id, activity_type) 是当前表的主键。
+```
+
+现在有一个工厂网站由几台机器运行，每台机器上运行着相同数量的进程。计算每台机器各自完成一个进程任务的平均耗时。
+
+完成一个进程任务的时间指进程的 'end' 时间戳减去 'start' 时间戳。平均耗时通过计算每台机器上所有进程任务的总耗费时间除以机器上的总进程数量获得。
+
+结果表必须包含 machine_id（机器ID）和对应的 average time（平均耗时） 别名 processing_time，且四舍五入保留 3 位小数。
+
+以 任意顺序 返回表。
+
+```none
+Input:
+Activity table:
++------------+------------+---------------+-----------+
+| machine_id | process_id | activity_type | timestamp |
++------------+------------+---------------+-----------+
+| 0          | 0          | start         | 0.712     |
+| 0          | 0          | end           | 1.520     |
+| 0          | 1          | start         | 3.140     |
+| 0          | 1          | end           | 4.120     |
+| 1          | 0          | start         | 0.550     |
+| 1          | 0          | end           | 1.550     |
+| 1          | 1          | start         | 0.430     |
+| 1          | 1          | end           | 1.420     |
+| 2          | 0          | start         | 4.100     |
+| 2          | 0          | end           | 4.512     |
+| 2          | 1          | start         | 2.500     |
+| 2          | 1          | end           | 5.000     |
++------------+------------+---------------+-----------+
+Output:
++------------+-----------------+
+| machine_id | processing_time |
++------------+-----------------+
+| 0          | 0.894           |
+| 1          | 0.995           |
+| 2          | 1.456           |
++------------+-----------------+
+解释：
+一共有3台机器,每台机器运行着两个进程.
+机器 0 的平均耗时: ((1.520 - 0.712) + (4.120 - 3.140)) / 2 = 0.894
+```
+
+```sql
+-- MySQL
+SELECT
+    machine_id,
+    ROUND(AVG(IF(activity_type = 'start', -timestamp, timestamp)) * 2, 3) processing_time
+FROM activity
+GROUP BY machine_id
+```
+
+## Employee Bonus - Easy
+
+选出所有 bonus < 1000 员工的 name 及其 bonus。
+
+```none
+Input:
+Employee table:
++-------+--------+------------+--------+
+| empId | name   | supervisor | salary |
++-------+--------+------------+--------+
+| 3     | Brad   | null       | 4000   |
+| 1     | John   | 3          | 1000   |
+| 2     | Dan    | 3          | 2000   |
+| 4     | Thomas | 3          | 4000   |
++-------+--------+------------+--------+
+Bonus table:
++-------+-------+
+| empId | bonus |
++-------+-------+
+| 2     | 500   |
+| 4     | 2000  |
++-------+-------+
+Output:
++------+-------+
+| name | bonus |
++------+-------+
+| Brad | null  |
+| John | null  |
+| Dan  | 500   |
++------+-------+
+```
+
+```sql
+-- MySQL
+SELECT name, bonus
+FROM employee
+LEFT JOIN bonus
+ON employee.empId = bonus.empId
+WHERE bonus IS NULL OR bonus < 1000
+;
+```
+
+## Students and Examinations - Easy
+
+```none
+Table: Students
++---------------+---------+
+| Column Name   | Type    |
++---------------+---------+
+| student_id    | int     |
+| student_name  | varchar |
++---------------+---------+
+student_id is the primary key.
+
+Table: Subjects
++--------------+---------+
+| Column Name  | Type    |
++--------------+---------+
+| subject_name | varchar |
++--------------+---------+
+subject_name is the primary key.
+
+Table: Examinations
++--------------+---------+
+| Column Name  | Type    |
++--------------+---------+
+| student_id   | int     |
+| subject_name | varchar |
++--------------+---------+
+无主键，可能会有重复行。
+```
+
+查询出每个学生参加每一门科目测试的次数，结果按 student_id 和 subject_name 排序。
+
+```none
+Input:
+Students table:
++------------+--------------+
+| student_id | student_name |
++------------+--------------+
+| 1          | Alice        |
+| 2          | Bob          |
+| 13         | John         |
+| 6          | Alex         |
++------------+--------------+
+Subjects table:
++--------------+
+| subject_name |
++--------------+
+| Math         |
+| Physics      |
+| Programming  |
++--------------+
+Examinations table:
++------------+--------------+
+| student_id | subject_name |
++------------+--------------+
+| 1          | Math         |
+| 1          | Physics      |
+| 1          | Programming  |
+| 2          | Programming  |
+| 1          | Physics      |
+| 1          | Math         |
+| 13         | Math         |
+| 13         | Programming  |
+| 13         | Physics      |
+| 2          | Math         |
+| 1          | Math         |
++------------+--------------+
+Output:
++------------+--------------+--------------+----------------+
+| student_id | student_name | subject_name | attended_exams |
++------------+--------------+--------------+----------------+
+| 1          | Alice        | Math         | 3              |
+| 1          | Alice        | Physics      | 2              |
+| 1          | Alice        | Programming  | 1              |
+| 2          | Bob          | Math         | 1              |
+| 2          | Bob          | Physics      | 0              |
+| 2          | Bob          | Programming  | 1              |
+| 6          | Alex         | Math         | 0              |
+| 6          | Alex         | Physics      | 0              |
+| 6          | Alex         | Programming  | 0              |
+| 13         | John         | Math         | 1              |
+| 13         | John         | Physics      | 1              |
+| 13         | John         | Programming  | 1              |
++------------+--------------+--------------+----------------+
+```
+
+```sql
+-- MySQL
+SELECT a.student_id, a.student_name, b.subject_name, COUNT(e.subject_name) AS attended_exams
+FROM Students a
+CROSS JOIN Subjects b
+LEFT JOIN Examinations e
+ON a.student_id = e.student_id
+AND b.subject_name = e.subject_name
+GROUP BY a.student_id, b.subject_name
+ORDER BY a.student_id, b.subject_name
+```
+
+## Managers with at Least 5 Direct Reports - Medium
+
+至少有 5 名直接下属的经理：
+
+```none
+Table: Employee
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| id          | int     |
+| name        | varchar |
+| department  | varchar |
+| managerId   | int     |
++-------------+---------+
+id is the primary key column.
+```
+
+查询至少有 5 名直接下属的经理。
+
+以 任意顺序 返回结果表。
+
+```none
+Input:
+Employee table:
++-----+-------+------------+-----------+
+| id  | name  | department | managerId |
++-----+-------+------------+-----------+
+| 101 | John  | A          | None      |
+| 102 | Dan   | A          | 101       |
+| 103 | James | A          | 101       |
+| 104 | Amy   | A          | 101       |
+| 105 | Anne  | A          | 101       |
+| 106 | Ron   | B          | 101       |
++-----+-------+------------+-----------+
+Output:
++------+
+| name |
++------+
+| John |
++------+
+```
+
+```sql
+-- MySQL
+SELECT name
+FROM employee AS t1 JOIN(
+    SELECT managerID
+    FROM employee
+    GROUP BY managerID
+    HAVING COUNT(managerID) >= 5) AS t2
+    ON t1.id = t2.managerID
+;
+```
+
+## Confirmation Rate - Medium
+
+确认率：
+
+```none
+Table: Signups
++----------------+----------+
+| Column Name    | Type     |
++----------------+----------+
+| user_id        | int      |
+| time_stamp     | datetime |
++----------------+----------+
+user_id is the primary key.
+
+Table: Confirmations
++----------------+----------+
+| Column Name    | Type     |
++----------------+----------+
+| user_id        | int      |
+| time_stamp     | datetime |
+| action         | ENUM     |
++----------------+----------+
+(user_id, time_stamp) is the primary key.
+user_id is a foreign key.
+```
+
+用户的确认率是 'confirmed' 消息的数量除以请求的确认消息的总数。没有请求任何确认消息的用户的确认率为 0 。确认率四舍五入到小数点后两位。
+
+查找每个用户的确认率。
+
+以任意顺序返回结果表。
+
+```none
+Input:
+Signups table:
++---------+---------------------+
+| user_id | time_stamp          |
++---------+---------------------+
+| 3       | 2020-03-21 10:16:13 |
+| 7       | 2020-01-04 13:57:59 |
+| 2       | 2020-07-29 23:09:44 |
+| 6       | 2020-12-09 10:39:37 |
++---------+---------------------+
+Confirmations table:
++---------+---------------------+-----------+
+| user_id | time_stamp          | action    |
++---------+---------------------+-----------+
+| 3       | 2021-01-06 03:30:46 | timeout   |
+| 3       | 2021-07-14 14:00:00 | timeout   |
+| 7       | 2021-06-12 11:57:29 | confirmed |
+| 7       | 2021-06-13 12:58:28 | confirmed |
+| 7       | 2021-06-14 13:59:27 | confirmed |
+| 2       | 2021-01-22 00:00:00 | confirmed |
+| 2       | 2021-02-28 23:59:59 | timeout   |
++---------+---------------------+-----------+
+Output:
++---------+-------------------+
+| user_id | confirmation_rate |
++---------+-------------------+
+| 6       | 0.00              |
+| 3       | 0.00              |
+| 7       | 1.00              |
+| 2       | 0.50              |
++---------+-------------------+
+```
+
+```sql
+-- MySQL
+
+解释:
+用户 6 没有请求任何确认消息。确认率为 0。
+用户 3 进行了 2 次请求，都超时了。确认率为 0。
+用户 7 提出了 3 个请求，所有请求都得到了确认。确认率为 1。
+用户 2 做了 2 个请求，其中一个被确认，另一个超时。确认率为 1 / 2 = 0.5。
+```
+
+
+
 
 
 
@@ -612,6 +1321,8 @@ WHERE area >= 3000000
 # Refer
 
 [「新」动计划 · 编程入门](https://leetcode.cn/studyplan/primers-list)
+[高频 SQL 50 题（基础版）](https://leetcode.cn/studyplan/sql-free-50)
+
 [算法通关手册](https://algo.itcharge.cn)
 [代码随想录](https://www.programmercarl.com)
 [1.初级算法](https://leetcode.cn/leetbook/detail/top-interview-questions-easy/)
