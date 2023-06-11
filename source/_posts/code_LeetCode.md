@@ -1296,11 +1296,6 @@ Output:
 | 7       | 1.00              |
 | 2       | 0.50              |
 +---------+-------------------+
-```
-
-```sql
--- MySQL
-
 解释:
 用户 6 没有请求任何确认消息。确认率为 0。
 用户 3 进行了 2 次请求，都超时了。确认率为 0。
@@ -1308,14 +1303,299 @@ Output:
 用户 2 做了 2 个请求，其中一个被确认，另一个超时。确认率为 1 / 2 = 0.5。
 ```
 
+```sql
+-- MySQL
+SELECT s.user_id, IFNULL(ROUND(SUM(action = 'confirmed') / COUNT(c.action), 2), 0.00) AS confirmation_rate
+FROM signups AS s
+LEFT JOIN confirmations AS c
+ON s.user_id = c.user_id
+GROUP BY s.user_id
+;
+```
 
+## Not Boring Movies - Easy
 
+```none
+Input:
+Cinema table:
++----+------------+-------------+--------+
+| id | movie      | description | rating |
++----+------------+-------------+--------+
+| 1  | War        | great 3D    | 8.9    |
+| 2  | Science    | fiction     | 8.5    |
+| 3  | irish      | boring      | 6.2    |
+| 4  | Ice song   | Fantacy     | 8.6    |
+| 5  | House card | Interesting | 9.1    |
++----+------------+-------------+--------+
+Output:
++----+------------+-------------+--------+
+| id | movie      | description | rating |
++----+------------+-------------+--------+
+| 5  | House card | Interesting | 9.1    |
+| 1  | War        | great 3D    | 8.9    |
++----+------------+-------------+--------+
+```
 
+找出所有影片描述为非 boring 的且 id 为奇数的影片，结果请按等级 rating 排列。
 
+```sql
+-- MySQL
+SELECT *
+FROM cinema
+WHERE MOD(id, 2) = 1
+    AND description != 'boring'
+ORDER BY rating DESC
+;
 
+-- SQL
+SELECT *
+FROM cinema
+WHERE id % 2 <> 0
+    AND description <> 'boring'
+ORDER BY rating DESC
+;
+```
 
+## Average Selling Price - Easy
 
+平均售价：
 
+```none
+Table: Prices
++---------------+---------+
+| Column Name   | Type    |
++---------------+---------+
+| product_id    | int     |
+| start_date    | date    |
+| end_date      | date    |
+| price         | int     |
++---------------+---------+
+(product_id, start_date, end_date) is the primary key.
+
+Table: UnitsSold
++---------------+---------+
+| Column Name   | Type    |
++---------------+---------+
+| product_id    | int     |
+| purchase_date | date    |
+| units         | int     |
++---------------+---------+
+There is no primary key for this table, it may contain duplicates.
+```
+
+查找每种产品的平均售价。average_price 应该四舍五入到小数点后两位。
+
+```none
+Input:
+Prices table:
++------------+------------+------------+--------+
+| product_id | start_date | end_date   | price  |
++------------+------------+------------+--------+
+| 1          | 2019-02-17 | 2019-02-28 | 5      |
+| 1          | 2019-03-01 | 2019-03-22 | 20     |
+| 2          | 2019-02-01 | 2019-02-20 | 15     |
+| 2          | 2019-02-21 | 2019-03-31 | 30     |
++------------+------------+------------+--------+
+UnitsSold table:
++------------+---------------+-------+
+| product_id | purchase_date | units |
++------------+---------------+-------+
+| 1          | 2019-02-25    | 100   |
+| 1          | 2019-03-01    | 15    |
+| 2          | 2019-02-10    | 200   |
+| 2          | 2019-03-22    | 30    |
++------------+---------------+-------+
+Output:
++------------+---------------+
+| product_id | average_price |
++------------+---------------+
+| 1          | 6.96          |
+| 2          | 16.96         |
++------------+---------------+
+
+平均售价 = 产品总价 / 销售的产品数量。
+产品 1 的平均售价 = ((100 * 5)+(15 * 20) )/ 115 = 6.96
+产品 2 的平均售价 = ((200 * 15)+(30 * 30) )/ 230 = 16.96
+```
+
+```sql
+-- MySQL
+SELECT
+    product_id,
+    Round(SUM(sales) / SUM(units), 2) AS average_price
+FROM (
+    SELECT
+        Prices.product_id AS product_id,
+        Prices.price * UnitsSold.units AS sales,
+        UnitsSold.units AS units
+    FROM Prices
+    JOIN UnitsSold ON Prices.product_id = UnitsSold.product_id
+    WHERE UnitsSold.purchase_date BETWEEN Prices.start_date AND Prices.end_date
+) T
+GROUP BY product_id
+```
+
+## Project Employees I - Easy
+
+```none
+Table: Project
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| project_id  | int     |
+| employee_id | int     |
++-------------+---------+
+(project_id, employee_id) is the primary key of this table.
+employee_id is a foreign key to Employee table.
+
+Table: Employee
++------------------+---------+
+| Column Name      | Type    |
++------------------+---------+
+| employee_id      | int     |
+| name             | varchar |
+| experience_years | int     |
++------------------+---------+
+employee_id is the primary key.
+```
+
+查询每一个项目中员工的 平均 工作年限，精确到小数点后两位。
+
+```none
+Input:
+Project table:
++-------------+-------------+
+| project_id  | employee_id |
++-------------+-------------+
+| 1           | 1           |
+| 1           | 2           |
+| 1           | 3           |
+| 2           | 1           |
+| 2           | 4           |
++-------------+-------------+
+Employee table:
++-------------+--------+------------------+
+| employee_id | name   | experience_years |
++-------------+--------+------------------+
+| 1           | Khaled | 3                |
+| 2           | Ali    | 2                |
+| 3           | John   | 1                |
+| 4           | Doe    | 2                |
++-------------+--------+------------------+
+Output:
++-------------+---------------+
+| project_id  | average_years |
++-------------+---------------+
+| 1           | 2.00          |
+| 2           | 2.50          |
++-------------+---------------+
+第一个项目中，员工的平均工作年限是 (3 + 2 + 1) / 3 = 2.00；第二个项目中，员工的平均工作年限是 (3 + 2) / 2 = 2.50
+```
+
+```sql
+-- MySQL
+SELECT
+    p.project_id,
+    ROUND(AVG(e.experience_years), 2) AS average_years
+FROM project p, employee e
+WHERE p.employee_id = e.employee_id
+GROUP BY p.project_id
+;
+```
+
+## Percentage of Users Attended a Contest - Easy
+
+各赛事的用户注册率：
+
+```none
+Table: Users
+
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| user_id     | int     |
+| user_name   | varchar |
++-------------+---------+
+user_id is the primary key.
+
+Table: Register
+
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| contest_id  | int     |
+| user_id     | int     |
++-------------+---------+
+(contest_id, user_id) is the primary key.
+```
+
+查询各赛事的用户注册百分率，保留两位小数。
+
+返回的结果表按 percentage 的 降序 排序，若相同则按 contest_id 的 升序 排序。
+
+```none
+Input:
+Users table:
++---------+-----------+
+| user_id | user_name |
++---------+-----------+
+| 6       | Alice     |
+| 2       | Bob       |
+| 7       | Alex      |
++---------+-----------+
+Register table:
++------------+---------+
+| contest_id | user_id |
++------------+---------+
+| 215        | 6       |
+| 209        | 2       |
+| 208        | 2       |
+| 210        | 6       |
+| 208        | 6       |
+| 209        | 7       |
+| 209        | 6       |
+| 215        | 7       |
+| 208        | 7       |
+| 210        | 2       |
+| 207        | 2       |
+| 210        | 7       |
++------------+---------+
+Output:
++------------+------------+
+| contest_id | percentage |
++------------+------------+
+| 208        | 100.0      |
+| 209        | 100.0      |
+| 210        | 100.0      |
+| 215        | 66.67      |
+| 207        | 33.33      |
++------------+------------+
+
+解释：
+所有用户都注册了 208、209 和 210 赛事，因此这些赛事的注册率为 100% ，我们按 contest_id 的降序排序加入结果表中。
+Alice 和 Alex 注册了 215 赛事，注册率为 ((2/3) * 100) = 66.67%
+Bob 注册了 207 赛事，注册率为 ((1/3) * 100) = 33.33%
+```
+
+```sql
+-- MySQL
+SELECT
+    contest_id,
+    ROUND(COUNT(user_id) * 100 / (SELECT count(*) FROM users), 2) percentage
+FROM Register
+GROUP BY contest_id
+ORDER BY percentage desc, contest_id
+
+-- SQL
+SELECT
+    contest_id,
+    CONVERT(DECIMAL(18, 2), COUNT(user_id * 1.00) * 100 / (SELECT COUNT(*) * 1.00 FROM users)) percentage
+FROM Register
+GROUP BY contest_id
+ORDER BY percentage desc, contest_id
+```
+
+##
 
 
 # Refer
