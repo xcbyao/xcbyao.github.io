@@ -6579,6 +6579,8 @@ Life is getting late, beyond the darkness is the dawn, why is the endless runnin
 
 出来见见世界之大，跟真实的世界多碰撞几次，才知道自己究竟在哪里擅长、又在哪里渺小。
 
+一个人没有对未知，对生命的敬畏，是一件很可怕的事情，很可能害人害己
+
 
 
 

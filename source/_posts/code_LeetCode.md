@@ -1595,14 +1595,224 @@ GROUP BY contest_id
 ORDER BY percentage desc, contest_id
 ```
 
+## Queries Quality and Percentage - Easy
+
+查询结果的质量和占比：
+
+```none
+Table: Queries
+
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| query_name  | varchar |
+| result      | varchar |
+| position    | int     |
+| rating      | int     |
++-------------+---------+
+
+此表没有主键，并可能有重复的行。
+此表包含了一些从数据库中收集的查询信息。
+“位置”（position）列的值为 1 到 500 。
+“评分”（rating）列的值为 1 到 5 。评分小于 3 的查询被定义为质量很差的查询。
+```
+
+将查询结果的质量 quality 定义为：
+
+各查询结果的评分与其位置之间比率的平均值。
+
+将劣质查询百分比 poor_query_percentage 为：
+
+评分小于 3 的查询结果占全部查询结果的百分比。
+
+编写一组 SQL 来查找每次查询的名称(query_name)、质量(quality) 和 劣质查询百分比(poor_query_percentage)。
+
+质量(quality) 和劣质查询百分比(poor_query_percentage) 都应四舍五入到小数点后两位。
+
+```none
+Input:
+Queries table:
++------------+-------------------+----------+--------+
+| query_name | result            | position | rating |
++------------+-------------------+----------+--------+
+| Dog        | Golden Retriever  | 1        | 5      |
+| Dog        | German Shepherd   | 2        | 5      |
+| Dog        | Mule              | 200      | 1      |
+| Cat        | Shirazi           | 5        | 2      |
+| Cat        | Siamese           | 3        | 3      |
+| Cat        | Sphynx            | 7        | 4      |
++------------+-------------------+----------+--------+
+Output:
++------------+---------+-----------------------+
+| query_name | quality | poor_query_percentage |
++------------+---------+-----------------------+
+| Dog        | 2.50    | 33.33                 |
+| Cat        | 0.66    | 33.33                 |
++------------+---------+-----------------------+
+Dog 查询结果的质量为 ((5 / 1) + (5 / 2) + (1 / 200)) / 3 = 2.50
+Dog 查询结果的劣质查询百分比为 (1 / 3) * 100 = 33.33
+
+Cat 查询结果的质量为 ((2 / 5) + (3 / 3) + (4 / 7)) / 3 = 0.66
+Cat 查询结果的劣质查询百分比为 (1 / 3) * 100 = 33.33
+```
+
+```sql
+-- MySQL
+SELECT
+    query_name,
+    ROUND(AVG(rating/position), 2) quality,
+    ROUND(SUM(IF(rating < 3, 1, 0)) * 100 / COUNT(*), 2) poor_query_percentage
+FROM Queries
+GROUP BY query_name
+```
+
+## Monthly Transactions I - Medium
+
+每月交易 I：
+
+```none
+Table: Transactions
+
++---------------+---------+
+| Column Name   | Type    |
++---------------+---------+
+| id            | int     |
+| country       | varchar |
+| state         | enum    |
+| amount        | int     |
+| trans_date    | date    |
++---------------+---------+
+id is the primary key
+The state column is an enum of type ["approved", "declined"].
+```
+
+查找每个月和每个国家/地区的事务数及其总金额、已批准的事务数及其总金额。
+
+以 任意顺序 返回结果表。
+
+```none
+Input:
+Transactions table:
++------+---------+----------+--------+------------+
+| id   | country | state    | amount | trans_date |
++------+---------+----------+--------+------------+
+| 121  | US      | approved | 1000   | 2018-12-18 |
+| 122  | US      | declined | 2000   | 2018-12-19 |
+| 123  | US      | approved | 2000   | 2019-01-01 |
+| 124  | DE      | approved | 2000   | 2019-01-07 |
++------+---------+----------+--------+------------+
+Output:
++----------+---------+-------------+----------------+--------------------+-----------------------+
+| month    | country | trans_count | approved_count | trans_total_amount | approved_total_amount |
++----------+---------+-------------+----------------+--------------------+-----------------------+
+| 2018-12  | US      | 2           | 1              | 3000               | 1000                  |
+| 2019-01  | US      | 1           | 1              | 2000               | 2000                  |
+| 2019-01  | DE      | 1           | 1              | 2000               | 2000                  |
++----------+---------+-------------+----------------+--------------------+-----------------------+
+```
+
+```sql
+-- MySQL
+SELECT
+    DATE_FORMAT(trans_date, '%Y-%m') AS month,
+    country,
+    COUNT(*) AS trans_count,
+    COUNT(IF(state = 'approved', 1, NULL)) AS approved_count,
+    SUM(amount) AS trans_total_amount,
+    SUM(IF(state = 'approved', amount, 0)) AS approved_total_amount
+FROM transactions
+GROUP BY month, country
+```
+
+## Immediate Food Delivery II - Medium
+
+即时食物配送 II：
+
+```none
+Table: Delivery
+
++-----------------------------+---------+
+| Column Name                 | Type    |
++-----------------------------+---------+
+| delivery_id                 | int     |
+| customer_id                 | int     |
+| order_date                  | date    |
+| customer_pref_delivery_date | date    |
++-----------------------------+---------+
+delivery_id is the primary key
+```
+
+如果顾客期望的配送日期和下单日期相同，则该订单称为 「即时订单」，否则称为「计划订单」。
+
+「首次订单」是顾客最早创建的订单。我们保证一个顾客只会有一个「首次订单」。
+
+写一条 SQL 查询语句获取即时订单在所有用户的首次订单中的比例。保留两位小数。
+
+```none
+Input:
+Delivery table:
++-------------+-------------+------------+-----------------------------+
+| delivery_id | customer_id | order_date | customer_pref_delivery_date |
++-------------+-------------+------------+-----------------------------+
+| 1           | 1           | 2019-08-01 | 2019-08-02                  |
+| 2           | 2           | 2019-08-02 | 2019-08-02                  |
+| 3           | 1           | 2019-08-11 | 2019-08-12                  |
+| 4           | 3           | 2019-08-24 | 2019-08-24                  |
+| 5           | 3           | 2019-08-21 | 2019-08-22                  |
+| 6           | 2           | 2019-08-11 | 2019-08-13                  |
+| 7           | 4           | 2019-08-09 | 2019-08-09                  |
++-------------+-------------+------------+-----------------------------+
+Output:
++----------------------+
+| immediate_percentage |
++----------------------+
+| 50.00                |
++----------------------+
+
+1 号顾客的 1 号订单是首次订单，并且是计划订单。
+2 号顾客的 2 号订单是首次订单，并且是即时订单。
+3 号顾客的 5 号订单是首次订单，并且是计划订单。
+4 号顾客的 7 号订单是首次订单，并且是即时订单。
+因此，一半顾客的首次订单是即时的。
+```
+
+```sql
+-- MySQL
+SELECT
+    ROUND(SUM(order_date = customer_pref_delivery_date) * 100 / COUNT(*), 2)
+    AS immediate_percentage
+FROM delivery
+WHERE (customer_id, order_date) IN (
+    SELECT customer_id, min(order_date)
+    FROM delivery
+    GROUP BY customer_id
+)
+```
+
 ##
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # Refer
 
 [「新」动计划 · 编程入门](https://leetcode.cn/studyplan/primers-list)
 [高频 SQL 50 题（基础版）](https://leetcode.cn/studyplan/sql-free-50)
-
+[LeetCode 热题 100](https://leetcode.cn/studyplan/top-100-liked)
 [算法通关手册](https://algo.itcharge.cn)
 [代码随想录](https://www.programmercarl.com)
 [1.初级算法](https://leetcode.cn/leetbook/detail/top-interview-questions-easy/)

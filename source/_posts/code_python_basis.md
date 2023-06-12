@@ -532,16 +532,14 @@ dimensions = (200, 50)
 for dimension in dimensions:
     print(dimension)
 dimensions = (400, 100)
-for dimension in dimensions:
-    print(dimension)
 ```
 
 # if 语句
 
-在所有算术、比较操作符求值后，依次求值 not，and，or
+在所有算术、比较操作符求值后，依次求值布尔操作符 not，and，or
 
 ```python
-# 圆括号只是提高可读性，布尔操作符 and or not
+# 圆括号只是提高可读性
 (age_0 >= 21) and (age_1 >= 21)
 ```
 
@@ -848,6 +846,7 @@ def make_pizza(size, *toppings):
 def show():
     print("...")
 
+
 '''main.py'''
 import pizza
 
@@ -1056,13 +1055,13 @@ for line in lines:
 print(use)
 ```
 
-## 写入文件 - write() - rwar+
+## 写入文件 - write() - rwar+w
 
 ```python
 '''
-读取模式：r 读、w 写、a 附加、r+ 读写；
+读取模式：r 读、w 写、a 附加、r+w 读写；
 省略模式实参，默认只读模式打开文件；
-写入文件不存在自动创建，存在则覆盖重写；
+写入文件不存在则自动创建，存在则覆盖重写；
 只能将字符串写入文本文件。
 '''
 filename = 'demo.txt'
@@ -1070,7 +1069,7 @@ filename = 'demo.txt'
 with open(filename, 'w') as file_object:
     file_object.write('anything')
 
-with open(filename, 'a') as file_object: # 附加内容
+with open(filename, 'a') as file_object:
     file_object.write('\naddition')
 ```
 
@@ -1110,9 +1109,9 @@ def count_words(filename):
     '''
     except FileNotFoundError:
         pass # 静默失败
-
-    pass 语句还充当了占位符，提醒你在程序的某处无操作，也许以后要做什么
     '''
+    # pass 语句还充当占位符，提醒你在程序的某处无操作，也许以后要做什么。
+
     else:
         # 分析文本
         words = contents.split()
@@ -1305,8 +1304,7 @@ def get_formatted_name(first, middle, last):
 运行测试文件，输出如下：
 第一行字母 E，指出有一个单元测试导致了错误；
 第三行指出 NamesTestCase 中的 test_first_last_name() 导致了错误；
-Traceback 指出函数调用 get_formatted_name(...) 有问题，
-缺少一个必不可少的位置实参；
+Traceback 指出函数调用 get_formatted_name(...) 有问题；
 最后指出整个测试用例未通过，因为发生了一个错误。
 '''
 E
@@ -1366,14 +1364,14 @@ OK
 
 unittest 模块中的断言方法，只能在继承 unittest.TestCase 的类中使用这些方法
 
-| 方法                     | 用途                 |
-| ------------------------ | -------------------- |
-| assertEqual(a, b)        | 核实 a == b          |
-| assertNotEqual(a, b)     | 核实 a != b          |
-| assertTrue(x)            | 核实 x 为 True       |
-| assertFalse(x)           | 核实 x 为 False      |
-| assertIn(item, list )    | 核实 item 在 list 中 |
-| assertNotIn(item, list ) | 核实 item 不在 list  |
+| 方法                    | 用途                 |
+| ----------------------- | -------------------- |
+| assertEqual(a, b)       | 核实 a == b          |
+| assertNotEqual(a, b)    | 核实 a != b          |
+| assertTrue(x)           | 核实 x 为 True       |
+| assertFalse(x)          | 核实 x 为 False      |
+| assertIn(item, list)    | 核实 item 在 list 中 |
+| assertNotIn(item, list) | 核实 item 不在 list  |
 
 ## 模块类定义与调用
 

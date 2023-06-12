@@ -2536,6 +2536,7 @@ ZONE
 # Refer
 
 《SQL必知必会（第5版）》
+《MySQL必知必会（第1版）》
 
 # PS
 
