@@ -1480,7 +1480,7 @@ if __name__ == '__main__':
 # 关键字
 
 | False  | await    | else    | import   | pass   |
-| ------ | -------- | ------- | -------- | ------ |
+| :----- | :------- | :------ | :------- | :----- |
 | None   | break    | except  | in       | raise  |
 | True   | class    | finally | is       | return |
 | and    | continue | for     | lambda   | try    |
@@ -1491,7 +1491,7 @@ if __name__ == '__main__':
 # 内置函数
 
 | abs()         | delattr()   | hash()       | memoryview() | set()     |
-| ------------- | ----------- | ------------ | ------------ | --------- |
+| :------------ | :---------- | :----------- | :----------- | :-------- |
 | all()         | dict()      | help()       | min()        | setattr() |
 | any()         | dir()       | hex()        | next()       | slice()   |
 | ascii()       | divmod()    | id()         | object()     | sorted()  |
