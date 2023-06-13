@@ -150,19 +150,20 @@ LIMIT 5
 ```sql
 SELECT prod_name
 FROM Products
-LIMIT 5 OFFSET 5;
+LIMIT 5 OFFSET 5
+;
 -- MySQL、MariaDB 和 SQLite 捷径
 -- 把 `LIMIT 4 OFFSET 3` 简化为 `LIMIT 3,4`
 ```
 
 ![](/images/select_offset.png)
 
-## 注释
+# 注释
 
 ```sql
 /* 多行注释 */
-SELECT prod_name -- 注释，都支持
-FROM Products; # 注释，有些不支持
+-- 注释，都支持
+# 注释，有些不支持
 ```
 
 # 排序
@@ -174,11 +175,13 @@ FROM Products; # 注释，有些不支持
 ```sql
 SELECT prod_name
 FROM Products
-ORDER BY prod_name; -- 按单列排序
-ORDER BY prod_price, prod_name; -- 按多列排序
+ORDER BY prod_name -- 按单列排序
+;
+ORDER BY prod_price, prod_name -- 按多列排序
+;
 ```
 
-> 注： ORDER BY 子句的位置应该是 SELECT 语句中最后一条子句，否则会报错。
+> 注： **ORDER BY** 子句的位置应该是 SELECT 语句中**最后一条子句**，否则会报错。
 
 ![](/images/select_order.jpeg)
 
@@ -191,32 +194,22 @@ ORDER BY prod_price, prod_name; -- 按多列排序
 ```sql
 SELECT prod_id, prod_price, prod_name -- 按列位置排序
 FROM Products
-ORDER BY 2, 3;
+ORDER BY 2, 3 -- 表示先按 prod_price，再按 prod_name 排序。
+;
 ```
 
 ![](/images/select_order3.jpeg)
-
-`ORDER BY 2，3` 表示先按 prod_price，再按 prod_name 进行排序。
 
 ## 指定排序方向
 
 ```sql
 SELECT prod_id, prod_price, prod_name
 FROM Products
-ORDER BY prod_price DESC; -- 降序，默认是升序 A-Z
+ORDER BY prod_price DESC -- 降序，默认是升序 A-Z
+;
 ```
 
 ![](/images/select_order4.png)
-
-```sql
-SELECT prod_id, prod_price, prod_name
-FROM Products
-ORDER BY prod_price DESC, prod_name; -- 多列分别排序
-```
-
-![](/images/select_order5.jpeg)
-
-prod_price 列以降序排序，prod_name 列（在每个价格内）按升序排序。
 
 > 注：若想在多列上进行降序排序，必须对每一列指定 DESC。
 > DESCENDING 是全写，亦可使用。
@@ -233,12 +226,11 @@ prod_price 列以降序排序，prod_name 列（在每个价格内）按升序�
 ```sql
 SELECT prod_name, prod_price
 FROM Products
-WHERE prod_price = 3.49;
+WHERE prod_price = 3.49
+;
 ```
 
 ![](/images/select_where.png)
-
-> ORDER BY 位于 WHERE 之后，否则将报错。
 
 ## WHERE 操作符
 
@@ -247,29 +239,25 @@ WHERE prod_price = 3.49;
 | 操 作 符 | 说 明    | 操 作 符 | 说 明                    |
 | -------- | -------- | -------- | ------------------------ |
 | =        | 等于     | >        | 大于                     |
-| < >      | 不等于   | >=       | 大于等于                 |
+| <>       | 不等于   | >=       | 大于等于                 |
 | !=       | 不等于   | !>       | 不大于                   |
 | <        | 小于     | BETWEEN  | 指定两个值之间（都包括） |
-| <=       | 小于等于 | IS NULL  | 为NULL值                 |
+| <=       | 小于等于 | IS NULL  | 为 NULL 值               |
 | !<       | 不小于   |
 
 ```sql
 SELECT prod_name, prod_price
 FROM Products
-WHERE prod_price < 10; -- 检查单个值
-WHERE vend_id <> 'DLL01'; -- 不匹配检查
-WHERE prod_price BETWEEN 5 AND 10; -- 范围值检查
-WHERE prod_price IS NULL; -- 空值检查
+WHERE vend_id <> 'DLL01' -- 不匹配检查
+;
+WHERE prod_price BETWEEN 5 AND 10 -- 范围值检查
+;
+WHERE prod_price IS NULL -- 空值检查
+;
 ```
 
 NULL 无值（no value），与字段包含 0、空字符串或仅空格不同。
 如上，返回空 prod_price 字段，不是价格为 0。
-
-![](/images/select_where2.png)
-
-![](/images/select_where3.png)
-
-![](/images/select_where4.png)
 
 # 高级数据过滤
 
@@ -278,11 +266,9 @@ NULL 无值（no value），与字段包含 0、空字符串或仅空格不同�
 ```sql
 SELECT prod_id, prod_price, prod_name
 FROM Products
-WHERE vend_id = 'DLL01' AND prod_price <= 4;
-WHERE vend_id = 'DLL01' OR vend_id = 'BRS01';
+WHERE vend_id = 'DLL01' OR vend_id = 'BRS01'
+;
 ```
-
-![](/images/select_where_and.png)
 
 许多 DBMS 在 OR WHERE 子句的第一个条件满足时，就不再计算第二个条件了。
 
@@ -293,22 +279,10 @@ WHERE vend_id = 'DLL01' OR vend_id = 'BRS01';
 ```sql
 SELECT prod_name, prod_price
 FROM Products
-WHERE (vend_id = 'DLL01' OR vend_id = 'BRS01')
-   AND prod_price >= 10;
-```
-
-![](/images/select_where_().png)
-
-```sql
-SELECT prod_name, prod_price
-FROM Products
 WHERE vend_id IN ('DLL01','BRS01') -- IN 与 OR 功能相当
-ORDER BY prod_name;
-
-SELECT prod_name, prod_price
-FROM Products
-WHERE vend_id = 'DLL01' OR vend_id = 'BRS01'
-ORDER BY prod_name;
+-- WHERE vend_id = 'DLL01' OR vend_id = 'BRS01'
+ORDER BY prod_name
+;
 ```
 
 检索由供应商 DLL01 和 BRS01 制造的所有产品，以上两种表达一样。
@@ -321,18 +295,15 @@ IN 操作符的语法更直观；
 IN 一般比一组 OR 执行更快；
 IN 最大优点是可包含其他 SELECT 语句，能更动态地建立 WHERE 子句。
 
-NOT 从不单独使用（总是与其他操作符一起使用），所以它的语法与其他操作符不同。可以用在要过滤的列前，而不仅是在其后。
+NOT 从不单独使用（总是与其他操作符一起使用），所以它的语法与其他操作符不同。
 
 ```sql
 SELECT prod_name
 FROM Products
 WHERE NOT vend_id = 'DLL01' -- NOT 与 <> 功能相当
-ORDER BY prod_name;
-
-SELECT prod_name
-FROM Products
-WHERE vend_id <> 'DLL01'
-ORDER BY prod_name;
+-- WHERE vend_id <> 'DLL01'
+ORDER BY prod_name
+;
 ```
 
 ![](/images/select_where_not.png)
@@ -340,7 +311,7 @@ ORDER BY prod_name;
 > MariaDB 支持使用 NOT 否定 IN、BETWEEN 和 EXISTS 子句。大多数
 DBMS 允许使用 NOT 否定任何条件。
 
-# 通配符过滤 LINK
+# 通配符过滤 LIKE
 
 通配符（wildcard）用来匹配值的一部分的特殊字符。
 
@@ -364,29 +335,22 @@ DBMS 允许使用 NOT 否定任何条件。
 ```sql
 SELECT prod_id, prod_name
 FROM Products
-WHERE prod_name LIKE 'Fish%'; -- 所有以 Fish 开头产品，大小写区分根据 DBMS 配置
-WHERE prod_name LIKE '%bean bag%'; -- 可使用多个通配符
-WHERE prod_name LIKE '__ inch teddy bear';
+WHERE prod_name LIKE 'Fish%' -- 所有以 Fish 开头产品，大小写区分根据 DBMS 配置。
+;
 ```
 
 ![](/images/link_%.png)
-
-![](/images/link_%2.png)
-
-![](/images/link__.png)
 
 > 注：字符串后面可能用空格填充，故匹配以某字母结尾，需要后面加百分号 `y%`
 
 ```sql
 SELECT cust_contact
 FROM Customers
-WHERE cust_contact LIKE '[JM]%' -- 找出名字以 J 或 M 起头的联系人
-# WHERE cust_contact LIKE '[^JM]%' -- 更简化
-# WHERE NOT cust_contact LIKE '[JM]%' -- 与 ^ 结果相同
-ORDER BY cust_contact;
+WHERE cust_contact LIKE '[^JM]%' -- 找出名字以非 J 或 M 起头的联系人
+-- WHERE NOT cust_contact LIKE '[JM]%' -- 与 ^ 结果相同
+ORDER BY cust_contact
+;
 ```
-
-![](/images/link_[].png)
 
 ## 通配符技巧
 
@@ -411,10 +375,10 @@ MySQL 和 MariaDB 使用特殊函数 `Concat`。
 
 ```sql
 SELECT vend_name + ' (' + vend_country + ')'
-# SELECT vend_name || ' (' || vend_country || ')'
-# SELECT Concat(vend_name, ' (', vend_country, ')')
+-- SELECT Concat(vend_name, ' (', vend_country, ')')
 FROM Vendors
-ORDER BY vend_name;
+ORDER BY vend_name
+;
 ```
 
 ![](/images/+.png)
@@ -424,7 +388,8 @@ ORDER BY vend_name;
 ```sql
 SELECT RTRIM(vend_name) + ' (' + RTRIM(vend_country) + ')'
 FROM Vendors
-ORDER BY vend_name;
+ORDER BY vend_name
+;
 ```
 
 ![](/images/+2.png)
@@ -433,24 +398,17 @@ ORDER BY vend_name;
 
 别名（alias）有时也称导出列（derived column）
 
-```sql
-SELECT RTRIM(vend_name) + ' (' + RTRIM(vend_country) + ')'
- AS vend_title
-FROM Vendors
-ORDER BY vend_name;
-```
-
-![](/images/alias.png)
-
 ## 执行算术计算
 
 ```sql
-SELECT prod_id,
+SELECT
+    prod_id,
     quantity,
     item_price,
     quantity*item_price AS expanded_price
 FROM OrderItems
-WHERE order_num = 20008;
+WHERE order_num = 20008
+;
 ```
 
 ![](/images/expanded.png)
@@ -478,7 +436,8 @@ WHERE order_num = 20008;
 ```sql
 SELECT vend_name, UPPER(vend_name) AS vend_name_upcase
 FROM Vendors
-ORDER BY vend_name;
+ORDER BY vend_name
+;
 ```
 
 ![](/images/upper.jpeg)
@@ -493,7 +452,7 @@ ORDER BY vend_name;
 | LTRIM()                       | 去掉字符串左边的空格                                    |
 | RTRIM()                       | 去掉字符串右边的空格                                    |
 | TRIM()                        | 去掉字符串两边的空格                                    |
-| SUBSTR() SUBSTRING()          | 提取字符串的组成部分 Oracle, SQLite                     |
+| SUBSTR() SUBSTRING()          | 提取字符串的组成部分                                    |
 | SOUNDEX()                     | 返回字符串的 SOUNDEX值                                  |
 
 SOUNDEX 是一个将任何文本串转换为描述其语音表示的字母数字模式的算法。能对字符串进行发音比较而不是字母比较。虽然 SOUNDEX 不是 SQL 概念，但多数 DBMS 都提供支持。
@@ -504,8 +463,9 @@ SOUNDEX 是一个将任何文本串转换为描述其语音表示的字母数字
 ```sql
 SELECT cust_name, cust_contact
 FROM Customers
-# WHERE cust_contact = 'Michael Green'; -- 用正确拼写无法检索
-WHERE SOUNDEX(cust_contact) = SOUNDEX('Michael Green');
+-- WHERE cust_contact = 'Michael Green' -- 用正确拼写无法检索
+WHERE SOUNDEX(cust_contact) = SOUNDEX('Michael Green')
+;
 ```
 
 表中的联系名是 Michelle Green 有误，正确拼写是 Michael Green。
@@ -515,16 +475,20 @@ WHERE SOUNDEX(cust_contact) = SOUNDEX('Michael Green');
 ```sql
 SELECT order_num
 FROM Orders
-WHERE DATEPART(yy, order_date) = 2020; -- SQL Server。参数：返回的成分和从中返回成分的日期。
-# WHERE DATE_PART('year', order_date) = 2020; -- PostgreSQL
-# WHERE EXTRACT(year FROM order_date) = 2020; -- Oracle, PostgreSQL
-# WHERE order_date BETWEEN to_date('2020-01-01', 'yyyy-mm-dd')
-AND to_date('2020-12-31', 'yyyy-mm-dd'); -- Oracle，将两个字符串转换为日期；SQL Server 不支持 to_date()，但这里换成 DATEPART() 支持
-# WHERE YEAR(order_date) = 2020; -- DB2，MySQL 和 MariaDB 具有各种日期处理函数，但没有 DATEPART()
-# WHERE strftime('%Y', order_date) = '2020'; -- SQLite
+-- SQL Server。参数：返回的成分和从中返回成分的日期。
+WHERE DATEPART(yy, order_date) = 2020
+-- PostgreSQL
+WHERE DATE_PART('year', order_date) = 2020
+-- Oracle, PostgreSQL
+WHERE EXTRACT(year FROM order_date) = 2020
+-- Oracle，将两个字符串转换为日期；SQL Server 不支持 to_date()，但这里换成 DATEPART() 支持
+WHERE order_date BETWEEN to_date('2020-01-01', 'yyyy-mm-dd') AND to_date('2020-12-31', 'yyyy-mm-dd')
+-- DB2，MySQL 和 MariaDB 具有各种日期处理函数，但没有 DATEPART()
+WHERE YEAR(order_date) = 2020
+-- SQLite
+WHERE strftime('%Y', order_date) = '2020'
+;
 ```
-
-![](/images/date.png)
 
 ## 数值函数
 
@@ -554,31 +518,31 @@ AND to_date('2020-12-31', 'yyyy-mm-dd'); -- Oracle，将两个字符串转换为
 
 ```sql
 SELECT AVG(prod_price) AS avg_price -- AVG() 只用于单列，忽略列值为 NULL 的行。
-FROM Products; -- 表中所有产品
+FROM Products
+;
 ```
 
 ![](/images/avg().png)
+
+> 注：最好指定别名以包含某个聚集函数的结果。否则许多 SQL 可能会产生错误消息。
 
 使用 COUNT(*) 对表中行的数目进行计数，包括空值（NULL）。
 使用 COUNT(column) 对特定列中具有值的行进行计数，忽略 NULL 值。
 
 ```sql
-SELECT COUNT(*) AS num_cust
-# SELECT COUNT(cust_email) AS num_cust
-FROM Customers;
+SELECT COUNT(cust_email) AS num_cust
+FROM Customers
+;
 ```
-
-![](/images/count().png)
 
 MAX() 一般用来找出最大的数值或日期值；用于文本数据时，返回按该列排序后的最后一行，忽略列值为 NULL 的行。MIN() 相反。
 
 ```sql
 SELECT SUM(item_price*quantity) AS total_price -- 计算总价钱
 FROM OrderItems
-WHERE order_num = 20005;
+WHERE order_num = 20005
+;
 ```
-
-![](/images/sum().png)
 
 ## 聚集不同值
 
@@ -588,26 +552,12 @@ WHERE order_num = 20005;
 ```sql
 SELECT AVG(DISTINCT prod_price) AS avg_price -- 平均值只考虑各个不同的价格，相同价格会排除
 FROM Products
-WHERE vend_id = 'DLL01';
-# 输出：4.2400
+WHERE vend_id = 'DLL01'
+;
 ```
 
 DISTINCT 不能用于 COUNT(*)，只能用于 COUNT()。
 DISTINCT 必须使用列名，不能用于计算或表达式。
-
-## 组合聚集函数
-
-```sql
-SELECT COUNT(*) AS num_items,
-    MIN(prod_price) AS price_min,
-    MAX(prod_price) AS price_max,
-    AVG(prod_price) AS price_avg
-FROM Products;
-```
-
-![](/images/count()2.png)
-
-> 注：最好指定别名以包含某个聚集函数的结果。否则许多 SQL 可能会产生错误消息。
 
 # 分组
 
@@ -616,15 +566,16 @@ FROM Products;
 ```sql
 SELECT vend_id, COUNT(*) AS num_prods
 FROM Products
-GROUP BY vend_id; -- 按 vend_id 排序并分组数据
+GROUP BY vend_id -- 按 vend_id 排序并分组数据
+;
 ```
 
 ![](/images/group.png)
 
 GROUP BY 子句可以包含任意数目的列，还可以嵌套，但不能是聚集函数。
-如果在 SELECT 中使用表达式，则必须在 GROUP BY 中指定相同的表达式，不能使用别名。
+**如果在 SELECT 中使用表达式，则必须在 GROUP BY 中指定相同的表达式，不能使用别名。**
 多数 SQL 实现不允许 GROUP BY 列带有长度可变的数据类型（如文本或备注型字段）
-除聚集计算语句外，SELECT 语句中的每一列都必须在 GROUP BY 中给出。
+**除聚集计算语句外，SELECT 语句中的每一列都必须在 GROUP BY 中给出。**
 如果分组列中包含具有 NULL 值的行，则 NULL 将作为一个分组返回。列中多行 NULL 值，将分为一组。
 GROUP BY 必须出现在 WHERE 之后，ORDER BY 之前。
 
