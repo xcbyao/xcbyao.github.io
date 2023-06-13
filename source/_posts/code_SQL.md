@@ -58,7 +58,8 @@ SQL 语句一般返回无格式的数据。
 
 ```sql
 SELECT prod_name
-FROM Products;
+FROM Products
+;
 ```
 
 从 Products 表中检索 prod_name 列。
@@ -74,7 +75,8 @@ FROM Products;
 
 ```sql
 SELECT prod_id, prod_name, prod_price
-FROM Products;
+FROM Products
+;
 ```
 
 ![](/images/select_2_column.png)
@@ -83,14 +85,16 @@ FROM Products;
 
 ```sql
 SELECT *
-FROM Products;
+FROM Products
+;
 ```
 
 ## 检索不同值
 
 ```sql
 SELECT vend_id
-FROM Products;
+FROM Products
+;
 ```
 
 ![](/images/select_id.png)
@@ -101,7 +105,8 @@ DISTINCT 关键字，指示数据库只返回不同的值。
 
 ```sql
 SELECT DISTINCT vend_id
-FROM Products;
+FROM Products
+;
 ```
 
 ![](/images/select_id2.png)
@@ -110,40 +115,32 @@ FROM Products;
 
 ## 限制结果（DBMS 实现不同）
 
-### SQL Server
-
 ```sql
+-- SQL Server
 SELECT TOP 5 prod_name
-FROM Products;
+FROM Products
+;
+
+-- DB2
+SELECT prod_name
+FROM Products
+FETCH FIRST 5 ROWS ONLY
+;
+
+-- Oracle
+SELECT prod_name
+FROM Products
+WHERE ROWNUM <=5; -- ROWNUM（行计数器）
+;
+
+-- MySQL、MariaDB、PostgreSQL 或 SQLite
+SELECT prod_name
+FROM Products
+LIMIT 5
+;
 ```
 
 ![](/images/select_top.png)
-
-### DB2
-
-```sql
-SELECT prod_name
-FROM Products
-FETCH FIRST 5 ROWS ONLY;
-```
-
-### Oracle
-
-ROWNUM（行计数器）
-
-```sql
-SELECT prod_name
-FROM Products
-WHERE ROWNUM <=5;
-```
-
-### MySQL、MariaDB、PostgreSQL 或 SQLite
-
-```sql
-SELECT prod_name
-FROM Products
-LIMIT 5;
-```
 
 第一个数字是检索的行数，第二个数字是指从哪开始。
 如下：返回从第 5 行起的 5 行数据。只有 9 种产品，所以只返回了 4 行数据。

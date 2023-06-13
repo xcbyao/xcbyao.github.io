@@ -1789,14 +1789,179 @@ WHERE (customer_id, order_date) IN (
 )
 ```
 
+## Game Play Analysis IV - Medium
+
+游戏玩法分析 IV：
+
+```none
+Table: Activity
+
++--------------+---------+
+| Column Name  | Type    |
++--------------+---------+
+| player_id    | int     |
+| device_id    | int     |
+| event_date   | date    |
+| games_played | int     |
++--------------+---------+
+(player_id, event_date) is the primary key
+```
+
+编写一个 SQL 查询，报告在首次登录的第二天再次登录的玩家的比率，四舍五入到小数点后两位。换句话说，您需要计算从首次登录日期开始至少连续两天登录的玩家的数量，然后除以玩家总数。
+
+```none
+Input:
+Activity table:
++-----------+-----------+------------+--------------+
+| player_id | device_id | event_date | games_played |
++-----------+-----------+------------+--------------+
+| 1         | 2         | 2016-03-01 | 5            |
+| 1         | 2         | 2016-03-02 | 6            |
+| 2         | 3         | 2017-06-25 | 1            |
+| 3         | 1         | 2016-03-02 | 0            |
+| 3         | 4         | 2018-07-03 | 5            |
++-----------+-----------+------------+--------------+
+Output:
++-----------+
+| fraction  |
++-----------+
+| 0.33      |
++-----------+
+只有 ID 为 1 的玩家在第一天登录后才重新登录，所以答案是 1/3 = 0.33
+```
+
+```sql
+-- MySQL
+SELECT ROUND(AVG(a.event_date IS NOT NULL), 2) fraction
+FROM
+    (SELECT player_id, min(event_date) AS login
+    FROM activity
+    GROUP BY player_id) p
+LEFT JOIN activity a
+ON p.player_id = a.player_id AND datediff(a.event_date, p.login) = 1
+```
+
+## Number of Unique Subjects Taught by Each Teacher - Easy
+
+每位教师所教授的科目种类的数量：
+
+```none
+Table: Teacher
+
++-------------+------+
+| Column Name | Type |
++-------------+------+
+| teacher_id  | int  |
+| subject_id  | int  |
+| dept_id     | int  |
++-------------+------+
+(subject_id, dept_id) is the primary key
+```
+
+查询每位老师在大学里教授的科目种类的数量。
+
+以 任意顺序 返回结果表。
+
+```none
+Input:
+Teacher table:
++------------+------------+---------+
+| teacher_id | subject_id | dept_id |
++------------+------------+---------+
+| 1          | 2          | 3       |
+| 1          | 2          | 4       |
+| 1          | 3          | 3       |
+| 2          | 1          | 1       |
+| 2          | 2          | 1       |
+| 2          | 3          | 1       |
+| 2          | 4          | 1       |
++------------+------------+---------+
+Output:
++------------+-----+
+| teacher_id | cnt |
++------------+-----+
+| 1          | 2   |
+| 2          | 4   |
++------------+-----+
+解释:
+教师 1:
+  - 他在 3、4 系教科目 2。
+  - 他在 3 系教科目 3。
+教师 2:
+  - 他在 1 系教科目 1。
+  - 他在 1 系教科目 2。
+  - 他在 1 系教科目 3。
+  - 他在 1 系教科目 4。
+```
+
+```sql
+-- MySQL
+SELECT teacher_id, COUNT(distinct subject_id) AS cnt
+FROM teacher
+GROUP BY teacher_id
+;
+```
+
+## User Activity for the Past 30 Days I - Easy
+
+查询近 30 天活跃用户数：
+
+```none
+Table: Activity
+
++---------------+---------+
+| Column Name   | Type    |
++---------------+---------+
+| user_id       | int     |
+| session_id    | int     |
+| activity_date | date    |
+| activity_type | enum    |
++---------------+---------+
+There is no primary key for this table, it may have duplicate rows.
+```
+
+请写SQL查询出截至 2019-07-27（包含2019-07-27），近 30 天的每日活跃用户数（当天只要有一条活动记录，即为活跃用户）。
+
+以 任意顺序 返回结果表。
+
+```none
+Input:
+Activity table:
++---------+------------+---------------+---------------+
+| user_id | session_id | activity_date | activity_type |
++---------+------------+---------------+---------------+
+| 1       | 1          | 2019-07-20    | open_session  |
+| 1       | 1          | 2019-07-20    | scroll_down   |
+| 1       | 1          | 2019-07-20    | end_session   |
+| 2       | 4          | 2019-07-20    | open_session  |
+| 2       | 4          | 2019-07-21    | send_message  |
+| 2       | 4          | 2019-07-21    | end_session   |
+| 3       | 2          | 2019-07-21    | open_session  |
+| 3       | 2          | 2019-07-21    | send_message  |
+| 3       | 2          | 2019-07-21    | end_session   |
+| 4       | 3          | 2019-06-25    | open_session  |
+| 4       | 3          | 2019-06-25    | end_session   |
++---------+------------+---------------+---------------+
+Output:
++------------+--------------+
+| day        | active_users |
++------------+--------------+
+| 2019-07-20 | 2            |
+| 2019-07-21 | 2            |
++------------+--------------+
+解释：注意非活跃用户的记录不需要展示。
+```
+
+```sql
+-- MySQL
+SELECT activity_date AS day, COUNT(DISTINCT(user_id)) AS active_users
+FROM Activity
+WHERE DATEDIFF('2019-7-27', activity_date) < 30 AND activity_date <= '2019-7-27'
+GROUP BY activity_date
+;
+```
+
 ##
-
-
-
-
-
-
-
 
 
 
