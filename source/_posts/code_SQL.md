@@ -311,7 +311,7 @@ ORDER BY prod_name
 > MariaDB 支持使用 NOT 否定 IN、BETWEEN 和 EXISTS 子句。大多数
 DBMS 允许使用 NOT 否定任何条件。
 
-# 通配符过滤 LIKE
+# 通配符过滤
 
 通配符（wildcard）用来匹配值的一部分的特殊字符。
 
@@ -577,7 +577,6 @@ GROUP BY 子句可以包含任意数目的列，还可以嵌套，但不能是�
 多数 SQL 实现不允许 GROUP BY 列带有长度可变的数据类型（如文本或备注型字段）
 **除聚集计算语句外，SELECT 语句中的每一列都必须在 GROUP BY 中给出。**
 如果分组列中包含具有 NULL 值的行，则 NULL 将作为一个分组返回。列中多行 NULL 值，将分为一组。
-GROUP BY 必须出现在 WHERE 之后，ORDER BY 之前。
 
 > SQL Server 等有些 SQL 实现在 GROUP BY 中支持可选的 ALL 子句。用来返回所有分组，即使是没有匹配行的分组也返回（在此情况下，聚集将返回 NULL）。
 
@@ -596,17 +595,18 @@ WHERE 排除的行不包括在分组中，可能会改变计算值，从而影�
 SELECT cust_id, COUNT(*) AS orders
 FROM Orders
 GROUP BY cust_id
-HAVING COUNT(*) >= 2;
+HAVING COUNT(*) >= 2
+;
 ```
 
 ![](/images/having.png)
 
-## 分组和排序
+## 排序和分组
 
 | ORDER BY                       | GROUP BY                                             |
 | ------------------------------ | ---------------------------------------------------- |
 | 对产生的输出排序               | 对行分组，输出可能不是分组的顺序                     |
-| 任意列都可用（甚至非选择的列） | 只能使用选择列或表达式列，且必须使用每个选择列表达式 |
+| 任意列都可用（甚至非选择的列） | 只能使用选择列或表达式列，且必须使用其表达式 |
 | 不一定需要                     | 如果与聚集函数一起使用列（或表达式），则必须使用     |
 
 > 一般在使用 GROUP BY 时，也给出 ORDER BY。这是保证数据正确排序的唯一方法。
@@ -616,7 +616,8 @@ SELECT order_num, COUNT(*) AS items
 FROM OrderItems
 GROUP BY order_num
 HAVING COUNT(*) >= 3
-ORDER BY items, order_num;
+ORDER BY items, order_num
+;
 ```
 
 ![](/images/group2.png)
@@ -643,7 +644,8 @@ WHERE cust_id IN (SELECT cust_id
                   FROM Orders
                   WHERE order_num IN (SELECT order_num
                                       FROM OrderItems
-                                      WHERE prod_id = 'RGAN01'));
+                                      WHERE prod_id = 'RGAN01'))
+;
 ```
 
 ![](/images/subquery.png)
@@ -653,36 +655,37 @@ WHERE cust_id IN (SELECT cust_id
 ## 作为计算字段使用
 
 ```sql
-SELECT cust_name,
-       cust_state,
-       (SELECT COUNT(*)
-        FROM Orders
-        WHERE Orders.cust_id = Customers.cust_id) AS orders
-        -- 完全限定列名，指定表名和列名，比较 Orders 表中的 cust_id 和正从 Customers 表中检索的 cust_id
+SELECT
+    cust_name,
+    cust_state,
+    (SELECT COUNT(*)
+    FROM Orders
+    WHERE Orders.cust_id = Customers.cust_id) AS orders
+    -- 完全限定列名，指定表名和列名，比较 Orders 表中的 cust_id 和正从 Customers 表中检索的 cust_id
 FROM Customers
 ORDER BY cust_name;
 ```
 
 ![](/images/subquery2.png)
 
-SELECT 对 Customers 表中每个顾客返回三列： cust_name、
-cust_state 和 orders。
-orders 是一个计算字段，由括号中子查询建立。该子查询对检索出的每个顾客执行一次。
+子查询对检索出的每个顾客执行一次。
 
 # 联结表
 
-**联结（join）**是一种机制，用来在一条 SELECT 语句中关联表。要保证所有联结都有 WHERE 子句。
+**联结（join）**是一种机制，用来在一条 SELECT 语句中关联表。**要保证所有联结都有 WHERE 子句。**
 
 **关系表**的设计就是要把信息分解成多个表，一类数据一个表。各表通过某些共同的值互相关联（所以才叫关系数据库）。
 
-**可伸缩（scale）**能够适应不断增加的工作量而不失败。设计良好的数据库或应用程序称为可伸缩性好（scale well）
+**可伸缩（scale）**能够适应不断增加的工作量而不失败。设计良好的数据库或应用程序称为可伸缩性好（scale well）。
 
 ## 创建联结
 
 ```sql
 SELECT vend_name, prod_name, prod_price
 FROM Vendors, Products
-WHERE Vendors.vend_id = Products.vend_id; -- 指示 DBMS 将 Vendors 表中的 vend_id 与 Products 表中的匹配起来。
+-- 将 Vendors 表中的 vend_id 与 Products 表中的匹配起来。
+WHERE Vendors.vend_id = Products.vend_id
+;
 ```
 
 ![](/images/join.png)
@@ -691,7 +694,8 @@ WHERE Vendors.vend_id = Products.vend_id; -- 指示 DBMS 将 Vendors 表中的 v
 
 ```sql
 SELECT vend_name, prod_name, prod_price
-FROM Vendors, Products; -- 返回笛卡尔积
+FROM Vendors, Products -- 返回笛卡尔积
+;
 ```
 
 ## 内联结
@@ -701,7 +705,9 @@ FROM Vendors, Products; -- 返回笛卡尔积
 ```sql
 SELECT vend_name, prod_name, prod_price
 FROM Vendors
-INNER JOIN Products ON Vendors.vend_id = Products.vend_id;
+INNER JOIN Products
+ON Vendors.vend_id = Products.vend_id
+;
 ```
 
 两个表之间的关系是以 INNER JOIN 指定的部分 FROM 子句。联结条件用特定的 ON 子句而不是 WHERE 子句给出。传递给 ON 的实际条件与传递给 WHERE 的相同。
@@ -714,8 +720,9 @@ INNER JOIN Products ON Vendors.vend_id = Products.vend_id;
 SELECT prod_name, vend_name, prod_price, quantity
 FROM OrderItems, Products, Vendors
 WHERE Products.vend_id = Vendors.vend_id
- AND OrderItems.prod_id = Products.prod_id
- AND order_num = 20007;
+AND OrderItems.prod_id = Products.prod_id
+AND order_num = 20007
+;
 ```
 
 ![](/images/join2.png)
@@ -734,19 +741,19 @@ WHERE cust_id IN (SELECT cust_id
                   FROM Orders
                   WHERE order_num IN (SELECT order_num
                                       FROM OrderItems
-                                      WHERE prod_id = 'RGAN01'));
+                                      WHERE prod_id = 'RGAN01'))
+;
 
-# 联结更有效
+-- 联结更有效
 SELECT cust_name, cust_contact
 FROM Customers, Orders, OrderItems
 WHERE Customers.cust_id = Orders.cust_id
- AND Orders.order_num = OrderItems.order_num
- AND prod_id = 'RGAN01';
+AND Orders.order_num = OrderItems.order_num
+AND prod_id = 'RGAN01'
+;
 ```
 
 ![](/images/join3.png)
-
-# 高级联结
 
 ## 表别名
 
@@ -756,65 +763,68 @@ WHERE Customers.cust_id = Orders.cust_id
 SELECT cust_name, cust_contact
 FROM Customers AS C, Orders AS O, OrderItems AS OI
 WHERE C.cust_id = O.cust_id
- AND O.order_num = OI.order_num
- AND prod_id = 'RGAN01';
+AND O.order_num = OI.order_num
+AND prod_id = 'RGAN01'
+;
 ```
 
 > Oracle 不支持 AS 关键字，直接指定即可 `Customers C`
 
-## 不同类型的联结
+## 自联结
 
-### 自联结（self-join）
+**self-join**
 
 ```sql
 SELECT cust_id, cust_name, cust_contact
 FROM Customers
 WHERE cust_name = (SELECT cust_name
                    FROM Customers
-                   WHERE cust_contact = 'Jim Jones');
+                   WHERE cust_contact = 'Jim Jones')
+;
 
-# 使用联结的相同查询
+-- 使用联结的相同查询
 SELECT c1.cust_id, c1.cust_name, c1.cust_contact
 FROM Customers AS c1, Customers AS c2
 WHERE c1.cust_name = c2.cust_name
-AND c2.cust_contact = 'Jim Jones';
+AND c2.cust_contact = 'Jim Jones'
+;
 ```
 
 ![](/images/join4.png)
 
-此查询中需要的两个表实际上是相同的表，因此 Customers 表在 FROM
-子句中出现了两次。虽然这是完全合法的，但对 Customers 的引用具有
-歧义性，因此使用表别名。
-
 - 用自联结而不用子查询
-自联结通常作为外部语句，用来替代从相同表中检索数据的使用子查询语句。许多 DBMS 处理联结远比子查询快。
+自联结通常作为外部语句，用来替代从相同表中检索数据使用的子查询语句。许多 DBMS 处理联结远比子查询快。
 
-### 自然联结（natural join）
+## 自然联结
 
-标准联结（内联结）返回所有数据，相同的列甚至多次出现。
-自然联结排除多次出现，使每一列只返回一次。
+**标准联结（内联结）**返回所有数据，相同的列甚至多次出现。
+**自然联结**排除多次出现，使每一列只返回一次。
 
-自然联结只能选择唯一的列，一般通过对一个表使用通配符（SELECT *），而对其他表的列使用明确的子集来完成。
+**自然联结（natural join）**只能选择唯一的列，一般通过对一个表使用通配符（SELECT *），而对其他表的列使用明确的子集来完成。
 
 ```sql
-SELECT C.*, O.order_num, O.order_date,
-       OI.prod_id, OI.quantity, OI.item_price
+SELECT
+    C.*, O.order_num, O.order_date,
+    OI.prod_id, OI.quantity, OI.item_price
 FROM Customers AS C, Orders AS O, OrderItems AS OI
 WHERE C.cust_id = O.cust_id
- AND OI.order_num = O.order_num
- AND prod_id = 'RGAN01';
+AND OI.order_num = O.order_num
+AND prod_id = 'RGAN01'
+;
 ```
 
 > 很可能永远都不会用到不是自然联结的内联结。
 
-### 外联结（outer join）
+## 外联结
 
-联结包含了那些在相关表中没有关联行的行。
+**外联结（outer join）**包含了那些在相关表中没有关联行的行。
 
 ```sql
 SELECT Customers.cust_id, Orders.order_num
 FROM Customers
- LEFT OUTER JOIN Orders ON Customers.cust_id = Orders.cust_id;
+LEFT OUTER JOIN Orders
+ON Customers.cust_id = Orders.cust_id
+;
 ```
 
 ![](/images/join5.jpeg)
@@ -828,7 +838,9 @@ FROM Customers
 ```sql
 SELECT Customers.cust_id, Orders.order_num
 FROM Customers
- FULL OUTER JOIN Orders ON Customers.cust_id = Orders.cust_id;
+FULL OUTER JOIN Orders
+ON Customers.cust_id = Orders.cust_id
+;
 ```
 
 > MariaDB、MySQL 和 SQLite 不支持全外联结。
@@ -839,8 +851,10 @@ FROM Customers
 SELECT Customers.cust_id,
        COUNT(Orders.order_num) AS num_ord
 FROM Customers
- LEFT OUTER JOIN Orders ON Customers.cust_id = Orders.cust_id
-GROUP BY Customers.cust_id;
+LEFT OUTER JOIN Orders
+ON Customers.cust_id = Orders.cust_id
+GROUP BY Customers.cust_id
+;
 ```
 
 ![](/images/join6.png)
@@ -848,7 +862,7 @@ GROUP BY Customers.cust_id;
 > 一般使用内联结，但使用外联结也有效。
 总是提供联结条件，否则会得出笛卡儿积。
 
-# 组合查询 UNION
+# 组合查询
 
 组合查询通常称为**并（union）**或**复合查询（compound query）**
 
@@ -863,12 +877,15 @@ WHERE cust_state IN ('IL','IN','MI')
 UNION
 SELECT cust_name, cust_contact, cust_email
 FROM Customers
-WHERE cust_name = 'Fun4All';
+WHERE cust_name = 'Fun4All'
+;
 
-# WHERE 相同结果
+-- WHERE 相同结果
 SELECT cust_name, cust_contact, cust_email
 FROM Customers
-WHERE cust_state IN ('IL','IN','MI') OR cust_name = 'Fun4All';
+WHERE cust_state IN ('IL','IN','MI')
+OR cust_name = 'Fun4All'
+;
 ```
 
 ![](/images/union.png)
@@ -890,7 +907,8 @@ WHERE cust_state IN ('IL','IN','MI')
 UNION ALL -- 返回所有匹配行，可能有重复
 SELECT cust_name, cust_contact, cust_email
 FROM Customers
-WHERE cust_name = 'Fun4All';
+WHERE cust_name = 'Fun4All'
+;
 ```
 
 ![](/images/union_all.png)
@@ -907,10 +925,9 @@ UNION
 SELECT cust_name, cust_contact, cust_email
 FROM Customers
 WHERE cust_name = 'Fun4All'
-ORDER BY cust_name, cust_contact;
+ORDER BY cust_name, cust_contact
+;
 ```
-
-![](/images/union2.png)
 
 > 某些 DBMS 还支持其他 UNION：`EXCEPT`（有时称为 `MINUS`）用来检索只在第一个表中存在而在第二个表中不存在的行；而 `INTERSECT` 用来检索两个表中都存在的行。实际上这两种很少使用，因为相同结果可用联结得到。
 
@@ -921,7 +938,7 @@ ORDER BY cust_name, cust_contact;
 必须给每一列提供一个值，没有值则指定 NULL。
 
 ```sql
-# 不安全，避免使用，次序要和表一致。
+-- 不安全，避免使用，顺序要和表一致。
 INSERT INTO Customers
 VALUES(1000000006,
        'Toy Land',
@@ -931,11 +948,12 @@ VALUES(1000000006,
        '11111',
        'USA',
        NULL,
-       NULL);
+       NULL)
+;
 ```
 
 ```sql
-# 更安全，次序随意，以列名匹配。
+-- 更安全，次序随意，以列名匹配。
 INSERT INTO Customers(cust_id,
                       cust_name,
                       cust_address,
@@ -953,7 +971,8 @@ VALUES(1000000006,
        '11111',
        'USA',
        NULL,
-       NULL);
+       NULL)
+;
 ```
 
 > 不能插入同一条记录两次，主键（cust_id）的值必须有唯一性。
@@ -974,7 +993,8 @@ VALUES(1000000006,
        'New York',
        'NY',
        '11111',
-       'USA');
+       'USA')
+;
 ```
 
 - 省略列
@@ -1004,7 +1024,8 @@ SELECT cust_id,
        cust_state,
        cust_zip,
        cust_country
-FROM CustNew;
+FROM CustNew
+;
 ```
 
 > 注：INSERT SELECT 中的列名，这里不一定要求列名匹配，以两个表对应的列位置匹配。
@@ -1016,8 +1037,14 @@ INSERT 通常只插入一行。要插入多行，必须执行多个 INSERT 语�
 CREATE SELECT 语句（SQL Server 也可用 SELECT INTO）（DB2 不支持 CREATE SELECT）。
 
 ```sql
-CREATE TABLE CustCopy AS SELECT * FROM Customers; -- MySQL, MariaDB, Oracle, PostgreSQL, SQLite
-# SELECT * INTO CustCopy FROM Customers; -- SQL Server
+-- MySQL, MariaDB, Oracle, PostgreSQL, SQLite, SQL Server
+CREATE TABLE CustCopy AS SELECT *
+FROM Customers
+;
+-- SQL Server, DB2
+SELECT * INTO CustCopy
+FROM Customers
+;
 ```
 
 > SELECT INTO 是试验新 SQL 语句前进行表复制的很好工具，不影响实际数据。
@@ -1036,15 +1063,17 @@ CREATE TABLE CustCopy AS SELECT * FROM Customers; -- MySQL, MariaDB, Oracle, Pos
 UPDATE Customers -- 要更新的表
 SET cust_contact = 'Sam Roberts',
     cust_email = 'kim@thetoystore.com' -- 列名和新值
-    # cust_email = NULL -- 删除值
-WHERE cust_id = 1000000005; -- 过滤条件
+    -- cust_email = NULL -- 删除值
+WHERE cust_id = 1000000005 -- 过滤条件
+;
 ```
 
 # 删除数据
 
 ```sql
 DELETE FROM Customers
-WHERE cust_id = 1000000006;
+WHERE cust_id = 1000000006
+;
 ```
 
 使用外键确保引用完整性的一个好处是 DBMS 通常可以防止删除某数据与其他表相关联的行。
@@ -1062,9 +1091,11 @@ DELETE 删除整行而不是列。删除指定列，用 UPDATE 语句。
 
 ```sql
 SELECT * FROM Customers
-WHERE cust_id = 1000000042;
+WHERE cust_id = 1000000042
+;
 DELETE Customers
-WHERE cust_id = 1000000042;
+WHERE cust_id = 1000000042
+;
 ```
 
 # 表
@@ -1072,14 +1103,14 @@ WHERE cust_id = 1000000042;
 ## 创建表 CREATE TABLE
 
 ```sql
-CREATE TABLE Products -- 新表名
-( -- 表列的名字和定义，逗号分隔
+CREATE TABLE Products( -- 新表名
+    -- 表列的名字和定义，逗号分隔
     prod_id CHAR(10) NOT NULL,
     vend_id CHAR(10) NOT NULL,
     prod_name CHAR(254) NOT NULL,
     prod_price DECIMAL(8,2) NOT NULL,
-    prod_desc VARCHAR(1000) NULL -- DB2 必须从最后一列中去掉 NULL
-);
+    prod_desc VARCHAR(1000) NULL) -- DB2 必须从最后一列中去掉 NULL
+;
 ```
 
 允许 NULL 值的列也允许在插入行时不给出该列的值。
@@ -1091,17 +1122,17 @@ NULL 值不是空字符串，如果指定 `''`（其间无字符），这在 NOT
 ## 指定默认值 DEFAULT
 
 ```sql
-CREATE TABLE OrderItems
-(
+CREATE TABLE OrderItems(
     order_num INTEGER NOT NULL,
     order_item INTEGER NOT NULL,
     prod_id CHAR(10) NOT NULL,
     quantity INTEGER NOT NULL DEFAULT 1,
-    item_price DECIMAL(8,2) NOT NULL
-);
+    item_price DECIMAL(8,2) NOT NULL)
+;
 ```
 
 - 获得系统日期
+
 | DBMS       | 函数/变量      |
 | ---------- | -------------- |
 | DB2        | CURRENT_DATE   |
@@ -1119,12 +1150,13 @@ CREATE TABLE OrderItems
 ```sql
 ALTER TABLE Vendors
 ADD vend_phone CHAR(20);
-# DROP COLUMN vend_phone; -- 部分 DBMS 支持
+DROP COLUMN vend_phone; -- 部分 DBMS 支持
 ```
 
 > SQLite 不支持用 ALTER TABLE 定义主键和外键，必须在最初创建表时指定。
 
-- 复杂的表结构更改一般需要手动删除：
+复杂的表结构更改一般需要手动删除：
+
 1. 创建一个新表；
 2. 用 INSERT SELECT 语句从旧表复制数据到新表，按需要修改；
 3. 检验包含所需数据的新表；
@@ -1142,9 +1174,9 @@ DROP TABLE CustCopy;
 
 ## 重命名表
 
-DB2、MariaDB、MySQL、Oracle、PostgreSQL 使用 RENAME 语句；
-SQL Server 使用 sp_rename 存储过程；
-SQLite 使用 ALTER TABLE 语句。
+DB2、MariaDB、MySQL、Oracle、PostgreSQL 使用 `RENAME` 语句；
+SQL Server 使用 `sp_rename` 存储过程；
+SQLite 使用 `ALTER TABLE` 语句。
 
 # 视图
 
@@ -1161,12 +1193,14 @@ SELECT cust_name, cust_contact
 FROM Customers, Orders, OrderItems
 WHERE Customers.cust_id = Orders.cust_id
 AND OrderItems.order_num = Orders.order_num
-AND prod_id = 'RGAN01';
+AND prod_id = 'RGAN01'
+;
 
 -- 把上面查询包装成虚拟表 ProductCustomers
 SELECT cust_name, cust_contact
 FROM ProductCustomers
-WHERE prod_id = 'RGAN01';
+WHERE prod_id = 'RGAN01'
+;
 ```
 
 ## 视图应用
@@ -1195,13 +1229,15 @@ CREATE VIEW ProductCustomers AS
 SELECT cust_name, cust_contact, prod_id
 FROM Customers, Orders, OrderItems
 WHERE Customers.cust_id = Orders.cust_id
- AND OrderItems.order_num = Orders.order_num;
+AND OrderItems.order_num = Orders.order_num
+;
 ```
 
 ```sql
 SELECT cust_name, cust_contact
 FROM ProductCustomers
-WHERE prod_id = 'RGAN01';
+WHERE prod_id = 'RGAN01'
+;
 ```
 
 ![](/images/view.png)
@@ -1210,9 +1246,10 @@ WHERE prod_id = 'RGAN01';
 
 ```sql
 SELECT RTRIM(vend_name) + ' (' + RTRIM(vend_country) + ')'
-    AS vend_title
+AS vend_title
 FROM Vendors
-ORDER BY vend_name;
+ORDER BY vend_name
+;
 ```
 
 ![](/images/view2.png)
@@ -1221,11 +1258,13 @@ ORDER BY vend_name;
 -- 视图格式化
 CREATE VIEW VendorLocations AS
 SELECT RTRIM(vend_name) + ' (' + RTRIM(vend_country) + ')'
-    AS vend_title
-FROM Vendors;
+AS vend_title
+FROM Vendors
+;
 
 -- 检索数据
-SELECT * FROM VendorLocations;
+SELECT * FROM VendorLocations
+;
 ```
 
 ## 用视图过滤不想要的数据
@@ -1234,9 +1273,10 @@ SELECT * FROM VendorLocations;
 CREATE VIEW CustomerEMailList AS
 SELECT cust_id, cust_name, cust_email
 FROM Customers
-WHERE cust_email IS NOT NULL;
+WHERE cust_email IS NOT NULL
 
-SELECT * FROM CustomerEMailList;
+SELECT * FROM CustomerEMailList
+;
 ```
 
 ![](/images/view3.png)
@@ -1253,7 +1293,8 @@ SELECT order_num,
 FROM OrderItems
 
 SELECT * FROM OrderItemsExpanded
-WHERE order_num = 20008;
+WHERE order_num = 20008
+;
 ```
 
 ![](/images/view4.png)
@@ -1272,7 +1313,8 @@ EXECUTE 接受存储过程名和需要传递给它的任何参数。
 EXECUTE AddNewProduct('JTS01', -- 供应商 ID（Vendors 表的主键）
                       'Stuffed Eiffel Tower', -- 产品名
                       6.49, -- 价格
-                      'Description'); -- 描述
+                      'Description') -- 描述
+;
 ```
 
 这 4 个参数匹配存储过程中 4 个预期变量（定义为存储过程自身的组成部分）。此存储过程将新行添加到 Products 表，并将传入的属性赋给相应的列。
