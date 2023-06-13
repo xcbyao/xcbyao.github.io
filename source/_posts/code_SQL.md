@@ -151,13 +151,11 @@ LIMIT 5
 SELECT prod_name
 FROM Products
 LIMIT 5 OFFSET 5;
+-- MySQL、MariaDB 和 SQLite 捷径
+-- 把 `LIMIT 4 OFFSET 3` 简化为 `LIMIT 3,4`
 ```
 
 ![](/images/select_offset.png)
-
-#### MySQL、MariaDB 和 SQLite 捷径
-
-可以把 `LIMIT 4 OFFSET 3` 简化为 `LIMIT 3,4`
 
 ## 注释
 
