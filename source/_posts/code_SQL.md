@@ -603,11 +603,11 @@ HAVING COUNT(*) >= 2
 
 ## 排序和分组
 
-| ORDER BY                       | GROUP BY                                             |
-| ------------------------------ | ---------------------------------------------------- |
-| 对产生的输出排序               | 对行分组，输出可能不是分组的顺序                     |
-| 任意列都可用（甚至非选择的列） | 只能使用选择列或表达式列，且必须使用其表达式 |
-| 不一定需要                     | 如果与聚集函数一起使用列（或表达式），则必须使用     |
+| ORDER BY                       | GROUP BY                                         |
+| ------------------------------ | ------------------------------------------------ |
+| 对产生的输出排序               | 对行分组，输出可能不是分组的顺序                 |
+| 任意列都可用（甚至非选择的列） | 只能使用选择列或表达式列，且必须使用其表达式     |
+| 不一定需要                     | 如果与聚集函数一起使用列（或表达式），则必须使用 |
 
 > 一般在使用 GROUP BY 时，也给出 ORDER BY。这是保证数据正确排序的唯一方法。
 
@@ -1364,7 +1364,8 @@ RETURN @cnt;
 
 /*
 此存储过程没有参数。调用程序检索 SQL Server 返回代码提供的值。
-用 DECLARE 语句声明了一个局部变量（SQL Server 中所有局部变量名都以@ 起头）；在 SELECT 语句中让它包含 COUNT() 函数返回的值；最后用 RETURN @cnt 语句将计数返回给调用程序。
+用 DECLARE 语句声明了一个局部变量（SQL Server 中所有局部变量名都以 @ 起头）；
+在 SELECT 语句中让它包含 COUNT() 函数返回的值；最后用 RETURN 语句将计数返回给调用程序。
 */
 ```
 
@@ -1388,7 +1389,8 @@ AS
 INSERT INTO Orders(cust_id)
 VALUES(@cust_id)
 -- 返回订单号
-SELECT order_num = @@IDENTITY;
+SELECT order_num = @@IDENTITY
+;
 ```
 
 SQL Server 中称这些自动增量的列为标识字段（identity field）
@@ -1443,9 +1445,9 @@ ROLLBACK;
 ```sql
 -- SQL Server
 BEGIN TRANSACTION -- 利用事务保证完全删除订单
-DELETE OrderItems WHERE order_num = 12345
-DELETE Orders WHERE order_num = 12345
-COMMIT TRANSACTION
+DELETE OrderItems WHERE order_num = 12345;
+DELETE Orders WHERE order_num = 12345;
+COMMIT TRANSACTION;
 
 -- Oracle
 SET TRANSACTION
@@ -1470,11 +1472,11 @@ SAVE TRANSACTION delete1;
 ROLLBACK TRANSACTION delete1; -- 回退
 ```
 
-# 游标 cursor
+# 游标
 
-游标是一个存储在 DBMS 服务器上的数据库查询，它不是一条 SELECT 语句，而是被该语句检索出来的结果集。在存储了游标之后，应用程序可以根据需要滚动或浏览其中的数据。
+**游标（cursor）**是一个存储在 DBMS 服务器上的数据库查询，它不是一条 SELECT 语句，而是被该语句检索出来的结果集。在存储了游标之后，应用程序可以根据需要滚动或浏览其中的数据。
 
-> SQLite 支持的游标称为步骤（step）
+> SQLite 支持的游标称为**步骤（step）**
 
 ## 常见特性
 
@@ -1498,13 +1500,15 @@ ROLLBACK TRANSACTION delete1; -- 回退
 DECLARE CustCursor CURSOR
 FOR
 SELECT * FROM Customers
-WHERE cust_email IS NULL;
+WHERE cust_email IS NULL
+;
 
 -- Oracle 和 PostgreSQL
 DECLARE CURSOR CustCursor
 IS
 SELECT * FROM Customers
-WHERE cust_email IS NULL;
+WHERE cust_email IS NULL
+;
 ```
 
 ## 使用游标 OPEN CURSOR
@@ -1544,24 +1548,23 @@ DEALLOCATE CURSOR CustCursor
 
 # 高级 SQL 特性
 
-## 约束 constraint
+## 约束
 
-约束：管理如何插入或处理数据库数据的规则。
+**约束（constraint）**管理如何插入或处理数据库数据的规则。
 大多数约束是在表定义中定义的。
 
 ### 主键
 
 主键是一种特殊的约束，用来保证一列（或一组列）中的值是唯一的，而且永不改动。
 
-表中任意列只要满足以下条件，都可用于主键。
-任意两行的主键值都不相同。
-每行都具有一个主键值（即列中不允许 NULL 值）。
-包含主键值的列从不修改或更新。（大多数 DBMS 不允许这么做）
-主键值不能重用。如果从表中删除某一行，其主键值不分配给新行。
+表中任意列只要满足以下条件，都可用于主键：
+任意两行的主键值都不相同；
+每行都具有一个主键值（即列中不允许 NULL 值）；
+包含主键值的列从不修改或更新（大多数 DBMS 不允许这么做）；
+主键值不能重用，如果从表中删除某一行，其主键值不分配给新行。
 
 ```sql
-CREATE TABLE Vendors
-(
+CREATE TABLE Vendors(
     vend_id CHAR(10) NOT NULL PRIMARY KEY, -- 通过创建定义主键
     vend_name CHAR(50) NOT NULL,
     vend_address CHAR(50) NULL,
@@ -1584,8 +1587,7 @@ ADD CONSTRAINT PRIMARY KEY (vend_id);
 
 REFERENCES 关键字，表示 cust_id 中的任何值都必须是 Customers 表的 cust_id 中的值。
 ```sql
-CREATE TABLE Orders
-(
+CREATE TABLE Orders(
     order_num INTEGER NOT NULL PRIMARY KEY,
     order_date DATETIME NOT NULL,
     cust_id CHAR(10) NOT NULL REFERENCES Customers(cust_id)
@@ -1594,7 +1596,7 @@ CREATE TABLE Orders
 -- 相同工作
 ALTER TABLE Orders
 ADD CONSTRAINT
-FOREIGN KEY (cust_id) REFERENCES Customers (cust_id);
+FOREIGN KEY (cust_id) REFERENCES Customers(cust_id);
 ```
 
 > 有的 DBMS 支持级联删除（cascading delete）特性。如果启用，该特性在从一个表中删除行时删除所有相关的数据。如，从 Customers 表中删除某个顾客，则任何关联的订单行也会被自动删除。
@@ -1621,8 +1623,7 @@ FOREIGN KEY (cust_id) REFERENCES Customers (cust_id);
 - 只允许特定的值。
 
 ```sql
-CREATE TABLE OrderItems
-(
+CREATE TABLE OrderItems(
     order_num INTEGER NOT NULL,
     order_item INTEGER NOT NULL,
     prod_id CHAR(10) NOT NULL,
@@ -1634,7 +1635,7 @@ CREATE TABLE OrderItems
 ADD CONSTRAINT CHECK (gender LIKE '[MF]');
 ```
 
-## 索引 CREATE INDEX
+## 索引
 
 索引用来排序数据以加快搜索和排序操作的速度。
 
@@ -1648,14 +1649,13 @@ ADD CONSTRAINT CHECK (gender LIKE '[MF]');
 ```sql
 -- 不同 DBMS 创建索引的语句变化很大
 CREATE INDEX prod_name_ind -- 索引必须唯一命名
-ON Products (prod_name);
+ON Products(prod_name);
 ```
 
 ## 触发器
 
 触发器是特殊的存储过程，它在特定的数据库活动发生时自动执行。
 触发器可与特定表上的 INSERT、UPDATE 和 DELETE 操作相关联。
-
 与存储过程不一样，触发器与单个的表相关联。与 Orders 表上的 INSERT 操作相关联的触发器只在 Orders 表中插入行时执行。
 
 触发器内的代码具有以下数据的访问权：
@@ -1677,7 +1677,8 @@ FOR INSERT, UPDATE
 AS
 UPDATE Customers
 SET cust_state = Upper(cust_state)
-WHERE Customers.cust_id = inserted.cust_id;
+WHERE Customers.cust_id = inserted.cust_id
+;
 
 -- Oracle 和 PostgreSQL
 CREATE TRIGGER customer_state
@@ -1687,7 +1688,8 @@ BEGIN
 UPDATE Customers
 SET cust_state = Upper(cust_state)
 WHERE Customers.cust_id = :OLD.cust_id
-END;
+END
+;
 ```
 
 > 一般来说，约束处理比触发器快，因此应该尽量使用约束。
@@ -1708,56 +1710,61 @@ END;
 
 ## Vendors 表
 
-列 说 明
-vend_id（主键） 唯一的供应商ID
-vend_name 供应商名
-vend_address 供应商的地址
-vend_city 供应商所在城市
-vend_state 供应商所在州
-vend_zip 供应商地址邮政编码
-vend_country 供应商所在国家
+| 列              | 说 明              |
+| --------------- | ------------------ |
+| vend_id（主键） | 唯一的供应商 ID    |
+| vend_name       | 供应商名           |
+| vend_address    | 供应商的地址       |
+| vend_city       | 供应商所在城市     |
+| vend_state      | 供应商所在州       |
+| vend_zip        | 供应商地址邮政编码 |
+| vend_country    | 供应商所在国家     |
 
 ## Products 表
 
-列 说 明
-prod_id（主键） 唯一的产品ID
-vend_id 产品供应商ID（关联到Vendors表的vend_id）
-prod_name 产品名
-prod_price 产品价格
-prod_desc 产品描述
+| 列              | 说 明                                    |
+| --------------- | ---------------------------------------- |
+| prod_id（主键） | 唯一的产品ID                             |
+| vend_id         | 产品供应商ID（关联到Vendors表的vend_id） |
+| prod_name       | 产品名                                   |
+| prod_price      | 产品价格                                 |
+| prod_desc       | 产品描述                                 |
 
 > 为实施引用完整性，在 vend_id 上定义一个外键，关联到 Vendors 的 vend_id 列。
 
 ## Customers 表
 
-列 说 明
-cust_id（主键） 唯一的顾客ID
-cust_name 顾客名
-cust_address 顾客的地址
-cust_city 顾客所在城市
-cust_state 顾客所在州
-cust_zip 顾客地址邮政编码
-cust_country 顾客所在国家
-cust_contact 顾客的联系名
-cust_email 顾客的电子邮件地址
+| 列              | 说 明              |
+| --------------- | ------------------ |
+| cust_id（主键） | 唯一的顾客ID       |
+| cust_name       | 顾客名             |
+| cust_address    | 顾客的地址         |
+| cust_city       | 顾客所在城市       |
+| cust_state      | 顾客所在州         |
+| cust_zip        | 顾客地址邮政编码   |
+| cust_country    | 顾客所在国家       |
+| cust_contact    | 顾客的联系名       |
+| cust_email      | 顾客的电子邮件地址 |
 
 ## Orders 表
 
-列 说 明
-order_num 唯一的订单号
-order_date 订单日期
-cust_id 订单顾客ID（关联到Customers表的cust_id）
+| 列         | 说 明                                    |
+| ---------- | ---------------------------------------- |
+| order_num  | 唯一的订单号                             |
+| order_date | 订单日期                                 |
+| cust_id    | 订单顾客ID（关联到Customers表的cust_id） |
 
 > cust_id 上定义外键，关联到 Customers 的 cust_id 列。
 
 ## OrderItems 表
 
-列 说 明
-order_num（主键） 订单号（关联到Orders表的order_num）
-order_item（主键） 订单物品号（订单内的顺序）
-prod_id 产品ID（关联到Products表的prod_id）
-quantity 物品数量
-item_price 物品价格
+| 列                 | 说 明                               |
+| ------------------ | ----------------------------------- |
+| order_num（主键）  | 订单号（关联到Orders表的order_num） |
+| order_item（主键） | 订单物品号（订单内的顺序）          |
+| prod_id            | 产品ID（关联到Products表的prod_id） |
+| quantity           | 物品数量                            |
+| item_price         | 物品价格                            |
 
 > 关联 order_num 到 Orders 的 order_num 列；
 > 关联 prod_id 到 Products的 prod_id 列。

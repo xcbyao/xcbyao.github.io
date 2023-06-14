@@ -1961,15 +1961,217 @@ GROUP BY activity_date
 ;
 ```
 
+## Sales Analysis III - Easy
+
+销售分析III：
+
+```none
+Table: Product
+
++--------------+---------+
+| Column Name  | Type    |
++--------------+---------+
+| product_id   | int     |
+| product_name | varchar |
+| unit_price   | int     |
++--------------+---------+
+product_id is the primary key
+
+Table: Sales
+
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| seller_id   | int     |
+| product_id  | int     |
+| buyer_id    | int     |
+| sale_date   | date    |
+| quantity    | int     |
+| price       | int     |
++-------------+---------+
+This table has no primary key, it can have repeated rows.
+product_id is a foreign key to the Product table.
+```
+
+编写一个SQL查询，报告2019年春季才售出的产品。即仅在2019-01-01至2019-03-31（含）之间出售的商品。
+
+以 任意顺序 返回结果表。
+
+```none
+Input:
+Product table:
++------------+--------------+------------+
+| product_id | product_name | unit_price |
++------------+--------------+------------+
+| 1          | S8           | 1000       |
+| 2          | G4           | 800        |
+| 3          | iPhone       | 1400       |
++------------+--------------+------------+
+Sales table:
++-----------+------------+----------+------------+----------+-------+
+| seller_id | product_id | buyer_id | sale_date  | quantity | price |
++-----------+------------+----------+------------+----------+-------+
+| 1         | 1          | 1        | 2019-01-21 | 2        | 2000  |
+| 1         | 2          | 2        | 2019-02-17 | 1        | 800   |
+| 2         | 2          | 3        | 2019-06-02 | 1        | 800   |
+| 3         | 3          | 4        | 2019-05-13 | 2        | 2800  |
++-----------+------------+----------+------------+----------+-------+
+Output:
++-------------+--------------+
+| product_id  | product_name |
++-------------+--------------+
+| 1           | S8           |
++-------------+--------------+
+
+解释:
+id为1的产品仅在2019年春季销售。
+id为2的产品在2019年春季销售，但也在2019年春季之后销售。
+id 3的产品在2019年春季之后销售。
+我们只退回产品1，因为它是2019年春季才销售的产品。
+```
+
+```sql
+-- MySQL
+SELECT
+    sales.product_id AS product_id,
+    product.product_name AS product_name
+FROM sales
+LEFT JOIN product
+ON sales.product_id = product.product_id
+GROUP BY product_id
+HAVING COUNT(sale_date BETWEEN '2019-01-01' AND '2019-03-31' OR NULL) = COUNT(*)
+```
+
+## Classes More Than 5 Students - Easy
+
+超过 5 名学生的课：
+
+```none
+Table: Courses
+
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| student     | varchar |
+| class       | varchar |
++-------------+---------+
+(student, class) is the primary key column
+```
+
+编写一个SQL查询来报告 至少有5个学生 的所有班级。
+
+以 任意顺序 返回结果表。
+
+```none
+Input:
+Courses table:
++---------+----------+
+| student | class    |
++---------+----------+
+| A       | Math     |
+| B       | English  |
+| C       | Math     |
+| D       | Biology  |
+| E       | Math     |
+| F       | Computer |
+| G       | Math     |
+| H       | Math     |
+| I       | Math     |
++---------+----------+
+Output:
++---------+
+| class   |
++---------+
+| Math    |
++---------+
+
+解释:
+-数学课有6个学生，所以我们包括它。
+-英语课有1名学生，所以我们不包括它。
+-生物课有1名学生，所以我们不包括它。
+-计算机课有1个学生，所以我们不包括它。
+```
+
+```sql
+-- MySQL
+-- 方法一：使用 GROUP BY 子句和子查询
+SELECT
+    class
+FROM
+    (SELECT
+        class, COUNT(DISTINCT student) AS num
+    FROM
+        courses
+    GROUP BY class) AS temp_table
+WHERE
+    num >= 5
+;
+
+-- 方法二：使用 GROUP BY 和 HAVING 条件
+SELECT
+    class
+FROM
+    courses
+GROUP BY class
+HAVING COUNT(DISTINCT student) >= 5
+;
+```
+
+##  Find Followers Count - Easy
+
+求关注者的数量：
+
+```none
+Table: Followers
+
++-------------+------+
+| Column Name | Type |
++-------------+------+
+| user_id     | int  |
+| follower_id | int  |
++-------------+------+
+(user_id, follower_id) is the primary key
+```
+
+对于每一个用户，返回该用户的关注者数量。
+
+按 user_id 的顺序返回结果表。
+
+```none
+Input:
+Followers table:
++---------+-------------+
+| user_id | follower_id |
++---------+-------------+
+| 0       | 1           |
+| 1       | 0           |
+| 2       | 0           |
+| 2       | 1           |
++---------+-------------+
+Output:
++---------+----------------+
+| user_id | followers_count|
++---------+----------------+
+| 0       | 1              |
+| 1       | 1              |
+| 2       | 2              |
++---------+----------------+
+解释：
+0 的关注者有 {1}
+1 的关注者有 {0}
+2 的关注者有 {0,1}
+```
+
+```sql
+-- MySQL
+SELECT user_id, COUNT(*) AS followers_count
+FROM followers
+GROUP BY user_id
+ORDER BY user_id
+;
+```
+
 ##
-
-
-
-
-
-
-
-
 
 
 
