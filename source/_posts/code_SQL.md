@@ -1748,26 +1748,21 @@ END
 
 ## Orders 表
 
-| 列         | 说 明                                    |
-| ---------- | ---------------------------------------- |
-| order_num  | 唯一的订单号                             |
-| order_date | 订单日期                                 |
-| cust_id    | 订单顾客ID（关联到Customers表的cust_id） |
-
-> cust_id 上定义外键，关联到 Customers 的 cust_id 列。
+| 列         | 说 明                                        |
+| ---------- | -------------------------------------------- |
+| order_num  | 唯一的订单号                                 |
+| order_date | 订单日期                                     |
+| cust_id    | 订单顾客 ID（关联到 Customers 表的 cust_id） |
 
 ## OrderItems 表
 
-| 列                 | 说 明                               |
-| ------------------ | ----------------------------------- |
-| order_num（主键）  | 订单号（关联到Orders表的order_num） |
-| order_item（主键） | 订单物品号（订单内的顺序）          |
-| prod_id            | 产品ID（关联到Products表的prod_id） |
-| quantity           | 物品数量                            |
-| item_price         | 物品价格                            |
-
-> 关联 order_num 到 Orders 的 order_num 列；
-> 关联 prod_id 到 Products的 prod_id 列。
+| 列                 | 说 明                                  |
+| ------------------ | -------------------------------------- |
+| order_num（主键）  | 订单号（关联到 Orders 表的 order_num） |
+| order_item（主键） | 订单物品号（订单内的顺序）             |
+| prod_id            | 产品 ID（关联到 Products 表的prod_id） |
+| quantity           | 物品数量                               |
+| item_price         | 物品价格                               |
 
 ![](/images/five_tables.bmp)
 
@@ -1776,58 +1771,48 @@ populate.txt 包含用来填充这些表的 SQL INSERT 语句。
 
 ```sql
 -- Example table creation scripts for MySQL & MariaDB
-
 -- Create Customers table
-CREATE TABLE Customers
-(
-  cust_id      char(10)  NOT NULL ,
-  cust_name    char(50)  NOT NULL ,
-  cust_address char(50)  NULL ,
-  cust_city    char(50)  NULL ,
-  cust_state   char(5)   NULL ,
-  cust_zip     char(10)  NULL ,
-  cust_country char(50)  NULL ,
-  cust_contact char(50)  NULL ,
+CREATE TABLE Customers(
+  cust_id      char(10)  NOT NULL,
+  cust_name    char(50)  NOT NULL,
+  cust_address char(50)  NULL,
+  cust_city    char(50)  NULL,
+  cust_state   char(5)   NULL,
+  cust_zip     char(10)  NULL,
+  cust_country char(50)  NULL,
+  cust_contact char(50)  NULL,
   cust_email   char(255) NULL
 );
 
--- Create OrderItems table
-CREATE TABLE OrderItems
-(
-  order_num  int          NOT NULL ,
-  order_item int          NOT NULL ,
-  prod_id    char(10)     NOT NULL ,
-  quantity   int          NOT NULL ,
+CREATE TABLE OrderItems(
+  order_num  int          NOT NULL,
+  order_item int          NOT NULL,
+  prod_id    char(10)     NOT NULL,
+  quantity   int          NOT NULL,
   item_price decimal(8,2) NOT NULL
 );
 
--- Create Orders table
-CREATE TABLE Orders
-(
-  order_num  int      NOT NULL ,
-  order_date datetime NOT NULL ,
+CREATE TABLE Orders(
+  order_num  int      NOT NULL,
+  order_date datetime NOT NULL,
   cust_id    char(10) NOT NULL
 );
 
--- Create Products table
-CREATE TABLE Products
-(
-  prod_id    char(10)      NOT NULL ,
-  vend_id    char(10)      NOT NULL ,
-  prod_name  char(255)     NOT NULL ,
-  prod_price decimal(8,2)  NOT NULL ,
+CREATE TABLE Products(
+  prod_id    char(10)      NOT NULL,
+  vend_id    char(10)      NOT NULL,
+  prod_name  char(255)     NOT NULL,
+  prod_price decimal(8,2)  NOT NULL,
   prod_desc  text          NULL
 );
 
--- Create Vendors table
-CREATE TABLE Vendors
-(
-  vend_id      char(10) NOT NULL ,
-  vend_name    char(50) NOT NULL ,
-  vend_address char(50) NULL ,
-  vend_city    char(50) NULL ,
-  vend_state   char(5)  NULL ,
-  vend_zip     char(10) NULL ,
+CREATE TABLE Vendors(
+  vend_id      char(10) NOT NULL,
+  vend_name    char(50) NOT NULL,
+  vend_address char(50) NULL,
+  vend_city    char(50) NULL,
+  vend_state   char(5)  NULL,
+  vend_zip     char(10) NULL,
   vend_country char(50) NULL
 );
 
@@ -1846,7 +1831,6 @@ ALTER TABLE Products ADD CONSTRAINT FK_Products_Vendors FOREIGN KEY (vend_id) RE
 
 
 -- Example table population scripts for MySQL & MariaDB
-
 -- Populate Customers table
 INSERT INTO Customers(cust_id, cust_name, cust_address, cust_city, cust_state, cust_zip, cust_country, cust_contact, cust_email)
 VALUES('1000000001', 'Village Toys', '200 Maple Lane', 'Detroit', 'MI', '44444', 'USA', 'John Smith', 'sales@villagetoys.com');
