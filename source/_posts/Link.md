@@ -1595,6 +1595,14 @@ https://www.logosc.cn/filter/
 
 https://shop.pockyt.io/
 
+https://www.scratch5.com/
+
+https://shop.fange.app/
+
+https://xiaohuojian.ml/
+
+https://www.ip123.in/#fraud_check
+
 
 
 ### 虚拟机直通/穿透

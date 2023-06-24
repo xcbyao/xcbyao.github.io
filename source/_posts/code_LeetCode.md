@@ -2171,7 +2171,590 @@ ORDER BY user_id
 ;
 ```
 
+## Biggest Single Number - Easy
+
+只出现一次的最大数字：
+
+```none
+Table: MyNumbers
+
++-------------+------+
+| Column Name | Type |
++-------------+------+
+| num         | int  |
++-------------+------+
+There is no primary key
+```
+
+单一数字 是在 MyNumbers 表中只出现一次的数字。
+
+请你编写一个 SQL 查询来报告最大的 单一数字 。如果不存在 单一数字 ，查询需报告 null 。
+
+```none
+Input:
+MyNumbers table:
++-----+
+| num |
++-----+
+| 8   |
+| 8   |
+| 3   |
+| 3   |
+| 1   |
+| 4   |
+| 5   |
+| 6   |
++-----+
+Output:
++-----+
+| num |
++-----+
+| 6   |
++-----+
+解释：单一数字有 1、4、5 和 6 。
+6 是最大的单一数字，返回 6 。
+```
+
+```sql
+-- MySQL
+SELECT MAX(num) AS num
+FROM(SELECT num
+    FROM mynumbers
+    GROUP BY num
+    HAVING COUNT(num) = 1)
+    AS t
+;
+```
+
+## Customers Who Bought All Products - Medium
+
+买下所有产品的客户：
+
+```none
+Table: Customer
+
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| customer_id | int     |
+| product_key | int     |
++-------------+---------+
+There is no primary key
+product_key is a foreign key to Product table.
+
+Table: Product
+
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| product_key | int     |
++-------------+---------+
+product_key is the primary key
+```
+
+从 Customer 表中查询购买了 Product 表中所有产品的客户的 id。
+
+```none
+Input:
+Customer table:
++-------------+-------------+
+| customer_id | product_key |
++-------------+-------------+
+| 1           | 5           |
+| 2           | 6           |
+| 3           | 5           |
+| 3           | 6           |
+| 1           | 6           |
++-------------+-------------+
+Product table:
++-------------+
+| product_key |
++-------------+
+| 5           |
+| 6           |
++-------------+
+Output:
++-------------+
+| customer_id |
++-------------+
+| 1           |
+| 3           |
++-------------+
+购买了所有产品（5 和 6）的客户的 id 是 1 和 3 。
+```
+
+```sql
+-- MySQL
+SELECT customer_id
+FROM customer
+GROUP BY customer_id
+HAVING COUNT(DISTINCT product_key) = (
+    SELECT COUNT(DISTINCT product_key)
+    FROM product
+);
+```
+
+## The Number of Employees Which Report to Each Employee - Easy
+
+每位经理的下属员工数量：
+
+```none
+Table: Employees
+
++-------------+----------+
+| Column Name | Type     |
++-------------+----------+
+| employee_id | int      |
+| name        | varchar  |
+| reports_to  | int      |
+| age         | int      |
++-------------+----------+
+employee_id is the primary key
+```
+
+对于此问题，我们将至少有一个其他员工需要向他汇报的员工，视为一个经理。
+
+编写SQL查询需要听取汇报的所有经理的ID、名称、直接向该经理汇报的员工人数，以及这些员工的平均年龄，其中该平均年龄需要四舍五入到最接近的整数。
+
+返回的结果集需要按照 employee_id 进行排序。
+
+```none
+Input:
+Employees table:
++-------------+---------+------------+-----+
+| employee_id | name    | reports_to | age |
++-------------+---------+------------+-----+
+| 9           | Hercy   | null       | 43  |
+| 6           | Alice   | 9          | 41  |
+| 4           | Bob     | 9          | 36  |
+| 2           | Winston | null       | 37  |
++-------------+---------+------------+-----+
+Output:
++-------------+-------+---------------+-------------+
+| employee_id | name  | reports_count | average_age |
++-------------+-------+---------------+-------------+
+| 9           | Hercy | 2             | 39          |
++-------------+-------+---------------+-------------+
+
+Hercy 有两个需要向他汇报的员工, 他们是 Alice and Bob. 他们的平均年龄是 (41+36)/2 = 38.5, 四舍五入的结果是 39.
+```
+
+```sql
+-- MySQL
+SELECT
+    b.employee_id,
+    b.name,
+    COUNT(a.name) reports_count,
+    ROUND(AVG(a.age), 0) average_age
+FROM Employees AS a
+JOIN employees AS b
+ON a.reports_to = b.employee_id
+GROUP BY b.employee_id
+ORDER BY b.employee_id
+;
+```
+
+## Primary Department for Each Employee - Easy
+
+员工的直属部门：
+
+```none
+Table: Employee
+
++---------------+---------+
+| Column Name   |  Type   |
++---------------+---------+
+| employee_id   | int     |
+| department_id | int     |
+| primary_flag  | varchar |
++---------------+---------+
+(employee_id, department_id) is the primary key
+```
+
+当一个员工加入超过一个部门的时候，他需要决定哪个部门是他的直属部门。
+
+请注意，当员工只加入一个部门的时候，那这个部门将默认为他的直属部门，虽然表记录的值为'N'.
+
+请编写一段SQL，查出员工所属的直属部门。
+
+返回结果没有顺序要求。
+
+```none
+Input:
+Employee table:
++-------------+---------------+--------------+
+| employee_id | department_id | primary_flag |
++-------------+---------------+--------------+
+| 1           | 1             | N            |
+| 2           | 1             | Y            |
+| 2           | 2             | N            |
+| 3           | 3             | N            |
+| 4           | 2             | N            |
+| 4           | 3             | Y            |
+| 4           | 4             | N            |
++-------------+---------------+--------------+
+Output:
++-------------+---------------+
+| employee_id | department_id |
++-------------+---------------+
+| 1           | 1             |
+| 2           | 1             |
+| 3           | 3             |
+| 4           | 3             |
++-------------+---------------+
+Explanation:
+- The Primary department for employee 1 is 1.
+- The Primary department for employee 2 is 1.
+- The Primary department for employee 3 is 3.
+- The Primary department for employee 4 is 3.
+```
+
+```sql
+-- MySQL
+SELECT employee_id, department_id
+FROM employee
+GROUP BY employee_id
+HAVING COUNT(department_id) = 1
+UNION
+SELECT employee_id, department_id
+FROM employee
+WHERE primary_flag = 'Y'
+;
+```
+
+## Triangle Judgement - Easy
+
+判断三角形：
+
+```none
+Table: Triangle
+
++-------------+------+
+| Column Name | Type |
++-------------+------+
+| x           | int  |
+| y           | int  |
+| z           | int  |
++-------------+------+
+(x, y, z) is the primary key
+```
+
+写一个SQL查询，每三个线段报告它们是否可以形成一个三角形。
+
+以 任意顺序 返回结果表。
+
+```none
+Input:
+Triangle table:
++----+----+----+
+| x  | y  | z  |
++----+----+----+
+| 13 | 15 | 30 |
+| 10 | 20 | 15 |
++----+----+----+
+Output:
++----+----+----+----------+
+| x  | y  | z  | triangle |
++----+----+----+----------+
+| 13 | 15 | 30 | No       |
+| 10 | 20 | 15 | Yes      |
++----+----+----+----------+
+```
+
+```sql
+-- MySQL
+SELECT
+    x,
+    y,
+    z,
+    CASE
+        WHEN x + y > z AND x + z > y AND y + z > x THEN 'Yes'
+        ELSE 'No'
+    END AS 'triangle'
+FROM triangle
+;
+```
+
+## Consecutive Numbers - Medium
+
+连续出现的数字：
+
+```none
+Table: Logs
+
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| id          | int     |
+| num         | varchar |
++-------------+---------+
+id is the primary key for this table.
+id is an autoincrement column.
+```
+
+编写一个 SQL 查询，查找所有至少连续出现三次的数字。
+
+返回的结果表中的数据可以按 任意顺序 排列。
+
+```none
+Input:
+Logs table:
++----+-----+
+| id | num |
++----+-----+
+| 1  | 1   |
+| 2  | 1   |
+| 3  | 1   |
+| 4  | 2   |
+| 5  | 1   |
+| 6  | 2   |
+| 7  | 2   |
++----+-----+
+Output:
++-----------------+
+| ConsecutiveNums |
++-----------------+
+| 1               |
++-----------------+
+Explanation: 1 is the only number that appears consecutively for at least three times.
+```
+
+```sql
+-- MySQL
+SELECT DISTINCT
+    l1.num AS ConsecutiveNums
+FROM
+    Logs l1,
+    Logs l2,
+    Logs l3
+WHERE
+    l1.id = l2.id - 1
+    AND
+    l2.id = l3.id - 1
+    AND
+    l1.num = l2.num
+    AND
+    l2.num = l3.num
+;
+```
+
+## Product Price at a Given Date - Medium
+
+指定日期的产品价格：
+
+```none
+Table: Products
+
++---------------+---------+
+| Column Name   | Type    |
++---------------+---------+
+| product_id    | int     |
+| new_price     | int     |
+| change_date   | date    |
++---------------+---------+
+(product_id, change_date) is the primary key
+```
+
+写一段 SQL来查找在 2019-08-16 时全部产品的价格，假设所有产品在修改前的价格都是 10 。
+
+以 任意顺序 返回结果表。
+
+```none
+Input:
+Products table:
++------------+-----------+-------------+
+| product_id | new_price | change_date |
++------------+-----------+-------------+
+| 1          | 20        | 2019-08-14  |
+| 2          | 50        | 2019-08-14  |
+| 1          | 30        | 2019-08-15  |
+| 1          | 35        | 2019-08-16  |
+| 2          | 65        | 2019-08-17  |
+| 3          | 20        | 2019-08-18  |
++------------+-----------+-------------+
+Output:
++------------+-------+
+| product_id | price |
++------------+-------+
+| 2          | 50    |
+| 1          | 35    |
+| 3          | 10    |
++------------+-------+
+```
+
+```sql
+-- MySQL
+SELECT
+    p1.product_id,
+    IFNULL(p2.new_price, 10) AS price
+FROM (
+    SELECT DISTINCT product_id
+    FROM products
+) AS p1
+LEFT JOIN (
+    SELECT product_id, new_price
+    FROM products
+    WHERE (product_id, change_date) IN (
+        SELECT product_id, MAX(change_date)
+        FROM products
+        WHERE change_date <= '2019-08-16'
+        GROUP BY product_id
+    )
+) AS p2
+ON p1.product_id = p2.product_id
+;
+```
+
+## Last Person to Fit in the Bus - Medium
+
+最后一个能进入电梯的人：
+
+```none
+Table: Queue
+
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| person_id   | int     |
+| person_name | varchar |
+| weight      | int     |
+| turn        | int     |
++-------------+---------+
+person_id is the primary key
+```
+
+有一群人在等着上公共汽车。然而，巴士有 1000 公斤的重量限制，所以可能会有一些人不能上。
+
+写一条 SQL 查询语句查找 最后一个 能进入电梯且不超过重量限制的 person_name 。题目确保队列中第一位的人可以进入电梯，不会超重。
+
+```none
+Input:
+Queue table:
++-----------+-------------+--------+------+
+| person_id | person_name | weight | turn |
++-----------+-------------+--------+------+
+| 5         | Alice       | 250    | 1    |
+| 4         | Bob         | 175    | 5    |
+| 3         | Alex        | 350    | 2    |
+| 6         | John Cena   | 400    | 3    |
+| 1         | Winston     | 500    | 6    |
+| 2         | Marie       | 200    | 4    |
++-----------+-------------+--------+------+
+Output:
++-------------+
+| person_name |
++-------------+
+| John Cena   |
++-------------+
+解释：
+为了简化，Queue 表按 turn 列由小到大排序。
+上例中 George Washington(id 5), John Adams(id 3) 和 Thomas Jefferson(id 6) 将可以进入电梯,因为他们的体重和为 250 + 350 + 400 = 1000。
+Thomas Jefferson(id 6) 是最后一个体重合适并进入电梯的人。
+```
+
+```sql
+-- MySQL
+-- 方法一：自连接
+SELECT a.person_name
+FROM Queue a, Queue b
+WHERE a.turn >= b.turn
+GROUP BY a.person_id
+HAVING SUM(b.weight) <= 1000
+ORDER BY a.turn DESC
+LIMIT 1
+;
+
+-- 方法二：自定义变量
+SELECT a.person_name
+FROM (
+    SELECT
+        person_name,
+        @pre := @pre + weight AS weight
+    FROM
+        queue,
+        (SELECT @pre := 0) AS tmp
+    ORDER BY turn
+) AS a
+WHERE a.weight <= 1000
+ORDER BY a.weight DESC
+LIMIT 1
+;
+```
+
+## Count Salary Categories - Medium
+
+按分类统计薪水：
+
+```none
+Table: Accounts
+
++-------------+------+
+| Column Name | Type |
++-------------+------+
+| account_id  | int  |
+| income      | int  |
++-------------+------+
+account_id is the primary key
+```
+
+写出一个 SQL 查询，来报告每个工资类别的银行账户数量。 工资类别如下：
+
+"Low Salary"：所有工资 严格低于 20000 美元。
+"Average Salary"： 包含 范围内的所有工资 [$20000, $50000] 。
+"High Salary"：所有工资 严格大于 50000 美元。
+
+结果表 必须 包含所有三个类别。如果某个类别中没有帐户，则报告 0。
+
+按 任意顺序 返回结果表。
+
+```none
+Input:
+Accounts table:
++------------+--------+
+| account_id | income |
++------------+--------+
+| 3          | 108939 |
+| 2          | 12747  |
+| 8          | 87709  |
+| 6          | 91796  |
++------------+--------+
+Output:
++----------------+----------------+
+| category       | accounts_count |
++----------------+----------------+
+| Low Salary     | 1              |
+| Average Salary | 0              |
+| High Salary    | 3              |
++----------------+----------------+
+Explanation:
+Low Salary: Account 2.
+Average Salary: No accounts.
+High Salary: Accounts 3, 6, and 8.
+```
+
+```sql
+-- MySQL
+SELECT
+    'Low Salary' category,
+    SUM(income < 20000) accounts_count
+FROM accounts
+UNION ALL
+SELECT
+    'Average Salary',
+    SUM(income >= 20000 AND income <= 50000)
+FROM accounts
+UNION ALL
+SELECT
+    'High Salary',
+    SUM(income > 50000)
+FROM accounts
+;
+```
+
 ##
+
+
+
 
 
 
