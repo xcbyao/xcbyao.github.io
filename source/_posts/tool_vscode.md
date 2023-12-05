@@ -144,3 +144,4 @@ Ctrl+Alt+J  select
 [Code Runner: 代码一键运行，支持超过 40 种语言](https://zhuanlan.zhihu.com/p/54861567)
 [VS Code 必备前端插件，你值得拥有！](https://juejin.cn/post/7032101930155376671)
 [vscode 显示 120 字符或者 80 字符提示线或者显示垂直标尺](https://www.jianshu.com/p/5cbf7b336d66)
+[vscode基础使用教程(基于macOS)](https://www.xiebruce.top/1719.html)

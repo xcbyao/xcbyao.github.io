@@ -1615,6 +1615,39 @@ Chrome 主题
 Kawayi Chrome Theme - Arthur
 Modern House
 
+大麦抢票辅助
+https://github.com/RookieTree/DaMaiHelper
+
+设计师口袋心理学（Mental Notes）将 53 个来自心理学的知识，汇集成一个简洁的参考和头脑风暴工具。每张卡片都描述了一种对人类行为的洞察力，并提出了将这种洞察力应用于网站、软件应用设计的方法
+https://iason.notion.site/6719c7650fd1406c92287f556520fbc3?v=a38e4e6416c24047afba6685f5269566
+
+认知偏差知识手册
+https://s75w5y7vut.feishu.cn/docs/doccn3BatnScBJe7wD7K3S5poFf#
+
+PC-红色警戒2重聚2023版（win10/11完美运行）
+https://pan.baidu.com/s/1zJ8vgndwfJToDUrjALdYgA 提取码：hujz 
+
+知名英文网站的RSS 聚合平台
+https://buzzing.cc 
+科技相关的报道
+https://wired.com
+独立开发者社群
+https://indiehackers.com
+
+1,生成GitHub项目封面
+https://socialify.git.ci/
+2,为你的博客生成卡片封面风格
+https://github.com/Ladicle/tcardgen
+3,自动生成YT，博客等的缩略图
+https://thumbnail.ai/
+
+Windows10蓝牙功能最新玩法：手机离开即可自动锁屏！
+https://zhuanlan.zhihu.com/p/262878339
+
+浏览器插件的每日最热榜单和历史最多下载量榜单
+https://extpose.com/top-grossing
+
+
 
 
 
