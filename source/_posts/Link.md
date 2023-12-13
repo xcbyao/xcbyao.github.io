@@ -1647,8 +1647,11 @@ https://zhuanlan.zhihu.com/p/262878339
 浏览器插件的每日最热榜单和历史最多下载量榜单
 https://extpose.com/top-grossing
 
+手写输入法
+http://3g.lvshiminglu.com/blog/1611.html
 
-
+美国地址生成器
+https://www.meiguodizhi.com/
 
 
 
