@@ -2718,6 +2718,7 @@ Accounts table:
 | 8          | 87709  |
 | 6          | 91796  |
 +------------+--------+
+
 Output:
 +----------------+----------------+
 | category       | accounts_count |
@@ -2751,9 +2752,556 @@ FROM accounts
 ;
 ```
 
+## Employees Whose Manager Left the Company - Easy
+
+上级经理已离职的公司员工
+
+```none
+Table: Employees
+
++-------------+----------+
+| Column Name | Type     |
++-------------+----------+
+| employee_id | int      |
+| name        | varchar  |
+| manager_id  | int      |
+| salary      | int      |
++-------------+----------+
+
+employee_id is the primary key
+Some employees do not have a manager (manager_id is null)
+```
+
+查找这些员工的id，他们的薪水严格少于$30000 并且他们的上级经理已离职。当一个经理离开公司时，他们的信息需要从员工表中删除掉，但是表中的员工的manager_id  这一列还是设置的离职经理的id 。
+
+返回的结果按照employee_id 从小到大排序。
+
+```none
+Input:
+Employees table:
++-------------+-----------+------------+--------+
+| employee_id | name      | manager_id | salary |
++-------------+-----------+------------+--------+
+| 3           | Mila      | 9          | 60301  |
+| 12          | Antonella | null       | 31000  |
+| 13          | Emery     | null       | 67084  |
+| 1           | Kalel     | 11         | 21241  |
+| 9           | Mikaela   | null       | 50937  |
+| 11          | Joziah    | 6          | 28485  |
++-------------+-----------+------------+--------+
+Output:
++-------------+
+| employee_id |
++-------------+
+| 11          |
++-------------+
+
+Explanation:
+薪水少于 30000 美元的员工有 1 号(Kalel) 和 11号 (Joziah)。
+Kalel 的上级经理是 11 号员工，他还在公司上班(他是 Joziah )。
+Joziah 的上级经理是 6 号员工，他已经离职，因为员工表里面已经没有 6 号员工的信息了，它被删除了。
+```
+
+```sql
+-- MySQL
+--方法一：左连接
+select e1.employee_id
+from Employees e1
+left join Employees e2
+on e1.manager_id = e2.employee_id
+where e1.salary < 30000 and e1.manager_id is not null and e2.employee_id is null
+order by e1.employee_id
+
+--方法二：not in + 子查询
+select employee_id
+from Employees
+where salary < 30000
+	and manager_id not in (select employee_id from Employees)
+order by employee_id
+```
+
+## Exchange Seats - Medium
+
+```none
+Table: Seat
+
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| id          | int     |
+| student     | varchar |
++-------------+---------+
+id is the primary key (unique value) column
+id is a continuous increment. 「连续增量」
+```
+
+编写解决方案来交换每两个连续的学生的座位号。如果学生的数量是奇数，则最后一个学生的id不交换。
+
+按 id 升序 返回结果表。
+
+```none
+Input:
+Seat table:
++----+---------+
+| id | student |
++----+---------+
+| 1  | Abbot   |
+| 2  | Doris   |
+| 3  | Emerson |
+| 4  | Green   |
+| 5  | Jeames  |
++----+---------+
+Output:
++----+---------+
+| id | student |
++----+---------+
+| 1  | Doris   |
+| 2  | Abbot   |
+| 3  | Green   |
+| 4  | Emerson |
+| 5  | Jeames  |
++----+---------+
+Explanation:
+如果学生人数为奇数，则不需要更换最后一名学生的座位。
+```
+
+```sql
+-- MySQL
+方法一：使用 CASE
+SELECT
+    COUNT(*) AS counts
+FROM
+    seat
+
+SELECT
+    (CASE
+        WHEN MOD(id, 2) != 0 AND counts != id THEN id + 1
+        WHEN MOD(id, 2) != 0 AND counts = id THEN id
+        ELSE id - 1
+    END) AS id,
+    student
+FROM
+    seat,
+    (SELECT
+        COUNT(*) AS counts
+    FROM
+        seat) AS seat_counts
+ORDER BY id ASC;
+
+方法二：使用位操作和 COALESCE()
+SELECT id, (id+1)^1-1, student FROM seat;
+
+SELECT
+    *
+FROM
+    seat s1
+        LEFT JOIN
+    seat s2 ON (s1.id+1)^1-1 = s2.id
+ORDER BY s1.id;
+
+SELECT
+    s1.id, COALESCE(s2.student, s1.student) AS student
+FROM
+    seat s1
+        LEFT JOIN
+    seat s2 ON ((s1.id + 1) ^ 1) - 1 = s2.id
+ORDER BY s1.id;
+```
+
+## Movie Rating - Medium
+
+```none
+Table: Movies
+
++---------------+---------+
+| Column Name   | Type    |
++---------------+---------+
+| movie_id      | int     |
+| title         | varchar |
++---------------+---------+
+movie_id is the primary key
+
+Table: Users
+
++---------------+---------+
+| Column Name   | Type    |
++---------------+---------+
+| user_id       | int     |
+| name          | varchar |
++---------------+---------+
+user_id is the primary key
+
+Table: MovieRating
+
++---------------+---------+
+| Column Name   | Type    |
++---------------+---------+
+| movie_id      | int     |
+| user_id       | int     |
+| rating        | int     |
+| created_at    | date    |
++---------------+---------+
+(movie_id, user_id) is the primary key
+```
+
+查找评论电影数量最多的用户名。如果出现平局，返回字典序较小的用户名。
+查找在 February 2020 平均评分最高 的电影名称。如果出现平局，返回字典序较小的电影名称。
+
+字典序 ，即按字母在字典中出现顺序对字符串排序，字典序较小则意味着排序靠前。
+
+```none
+Input:
+Movies table:
++-------------+--------------+
+| movie_id    |  title       |
++-------------+--------------+
+| 1           | Avengers     |
+| 2           | Frozen 2     |
+| 3           | Joker        |
++-------------+--------------+
+Users table:
++-------------+--------------+
+| user_id     |  name        |
++-------------+--------------+
+| 1           | Daniel       |
+| 2           | Monica       |
+| 3           | Maria        |
+| 4           | James        |
++-------------+--------------+
+MovieRating table:
++-------------+--------------+--------------+-------------+
+| movie_id    | user_id      | rating       | created_at  |
++-------------+--------------+--------------+-------------+
+| 1           | 1            | 3            | 2020-01-12  |
+| 1           | 2            | 4            | 2020-02-11  |
+| 1           | 3            | 2            | 2020-02-12  |
+| 1           | 4            | 1            | 2020-01-01  |
+| 2           | 1            | 5            | 2020-02-17  |
+| 2           | 2            | 2            | 2020-02-01  |
+| 2           | 3            | 2            | 2020-03-01  |
+| 3           | 1            | 3            | 2020-02-22  |
+| 3           | 2            | 4            | 2020-02-25  |
++-------------+--------------+--------------+-------------+
+Output:
++--------------+
+| results      |
++--------------+
+| Daniel       |
+| Frozen 2     |
++--------------+
+Explanation:
+Daniel 和 Monica 都点评了 3 部电影（"Avengers", "Frozen 2" 和 "Joker"） 但是 Daniel 字典序比较小。
+Frozen 2 和 Joker 在 2 月的评分都是 3.5，但是 Frozen 2 的字典序比较小。
+```
+
+```sql
+-- MySQL
+# 评论电影数量最多且字典序较小的用户名
+(
+    select Users.name as results
+    FROM MovieRating
+        JOIN Users ON MovieRating.user_id = Users.user_id
+    GROUP BY MovieRating.user_id
+    ORDER BY
+        count(MovieRating.user_id) desc,
+        Users.name
+    LIMIT 1
+)
+UNION ALL(
+# 2020年2月份平均评分最高且字典序较小的电影名
+    select
+        Movies.title as results
+    FROM MovieRating
+        JOIN Movies ON MovieRating.movie_id = Movies.movie_id
+    WHERE
+        MovieRating.created_at >= '2020-02-01'
+        AND MovieRating.created_at < '2020-03-01'
+    GROUP BY MovieRating.movie_id
+    ORDER BY
+        avg(MovieRating.rating) desc,
+        Movies.title
+    LIMIT 1
+)
+```
+
+## Restaurant Growth - Medium
+
+餐馆营业额变化增长
+
+```none
+
+
+该表包含一家餐馆的顾客交易数据。
+visited_on 表示 (customer_id) 的顾客在 visited_on 那天访问了餐馆。
+amount 是一个顾客某一天的消费总额。
+```
+
+分析一下可能的营业额变化增长（每天至少有一位顾客）。
+
+计算以 7 天（某日期 + 该日期前的 6 天）为一个时间段的顾客消费平均值。average_amount 要 保留两位小数。
+
+结果按 visited_on 升序排序。
+
+```none
+
+
+第一个七天消费平均值从 2019-01-01 到 2019-01-07 是restaurant-growth/restaurant-growth/ (100 + 110 + 120 + 130 + 110 + 140 + 150)/7 = 122.86
+第二个七天消费平均值从 2019-01-02 到 2019-01-08 是 (110 + 120 + 130 + 110 + 140 + 150 + 80)/7 = 120
+第三个七天消费平均值从 2019-01-03 到 2019-01-09 是 (120 + 130 + 110 + 140 + 150 + 80 + 110)/7 = 120
+第四个七天消费平均值从 2019-01-04 到 2019-01-10 是 (130 + 110 + 140 + 150 + 80 + 110 + 130 + 150)/7 = 142.86
+```
+
+
+
+##
+
+好友申请 II ：谁有最多的好友
+
+```none
+
+
+
+```
+
+找出拥有最多的好友的人和他拥有的好友数目。
+
+生成的测试用例保证拥有最多好友数目的只有 1 个人。
+
+```none
+
+编号为 3 的人是编号为 1 ，2 和 4 的人的好友，所以他总共有 3 个好友，比其他人都多。
+```
+
+
+
+
+
+
+##
+
+```none
+
+
+表中的每一行都包含一条保险信息，其中：
+pid 是投保人的投保编号。
+tiv_2015 是该投保人在 2015 年的总投保金额，tiv_2016 是该投保人在 2016 年的总投保金额。
+lat 是投保人所在城市的纬度。题目数据确保 lat 不为空。
+lon 是投保人所在城市的经度。题目数据确保 lon 不为空。
+```
+
+报告 2016 年 (tiv_2016) 所有满足下述条件的投保人的投保金额之和：
+
+他在 2015 年的投保额 (tiv_2015) 至少跟一个其他投保人在 2015 年的投保额相同。
+他所在的城市必须与其他投保人都不同（也就是说 (lat, lon) 不能跟其他任何一个投保人完全相同）。
+tiv_2016 四舍五入的 两位小数 。
+
+```none
+
+
+表中的第一条记录和最后一条记录都满足两个条件。
+tiv_2015 值为 10 与第三条和第四条记录相同，且其位置是唯一的。
+
+第二条记录不符合任何一个条件。其 tiv_2015 与其他投保人不同，并且位置与第三条记录相同，这也导致了第三条记录不符合题目要求。
+因此，结果是第一条记录和最后一条记录的 tiv_2016 之和，即 45 。
+```
+
+
+
+
+
+
 ##
 
 
+公司的主管们感兴趣的是公司每个部门中谁赚的钱最多。一个部门的 高收入者 是指一个员工的工资在该部门的 不同 工资中 排名前三 。
+
+编写解决方案，找出每个部门中 收入高的员工 。
+
+以 任意顺序 返回结果表。
+
+```none
+
+
+在IT部门:
+- Max的工资最高
+- 兰迪和乔都赚取第二高的独特的薪水
+- 威尔的薪水是第三高的
+
+在销售部:
+- 亨利的工资最高
+- 山姆的薪水第二高
+- 没有第三高的工资，因为只有两名员工
+```
+
+
+
+
+
+##
+
+修复表中的名字
+
+```none
+
+
+该表包含用户的 ID 和名字。名字仅由小写和大写字符组成。
+```
+
+修复名字，使得只有第一个字符是大写的，其余都是小写的。
+
+返回按 user_id 排序的结果表。
+
+```none
+
+```
+
+
+
+
+
+
+##
+
+患某种疾病的患者
+
+```none
+
+
+'conditions' （疾病）包含 0 个或以上的疾病代码，以空格分隔。
+```
+
+查询患有 I 类糖尿病的患者 ID （patient_id）、患者姓名（patient_name）以及其患有的所有疾病代码（conditions）。I 类糖尿病的代码总是包含前缀 DIAB1 。
+
+按 任意顺序 返回结果表。
+
+```none
+
+
+Bob 和 George 都患有代码以 DIAB1 开头的疾病。
+```
+
+
+
+
+##
+
+删除重复的电子邮箱
+
+```none
+
+
+该表的每一行包含一封电子邮件。电子邮件将不包含大写字母。
+```
+
+删除 所有重复的电子邮件，只保留一个具有最小 id 的唯一电子邮件。
+
+（对于 SQL 用户，请注意你应该编写一个 DELETE 语句而不是 SELECT 语句。）
+
+（对于 Pandas 用户，请注意你应该直接修改 Person 表。）
+
+运行脚本后，显示的答案是 Person 表。驱动程序将首先编译并运行您的代码片段，然后再显示 Person 表。Person 表的最终顺序 无关紧要 。
+
+```none
+
+
+john@example.com重复两次。我们保留最小的Id = 1。
+```
+
+
+
+
+
+
+##
+
+第二高的薪水
+
+```none
+
+```
+
+查询并返回 Employee 表中第二高的薪水 。如果不存在第二高的薪水，查询应该返回 null(Pandas 则返回 None) 。
+
+```none
+
+```
+
+
+##
+
+按日期分组销售产品
+
+```none
+
+```
+
+找出每个日期、销售的不同产品的数量及其名称。
+每个日期的销售产品名称应按词典序排列。
+返回按 sell_date 排序的结果表。
+
+```none
+
+
+对于2020-05-30，出售的物品是 (Headphone, Basketball, T-shirt)，按词典序排列，并用逗号 ',' 分隔。
+对于2020-06-01，出售的物品是 (Pencil, Bible)，按词典序排列，并用逗号分隔。
+对于2020-06-02，出售的物品是 (Mask)，只需返回该物品名。
+```
+
+
+
+##
+
+列出指定时间段内所有的下单产品
+
+```none
+
+
+该表可能包含重复行。
+unit 是在日期 order_date 内下单产品的数目。
+```
+
+获取在 2020 年 2 月份下单的数量不少于 100 的产品的名字和数目。
+
+返回结果表单的 顺序无要求 。
+
+```none
+
+
+2020 年 2 月份下单 product_id = 1 的产品的数目总和为 (60 + 70) = 130 。
+2020 年 2 月份下单 product_id = 2 的产品的数目总和为 80 。
+2020 年 2 月份下单 product_id = 3 的产品的数目总和为 (2 + 3) = 5 。
+2020 年 2 月份 product_id = 4 的产品并没有下单。
+2020 年 2 月份下单 product_id = 5 的产品的数目总和为 (50 + 50) = 100 。
+```
+
+
+
+##
+
+查找拥有有效邮箱的用户
+
+```none
+
+
+该表包含了网站已注册用户的信息。有一些电子邮件是无效的。
+```
+
+查找具有有效电子邮件的用户。
+
+一个有效的电子邮件具有前缀名称和域，其中：
+
+ 前缀 名称是一个字符串，可以包含字母（大写或小写），数字，下划线 '_' ，点 '.' 和/或破折号 '-' 。前缀名称 必须 以字母开头。
+域 为 '@leetcode.com' 。
+以任何顺序返回结果表。
+
+```none
+
+
+用户 2 的电子邮件没有域。
+用户 5 的电子邮件带有不允许的 '#' 符号。
+用户 6 的电子邮件没有 leetcode 域。
+用户 7 的电子邮件以点开头。
+```
 
 
 
