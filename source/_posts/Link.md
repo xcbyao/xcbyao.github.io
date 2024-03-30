@@ -1653,6 +1653,21 @@ http://3g.lvshiminglu.com/blog/1611.html
 美国地址生成器
 https://www.meiguodizhi.com/
 
+[Sora](https://cwm1b8fgq31.feishu.cn/wiki/V0uzwelqoiDlfzk4gFSczm6In8g)
+
+面试网站
+https://www.linkedin.com/feed/
+https://cn.indeed.com/
+https://www.zhipin.com/guangzhou/
+https://www.nowcoder.com/jobs/recommend/campus
+https://www.wondercv.com
+
+C++ 相关
+[陈同学整理的10个可以写到简历上C++项目](https://mp.weixin.qq.com/s?__biz=MzkzNzIzNjI4Nw==&mid=2247485770&idx=1&sn=6e62f1a0ec73df219bab529d3c0072c3&source=41#wechat_redirect)
+[万字长文 | 这可能是东半球最保姆级的后台服务器开发学习路线](https://mp.weixin.qq.com/s/7xANFCFUd528Lch3lqcbRg)
+[这才是你需要的 C 语言、C++ 学习路线！](https://my.oschina.net/hansonwang99/blog/3179338)
+
+
 
 
 ### 虚拟机直通/穿透
