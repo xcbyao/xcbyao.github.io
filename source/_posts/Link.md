@@ -1667,6 +1667,10 @@ C++ 相关
 [万字长文 | 这可能是东半球最保姆级的后台服务器开发学习路线](https://mp.weixin.qq.com/s/7xANFCFUd528Lch3lqcbRg)
 [这才是你需要的 C 语言、C++ 学习路线！](https://my.oschina.net/hansonwang99/blog/3179338)
 
+系统镜像
+[网易开源镜像站](https://mirrors.163.com/)
+[npmmirror 镜像站](https://npmmirror.com/)
+[MSDN](https://msdn.itellyou.cn/)
 
 
 
