@@ -1211,7 +1211,7 @@ https://www.ycombinator.com/
 https://www.1point3acres.com/bbs/
 
 https://gonglue.us/youtube-downloader
-YouTube 视频/音频下载推荐-美国攻略（YouTubepi）
+YouTube 视频/音频下载推荐-美国攻略（YouTubepi，youtubezz）
 
 https://xd.x6d.com/
 小刀资源网
@@ -1233,11 +1233,12 @@ https://www.zjlib.cn/
 
 https://eureka.mba/posts/3f43dc72.html
 
-https://caj2pdf.cn/en
+https://caj2pdf.cn
 
 一个书库
-http://louischeung.top:225/
-
+http://louischeung.top:225
+http://192.168.124.22:225
+8081
 
 https://forum.freemdict.com/
 
@@ -1647,7 +1648,7 @@ https://zhuanlan.zhihu.com/p/262878339
 浏览器插件的每日最热榜单和历史最多下载量榜单
 https://extpose.com/top-grossing
 
-手写输入法
+手心输入法
 http://3g.lvshiminglu.com/blog/1611.html
 
 美国地址生成器
@@ -1671,6 +1672,95 @@ C++ 相关
 [网易开源镜像站](https://mirrors.163.com/)
 [npmmirror 镜像站](https://npmmirror.com/)
 [MSDN](https://msdn.itellyou.cn/)
+
+粤语
+https://corpus.eduhk.hk/cantonese/
+https://www.bilibili.com/video/BV12b411L7NS
+
+舌头
+https://theporndude.com/zh
+https://spankbang.com/
+https://91porn.plus/video/VT_1XDCdomEy
+https://91porn.plus/video/VT_KPPzLFNPq
+https://91porny.com/video/view/8ce31a015fa7fd0d44ee
+https://91porny.com/video/view/f20885824442636826bd
+
+
+小说
+https://yazhouse8.com/article/75878.html
+
+
+3D mockup images and movies
+https://rotato.app/
+
+https://www.velasx.com/
+
+https://onojyun.com/
+写作，一场自我悖驳的旅程。
+果实也要在腐烂之后才能生根发芽。
+
+网站历史查询
+https://seo.juziseo.cn/snapshot/
+
+独立开发者论坛
+https://w2solo.com/
+
+https://linklearner.com/study
+
+在线匿名聊天
+https://hack.chat/
+
+在线端口扫描器
+https://duankou.wlphp.com/
+
+牛津高阶词典第十版
+链接：https://pan.baidu.com/s/19A2vRMJRu5NneaPkTNhwqA
+提取码：NJSB
+https://www.123pan.com/s/tJA9-gyWWd
+提取码:NJSB
+
+单手转棍
+https://www.youtube.com/watch?v=sGGBmjj2WfU&ab_channel=%E5%B0%8F%E5%BF%83%E9%A3%9E%E7%BF%94
+
+KeymouseGo 鼠标键盘录制
+https://github.com/taojy123/KeymouseGo
+
+https://neal.fun/ambient-chaos/
+背景音
+
+https://kdocs.cn/l/cp8FD1EDjb0H?f=201
+玉米蛇饲养指南
+
+ios 苹果账号，ipa
+https://www.52appleid.com/
+
+ipa 商店
+https://ipa.store/
+
+苹果软件库
+https://cuiun.com/
+
+苹果软件站
+https://www.iios.fun
+https://www.iios.club
+
+雨晨ios
+https://yuchen.tonghuaios.com/
+https://yc.yuchengyouxi.com/
+
+https://cnys.tv/
+
+ios 限免
+https://www.mergeek.com/free/apps
+https://gofans.cn/
+https://free.warmday.wang/daily
+https://mrmad.com.tw/category/3c-information/free-app
+https://app.so/xianmian/
+https://www.newmobilelife.com/category/apps-%E6%83%85%E5%A0%B1/%E9%99%90%E6%99%82%E5%85%8D%E8%B2%BB%E6%83%85%E5%A0%B1/
+https://free.apprcn.com/category/ios/
+
+https://hellogithub.com/
+
 
 
 
