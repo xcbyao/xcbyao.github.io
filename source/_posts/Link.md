@@ -1679,7 +1679,6 @@ https://www.bilibili.com/video/BV12b411L7NS
 
 舌头
 https://theporndude.com/zh
-https://spankbang.com/
 https://91porn.plus/video/VT_1XDCdomEy
 https://91porn.plus/video/VT_KPPzLFNPq
 https://91porny.com/video/view/8ce31a015fa7fd0d44ee
@@ -1761,10 +1760,21 @@ https://free.apprcn.com/category/ios/
 
 https://hellogithub.com/
 
+V2Ray 配置指南
+https://guide.v2fly.org/#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98-q-a
 
-
-
-### 虚拟机直通/穿透
+## 虚拟机直通/穿透
 | [平台虚拟化软件比较](https://en.wikipedia.org/wiki/Comparison_of_platform_virtualization_software###Other_features) | [VMware三个版本workstation、server、esxi的区别](https://blog.csdn.net/wuhen1226/article/details/25543811) | [Hypervisor 浅谈](https://johnnyqian.net/blog/hypervisor-in-brief/) | [不看后悔一辈子的VMware教程](https://zhuanlan.zhihu.com/p/110128514) | [让 KVM 上的 Windows 虚拟机插上 GVT-g 的翅膀](https://medium.com/@langleyhouge/%E8%AE%A9-kvm-%E4%B8%8A%E7%9A%84-windows-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%8F%92%E4%B8%8Agvt-g-%E7%9A%84%E7%BF%85%E8%86%80-ac0ac28b73b8) |
 | :-- | :-- | :-- | :-- | :-- |
 | [VMware vs KVM](https://www.rippleweb.com/vmware-vs-kvm/) | [虚拟化 - xen、kvm、vmware、hyper-v等虚拟化技术的比较](https://www.cnblogs.com/sammyliu/articles/4390371.html) |  |  |  |
+
+ipa 美图秀秀
+https://pan.quark.cn/s/64febc0686f9
+
+ipa 签名安装
+https://www.bilibili.com/video/BV1Yt421A7PU/
+https://zhuanlan.zhihu.com/p/645026843
+https://www.ipapark.com/1598.html
+
+https://t.me/baipiaoge888
+
